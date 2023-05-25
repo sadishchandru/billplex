@@ -15,6 +15,7 @@ namespace BillPlex
         public CompanyInfo()
         {
             InitializeComponent();
+
         }
     }
 }
