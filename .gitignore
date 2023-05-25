@@ -1,0 +1,30 @@
+# Compiled files
+*.exe
+*.dll
+*.pdb
+
+# NuGet packages
+*.nupkg
+packages/
+
+# Visual Studio files
+*.obj
+*.user
+*.suo
+*.cache
+*.vs
+*.vscode
+
+# Test Results
+TestResults/
+
+# Resharper files
+_ReSharper*
+
+# DevExpress-specific files
+*.licx
+*.v12.suo
+*.v14.suo
+*.v16.suo
+*.v19.suo
+*.v21.suo
