@@ -32,7 +32,7 @@ namespace BillPlex
 
         private void MasterButtonClicked(object sender, DevExpress.XtraBars.Ribbon.RibbonPageGroupEventArgs e)
         {
-            CompanyProfile CP = new CompanyProfile();
+            FrmClientCompanyProfile CP = new FrmClientCompanyProfile();
 
             CP.ShowDialog();
         }

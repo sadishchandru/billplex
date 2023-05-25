@@ -7,6 +7,18 @@
 *.nupkg
 packages/
 
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+
 # Visual Studio files
 *.obj
 *.user
@@ -14,6 +26,19 @@ packages/
 *.cache
 *.vs
 *.vscode
+
+# Visual Studio profiler
+*.psess
+*.vsp
+*.vspx
+*.sap
+
+# Visual Studio cache files
+# files ending in .cache can be ignored
+*.[Cc]ache
+# but keep track of directories ending in .cache
+!*.[Cc]ache/
+
 
 # Test Results
 TestResults/
