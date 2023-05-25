@@ -27,5 +27,12 @@ namespace BillPlex
         {
 
         }
+
+        private void MasterButtonClicked(object sender, DevExpress.XtraBars.Ribbon.RibbonPageGroupEventArgs e)
+        {
+            CompanyProfile CP = new CompanyProfile();
+
+            CP.ShowDialog();
+        }
     }
 }
