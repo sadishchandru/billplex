@@ -30,20 +30,20 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.NewButton = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton9 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton10 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton11 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton10 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton9 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -66,21 +66,13 @@ namespace BillPlex
             this.groupControl1.Text = "Main Company";
             this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
             // 
-            // dropDownButton1
+            // simpleButton3
             // 
-            this.dropDownButton1.Location = new System.Drawing.Point(71, 26);
-            this.dropDownButton1.Name = "dropDownButton1";
-            this.dropDownButton1.Size = new System.Drawing.Size(293, 23);
-            this.dropDownButton1.TabIndex = 5;
-            this.dropDownButton1.Text = "dropDownButton1";
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Location = new System.Drawing.Point(370, 26);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton1.TabIndex = 3;
-            this.simpleButton1.Text = "Find";
+            this.simpleButton3.Location = new System.Drawing.Point(674, 26);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton3.TabIndex = 4;
+            this.simpleButton3.Text = "Print";
             // 
             // simpleButton2
             // 
@@ -90,13 +82,21 @@ namespace BillPlex
             this.simpleButton2.TabIndex = 4;
             this.simpleButton2.Text = "Clear";
             // 
-            // simpleButton3
+            // simpleButton1
             // 
-            this.simpleButton3.Location = new System.Drawing.Point(674, 26);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton3.TabIndex = 4;
-            this.simpleButton3.Text = "Print";
+            this.simpleButton1.Location = new System.Drawing.Point(370, 26);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton1.TabIndex = 3;
+            this.simpleButton1.Text = "Find";
+            // 
+            // dropDownButton1
+            // 
+            this.dropDownButton1.Location = new System.Drawing.Point(71, 26);
+            this.dropDownButton1.Name = "dropDownButton1";
+            this.dropDownButton1.Size = new System.Drawing.Size(293, 23);
+            this.dropDownButton1.TabIndex = 5;
+            this.dropDownButton1.Text = "dropDownButton1";
             // 
             // gridControl1
             // 
@@ -113,13 +113,14 @@ namespace BillPlex
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             // 
-            // simpleButton4
+            // NewButton
             // 
-            this.simpleButton4.Location = new System.Drawing.Point(10, 26);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton4.TabIndex = 5;
-            this.simpleButton4.Text = "New";
+            this.NewButton.Location = new System.Drawing.Point(10, 26);
+            this.NewButton.Name = "NewButton";
+            this.NewButton.Size = new System.Drawing.Size(75, 23);
+            this.NewButton.TabIndex = 5;
+            this.NewButton.Text = "New";
+            this.NewButton.Click += new System.EventHandler(this.NewButton_Click);
             // 
             // groupControl2
             // 
@@ -129,43 +130,19 @@ namespace BillPlex
             this.groupControl2.Controls.Add(this.simpleButton7);
             this.groupControl2.Controls.Add(this.simpleButton6);
             this.groupControl2.Controls.Add(this.simpleButton5);
-            this.groupControl2.Controls.Add(this.simpleButton4);
+            this.groupControl2.Controls.Add(this.NewButton);
             this.groupControl2.Location = new System.Drawing.Point(665, 200);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(103, 239);
             this.groupControl2.TabIndex = 6;
             // 
-            // simpleButton5
+            // simpleButton11
             // 
-            this.simpleButton5.Location = new System.Drawing.Point(10, 55);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton5.TabIndex = 6;
-            this.simpleButton5.Text = "Add";
-            // 
-            // simpleButton6
-            // 
-            this.simpleButton6.Location = new System.Drawing.Point(10, 84);
-            this.simpleButton6.Name = "simpleButton6";
-            this.simpleButton6.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton6.TabIndex = 7;
-            this.simpleButton6.Text = "Edit";
-            // 
-            // simpleButton7
-            // 
-            this.simpleButton7.Location = new System.Drawing.Point(10, 113);
-            this.simpleButton7.Name = "simpleButton7";
-            this.simpleButton7.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton7.TabIndex = 8;
-            this.simpleButton7.Text = "Update";
-            // 
-            // simpleButton9
-            // 
-            this.simpleButton9.Location = new System.Drawing.Point(10, 142);
-            this.simpleButton9.Name = "simpleButton9";
-            this.simpleButton9.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton9.TabIndex = 10;
-            this.simpleButton9.Text = "Delete";
+            this.simpleButton11.Location = new System.Drawing.Point(10, 200);
+            this.simpleButton11.Name = "simpleButton11";
+            this.simpleButton11.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton11.TabIndex = 12;
+            this.simpleButton11.Text = "Exit";
             // 
             // simpleButton10
             // 
@@ -175,13 +152,37 @@ namespace BillPlex
             this.simpleButton10.TabIndex = 11;
             this.simpleButton10.Text = "clear";
             // 
-            // simpleButton11
+            // simpleButton9
             // 
-            this.simpleButton11.Location = new System.Drawing.Point(10, 200);
-            this.simpleButton11.Name = "simpleButton11";
-            this.simpleButton11.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton11.TabIndex = 12;
-            this.simpleButton11.Text = "Exit";
+            this.simpleButton9.Location = new System.Drawing.Point(10, 142);
+            this.simpleButton9.Name = "simpleButton9";
+            this.simpleButton9.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton9.TabIndex = 10;
+            this.simpleButton9.Text = "Delete";
+            // 
+            // simpleButton7
+            // 
+            this.simpleButton7.Location = new System.Drawing.Point(10, 113);
+            this.simpleButton7.Name = "simpleButton7";
+            this.simpleButton7.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton7.TabIndex = 8;
+            this.simpleButton7.Text = "Update";
+            // 
+            // simpleButton6
+            // 
+            this.simpleButton6.Location = new System.Drawing.Point(10, 84);
+            this.simpleButton6.Name = "simpleButton6";
+            this.simpleButton6.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton6.TabIndex = 7;
+            this.simpleButton6.Text = "Edit";
+            // 
+            // simpleButton5
+            // 
+            this.simpleButton5.Location = new System.Drawing.Point(10, 55);
+            this.simpleButton5.Name = "simpleButton5";
+            this.simpleButton5.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton5.TabIndex = 6;
+            this.simpleButton5.Text = "Add";
             // 
             // labelControl1
             // 
@@ -206,6 +207,7 @@ namespace BillPlex
             this.Controls.Add(this.groupControl1);
             this.Name = "CompanyProfile";
             this.Text = "CompanyProfile";
+            this.Load += new System.EventHandler(this.CompanyProfile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
@@ -225,7 +227,7 @@ namespace BillPlex
         private DevExpress.XtraEditors.DropDownButton dropDownButton1;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
+        private DevExpress.XtraEditors.SimpleButton NewButton;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.SimpleButton simpleButton11;
         private DevExpress.XtraEditors.SimpleButton simpleButton10;

@@ -22,5 +22,15 @@ namespace BillPlex
         {
 
         }
+
+        private void CompanyProfile_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NewButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("New Button clicked");
+        }
     }
 }

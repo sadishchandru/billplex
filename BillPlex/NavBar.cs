@@ -20,12 +20,21 @@ namespace BillPlex
 
         private void Master_Company_Click(object sender, ItemClickEventArgs e)
         {
-
+            /*CompanyProfile CP = new CompanyProfile();
+            CP.ShowDialog();*/
+            MessageBox.Show("Master_Company button clicked!");
         }
 
         private void ribbon_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void MasterButtonClicked(object sender, DevExpress.XtraBars.Ribbon.RibbonPageGroupEventArgs e)
+        {
+            CompanyProfile CP = new CompanyProfile();
+
+            CP.ShowDialog();
         }
     }
 }
