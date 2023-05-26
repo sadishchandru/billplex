@@ -108,9 +108,13 @@ namespace BillPlex
             // 
             // Exitbtn
             // 
+            this.Exitbtn.Appearance.BackColor = System.Drawing.Color.LightBlue;
             this.Exitbtn.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Exitbtn.Appearance.Options.UseBackColor = true;
             this.Exitbtn.Appearance.Options.UseFont = true;
             this.Exitbtn.Location = new System.Drawing.Point(12, 246);
+            this.Exitbtn.LookAndFeel.SkinName = "DevExpress Style";
+            this.Exitbtn.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Exitbtn.Name = "Exitbtn";
             this.Exitbtn.Size = new System.Drawing.Size(75, 23);
             this.Exitbtn.TabIndex = 11;
@@ -118,9 +122,13 @@ namespace BillPlex
             // 
             // Clearbtn
             // 
+            this.Clearbtn.Appearance.BackColor = System.Drawing.Color.LightBlue;
             this.Clearbtn.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Clearbtn.Appearance.Options.UseBackColor = true;
             this.Clearbtn.Appearance.Options.UseFont = true;
             this.Clearbtn.Location = new System.Drawing.Point(12, 207);
+            this.Clearbtn.LookAndFeel.SkinName = "DevExpress Style";
+            this.Clearbtn.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Clearbtn.Name = "Clearbtn";
             this.Clearbtn.Size = new System.Drawing.Size(75, 23);
             this.Clearbtn.TabIndex = 10;
@@ -128,9 +136,13 @@ namespace BillPlex
             // 
             // Deletebtn
             // 
+            this.Deletebtn.Appearance.BackColor = System.Drawing.Color.LightBlue;
             this.Deletebtn.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Deletebtn.Appearance.Options.UseBackColor = true;
             this.Deletebtn.Appearance.Options.UseFont = true;
             this.Deletebtn.Location = new System.Drawing.Point(12, 168);
+            this.Deletebtn.LookAndFeel.SkinName = "DevExpress Style";
+            this.Deletebtn.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Deletebtn.Name = "Deletebtn";
             this.Deletebtn.Size = new System.Drawing.Size(75, 23);
             this.Deletebtn.TabIndex = 9;
@@ -138,9 +150,13 @@ namespace BillPlex
             // 
             // Updatebtn
             // 
+            this.Updatebtn.Appearance.BackColor = System.Drawing.Color.LightBlue;
             this.Updatebtn.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Updatebtn.Appearance.Options.UseBackColor = true;
             this.Updatebtn.Appearance.Options.UseFont = true;
             this.Updatebtn.Location = new System.Drawing.Point(12, 126);
+            this.Updatebtn.LookAndFeel.SkinName = "DevExpress Style";
+            this.Updatebtn.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Updatebtn.Name = "Updatebtn";
             this.Updatebtn.Size = new System.Drawing.Size(75, 23);
             this.Updatebtn.TabIndex = 8;
@@ -148,9 +164,13 @@ namespace BillPlex
             // 
             // Editbtn
             // 
+            this.Editbtn.Appearance.BackColor = System.Drawing.Color.LightBlue;
             this.Editbtn.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Editbtn.Appearance.Options.UseBackColor = true;
             this.Editbtn.Appearance.Options.UseFont = true;
             this.Editbtn.Location = new System.Drawing.Point(12, 86);
+            this.Editbtn.LookAndFeel.SkinName = "DevExpress Style";
+            this.Editbtn.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Editbtn.Name = "Editbtn";
             this.Editbtn.Size = new System.Drawing.Size(75, 23);
             this.Editbtn.TabIndex = 7;
@@ -158,9 +178,13 @@ namespace BillPlex
             // 
             // Addbtn
             // 
+            this.Addbtn.Appearance.BackColor = System.Drawing.Color.LightBlue;
             this.Addbtn.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Addbtn.Appearance.Options.UseBackColor = true;
             this.Addbtn.Appearance.Options.UseFont = true;
             this.Addbtn.Location = new System.Drawing.Point(12, 43);
+            this.Addbtn.LookAndFeel.SkinName = "DevExpress Style";
+            this.Addbtn.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Addbtn.Name = "Addbtn";
             this.Addbtn.Size = new System.Drawing.Size(75, 23);
             this.Addbtn.TabIndex = 6;
@@ -168,9 +192,13 @@ namespace BillPlex
             // 
             // Newbtn
             // 
+            this.Newbtn.Appearance.BackColor = System.Drawing.Color.LightBlue;
             this.Newbtn.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Newbtn.Appearance.Options.UseBackColor = true;
             this.Newbtn.Appearance.Options.UseFont = true;
             this.Newbtn.Location = new System.Drawing.Point(12, 5);
+            this.Newbtn.LookAndFeel.SkinName = "DevExpress Style";
+            this.Newbtn.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Newbtn.Name = "Newbtn";
             this.Newbtn.Size = new System.Drawing.Size(75, 23);
             this.Newbtn.TabIndex = 5;
@@ -224,9 +252,13 @@ namespace BillPlex
             // 
             // Claerbtn
             // 
+            this.Claerbtn.Appearance.BackColor = System.Drawing.Color.LightBlue;
             this.Claerbtn.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Claerbtn.Appearance.Options.UseBackColor = true;
             this.Claerbtn.Appearance.Options.UseFont = true;
             this.Claerbtn.Location = new System.Drawing.Point(951, 23);
+            this.Claerbtn.LookAndFeel.SkinName = "DevExpress Style";
+            this.Claerbtn.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Claerbtn.Name = "Claerbtn";
             this.Claerbtn.Size = new System.Drawing.Size(75, 23);
             this.Claerbtn.TabIndex = 4;
@@ -234,9 +266,13 @@ namespace BillPlex
             // 
             // Findbtn
             // 
+            this.Findbtn.Appearance.BackColor = System.Drawing.Color.LightBlue;
             this.Findbtn.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Findbtn.Appearance.Options.UseBackColor = true;
             this.Findbtn.Appearance.Options.UseFont = true;
             this.Findbtn.Location = new System.Drawing.Point(798, 23);
+            this.Findbtn.LookAndFeel.SkinName = "DevExpress Style";
+            this.Findbtn.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Findbtn.Name = "Findbtn";
             this.Findbtn.Size = new System.Drawing.Size(75, 23);
             this.Findbtn.TabIndex = 3;

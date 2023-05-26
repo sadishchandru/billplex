@@ -231,3 +231,7 @@ D:\billplex\billplex\BillPlex\obj\Debug\BillPlex.pdb
 D:\billplex\billplex\BillPlex\obj\Debug\BillPlex.FrmSubClientCompanyProfile.resources
 D:\billplex\billplex\BillPlex\obj\Debug\BillPlex.FrmCompanyProfile.resources
 D:\billplex\billplex\BillPlex\obj\Debug\BillPlex.FrmClientCompanyProfile.resources
+D:\billplex\billplex\BillPlex\obj\Debug\BillPlex.csproj.AssemblyReference.cache
+D:\billplex\billplex\BillPlex\obj\Debug\BillPlex.FrmCompanyInfo.resources
+D:\billplex\billplex\BillPlex\obj\Debug\BillPlex.FrmClientCompanyInfo.resources
+D:\billplex\billplex\BillPlex\obj\Debug\BillPlex.FrmSubClientCompanyInfo.resources

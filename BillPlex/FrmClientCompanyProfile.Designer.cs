@@ -36,13 +36,13 @@ namespace BillPlex
             this.Exitbtn = new DevExpress.XtraEditors.SimpleButton();
             this.Newbtn = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.vScrollBar1 = new DevExpress.XtraEditors.VScrollBar();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.hScrollBar1 = new DevExpress.XtraEditors.HScrollBar();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Claerbtn = new DevExpress.XtraEditors.SimpleButton();
             this.Findbtn = new DevExpress.XtraEditors.SimpleButton();
             this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
-            this.vScrollBar1 = new DevExpress.XtraEditors.VScrollBar();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -92,15 +92,21 @@ namespace BillPlex
             this.panelControl5.Controls.Add(this.Exitbtn);
             this.panelControl5.Controls.Add(this.Newbtn);
             this.panelControl5.Location = new System.Drawing.Point(1456, 110);
+            this.panelControl5.LookAndFeel.SkinName = "DevExpress Style";
+            this.panelControl5.LookAndFeel.UseDefaultLookAndFeel = false;
             this.panelControl5.Name = "panelControl5";
             this.panelControl5.Size = new System.Drawing.Size(98, 226);
             this.panelControl5.TabIndex = 1;
             // 
             // Exitbtn
             // 
+            this.Exitbtn.Appearance.BackColor = System.Drawing.Color.LightBlue;
             this.Exitbtn.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Exitbtn.Appearance.Options.UseBackColor = true;
             this.Exitbtn.Appearance.Options.UseFont = true;
             this.Exitbtn.Location = new System.Drawing.Point(12, 196);
+            this.Exitbtn.LookAndFeel.SkinName = "DevExpress Style";
+            this.Exitbtn.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Exitbtn.Name = "Exitbtn";
             this.Exitbtn.Size = new System.Drawing.Size(75, 23);
             this.Exitbtn.TabIndex = 11;
@@ -108,9 +114,13 @@ namespace BillPlex
             // 
             // Newbtn
             // 
+            this.Newbtn.Appearance.BackColor = System.Drawing.Color.LightBlue;
             this.Newbtn.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Newbtn.Appearance.Options.UseBackColor = true;
             this.Newbtn.Appearance.Options.UseFont = true;
             this.Newbtn.Location = new System.Drawing.Point(12, 5);
+            this.Newbtn.LookAndFeel.SkinName = "DevExpress Style";
+            this.Newbtn.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Newbtn.Name = "Newbtn";
             this.Newbtn.Size = new System.Drawing.Size(75, 23);
             this.Newbtn.TabIndex = 5;
@@ -125,6 +135,13 @@ namespace BillPlex
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(1429, 648);
             this.panelControl3.TabIndex = 0;
+            // 
+            // vScrollBar1
+            // 
+            this.vScrollBar1.Location = new System.Drawing.Point(1411, 6);
+            this.vScrollBar1.Name = "vScrollBar1";
+            this.vScrollBar1.Size = new System.Drawing.Size(17, 598);
+            this.vScrollBar1.TabIndex = 1;
             // 
             // panelControl4
             // 
@@ -157,9 +174,13 @@ namespace BillPlex
             // 
             // Claerbtn
             // 
+            this.Claerbtn.Appearance.BackColor = System.Drawing.Color.LightBlue;
             this.Claerbtn.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Claerbtn.Appearance.Options.UseBackColor = true;
             this.Claerbtn.Appearance.Options.UseFont = true;
             this.Claerbtn.Location = new System.Drawing.Point(951, 23);
+            this.Claerbtn.LookAndFeel.SkinName = "DevExpress Style";
+            this.Claerbtn.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Claerbtn.Name = "Claerbtn";
             this.Claerbtn.Size = new System.Drawing.Size(75, 23);
             this.Claerbtn.TabIndex = 4;
@@ -167,9 +188,13 @@ namespace BillPlex
             // 
             // Findbtn
             // 
+            this.Findbtn.Appearance.BackColor = System.Drawing.Color.LightBlue;
             this.Findbtn.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Findbtn.Appearance.Options.UseBackColor = true;
             this.Findbtn.Appearance.Options.UseFont = true;
             this.Findbtn.Location = new System.Drawing.Point(798, 23);
+            this.Findbtn.LookAndFeel.SkinName = "DevExpress Style";
+            this.Findbtn.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Findbtn.Name = "Findbtn";
             this.Findbtn.Size = new System.Drawing.Size(75, 23);
             this.Findbtn.TabIndex = 3;
@@ -181,13 +206,6 @@ namespace BillPlex
             this.dropDownButton1.Name = "dropDownButton1";
             this.dropDownButton1.Size = new System.Drawing.Size(721, 23);
             this.dropDownButton1.TabIndex = 2;
-            // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Location = new System.Drawing.Point(1411, 6);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(17, 598);
-            this.vScrollBar1.TabIndex = 1;
             // 
             // FrmClientCompanyProfile
             // 

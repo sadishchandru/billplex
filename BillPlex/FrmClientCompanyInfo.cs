@@ -11,17 +11,11 @@ using System.Windows.Forms;
 
 namespace BillPlex
 {
-    public partial class FrmCompanyProfile : DevExpress.XtraEditors.XtraForm
+    public partial class FrmClientCompanyInfo : DevExpress.XtraEditors.XtraForm
     {
-        public FrmCompanyProfile()
+        public FrmClientCompanyInfo()
         {
             InitializeComponent();
-        }
-
-        private void Newbtn_Click(object sender, EventArgs e)
-        {
-            FrmCompanyInfo CP = new FrmCompanyInfo();
-            CP.ShowDialog();
         }
     }
 }

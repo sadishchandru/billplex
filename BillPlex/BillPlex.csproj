@@ -81,6 +81,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmClientCompanyInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmClientCompanyInfo.Designer.cs">
+      <DependentUpon>FrmClientCompanyInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="CompanyInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,11 +117,23 @@
     <Compile Include="FrmClientCompanyProfile.Designer.cs">
       <DependentUpon>FrmClientCompanyProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmCompanyInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCompanyInfo.Designer.cs">
+      <DependentUpon>FrmCompanyInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCompanyProfile.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmCompanyProfile.Designer.cs">
       <DependentUpon>FrmCompanyProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSubClientCompanyInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSubClientCompanyInfo.Designer.cs">
+      <DependentUpon>FrmSubClientCompanyInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmSubClientCompanyProfile.cs">
       <SubType>Form</SubType>
@@ -131,6 +149,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmClientCompanyInfo.resx">
+      <DependentUpon>FrmClientCompanyInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CompanyInfo.resx">
       <DependentUpon>CompanyInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,8 +168,14 @@
     <EmbeddedResource Include="FrmClientCompanyProfile.resx">
       <DependentUpon>FrmClientCompanyProfile.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmCompanyInfo.resx">
+      <DependentUpon>FrmCompanyInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCompanyProfile.resx">
       <DependentUpon>FrmCompanyProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSubClientCompanyInfo.resx">
+      <DependentUpon>FrmSubClientCompanyInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSubClientCompanyProfile.resx">
       <DependentUpon>FrmSubClientCompanyProfile.cs</DependentUpon>
