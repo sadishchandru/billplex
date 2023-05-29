@@ -42,12 +42,11 @@ namespace BillPlex
             this.Newbtn = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
-            this.hScrollBar1 = new DevExpress.XtraEditors.HScrollBar();
-            this.vScrollBar1 = new DevExpress.XtraEditors.VScrollBar();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Claerbtn = new DevExpress.XtraEditors.SimpleButton();
             this.Findbtn = new DevExpress.XtraEditors.SimpleButton();
             this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -58,7 +57,8 @@ namespace BillPlex
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -216,9 +216,7 @@ namespace BillPlex
             // panelControl4
             // 
             this.panelControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.panelControl4.Controls.Add(this.hScrollBar1);
-            this.panelControl4.Controls.Add(this.vScrollBar1);
-            this.panelControl4.Controls.Add(this.dataGridView1);
+            this.panelControl4.Controls.Add(this.gridControl1);
             this.panelControl4.Controls.Add(this.Claerbtn);
             this.panelControl4.Controls.Add(this.Findbtn);
             this.panelControl4.Controls.Add(this.dropDownButton1);
@@ -226,29 +224,6 @@ namespace BillPlex
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Size = new System.Drawing.Size(1423, 621);
             this.panelControl4.TabIndex = 0;
-            // 
-            // hScrollBar1
-            // 
-            this.hScrollBar1.Location = new System.Drawing.Point(6, 599);
-            this.hScrollBar1.Name = "hScrollBar1";
-            this.hScrollBar1.Size = new System.Drawing.Size(1400, 17);
-            this.hScrollBar1.TabIndex = 6;
-            // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Location = new System.Drawing.Point(1406, 5);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(17, 593);
-            this.vScrollBar1.TabIndex = 7;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 53);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1417, 545);
-            this.dataGridView1.TabIndex = 5;
             // 
             // Claerbtn
             // 
@@ -285,6 +260,29 @@ namespace BillPlex
             this.dropDownButton1.Size = new System.Drawing.Size(721, 23);
             this.dropDownButton1.TabIndex = 2;
             // 
+            // gridControl1
+            // 
+            this.gridControl1.Location = new System.Drawing.Point(21, 70);
+            this.gridControl1.LookAndFeel.SkinName = "DevExpress Style";
+            this.gridControl1.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.gridControl1.MainView = this.gridView2;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(1402, 551);
+            this.gridControl1.TabIndex = 8;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
+            // 
+            // gridView2
+            // 
+            this.gridView2.Appearance.GroupPanel.BackColor = System.Drawing.Color.LightGray;
+            this.gridView2.Appearance.GroupPanel.BackColor2 = System.Drawing.Color.LightGray;
+            this.gridView2.Appearance.GroupPanel.Options.UseBackColor = true;
+            this.gridView2.GridControl = this.gridControl1;
+            this.gridView2.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.PaintStyleName = "Flat";
+            this.gridView2.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
+            // 
             // FrmSubClientCompanyProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -305,7 +303,8 @@ namespace BillPlex
             this.panelControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -328,8 +327,7 @@ namespace BillPlex
         private DevExpress.XtraEditors.SimpleButton Editbtn;
         private DevExpress.XtraEditors.SimpleButton Addbtn;
         private DevExpress.XtraEditors.SimpleButton Newbtn;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private DevExpress.XtraEditors.HScrollBar hScrollBar1;
-        private DevExpress.XtraEditors.VScrollBar vScrollBar1;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
     }
 }

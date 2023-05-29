@@ -33,6 +33,9 @@ namespace BillPlex
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
+            this.dropDownButton4 = new DevExpress.XtraEditors.DropDownButton();
+            this.dropDownButton3 = new DevExpress.XtraEditors.DropDownButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.AuthClearImageBtn = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl26 = new DevExpress.XtraEditors.LabelControl();
             this.AuthImg = new DevExpress.XtraEditors.SvgImageBox();
@@ -70,9 +73,18 @@ namespace BillPlex
             this.GenderRdBtn = new DevExpress.XtraEditors.RadioGroup();
             this.ActiveStatusRdBtn = new DevExpress.XtraEditors.RadioGroup();
             this.panelControl7 = new DevExpress.XtraEditors.PanelControl();
+            this.ClearBtn = new DevExpress.XtraEditors.SimpleButton();
+            this.DeleteBtn = new DevExpress.XtraEditors.SimpleButton();
+            this.UpdateBtn = new DevExpress.XtraEditors.SimpleButton();
+            this.EditBtn = new DevExpress.XtraEditors.SimpleButton();
+            this.AddBtn = new DevExpress.XtraEditors.SimpleButton();
             this.ExitBtn = new DevExpress.XtraEditors.SimpleButton();
             this.NewBtn = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.dropDownButton2 = new DevExpress.XtraEditors.DropDownButton();
+            this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
+            this.labelControl32 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl28 = new DevExpress.XtraEditors.LabelControl();
             this.CstTxt = new DevExpress.XtraEditors.TextEdit();
             this.SsiTxt = new DevExpress.XtraEditors.TextEdit();
             this.PanNotxt = new DevExpress.XtraEditors.TextEdit();
@@ -126,18 +138,6 @@ namespace BillPlex
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.PfTypeRdBtn = new DevExpress.XtraEditors.RadioGroup();
-            this.labelControl28 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl32 = new DevExpress.XtraEditors.LabelControl();
-            this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
-            this.dropDownButton2 = new DevExpress.XtraEditors.DropDownButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.dropDownButton3 = new DevExpress.XtraEditors.DropDownButton();
-            this.dropDownButton4 = new DevExpress.XtraEditors.DropDownButton();
-            this.AddBtn = new DevExpress.XtraEditors.SimpleButton();
-            this.EditBtn = new DevExpress.XtraEditors.SimpleButton();
-            this.UpdateBtn = new DevExpress.XtraEditors.SimpleButton();
-            this.DeleteBtn = new DevExpress.XtraEditors.SimpleButton();
-            this.ClearBtn = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -260,6 +260,34 @@ namespace BillPlex
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Size = new System.Drawing.Size(1230, 267);
             this.panelControl4.TabIndex = 63;
+            // 
+            // dropDownButton4
+            // 
+            this.dropDownButton4.Location = new System.Drawing.Point(138, 154);
+            this.dropDownButton4.Name = "dropDownButton4";
+            this.dropDownButton4.Size = new System.Drawing.Size(263, 23);
+            this.dropDownButton4.TabIndex = 75;
+            // 
+            // dropDownButton3
+            // 
+            this.dropDownButton3.Location = new System.Drawing.Point(138, 189);
+            this.dropDownButton3.Name = "dropDownButton3";
+            this.dropDownButton3.Size = new System.Drawing.Size(263, 23);
+            this.dropDownButton3.TabIndex = 74;
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.Location = new System.Drawing.Point(702, 176);
+            this.simpleButton1.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.simpleButton1.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.White;
+            this.simpleButton1.LookAndFeel.SkinName = "DevExpress Style";
+            this.simpleButton1.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(63, 23);
+            this.simpleButton1.TabIndex = 73;
+            this.simpleButton1.Text = "COPY";
             // 
             // AuthClearImageBtn
             // 
@@ -657,6 +685,76 @@ namespace BillPlex
             this.panelControl7.Size = new System.Drawing.Size(113, 307);
             this.panelControl7.TabIndex = 62;
             // 
+            // ClearBtn
+            // 
+            this.ClearBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClearBtn.Appearance.Options.UseFont = true;
+            this.ClearBtn.Location = new System.Drawing.Point(18, 220);
+            this.ClearBtn.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.ClearBtn.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.White;
+            this.ClearBtn.LookAndFeel.SkinName = "DevExpress Style";
+            this.ClearBtn.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.ClearBtn.Name = "ClearBtn";
+            this.ClearBtn.Size = new System.Drawing.Size(81, 23);
+            this.ClearBtn.TabIndex = 64;
+            this.ClearBtn.Text = "CLEAR";
+            // 
+            // DeleteBtn
+            // 
+            this.DeleteBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteBtn.Appearance.Options.UseFont = true;
+            this.DeleteBtn.Location = new System.Drawing.Point(18, 173);
+            this.DeleteBtn.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.DeleteBtn.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.White;
+            this.DeleteBtn.LookAndFeel.SkinName = "DevExpress Style";
+            this.DeleteBtn.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.DeleteBtn.Name = "DeleteBtn";
+            this.DeleteBtn.Size = new System.Drawing.Size(81, 23);
+            this.DeleteBtn.TabIndex = 63;
+            this.DeleteBtn.Text = "DELETE";
+            // 
+            // UpdateBtn
+            // 
+            this.UpdateBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UpdateBtn.Appearance.Options.UseFont = true;
+            this.UpdateBtn.Location = new System.Drawing.Point(18, 128);
+            this.UpdateBtn.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.UpdateBtn.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.White;
+            this.UpdateBtn.LookAndFeel.SkinName = "DevExpress Style";
+            this.UpdateBtn.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.UpdateBtn.Name = "UpdateBtn";
+            this.UpdateBtn.Size = new System.Drawing.Size(81, 23);
+            this.UpdateBtn.TabIndex = 62;
+            this.UpdateBtn.Text = "UPDATE";
+            // 
+            // EditBtn
+            // 
+            this.EditBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditBtn.Appearance.Options.UseFont = true;
+            this.EditBtn.Location = new System.Drawing.Point(18, 87);
+            this.EditBtn.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.EditBtn.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.White;
+            this.EditBtn.LookAndFeel.SkinName = "DevExpress Style";
+            this.EditBtn.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.EditBtn.Name = "EditBtn";
+            this.EditBtn.Size = new System.Drawing.Size(81, 23);
+            this.EditBtn.TabIndex = 61;
+            this.EditBtn.Text = "EDIT";
+            // 
+            // AddBtn
+            // 
+            this.AddBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddBtn.Appearance.Options.UseFont = true;
+            this.AddBtn.Location = new System.Drawing.Point(18, 48);
+            this.AddBtn.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.AddBtn.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.White;
+            this.AddBtn.LookAndFeel.SkinName = "DevExpress Style";
+            this.AddBtn.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.AddBtn.Name = "AddBtn";
+            this.AddBtn.Size = new System.Drawing.Size(81, 23);
+            this.AddBtn.TabIndex = 60;
+            this.AddBtn.Text = "ADD";
+            // 
             // ExitBtn
             // 
             this.ExitBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -684,6 +782,7 @@ namespace BillPlex
             this.NewBtn.Size = new System.Drawing.Size(81, 23);
             this.NewBtn.TabIndex = 53;
             this.NewBtn.Text = "NEW";
+            this.NewBtn.Click += new System.EventHandler(this.NewBtn_Click);
             // 
             // panelControl3
             // 
@@ -747,6 +846,40 @@ namespace BillPlex
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(1230, 350);
             this.panelControl3.TabIndex = 0;
+            // 
+            // dropDownButton2
+            // 
+            this.dropDownButton2.Location = new System.Drawing.Point(6, 115);
+            this.dropDownButton2.Name = "dropDownButton2";
+            this.dropDownButton2.Size = new System.Drawing.Size(151, 23);
+            this.dropDownButton2.TabIndex = 64;
+            // 
+            // dropDownButton1
+            // 
+            this.dropDownButton1.Location = new System.Drawing.Point(177, 115);
+            this.dropDownButton1.Name = "dropDownButton1";
+            this.dropDownButton1.Size = new System.Drawing.Size(224, 23);
+            this.dropDownButton1.TabIndex = 63;
+            // 
+            // labelControl32
+            // 
+            this.labelControl32.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl32.Appearance.Options.UseFont = true;
+            this.labelControl32.Location = new System.Drawing.Point(6, 144);
+            this.labelControl32.Name = "labelControl32";
+            this.labelControl32.Size = new System.Drawing.Size(123, 16);
+            this.labelControl32.TabIndex = 62;
+            this.labelControl32.Text = "Sub Company Code";
+            // 
+            // labelControl28
+            // 
+            this.labelControl28.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl28.Appearance.Options.UseFont = true;
+            this.labelControl28.Location = new System.Drawing.Point(177, 144);
+            this.labelControl28.Name = "labelControl28";
+            this.labelControl28.Size = new System.Drawing.Size(126, 16);
+            this.labelControl28.TabIndex = 61;
+            this.labelControl28.Text = "Sub Company Name";
             // 
             // CstTxt
             // 
@@ -1246,138 +1379,6 @@ namespace BillPlex
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Category 2", true, null, "Category 2")});
             this.PfTypeRdBtn.Size = new System.Drawing.Size(249, 37);
             this.PfTypeRdBtn.TabIndex = 38;
-            // 
-            // labelControl28
-            // 
-            this.labelControl28.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl28.Appearance.Options.UseFont = true;
-            this.labelControl28.Location = new System.Drawing.Point(177, 144);
-            this.labelControl28.Name = "labelControl28";
-            this.labelControl28.Size = new System.Drawing.Size(126, 16);
-            this.labelControl28.TabIndex = 61;
-            this.labelControl28.Text = "Sub Company Name";
-            // 
-            // labelControl32
-            // 
-            this.labelControl32.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl32.Appearance.Options.UseFont = true;
-            this.labelControl32.Location = new System.Drawing.Point(6, 144);
-            this.labelControl32.Name = "labelControl32";
-            this.labelControl32.Size = new System.Drawing.Size(123, 16);
-            this.labelControl32.TabIndex = 62;
-            this.labelControl32.Text = "Sub Company Code";
-            // 
-            // dropDownButton1
-            // 
-            this.dropDownButton1.Location = new System.Drawing.Point(177, 115);
-            this.dropDownButton1.Name = "dropDownButton1";
-            this.dropDownButton1.Size = new System.Drawing.Size(224, 23);
-            this.dropDownButton1.TabIndex = 63;
-            // 
-            // dropDownButton2
-            // 
-            this.dropDownButton2.Location = new System.Drawing.Point(6, 115);
-            this.dropDownButton2.Name = "dropDownButton2";
-            this.dropDownButton2.Size = new System.Drawing.Size(151, 23);
-            this.dropDownButton2.TabIndex = 64;
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Location = new System.Drawing.Point(702, 176);
-            this.simpleButton1.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
-            this.simpleButton1.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.White;
-            this.simpleButton1.LookAndFeel.SkinName = "DevExpress Style";
-            this.simpleButton1.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(63, 23);
-            this.simpleButton1.TabIndex = 73;
-            this.simpleButton1.Text = "COPY";
-            // 
-            // dropDownButton3
-            // 
-            this.dropDownButton3.Location = new System.Drawing.Point(138, 189);
-            this.dropDownButton3.Name = "dropDownButton3";
-            this.dropDownButton3.Size = new System.Drawing.Size(263, 23);
-            this.dropDownButton3.TabIndex = 74;
-            // 
-            // dropDownButton4
-            // 
-            this.dropDownButton4.Location = new System.Drawing.Point(138, 154);
-            this.dropDownButton4.Name = "dropDownButton4";
-            this.dropDownButton4.Size = new System.Drawing.Size(263, 23);
-            this.dropDownButton4.TabIndex = 75;
-            // 
-            // AddBtn
-            // 
-            this.AddBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddBtn.Appearance.Options.UseFont = true;
-            this.AddBtn.Location = new System.Drawing.Point(18, 48);
-            this.AddBtn.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
-            this.AddBtn.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.White;
-            this.AddBtn.LookAndFeel.SkinName = "DevExpress Style";
-            this.AddBtn.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Size = new System.Drawing.Size(81, 23);
-            this.AddBtn.TabIndex = 60;
-            this.AddBtn.Text = "ADD";
-            // 
-            // EditBtn
-            // 
-            this.EditBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditBtn.Appearance.Options.UseFont = true;
-            this.EditBtn.Location = new System.Drawing.Point(18, 87);
-            this.EditBtn.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
-            this.EditBtn.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.White;
-            this.EditBtn.LookAndFeel.SkinName = "DevExpress Style";
-            this.EditBtn.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.EditBtn.Name = "EditBtn";
-            this.EditBtn.Size = new System.Drawing.Size(81, 23);
-            this.EditBtn.TabIndex = 61;
-            this.EditBtn.Text = "EDIT";
-            // 
-            // UpdateBtn
-            // 
-            this.UpdateBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UpdateBtn.Appearance.Options.UseFont = true;
-            this.UpdateBtn.Location = new System.Drawing.Point(18, 128);
-            this.UpdateBtn.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
-            this.UpdateBtn.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.White;
-            this.UpdateBtn.LookAndFeel.SkinName = "DevExpress Style";
-            this.UpdateBtn.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.UpdateBtn.Name = "UpdateBtn";
-            this.UpdateBtn.Size = new System.Drawing.Size(81, 23);
-            this.UpdateBtn.TabIndex = 62;
-            this.UpdateBtn.Text = "UPDATE";
-            // 
-            // DeleteBtn
-            // 
-            this.DeleteBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteBtn.Appearance.Options.UseFont = true;
-            this.DeleteBtn.Location = new System.Drawing.Point(18, 173);
-            this.DeleteBtn.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
-            this.DeleteBtn.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.White;
-            this.DeleteBtn.LookAndFeel.SkinName = "DevExpress Style";
-            this.DeleteBtn.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.DeleteBtn.Name = "DeleteBtn";
-            this.DeleteBtn.Size = new System.Drawing.Size(81, 23);
-            this.DeleteBtn.TabIndex = 63;
-            this.DeleteBtn.Text = "DELETE";
-            // 
-            // ClearBtn
-            // 
-            this.ClearBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClearBtn.Appearance.Options.UseFont = true;
-            this.ClearBtn.Location = new System.Drawing.Point(18, 220);
-            this.ClearBtn.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
-            this.ClearBtn.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.White;
-            this.ClearBtn.LookAndFeel.SkinName = "DevExpress Style";
-            this.ClearBtn.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.ClearBtn.Name = "ClearBtn";
-            this.ClearBtn.Size = new System.Drawing.Size(81, 23);
-            this.ClearBtn.TabIndex = 64;
-            this.ClearBtn.Text = "CLEAR";
             // 
             // FrmSubClientCompanyInfo
             // 
