@@ -153,6 +153,7 @@ namespace BillPlex
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit1.Size = new System.Drawing.Size(1047, 338);
             this.pictureEdit1.TabIndex = 23;
+            this.pictureEdit1.EditValueChanged += new System.EventHandler(this.pictureEdit1_EditValueChanged);
             // 
             // simpleButton5
             // 
