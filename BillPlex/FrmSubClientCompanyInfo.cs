@@ -22,5 +22,11 @@ namespace BillPlex
         {
 
         }
+
+        private void BtnInsertBankInfo_Click(object sender, EventArgs e)
+        {
+            FrmSubClientCompanyBankInfo fbankInfo = new FrmSubClientCompanyBankInfo();
+            fbankInfo.Show();
+        }
     }
 }

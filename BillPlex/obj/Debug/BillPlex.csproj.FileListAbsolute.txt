@@ -218,7 +218,6 @@ D:\billplex\billplex\BillPlex\bin\Debug\ja\DevExpress.XtraTreeList.v21.1.resourc
 D:\billplex\billplex\BillPlex\bin\Debug\ru\DevExpress.XtraTreeList.v21.1.resources.dll
 D:\billplex\billplex\BillPlex\obj\Debug\BillPlex.CompanyInfo.resources
 D:\billplex\billplex\BillPlex\obj\Debug\BillPlex.CompanyProfile.resources
-D:\billplex\billplex\BillPlex\obj\Debug\BillPlex.Form1.resources
 D:\billplex\billplex\BillPlex\obj\Debug\BillPlex.ClientCompanyProfile.resources
 D:\billplex\billplex\BillPlex\obj\Debug\BillPlex.NavBar.resources
 D:\billplex\billplex\BillPlex\obj\Debug\BillPlex.Properties.Resources.resources
@@ -347,11 +346,8 @@ D:\billplex\billplex\BillPlex\bin\Debug\DevExpress.CodeParser.v21.1.dll
 D:\billplex\billplex\BillPlex\bin\Debug\DevExpress.DataAccess.v21.1.dll
 D:\billplex\billplex\BillPlex\bin\Debug\DevExpress.ExpressApp.v21.1.dll
 D:\billplex\billplex\BillPlex\bin\Debug\DevExpress.Persistent.Base.v21.1.dll
-D:\billplex\billplex\BillPlex\bin\Debug\DevExpress.Persistent.BaseImpl.v21.1.dll
 D:\billplex\billplex\BillPlex\bin\Debug\DevExpress.Xpo.v21.1.dll
 D:\billplex\billplex\BillPlex\bin\Debug\DevExpress.XtraReports.v21.1.dll
-D:\billplex\billplex\BillPlex\bin\Debug\DevExpress.ExpressApp.Xpo.v21.1.dll
-D:\billplex\billplex\BillPlex\bin\Debug\DevExpress.XtraScheduler.v21.1.Core.dll
 D:\billplex\billplex\BillPlex\bin\Debug\DevExpress.XtraCharts.v21.1.dll
 D:\billplex\billplex\BillPlex\bin\Debug\DevExpress.PivotGrid.v21.1.Core.dll
 D:\billplex\billplex\BillPlex\bin\Debug\DevExpress.Charts.v21.1.Core.dll
@@ -360,11 +356,8 @@ D:\billplex\billplex\BillPlex\bin\Debug\DevExpress.DataVisualization.v21.1.Core.
 D:\billplex\billplex\BillPlex\bin\Debug\DevExpress.DataAccess.v21.1.xml
 D:\billplex\billplex\BillPlex\bin\Debug\DevExpress.ExpressApp.v21.1.xml
 D:\billplex\billplex\BillPlex\bin\Debug\DevExpress.Persistent.Base.v21.1.xml
-D:\billplex\billplex\BillPlex\bin\Debug\DevExpress.Persistent.BaseImpl.v21.1.xml
 D:\billplex\billplex\BillPlex\bin\Debug\DevExpress.Xpo.v21.1.xml
 D:\billplex\billplex\BillPlex\bin\Debug\DevExpress.XtraReports.v21.1.xml
-D:\billplex\billplex\BillPlex\bin\Debug\DevExpress.ExpressApp.Xpo.v21.1.xml
-D:\billplex\billplex\BillPlex\bin\Debug\DevExpress.XtraScheduler.v21.1.Core.xml
 D:\billplex\billplex\BillPlex\bin\Debug\DevExpress.XtraCharts.v21.1.xml
 D:\billplex\billplex\BillPlex\bin\Debug\DevExpress.PivotGrid.v21.1.Core.xml
 D:\billplex\billplex\BillPlex\bin\Debug\DevExpress.XtraGauges.v21.1.Core.xml
@@ -388,10 +381,6 @@ D:\billplex\billplex\BillPlex\bin\Debug\de\DevExpress.XtraReports.v21.1.resource
 D:\billplex\billplex\BillPlex\bin\Debug\es\DevExpress.XtraReports.v21.1.resources.dll
 D:\billplex\billplex\BillPlex\bin\Debug\ja\DevExpress.XtraReports.v21.1.resources.dll
 D:\billplex\billplex\BillPlex\bin\Debug\ru\DevExpress.XtraReports.v21.1.resources.dll
-D:\billplex\billplex\BillPlex\bin\Debug\de\DevExpress.XtraScheduler.v21.1.Core.resources.dll
-D:\billplex\billplex\BillPlex\bin\Debug\es\DevExpress.XtraScheduler.v21.1.Core.resources.dll
-D:\billplex\billplex\BillPlex\bin\Debug\ja\DevExpress.XtraScheduler.v21.1.Core.resources.dll
-D:\billplex\billplex\BillPlex\bin\Debug\ru\DevExpress.XtraScheduler.v21.1.Core.resources.dll
 D:\billplex\billplex\BillPlex\bin\Debug\de\DevExpress.XtraCharts.v21.1.resources.dll
 D:\billplex\billplex\BillPlex\bin\Debug\es\DevExpress.XtraCharts.v21.1.resources.dll
 D:\billplex\billplex\BillPlex\bin\Debug\ja\DevExpress.XtraCharts.v21.1.resources.dll
@@ -405,5 +394,8 @@ D:\billplex\billplex\BillPlex\bin\Debug\es\DevExpress.XtraGauges.v21.1.Core.reso
 D:\billplex\billplex\BillPlex\bin\Debug\ja\DevExpress.XtraGauges.v21.1.Core.resources.dll
 D:\billplex\billplex\BillPlex\bin\Debug\ru\DevExpress.XtraGauges.v21.1.Core.resources.dll
 D:\billplex\billplex\BillPlex\obj\Debug\BillPlex.FrmClientCompanyBankInfo.resources
-D:\billplex\billplex\BillPlex\obj\Debug\BillPlex.FrmCompanyBankInfo.resources
-D:\billplex\billplex\BillPlex\obj\Debug\BillPlex.BankInfo.resources
+D:\billplex\billplex\BillPlex\bin\Debug\DataLayer.dll
+D:\billplex\billplex\BillPlex\bin\Debug\DataLayer.pdb
+D:\billplex\billplex\BillPlex\obj\Debug\BillPlex.csproj.AssemblyReference.cache
+D:\billplex\billplex\BillPlex\obj\Debug\BillPlex.FrmCompanyProfileBankInfo.resources
+D:\billplex\billplex\BillPlex\obj\Debug\BillPlex.FrmSubClientCompanyBankInfo.resources

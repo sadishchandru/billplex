@@ -412,6 +412,7 @@ namespace BillPlex
             this.simpleButton1.Size = new System.Drawing.Size(257, 23);
             this.simpleButton1.TabIndex = 52;
             this.simpleButton1.Text = "Add Bank Info";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // EmailIDtxt
             // 

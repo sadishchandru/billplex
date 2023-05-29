@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace BillPlex
 {
-    public partial class FrmSubClientCompanyBankInfo : DevExpress.XtraEditors.XtraForm
+    public partial class FrmCompanyProfileBankInfo : DevExpress.XtraEditors.XtraForm
     {
-        public FrmSubClientCompanyBankInfo()
+        public FrmCompanyProfileBankInfo()
         {
             InitializeComponent();
         }

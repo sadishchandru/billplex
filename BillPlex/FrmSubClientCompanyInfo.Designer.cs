@@ -41,7 +41,7 @@ namespace BillPlex
             this.AuthImg = new DevExpress.XtraEditors.SvgImageBox();
             this.BankDetailsMemoEdit = new DevExpress.XtraEditors.MemoEdit();
             this.labelControl25 = new DevExpress.XtraEditors.LabelControl();
-            this.InsertBankInfoBtn = new DevExpress.XtraEditors.SimpleButton();
+            this.BtnInsertBankInfo = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl24 = new DevExpress.XtraEditors.LabelControl();
             this.PercentTxt = new DevExpress.XtraEditors.TextEdit();
             this.labelControl23 = new DevExpress.XtraEditors.LabelControl();
@@ -226,7 +226,7 @@ namespace BillPlex
             this.panelControl4.Controls.Add(this.AuthImg);
             this.panelControl4.Controls.Add(this.BankDetailsMemoEdit);
             this.panelControl4.Controls.Add(this.labelControl25);
-            this.panelControl4.Controls.Add(this.InsertBankInfoBtn);
+            this.panelControl4.Controls.Add(this.BtnInsertBankInfo);
             this.panelControl4.Controls.Add(this.labelControl24);
             this.panelControl4.Controls.Add(this.PercentTxt);
             this.panelControl4.Controls.Add(this.labelControl23);
@@ -342,19 +342,20 @@ namespace BillPlex
             this.labelControl25.TabIndex = 68;
             this.labelControl25.Text = "Bank Name";
             // 
-            // InsertBankInfoBtn
+            // BtnInsertBankInfo
             // 
-            this.InsertBankInfoBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InsertBankInfoBtn.Appearance.Options.UseFont = true;
-            this.InsertBankInfoBtn.Location = new System.Drawing.Point(868, 78);
-            this.InsertBankInfoBtn.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
-            this.InsertBankInfoBtn.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.White;
-            this.InsertBankInfoBtn.LookAndFeel.SkinName = "DevExpress Style";
-            this.InsertBankInfoBtn.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.InsertBankInfoBtn.Name = "InsertBankInfoBtn";
-            this.InsertBankInfoBtn.Size = new System.Drawing.Size(171, 23);
-            this.InsertBankInfoBtn.TabIndex = 67;
-            this.InsertBankInfoBtn.Text = "INSERT BANK INFO";
+            this.BtnInsertBankInfo.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnInsertBankInfo.Appearance.Options.UseFont = true;
+            this.BtnInsertBankInfo.Location = new System.Drawing.Point(868, 78);
+            this.BtnInsertBankInfo.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.BtnInsertBankInfo.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.White;
+            this.BtnInsertBankInfo.LookAndFeel.SkinName = "DevExpress Style";
+            this.BtnInsertBankInfo.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.BtnInsertBankInfo.Name = "BtnInsertBankInfo";
+            this.BtnInsertBankInfo.Size = new System.Drawing.Size(171, 23);
+            this.BtnInsertBankInfo.TabIndex = 67;
+            this.BtnInsertBankInfo.Text = "INSERT BANK INFO";
+            this.BtnInsertBankInfo.Click += new System.EventHandler(this.BtnInsertBankInfo_Click);
             // 
             // labelControl24
             // 
@@ -1454,7 +1455,7 @@ namespace BillPlex
         private DevExpress.XtraEditors.SvgImageBox AuthImg;
         private DevExpress.XtraEditors.MemoEdit BankDetailsMemoEdit;
         private DevExpress.XtraEditors.LabelControl labelControl25;
-        private DevExpress.XtraEditors.SimpleButton InsertBankInfoBtn;
+        private DevExpress.XtraEditors.SimpleButton BtnInsertBankInfo;
         private DevExpress.XtraEditors.LabelControl labelControl24;
         private DevExpress.XtraEditors.TextEdit PercentTxt;
         private DevExpress.XtraEditors.LabelControl labelControl23;

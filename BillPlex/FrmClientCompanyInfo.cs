@@ -17,5 +17,11 @@ namespace BillPlex
         {
             InitializeComponent();
         }
+
+        private void InsertBankInfoBtn_Click(object sender, EventArgs e)
+        {
+            FrmClientCompanyBankInfo Cs = new FrmClientCompanyBankInfo();
+            Cs.ShowDialog();
+        }
     }
 }

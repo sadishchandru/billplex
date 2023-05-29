@@ -346,6 +346,7 @@ namespace BillPlex
             this.InsertBankInfoBtn.Size = new System.Drawing.Size(171, 23);
             this.InsertBankInfoBtn.TabIndex = 67;
             this.InsertBankInfoBtn.Text = "INSERT BANK INFO";
+            this.InsertBankInfoBtn.Click += new System.EventHandler(this.InsertBankInfoBtn_Click);
             // 
             // labelControl24
             // 
