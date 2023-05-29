@@ -57,7 +57,6 @@
     <Reference Include="DevExpress.ExpressApp.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Office.v21.1.Core, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Persistent.Base.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Persistent.BaseImpl.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v21.1.Core, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.RichEdit.v21.1.Core, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Sparkline.v21.1.Core, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -94,12 +93,6 @@
     <Compile Include="FrmClientCompanyBankInfo.Designer.cs">
       <DependentUpon>FrmClientCompanyBankInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmCompanyBankInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmCompanyBankInfo.Designer.cs">
-      <DependentUpon>FrmCompanyBankInfo.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmSubClientCompanyBankInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,12 +116,6 @@
     </Compile>
     <Compile Include="CompanyProfile.Designer.cs">
       <DependentUpon>CompanyProfile.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="ClientCompanyProfile.cs">
       <SubType>Form</SubType>
@@ -177,9 +164,6 @@
     <EmbeddedResource Include="FrmClientCompanyBankInfo.resx">
       <DependentUpon>FrmClientCompanyBankInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCompanyBankInfo.resx">
-      <DependentUpon>FrmCompanyBankInfo.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmSubClientCompanyBankInfo.resx">
       <DependentUpon>FrmSubClientCompanyBankInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,10 +175,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CompanyProfile.resx">
       <DependentUpon>CompanyProfile.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ClientCompanyProfile.resx">
       <DependentUpon>ClientCompanyProfile.cs</DependentUpon>
@@ -254,6 +234,12 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataLayer\DataLayer.csproj">
+      <Project>{3e0a50bd-920e-4c49-a2fd-506bdba90a12}</Project>
+      <Name>DataLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

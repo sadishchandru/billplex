@@ -152,7 +152,7 @@ namespace BillPlex
             // 
             // pictureEdit1
             // 
-            this.pictureEdit1.Location = new System.Drawing.Point(524, 53);
+            this.pictureEdit1.Location = new System.Drawing.Point(448, 60);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit1.Size = new System.Drawing.Size(1047, 338);
