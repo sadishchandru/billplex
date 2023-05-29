@@ -17,5 +17,10 @@ namespace BillPlex
         {
             InitializeComponent();
         }
+
+        private void FrmClientCompanyInfo_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

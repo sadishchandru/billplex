@@ -29,6 +29,12 @@ namespace BillPlex
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraEditors.Controls.RadioGroupItem radioGroupItem11 = new DevExpress.XtraEditors.Controls.RadioGroupItem();
+            DevExpress.XtraEditors.Controls.RadioGroupItem radioGroupItem12 = new DevExpress.XtraEditors.Controls.RadioGroupItem();
+            DevExpress.XtraEditors.Controls.RadioGroupItem radioGroupItem7 = new DevExpress.XtraEditors.Controls.RadioGroupItem();
+            DevExpress.XtraEditors.Controls.RadioGroupItem radioGroupItem8 = new DevExpress.XtraEditors.Controls.RadioGroupItem();
+            DevExpress.XtraEditors.Controls.RadioGroupItem radioGroupItem9 = new DevExpress.XtraEditors.Controls.RadioGroupItem();
+            DevExpress.XtraEditors.Controls.RadioGroupItem radioGroupItem10 = new DevExpress.XtraEditors.Controls.RadioGroupItem();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
@@ -120,20 +126,15 @@ namespace BillPlex
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
-            this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).BeginInit();
-            this.panelControl7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
-            this.panelControl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Pintxt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddressMemoedit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmailIDtxt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Phonetxt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GenderRdBtn.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
-            this.panelControl6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pantxt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mobiletxt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BloodGrouptxt.Properties)).BeginInit();
@@ -141,9 +142,7 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.FathersTxt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Nametxt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
-            this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
-            this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OfficeAddMemoedit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CstTxt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SsiTxt.Properties)).BeginInit();
@@ -394,6 +393,9 @@ namespace BillPlex
             this.AddressMemoedit.EditValue = "";
             this.AddressMemoedit.Location = new System.Drawing.Point(138, 147);
             this.AddressMemoedit.Name = "AddressMemoedit";
+            // 
+            // 
+            // 
             this.AddressMemoedit.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.AddressMemoedit.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.AddressMemoedit.Size = new System.Drawing.Size(230, 84);
@@ -442,6 +444,9 @@ namespace BillPlex
             // 
             this.GenderRdBtn.Location = new System.Drawing.Point(138, 103);
             this.GenderRdBtn.Name = "GenderRdBtn";
+            // 
+            // 
+            // 
             this.GenderRdBtn.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.GenderRdBtn.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GenderRdBtn.Properties.Appearance.Options.UseBackColor = true;
@@ -449,9 +454,15 @@ namespace BillPlex
             this.GenderRdBtn.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.GenderRdBtn.Properties.Columns = 2;
             this.GenderRdBtn.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
+            radioGroupItem11.AccessibleName = "Male";
+            radioGroupItem11.Description = "Male";
+            radioGroupItem11.Value = null;
+            radioGroupItem12.AccessibleName = "Female";
+            radioGroupItem12.Description = "Female";
+            radioGroupItem12.Value = null;
             this.GenderRdBtn.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Male", true, null, "Male"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Female", true, null, "Female")});
+            radioGroupItem11,
+            radioGroupItem12});
             this.GenderRdBtn.Size = new System.Drawing.Size(300, 45);
             this.GenderRdBtn.TabIndex = 47;
             // 
@@ -732,6 +743,9 @@ namespace BillPlex
             this.OfficeAddMemoedit.EditValue = "";
             this.OfficeAddMemoedit.Location = new System.Drawing.Point(138, 96);
             this.OfficeAddMemoedit.Name = "OfficeAddMemoedit";
+            // 
+            // 
+            // 
             this.OfficeAddMemoedit.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.OfficeAddMemoedit.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.OfficeAddMemoedit.Size = new System.Drawing.Size(300, 84);
@@ -899,7 +913,6 @@ namespace BillPlex
             this.PinNotxt.EditValue = "";
             this.PinNotxt.Location = new System.Drawing.Point(338, 195);
             this.PinNotxt.Name = "PinNotxt";
-            this.PinNotxt.Size = new System.Drawing.Size(100, 20);
             this.PinNotxt.TabIndex = 28;
             // 
             // labelControl17
@@ -923,6 +936,9 @@ namespace BillPlex
             // 
             this.BusinessRadioGroup.Location = new System.Drawing.Point(632, 42);
             this.BusinessRadioGroup.Name = "BusinessRadioGroup";
+            // 
+            // 
+            // 
             this.BusinessRadioGroup.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.BusinessRadioGroup.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BusinessRadioGroup.Properties.Appearance.Options.UseBackColor = true;
@@ -930,11 +946,23 @@ namespace BillPlex
             this.BusinessRadioGroup.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.BusinessRadioGroup.Properties.Columns = 2;
             this.BusinessRadioGroup.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
+            radioGroupItem7.AccessibleName = "Manufacture";
+            radioGroupItem7.Description = "Manufacture";
+            radioGroupItem7.Value = null;
+            radioGroupItem8.AccessibleName = "Traders";
+            radioGroupItem8.Description = "Traders";
+            radioGroupItem8.Value = null;
+            radioGroupItem9.AccessibleName = "Job Work";
+            radioGroupItem9.Description = "Job Work";
+            radioGroupItem9.Value = null;
+            radioGroupItem10.AccessibleName = "Others";
+            radioGroupItem10.Description = "Others";
+            radioGroupItem10.Value = null;
             this.BusinessRadioGroup.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Manufacture", true, null, "Manufacture"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Traders", true, null, "Traders"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Job Work", true, null, "Job Work"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Others", true, null, "Others")});
+            radioGroupItem7,
+            radioGroupItem8,
+            radioGroupItem9,
+            radioGroupItem10});
             this.BusinessRadioGroup.Size = new System.Drawing.Size(230, 54);
             this.BusinessRadioGroup.TabIndex = 25;
             // 
@@ -1154,24 +1182,17 @@ namespace BillPlex
             this.Controls.Add(this.panelControl1);
             this.Name = "FrmCompanyInfo";
             this.Text = "FrmCompanyInfo";
+            this.Load += new System.EventHandler(this.FrmCompanyInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
-            this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
-            this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).EndInit();
-            this.panelControl7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
-            this.panelControl5.ResumeLayout(false);
-            this.panelControl5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Pintxt.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddressMemoedit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmailIDtxt.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Phonetxt.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GenderRdBtn.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
-            this.panelControl6.ResumeLayout(false);
-            this.panelControl6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pantxt.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mobiletxt.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BloodGrouptxt.Properties)).EndInit();
@@ -1179,11 +1200,7 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.FathersTxt.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Nametxt.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
-            this.panelControl4.ResumeLayout(false);
-            this.panelControl4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
-            this.panelControl3.ResumeLayout(false);
-            this.panelControl3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OfficeAddMemoedit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CstTxt.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SsiTxt.Properties)).EndInit();

@@ -1,5 +1,4 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,16 +10,11 @@ using System.Windows.Forms;
 
 namespace BillPlex
 {
-    public partial class FrmCompanyInfo : DevExpress.XtraEditors.XtraForm
+    public partial class Form2 : Form
     {
-        public FrmCompanyInfo()
+        public Form2()
         {
             InitializeComponent();
-        }
-
-        private void FrmCompanyInfo_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

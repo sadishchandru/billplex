@@ -29,6 +29,16 @@ namespace BillPlex
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraEditors.Controls.RadioGroupItem radioGroupItem1 = new DevExpress.XtraEditors.Controls.RadioGroupItem();
+            DevExpress.XtraEditors.Controls.RadioGroupItem radioGroupItem2 = new DevExpress.XtraEditors.Controls.RadioGroupItem();
+            DevExpress.XtraEditors.Controls.RadioGroupItem radioGroupItem3 = new DevExpress.XtraEditors.Controls.RadioGroupItem();
+            DevExpress.XtraEditors.Controls.RadioGroupItem radioGroupItem4 = new DevExpress.XtraEditors.Controls.RadioGroupItem();
+            DevExpress.XtraEditors.Controls.RadioGroupItem radioGroupItem5 = new DevExpress.XtraEditors.Controls.RadioGroupItem();
+            DevExpress.XtraEditors.Controls.RadioGroupItem radioGroupItem6 = new DevExpress.XtraEditors.Controls.RadioGroupItem();
+            DevExpress.XtraEditors.Controls.RadioGroupItem radioGroupItem7 = new DevExpress.XtraEditors.Controls.RadioGroupItem();
+            DevExpress.XtraEditors.Controls.RadioGroupItem radioGroupItem8 = new DevExpress.XtraEditors.Controls.RadioGroupItem();
+            DevExpress.XtraEditors.Controls.RadioGroupItem radioGroupItem9 = new DevExpress.XtraEditors.Controls.RadioGroupItem();
+            DevExpress.XtraEditors.Controls.RadioGroupItem radioGroupItem10 = new DevExpress.XtraEditors.Controls.RadioGroupItem();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
@@ -130,11 +140,8 @@ namespace BillPlex
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.PfTypeRdBtn = new DevExpress.XtraEditors.RadioGroup();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
-            this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
-            this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AuthImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BankDetailsMemoEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PercentTxt.Properties)).BeginInit();
@@ -143,16 +150,13 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.AuthpinTxt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmailIDtxt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
-            this.panelControl6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mobiletxt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FathersTxt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Nametxt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GenderRdBtn.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ActiveStatusRdBtn.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).BeginInit();
-            this.panelControl7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
-            this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CstTxt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SsiTxt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PanNotxt.Properties)).BeginInit();
@@ -172,7 +176,6 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.CompanyNameTxt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CompanyCodeTxt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
-            this.panelControl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PfTypeRdBtn.Properties)).BeginInit();
             this.SuspendLayout();
             // 
@@ -318,6 +321,9 @@ namespace BillPlex
             // 
             this.BankDetailsMemoEdit.Location = new System.Drawing.Point(868, 107);
             this.BankDetailsMemoEdit.Name = "BankDetailsMemoEdit";
+            // 
+            // 
+            // 
             this.BankDetailsMemoEdit.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.BankDetailsMemoEdit.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.BankDetailsMemoEdit.Size = new System.Drawing.Size(171, 127);
@@ -397,6 +403,9 @@ namespace BillPlex
             // 
             this.AuthAddressMemoEdit.Location = new System.Drawing.Point(525, 45);
             this.AuthAddressMemoEdit.Name = "AuthAddressMemoEdit";
+            // 
+            // 
+            // 
             this.AuthAddressMemoEdit.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
             this.AuthAddressMemoEdit.Size = new System.Drawing.Size(171, 54);
             this.AuthAddressMemoEdit.TabIndex = 60;
@@ -632,6 +641,9 @@ namespace BillPlex
             // 
             this.GenderRdBtn.Location = new System.Drawing.Point(138, 103);
             this.GenderRdBtn.Name = "GenderRdBtn";
+            // 
+            // 
+            // 
             this.GenderRdBtn.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.GenderRdBtn.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GenderRdBtn.Properties.Appearance.Options.UseBackColor = true;
@@ -639,9 +651,15 @@ namespace BillPlex
             this.GenderRdBtn.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.GenderRdBtn.Properties.Columns = 2;
             this.GenderRdBtn.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
+            radioGroupItem1.AccessibleName = "Male";
+            radioGroupItem1.Description = "Male";
+            radioGroupItem1.Value = null;
+            radioGroupItem2.AccessibleName = "Female";
+            radioGroupItem2.Description = "Female";
+            radioGroupItem2.Value = null;
             this.GenderRdBtn.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Male", true, null, "Male"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Female", true, null, "Female")});
+            radioGroupItem1,
+            radioGroupItem2});
             this.GenderRdBtn.Size = new System.Drawing.Size(300, 45);
             this.GenderRdBtn.TabIndex = 47;
             // 
@@ -649,6 +667,9 @@ namespace BillPlex
             // 
             this.ActiveStatusRdBtn.Location = new System.Drawing.Point(887, 30);
             this.ActiveStatusRdBtn.Name = "ActiveStatusRdBtn";
+            // 
+            // 
+            // 
             this.ActiveStatusRdBtn.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.ActiveStatusRdBtn.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ActiveStatusRdBtn.Properties.Appearance.Options.UseBackColor = true;
@@ -656,9 +677,15 @@ namespace BillPlex
             this.ActiveStatusRdBtn.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.ActiveStatusRdBtn.Properties.Columns = 2;
             this.ActiveStatusRdBtn.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
+            radioGroupItem3.AccessibleName = "Yes";
+            radioGroupItem3.Description = "Yes";
+            radioGroupItem3.Value = null;
+            radioGroupItem4.AccessibleName = "No";
+            radioGroupItem4.Description = "No";
+            radioGroupItem4.Value = null;
             this.ActiveStatusRdBtn.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Yes", true, null, "Yes"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "No", true, null, "No")});
+            radioGroupItem3,
+            radioGroupItem4});
             this.ActiveStatusRdBtn.Size = new System.Drawing.Size(119, 45);
             this.ActiveStatusRdBtn.TabIndex = 66;
             // 
@@ -1046,6 +1073,9 @@ namespace BillPlex
             // 
             this.BusinessRadioGroup.Location = new System.Drawing.Point(116, 252);
             this.BusinessRadioGroup.Name = "BusinessRadioGroup";
+            // 
+            // 
+            // 
             this.BusinessRadioGroup.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.BusinessRadioGroup.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BusinessRadioGroup.Properties.Appearance.Options.UseBackColor = true;
@@ -1053,11 +1083,23 @@ namespace BillPlex
             this.BusinessRadioGroup.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.BusinessRadioGroup.Properties.Columns = 2;
             this.BusinessRadioGroup.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
+            radioGroupItem5.AccessibleName = "Manufacture";
+            radioGroupItem5.Description = "Manufacture";
+            radioGroupItem5.Value = null;
+            radioGroupItem6.AccessibleName = "Traders";
+            radioGroupItem6.Description = "Traders";
+            radioGroupItem6.Value = null;
+            radioGroupItem7.AccessibleName = "Job Work";
+            radioGroupItem7.Description = "Job Work";
+            radioGroupItem7.Value = null;
+            radioGroupItem8.AccessibleName = "Others";
+            radioGroupItem8.Description = "Others";
+            radioGroupItem8.Value = null;
             this.BusinessRadioGroup.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Manufacture", true, null, "Manufacture"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Traders", true, null, "Traders"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Job Work", true, null, "Job Work"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Others", true, null, "Others")});
+            radioGroupItem5,
+            radioGroupItem6,
+            radioGroupItem7,
+            radioGroupItem8});
             this.BusinessRadioGroup.Size = new System.Drawing.Size(276, 59);
             this.BusinessRadioGroup.TabIndex = 27;
             // 
@@ -1109,6 +1151,9 @@ namespace BillPlex
             // 
             this.OffAddressMemoEdit.Location = new System.Drawing.Point(116, 155);
             this.OffAddressMemoEdit.Name = "OffAddressMemoEdit";
+            // 
+            // 
+            // 
             this.OffAddressMemoEdit.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
             this.OffAddressMemoEdit.Size = new System.Drawing.Size(285, 54);
             this.OffAddressMemoEdit.TabIndex = 16;
@@ -1244,6 +1289,9 @@ namespace BillPlex
             // 
             this.PfTypeRdBtn.Location = new System.Drawing.Point(554, 128);
             this.PfTypeRdBtn.Name = "PfTypeRdBtn";
+            // 
+            // 
+            // 
             this.PfTypeRdBtn.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.PfTypeRdBtn.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PfTypeRdBtn.Properties.Appearance.Options.UseBackColor = true;
@@ -1251,9 +1299,15 @@ namespace BillPlex
             this.PfTypeRdBtn.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.PfTypeRdBtn.Properties.Columns = 2;
             this.PfTypeRdBtn.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
+            radioGroupItem9.AccessibleName = "Category 1";
+            radioGroupItem9.Description = "Category 1";
+            radioGroupItem9.Value = null;
+            radioGroupItem10.AccessibleName = "Category 2";
+            radioGroupItem10.Description = "Category 2";
+            radioGroupItem10.Value = null;
             this.PfTypeRdBtn.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Category 1", true, null, "Category 1"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Category 2", true, null, "Category 2")});
+            radioGroupItem9,
+            radioGroupItem10});
             this.PfTypeRdBtn.Size = new System.Drawing.Size(249, 37);
             this.PfTypeRdBtn.TabIndex = 38;
             // 
@@ -1268,14 +1322,10 @@ namespace BillPlex
             this.Controls.Add(this.panelControl1);
             this.Name = "FrmClientCompanyInfo";
             this.Text = "ClientCompanyInfo";
+            this.Load += new System.EventHandler(this.FrmClientCompanyInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
-            this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
-            this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
-            this.panelControl4.ResumeLayout(false);
-            this.panelControl4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AuthImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BankDetailsMemoEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PercentTxt.Properties)).EndInit();
@@ -1284,18 +1334,13 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.AuthpinTxt.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmailIDtxt.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
-            this.panelControl6.ResumeLayout(false);
-            this.panelControl6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mobiletxt.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FathersTxt.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Nametxt.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GenderRdBtn.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ActiveStatusRdBtn.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).EndInit();
-            this.panelControl7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
-            this.panelControl3.ResumeLayout(false);
-            this.panelControl3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CstTxt.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SsiTxt.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PanNotxt.Properties)).EndInit();
@@ -1315,8 +1360,6 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.CompanyNameTxt.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CompanyCodeTxt.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
-            this.panelControl5.ResumeLayout(false);
-            this.panelControl5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PfTypeRdBtn.Properties)).EndInit();
             this.ResumeLayout(false);
 

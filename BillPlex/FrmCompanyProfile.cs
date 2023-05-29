@@ -23,5 +23,10 @@ namespace BillPlex
             FrmCompanyInfo CP = new FrmCompanyInfo();
             CP.ShowDialog();
         }
+
+        private void FrmCompanyProfile_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

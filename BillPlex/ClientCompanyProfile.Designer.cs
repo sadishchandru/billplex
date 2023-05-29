@@ -31,21 +31,21 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btn_Exit = new System.Windows.Forms.Button();
+            this.btn_new = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.btn_Find = new System.Windows.Forms.Button();
-            this.btn_Clear = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.btn_new = new System.Windows.Forms.Button();
-            this.btn_Exit = new System.Windows.Forms.Button();
-            this.hScrollBar1 = new System.Windows.Forms.HScrollBar();
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
+            this.hScrollBar1 = new System.Windows.Forms.HScrollBar();
+            this.btn_Clear = new System.Windows.Forms.Button();
+            this.btn_Find = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -75,6 +75,38 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1111, 437);
             this.panel2.TabIndex = 1;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.btn_Exit);
+            this.panel5.Controls.Add(this.btn_new);
+            this.panel5.Location = new System.Drawing.Point(975, 74);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(112, 245);
+            this.panel5.TabIndex = 1;
+            // 
+            // btn_Exit
+            // 
+            this.btn_Exit.BackColor = System.Drawing.Color.LightBlue;
+            this.btn_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Exit.Location = new System.Drawing.Point(17, 210);
+            this.btn_Exit.Name = "btn_Exit";
+            this.btn_Exit.Size = new System.Drawing.Size(75, 23);
+            this.btn_Exit.TabIndex = 4;
+            this.btn_Exit.Text = "EXIT";
+            this.btn_Exit.UseVisualStyleBackColor = false;
+            // 
+            // btn_new
+            // 
+            this.btn_new.BackColor = System.Drawing.Color.LightBlue;
+            this.btn_new.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_new.Location = new System.Drawing.Point(17, 17);
+            this.btn_new.Name = "btn_new";
+            this.btn_new.Size = new System.Drawing.Size(75, 23);
+            this.btn_new.TabIndex = 3;
+            this.btn_new.Text = "NEW";
+            this.btn_new.UseVisualStyleBackColor = false;
             // 
             // panel3
             // 
@@ -96,27 +128,19 @@
             this.panel4.Size = new System.Drawing.Size(919, 390);
             this.panel4.TabIndex = 1;
             // 
-            // comboBox1
+            // vScrollBar1
             // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(13, 15);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(288, 21);
-            this.comboBox1.TabIndex = 0;
+            this.vScrollBar1.Location = new System.Drawing.Point(895, 0);
+            this.vScrollBar1.Name = "vScrollBar1";
+            this.vScrollBar1.Size = new System.Drawing.Size(25, 370);
+            this.vScrollBar1.TabIndex = 4;
             // 
-            // btn_Find
+            // hScrollBar1
             // 
-            this.btn_Find.BackColor = System.Drawing.Color.LightBlue;
-            this.btn_Find.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Find.Location = new System.Drawing.Point(324, 15);
-            this.btn_Find.Name = "btn_Find";
-            this.btn_Find.Size = new System.Drawing.Size(75, 23);
-            this.btn_Find.TabIndex = 1;
-            this.btn_Find.Text = "Find";
-            this.btn_Find.UseVisualStyleBackColor = false;
+            this.hScrollBar1.Location = new System.Drawing.Point(13, 371);
+            this.hScrollBar1.Name = "hScrollBar1";
+            this.hScrollBar1.Size = new System.Drawing.Size(906, 19);
+            this.hScrollBar1.TabIndex = 3;
             // 
             // btn_Clear
             // 
@@ -129,66 +153,43 @@
             this.btn_Clear.Text = "Clear";
             this.btn_Clear.UseVisualStyleBackColor = false;
             // 
-            // panel5
+            // btn_Find
             // 
-            this.panel5.Controls.Add(this.btn_Exit);
-            this.panel5.Controls.Add(this.btn_new);
-            this.panel5.Location = new System.Drawing.Point(975, 74);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(112, 245);
-            this.panel5.TabIndex = 1;
+            this.btn_Find.BackColor = System.Drawing.Color.LightBlue;
+            this.btn_Find.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Find.Location = new System.Drawing.Point(324, 15);
+            this.btn_Find.Name = "btn_Find";
+            this.btn_Find.Size = new System.Drawing.Size(75, 23);
+            this.btn_Find.TabIndex = 1;
+            this.btn_Find.Text = "Find";
+            this.btn_Find.UseVisualStyleBackColor = false;
             // 
-            // btn_new
+            // comboBox1
             // 
-            this.btn_new.BackColor = System.Drawing.Color.LightBlue;
-            this.btn_new.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_new.Location = new System.Drawing.Point(17, 17);
-            this.btn_new.Name = "btn_new";
-            this.btn_new.Size = new System.Drawing.Size(75, 23);
-            this.btn_new.TabIndex = 3;
-            this.btn_new.Text = "NEW";
-            this.btn_new.UseVisualStyleBackColor = false;
+            this.comboBox1.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(13, 15);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(288, 21);
+            this.comboBox1.TabIndex = 0;
             // 
-            // btn_Exit
-            // 
-            this.btn_Exit.BackColor = System.Drawing.Color.LightBlue;
-            this.btn_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Exit.Location = new System.Drawing.Point(17, 210);
-            this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Size = new System.Drawing.Size(75, 23);
-            this.btn_Exit.TabIndex = 4;
-            this.btn_Exit.Text = "EXIT";
-            this.btn_Exit.UseVisualStyleBackColor = false;
-            // 
-            // hScrollBar1
-            // 
-            this.hScrollBar1.Location = new System.Drawing.Point(13, 371);
-            this.hScrollBar1.Name = "hScrollBar1";
-            this.hScrollBar1.Size = new System.Drawing.Size(906, 19);
-            this.hScrollBar1.TabIndex = 3;
-            // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Location = new System.Drawing.Point(895, 0);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(25, 370);
-            this.vScrollBar1.TabIndex = 4;
-            // 
-            // FrmClientCompanyProfile
+            // ClientCompanyProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1116, 506);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "FrmClientCompanyProfile";
+            this.Name = "ClientCompanyProfile";
             this.Text = "FrmClientCompanyProfile";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

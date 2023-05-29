@@ -49,15 +49,10 @@ namespace BillPlex
             this.Findbtn = new DevExpress.XtraEditors.SimpleButton();
             this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
-            this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
-            this.panelControl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
-            this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
-            this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -116,7 +111,6 @@ namespace BillPlex
             this.Exitbtn.LookAndFeel.SkinName = "DevExpress Style";
             this.Exitbtn.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Exitbtn.Name = "Exitbtn";
-            this.Exitbtn.Size = new System.Drawing.Size(75, 23);
             this.Exitbtn.TabIndex = 11;
             this.Exitbtn.Text = "EXIT";
             // 
@@ -130,7 +124,6 @@ namespace BillPlex
             this.Clearbtn.LookAndFeel.SkinName = "DevExpress Style";
             this.Clearbtn.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Clearbtn.Name = "Clearbtn";
-            this.Clearbtn.Size = new System.Drawing.Size(75, 23);
             this.Clearbtn.TabIndex = 10;
             this.Clearbtn.Text = "CLEAR";
             // 
@@ -144,7 +137,6 @@ namespace BillPlex
             this.Deletebtn.LookAndFeel.SkinName = "DevExpress Style";
             this.Deletebtn.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Deletebtn.Name = "Deletebtn";
-            this.Deletebtn.Size = new System.Drawing.Size(75, 23);
             this.Deletebtn.TabIndex = 9;
             this.Deletebtn.Text = "DELETE";
             // 
@@ -158,7 +150,6 @@ namespace BillPlex
             this.Updatebtn.LookAndFeel.SkinName = "DevExpress Style";
             this.Updatebtn.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Updatebtn.Name = "Updatebtn";
-            this.Updatebtn.Size = new System.Drawing.Size(75, 23);
             this.Updatebtn.TabIndex = 8;
             this.Updatebtn.Text = "UPDATE";
             // 
@@ -172,7 +163,6 @@ namespace BillPlex
             this.Editbtn.LookAndFeel.SkinName = "DevExpress Style";
             this.Editbtn.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Editbtn.Name = "Editbtn";
-            this.Editbtn.Size = new System.Drawing.Size(75, 23);
             this.Editbtn.TabIndex = 7;
             this.Editbtn.Text = "EDIT";
             // 
@@ -186,7 +176,6 @@ namespace BillPlex
             this.Addbtn.LookAndFeel.SkinName = "DevExpress Style";
             this.Addbtn.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Addbtn.Name = "Addbtn";
-            this.Addbtn.Size = new System.Drawing.Size(75, 23);
             this.Addbtn.TabIndex = 6;
             this.Addbtn.Text = "ADD";
             // 
@@ -200,7 +189,6 @@ namespace BillPlex
             this.Newbtn.LookAndFeel.SkinName = "DevExpress Style";
             this.Newbtn.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Newbtn.Name = "Newbtn";
-            this.Newbtn.Size = new System.Drawing.Size(75, 23);
             this.Newbtn.TabIndex = 5;
             this.Newbtn.Text = "NEW";
             this.Newbtn.Click += new System.EventHandler(this.Newbtn_Click);
@@ -241,7 +229,6 @@ namespace BillPlex
             this.Printbtn.LookAndFeel.SkinName = "DevExpress Style";
             this.Printbtn.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Printbtn.Name = "Printbtn";
-            this.Printbtn.Size = new System.Drawing.Size(75, 23);
             this.Printbtn.TabIndex = 7;
             this.Printbtn.Text = "Print";
             // 
@@ -277,7 +264,6 @@ namespace BillPlex
             this.Claerbtn.LookAndFeel.SkinName = "DevExpress Style";
             this.Claerbtn.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Claerbtn.Name = "Claerbtn";
-            this.Claerbtn.Size = new System.Drawing.Size(75, 23);
             this.Claerbtn.TabIndex = 4;
             this.Claerbtn.Text = "Clear";
             // 
@@ -316,7 +302,6 @@ namespace BillPlex
             this.Findbtn.LookAndFeel.SkinName = "DevExpress Style";
             this.Findbtn.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Findbtn.Name = "Findbtn";
-            this.Findbtn.Size = new System.Drawing.Size(75, 23);
             this.Findbtn.TabIndex = 3;
             this.Findbtn.Text = "Find";
             // 
@@ -341,17 +326,12 @@ namespace BillPlex
             this.Controls.Add(this.panelControl1);
             this.Name = "FrmCompanyProfile";
             this.Text = "FrmCompanyProfile";
+            this.Load += new System.EventHandler(this.FrmCompanyProfile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
-            this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
-            this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
-            this.panelControl5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
-            this.panelControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
-            this.panelControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
