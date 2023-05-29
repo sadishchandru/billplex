@@ -1,7 +1,7 @@
 ﻿
 namespace BillPlex
 {
-    partial class FrmClientCompanyBankInfo
+    partial class FrmCompanyBankInfo
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace BillPlex
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmClientCompanyBankInfo));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCompanyBankInfo));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -47,7 +47,6 @@ namespace BillPlex
             this.txtAddress = new DevExpress.XtraEditors.MemoEdit();
             this.txtAccountNo = new DevExpress.XtraEditors.TextEdit();
             this.dDbankName = new DevExpress.XtraEditors.DropDownButton();
-            this.dDclientCompany = new DevExpress.XtraEditors.DropDownButton();
             this.dDmainCompany = new DevExpress.XtraEditors.DropDownButton();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
@@ -55,7 +54,6 @@ namespace BillPlex
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -76,7 +74,7 @@ namespace BillPlex
             // 
             // panelControl1
             // 
-            this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.panelControl1.Controls.Add(this.gridControl1);
             this.panelControl1.Controls.Add(this.txtSearchComapnyName);
             this.panelControl1.Controls.Add(this.labelControl10);
@@ -92,7 +90,6 @@ namespace BillPlex
             this.panelControl1.Controls.Add(this.txtAddress);
             this.panelControl1.Controls.Add(this.txtAccountNo);
             this.panelControl1.Controls.Add(this.dDbankName);
-            this.panelControl1.Controls.Add(this.dDclientCompany);
             this.panelControl1.Controls.Add(this.dDmainCompany);
             this.panelControl1.Controls.Add(this.labelControl9);
             this.panelControl1.Controls.Add(this.labelControl8);
@@ -100,15 +97,14 @@ namespace BillPlex
             this.panelControl1.Controls.Add(this.labelControl6);
             this.panelControl1.Controls.Add(this.labelControl5);
             this.panelControl1.Controls.Add(this.labelControl4);
-            this.panelControl1.Controls.Add(this.labelControl2);
             this.panelControl1.Controls.Add(this.panelControl2);
             this.panelControl1.Controls.Add(this.labelControl1);
-            this.panelControl1.Location = new System.Drawing.Point(12, 10);
+            this.panelControl1.Location = new System.Drawing.Point(4, 12);
             this.panelControl1.LookAndFeel.SkinName = "DevExpress Style";
             this.panelControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1576, 808);
-            this.panelControl1.TabIndex = 1;
+            this.panelControl1.Size = new System.Drawing.Size(1582, 808);
+            this.panelControl1.TabIndex = 2;
             // 
             // gridControl1
             // 
@@ -144,7 +140,7 @@ namespace BillPlex
             // 
             this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Location = new System.Drawing.Point(667, 410);
+            this.labelControl10.Location = new System.Drawing.Point(669, 412);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(147, 16);
             this.labelControl10.TabIndex = 24;
@@ -162,7 +158,7 @@ namespace BillPlex
             // 
             this.simpleButton5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
             this.simpleButton5.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.simpleButton5.Location = new System.Drawing.Point(368, 318);
+            this.simpleButton5.Location = new System.Drawing.Point(368, 289);
             this.simpleButton5.LookAndFeel.SkinName = "DevExpress Style";
             this.simpleButton5.LookAndFeel.UseDefaultLookAndFeel = false;
             this.simpleButton5.Name = "simpleButton5";
@@ -173,7 +169,7 @@ namespace BillPlex
             // 
             this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
             this.simpleButton4.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.simpleButton4.Location = new System.Drawing.Point(368, 231);
+            this.simpleButton4.Location = new System.Drawing.Point(368, 210);
             this.simpleButton4.LookAndFeel.SkinName = "DevExpress Style";
             this.simpleButton4.LookAndFeel.UseDefaultLookAndFeel = false;
             this.simpleButton4.Name = "simpleButton4";
@@ -184,7 +180,7 @@ namespace BillPlex
             // 
             this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
             this.simpleButton3.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.simpleButton3.Location = new System.Drawing.Point(368, 152);
+            this.simpleButton3.Location = new System.Drawing.Point(368, 132);
             this.simpleButton3.LookAndFeel.SkinName = "DevExpress Style";
             this.simpleButton3.LookAndFeel.UseDefaultLookAndFeel = false;
             this.simpleButton3.Name = "simpleButton3";
@@ -195,7 +191,7 @@ namespace BillPlex
             // 
             this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
             this.simpleButton2.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.simpleButton2.Location = new System.Drawing.Point(368, 73);
+            this.simpleButton2.Location = new System.Drawing.Point(368, 53);
             this.simpleButton2.LookAndFeel.SkinName = "DevExpress Style";
             this.simpleButton2.LookAndFeel.UseDefaultLookAndFeel = false;
             this.simpleButton2.Name = "simpleButton2";
@@ -204,7 +200,7 @@ namespace BillPlex
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(335, 123);
+            this.simpleButton1.Location = new System.Drawing.Point(334, 94);
             this.simpleButton1.LookAndFeel.SkinName = "DevExpress Style";
             this.simpleButton1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.simpleButton1.Name = "simpleButton1";
@@ -213,52 +209,45 @@ namespace BillPlex
             // 
             // txtIfsCode
             // 
-            this.txtIfsCode.Location = new System.Drawing.Point(149, 371);
+            this.txtIfsCode.Location = new System.Drawing.Point(149, 342);
             this.txtIfsCode.Name = "txtIfsCode";
             this.txtIfsCode.Size = new System.Drawing.Size(209, 20);
             this.txtIfsCode.TabIndex = 17;
             // 
             // TxtBranchName
             // 
-            this.TxtBranchName.Location = new System.Drawing.Point(149, 325);
+            this.TxtBranchName.Location = new System.Drawing.Point(149, 296);
             this.TxtBranchName.Name = "TxtBranchName";
             this.TxtBranchName.Size = new System.Drawing.Size(209, 20);
             this.TxtBranchName.TabIndex = 16;
             // 
             // txtBranchCode
             // 
-            this.txtBranchCode.Location = new System.Drawing.Point(149, 277);
+            this.txtBranchCode.Location = new System.Drawing.Point(149, 248);
             this.txtBranchCode.Name = "txtBranchCode";
             this.txtBranchCode.Size = new System.Drawing.Size(209, 20);
             this.txtBranchCode.TabIndex = 15;
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(149, 195);
+            this.txtAddress.Location = new System.Drawing.Point(149, 166);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(209, 66);
             this.txtAddress.TabIndex = 14;
             // 
             // txtAccountNo
             // 
-            this.txtAccountNo.Location = new System.Drawing.Point(149, 160);
+            this.txtAccountNo.Location = new System.Drawing.Point(149, 131);
             this.txtAccountNo.Name = "txtAccountNo";
             this.txtAccountNo.Size = new System.Drawing.Size(209, 20);
             this.txtAccountNo.TabIndex = 13;
             // 
             // dDbankName
             // 
-            this.dDbankName.Location = new System.Drawing.Point(149, 123);
+            this.dDbankName.Location = new System.Drawing.Point(149, 94);
             this.dDbankName.Name = "dDbankName";
             this.dDbankName.Size = new System.Drawing.Size(179, 23);
             this.dDbankName.TabIndex = 12;
-            // 
-            // dDclientCompany
-            // 
-            this.dDclientCompany.Location = new System.Drawing.Point(149, 88);
-            this.dDclientCompany.Name = "dDclientCompany";
-            this.dDclientCompany.Size = new System.Drawing.Size(209, 23);
-            this.dDclientCompany.TabIndex = 11;
             // 
             // dDmainCompany
             // 
@@ -273,7 +262,7 @@ namespace BillPlex
             // 
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(5, 375);
+            this.labelControl9.Location = new System.Drawing.Point(7, 348);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(55, 16);
             this.labelControl9.TabIndex = 9;
@@ -283,7 +272,7 @@ namespace BillPlex
             // 
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(5, 329);
+            this.labelControl8.Location = new System.Drawing.Point(7, 302);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(84, 16);
             this.labelControl8.TabIndex = 8;
@@ -293,7 +282,7 @@ namespace BillPlex
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(5, 281);
+            this.labelControl7.Location = new System.Drawing.Point(7, 254);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(81, 16);
             this.labelControl7.TabIndex = 7;
@@ -303,7 +292,7 @@ namespace BillPlex
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(5, 195);
+            this.labelControl6.Location = new System.Drawing.Point(7, 168);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(54, 16);
             this.labelControl6.TabIndex = 6;
@@ -313,7 +302,7 @@ namespace BillPlex
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(5, 164);
+            this.labelControl5.Location = new System.Drawing.Point(7, 137);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(82, 16);
             this.labelControl5.TabIndex = 5;
@@ -323,21 +312,11 @@ namespace BillPlex
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(5, 130);
+            this.labelControl4.Location = new System.Drawing.Point(7, 103);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(70, 16);
             this.labelControl4.TabIndex = 4;
             this.labelControl4.Text = "Bank Name";
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(5, 95);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(99, 16);
-            this.labelControl2.TabIndex = 3;
-            this.labelControl2.Text = "Client Company";
             // 
             // panelControl2
             // 
@@ -346,7 +325,7 @@ namespace BillPlex
             this.panelControl2.AutoSize = true;
             this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl2.Controls.Add(this.labelControl3);
-            this.panelControl2.Location = new System.Drawing.Point(2, 3);
+            this.panelControl2.Location = new System.Drawing.Point(4, 5);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(1569, 35);
             this.panelControl2.TabIndex = 2;
@@ -367,20 +346,20 @@ namespace BillPlex
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(5, 60);
+            this.labelControl1.Location = new System.Drawing.Point(7, 62);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(93, 16);
             this.labelControl1.TabIndex = 1;
             this.labelControl1.Text = "Main Company";
             // 
-            // FrmClientCompanyBankInfo
+            // FrmCompanyBankInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1613, 830);
+            this.ClientSize = new System.Drawing.Size(1592, 826);
             this.Controls.Add(this.panelControl1);
-            this.Name = "FrmClientCompanyBankInfo";
-            this.Text = "ClientCompanyBankInfo";
+            this.Name = "FrmCompanyBankInfo";
+            this.Text = "FrmCompanyBankInfo";
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
@@ -419,7 +398,6 @@ namespace BillPlex
         private DevExpress.XtraEditors.MemoEdit txtAddress;
         private DevExpress.XtraEditors.TextEdit txtAccountNo;
         private DevExpress.XtraEditors.DropDownButton dDbankName;
-        private DevExpress.XtraEditors.DropDownButton dDclientCompany;
         private DevExpress.XtraEditors.DropDownButton dDmainCompany;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.LabelControl labelControl8;
@@ -427,7 +405,6 @@ namespace BillPlex
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl1;

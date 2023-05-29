@@ -40,14 +40,14 @@ namespace BillPlex
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.MainCompanyDd = new DevExpress.XtraEditors.DropDownButton();
-            this.ClientCompanyDd = new DevExpress.XtraEditors.DropDownButton();
-            this.BankNameDd = new DevExpress.XtraEditors.DropDownButton();
-            this.BankAccNoTxt = new DevExpress.XtraEditors.TextEdit();
-            this.AddressMemoEdit = new DevExpress.XtraEditors.MemoEdit();
-            this.Branch = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
+            this.dDClientCompany = new DevExpress.XtraEditors.DropDownButton();
+            this.dDSubClientCompany = new DevExpress.XtraEditors.DropDownButton();
+            this.dDBankName = new DevExpress.XtraEditors.DropDownButton();
+            this.TxtBankAccountNo = new DevExpress.XtraEditors.TextEdit();
+            this.TxtAddress = new DevExpress.XtraEditors.MemoEdit();
+            this.TxtBranchCode = new DevExpress.XtraEditors.TextEdit();
+            this.TxtBranchName = new DevExpress.XtraEditors.TextEdit();
+            this.TxtIfsCode = new DevExpress.XtraEditors.TextEdit();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
@@ -61,11 +61,11 @@ namespace BillPlex
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BankAccNoTxt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AddressMemoEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Branch.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtBankAccountNo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtAddress.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtBranchCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtBranchName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtIfsCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SearchComapnyNameTxt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -80,9 +80,9 @@ namespace BillPlex
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Location = new System.Drawing.Point(5, 60);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(93, 16);
+            this.labelControl1.Size = new System.Drawing.Size(99, 16);
             this.labelControl1.TabIndex = 1;
-            this.labelControl1.Text = "Main Company";
+            this.labelControl1.Text = "Client Company";
             // 
             // panelControl2
             // 
@@ -114,9 +114,9 @@ namespace BillPlex
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Location = new System.Drawing.Point(5, 95);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(99, 16);
+            this.labelControl2.Size = new System.Drawing.Size(127, 16);
             this.labelControl2.TabIndex = 3;
-            this.labelControl2.Text = "Client Company";
+            this.labelControl2.Text = "Sub Client Company";
             // 
             // labelControl4
             // 
@@ -178,61 +178,61 @@ namespace BillPlex
             this.labelControl9.TabIndex = 9;
             this.labelControl9.Text = "IFS Code";
             // 
-            // MainCompanyDd
+            // dDClientCompany
             // 
-            this.MainCompanyDd.Location = new System.Drawing.Point(149, 53);
-            this.MainCompanyDd.Name = "MainCompanyDd";
-            this.MainCompanyDd.Size = new System.Drawing.Size(209, 23);
-            this.MainCompanyDd.TabIndex = 10;
+            this.dDClientCompany.Location = new System.Drawing.Point(149, 53);
+            this.dDClientCompany.Name = "dDClientCompany";
+            this.dDClientCompany.Size = new System.Drawing.Size(209, 23);
+            this.dDClientCompany.TabIndex = 10;
             // 
-            // ClientCompanyDd
+            // dDSubClientCompany
             // 
-            this.ClientCompanyDd.Location = new System.Drawing.Point(149, 88);
-            this.ClientCompanyDd.Name = "ClientCompanyDd";
-            this.ClientCompanyDd.Size = new System.Drawing.Size(209, 23);
-            this.ClientCompanyDd.TabIndex = 11;
+            this.dDSubClientCompany.Location = new System.Drawing.Point(149, 88);
+            this.dDSubClientCompany.Name = "dDSubClientCompany";
+            this.dDSubClientCompany.Size = new System.Drawing.Size(209, 23);
+            this.dDSubClientCompany.TabIndex = 11;
             // 
-            // BankNameDd
+            // dDBankName
             // 
-            this.BankNameDd.Location = new System.Drawing.Point(149, 123);
-            this.BankNameDd.Name = "BankNameDd";
-            this.BankNameDd.Size = new System.Drawing.Size(179, 23);
-            this.BankNameDd.TabIndex = 12;
+            this.dDBankName.Location = new System.Drawing.Point(149, 123);
+            this.dDBankName.Name = "dDBankName";
+            this.dDBankName.Size = new System.Drawing.Size(179, 23);
+            this.dDBankName.TabIndex = 12;
             // 
-            // BankAccNoTxt
+            // TxtBankAccountNo
             // 
-            this.BankAccNoTxt.Location = new System.Drawing.Point(149, 160);
-            this.BankAccNoTxt.Name = "BankAccNoTxt";
-            this.BankAccNoTxt.Size = new System.Drawing.Size(209, 20);
-            this.BankAccNoTxt.TabIndex = 13;
+            this.TxtBankAccountNo.Location = new System.Drawing.Point(149, 160);
+            this.TxtBankAccountNo.Name = "TxtBankAccountNo";
+            this.TxtBankAccountNo.Size = new System.Drawing.Size(209, 20);
+            this.TxtBankAccountNo.TabIndex = 13;
             // 
-            // AddressMemoEdit
+            // TxtAddress
             // 
-            this.AddressMemoEdit.Location = new System.Drawing.Point(149, 195);
-            this.AddressMemoEdit.Name = "AddressMemoEdit";
-            this.AddressMemoEdit.Size = new System.Drawing.Size(209, 66);
-            this.AddressMemoEdit.TabIndex = 14;
+            this.TxtAddress.Location = new System.Drawing.Point(149, 195);
+            this.TxtAddress.Name = "TxtAddress";
+            this.TxtAddress.Size = new System.Drawing.Size(209, 66);
+            this.TxtAddress.TabIndex = 14;
             // 
-            // Branch
+            // TxtBranchCode
             // 
-            this.Branch.Location = new System.Drawing.Point(149, 277);
-            this.Branch.Name = "Branch";
-            this.Branch.Size = new System.Drawing.Size(209, 20);
-            this.Branch.TabIndex = 15;
+            this.TxtBranchCode.Location = new System.Drawing.Point(149, 277);
+            this.TxtBranchCode.Name = "TxtBranchCode";
+            this.TxtBranchCode.Size = new System.Drawing.Size(209, 20);
+            this.TxtBranchCode.TabIndex = 15;
             // 
-            // textEdit3
+            // TxtBranchName
             // 
-            this.textEdit3.Location = new System.Drawing.Point(149, 325);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(209, 20);
-            this.textEdit3.TabIndex = 16;
+            this.TxtBranchName.Location = new System.Drawing.Point(149, 325);
+            this.TxtBranchName.Name = "TxtBranchName";
+            this.TxtBranchName.Size = new System.Drawing.Size(209, 20);
+            this.TxtBranchName.TabIndex = 16;
             // 
-            // textEdit4
+            // TxtIfsCode
             // 
-            this.textEdit4.Location = new System.Drawing.Point(149, 371);
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Size = new System.Drawing.Size(209, 20);
-            this.textEdit4.TabIndex = 17;
+            this.TxtIfsCode.Location = new System.Drawing.Point(149, 371);
+            this.TxtIfsCode.Name = "TxtIfsCode";
+            this.TxtIfsCode.Size = new System.Drawing.Size(209, 20);
+            this.TxtIfsCode.TabIndex = 17;
             // 
             // simpleButton1
             // 
@@ -347,14 +347,14 @@ namespace BillPlex
             this.panelControl1.Controls.Add(this.simpleButton3);
             this.panelControl1.Controls.Add(this.simpleButton2);
             this.panelControl1.Controls.Add(this.simpleButton1);
-            this.panelControl1.Controls.Add(this.textEdit4);
-            this.panelControl1.Controls.Add(this.textEdit3);
-            this.panelControl1.Controls.Add(this.Branch);
-            this.panelControl1.Controls.Add(this.AddressMemoEdit);
-            this.panelControl1.Controls.Add(this.BankAccNoTxt);
-            this.panelControl1.Controls.Add(this.BankNameDd);
-            this.panelControl1.Controls.Add(this.ClientCompanyDd);
-            this.panelControl1.Controls.Add(this.MainCompanyDd);
+            this.panelControl1.Controls.Add(this.TxtIfsCode);
+            this.panelControl1.Controls.Add(this.TxtBranchName);
+            this.panelControl1.Controls.Add(this.TxtBranchCode);
+            this.panelControl1.Controls.Add(this.TxtAddress);
+            this.panelControl1.Controls.Add(this.TxtBankAccountNo);
+            this.panelControl1.Controls.Add(this.dDBankName);
+            this.panelControl1.Controls.Add(this.dDSubClientCompany);
+            this.panelControl1.Controls.Add(this.dDClientCompany);
             this.panelControl1.Controls.Add(this.labelControl9);
             this.panelControl1.Controls.Add(this.labelControl8);
             this.panelControl1.Controls.Add(this.labelControl7);
@@ -382,11 +382,11 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BankAccNoTxt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AddressMemoEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Branch.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtBankAccountNo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtAddress.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtBranchCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtBranchName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtIfsCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SearchComapnyNameTxt.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
@@ -410,14 +410,14 @@ namespace BillPlex
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.LabelControl labelControl9;
-        private DevExpress.XtraEditors.DropDownButton MainCompanyDd;
-        private DevExpress.XtraEditors.DropDownButton ClientCompanyDd;
-        private DevExpress.XtraEditors.DropDownButton BankNameDd;
-        private DevExpress.XtraEditors.TextEdit BankAccNoTxt;
-        private DevExpress.XtraEditors.MemoEdit AddressMemoEdit;
-        private DevExpress.XtraEditors.TextEdit Branch;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
+        private DevExpress.XtraEditors.DropDownButton dDClientCompany;
+        private DevExpress.XtraEditors.DropDownButton dDSubClientCompany;
+        private DevExpress.XtraEditors.DropDownButton dDBankName;
+        private DevExpress.XtraEditors.TextEdit TxtBankAccountNo;
+        private DevExpress.XtraEditors.MemoEdit TxtAddress;
+        private DevExpress.XtraEditors.TextEdit TxtBranchCode;
+        private DevExpress.XtraEditors.TextEdit TxtBranchName;
+        private DevExpress.XtraEditors.TextEdit TxtIfsCode;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
