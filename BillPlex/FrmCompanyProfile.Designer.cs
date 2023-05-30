@@ -47,7 +47,7 @@ namespace BillPlex
             this.Printbtn = new DevExpress.XtraEditors.SimpleButton();
             this.Claerbtn = new DevExpress.XtraEditors.SimpleButton();
             this.Findbtn = new DevExpress.XtraEditors.SimpleButton();
-            this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
+            this.drpClientprofile = new DevExpress.XtraEditors.DropDownButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -220,11 +220,11 @@ namespace BillPlex
             // panelControl4
             // 
             this.panelControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.panelControl4.Controls.Add(this.drpClientprofile);
             this.panelControl4.Controls.Add(this.gridControl1);
             this.panelControl4.Controls.Add(this.Printbtn);
             this.panelControl4.Controls.Add(this.Claerbtn);
             this.panelControl4.Controls.Add(this.Findbtn);
-            this.panelControl4.Controls.Add(this.dropDownButton1);
             this.panelControl4.Location = new System.Drawing.Point(6, 5);
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Size = new System.Drawing.Size(1406, 622);
@@ -324,17 +324,12 @@ namespace BillPlex
             this.Findbtn.TabIndex = 3;
             this.Findbtn.Text = "Find";
             // 
-            // dropDownButton1
+            // drpClientprofile
             // 
-            this.dropDownButton1.Appearance.BorderColor = System.Drawing.Color.Black;
-            this.dropDownButton1.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.dropDownButton1.Appearance.Options.UseBorderColor = true;
-            this.dropDownButton1.Location = new System.Drawing.Point(23, 23);
-            this.dropDownButton1.LookAndFeel.SkinName = "DevExpress Style";
-            this.dropDownButton1.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.dropDownButton1.Name = "dropDownButton1";
-            this.dropDownButton1.Size = new System.Drawing.Size(721, 23);
-            this.dropDownButton1.TabIndex = 2;
+            this.drpClientprofile.Location = new System.Drawing.Point(184, 22);
+            this.drpClientprofile.Name = "drpClientprofile";
+            this.drpClientprofile.Size = new System.Drawing.Size(503, 23);
+            this.drpClientprofile.TabIndex = 9;
             // 
             // FrmCompanyProfile
             // 
@@ -379,9 +374,9 @@ namespace BillPlex
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraEditors.SimpleButton Claerbtn;
         private DevExpress.XtraEditors.SimpleButton Findbtn;
-        private DevExpress.XtraEditors.DropDownButton dropDownButton1;
         private DevExpress.XtraEditors.SimpleButton Printbtn;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraEditors.DropDownButton drpClientprofile;
     }
 }

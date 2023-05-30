@@ -33,147 +33,160 @@ namespace BillPlex
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
-            this.dropDownButton4 = new DevExpress.XtraEditors.DropDownButton();
-            this.dropDownButton3 = new DevExpress.XtraEditors.DropDownButton();
+            this.ddDOB = new DevExpress.XtraEditors.DateEdit();
+            this.DrpBloodGroup = new DevExpress.XtraEditors.DropDownButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.AuthClearImageBtn = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl26 = new DevExpress.XtraEditors.LabelControl();
             this.AuthImg = new DevExpress.XtraEditors.SvgImageBox();
-            this.BankDetailsMemoEdit = new DevExpress.XtraEditors.MemoEdit();
+            this.txtBankDetails = new DevExpress.XtraEditors.MemoEdit();
             this.labelControl25 = new DevExpress.XtraEditors.LabelControl();
             this.InsertBankInfoBtn = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl24 = new DevExpress.XtraEditors.LabelControl();
-            this.PercentTxt = new DevExpress.XtraEditors.TextEdit();
+            this.txtPercent = new DevExpress.XtraEditors.TextEdit();
             this.labelControl23 = new DevExpress.XtraEditors.LabelControl();
-            this.AuthPanNoTxt = new DevExpress.XtraEditors.TextEdit();
+            this.txtAuthPanNo = new DevExpress.XtraEditors.TextEdit();
             this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
-            this.AuthAddressMemoEdit = new DevExpress.XtraEditors.MemoEdit();
-            this.AuthpinTxt = new DevExpress.XtraEditors.TextEdit();
+            this.TxtAuthAddress = new DevExpress.XtraEditors.MemoEdit();
+            this.txtAuthpin = new DevExpress.XtraEditors.TextEdit();
             this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
-            this.AuthStateDd = new DevExpress.XtraEditors.DropDownButton();
+            this.drpAuthState = new DevExpress.XtraEditors.DropDownButton();
             this.labelControl22 = new DevExpress.XtraEditors.LabelControl();
             this.EmailCpyBtn = new DevExpress.XtraEditors.SimpleButton();
             this.AuthAddClearBtn = new DevExpress.XtraEditors.SimpleButton();
             this.AuthCopyBtn = new DevExpress.XtraEditors.SimpleButton();
-            this.EmailIDtxt = new DevExpress.XtraEditors.TextEdit();
+            this.txtEmailID = new DevExpress.XtraEditors.TextEdit();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
             this.AuthorisedLbl = new DevExpress.XtraEditors.LabelControl();
             this.labelControl38 = new DevExpress.XtraEditors.LabelControl();
-            this.mobiletxt = new DevExpress.XtraEditors.TextEdit();
+            this.txtmobile = new DevExpress.XtraEditors.TextEdit();
             this.labelControl27 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl29 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl30 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl31 = new DevExpress.XtraEditors.LabelControl();
-            this.FathersTxt = new DevExpress.XtraEditors.TextEdit();
-            this.Nametxt = new DevExpress.XtraEditors.TextEdit();
+            this.txtFathers = new DevExpress.XtraEditors.TextEdit();
+            this.txtName = new DevExpress.XtraEditors.TextEdit();
             this.AddressLbl = new DevExpress.XtraEditors.LabelControl();
             this.GenderLbl = new DevExpress.XtraEditors.LabelControl();
             this.labelControl39 = new DevExpress.XtraEditors.LabelControl();
             this.nameLbl = new DevExpress.XtraEditors.LabelControl();
-            this.GenderRdBtn = new DevExpress.XtraEditors.RadioGroup();
-            this.ActiveStatusRdBtn = new DevExpress.XtraEditors.RadioGroup();
+            this.radGender = new DevExpress.XtraEditors.RadioGroup();
+            this.radActiveStatus = new DevExpress.XtraEditors.RadioGroup();
             this.panelControl7 = new DevExpress.XtraEditors.PanelControl();
+            this.ClearBtn = new DevExpress.XtraEditors.SimpleButton();
+            this.DeleteBtn = new DevExpress.XtraEditors.SimpleButton();
+            this.UpdateBtn = new DevExpress.XtraEditors.SimpleButton();
+            this.EditBtn = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.ExitBtn = new DevExpress.XtraEditors.SimpleButton();
             this.NewBtn = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.CstTxt = new DevExpress.XtraEditors.TextEdit();
-            this.SsiTxt = new DevExpress.XtraEditors.TextEdit();
-            this.PanNotxt = new DevExpress.XtraEditors.TextEdit();
-            this.tanTxt = new DevExpress.XtraEditors.TextEdit();
-            this.LicenseTxt = new DevExpress.XtraEditors.TextEdit();
-            this.TinTxt = new DevExpress.XtraEditors.TextEdit();
+            this.ddPfDate = new DevExpress.XtraEditors.DateEdit();
+            this.ddEsiCode = new DevExpress.XtraEditors.DateEdit();
+            this.drpDirector = new DevExpress.XtraEditors.DropDownButton();
+            this.txtCst = new DevExpress.XtraEditors.TextEdit();
+            this.txtSsi = new DevExpress.XtraEditors.TextEdit();
+            this.txtPanNo = new DevExpress.XtraEditors.TextEdit();
+            this.txtTan = new DevExpress.XtraEditors.TextEdit();
+            this.txtTin = new DevExpress.XtraEditors.TextEdit();
             this.LicenseLbl = new DevExpress.XtraEditors.LabelControl();
             this.TanLbl = new DevExpress.XtraEditors.LabelControl();
             this.PanLbl = new DevExpress.XtraEditors.LabelControl();
             this.SsiLbl = new DevExpress.XtraEditors.LabelControl();
             this.CstLbl = new DevExpress.XtraEditors.LabelControl();
             this.TinLbl = new DevExpress.XtraEditors.LabelControl();
-            this.FactoryActTxt = new DevExpress.XtraEditors.TextEdit();
+            this.txtFactoryAct = new DevExpress.XtraEditors.TextEdit();
             this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
-            this.EsiDateDd = new DevExpress.XtraEditors.DropDownButton();
-            this.EsiCodeTxt = new DevExpress.XtraEditors.TextEdit();
+            this.txtEsiCode = new DevExpress.XtraEditors.TextEdit();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
-            this.PfDateDd = new DevExpress.XtraEditors.DropDownButton();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
-            this.PFCodeTxt = new DevExpress.XtraEditors.TextEdit();
+            this.txtPFCode = new DevExpress.XtraEditors.TextEdit();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
-            this.WebsiteTxt = new DevExpress.XtraEditors.TextEdit();
+            this.txtWebsite = new DevExpress.XtraEditors.TextEdit();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
-            this.Emailtxt = new DevExpress.XtraEditors.TextEdit();
+            this.txtEmail = new DevExpress.XtraEditors.TextEdit();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
-            this.Officetxt = new DevExpress.XtraEditors.TextEdit();
+            this.txtClientCompanyPhone = new DevExpress.XtraEditors.TextEdit();
             this.OffPinTxt = new DevExpress.XtraEditors.TextEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.StartingDateDdBtn = new DevExpress.XtraEditors.DropDownButton();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.BusinessRadioGroup = new DevExpress.XtraEditors.RadioGroup();
+            this.radBusinessNature = new DevExpress.XtraEditors.RadioGroup();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            this.Pintxt = new DevExpress.XtraEditors.TextEdit();
+            this.txtPin = new DevExpress.XtraEditors.TextEdit();
             this.PinLbl = new DevExpress.XtraEditors.LabelControl();
-            this.StateDd = new DevExpress.XtraEditors.DropDownButton();
+            this.drpState = new DevExpress.XtraEditors.DropDownButton();
             this.StateLbl = new DevExpress.XtraEditors.LabelControl();
-            this.OffAddressMemoEdit = new DevExpress.XtraEditors.MemoEdit();
+            this.txtOffAddress = new DevExpress.XtraEditors.MemoEdit();
             this.OfficeAddressTxt = new DevExpress.XtraEditors.LabelControl();
-            this.CompanyNameTxt = new DevExpress.XtraEditors.TextEdit();
-            this.CompanyCodeTxt = new DevExpress.XtraEditors.TextEdit();
+            this.txtCompanyName = new DevExpress.XtraEditors.TextEdit();
+            this.txtCompanyCode = new DevExpress.XtraEditors.TextEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.DirectorDd = new DevExpress.XtraEditors.DropDownButton();
-            this.MainCompanyDd = new DevExpress.XtraEditors.DropDownButton();
+            this.drpMainCompany = new DevExpress.XtraEditors.DropDownButton();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.PfTypeRdBtn = new DevExpress.XtraEditors.RadioGroup();
+            this.radPfType = new DevExpress.XtraEditors.RadioGroup();
+            this.LicenseTxt = new DevExpress.XtraEditors.TextEdit();
+            this.ddStartingDate = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ddDOB.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddDOB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AuthImg)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BankDetailsMemoEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PercentTxt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AuthPanNoTxt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AuthAddressMemoEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AuthpinTxt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EmailIDtxt.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBankDetails.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPercent.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAuthPanNo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtAuthAddress.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAuthpin.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmailID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
             this.panelControl6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mobiletxt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FathersTxt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Nametxt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GenderRdBtn.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ActiveStatusRdBtn.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtmobile.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFathers.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radGender.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radActiveStatus.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).BeginInit();
             this.panelControl7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CstTxt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SsiTxt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PanNotxt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tanTxt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LicenseTxt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TinTxt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FactoryActTxt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EsiCodeTxt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PFCodeTxt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.WebsiteTxt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Emailtxt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Officetxt.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddPfDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddPfDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddEsiCode.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddEsiCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCst.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSsi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPanNo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTan.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTin.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFactoryAct.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEsiCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPFCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtWebsite.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtClientCompanyPhone.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OffPinTxt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BusinessRadioGroup.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pintxt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OffAddressMemoEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CompanyNameTxt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CompanyCodeTxt.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radBusinessNature.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPin.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOffAddress.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCompanyName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCompanyCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
             this.panelControl5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PfTypeRdBtn.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radPfType.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LicenseTxt.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddStartingDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddStartingDate.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -209,62 +222,74 @@ namespace BillPlex
             // panelControl4
             // 
             this.panelControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.panelControl4.Controls.Add(this.dropDownButton4);
-            this.panelControl4.Controls.Add(this.dropDownButton3);
+            this.panelControl4.Controls.Add(this.ddDOB);
+            this.panelControl4.Controls.Add(this.DrpBloodGroup);
             this.panelControl4.Controls.Add(this.simpleButton1);
             this.panelControl4.Controls.Add(this.AuthClearImageBtn);
             this.panelControl4.Controls.Add(this.labelControl26);
             this.panelControl4.Controls.Add(this.AuthImg);
-            this.panelControl4.Controls.Add(this.BankDetailsMemoEdit);
+            this.panelControl4.Controls.Add(this.txtBankDetails);
             this.panelControl4.Controls.Add(this.labelControl25);
             this.panelControl4.Controls.Add(this.InsertBankInfoBtn);
             this.panelControl4.Controls.Add(this.labelControl24);
-            this.panelControl4.Controls.Add(this.PercentTxt);
+            this.panelControl4.Controls.Add(this.txtPercent);
             this.panelControl4.Controls.Add(this.labelControl23);
-            this.panelControl4.Controls.Add(this.AuthPanNoTxt);
+            this.panelControl4.Controls.Add(this.txtAuthPanNo);
             this.panelControl4.Controls.Add(this.labelControl21);
-            this.panelControl4.Controls.Add(this.AuthAddressMemoEdit);
-            this.panelControl4.Controls.Add(this.AuthpinTxt);
+            this.panelControl4.Controls.Add(this.TxtAuthAddress);
+            this.panelControl4.Controls.Add(this.txtAuthpin);
             this.panelControl4.Controls.Add(this.labelControl20);
-            this.panelControl4.Controls.Add(this.AuthStateDd);
+            this.panelControl4.Controls.Add(this.drpAuthState);
             this.panelControl4.Controls.Add(this.labelControl22);
             this.panelControl4.Controls.Add(this.EmailCpyBtn);
             this.panelControl4.Controls.Add(this.AuthAddClearBtn);
             this.panelControl4.Controls.Add(this.AuthCopyBtn);
-            this.panelControl4.Controls.Add(this.EmailIDtxt);
+            this.panelControl4.Controls.Add(this.txtEmailID);
             this.panelControl4.Controls.Add(this.panelControl6);
             this.panelControl4.Controls.Add(this.labelControl38);
-            this.panelControl4.Controls.Add(this.mobiletxt);
+            this.panelControl4.Controls.Add(this.txtmobile);
             this.panelControl4.Controls.Add(this.labelControl27);
             this.panelControl4.Controls.Add(this.labelControl29);
             this.panelControl4.Controls.Add(this.labelControl30);
             this.panelControl4.Controls.Add(this.labelControl31);
-            this.panelControl4.Controls.Add(this.FathersTxt);
-            this.panelControl4.Controls.Add(this.Nametxt);
+            this.panelControl4.Controls.Add(this.txtFathers);
+            this.panelControl4.Controls.Add(this.txtName);
             this.panelControl4.Controls.Add(this.AddressLbl);
             this.panelControl4.Controls.Add(this.GenderLbl);
             this.panelControl4.Controls.Add(this.labelControl39);
             this.panelControl4.Controls.Add(this.nameLbl);
-            this.panelControl4.Controls.Add(this.GenderRdBtn);
-            this.panelControl4.Controls.Add(this.ActiveStatusRdBtn);
+            this.panelControl4.Controls.Add(this.radGender);
+            this.panelControl4.Controls.Add(this.radActiveStatus);
             this.panelControl4.Location = new System.Drawing.Point(21, 374);
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Size = new System.Drawing.Size(1230, 267);
             this.panelControl4.TabIndex = 63;
             // 
-            // dropDownButton4
+            // ddDOB
             // 
-            this.dropDownButton4.Location = new System.Drawing.Point(138, 147);
-            this.dropDownButton4.Name = "dropDownButton4";
-            this.dropDownButton4.Size = new System.Drawing.Size(263, 23);
-            this.dropDownButton4.TabIndex = 77;
+            this.ddDOB.EditValue = null;
+            this.ddDOB.Location = new System.Drawing.Point(138, 193);
+            this.ddDOB.Name = "ddDOB";
+            this.ddDOB.Properties.BeepOnError = false;
+            this.ddDOB.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ddDOB.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ddDOB.Properties.DisplayFormat.FormatString = "";
+            this.ddDOB.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.ddDOB.Properties.EditFormat.FormatString = "";
+            this.ddDOB.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.ddDOB.Properties.MaskSettings.Set("mask", "d");
+            this.ddDOB.Properties.UseMaskAsDisplayFormat = true;
+            this.ddDOB.Size = new System.Drawing.Size(263, 20);
+            this.ddDOB.TabIndex = 78;
             // 
-            // dropDownButton3
+            // DrpBloodGroup
             // 
-            this.dropDownButton3.Location = new System.Drawing.Point(138, 182);
-            this.dropDownButton3.Name = "dropDownButton3";
-            this.dropDownButton3.Size = new System.Drawing.Size(263, 23);
-            this.dropDownButton3.TabIndex = 76;
+            this.DrpBloodGroup.Location = new System.Drawing.Point(138, 147);
+            this.DrpBloodGroup.Name = "DrpBloodGroup";
+            this.DrpBloodGroup.Size = new System.Drawing.Size(263, 23);
+            this.DrpBloodGroup.TabIndex = 77;
             // 
             // simpleButton1
             // 
@@ -314,14 +339,14 @@ namespace BillPlex
             this.AuthImg.TabIndex = 70;
             this.AuthImg.Text = "svgImageBox1";
             // 
-            // BankDetailsMemoEdit
+            // txtBankDetails
             // 
-            this.BankDetailsMemoEdit.Location = new System.Drawing.Point(868, 107);
-            this.BankDetailsMemoEdit.Name = "BankDetailsMemoEdit";
-            this.BankDetailsMemoEdit.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.BankDetailsMemoEdit.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.BankDetailsMemoEdit.Size = new System.Drawing.Size(171, 127);
-            this.BankDetailsMemoEdit.TabIndex = 69;
+            this.txtBankDetails.Location = new System.Drawing.Point(868, 107);
+            this.txtBankDetails.Name = "txtBankDetails";
+            this.txtBankDetails.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.txtBankDetails.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtBankDetails.Size = new System.Drawing.Size(171, 127);
+            this.txtBankDetails.TabIndex = 69;
             // 
             // labelControl25
             // 
@@ -358,13 +383,13 @@ namespace BillPlex
             this.labelControl24.TabIndex = 65;
             this.labelControl24.Text = "Active Status";
             // 
-            // PercentTxt
+            // txtPercent
             // 
-            this.PercentTxt.EditValue = "";
-            this.PercentTxt.Location = new System.Drawing.Point(525, 214);
-            this.PercentTxt.Name = "PercentTxt";
-            this.PercentTxt.Size = new System.Drawing.Size(240, 20);
-            this.PercentTxt.TabIndex = 64;
+            this.txtPercent.EditValue = "";
+            this.txtPercent.Location = new System.Drawing.Point(525, 214);
+            this.txtPercent.Name = "txtPercent";
+            this.txtPercent.Size = new System.Drawing.Size(240, 20);
+            this.txtPercent.TabIndex = 64;
             // 
             // labelControl23
             // 
@@ -376,13 +401,13 @@ namespace BillPlex
             this.labelControl23.TabIndex = 63;
             this.labelControl23.Text = "Percent";
             // 
-            // AuthPanNoTxt
+            // txtAuthPanNo
             // 
-            this.AuthPanNoTxt.EditValue = "";
-            this.AuthPanNoTxt.Location = new System.Drawing.Point(525, 179);
-            this.AuthPanNoTxt.Name = "AuthPanNoTxt";
-            this.AuthPanNoTxt.Size = new System.Drawing.Size(166, 20);
-            this.AuthPanNoTxt.TabIndex = 62;
+            this.txtAuthPanNo.EditValue = "";
+            this.txtAuthPanNo.Location = new System.Drawing.Point(525, 179);
+            this.txtAuthPanNo.Name = "txtAuthPanNo";
+            this.txtAuthPanNo.Size = new System.Drawing.Size(166, 20);
+            this.txtAuthPanNo.TabIndex = 62;
             // 
             // labelControl21
             // 
@@ -394,20 +419,20 @@ namespace BillPlex
             this.labelControl21.TabIndex = 61;
             this.labelControl21.Text = "PAN No";
             // 
-            // AuthAddressMemoEdit
+            // TxtAuthAddress
             // 
-            this.AuthAddressMemoEdit.Location = new System.Drawing.Point(525, 45);
-            this.AuthAddressMemoEdit.Name = "AuthAddressMemoEdit";
-            this.AuthAddressMemoEdit.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.AuthAddressMemoEdit.Size = new System.Drawing.Size(171, 54);
-            this.AuthAddressMemoEdit.TabIndex = 60;
+            this.TxtAuthAddress.Location = new System.Drawing.Point(525, 45);
+            this.TxtAuthAddress.Name = "TxtAuthAddress";
+            this.TxtAuthAddress.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.TxtAuthAddress.Size = new System.Drawing.Size(171, 54);
+            this.TxtAuthAddress.TabIndex = 60;
             // 
-            // AuthpinTxt
+            // txtAuthpin
             // 
-            this.AuthpinTxt.Location = new System.Drawing.Point(713, 116);
-            this.AuthpinTxt.Name = "AuthpinTxt";
-            this.AuthpinTxt.Size = new System.Drawing.Size(52, 20);
-            this.AuthpinTxt.TabIndex = 59;
+            this.txtAuthpin.Location = new System.Drawing.Point(713, 116);
+            this.txtAuthpin.Name = "txtAuthpin";
+            this.txtAuthpin.Size = new System.Drawing.Size(52, 20);
+            this.txtAuthpin.TabIndex = 59;
             // 
             // labelControl20
             // 
@@ -419,18 +444,18 @@ namespace BillPlex
             this.labelControl20.TabIndex = 58;
             this.labelControl20.Text = "Pin";
             // 
-            // AuthStateDd
+            // drpAuthState
             // 
-            this.AuthStateDd.Location = new System.Drawing.Point(525, 113);
-            this.AuthStateDd.Name = "AuthStateDd";
-            this.AuthStateDd.Size = new System.Drawing.Size(152, 23);
-            this.AuthStateDd.TabIndex = 57;
+            this.drpAuthState.Location = new System.Drawing.Point(525, 113);
+            this.drpAuthState.Name = "drpAuthState";
+            this.drpAuthState.Size = new System.Drawing.Size(152, 23);
+            this.drpAuthState.TabIndex = 57;
             // 
             // labelControl22
             // 
             this.labelControl22.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl22.Appearance.Options.UseFont = true;
-            this.labelControl22.Location = new System.Drawing.Point(450, 107);
+            this.labelControl22.Location = new System.Drawing.Point(450, 120);
             this.labelControl22.Name = "labelControl22";
             this.labelControl22.Size = new System.Drawing.Size(36, 16);
             this.labelControl22.TabIndex = 56;
@@ -478,13 +503,13 @@ namespace BillPlex
             this.AuthCopyBtn.TabIndex = 53;
             this.AuthCopyBtn.Text = "COPY";
             // 
-            // EmailIDtxt
+            // txtEmailID
             // 
-            this.EmailIDtxt.EditValue = "";
-            this.EmailIDtxt.Location = new System.Drawing.Point(138, 231);
-            this.EmailIDtxt.Name = "EmailIDtxt";
-            this.EmailIDtxt.Size = new System.Drawing.Size(194, 20);
-            this.EmailIDtxt.TabIndex = 51;
+            this.txtEmailID.EditValue = "";
+            this.txtEmailID.Location = new System.Drawing.Point(138, 231);
+            this.txtEmailID.Name = "txtEmailID";
+            this.txtEmailID.Size = new System.Drawing.Size(194, 20);
+            this.txtEmailID.TabIndex = 51;
             // 
             // panelControl6
             // 
@@ -524,12 +549,12 @@ namespace BillPlex
             this.labelControl38.TabIndex = 3;
             this.labelControl38.Text = "Father\'s / Husband Name";
             // 
-            // mobiletxt
+            // txtmobile
             // 
-            this.mobiletxt.Location = new System.Drawing.Point(525, 151);
-            this.mobiletxt.Name = "mobiletxt";
-            this.mobiletxt.Size = new System.Drawing.Size(240, 20);
-            this.mobiletxt.TabIndex = 30;
+            this.txtmobile.Location = new System.Drawing.Point(525, 151);
+            this.txtmobile.Name = "txtmobile";
+            this.txtmobile.Size = new System.Drawing.Size(240, 20);
+            this.txtmobile.TabIndex = 30;
             // 
             // labelControl27
             // 
@@ -555,7 +580,7 @@ namespace BillPlex
             // 
             this.labelControl30.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl30.Appearance.Options.UseFont = true;
-            this.labelControl30.Location = new System.Drawing.Point(5, 196);
+            this.labelControl30.Location = new System.Drawing.Point(6, 194);
             this.labelControl30.Name = "labelControl30";
             this.labelControl30.Size = new System.Drawing.Size(84, 16);
             this.labelControl30.TabIndex = 18;
@@ -565,27 +590,27 @@ namespace BillPlex
             // 
             this.labelControl31.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl31.Appearance.Options.UseFont = true;
-            this.labelControl31.Location = new System.Drawing.Point(6, 157);
+            this.labelControl31.Location = new System.Drawing.Point(6, 154);
             this.labelControl31.Name = "labelControl31";
             this.labelControl31.Size = new System.Drawing.Size(77, 16);
             this.labelControl31.TabIndex = 17;
             this.labelControl31.Text = "Blood Group";
             // 
-            // FathersTxt
+            // txtFathers
             // 
-            this.FathersTxt.EditValue = "";
-            this.FathersTxt.Location = new System.Drawing.Point(138, 70);
-            this.FathersTxt.Name = "FathersTxt";
-            this.FathersTxt.Size = new System.Drawing.Size(263, 20);
-            this.FathersTxt.TabIndex = 10;
+            this.txtFathers.EditValue = "";
+            this.txtFathers.Location = new System.Drawing.Point(138, 70);
+            this.txtFathers.Name = "txtFathers";
+            this.txtFathers.Size = new System.Drawing.Size(263, 20);
+            this.txtFathers.TabIndex = 10;
             // 
-            // Nametxt
+            // txtName
             // 
-            this.Nametxt.EditValue = "";
-            this.Nametxt.Location = new System.Drawing.Point(138, 40);
-            this.Nametxt.Name = "Nametxt";
-            this.Nametxt.Size = new System.Drawing.Size(263, 20);
-            this.Nametxt.TabIndex = 9;
+            this.txtName.EditValue = "";
+            this.txtName.Location = new System.Drawing.Point(138, 40);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(263, 20);
+            this.txtName.TabIndex = 9;
             // 
             // AddressLbl
             // 
@@ -629,48 +654,129 @@ namespace BillPlex
             this.nameLbl.TabIndex = 1;
             this.nameLbl.Text = "Name";
             // 
-            // GenderRdBtn
+            // radGender
             // 
-            this.GenderRdBtn.Location = new System.Drawing.Point(138, 103);
-            this.GenderRdBtn.Name = "GenderRdBtn";
-            this.GenderRdBtn.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.GenderRdBtn.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GenderRdBtn.Properties.Appearance.Options.UseBackColor = true;
-            this.GenderRdBtn.Properties.Appearance.Options.UseFont = true;
-            this.GenderRdBtn.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.GenderRdBtn.Properties.Columns = 2;
-            this.GenderRdBtn.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.GenderRdBtn.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            this.radGender.Location = new System.Drawing.Point(138, 103);
+            this.radGender.Name = "radGender";
+            this.radGender.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.radGender.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radGender.Properties.Appearance.Options.UseBackColor = true;
+            this.radGender.Properties.Appearance.Options.UseFont = true;
+            this.radGender.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.radGender.Properties.Columns = 2;
+            this.radGender.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.radGender.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Male", true, null, "Male"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Female", true, null, "Female")});
-            this.GenderRdBtn.Size = new System.Drawing.Size(300, 45);
-            this.GenderRdBtn.TabIndex = 47;
+            this.radGender.Properties.LookAndFeel.SkinName = "DevExpress Style";
+            this.radGender.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.radGender.Size = new System.Drawing.Size(300, 45);
+            this.radGender.TabIndex = 47;
             // 
-            // ActiveStatusRdBtn
+            // radActiveStatus
             // 
-            this.ActiveStatusRdBtn.Location = new System.Drawing.Point(887, 30);
-            this.ActiveStatusRdBtn.Name = "ActiveStatusRdBtn";
-            this.ActiveStatusRdBtn.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.ActiveStatusRdBtn.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ActiveStatusRdBtn.Properties.Appearance.Options.UseBackColor = true;
-            this.ActiveStatusRdBtn.Properties.Appearance.Options.UseFont = true;
-            this.ActiveStatusRdBtn.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.ActiveStatusRdBtn.Properties.Columns = 2;
-            this.ActiveStatusRdBtn.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.ActiveStatusRdBtn.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            this.radActiveStatus.Location = new System.Drawing.Point(887, 30);
+            this.radActiveStatus.Name = "radActiveStatus";
+            this.radActiveStatus.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.radActiveStatus.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radActiveStatus.Properties.Appearance.Options.UseBackColor = true;
+            this.radActiveStatus.Properties.Appearance.Options.UseFont = true;
+            this.radActiveStatus.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.radActiveStatus.Properties.Columns = 2;
+            this.radActiveStatus.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.radActiveStatus.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Yes", true, null, "Yes"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "No", true, null, "No")});
-            this.ActiveStatusRdBtn.Size = new System.Drawing.Size(119, 45);
-            this.ActiveStatusRdBtn.TabIndex = 66;
+            this.radActiveStatus.Properties.LookAndFeel.SkinName = "DevExpress Style";
+            this.radActiveStatus.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.radActiveStatus.Size = new System.Drawing.Size(119, 45);
+            this.radActiveStatus.TabIndex = 66;
             // 
             // panelControl7
             // 
+            this.panelControl7.Controls.Add(this.ClearBtn);
+            this.panelControl7.Controls.Add(this.DeleteBtn);
+            this.panelControl7.Controls.Add(this.UpdateBtn);
+            this.panelControl7.Controls.Add(this.EditBtn);
+            this.panelControl7.Controls.Add(this.btnAdd);
             this.panelControl7.Controls.Add(this.ExitBtn);
             this.panelControl7.Controls.Add(this.NewBtn);
             this.panelControl7.Location = new System.Drawing.Point(1351, 140);
             this.panelControl7.Name = "panelControl7";
             this.panelControl7.Size = new System.Drawing.Size(113, 307);
             this.panelControl7.TabIndex = 62;
+            // 
+            // ClearBtn
+            // 
+            this.ClearBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClearBtn.Appearance.Options.UseFont = true;
+            this.ClearBtn.Location = new System.Drawing.Point(18, 213);
+            this.ClearBtn.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.ClearBtn.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.White;
+            this.ClearBtn.LookAndFeel.SkinName = "DevExpress Style";
+            this.ClearBtn.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.ClearBtn.Name = "ClearBtn";
+            this.ClearBtn.Size = new System.Drawing.Size(81, 23);
+            this.ClearBtn.TabIndex = 64;
+            this.ClearBtn.Text = "CLEAR";
+            // 
+            // DeleteBtn
+            // 
+            this.DeleteBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteBtn.Appearance.Options.UseFont = true;
+            this.DeleteBtn.Location = new System.Drawing.Point(18, 172);
+            this.DeleteBtn.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.DeleteBtn.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.White;
+            this.DeleteBtn.LookAndFeel.SkinName = "DevExpress Style";
+            this.DeleteBtn.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.DeleteBtn.Name = "DeleteBtn";
+            this.DeleteBtn.Size = new System.Drawing.Size(81, 23);
+            this.DeleteBtn.TabIndex = 63;
+            this.DeleteBtn.Text = "DELETE";
+            // 
+            // UpdateBtn
+            // 
+            this.UpdateBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UpdateBtn.Appearance.Options.UseFont = true;
+            this.UpdateBtn.Location = new System.Drawing.Point(18, 131);
+            this.UpdateBtn.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.UpdateBtn.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.White;
+            this.UpdateBtn.LookAndFeel.SkinName = "DevExpress Style";
+            this.UpdateBtn.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.UpdateBtn.Name = "UpdateBtn";
+            this.UpdateBtn.Size = new System.Drawing.Size(81, 23);
+            this.UpdateBtn.TabIndex = 62;
+            this.UpdateBtn.Text = "UPDATE";
+            this.UpdateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
+            // 
+            // EditBtn
+            // 
+            this.EditBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditBtn.Appearance.Options.UseFont = true;
+            this.EditBtn.Location = new System.Drawing.Point(18, 85);
+            this.EditBtn.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.EditBtn.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.White;
+            this.EditBtn.LookAndFeel.SkinName = "DevExpress Style";
+            this.EditBtn.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.EditBtn.Name = "EditBtn";
+            this.EditBtn.Size = new System.Drawing.Size(81, 23);
+            this.EditBtn.TabIndex = 61;
+            this.EditBtn.Text = "EDIT";
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Appearance.Options.UseFont = true;
+            this.btnAdd.Location = new System.Drawing.Point(18, 40);
+            this.btnAdd.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btnAdd.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.White;
+            this.btnAdd.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnAdd.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(81, 23);
+            this.btnAdd.TabIndex = 60;
+            this.btnAdd.Text = "ADD";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // ExitBtn
             // 
@@ -702,110 +808,147 @@ namespace BillPlex
             // 
             // panelControl3
             // 
-            this.panelControl3.Controls.Add(this.CstTxt);
-            this.panelControl3.Controls.Add(this.SsiTxt);
-            this.panelControl3.Controls.Add(this.PanNotxt);
-            this.panelControl3.Controls.Add(this.tanTxt);
-            this.panelControl3.Controls.Add(this.LicenseTxt);
-            this.panelControl3.Controls.Add(this.TinTxt);
+            this.panelControl3.Controls.Add(this.ddPfDate);
+            this.panelControl3.Controls.Add(this.ddEsiCode);
+            this.panelControl3.Controls.Add(this.drpDirector);
+            this.panelControl3.Controls.Add(this.txtCst);
+            this.panelControl3.Controls.Add(this.txtSsi);
+            this.panelControl3.Controls.Add(this.txtPanNo);
+            this.panelControl3.Controls.Add(this.txtTan);
+            this.panelControl3.Controls.Add(this.txtTin);
             this.panelControl3.Controls.Add(this.LicenseLbl);
             this.panelControl3.Controls.Add(this.TanLbl);
             this.panelControl3.Controls.Add(this.PanLbl);
             this.panelControl3.Controls.Add(this.SsiLbl);
             this.panelControl3.Controls.Add(this.CstLbl);
             this.panelControl3.Controls.Add(this.TinLbl);
-            this.panelControl3.Controls.Add(this.FactoryActTxt);
+            this.panelControl3.Controls.Add(this.txtFactoryAct);
             this.panelControl3.Controls.Add(this.labelControl19);
-            this.panelControl3.Controls.Add(this.EsiDateDd);
-            this.panelControl3.Controls.Add(this.EsiCodeTxt);
+            this.panelControl3.Controls.Add(this.txtEsiCode);
             this.panelControl3.Controls.Add(this.labelControl18);
             this.panelControl3.Controls.Add(this.labelControl17);
-            this.panelControl3.Controls.Add(this.PfDateDd);
             this.panelControl3.Controls.Add(this.labelControl16);
-            this.panelControl3.Controls.Add(this.PFCodeTxt);
+            this.panelControl3.Controls.Add(this.txtPFCode);
             this.panelControl3.Controls.Add(this.labelControl15);
             this.panelControl3.Controls.Add(this.labelControl14);
-            this.panelControl3.Controls.Add(this.WebsiteTxt);
+            this.panelControl3.Controls.Add(this.txtWebsite);
             this.panelControl3.Controls.Add(this.labelControl13);
-            this.panelControl3.Controls.Add(this.Emailtxt);
+            this.panelControl3.Controls.Add(this.txtEmail);
             this.panelControl3.Controls.Add(this.labelControl12);
-            this.panelControl3.Controls.Add(this.Officetxt);
+            this.panelControl3.Controls.Add(this.txtClientCompanyPhone);
             this.panelControl3.Controls.Add(this.OffPinTxt);
             this.panelControl3.Controls.Add(this.labelControl9);
-            this.panelControl3.Controls.Add(this.StartingDateDdBtn);
             this.panelControl3.Controls.Add(this.labelControl10);
-            this.panelControl3.Controls.Add(this.BusinessRadioGroup);
+            this.panelControl3.Controls.Add(this.radBusinessNature);
             this.panelControl3.Controls.Add(this.labelControl11);
-            this.panelControl3.Controls.Add(this.Pintxt);
+            this.panelControl3.Controls.Add(this.txtPin);
             this.panelControl3.Controls.Add(this.PinLbl);
-            this.panelControl3.Controls.Add(this.StateDd);
+            this.panelControl3.Controls.Add(this.drpState);
             this.panelControl3.Controls.Add(this.StateLbl);
-            this.panelControl3.Controls.Add(this.OffAddressMemoEdit);
+            this.panelControl3.Controls.Add(this.txtOffAddress);
             this.panelControl3.Controls.Add(this.OfficeAddressTxt);
-            this.panelControl3.Controls.Add(this.CompanyNameTxt);
-            this.panelControl3.Controls.Add(this.CompanyCodeTxt);
+            this.panelControl3.Controls.Add(this.txtCompanyName);
+            this.panelControl3.Controls.Add(this.txtCompanyCode);
             this.panelControl3.Controls.Add(this.labelControl8);
             this.panelControl3.Controls.Add(this.labelControl7);
             this.panelControl3.Controls.Add(this.labelControl5);
             this.panelControl3.Controls.Add(this.labelControl6);
-            this.panelControl3.Controls.Add(this.DirectorDd);
-            this.panelControl3.Controls.Add(this.MainCompanyDd);
+            this.panelControl3.Controls.Add(this.drpMainCompany);
             this.panelControl3.Controls.Add(this.labelControl4);
             this.panelControl3.Controls.Add(this.labelControl2);
             this.panelControl3.Controls.Add(this.panelControl5);
-            this.panelControl3.Controls.Add(this.PfTypeRdBtn);
+            this.panelControl3.Controls.Add(this.radPfType);
+            this.panelControl3.Controls.Add(this.LicenseTxt);
+            this.panelControl3.Controls.Add(this.ddStartingDate);
             this.panelControl3.Location = new System.Drawing.Point(21, 6);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(1230, 350);
             this.panelControl3.TabIndex = 0;
             // 
-            // CstTxt
+            // ddPfDate
             // 
-            this.CstTxt.EditValue = "";
-            this.CstTxt.Location = new System.Drawing.Point(963, 131);
-            this.CstTxt.Name = "CstTxt";
-            this.CstTxt.Size = new System.Drawing.Size(207, 20);
-            this.CstTxt.TabIndex = 60;
+            this.ddPfDate.EditValue = null;
+            this.ddPfDate.Location = new System.Drawing.Point(556, 207);
+            this.ddPfDate.Name = "ddPfDate";
+            this.ddPfDate.Properties.BeepOnError = false;
+            this.ddPfDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ddPfDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ddPfDate.Properties.DisplayFormat.FormatString = "";
+            this.ddPfDate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.ddPfDate.Properties.EditFormat.FormatString = "";
+            this.ddPfDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.ddPfDate.Properties.MaskSettings.Set("mask", "d");
+            this.ddPfDate.Properties.UseMaskAsDisplayFormat = true;
+            this.ddPfDate.Size = new System.Drawing.Size(207, 20);
+            this.ddPfDate.TabIndex = 64;
             // 
-            // SsiTxt
+            // ddEsiCode
             // 
-            this.SsiTxt.EditValue = "";
-            this.SsiTxt.Location = new System.Drawing.Point(963, 167);
-            this.SsiTxt.Name = "SsiTxt";
-            this.SsiTxt.Size = new System.Drawing.Size(207, 20);
-            this.SsiTxt.TabIndex = 59;
+            this.ddEsiCode.EditValue = null;
+            this.ddEsiCode.Location = new System.Drawing.Point(556, 313);
+            this.ddEsiCode.Name = "ddEsiCode";
+            this.ddEsiCode.Properties.BeepOnError = false;
+            this.ddEsiCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ddEsiCode.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ddEsiCode.Properties.DisplayFormat.FormatString = "";
+            this.ddEsiCode.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.ddEsiCode.Properties.EditFormat.FormatString = "";
+            this.ddEsiCode.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.ddEsiCode.Properties.MaskSettings.Set("mask", "d");
+            this.ddEsiCode.Properties.UseMaskAsDisplayFormat = true;
+            this.ddEsiCode.Size = new System.Drawing.Size(207, 20);
+            this.ddEsiCode.TabIndex = 63;
             // 
-            // PanNotxt
+            // drpDirector
             // 
-            this.PanNotxt.EditValue = "";
-            this.PanNotxt.Location = new System.Drawing.Point(963, 202);
-            this.PanNotxt.Name = "PanNotxt";
-            this.PanNotxt.Size = new System.Drawing.Size(207, 20);
-            this.PanNotxt.TabIndex = 58;
+            this.drpDirector.Location = new System.Drawing.Point(181, 64);
+            this.drpDirector.Name = "drpDirector";
+            this.drpDirector.Size = new System.Drawing.Size(220, 23);
+            this.drpDirector.TabIndex = 61;
             // 
-            // tanTxt
+            // txtCst
             // 
-            this.tanTxt.EditValue = "";
-            this.tanTxt.Location = new System.Drawing.Point(963, 234);
-            this.tanTxt.Name = "tanTxt";
-            this.tanTxt.Size = new System.Drawing.Size(207, 20);
-            this.tanTxt.TabIndex = 57;
+            this.txtCst.EditValue = "";
+            this.txtCst.Location = new System.Drawing.Point(963, 131);
+            this.txtCst.Name = "txtCst";
+            this.txtCst.Size = new System.Drawing.Size(207, 20);
+            this.txtCst.TabIndex = 60;
             // 
-            // LicenseTxt
+            // txtSsi
             // 
-            this.LicenseTxt.EditValue = "";
-            this.LicenseTxt.Location = new System.Drawing.Point(963, 271);
-            this.LicenseTxt.Name = "LicenseTxt";
-            this.LicenseTxt.Size = new System.Drawing.Size(207, 20);
-            this.LicenseTxt.TabIndex = 56;
+            this.txtSsi.EditValue = "";
+            this.txtSsi.Location = new System.Drawing.Point(963, 167);
+            this.txtSsi.Name = "txtSsi";
+            this.txtSsi.Size = new System.Drawing.Size(207, 20);
+            this.txtSsi.TabIndex = 59;
             // 
-            // TinTxt
+            // txtPanNo
             // 
-            this.TinTxt.EditValue = "";
-            this.TinTxt.Location = new System.Drawing.Point(963, 88);
-            this.TinTxt.Name = "TinTxt";
-            this.TinTxt.Size = new System.Drawing.Size(207, 20);
-            this.TinTxt.TabIndex = 55;
+            this.txtPanNo.EditValue = "";
+            this.txtPanNo.Location = new System.Drawing.Point(963, 202);
+            this.txtPanNo.Name = "txtPanNo";
+            this.txtPanNo.Size = new System.Drawing.Size(207, 20);
+            this.txtPanNo.TabIndex = 58;
+            // 
+            // txtTan
+            // 
+            this.txtTan.EditValue = "";
+            this.txtTan.Location = new System.Drawing.Point(963, 234);
+            this.txtTan.Name = "txtTan";
+            this.txtTan.Size = new System.Drawing.Size(207, 20);
+            this.txtTan.TabIndex = 57;
+            // 
+            // txtTin
+            // 
+            this.txtTin.EditValue = "";
+            this.txtTin.Location = new System.Drawing.Point(963, 88);
+            this.txtTin.Name = "txtTin";
+            this.txtTin.Size = new System.Drawing.Size(207, 20);
+            this.txtTin.TabIndex = 55;
             // 
             // LicenseLbl
             // 
@@ -867,12 +1010,12 @@ namespace BillPlex
             this.TinLbl.TabIndex = 49;
             this.TinLbl.Text = "TIN No";
             // 
-            // FactoryActTxt
+            // txtFactoryAct
             // 
-            this.FactoryActTxt.Location = new System.Drawing.Point(963, 49);
-            this.FactoryActTxt.Name = "FactoryActTxt";
-            this.FactoryActTxt.Size = new System.Drawing.Size(207, 20);
-            this.FactoryActTxt.TabIndex = 48;
+            this.txtFactoryAct.Location = new System.Drawing.Point(963, 49);
+            this.txtFactoryAct.Name = "txtFactoryAct";
+            this.txtFactoryAct.Size = new System.Drawing.Size(207, 20);
+            this.txtFactoryAct.TabIndex = 48;
             // 
             // labelControl19
             // 
@@ -884,20 +1027,13 @@ namespace BillPlex
             this.labelControl19.TabIndex = 47;
             this.labelControl19.Text = "Factory Act No";
             // 
-            // EsiDateDd
+            // txtEsiCode
             // 
-            this.EsiDateDd.Location = new System.Drawing.Point(556, 309);
-            this.EsiDateDd.Name = "EsiDateDd";
-            this.EsiDateDd.Size = new System.Drawing.Size(207, 23);
-            this.EsiDateDd.TabIndex = 46;
-            // 
-            // EsiCodeTxt
-            // 
-            this.EsiCodeTxt.EditValue = "";
-            this.EsiCodeTxt.Location = new System.Drawing.Point(556, 248);
-            this.EsiCodeTxt.Name = "EsiCodeTxt";
-            this.EsiCodeTxt.Size = new System.Drawing.Size(207, 20);
-            this.EsiCodeTxt.TabIndex = 45;
+            this.txtEsiCode.EditValue = "";
+            this.txtEsiCode.Location = new System.Drawing.Point(556, 248);
+            this.txtEsiCode.Name = "txtEsiCode";
+            this.txtEsiCode.Size = new System.Drawing.Size(207, 20);
+            this.txtEsiCode.TabIndex = 45;
             // 
             // labelControl18
             // 
@@ -919,13 +1055,6 @@ namespace BillPlex
             this.labelControl17.TabIndex = 43;
             this.labelControl17.Text = "ESI Date";
             // 
-            // PfDateDd
-            // 
-            this.PfDateDd.Location = new System.Drawing.Point(556, 208);
-            this.PfDateDd.Name = "PfDateDd";
-            this.PfDateDd.Size = new System.Drawing.Size(207, 23);
-            this.PfDateDd.TabIndex = 42;
-            // 
             // labelControl16
             // 
             this.labelControl16.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -936,13 +1065,13 @@ namespace BillPlex
             this.labelControl16.TabIndex = 41;
             this.labelControl16.Text = "PF Date";
             // 
-            // PFCodeTxt
+            // txtPFCode
             // 
-            this.PFCodeTxt.EditValue = "";
-            this.PFCodeTxt.Location = new System.Drawing.Point(556, 170);
-            this.PFCodeTxt.Name = "PFCodeTxt";
-            this.PFCodeTxt.Size = new System.Drawing.Size(207, 20);
-            this.PFCodeTxt.TabIndex = 40;
+            this.txtPFCode.EditValue = "";
+            this.txtPFCode.Location = new System.Drawing.Point(556, 170);
+            this.txtPFCode.Name = "txtPFCode";
+            this.txtPFCode.Size = new System.Drawing.Size(207, 20);
+            this.txtPFCode.TabIndex = 40;
             // 
             // labelControl15
             // 
@@ -964,13 +1093,13 @@ namespace BillPlex
             this.labelControl14.TabIndex = 37;
             this.labelControl14.Text = "PF Type";
             // 
-            // WebsiteTxt
+            // txtWebsite
             // 
-            this.WebsiteTxt.EditValue = "";
-            this.WebsiteTxt.Location = new System.Drawing.Point(556, 104);
-            this.WebsiteTxt.Name = "WebsiteTxt";
-            this.WebsiteTxt.Size = new System.Drawing.Size(207, 20);
-            this.WebsiteTxt.TabIndex = 36;
+            this.txtWebsite.EditValue = "";
+            this.txtWebsite.Location = new System.Drawing.Point(556, 104);
+            this.txtWebsite.Name = "txtWebsite";
+            this.txtWebsite.Size = new System.Drawing.Size(207, 20);
+            this.txtWebsite.TabIndex = 36;
             // 
             // labelControl13
             // 
@@ -982,13 +1111,13 @@ namespace BillPlex
             this.labelControl13.TabIndex = 35;
             this.labelControl13.Text = "Website";
             // 
-            // Emailtxt
+            // txtEmail
             // 
-            this.Emailtxt.EditValue = "";
-            this.Emailtxt.Location = new System.Drawing.Point(556, 78);
-            this.Emailtxt.Name = "Emailtxt";
-            this.Emailtxt.Size = new System.Drawing.Size(207, 20);
-            this.Emailtxt.TabIndex = 34;
+            this.txtEmail.EditValue = "";
+            this.txtEmail.Location = new System.Drawing.Point(556, 78);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(207, 20);
+            this.txtEmail.TabIndex = 34;
             // 
             // labelControl12
             // 
@@ -1000,13 +1129,13 @@ namespace BillPlex
             this.labelControl12.TabIndex = 33;
             this.labelControl12.Text = "Email ID";
             // 
-            // Officetxt
+            // txtClientCompanyPhone
             // 
-            this.Officetxt.EditValue = "";
-            this.Officetxt.Location = new System.Drawing.Point(609, 49);
-            this.Officetxt.Name = "Officetxt";
-            this.Officetxt.Size = new System.Drawing.Size(154, 20);
-            this.Officetxt.TabIndex = 32;
+            this.txtClientCompanyPhone.EditValue = "";
+            this.txtClientCompanyPhone.Location = new System.Drawing.Point(609, 49);
+            this.txtClientCompanyPhone.Name = "txtClientCompanyPhone";
+            this.txtClientCompanyPhone.Size = new System.Drawing.Size(154, 20);
+            this.txtClientCompanyPhone.TabIndex = 32;
             // 
             // OffPinTxt
             // 
@@ -1026,13 +1155,6 @@ namespace BillPlex
             this.labelControl9.TabIndex = 30;
             this.labelControl9.Text = "Phone No";
             // 
-            // StartingDateDdBtn
-            // 
-            this.StartingDateDdBtn.Location = new System.Drawing.Point(116, 313);
-            this.StartingDateDdBtn.Name = "StartingDateDdBtn";
-            this.StartingDateDdBtn.Size = new System.Drawing.Size(285, 23);
-            this.StartingDateDdBtn.TabIndex = 29;
-            // 
             // labelControl10
             // 
             this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1043,24 +1165,28 @@ namespace BillPlex
             this.labelControl10.TabIndex = 28;
             this.labelControl10.Text = "Starting Date";
             // 
-            // BusinessRadioGroup
+            // radBusinessNature
             // 
-            this.BusinessRadioGroup.Location = new System.Drawing.Point(116, 252);
-            this.BusinessRadioGroup.Name = "BusinessRadioGroup";
-            this.BusinessRadioGroup.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.BusinessRadioGroup.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BusinessRadioGroup.Properties.Appearance.Options.UseBackColor = true;
-            this.BusinessRadioGroup.Properties.Appearance.Options.UseFont = true;
-            this.BusinessRadioGroup.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.BusinessRadioGroup.Properties.Columns = 2;
-            this.BusinessRadioGroup.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.BusinessRadioGroup.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            this.radBusinessNature.Location = new System.Drawing.Point(116, 252);
+            this.radBusinessNature.Name = "radBusinessNature";
+            this.radBusinessNature.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.radBusinessNature.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radBusinessNature.Properties.Appearance.Options.UseBackColor = true;
+            this.radBusinessNature.Properties.Appearance.Options.UseFont = true;
+            this.radBusinessNature.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.radBusinessNature.Properties.Columns = 2;
+            this.radBusinessNature.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.radBusinessNature.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Manufacture", true, null, "Manufacture"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Traders", true, null, "Traders"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Job Work", true, null, "Job Work"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Others", true, null, "Others")});
-            this.BusinessRadioGroup.Size = new System.Drawing.Size(276, 59);
-            this.BusinessRadioGroup.TabIndex = 27;
+            this.radBusinessNature.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.radBusinessNature.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightBlue;
+            this.radBusinessNature.Properties.LookAndFeel.SkinName = "DevExpress Style";
+            this.radBusinessNature.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.radBusinessNature.Size = new System.Drawing.Size(276, 59);
+            this.radBusinessNature.TabIndex = 27;
             // 
             // labelControl11
             // 
@@ -1072,12 +1198,12 @@ namespace BillPlex
             this.labelControl11.TabIndex = 26;
             this.labelControl11.Text = "Business Nature";
             // 
-            // Pintxt
+            // txtPin
             // 
-            this.Pintxt.Location = new System.Drawing.Point(315, 229);
-            this.Pintxt.Name = "Pintxt";
-            this.Pintxt.Size = new System.Drawing.Size(86, 20);
-            this.Pintxt.TabIndex = 20;
+            this.txtPin.Location = new System.Drawing.Point(315, 229);
+            this.txtPin.Name = "txtPin";
+            this.txtPin.Size = new System.Drawing.Size(86, 20);
+            this.txtPin.TabIndex = 20;
             // 
             // PinLbl
             // 
@@ -1089,12 +1215,12 @@ namespace BillPlex
             this.PinLbl.TabIndex = 19;
             this.PinLbl.Text = "Pin";
             // 
-            // StateDd
+            // drpState
             // 
-            this.StateDd.Location = new System.Drawing.Point(116, 226);
-            this.StateDd.Name = "StateDd";
-            this.StateDd.Size = new System.Drawing.Size(168, 23);
-            this.StateDd.TabIndex = 18;
+            this.drpState.Location = new System.Drawing.Point(116, 226);
+            this.drpState.Name = "drpState";
+            this.drpState.Size = new System.Drawing.Size(168, 23);
+            this.drpState.TabIndex = 18;
             // 
             // StateLbl
             // 
@@ -1106,13 +1232,13 @@ namespace BillPlex
             this.StateLbl.TabIndex = 17;
             this.StateLbl.Text = "State";
             // 
-            // OffAddressMemoEdit
+            // txtOffAddress
             // 
-            this.OffAddressMemoEdit.Location = new System.Drawing.Point(116, 155);
-            this.OffAddressMemoEdit.Name = "OffAddressMemoEdit";
-            this.OffAddressMemoEdit.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.OffAddressMemoEdit.Size = new System.Drawing.Size(285, 54);
-            this.OffAddressMemoEdit.TabIndex = 16;
+            this.txtOffAddress.Location = new System.Drawing.Point(116, 155);
+            this.txtOffAddress.Name = "txtOffAddress";
+            this.txtOffAddress.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.txtOffAddress.Size = new System.Drawing.Size(285, 54);
+            this.txtOffAddress.TabIndex = 16;
             // 
             // OfficeAddressTxt
             // 
@@ -1124,19 +1250,19 @@ namespace BillPlex
             this.OfficeAddressTxt.TabIndex = 15;
             this.OfficeAddressTxt.Text = "Office Address";
             // 
-            // CompanyNameTxt
+            // txtCompanyName
             // 
-            this.CompanyNameTxt.Location = new System.Drawing.Point(177, 121);
-            this.CompanyNameTxt.Name = "CompanyNameTxt";
-            this.CompanyNameTxt.Size = new System.Drawing.Size(224, 20);
-            this.CompanyNameTxt.TabIndex = 14;
+            this.txtCompanyName.Location = new System.Drawing.Point(177, 121);
+            this.txtCompanyName.Name = "txtCompanyName";
+            this.txtCompanyName.Size = new System.Drawing.Size(224, 20);
+            this.txtCompanyName.TabIndex = 14;
             // 
-            // CompanyCodeTxt
+            // txtCompanyCode
             // 
-            this.CompanyCodeTxt.Location = new System.Drawing.Point(6, 119);
-            this.CompanyCodeTxt.Name = "CompanyCodeTxt";
-            this.CompanyCodeTxt.Size = new System.Drawing.Size(151, 20);
-            this.CompanyCodeTxt.TabIndex = 13;
+            this.txtCompanyCode.Location = new System.Drawing.Point(6, 119);
+            this.txtCompanyCode.Name = "txtCompanyCode";
+            this.txtCompanyCode.Size = new System.Drawing.Size(151, 20);
+            this.txtCompanyCode.TabIndex = 13;
             // 
             // labelControl8
             // 
@@ -1182,19 +1308,13 @@ namespace BillPlex
             this.labelControl6.TabIndex = 7;
             this.labelControl6.Text = "Company Code";
             // 
-            // DirectorDd
+            // drpMainCompany
             // 
-            this.DirectorDd.Location = new System.Drawing.Point(177, 65);
-            this.DirectorDd.Name = "DirectorDd";
-            this.DirectorDd.Size = new System.Drawing.Size(224, 23);
-            this.DirectorDd.TabIndex = 6;
-            // 
-            // MainCompanyDd
-            // 
-            this.MainCompanyDd.Location = new System.Drawing.Point(6, 65);
-            this.MainCompanyDd.Name = "MainCompanyDd";
-            this.MainCompanyDd.Size = new System.Drawing.Size(151, 23);
-            this.MainCompanyDd.TabIndex = 5;
+            this.drpMainCompany.Location = new System.Drawing.Point(6, 65);
+            this.drpMainCompany.Name = "drpMainCompany";
+            this.drpMainCompany.Size = new System.Drawing.Size(151, 23);
+            this.drpMainCompany.TabIndex = 5;
+            this.drpMainCompany.Click += new System.EventHandler(this.MainCompanyDd_Click);
             // 
             // labelControl4
             // 
@@ -1241,22 +1361,51 @@ namespace BillPlex
             this.labelControl3.TabIndex = 0;
             this.labelControl3.Text = "Client Company Info";
             // 
-            // PfTypeRdBtn
+            // radPfType
             // 
-            this.PfTypeRdBtn.Location = new System.Drawing.Point(554, 128);
-            this.PfTypeRdBtn.Name = "PfTypeRdBtn";
-            this.PfTypeRdBtn.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.PfTypeRdBtn.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PfTypeRdBtn.Properties.Appearance.Options.UseBackColor = true;
-            this.PfTypeRdBtn.Properties.Appearance.Options.UseFont = true;
-            this.PfTypeRdBtn.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.PfTypeRdBtn.Properties.Columns = 2;
-            this.PfTypeRdBtn.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.PfTypeRdBtn.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            this.radPfType.Location = new System.Drawing.Point(554, 128);
+            this.radPfType.Name = "radPfType";
+            this.radPfType.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.radPfType.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radPfType.Properties.Appearance.Options.UseBackColor = true;
+            this.radPfType.Properties.Appearance.Options.UseFont = true;
+            this.radPfType.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.radPfType.Properties.Columns = 2;
+            this.radPfType.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.radPfType.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Category 1", true, null, "Category 1"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Category 2", true, null, "Category 2")});
-            this.PfTypeRdBtn.Size = new System.Drawing.Size(249, 37);
-            this.PfTypeRdBtn.TabIndex = 38;
+            this.radPfType.Properties.LookAndFeel.SkinName = "DevExpress Style";
+            this.radPfType.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.radPfType.Size = new System.Drawing.Size(249, 37);
+            this.radPfType.TabIndex = 38;
+            // 
+            // LicenseTxt
+            // 
+            this.LicenseTxt.EditValue = "";
+            this.LicenseTxt.Location = new System.Drawing.Point(963, 271);
+            this.LicenseTxt.Name = "LicenseTxt";
+            this.LicenseTxt.Size = new System.Drawing.Size(207, 20);
+            this.LicenseTxt.TabIndex = 56;
+            // 
+            // ddStartingDate
+            // 
+            this.ddStartingDate.EditValue = null;
+            this.ddStartingDate.Location = new System.Drawing.Point(116, 316);
+            this.ddStartingDate.Name = "ddStartingDate";
+            this.ddStartingDate.Properties.BeepOnError = false;
+            this.ddStartingDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ddStartingDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ddStartingDate.Properties.DisplayFormat.FormatString = "";
+            this.ddStartingDate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.ddStartingDate.Properties.EditFormat.FormatString = "";
+            this.ddStartingDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.ddStartingDate.Properties.MaskSettings.Set("mask", "d");
+            this.ddStartingDate.Properties.UseMaskAsDisplayFormat = true;
+            this.ddStartingDate.Size = new System.Drawing.Size(285, 20);
+            this.ddStartingDate.TabIndex = 62;
             // 
             // FrmClientCompanyInfo
             // 
@@ -1277,48 +1426,56 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
             this.panelControl4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ddDOB.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddDOB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AuthImg)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BankDetailsMemoEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PercentTxt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AuthPanNoTxt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AuthAddressMemoEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AuthpinTxt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EmailIDtxt.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBankDetails.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPercent.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAuthPanNo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtAuthAddress.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAuthpin.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmailID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
             this.panelControl6.ResumeLayout(false);
             this.panelControl6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mobiletxt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FathersTxt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Nametxt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GenderRdBtn.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ActiveStatusRdBtn.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtmobile.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFathers.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radGender.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radActiveStatus.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).EndInit();
             this.panelControl7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.panelControl3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CstTxt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SsiTxt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PanNotxt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tanTxt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LicenseTxt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TinTxt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FactoryActTxt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EsiCodeTxt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PFCodeTxt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.WebsiteTxt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Emailtxt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Officetxt.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddPfDate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddPfDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddEsiCode.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddEsiCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCst.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSsi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPanNo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTan.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTin.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFactoryAct.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEsiCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPFCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtWebsite.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtClientCompanyPhone.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OffPinTxt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BusinessRadioGroup.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pintxt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OffAddressMemoEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CompanyNameTxt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CompanyCodeTxt.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radBusinessNature.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPin.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOffAddress.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCompanyName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCompanyCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
             this.panelControl5.ResumeLayout(false);
             this.panelControl5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PfTypeRdBtn.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radPfType.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LicenseTxt.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddStartingDate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddStartingDate.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1333,49 +1490,44 @@ namespace BillPlex
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.DropDownButton DirectorDd;
-        private DevExpress.XtraEditors.DropDownButton MainCompanyDd;
+        private DevExpress.XtraEditors.DropDownButton drpMainCompany;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.LabelControl labelControl7;
-        private DevExpress.XtraEditors.TextEdit Pintxt;
+        private DevExpress.XtraEditors.TextEdit txtPin;
         private DevExpress.XtraEditors.LabelControl PinLbl;
-        private DevExpress.XtraEditors.DropDownButton StateDd;
+        private DevExpress.XtraEditors.DropDownButton drpState;
         private DevExpress.XtraEditors.LabelControl StateLbl;
-        private DevExpress.XtraEditors.MemoEdit OffAddressMemoEdit;
+        private DevExpress.XtraEditors.MemoEdit txtOffAddress;
         private DevExpress.XtraEditors.LabelControl OfficeAddressTxt;
-        private DevExpress.XtraEditors.TextEdit CompanyNameTxt;
-        private DevExpress.XtraEditors.TextEdit CompanyCodeTxt;
-        private DevExpress.XtraEditors.RadioGroup BusinessRadioGroup;
+        private DevExpress.XtraEditors.TextEdit txtCompanyName;
+        private DevExpress.XtraEditors.TextEdit txtCompanyCode;
+        private DevExpress.XtraEditors.RadioGroup radBusinessNature;
         private DevExpress.XtraEditors.LabelControl labelControl11;
-        private DevExpress.XtraEditors.DropDownButton StartingDateDdBtn;
         private DevExpress.XtraEditors.LabelControl labelControl10;
-        private DevExpress.XtraEditors.TextEdit Officetxt;
+        private DevExpress.XtraEditors.TextEdit txtClientCompanyPhone;
         private DevExpress.XtraEditors.TextEdit OffPinTxt;
         private DevExpress.XtraEditors.LabelControl labelControl9;
-        private DevExpress.XtraEditors.TextEdit Emailtxt;
+        private DevExpress.XtraEditors.TextEdit txtEmail;
         private DevExpress.XtraEditors.LabelControl labelControl12;
-        private DevExpress.XtraEditors.TextEdit WebsiteTxt;
+        private DevExpress.XtraEditors.TextEdit txtWebsite;
         private DevExpress.XtraEditors.LabelControl labelControl13;
         private DevExpress.XtraEditors.LabelControl labelControl14;
-        private DevExpress.XtraEditors.DropDownButton EsiDateDd;
-        private DevExpress.XtraEditors.TextEdit EsiCodeTxt;
+        private DevExpress.XtraEditors.TextEdit txtEsiCode;
         private DevExpress.XtraEditors.LabelControl labelControl18;
         private DevExpress.XtraEditors.LabelControl labelControl17;
-        private DevExpress.XtraEditors.DropDownButton PfDateDd;
         private DevExpress.XtraEditors.LabelControl labelControl16;
-        private DevExpress.XtraEditors.TextEdit PFCodeTxt;
+        private DevExpress.XtraEditors.TextEdit txtPFCode;
         private DevExpress.XtraEditors.LabelControl labelControl15;
-        private DevExpress.XtraEditors.RadioGroup PfTypeRdBtn;
-        private DevExpress.XtraEditors.TextEdit FactoryActTxt;
+        private DevExpress.XtraEditors.RadioGroup radPfType;
+        private DevExpress.XtraEditors.TextEdit txtFactoryAct;
         private DevExpress.XtraEditors.LabelControl labelControl19;
-        private DevExpress.XtraEditors.TextEdit CstTxt;
-        private DevExpress.XtraEditors.TextEdit SsiTxt;
-        private DevExpress.XtraEditors.TextEdit PanNotxt;
-        private DevExpress.XtraEditors.TextEdit tanTxt;
-        private DevExpress.XtraEditors.TextEdit LicenseTxt;
-        private DevExpress.XtraEditors.TextEdit TinTxt;
+        private DevExpress.XtraEditors.TextEdit txtCst;
+        private DevExpress.XtraEditors.TextEdit txtSsi;
+        private DevExpress.XtraEditors.TextEdit txtPanNo;
+        private DevExpress.XtraEditors.TextEdit txtTan;
+        private DevExpress.XtraEditors.TextEdit txtTin;
         private DevExpress.XtraEditors.LabelControl LicenseLbl;
         private DevExpress.XtraEditors.LabelControl TanLbl;
         private DevExpress.XtraEditors.LabelControl PanLbl;
@@ -1388,42 +1540,52 @@ namespace BillPlex
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraEditors.SimpleButton AuthAddClearBtn;
         private DevExpress.XtraEditors.SimpleButton AuthCopyBtn;
-        private DevExpress.XtraEditors.TextEdit EmailIDtxt;
-        private DevExpress.XtraEditors.RadioGroup GenderRdBtn;
+        private DevExpress.XtraEditors.TextEdit txtEmailID;
+        private DevExpress.XtraEditors.RadioGroup radGender;
         private DevExpress.XtraEditors.PanelControl panelControl6;
         private DevExpress.XtraEditors.LabelControl AuthorisedLbl;
         private DevExpress.XtraEditors.LabelControl labelControl38;
-        private DevExpress.XtraEditors.TextEdit mobiletxt;
+        private DevExpress.XtraEditors.TextEdit txtmobile;
         private DevExpress.XtraEditors.LabelControl labelControl27;
         private DevExpress.XtraEditors.LabelControl labelControl29;
         private DevExpress.XtraEditors.LabelControl labelControl30;
         private DevExpress.XtraEditors.LabelControl labelControl31;
-        private DevExpress.XtraEditors.TextEdit FathersTxt;
-        private DevExpress.XtraEditors.TextEdit Nametxt;
+        private DevExpress.XtraEditors.TextEdit txtFathers;
+        private DevExpress.XtraEditors.TextEdit txtName;
         private DevExpress.XtraEditors.LabelControl AddressLbl;
         private DevExpress.XtraEditors.LabelControl GenderLbl;
         private DevExpress.XtraEditors.LabelControl labelControl39;
         private DevExpress.XtraEditors.LabelControl nameLbl;
-        private DevExpress.XtraEditors.TextEdit PercentTxt;
+        private DevExpress.XtraEditors.TextEdit txtPercent;
         private DevExpress.XtraEditors.LabelControl labelControl23;
-        private DevExpress.XtraEditors.TextEdit AuthPanNoTxt;
+        private DevExpress.XtraEditors.TextEdit txtAuthPanNo;
         private DevExpress.XtraEditors.LabelControl labelControl21;
-        private DevExpress.XtraEditors.MemoEdit AuthAddressMemoEdit;
-        private DevExpress.XtraEditors.TextEdit AuthpinTxt;
+        private DevExpress.XtraEditors.TextEdit txtAuthpin;
         private DevExpress.XtraEditors.LabelControl labelControl20;
-        private DevExpress.XtraEditors.DropDownButton AuthStateDd;
+        private DevExpress.XtraEditors.DropDownButton drpAuthState;
         private DevExpress.XtraEditors.LabelControl labelControl22;
         private DevExpress.XtraEditors.SimpleButton EmailCpyBtn;
         private DevExpress.XtraEditors.SimpleButton AuthClearImageBtn;
         private DevExpress.XtraEditors.LabelControl labelControl26;
         private DevExpress.XtraEditors.SvgImageBox AuthImg;
-        private DevExpress.XtraEditors.MemoEdit BankDetailsMemoEdit;
+        private DevExpress.XtraEditors.MemoEdit txtBankDetails;
         private DevExpress.XtraEditors.LabelControl labelControl25;
         private DevExpress.XtraEditors.SimpleButton InsertBankInfoBtn;
         private DevExpress.XtraEditors.LabelControl labelControl24;
-        private DevExpress.XtraEditors.RadioGroup ActiveStatusRdBtn;
+        private DevExpress.XtraEditors.RadioGroup radActiveStatus;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.DropDownButton dropDownButton4;
-        private DevExpress.XtraEditors.DropDownButton dropDownButton3;
+        private DevExpress.XtraEditors.DropDownButton DrpBloodGroup;
+        private DevExpress.XtraEditors.SimpleButton btnAdd;
+        private DevExpress.XtraEditors.SimpleButton ClearBtn;
+        private DevExpress.XtraEditors.SimpleButton DeleteBtn;
+        private DevExpress.XtraEditors.SimpleButton UpdateBtn;
+        private DevExpress.XtraEditors.SimpleButton EditBtn;
+        private DevExpress.XtraEditors.DropDownButton drpDirector;
+        private DevExpress.XtraEditors.MemoEdit TxtAuthAddress;
+        private DevExpress.XtraEditors.TextEdit LicenseTxt;
+        private DevExpress.XtraEditors.DateEdit ddStartingDate;
+        private DevExpress.XtraEditors.DateEdit ddDOB;
+        private DevExpress.XtraEditors.DateEdit ddPfDate;
+        private DevExpress.XtraEditors.DateEdit ddEsiCode;
     }
 }

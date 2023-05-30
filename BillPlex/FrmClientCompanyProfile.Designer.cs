@@ -125,6 +125,7 @@ namespace BillPlex
             this.Newbtn.Size = new System.Drawing.Size(75, 23);
             this.Newbtn.TabIndex = 5;
             this.Newbtn.Text = "NEW";
+            this.Newbtn.Click += new System.EventHandler(this.Newbtn_Click);
             // 
             // panelControl3
             // 

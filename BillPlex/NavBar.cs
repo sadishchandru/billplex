@@ -32,19 +32,19 @@ namespace BillPlex
 
         private void MasterButtonClicked(object sender, DevExpress.XtraBars.Ribbon.RibbonPageGroupEventArgs e)
         {
-            FrmCompanyInfo CP = new FrmCompanyInfo();
+            FrmCompanyProfile CP = new FrmCompanyProfile();
             CP.ShowDialog();
         }
 
         private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
         {
-            FrmClientCompanyInfo CP = new FrmClientCompanyInfo();
+            FrmClientCompanyProfile CP = new FrmClientCompanyProfile();
             CP.ShowDialog();
         }
 
         private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
         {
-            FrmSubClientCompanyInfo CP = new FrmSubClientCompanyInfo();
+            FrmSubClientCompanyProfile CP = new FrmSubClientCompanyProfile();
             CP.ShowDialog();
         }
     }
