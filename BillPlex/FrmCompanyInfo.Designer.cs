@@ -41,31 +41,31 @@ namespace BillPlex
             this.AddBtn = new DevExpress.XtraEditors.SimpleButton();
             this.NewBtn = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
-            this.Pintxt = new DevExpress.XtraEditors.TextEdit();
+            this.txtAuthorPin = new DevExpress.XtraEditors.TextEdit();
             this.PinLbl = new DevExpress.XtraEditors.LabelControl();
             this.AddClearBtn = new DevExpress.XtraEditors.SimpleButton();
             this.CopyBtn = new DevExpress.XtraEditors.SimpleButton();
-            this.AddressMemoedit = new DevExpress.XtraEditors.MemoEdit();
+            this.txtAddress = new DevExpress.XtraEditors.MemoEdit();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.EmailIDtxt = new DevExpress.XtraEditors.TextEdit();
-            this.Phonetxt = new DevExpress.XtraEditors.TextEdit();
+            this.txtAuthorEmailId = new DevExpress.XtraEditors.TextEdit();
+            this.txtAuthorPhoneNo = new DevExpress.XtraEditors.TextEdit();
             this.labelControl26 = new DevExpress.XtraEditors.LabelControl();
-            this.GenderRdBtn = new DevExpress.XtraEditors.RadioGroup();
+            this.radGender = new DevExpress.XtraEditors.RadioGroup();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
             this.AuthorisedLbl = new DevExpress.XtraEditors.LabelControl();
-            this.pantxt = new DevExpress.XtraEditors.TextEdit();
+            this.txtAuthorPanNo = new DevExpress.XtraEditors.TextEdit();
             this.labelControl38 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
-            this.mobiletxt = new DevExpress.XtraEditors.TextEdit();
-            this.BloodGrouptxt = new DevExpress.XtraEditors.TextEdit();
-            this.DOBtxt = new DevExpress.XtraEditors.TextEdit();
+            this.txtAuthorMobileNo = new DevExpress.XtraEditors.TextEdit();
+            this.txtAuthorBloodGroup = new DevExpress.XtraEditors.TextEdit();
+            this.txtAuthorDOB = new DevExpress.XtraEditors.TextEdit();
             this.labelControl27 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl29 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl30 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl31 = new DevExpress.XtraEditors.LabelControl();
-            this.StartingdateDd = new DevExpress.XtraEditors.DropDownButton();
-            this.FathersTxt = new DevExpress.XtraEditors.TextEdit();
-            this.Nametxt = new DevExpress.XtraEditors.TextEdit();
+            this.drpAuthorStartingdate = new DevExpress.XtraEditors.DropDownButton();
+            this.txtFathersName = new DevExpress.XtraEditors.TextEdit();
+            this.txtName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl33 = new DevExpress.XtraEditors.LabelControl();
             this.AddressLbl = new DevExpress.XtraEditors.LabelControl();
             this.GenderLbl = new DevExpress.XtraEditors.LabelControl();
@@ -74,43 +74,43 @@ namespace BillPlex
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.OfficeAddMemoedit = new DevExpress.XtraEditors.MemoEdit();
-            this.CstTxt = new DevExpress.XtraEditors.TextEdit();
-            this.SsiTxt = new DevExpress.XtraEditors.TextEdit();
-            this.PanNotxt = new DevExpress.XtraEditors.TextEdit();
-            this.tanTxt = new DevExpress.XtraEditors.TextEdit();
-            this.LicenseTxt = new DevExpress.XtraEditors.TextEdit();
-            this.TinTxt = new DevExpress.XtraEditors.TextEdit();
+            this.txtOfficeAddress = new DevExpress.XtraEditors.MemoEdit();
+            this.txtCSTNo = new DevExpress.XtraEditors.TextEdit();
+            this.txtSSINo = new DevExpress.XtraEditors.TextEdit();
+            this.txtPanNo = new DevExpress.XtraEditors.TextEdit();
+            this.txtTanNo = new DevExpress.XtraEditors.TextEdit();
+            this.txtLicense = new DevExpress.XtraEditors.TextEdit();
+            this.txtTin = new DevExpress.XtraEditors.TextEdit();
             this.LicenseLbl = new DevExpress.XtraEditors.LabelControl();
             this.TanLbl = new DevExpress.XtraEditors.LabelControl();
             this.PanLbl = new DevExpress.XtraEditors.LabelControl();
             this.SsiLbl = new DevExpress.XtraEditors.LabelControl();
             this.CstLbl = new DevExpress.XtraEditors.LabelControl();
             this.TinLbl = new DevExpress.XtraEditors.LabelControl();
-            this.dropDownButton3 = new DevExpress.XtraEditors.DropDownButton();
-            this.dropDownButton2 = new DevExpress.XtraEditors.DropDownButton();
+            this.drpESIDate = new DevExpress.XtraEditors.DropDownButton();
+            this.drpPFDate = new DevExpress.XtraEditors.DropDownButton();
             this.DateLbl1 = new DevExpress.XtraEditors.LabelControl();
             this.DateLbl = new DevExpress.XtraEditors.LabelControl();
-            this.FactoryActTxt = new DevExpress.XtraEditors.TextEdit();
-            this.EsiTxt = new DevExpress.XtraEditors.TextEdit();
-            this.PinNotxt = new DevExpress.XtraEditors.TextEdit();
+            this.txtFactoryAct = new DevExpress.XtraEditors.TextEdit();
+            this.txtEsiCode = new DevExpress.XtraEditors.TextEdit();
+            this.txtPinNo = new DevExpress.XtraEditors.TextEdit();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
-            this.StateDd = new DevExpress.XtraEditors.DropDownButton();
-            this.BusinessRadioGroup = new DevExpress.XtraEditors.RadioGroup();
-            this.PFTxt = new DevExpress.XtraEditors.TextEdit();
-            this.Emailtxt = new DevExpress.XtraEditors.TextEdit();
-            this.WebsiteTxt = new DevExpress.XtraEditors.TextEdit();
+            this.drpState = new DevExpress.XtraEditors.DropDownButton();
+            this.radBusinessNature = new DevExpress.XtraEditors.RadioGroup();
+            this.txtPFCode = new DevExpress.XtraEditors.TextEdit();
+            this.txtEmail = new DevExpress.XtraEditors.TextEdit();
+            this.txtWebsite = new DevExpress.XtraEditors.TextEdit();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
-            this.StartingDateDdBtn = new DevExpress.XtraEditors.DropDownButton();
+            this.drpStartingDate = new DevExpress.XtraEditors.DropDownButton();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            this.Officetxt = new DevExpress.XtraEditors.TextEdit();
+            this.txtOffice = new DevExpress.XtraEditors.TextEdit();
             this.OffPinTxt = new DevExpress.XtraEditors.TextEdit();
-            this.CompanyNametxtEdit = new DevExpress.XtraEditors.TextEdit();
-            this.Codetxtedit = new DevExpress.XtraEditors.TextEdit();
+            this.txtCompanyName = new DevExpress.XtraEditors.TextEdit();
+            this.txtCode = new DevExpress.XtraEditors.TextEdit();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
@@ -127,41 +127,41 @@ namespace BillPlex
             this.panelControl7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
             this.panelControl5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Pintxt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AddressMemoedit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EmailIDtxt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Phonetxt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GenderRdBtn.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAuthorPin.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAddress.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAuthorEmailId.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAuthorPhoneNo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radGender.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
             this.panelControl6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pantxt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mobiletxt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BloodGrouptxt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DOBtxt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FathersTxt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Nametxt.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAuthorPanNo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAuthorMobileNo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAuthorBloodGroup.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAuthorDOB.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFathersName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.OfficeAddMemoedit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CstTxt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SsiTxt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PanNotxt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tanTxt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LicenseTxt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TinTxt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FactoryActTxt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EsiTxt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PinNotxt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BusinessRadioGroup.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PFTxt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Emailtxt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.WebsiteTxt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Officetxt.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOfficeAddress.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCSTNo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSSINo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPanNo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTanNo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLicense.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTin.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFactoryAct.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEsiCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPinNo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radBusinessNature.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPFCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtWebsite.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOffice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OffPinTxt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CompanyNametxtEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Codetxtedit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCompanyName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -264,6 +264,7 @@ namespace BillPlex
             this.UpdateBtn.Size = new System.Drawing.Size(81, 23);
             this.UpdateBtn.TabIndex = 56;
             this.UpdateBtn.Text = "UPDATE";
+            this.UpdateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
             // 
             // EditBtn
             // 
@@ -292,6 +293,7 @@ namespace BillPlex
             this.AddBtn.Size = new System.Drawing.Size(81, 23);
             this.AddBtn.TabIndex = 54;
             this.AddBtn.Text = "ADD";
+            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // NewBtn
             // 
@@ -310,30 +312,30 @@ namespace BillPlex
             // panelControl5
             // 
             this.panelControl5.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.panelControl5.Controls.Add(this.Pintxt);
+            this.panelControl5.Controls.Add(this.txtAuthorPin);
             this.panelControl5.Controls.Add(this.PinLbl);
             this.panelControl5.Controls.Add(this.AddClearBtn);
             this.panelControl5.Controls.Add(this.CopyBtn);
-            this.panelControl5.Controls.Add(this.AddressMemoedit);
+            this.panelControl5.Controls.Add(this.txtAddress);
             this.panelControl5.Controls.Add(this.simpleButton1);
-            this.panelControl5.Controls.Add(this.EmailIDtxt);
-            this.panelControl5.Controls.Add(this.Phonetxt);
+            this.panelControl5.Controls.Add(this.txtAuthorEmailId);
+            this.panelControl5.Controls.Add(this.txtAuthorPhoneNo);
             this.panelControl5.Controls.Add(this.labelControl26);
-            this.panelControl5.Controls.Add(this.GenderRdBtn);
+            this.panelControl5.Controls.Add(this.radGender);
             this.panelControl5.Controls.Add(this.panelControl6);
-            this.panelControl5.Controls.Add(this.pantxt);
+            this.panelControl5.Controls.Add(this.txtAuthorPanNo);
             this.panelControl5.Controls.Add(this.labelControl38);
             this.panelControl5.Controls.Add(this.labelControl20);
-            this.panelControl5.Controls.Add(this.mobiletxt);
-            this.panelControl5.Controls.Add(this.BloodGrouptxt);
-            this.panelControl5.Controls.Add(this.DOBtxt);
+            this.panelControl5.Controls.Add(this.txtAuthorMobileNo);
+            this.panelControl5.Controls.Add(this.txtAuthorBloodGroup);
+            this.panelControl5.Controls.Add(this.txtAuthorDOB);
             this.panelControl5.Controls.Add(this.labelControl27);
             this.panelControl5.Controls.Add(this.labelControl29);
             this.panelControl5.Controls.Add(this.labelControl30);
             this.panelControl5.Controls.Add(this.labelControl31);
-            this.panelControl5.Controls.Add(this.StartingdateDd);
-            this.panelControl5.Controls.Add(this.FathersTxt);
-            this.panelControl5.Controls.Add(this.Nametxt);
+            this.panelControl5.Controls.Add(this.drpAuthorStartingdate);
+            this.panelControl5.Controls.Add(this.txtFathersName);
+            this.panelControl5.Controls.Add(this.txtName);
             this.panelControl5.Controls.Add(this.labelControl33);
             this.panelControl5.Controls.Add(this.AddressLbl);
             this.panelControl5.Controls.Add(this.GenderLbl);
@@ -344,12 +346,12 @@ namespace BillPlex
             this.panelControl5.Size = new System.Drawing.Size(1309, 339);
             this.panelControl5.TabIndex = 2;
             // 
-            // Pintxt
+            // txtAuthorPin
             // 
-            this.Pintxt.Location = new System.Drawing.Point(375, 271);
-            this.Pintxt.Name = "Pintxt";
-            this.Pintxt.Size = new System.Drawing.Size(63, 20);
-            this.Pintxt.TabIndex = 56;
+            this.txtAuthorPin.Location = new System.Drawing.Point(375, 271);
+            this.txtAuthorPin.Name = "txtAuthorPin";
+            this.txtAuthorPin.Size = new System.Drawing.Size(63, 20);
+            this.txtAuthorPin.TabIndex = 56;
             // 
             // PinLbl
             // 
@@ -389,15 +391,15 @@ namespace BillPlex
             this.CopyBtn.TabIndex = 53;
             this.CopyBtn.Text = "COPY";
             // 
-            // AddressMemoedit
+            // txtAddress
             // 
-            this.AddressMemoedit.EditValue = "";
-            this.AddressMemoedit.Location = new System.Drawing.Point(138, 147);
-            this.AddressMemoedit.Name = "AddressMemoedit";
-            this.AddressMemoedit.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.AddressMemoedit.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.AddressMemoedit.Size = new System.Drawing.Size(230, 84);
-            this.AddressMemoedit.TabIndex = 2;
+            this.txtAddress.EditValue = "";
+            this.txtAddress.Location = new System.Drawing.Point(138, 147);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.txtAddress.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtAddress.Size = new System.Drawing.Size(230, 84);
+            this.txtAddress.TabIndex = 2;
             // 
             // simpleButton1
             // 
@@ -414,20 +416,20 @@ namespace BillPlex
             this.simpleButton1.Text = "Add Bank Info";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
-            // EmailIDtxt
+            // txtAuthorEmailId
             // 
-            this.EmailIDtxt.EditValue = "";
-            this.EmailIDtxt.Location = new System.Drawing.Point(620, 157);
-            this.EmailIDtxt.Name = "EmailIDtxt";
-            this.EmailIDtxt.Size = new System.Drawing.Size(207, 20);
-            this.EmailIDtxt.TabIndex = 51;
+            this.txtAuthorEmailId.EditValue = "";
+            this.txtAuthorEmailId.Location = new System.Drawing.Point(620, 157);
+            this.txtAuthorEmailId.Name = "txtAuthorEmailId";
+            this.txtAuthorEmailId.Size = new System.Drawing.Size(207, 20);
+            this.txtAuthorEmailId.TabIndex = 51;
             // 
-            // Phonetxt
+            // txtAuthorPhoneNo
             // 
-            this.Phonetxt.Location = new System.Drawing.Point(620, 46);
-            this.Phonetxt.Name = "Phonetxt";
-            this.Phonetxt.Size = new System.Drawing.Size(207, 20);
-            this.Phonetxt.TabIndex = 50;
+            this.txtAuthorPhoneNo.Location = new System.Drawing.Point(620, 46);
+            this.txtAuthorPhoneNo.Name = "txtAuthorPhoneNo";
+            this.txtAuthorPhoneNo.Size = new System.Drawing.Size(207, 20);
+            this.txtAuthorPhoneNo.TabIndex = 50;
             // 
             // labelControl26
             // 
@@ -439,22 +441,22 @@ namespace BillPlex
             this.labelControl26.TabIndex = 49;
             this.labelControl26.Text = "Phone No";
             // 
-            // GenderRdBtn
+            // radGender
             // 
-            this.GenderRdBtn.Location = new System.Drawing.Point(138, 103);
-            this.GenderRdBtn.Name = "GenderRdBtn";
-            this.GenderRdBtn.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.GenderRdBtn.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GenderRdBtn.Properties.Appearance.Options.UseBackColor = true;
-            this.GenderRdBtn.Properties.Appearance.Options.UseFont = true;
-            this.GenderRdBtn.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.GenderRdBtn.Properties.Columns = 2;
-            this.GenderRdBtn.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.GenderRdBtn.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            this.radGender.Location = new System.Drawing.Point(138, 103);
+            this.radGender.Name = "radGender";
+            this.radGender.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.radGender.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radGender.Properties.Appearance.Options.UseBackColor = true;
+            this.radGender.Properties.Appearance.Options.UseFont = true;
+            this.radGender.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.radGender.Properties.Columns = 2;
+            this.radGender.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.radGender.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Male", true, null, "Male"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Female", true, null, "Female")});
-            this.GenderRdBtn.Size = new System.Drawing.Size(300, 45);
-            this.GenderRdBtn.TabIndex = 47;
+            this.radGender.Size = new System.Drawing.Size(300, 45);
+            this.radGender.TabIndex = 47;
             // 
             // panelControl6
             // 
@@ -481,13 +483,13 @@ namespace BillPlex
             this.AuthorisedLbl.TabIndex = 0;
             this.AuthorisedLbl.Text = "Authorised Person Info";
             // 
-            // pantxt
+            // txtAuthorPanNo
             // 
-            this.pantxt.EditValue = "";
-            this.pantxt.Location = new System.Drawing.Point(998, 47);
-            this.pantxt.Name = "pantxt";
-            this.pantxt.Size = new System.Drawing.Size(257, 20);
-            this.pantxt.TabIndex = 44;
+            this.txtAuthorPanNo.EditValue = "";
+            this.txtAuthorPanNo.Location = new System.Drawing.Point(998, 47);
+            this.txtAuthorPanNo.Name = "txtAuthorPanNo";
+            this.txtAuthorPanNo.Size = new System.Drawing.Size(257, 20);
+            this.txtAuthorPanNo.TabIndex = 44;
             // 
             // labelControl38
             // 
@@ -512,28 +514,28 @@ namespace BillPlex
             this.labelControl20.TabIndex = 38;
             this.labelControl20.Text = "PAN No";
             // 
-            // mobiletxt
+            // txtAuthorMobileNo
             // 
-            this.mobiletxt.Location = new System.Drawing.Point(620, 225);
-            this.mobiletxt.Name = "mobiletxt";
-            this.mobiletxt.Size = new System.Drawing.Size(207, 20);
-            this.mobiletxt.TabIndex = 30;
+            this.txtAuthorMobileNo.Location = new System.Drawing.Point(620, 225);
+            this.txtAuthorMobileNo.Name = "txtAuthorMobileNo";
+            this.txtAuthorMobileNo.Size = new System.Drawing.Size(207, 20);
+            this.txtAuthorMobileNo.TabIndex = 30;
             // 
-            // BloodGrouptxt
+            // txtAuthorBloodGroup
             // 
-            this.BloodGrouptxt.EditValue = "";
-            this.BloodGrouptxt.Location = new System.Drawing.Point(620, 89);
-            this.BloodGrouptxt.Name = "BloodGrouptxt";
-            this.BloodGrouptxt.Size = new System.Drawing.Size(207, 20);
-            this.BloodGrouptxt.TabIndex = 23;
+            this.txtAuthorBloodGroup.EditValue = "";
+            this.txtAuthorBloodGroup.Location = new System.Drawing.Point(620, 89);
+            this.txtAuthorBloodGroup.Name = "txtAuthorBloodGroup";
+            this.txtAuthorBloodGroup.Size = new System.Drawing.Size(207, 20);
+            this.txtAuthorBloodGroup.TabIndex = 23;
             // 
-            // DOBtxt
+            // txtAuthorDOB
             // 
-            this.DOBtxt.EditValue = "";
-            this.DOBtxt.Location = new System.Drawing.Point(620, 125);
-            this.DOBtxt.Name = "DOBtxt";
-            this.DOBtxt.Size = new System.Drawing.Size(207, 20);
-            this.DOBtxt.TabIndex = 22;
+            this.txtAuthorDOB.EditValue = "";
+            this.txtAuthorDOB.Location = new System.Drawing.Point(620, 125);
+            this.txtAuthorDOB.Name = "txtAuthorDOB";
+            this.txtAuthorDOB.Size = new System.Drawing.Size(207, 20);
+            this.txtAuthorDOB.TabIndex = 22;
             // 
             // labelControl27
             // 
@@ -575,28 +577,28 @@ namespace BillPlex
             this.labelControl31.TabIndex = 17;
             this.labelControl31.Text = "Blood Group";
             // 
-            // StartingdateDd
+            // drpAuthorStartingdate
             // 
-            this.StartingdateDd.Location = new System.Drawing.Point(138, 269);
-            this.StartingdateDd.Name = "StartingdateDd";
-            this.StartingdateDd.Size = new System.Drawing.Size(194, 23);
-            this.StartingdateDd.TabIndex = 16;
+            this.drpAuthorStartingdate.Location = new System.Drawing.Point(138, 269);
+            this.drpAuthorStartingdate.Name = "drpAuthorStartingdate";
+            this.drpAuthorStartingdate.Size = new System.Drawing.Size(194, 23);
+            this.drpAuthorStartingdate.TabIndex = 16;
             // 
-            // FathersTxt
+            // txtFathersName
             // 
-            this.FathersTxt.EditValue = "";
-            this.FathersTxt.Location = new System.Drawing.Point(138, 70);
-            this.FathersTxt.Name = "FathersTxt";
-            this.FathersTxt.Size = new System.Drawing.Size(300, 20);
-            this.FathersTxt.TabIndex = 10;
+            this.txtFathersName.EditValue = "";
+            this.txtFathersName.Location = new System.Drawing.Point(138, 70);
+            this.txtFathersName.Name = "txtFathersName";
+            this.txtFathersName.Size = new System.Drawing.Size(300, 20);
+            this.txtFathersName.TabIndex = 10;
             // 
-            // Nametxt
+            // txtName
             // 
-            this.Nametxt.EditValue = "";
-            this.Nametxt.Location = new System.Drawing.Point(138, 40);
-            this.Nametxt.Name = "Nametxt";
-            this.Nametxt.Size = new System.Drawing.Size(300, 20);
-            this.Nametxt.TabIndex = 9;
+            this.txtName.EditValue = "";
+            this.txtName.Location = new System.Drawing.Point(138, 40);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(300, 20);
+            this.txtName.TabIndex = 9;
             // 
             // labelControl33
             // 
@@ -678,43 +680,43 @@ namespace BillPlex
             // panelControl3
             // 
             this.panelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.panelControl3.Controls.Add(this.OfficeAddMemoedit);
-            this.panelControl3.Controls.Add(this.CstTxt);
-            this.panelControl3.Controls.Add(this.SsiTxt);
-            this.panelControl3.Controls.Add(this.PanNotxt);
-            this.panelControl3.Controls.Add(this.tanTxt);
-            this.panelControl3.Controls.Add(this.LicenseTxt);
-            this.panelControl3.Controls.Add(this.TinTxt);
+            this.panelControl3.Controls.Add(this.txtOfficeAddress);
+            this.panelControl3.Controls.Add(this.txtCSTNo);
+            this.panelControl3.Controls.Add(this.txtSSINo);
+            this.panelControl3.Controls.Add(this.txtPanNo);
+            this.panelControl3.Controls.Add(this.txtTanNo);
+            this.panelControl3.Controls.Add(this.txtLicense);
+            this.panelControl3.Controls.Add(this.txtTin);
             this.panelControl3.Controls.Add(this.LicenseLbl);
             this.panelControl3.Controls.Add(this.TanLbl);
             this.panelControl3.Controls.Add(this.PanLbl);
             this.panelControl3.Controls.Add(this.SsiLbl);
             this.panelControl3.Controls.Add(this.CstLbl);
             this.panelControl3.Controls.Add(this.TinLbl);
-            this.panelControl3.Controls.Add(this.dropDownButton3);
-            this.panelControl3.Controls.Add(this.dropDownButton2);
+            this.panelControl3.Controls.Add(this.drpESIDate);
+            this.panelControl3.Controls.Add(this.drpPFDate);
             this.panelControl3.Controls.Add(this.DateLbl1);
             this.panelControl3.Controls.Add(this.DateLbl);
-            this.panelControl3.Controls.Add(this.FactoryActTxt);
-            this.panelControl3.Controls.Add(this.EsiTxt);
-            this.panelControl3.Controls.Add(this.PinNotxt);
+            this.panelControl3.Controls.Add(this.txtFactoryAct);
+            this.panelControl3.Controls.Add(this.txtEsiCode);
+            this.panelControl3.Controls.Add(this.txtPinNo);
             this.panelControl3.Controls.Add(this.labelControl17);
-            this.panelControl3.Controls.Add(this.StateDd);
-            this.panelControl3.Controls.Add(this.BusinessRadioGroup);
-            this.panelControl3.Controls.Add(this.PFTxt);
-            this.panelControl3.Controls.Add(this.Emailtxt);
-            this.panelControl3.Controls.Add(this.WebsiteTxt);
+            this.panelControl3.Controls.Add(this.drpState);
+            this.panelControl3.Controls.Add(this.radBusinessNature);
+            this.panelControl3.Controls.Add(this.txtPFCode);
+            this.panelControl3.Controls.Add(this.txtEmail);
+            this.panelControl3.Controls.Add(this.txtWebsite);
             this.panelControl3.Controls.Add(this.labelControl16);
             this.panelControl3.Controls.Add(this.labelControl15);
             this.panelControl3.Controls.Add(this.labelControl14);
             this.panelControl3.Controls.Add(this.labelControl13);
             this.panelControl3.Controls.Add(this.labelControl12);
-            this.panelControl3.Controls.Add(this.StartingDateDdBtn);
+            this.panelControl3.Controls.Add(this.drpStartingDate);
             this.panelControl3.Controls.Add(this.labelControl11);
-            this.panelControl3.Controls.Add(this.Officetxt);
+            this.panelControl3.Controls.Add(this.txtOffice);
             this.panelControl3.Controls.Add(this.OffPinTxt);
-            this.panelControl3.Controls.Add(this.CompanyNametxtEdit);
-            this.panelControl3.Controls.Add(this.Codetxtedit);
+            this.panelControl3.Controls.Add(this.txtCompanyName);
+            this.panelControl3.Controls.Add(this.txtCode);
             this.panelControl3.Controls.Add(this.labelControl10);
             this.panelControl3.Controls.Add(this.labelControl9);
             this.panelControl3.Controls.Add(this.labelControl8);
@@ -728,63 +730,63 @@ namespace BillPlex
             this.panelControl3.Size = new System.Drawing.Size(1309, 308);
             this.panelControl3.TabIndex = 0;
             // 
-            // OfficeAddMemoedit
+            // txtOfficeAddress
             // 
-            this.OfficeAddMemoedit.EditValue = "";
-            this.OfficeAddMemoedit.Location = new System.Drawing.Point(138, 96);
-            this.OfficeAddMemoedit.Name = "OfficeAddMemoedit";
-            this.OfficeAddMemoedit.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.OfficeAddMemoedit.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.OfficeAddMemoedit.Size = new System.Drawing.Size(300, 84);
-            this.OfficeAddMemoedit.TabIndex = 4;
+            this.txtOfficeAddress.EditValue = "";
+            this.txtOfficeAddress.Location = new System.Drawing.Point(138, 96);
+            this.txtOfficeAddress.Name = "txtOfficeAddress";
+            this.txtOfficeAddress.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.txtOfficeAddress.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtOfficeAddress.Size = new System.Drawing.Size(300, 84);
+            this.txtOfficeAddress.TabIndex = 4;
             // 
-            // CstTxt
+            // txtCSTNo
             // 
-            this.CstTxt.EditValue = "";
-            this.CstTxt.Location = new System.Drawing.Point(998, 90);
-            this.CstTxt.Name = "CstTxt";
-            this.CstTxt.Size = new System.Drawing.Size(257, 20);
-            this.CstTxt.TabIndex = 46;
+            this.txtCSTNo.EditValue = "";
+            this.txtCSTNo.Location = new System.Drawing.Point(998, 90);
+            this.txtCSTNo.Name = "txtCSTNo";
+            this.txtCSTNo.Size = new System.Drawing.Size(257, 20);
+            this.txtCSTNo.TabIndex = 46;
             // 
-            // SsiTxt
+            // txtSSINo
             // 
-            this.SsiTxt.EditValue = "";
-            this.SsiTxt.Location = new System.Drawing.Point(998, 126);
-            this.SsiTxt.Name = "SsiTxt";
-            this.SsiTxt.Size = new System.Drawing.Size(257, 20);
-            this.SsiTxt.TabIndex = 45;
+            this.txtSSINo.EditValue = "";
+            this.txtSSINo.Location = new System.Drawing.Point(998, 126);
+            this.txtSSINo.Name = "txtSSINo";
+            this.txtSSINo.Size = new System.Drawing.Size(257, 20);
+            this.txtSSINo.TabIndex = 45;
             // 
-            // PanNotxt
+            // txtPanNo
             // 
-            this.PanNotxt.EditValue = "";
-            this.PanNotxt.Location = new System.Drawing.Point(998, 161);
-            this.PanNotxt.Name = "PanNotxt";
-            this.PanNotxt.Size = new System.Drawing.Size(257, 20);
-            this.PanNotxt.TabIndex = 44;
+            this.txtPanNo.EditValue = "";
+            this.txtPanNo.Location = new System.Drawing.Point(998, 161);
+            this.txtPanNo.Name = "txtPanNo";
+            this.txtPanNo.Size = new System.Drawing.Size(257, 20);
+            this.txtPanNo.TabIndex = 44;
             // 
-            // tanTxt
+            // txtTanNo
             // 
-            this.tanTxt.EditValue = "";
-            this.tanTxt.Location = new System.Drawing.Point(998, 193);
-            this.tanTxt.Name = "tanTxt";
-            this.tanTxt.Size = new System.Drawing.Size(257, 20);
-            this.tanTxt.TabIndex = 43;
+            this.txtTanNo.EditValue = "";
+            this.txtTanNo.Location = new System.Drawing.Point(998, 193);
+            this.txtTanNo.Name = "txtTanNo";
+            this.txtTanNo.Size = new System.Drawing.Size(257, 20);
+            this.txtTanNo.TabIndex = 43;
             // 
-            // LicenseTxt
+            // txtLicense
             // 
-            this.LicenseTxt.EditValue = "";
-            this.LicenseTxt.Location = new System.Drawing.Point(998, 230);
-            this.LicenseTxt.Name = "LicenseTxt";
-            this.LicenseTxt.Size = new System.Drawing.Size(257, 20);
-            this.LicenseTxt.TabIndex = 42;
+            this.txtLicense.EditValue = "";
+            this.txtLicense.Location = new System.Drawing.Point(998, 230);
+            this.txtLicense.Name = "txtLicense";
+            this.txtLicense.Size = new System.Drawing.Size(257, 20);
+            this.txtLicense.TabIndex = 42;
             // 
-            // TinTxt
+            // txtTin
             // 
-            this.TinTxt.EditValue = "";
-            this.TinTxt.Location = new System.Drawing.Point(998, 47);
-            this.TinTxt.Name = "TinTxt";
-            this.TinTxt.Size = new System.Drawing.Size(257, 20);
-            this.TinTxt.TabIndex = 41;
+            this.txtTin.EditValue = "";
+            this.txtTin.Location = new System.Drawing.Point(998, 47);
+            this.txtTin.Name = "txtTin";
+            this.txtTin.Size = new System.Drawing.Size(257, 20);
+            this.txtTin.TabIndex = 41;
             // 
             // LicenseLbl
             // 
@@ -846,19 +848,19 @@ namespace BillPlex
             this.TinLbl.TabIndex = 35;
             this.TinLbl.Text = "TIN No";
             // 
-            // dropDownButton3
+            // drpESIDate
             // 
-            this.dropDownButton3.Location = new System.Drawing.Point(738, 205);
-            this.dropDownButton3.Name = "dropDownButton3";
-            this.dropDownButton3.Size = new System.Drawing.Size(89, 20);
-            this.dropDownButton3.TabIndex = 34;
+            this.drpESIDate.Location = new System.Drawing.Point(738, 205);
+            this.drpESIDate.Name = "drpESIDate";
+            this.drpESIDate.Size = new System.Drawing.Size(89, 20);
+            this.drpESIDate.TabIndex = 34;
             // 
-            // dropDownButton2
+            // drpPFDate
             // 
-            this.dropDownButton2.Location = new System.Drawing.Point(738, 174);
-            this.dropDownButton2.Name = "dropDownButton2";
-            this.dropDownButton2.Size = new System.Drawing.Size(89, 20);
-            this.dropDownButton2.TabIndex = 33;
+            this.drpPFDate.Location = new System.Drawing.Point(738, 174);
+            this.drpPFDate.Name = "drpPFDate";
+            this.drpPFDate.Size = new System.Drawing.Size(89, 20);
+            this.drpPFDate.TabIndex = 33;
             // 
             // DateLbl1
             // 
@@ -880,28 +882,28 @@ namespace BillPlex
             this.DateLbl.TabIndex = 31;
             this.DateLbl.Text = "Date";
             // 
-            // FactoryActTxt
+            // txtFactoryAct
             // 
-            this.FactoryActTxt.Location = new System.Drawing.Point(620, 238);
-            this.FactoryActTxt.Name = "FactoryActTxt";
-            this.FactoryActTxt.Size = new System.Drawing.Size(207, 20);
-            this.FactoryActTxt.TabIndex = 30;
+            this.txtFactoryAct.Location = new System.Drawing.Point(620, 238);
+            this.txtFactoryAct.Name = "txtFactoryAct";
+            this.txtFactoryAct.Size = new System.Drawing.Size(207, 20);
+            this.txtFactoryAct.TabIndex = 30;
             // 
-            // EsiTxt
+            // txtEsiCode
             // 
-            this.EsiTxt.EditValue = "";
-            this.EsiTxt.Location = new System.Drawing.Point(620, 204);
-            this.EsiTxt.Name = "EsiTxt";
-            this.EsiTxt.Size = new System.Drawing.Size(77, 20);
-            this.EsiTxt.TabIndex = 29;
+            this.txtEsiCode.EditValue = "";
+            this.txtEsiCode.Location = new System.Drawing.Point(620, 204);
+            this.txtEsiCode.Name = "txtEsiCode";
+            this.txtEsiCode.Size = new System.Drawing.Size(77, 20);
+            this.txtEsiCode.TabIndex = 29;
             // 
-            // PinNotxt
+            // txtPinNo
             // 
-            this.PinNotxt.EditValue = "";
-            this.PinNotxt.Location = new System.Drawing.Point(338, 195);
-            this.PinNotxt.Name = "PinNotxt";
-            this.PinNotxt.Size = new System.Drawing.Size(100, 20);
-            this.PinNotxt.TabIndex = 28;
+            this.txtPinNo.EditValue = "";
+            this.txtPinNo.Location = new System.Drawing.Point(338, 195);
+            this.txtPinNo.Name = "txtPinNo";
+            this.txtPinNo.Size = new System.Drawing.Size(100, 20);
+            this.txtPinNo.TabIndex = 28;
             // 
             // labelControl17
             // 
@@ -913,55 +915,55 @@ namespace BillPlex
             this.labelControl17.TabIndex = 27;
             this.labelControl17.Text = "Pin";
             // 
-            // StateDd
+            // drpState
             // 
-            this.StateDd.Location = new System.Drawing.Point(138, 193);
-            this.StateDd.Name = "StateDd";
-            this.StateDd.Size = new System.Drawing.Size(168, 23);
-            this.StateDd.TabIndex = 26;
+            this.drpState.Location = new System.Drawing.Point(138, 193);
+            this.drpState.Name = "drpState";
+            this.drpState.Size = new System.Drawing.Size(168, 23);
+            this.drpState.TabIndex = 26;
             // 
-            // BusinessRadioGroup
+            // radBusinessNature
             // 
-            this.BusinessRadioGroup.Location = new System.Drawing.Point(632, 42);
-            this.BusinessRadioGroup.Name = "BusinessRadioGroup";
-            this.BusinessRadioGroup.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.BusinessRadioGroup.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BusinessRadioGroup.Properties.Appearance.Options.UseBackColor = true;
-            this.BusinessRadioGroup.Properties.Appearance.Options.UseFont = true;
-            this.BusinessRadioGroup.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.BusinessRadioGroup.Properties.Columns = 2;
-            this.BusinessRadioGroup.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.BusinessRadioGroup.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            this.radBusinessNature.Location = new System.Drawing.Point(632, 42);
+            this.radBusinessNature.Name = "radBusinessNature";
+            this.radBusinessNature.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.radBusinessNature.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radBusinessNature.Properties.Appearance.Options.UseBackColor = true;
+            this.radBusinessNature.Properties.Appearance.Options.UseFont = true;
+            this.radBusinessNature.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.radBusinessNature.Properties.Columns = 2;
+            this.radBusinessNature.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.radBusinessNature.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Manufacture", true, null, "Manufacture"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Traders", true, null, "Traders"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Job Work", true, null, "Job Work"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Others", true, null, "Others")});
-            this.BusinessRadioGroup.Size = new System.Drawing.Size(230, 54);
-            this.BusinessRadioGroup.TabIndex = 25;
+            this.radBusinessNature.Size = new System.Drawing.Size(230, 54);
+            this.radBusinessNature.TabIndex = 25;
             // 
-            // PFTxt
+            // txtPFCode
             // 
-            this.PFTxt.EditValue = "";
-            this.PFTxt.Location = new System.Drawing.Point(620, 175);
-            this.PFTxt.Name = "PFTxt";
-            this.PFTxt.Size = new System.Drawing.Size(77, 20);
-            this.PFTxt.TabIndex = 24;
+            this.txtPFCode.EditValue = "";
+            this.txtPFCode.Location = new System.Drawing.Point(620, 175);
+            this.txtPFCode.Name = "txtPFCode";
+            this.txtPFCode.Size = new System.Drawing.Size(77, 20);
+            this.txtPFCode.TabIndex = 24;
             // 
-            // Emailtxt
+            // txtEmail
             // 
-            this.Emailtxt.EditValue = "";
-            this.Emailtxt.Location = new System.Drawing.Point(620, 102);
-            this.Emailtxt.Name = "Emailtxt";
-            this.Emailtxt.Size = new System.Drawing.Size(207, 20);
-            this.Emailtxt.TabIndex = 23;
+            this.txtEmail.EditValue = "";
+            this.txtEmail.Location = new System.Drawing.Point(620, 102);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(207, 20);
+            this.txtEmail.TabIndex = 23;
             // 
-            // WebsiteTxt
+            // txtWebsite
             // 
-            this.WebsiteTxt.EditValue = "";
-            this.WebsiteTxt.Location = new System.Drawing.Point(620, 138);
-            this.WebsiteTxt.Name = "WebsiteTxt";
-            this.WebsiteTxt.Size = new System.Drawing.Size(207, 20);
-            this.WebsiteTxt.TabIndex = 22;
+            this.txtWebsite.EditValue = "";
+            this.txtWebsite.Location = new System.Drawing.Point(620, 138);
+            this.txtWebsite.Name = "txtWebsite";
+            this.txtWebsite.Size = new System.Drawing.Size(207, 20);
+            this.txtWebsite.TabIndex = 22;
             // 
             // labelControl16
             // 
@@ -1013,12 +1015,12 @@ namespace BillPlex
             this.labelControl12.TabIndex = 17;
             this.labelControl12.Text = "Email ID";
             // 
-            // StartingDateDdBtn
+            // drpStartingDate
             // 
-            this.StartingDateDdBtn.Location = new System.Drawing.Point(138, 255);
-            this.StartingDateDdBtn.Name = "StartingDateDdBtn";
-            this.StartingDateDdBtn.Size = new System.Drawing.Size(300, 23);
-            this.StartingDateDdBtn.TabIndex = 16;
+            this.drpStartingDate.Location = new System.Drawing.Point(138, 255);
+            this.drpStartingDate.Name = "drpStartingDate";
+            this.drpStartingDate.Size = new System.Drawing.Size(300, 23);
+            this.drpStartingDate.TabIndex = 16;
             // 
             // labelControl11
             // 
@@ -1030,13 +1032,13 @@ namespace BillPlex
             this.labelControl11.TabIndex = 15;
             this.labelControl11.Text = "Business Nature";
             // 
-            // Officetxt
+            // txtOffice
             // 
-            this.Officetxt.EditValue = "";
-            this.Officetxt.Location = new System.Drawing.Point(196, 227);
-            this.Officetxt.Name = "Officetxt";
-            this.Officetxt.Size = new System.Drawing.Size(242, 20);
-            this.Officetxt.TabIndex = 13;
+            this.txtOffice.EditValue = "";
+            this.txtOffice.Location = new System.Drawing.Point(196, 227);
+            this.txtOffice.Name = "txtOffice";
+            this.txtOffice.Size = new System.Drawing.Size(242, 20);
+            this.txtOffice.TabIndex = 13;
             // 
             // OffPinTxt
             // 
@@ -1046,21 +1048,21 @@ namespace BillPlex
             this.OffPinTxt.Size = new System.Drawing.Size(52, 20);
             this.OffPinTxt.TabIndex = 12;
             // 
-            // CompanyNametxtEdit
+            // txtCompanyName
             // 
-            this.CompanyNametxtEdit.EditValue = "";
-            this.CompanyNametxtEdit.Location = new System.Drawing.Point(138, 66);
-            this.CompanyNametxtEdit.Name = "CompanyNametxtEdit";
-            this.CompanyNametxtEdit.Size = new System.Drawing.Size(300, 20);
-            this.CompanyNametxtEdit.TabIndex = 10;
+            this.txtCompanyName.EditValue = "";
+            this.txtCompanyName.Location = new System.Drawing.Point(138, 66);
+            this.txtCompanyName.Name = "txtCompanyName";
+            this.txtCompanyName.Size = new System.Drawing.Size(300, 20);
+            this.txtCompanyName.TabIndex = 10;
             // 
-            // Codetxtedit
+            // txtCode
             // 
-            this.Codetxtedit.EditValue = "";
-            this.Codetxtedit.Location = new System.Drawing.Point(138, 40);
-            this.Codetxtedit.Name = "Codetxtedit";
-            this.Codetxtedit.Size = new System.Drawing.Size(300, 20);
-            this.Codetxtedit.TabIndex = 9;
+            this.txtCode.EditValue = "";
+            this.txtCode.Location = new System.Drawing.Point(138, 40);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(300, 20);
+            this.txtCode.TabIndex = 9;
             // 
             // labelControl10
             // 
@@ -1165,44 +1167,44 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
             this.panelControl5.ResumeLayout(false);
             this.panelControl5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Pintxt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AddressMemoedit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EmailIDtxt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Phonetxt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GenderRdBtn.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAuthorPin.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAddress.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAuthorEmailId.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAuthorPhoneNo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radGender.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
             this.panelControl6.ResumeLayout(false);
             this.panelControl6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pantxt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mobiletxt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BloodGrouptxt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DOBtxt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FathersTxt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Nametxt.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAuthorPanNo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAuthorMobileNo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAuthorBloodGroup.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAuthorDOB.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFathersName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
             this.panelControl4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.panelControl3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.OfficeAddMemoedit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CstTxt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SsiTxt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PanNotxt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tanTxt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LicenseTxt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TinTxt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FactoryActTxt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EsiTxt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PinNotxt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BusinessRadioGroup.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PFTxt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Emailtxt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.WebsiteTxt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Officetxt.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOfficeAddress.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCSTNo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSSINo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPanNo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTanNo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLicense.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTin.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFactoryAct.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEsiCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPinNo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radBusinessNature.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPFCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtWebsite.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOffice.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OffPinTxt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CompanyNametxtEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Codetxtedit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCompanyName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1215,10 +1217,10 @@ namespace BillPlex
         private DevExpress.XtraEditors.PanelControl panelControl3;
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit Officetxt;
+        private DevExpress.XtraEditors.TextEdit txtOffice;
         private DevExpress.XtraEditors.TextEdit OffPinTxt;
-        private DevExpress.XtraEditors.TextEdit CompanyNametxtEdit;
-        private DevExpress.XtraEditors.TextEdit Codetxtedit;
+        private DevExpress.XtraEditors.TextEdit txtCompanyName;
+        private DevExpress.XtraEditors.TextEdit txtCode;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.LabelControl labelControl8;
@@ -1231,62 +1233,62 @@ namespace BillPlex
         private DevExpress.XtraEditors.LabelControl SsiLbl;
         private DevExpress.XtraEditors.LabelControl CstLbl;
         private DevExpress.XtraEditors.LabelControl TinLbl;
-        private DevExpress.XtraEditors.DropDownButton dropDownButton3;
-        private DevExpress.XtraEditors.DropDownButton dropDownButton2;
+        private DevExpress.XtraEditors.DropDownButton drpESIDate;
+        private DevExpress.XtraEditors.DropDownButton drpPFDate;
         private DevExpress.XtraEditors.LabelControl DateLbl1;
         private DevExpress.XtraEditors.LabelControl DateLbl;
-        private DevExpress.XtraEditors.TextEdit FactoryActTxt;
-        private DevExpress.XtraEditors.TextEdit EsiTxt;
-        private DevExpress.XtraEditors.TextEdit PinNotxt;
+        private DevExpress.XtraEditors.TextEdit txtFactoryAct;
+        private DevExpress.XtraEditors.TextEdit txtEsiCode;
+        private DevExpress.XtraEditors.TextEdit txtPinNo;
         private DevExpress.XtraEditors.LabelControl labelControl17;
-        private DevExpress.XtraEditors.DropDownButton StateDd;
-        private DevExpress.XtraEditors.TextEdit PFTxt;
-        private DevExpress.XtraEditors.TextEdit Emailtxt;
-        private DevExpress.XtraEditors.TextEdit WebsiteTxt;
+        private DevExpress.XtraEditors.DropDownButton drpState;
+        private DevExpress.XtraEditors.TextEdit txtPFCode;
+        private DevExpress.XtraEditors.TextEdit txtEmail;
+        private DevExpress.XtraEditors.TextEdit txtWebsite;
         private DevExpress.XtraEditors.LabelControl labelControl16;
         private DevExpress.XtraEditors.LabelControl labelControl15;
         private DevExpress.XtraEditors.LabelControl labelControl14;
         private DevExpress.XtraEditors.LabelControl labelControl13;
         private DevExpress.XtraEditors.LabelControl labelControl12;
-        private DevExpress.XtraEditors.DropDownButton StartingDateDdBtn;
+        private DevExpress.XtraEditors.DropDownButton drpStartingDate;
         private DevExpress.XtraEditors.LabelControl labelControl11;
-        private DevExpress.XtraEditors.TextEdit CstTxt;
-        private DevExpress.XtraEditors.TextEdit SsiTxt;
-        private DevExpress.XtraEditors.TextEdit PanNotxt;
-        private DevExpress.XtraEditors.TextEdit tanTxt;
-        private DevExpress.XtraEditors.TextEdit LicenseTxt;
-        private DevExpress.XtraEditors.TextEdit TinTxt;
+        private DevExpress.XtraEditors.TextEdit txtCSTNo;
+        private DevExpress.XtraEditors.TextEdit txtSSINo;
+        private DevExpress.XtraEditors.TextEdit txtPanNo;
+        private DevExpress.XtraEditors.TextEdit txtTanNo;
+        private DevExpress.XtraEditors.TextEdit txtLicense;
+        private DevExpress.XtraEditors.TextEdit txtTin;
         private DevExpress.XtraEditors.LabelControl LicenseLbl;
         private DevExpress.XtraEditors.LabelControl TanLbl;
         private DevExpress.XtraEditors.PanelControl panelControl6;
         private DevExpress.XtraEditors.LabelControl AuthorisedLbl;
         private DevExpress.XtraEditors.PanelControl panelControl5;
-        private DevExpress.XtraEditors.TextEdit pantxt;
+        private DevExpress.XtraEditors.TextEdit txtAuthorPanNo;
         private DevExpress.XtraEditors.LabelControl labelControl20;
-        private DevExpress.XtraEditors.TextEdit mobiletxt;
-        private DevExpress.XtraEditors.TextEdit BloodGrouptxt;
-        private DevExpress.XtraEditors.TextEdit DOBtxt;
+        private DevExpress.XtraEditors.TextEdit txtAuthorMobileNo;
+        private DevExpress.XtraEditors.TextEdit txtAuthorBloodGroup;
+        private DevExpress.XtraEditors.TextEdit txtAuthorDOB;
         private DevExpress.XtraEditors.LabelControl labelControl27;
         private DevExpress.XtraEditors.LabelControl labelControl29;
         private DevExpress.XtraEditors.LabelControl labelControl30;
         private DevExpress.XtraEditors.LabelControl labelControl31;
-        private DevExpress.XtraEditors.DropDownButton StartingdateDd;
-        private DevExpress.XtraEditors.TextEdit FathersTxt;
-        private DevExpress.XtraEditors.TextEdit Nametxt;
+        private DevExpress.XtraEditors.DropDownButton drpAuthorStartingdate;
+        private DevExpress.XtraEditors.TextEdit txtFathersName;
+        private DevExpress.XtraEditors.TextEdit txtName;
         private DevExpress.XtraEditors.LabelControl AddressLbl;
         private DevExpress.XtraEditors.LabelControl GenderLbl;
         private DevExpress.XtraEditors.LabelControl labelControl38;
         private DevExpress.XtraEditors.LabelControl labelControl39;
         private DevExpress.XtraEditors.LabelControl nameLbl;
         private DevExpress.XtraEditors.PanelControl panelControl7;
-        private DevExpress.XtraEditors.RadioGroup GenderRdBtn;
-        private DevExpress.XtraEditors.RadioGroup BusinessRadioGroup;
-        private DevExpress.XtraEditors.MemoEdit AddressMemoedit;
+        private DevExpress.XtraEditors.RadioGroup radGender;
+        private DevExpress.XtraEditors.RadioGroup radBusinessNature;
+        private DevExpress.XtraEditors.MemoEdit txtAddress;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.TextEdit EmailIDtxt;
-        private DevExpress.XtraEditors.TextEdit Phonetxt;
+        private DevExpress.XtraEditors.TextEdit txtAuthorEmailId;
+        private DevExpress.XtraEditors.TextEdit txtAuthorPhoneNo;
         private DevExpress.XtraEditors.LabelControl labelControl26;
-        private DevExpress.XtraEditors.MemoEdit OfficeAddMemoedit;
+        private DevExpress.XtraEditors.MemoEdit txtOfficeAddress;
         private DevExpress.XtraEditors.SimpleButton ExitBtn;
         private DevExpress.XtraEditors.SimpleButton ClearBtn;
         private DevExpress.XtraEditors.SimpleButton DeleteBtn;
@@ -1294,7 +1296,7 @@ namespace BillPlex
         private DevExpress.XtraEditors.SimpleButton EditBtn;
         private DevExpress.XtraEditors.SimpleButton AddBtn;
         private DevExpress.XtraEditors.SimpleButton NewBtn;
-        private DevExpress.XtraEditors.TextEdit Pintxt;
+        private DevExpress.XtraEditors.TextEdit txtAuthorPin;
         private DevExpress.XtraEditors.LabelControl PinLbl;
         private DevExpress.XtraEditors.SimpleButton AddClearBtn;
         private DevExpress.XtraEditors.SimpleButton CopyBtn;
