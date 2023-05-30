@@ -109,7 +109,7 @@ namespace BillPlex
             this.txtEmail = new DevExpress.XtraEditors.TextEdit();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.txtClientCompanyPhone = new DevExpress.XtraEditors.TextEdit();
-            this.OffPinTxt = new DevExpress.XtraEditors.TextEdit();
+            this.stdCodeTxt = new DevExpress.XtraEditors.TextEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.radBusinessNature = new DevExpress.XtraEditors.RadioGroup();
@@ -175,7 +175,7 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.txtWebsite.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtClientCompanyPhone.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OffPinTxt.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stdCodeTxt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radBusinessNature.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPin.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOffAddress.Properties)).BeginInit();
@@ -710,6 +710,7 @@ namespace BillPlex
             // 
             this.ClearBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClearBtn.Appearance.Options.UseFont = true;
+            this.ClearBtn.Enabled = false;
             this.ClearBtn.Location = new System.Drawing.Point(18, 213);
             this.ClearBtn.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.ClearBtn.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.White;
@@ -724,6 +725,7 @@ namespace BillPlex
             // 
             this.DeleteBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeleteBtn.Appearance.Options.UseFont = true;
+            this.DeleteBtn.Enabled = false;
             this.DeleteBtn.Location = new System.Drawing.Point(18, 172);
             this.DeleteBtn.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.DeleteBtn.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.White;
@@ -738,6 +740,7 @@ namespace BillPlex
             // 
             this.UpdateBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UpdateBtn.Appearance.Options.UseFont = true;
+            this.UpdateBtn.Enabled = false;
             this.UpdateBtn.Location = new System.Drawing.Point(18, 131);
             this.UpdateBtn.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.UpdateBtn.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.White;
@@ -753,6 +756,7 @@ namespace BillPlex
             // 
             this.EditBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EditBtn.Appearance.Options.UseFont = true;
+            this.EditBtn.Enabled = false;
             this.EditBtn.Location = new System.Drawing.Point(18, 85);
             this.EditBtn.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.EditBtn.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.White;
@@ -796,6 +800,7 @@ namespace BillPlex
             // 
             this.NewBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NewBtn.Appearance.Options.UseFont = true;
+            this.NewBtn.Enabled = false;
             this.NewBtn.Location = new System.Drawing.Point(18, 5);
             this.NewBtn.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.NewBtn.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.White;
@@ -836,7 +841,7 @@ namespace BillPlex
             this.panelControl3.Controls.Add(this.txtEmail);
             this.panelControl3.Controls.Add(this.labelControl12);
             this.panelControl3.Controls.Add(this.txtClientCompanyPhone);
-            this.panelControl3.Controls.Add(this.OffPinTxt);
+            this.panelControl3.Controls.Add(this.stdCodeTxt);
             this.panelControl3.Controls.Add(this.labelControl9);
             this.panelControl3.Controls.Add(this.labelControl10);
             this.panelControl3.Controls.Add(this.radBusinessNature);
@@ -1137,13 +1142,13 @@ namespace BillPlex
             this.txtClientCompanyPhone.Size = new System.Drawing.Size(154, 20);
             this.txtClientCompanyPhone.TabIndex = 32;
             // 
-            // OffPinTxt
+            // stdCodeTxt
             // 
-            this.OffPinTxt.EditValue = "";
-            this.OffPinTxt.Location = new System.Drawing.Point(556, 49);
-            this.OffPinTxt.Name = "OffPinTxt";
-            this.OffPinTxt.Size = new System.Drawing.Size(52, 20);
-            this.OffPinTxt.TabIndex = 31;
+            this.stdCodeTxt.EditValue = "";
+            this.stdCodeTxt.Location = new System.Drawing.Point(556, 49);
+            this.stdCodeTxt.Name = "stdCodeTxt";
+            this.stdCodeTxt.Size = new System.Drawing.Size(52, 20);
+            this.stdCodeTxt.TabIndex = 31;
             // 
             // labelControl9
             // 
@@ -1463,7 +1468,7 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.txtWebsite.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtClientCompanyPhone.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OffPinTxt.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stdCodeTxt.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radBusinessNature.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPin.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOffAddress.Properties)).EndInit();
@@ -1507,7 +1512,7 @@ namespace BillPlex
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.TextEdit txtClientCompanyPhone;
-        private DevExpress.XtraEditors.TextEdit OffPinTxt;
+        private DevExpress.XtraEditors.TextEdit stdCodeTxt;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.TextEdit txtEmail;
         private DevExpress.XtraEditors.LabelControl labelControl12;

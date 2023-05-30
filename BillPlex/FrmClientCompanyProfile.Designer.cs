@@ -104,6 +104,7 @@ namespace BillPlex
             this.Exitbtn.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Exitbtn.Appearance.Options.UseBackColor = true;
             this.Exitbtn.Appearance.Options.UseFont = true;
+            this.Exitbtn.Enabled = false;
             this.Exitbtn.Location = new System.Drawing.Point(12, 196);
             this.Exitbtn.LookAndFeel.SkinName = "DevExpress Style";
             this.Exitbtn.LookAndFeel.UseDefaultLookAndFeel = false;

@@ -42,11 +42,11 @@ namespace BillPlex
             this.Newbtn = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Claerbtn = new DevExpress.XtraEditors.SimpleButton();
             this.Findbtn = new DevExpress.XtraEditors.SimpleButton();
             this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -112,6 +112,7 @@ namespace BillPlex
             this.Exitbtn.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Exitbtn.Appearance.Options.UseBackColor = true;
             this.Exitbtn.Appearance.Options.UseFont = true;
+            this.Exitbtn.Enabled = false;
             this.Exitbtn.Location = new System.Drawing.Point(12, 246);
             this.Exitbtn.LookAndFeel.SkinName = "DevExpress Style";
             this.Exitbtn.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -126,6 +127,7 @@ namespace BillPlex
             this.Clearbtn.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Clearbtn.Appearance.Options.UseBackColor = true;
             this.Clearbtn.Appearance.Options.UseFont = true;
+            this.Clearbtn.Enabled = false;
             this.Clearbtn.Location = new System.Drawing.Point(12, 207);
             this.Clearbtn.LookAndFeel.SkinName = "DevExpress Style";
             this.Clearbtn.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -140,6 +142,7 @@ namespace BillPlex
             this.Deletebtn.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Deletebtn.Appearance.Options.UseBackColor = true;
             this.Deletebtn.Appearance.Options.UseFont = true;
+            this.Deletebtn.Enabled = false;
             this.Deletebtn.Location = new System.Drawing.Point(12, 168);
             this.Deletebtn.LookAndFeel.SkinName = "DevExpress Style";
             this.Deletebtn.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -154,6 +157,7 @@ namespace BillPlex
             this.Updatebtn.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Updatebtn.Appearance.Options.UseBackColor = true;
             this.Updatebtn.Appearance.Options.UseFont = true;
+            this.Updatebtn.Enabled = false;
             this.Updatebtn.Location = new System.Drawing.Point(12, 126);
             this.Updatebtn.LookAndFeel.SkinName = "DevExpress Style";
             this.Updatebtn.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -168,6 +172,7 @@ namespace BillPlex
             this.Editbtn.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Editbtn.Appearance.Options.UseBackColor = true;
             this.Editbtn.Appearance.Options.UseFont = true;
+            this.Editbtn.Enabled = false;
             this.Editbtn.Location = new System.Drawing.Point(12, 86);
             this.Editbtn.LookAndFeel.SkinName = "DevExpress Style";
             this.Editbtn.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -182,6 +187,7 @@ namespace BillPlex
             this.Addbtn.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Addbtn.Appearance.Options.UseBackColor = true;
             this.Addbtn.Appearance.Options.UseFont = true;
+            this.Addbtn.Enabled = false;
             this.Addbtn.Location = new System.Drawing.Point(12, 43);
             this.Addbtn.LookAndFeel.SkinName = "DevExpress Style";
             this.Addbtn.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -203,6 +209,7 @@ namespace BillPlex
             this.Newbtn.Size = new System.Drawing.Size(75, 23);
             this.Newbtn.TabIndex = 5;
             this.Newbtn.Text = "NEW";
+            this.Newbtn.Click += new System.EventHandler(this.Newbtn_Click);
             // 
             // panelControl3
             // 
@@ -224,6 +231,29 @@ namespace BillPlex
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Size = new System.Drawing.Size(1423, 621);
             this.panelControl4.TabIndex = 0;
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.Location = new System.Drawing.Point(21, 70);
+            this.gridControl1.LookAndFeel.SkinName = "DevExpress Style";
+            this.gridControl1.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.gridControl1.MainView = this.gridView2;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(1402, 551);
+            this.gridControl1.TabIndex = 8;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
+            // 
+            // gridView2
+            // 
+            this.gridView2.Appearance.GroupPanel.BackColor = System.Drawing.Color.LightGray;
+            this.gridView2.Appearance.GroupPanel.BackColor2 = System.Drawing.Color.LightGray;
+            this.gridView2.Appearance.GroupPanel.Options.UseBackColor = true;
+            this.gridView2.GridControl = this.gridControl1;
+            this.gridView2.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.PaintStyleName = "Flat";
+            this.gridView2.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             // 
             // Claerbtn
             // 
@@ -259,29 +289,6 @@ namespace BillPlex
             this.dropDownButton1.Name = "dropDownButton1";
             this.dropDownButton1.Size = new System.Drawing.Size(721, 23);
             this.dropDownButton1.TabIndex = 2;
-            // 
-            // gridControl1
-            // 
-            this.gridControl1.Location = new System.Drawing.Point(21, 70);
-            this.gridControl1.LookAndFeel.SkinName = "DevExpress Style";
-            this.gridControl1.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.gridControl1.MainView = this.gridView2;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1402, 551);
-            this.gridControl1.TabIndex = 8;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
-            // 
-            // gridView2
-            // 
-            this.gridView2.Appearance.GroupPanel.BackColor = System.Drawing.Color.LightGray;
-            this.gridView2.Appearance.GroupPanel.BackColor2 = System.Drawing.Color.LightGray;
-            this.gridView2.Appearance.GroupPanel.Options.UseBackColor = true;
-            this.gridView2.GridControl = this.gridControl1;
-            this.gridView2.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.PaintStyleName = "Flat";
-            this.gridView2.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             // 
             // FrmSubClientCompanyProfile
             // 
