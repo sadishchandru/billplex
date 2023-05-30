@@ -46,8 +46,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlConnector.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="SQLChanges\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

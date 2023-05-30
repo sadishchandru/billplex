@@ -42,74 +42,86 @@ namespace BillPlex
             new SqlParameter("@ComOffAdd", txtOfficeAddress.Text),
             new SqlParameter("@Comstate", drpState.Text),
             new SqlParameter("@ComPin", txtPinNo.Text),
-            new SqlParameter("@ComNature", txtOffice.Text),
+            new SqlParameter("@ComStdCode", txtStdCode.Text),
+            new SqlParameter("@ComPhone", txtPhoneNo.Text),
             new SqlParameter("@ComDatestart", ddStartingdate.Text),
-            new SqlParameter("@ComStdCode", radBusinessNature.Text),
-            new SqlParameter("", txtEmail.Text),
-            new SqlParameter("", txtWebsite.Text),
-            new SqlParameter("", txtPFCode.Text),
-            new SqlParameter("", ddPfDate.Text),
-            new SqlParameter("", txtEsiCode.Text),
-            new SqlParameter("", ddEsiDate.Text),
-            new SqlParameter("", txtFactoryAct.Text),
-            new SqlParameter("", txtTin.Text),
-            new SqlParameter("", txtCSTNo.Text),
-            new SqlParameter("", txtSSINo.Text),
-            new SqlParameter("", txtPanNo.Text),
-            new SqlParameter("", txtTanNo.Text),
-            new SqlParameter("", txtLicense.Text),
-            new SqlParameter("", txtName.Text),
-            new SqlParameter("", txtFathersName.Text),
-            new SqlParameter("", radGender.Text),
-            new SqlParameter("", txtAddress.Text),
-            new SqlParameter("", ddAuthstartingdate.Text),
-            new SqlParameter("", txtAuthorPin.Text),
-            new SqlParameter("", txtAuthorPhoneNo.Text),
-            new SqlParameter("", txtAuthorBloodGroup.Text),
-            new SqlParameter("", ddAuthDOB.Text),
-            new SqlParameter("", txtAuthorEmailId.Text),
-            new SqlParameter("", txtAuthorMobileNo.Text),
-            new SqlParameter("", txtAuthorPanNo.Text)
-           // new SqlParameter("", drpAuthorStartingdate.Text),
-
+            new SqlParameter("@ComNature", radBusinessNature.Text),
+            new SqlParameter("@ComEmail", txtEmail.Text),
+            new SqlParameter("@ComWebsite", txtWebsite.Text),
+            new SqlParameter("@ComPFno", txtPFCode.Text),
+            new SqlParameter("@ComPFdate", ddPfDate.Text),
+            new SqlParameter("@ComESIno", txtEsiCode.Text),
+            new SqlParameter("@ComESIdate", ddEsiDate.Text),
+            new SqlParameter("@ComFactoryNo", txtFactoryAct.Text),
+            new SqlParameter("@ComTINno", txtTin.Text),
+            new SqlParameter("@ComCSTno", txtCSTNo.Text),
+            new SqlParameter("@ComSSLno", txtSSINo.Text),
+            new SqlParameter("@ComPanno", txtPanNo.Text),
+            new SqlParameter("@ComTanno", txtTanNo.Text),
+            new SqlParameter("@ComLicenseno", txtLicense.Text),
+            new SqlParameter("@CAuthorName", txtName.Text),
+            new SqlParameter("@CAFathername", txtFathersName.Text),
+            new SqlParameter("@CAGender", radGender.Text),
+            new SqlParameter("@CAAddress", txtAddress.Text),
+            new SqlParameter("@CAstate", ddAuthstartingdate.Text),
+            new SqlParameter("@CApin", txtAuthorPin.Text),
+            new SqlParameter("@CAStdCode", txtAuthorStdCode.Text),
+            new SqlParameter("@CAPhoneno", txtAuthorPhoneNo.Text),
+            new SqlParameter("@CAblood", txtAuthorBloodGroup.Text),
+            new SqlParameter("@CADOB", ddAuthDOB.Text),
+            new SqlParameter("@CAEmail", txtAuthorEmailId.Text),
+            new SqlParameter("@CAMobile", txtAuthorMobileNo.Text),
+            new SqlParameter("@CAPan", txtAuthorPanNo.Text)
             };
 
-           var i =  _conn.ExecuteNonQuery("PRO_UpdateCompanyProfileInfo", parameters);
+            var i = _conn.ExecuteNonQuery("PRO_UpdateCompanyProfileInfo", parameters);
         }
 
         private void UpdateBtn_Click(object sender, EventArgs e)
         {
-        //    string connectionString = ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString;
-        //    SqlConnector con = new SqlConnector(connectionString);
+            var Id = 0;
+            // Calling the stored procedure for creating a new Company Profile
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+            new SqlParameter("@Id", Id),
+            new SqlParameter("@ComCcode", txtCode.Text),
+            new SqlParameter("@ComName", txtCompanyName.Text),
+            new SqlParameter("@ComOffAdd", txtOfficeAddress.Text),
+            new SqlParameter("@Comstate", drpState.Text),
+            new SqlParameter("@ComPin", txtPinNo.Text),
+            new SqlParameter("@ComStdCode", txtStdCode.Text),
+            new SqlParameter("@ComPhone", txtPhoneNo.Text),
+            new SqlParameter("@ComDatestart", ddStartingdate.Text),
+            new SqlParameter("@ComNature", radBusinessNature.Text),
+            new SqlParameter("@ComEmail", txtEmail.Text),
+            new SqlParameter("@ComWebsite", txtWebsite.Text),
+            new SqlParameter("@ComPFno", txtPFCode.Text),
+            new SqlParameter("@ComPFdate", ddPfDate.Text),
+            new SqlParameter("@ComESIno", txtEsiCode.Text),
+            new SqlParameter("@ComESIdate", ddEsiDate.Text),
+            new SqlParameter("@ComFactoryNo", txtFactoryAct.Text),
+            new SqlParameter("@ComTINno", txtTin.Text),
+            new SqlParameter("@ComCSTno", txtCSTNo.Text),
+            new SqlParameter("@ComSSLno", txtSSINo.Text),
+            new SqlParameter("@ComPanno", txtPanNo.Text),
+            new SqlParameter("@ComTanno", txtTanNo.Text),
+            new SqlParameter("@ComLicenseno", txtLicense.Text),
+            new SqlParameter("@CAuthorName", txtName.Text),
+            new SqlParameter("@CAFathername", txtFathersName.Text),
+            new SqlParameter("@CAGender", radGender.Text),
+            new SqlParameter("@CAAddress", txtAddress.Text),
+            new SqlParameter("@CAstate", ddAuthstartingdate.Text),
+            new SqlParameter("@CApin", txtAuthorPin.Text),
+            new SqlParameter("@CAStdCode", txtAuthorStdCode.Text),
+            new SqlParameter("@CAPhoneno", txtAuthorPhoneNo.Text),
+            new SqlParameter("@CAblood", txtAuthorBloodGroup.Text),
+            new SqlParameter("@CADOB", ddAuthDOB.Text),
+            new SqlParameter("@CAEmail", txtAuthorEmailId.Text),
+            new SqlParameter("@CAMobile", txtAuthorMobileNo.Text),
+            new SqlParameter("@CAPan", txtAuthorPanNo.Text)
+            };
 
-        //    // Example of calling the stored procedure for creating a new user
-        //    SqlParameter[] parameters = new SqlParameter[]
-        //    {
-        //    new SqlParameter("@ComCcode", txtCodeEdit.Text),
-        //    new SqlParameter("@ComName", txtCompanyNameEdit.Text),
-        //    new SqlParameter("@ComOffAdd", txtOfficeAddress.Text),
-        //    new SqlParameter("@Comstate", drpState.Text),
-        //    new SqlParameter("@ComPin", txtPinNo.Text),
-        //    new SqlParameter("@ComNature", txtOffice.Text),
-        //    new SqlParameter("@ComDatestart", drpStartingDate.Text),
-        //    new SqlParameter("@ComStdCode", radBusinessNature.Text),
-        //    new SqlParameter("", txtEmail.Text),
-        //    new SqlParameter("", txtWebsite.Text),
-        //    new SqlParameter("", txtPFCode.Text),
-        //    new SqlParameter("", drpPFDate.Text),
-        //    new SqlParameter("", txtEsiCode.Text),
-        //    new SqlParameter("", drpESIDate.Text),
-        //    new SqlParameter("", txtFactoryAct.Text),
-        //    new SqlParameter("", txtTin.Text),
-        //    new SqlParameter("", txtCSTNo.Text),
-        //    new SqlParameter("", txtSSINo.Text),
-        //    new SqlParameter("", txtPanNo.Text),
-        //    new SqlParameter("", txtTanNo.Text),
-        //    new SqlParameter("", txtLicense.Text),
-
-        //    };
-
-        //    con.ExecuteNonQuery("PRO_UpdateCompanyProfileInfo", parameters);
-       }
+            var i = _conn.ExecuteNonQuery("PRO_UpdateCompanyProfileInfo", parameters);
+        }
     }
 }

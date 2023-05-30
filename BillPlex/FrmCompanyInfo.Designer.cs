@@ -50,7 +50,6 @@ namespace BillPlex
             this.txtAddress = new DevExpress.XtraEditors.MemoEdit();
             this.btnAddBankInfo = new DevExpress.XtraEditors.SimpleButton();
             this.txtAuthorEmailId = new DevExpress.XtraEditors.TextEdit();
-            this.txtAuthorPhoneNo = new DevExpress.XtraEditors.TextEdit();
             this.labelControl26 = new DevExpress.XtraEditors.LabelControl();
             this.radGender = new DevExpress.XtraEditors.RadioGroup();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
@@ -106,8 +105,8 @@ namespace BillPlex
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            this.txtOffice = new DevExpress.XtraEditors.TextEdit();
-            this.OffPinTxt = new DevExpress.XtraEditors.TextEdit();
+            this.txtPhoneNo = new DevExpress.XtraEditors.TextEdit();
+            this.txtStdCode = new DevExpress.XtraEditors.TextEdit();
             this.txtCompanyName = new DevExpress.XtraEditors.TextEdit();
             this.txtCode = new DevExpress.XtraEditors.TextEdit();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
@@ -119,6 +118,8 @@ namespace BillPlex
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.ddStartingdate = new DevExpress.XtraEditors.DateEdit();
+            this.txtAuthorPhoneNo = new DevExpress.XtraEditors.TextEdit();
+            this.txtAuthorStdCode = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -134,7 +135,6 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.txtAuthorPin.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAddress.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAuthorEmailId.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAuthorPhoneNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGender.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
             this.panelControl6.SuspendLayout();
@@ -165,12 +165,14 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.txtPFCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtWebsite.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtOffice.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OffPinTxt.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPhoneNo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtStdCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCompanyName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddStartingdate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddStartingdate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAuthorPhoneNo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAuthorStdCode.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -324,6 +326,8 @@ namespace BillPlex
             // panelControl5
             // 
             this.panelControl5.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.panelControl5.Controls.Add(this.txtAuthorPhoneNo);
+            this.panelControl5.Controls.Add(this.txtAuthorStdCode);
             this.panelControl5.Controls.Add(this.ddAuthDOB);
             this.panelControl5.Controls.Add(this.ddAuthstartingdate);
             this.panelControl5.Controls.Add(this.txtAuthorPin);
@@ -333,7 +337,6 @@ namespace BillPlex
             this.panelControl5.Controls.Add(this.txtAddress);
             this.panelControl5.Controls.Add(this.btnAddBankInfo);
             this.panelControl5.Controls.Add(this.txtAuthorEmailId);
-            this.panelControl5.Controls.Add(this.txtAuthorPhoneNo);
             this.panelControl5.Controls.Add(this.labelControl26);
             this.panelControl5.Controls.Add(this.radGender);
             this.panelControl5.Controls.Add(this.panelControl6);
@@ -473,13 +476,6 @@ namespace BillPlex
             this.txtAuthorEmailId.Name = "txtAuthorEmailId";
             this.txtAuthorEmailId.Size = new System.Drawing.Size(207, 20);
             this.txtAuthorEmailId.TabIndex = 51;
-            // 
-            // txtAuthorPhoneNo
-            // 
-            this.txtAuthorPhoneNo.Location = new System.Drawing.Point(620, 46);
-            this.txtAuthorPhoneNo.Name = "txtAuthorPhoneNo";
-            this.txtAuthorPhoneNo.Size = new System.Drawing.Size(207, 20);
-            this.txtAuthorPhoneNo.TabIndex = 50;
             // 
             // labelControl26
             // 
@@ -749,8 +745,8 @@ namespace BillPlex
             this.panelControl3.Controls.Add(this.labelControl13);
             this.panelControl3.Controls.Add(this.labelControl12);
             this.panelControl3.Controls.Add(this.labelControl11);
-            this.panelControl3.Controls.Add(this.txtOffice);
-            this.panelControl3.Controls.Add(this.OffPinTxt);
+            this.panelControl3.Controls.Add(this.txtPhoneNo);
+            this.panelControl3.Controls.Add(this.txtStdCode);
             this.panelControl3.Controls.Add(this.txtCompanyName);
             this.panelControl3.Controls.Add(this.txtCode);
             this.panelControl3.Controls.Add(this.labelControl10);
@@ -1088,21 +1084,21 @@ namespace BillPlex
             this.labelControl11.TabIndex = 15;
             this.labelControl11.Text = "Business Nature";
             // 
-            // txtOffice
+            // txtPhoneNo
             // 
-            this.txtOffice.EditValue = "";
-            this.txtOffice.Location = new System.Drawing.Point(196, 227);
-            this.txtOffice.Name = "txtOffice";
-            this.txtOffice.Size = new System.Drawing.Size(242, 20);
-            this.txtOffice.TabIndex = 13;
+            this.txtPhoneNo.EditValue = "";
+            this.txtPhoneNo.Location = new System.Drawing.Point(196, 227);
+            this.txtPhoneNo.Name = "txtPhoneNo";
+            this.txtPhoneNo.Size = new System.Drawing.Size(242, 20);
+            this.txtPhoneNo.TabIndex = 13;
             // 
-            // OffPinTxt
+            // txtStdCode
             // 
-            this.OffPinTxt.EditValue = "";
-            this.OffPinTxt.Location = new System.Drawing.Point(138, 227);
-            this.OffPinTxt.Name = "OffPinTxt";
-            this.OffPinTxt.Size = new System.Drawing.Size(52, 20);
-            this.OffPinTxt.TabIndex = 12;
+            this.txtStdCode.EditValue = "";
+            this.txtStdCode.Location = new System.Drawing.Point(138, 227);
+            this.txtStdCode.Name = "txtStdCode";
+            this.txtStdCode.Size = new System.Drawing.Size(52, 20);
+            this.txtStdCode.TabIndex = 12;
             // 
             // txtCompanyName
             // 
@@ -1223,6 +1219,22 @@ namespace BillPlex
             this.ddStartingdate.Size = new System.Drawing.Size(300, 20);
             this.ddStartingdate.TabIndex = 47;
             // 
+            // txtAuthorPhoneNo
+            // 
+            this.txtAuthorPhoneNo.EditValue = "";
+            this.txtAuthorPhoneNo.Location = new System.Drawing.Point(670, 45);
+            this.txtAuthorPhoneNo.Name = "txtAuthorPhoneNo";
+            this.txtAuthorPhoneNo.Size = new System.Drawing.Size(157, 20);
+            this.txtAuthorPhoneNo.TabIndex = 60;
+            // 
+            // txtAuthorStdCode
+            // 
+            this.txtAuthorStdCode.EditValue = "";
+            this.txtAuthorStdCode.Location = new System.Drawing.Point(612, 45);
+            this.txtAuthorStdCode.Name = "txtAuthorStdCode";
+            this.txtAuthorStdCode.Size = new System.Drawing.Size(42, 20);
+            this.txtAuthorStdCode.TabIndex = 59;
+            // 
             // FrmCompanyInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1249,7 +1261,6 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.txtAuthorPin.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAddress.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAuthorEmailId.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAuthorPhoneNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGender.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
             this.panelControl6.ResumeLayout(false);
@@ -1283,12 +1294,14 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.txtPFCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtWebsite.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtOffice.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OffPinTxt.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPhoneNo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtStdCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCompanyName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddStartingdate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddStartingdate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAuthorPhoneNo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAuthorStdCode.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1301,8 +1314,8 @@ namespace BillPlex
         private DevExpress.XtraEditors.PanelControl panelControl3;
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit txtOffice;
-        private DevExpress.XtraEditors.TextEdit OffPinTxt;
+        private DevExpress.XtraEditors.TextEdit txtPhoneNo;
+        private DevExpress.XtraEditors.TextEdit txtStdCode;
         private DevExpress.XtraEditors.TextEdit txtCompanyName;
         private DevExpress.XtraEditors.TextEdit txtCode;
         private DevExpress.XtraEditors.LabelControl labelControl10;
@@ -1365,7 +1378,6 @@ namespace BillPlex
         private DevExpress.XtraEditors.MemoEdit txtAddress;
         private DevExpress.XtraEditors.SimpleButton btnAddBankInfo;
         private DevExpress.XtraEditors.TextEdit txtAuthorEmailId;
-        private DevExpress.XtraEditors.TextEdit txtAuthorPhoneNo;
         private DevExpress.XtraEditors.LabelControl labelControl26;
         private DevExpress.XtraEditors.MemoEdit txtOfficeAddress;
         private DevExpress.XtraEditors.SimpleButton ExitBtn;
@@ -1385,5 +1397,7 @@ namespace BillPlex
         private DevExpress.XtraEditors.DateEdit ddPfDate;
         private DevExpress.XtraEditors.DateEdit ddAuthstartingdate;
         private DevExpress.XtraEditors.DateEdit ddAuthDOB;
+        private DevExpress.XtraEditors.TextEdit txtAuthorPhoneNo;
+        private DevExpress.XtraEditors.TextEdit txtAuthorStdCode;
     }
 }
