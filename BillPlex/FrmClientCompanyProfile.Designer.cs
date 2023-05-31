@@ -151,6 +151,7 @@ namespace BillPlex
             // 
             // gridControl1
             // 
+            this.gridControl1.DataMember = "PRO_GetMasterCompanyProfileInfo";
             this.gridControl1.Location = new System.Drawing.Point(6, 52);
             this.gridControl1.LookAndFeel.SkinName = "DevExpress Style";
             this.gridControl1.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -167,8 +168,11 @@ namespace BillPlex
             this.gridView2.Appearance.GroupPanel.BackColor2 = System.Drawing.Color.LightGray;
             this.gridView2.Appearance.GroupPanel.Options.UseBackColor = true;
             this.gridView2.GridControl = this.gridControl1;
-            this.gridView2.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsScrollAnnotations.ShowCustomAnnotations = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView2.OptionsScrollAnnotations.ShowErrors = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView2.OptionsScrollAnnotations.ShowFocusedRow = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView2.OptionsScrollAnnotations.ShowSelectedRows = DevExpress.Utils.DefaultBoolean.False;
             this.gridView2.PaintStyleName = "Flat";
             this.gridView2.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             // 

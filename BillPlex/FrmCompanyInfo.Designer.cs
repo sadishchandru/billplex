@@ -41,6 +41,8 @@ namespace BillPlex
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.BtnNew = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
+            this.txtAuthorPhoneNo = new DevExpress.XtraEditors.TextEdit();
+            this.txtAuthorStdCode = new DevExpress.XtraEditors.TextEdit();
             this.ddAuthDOB = new DevExpress.XtraEditors.DateEdit();
             this.ddAuthstartingdate = new DevExpress.XtraEditors.DateEdit();
             this.txtAuthorPin = new DevExpress.XtraEditors.TextEdit();
@@ -118,8 +120,6 @@ namespace BillPlex
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.ddStartingdate = new DevExpress.XtraEditors.DateEdit();
-            this.txtAuthorPhoneNo = new DevExpress.XtraEditors.TextEdit();
-            this.txtAuthorStdCode = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -128,6 +128,8 @@ namespace BillPlex
             this.panelControl7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
             this.panelControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAuthorPhoneNo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAuthorStdCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddAuthDOB.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddAuthDOB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddAuthstartingdate.Properties.CalendarTimeProperties)).BeginInit();
@@ -171,8 +173,6 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddStartingdate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddStartingdate.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAuthorPhoneNo.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAuthorStdCode.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -361,6 +361,22 @@ namespace BillPlex
             this.panelControl5.Size = new System.Drawing.Size(1309, 339);
             this.panelControl5.TabIndex = 2;
             // 
+            // txtAuthorPhoneNo
+            // 
+            this.txtAuthorPhoneNo.EditValue = "";
+            this.txtAuthorPhoneNo.Location = new System.Drawing.Point(670, 45);
+            this.txtAuthorPhoneNo.Name = "txtAuthorPhoneNo";
+            this.txtAuthorPhoneNo.Size = new System.Drawing.Size(157, 20);
+            this.txtAuthorPhoneNo.TabIndex = 60;
+            // 
+            // txtAuthorStdCode
+            // 
+            this.txtAuthorStdCode.EditValue = "";
+            this.txtAuthorStdCode.Location = new System.Drawing.Point(612, 45);
+            this.txtAuthorStdCode.Name = "txtAuthorStdCode";
+            this.txtAuthorStdCode.Size = new System.Drawing.Size(42, 20);
+            this.txtAuthorStdCode.TabIndex = 59;
+            // 
             // ddAuthDOB
             // 
             this.ddAuthDOB.EditValue = "";
@@ -505,6 +521,7 @@ namespace BillPlex
             this.radGender.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.radGender.Size = new System.Drawing.Size(300, 45);
             this.radGender.TabIndex = 47;
+            //this.radGender.SelectedIndexChanged += new System.EventHandler(this.radGender_SelectedIndexChanged);
             // 
             // panelControl6
             // 
@@ -1219,22 +1236,6 @@ namespace BillPlex
             this.ddStartingdate.Size = new System.Drawing.Size(300, 20);
             this.ddStartingdate.TabIndex = 47;
             // 
-            // txtAuthorPhoneNo
-            // 
-            this.txtAuthorPhoneNo.EditValue = "";
-            this.txtAuthorPhoneNo.Location = new System.Drawing.Point(670, 45);
-            this.txtAuthorPhoneNo.Name = "txtAuthorPhoneNo";
-            this.txtAuthorPhoneNo.Size = new System.Drawing.Size(157, 20);
-            this.txtAuthorPhoneNo.TabIndex = 60;
-            // 
-            // txtAuthorStdCode
-            // 
-            this.txtAuthorStdCode.EditValue = "";
-            this.txtAuthorStdCode.Location = new System.Drawing.Point(612, 45);
-            this.txtAuthorStdCode.Name = "txtAuthorStdCode";
-            this.txtAuthorStdCode.Size = new System.Drawing.Size(42, 20);
-            this.txtAuthorStdCode.TabIndex = 59;
-            // 
             // FrmCompanyInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1254,6 +1255,8 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
             this.panelControl5.ResumeLayout(false);
             this.panelControl5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAuthorPhoneNo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAuthorStdCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddAuthDOB.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddAuthDOB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddAuthstartingdate.Properties.CalendarTimeProperties)).EndInit();
@@ -1300,8 +1303,6 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddStartingdate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddStartingdate.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAuthorPhoneNo.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAuthorStdCode.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
