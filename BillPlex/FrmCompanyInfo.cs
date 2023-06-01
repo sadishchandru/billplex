@@ -33,8 +33,12 @@ namespace BillPlex
         private void AddBtn_Click(object sender, EventArgs e)
         {
 
+            string selectedValue = radBusinessNature.EditValue?.ToString() ?? "Default Value";
 
             // Calling the stored procedure for creating a new Company Profile
+
+
+
             SqlParameter[] parameters = new SqlParameter[]
             {
             new SqlParameter("@ComCcode", txtCode.Text),
@@ -45,7 +49,7 @@ namespace BillPlex
             new SqlParameter("@ComStdCode", txtStdCode.Text),
             new SqlParameter("@ComPhone", txtPhoneNo.Text),
             new SqlParameter("@ComDatestart", ddStartingdate.Text.ToString()),
-            new SqlParameter("@ComNature", radBusinessNature.Text.ToString()),
+            new SqlParameter("@ComNature", selectedValue),
             new SqlParameter("@ComEmail", txtEmail.Text),
             new SqlParameter("@ComWebsite", txtWebsite.Text),
             new SqlParameter("@ComPFno", txtPFCode.Text),
@@ -61,7 +65,7 @@ namespace BillPlex
             new SqlParameter("@ComLicenseno", txtLicense.Text),
             new SqlParameter("@CAuthorName", txtName.Text),
             new SqlParameter("@CAFathername", txtFathersName.Text),
-            new SqlParameter("@CAGender", radGender.Text),
+            new SqlParameter("@CAGender", selectedValue),
             new SqlParameter("@CAAddress", txtAddress.Text),
             new SqlParameter("@CAstate", ddAuthstartingdate.Text.ToString()),
             new SqlParameter("@CApin", txtAuthorPin.Text),
@@ -80,6 +84,7 @@ namespace BillPlex
         private void UpdateBtn_Click(object sender, EventArgs e)
         {
             var Id = 0;
+            string selectedValue = radBusinessNature.EditValue?.ToString() ?? "Default Value";
             // Calling the stored procedure for creating a new Company Profile
             SqlParameter[] parameters = new SqlParameter[]
             {
@@ -92,7 +97,7 @@ namespace BillPlex
             new SqlParameter("@ComStdCode", txtStdCode.Text),
             new SqlParameter("@ComPhone", txtPhoneNo.Text),
             new SqlParameter("@ComDatestart", ddStartingdate.Text.ToString()),
-            new SqlParameter("@ComNature", radBusinessNature.Text.ToString()),
+            new SqlParameter("@ComNature", selectedValue),
             new SqlParameter("@ComEmail", txtEmail.Text),
             new SqlParameter("@ComWebsite", txtWebsite.Text),
             new SqlParameter("@ComPFno", txtPFCode.Text),
@@ -108,7 +113,7 @@ namespace BillPlex
             new SqlParameter("@ComLicenseno", txtLicense.Text),
             new SqlParameter("@CAuthorName", txtName.Text),
             new SqlParameter("@CAFathername", txtFathersName.Text),
-            new SqlParameter("@CAGender", radGender.Text),
+            new SqlParameter("@CAGender", selectedValue),
             new SqlParameter("@CAAddress", txtAddress.Text),
             new SqlParameter("@CAstate", ddAuthstartingdate.Text.ToString()),
             new SqlParameter("@CApin", txtAuthorPin.Text),

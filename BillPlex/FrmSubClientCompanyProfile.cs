@@ -20,7 +20,7 @@ namespace BillPlex
 
         private void Newbtn_Click(object sender, EventArgs e)
         {
-            FrmClientCompanyInfo CP = new FrmClientCompanyInfo();
+            FrmSubClientCompanyInfo CP = new FrmSubClientCompanyInfo();
             CP.ShowDialog();
         }
     }

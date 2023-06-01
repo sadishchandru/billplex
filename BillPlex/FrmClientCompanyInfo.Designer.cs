@@ -666,8 +666,8 @@ namespace BillPlex
             this.radGender.Properties.Columns = 2;
             this.radGender.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
             this.radGender.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Male", true, null, "Male"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Female", true, null, "Female")});
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(1)), "Male", true, null, "Male"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(2)), "Female", true, null, "Female")});
             this.radGender.Properties.LookAndFeel.SkinName = "DevExpress Style";
             this.radGender.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.radGender.Size = new System.Drawing.Size(300, 45);
@@ -685,8 +685,8 @@ namespace BillPlex
             this.radActiveStatus.Properties.Columns = 2;
             this.radActiveStatus.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
             this.radActiveStatus.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Yes", true, null, "Yes"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "No", true, null, "No")});
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(1)), "Yes", true, null, "Yes"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(2)), "No", true, null, "No")});
             this.radActiveStatus.Properties.LookAndFeel.SkinName = "DevExpress Style";
             this.radActiveStatus.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.radActiveStatus.Size = new System.Drawing.Size(119, 45);
@@ -1182,10 +1182,10 @@ namespace BillPlex
             this.radBusinessNature.Properties.Columns = 2;
             this.radBusinessNature.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
             this.radBusinessNature.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Manufacture", true, null, "Manufacture"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Traders", true, null, "Traders"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Job Work", true, null, "Job Work"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Others", true, null, "Others")});
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(1)), "Manufacture", true, null, "Manufacture"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(3)), "Traders", true, null, "Traders"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(2)), "Job Work", true, null, "Job Work"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(4)), "Others", true, null, "Others")});
             this.radBusinessNature.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.radBusinessNature.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightBlue;
             this.radBusinessNature.Properties.LookAndFeel.SkinName = "DevExpress Style";
@@ -1378,8 +1378,8 @@ namespace BillPlex
             this.radPfType.Properties.Columns = 2;
             this.radPfType.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
             this.radPfType.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Category 1", true, null, "Category 1"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Category 2", true, null, "Category 2")});
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(1)), "Category 1", true, null, "Category 1"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(2)), "Category 2", true, null, "Category 2")});
             this.radPfType.Properties.LookAndFeel.SkinName = "DevExpress Style";
             this.radPfType.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.radPfType.Size = new System.Drawing.Size(249, 37);

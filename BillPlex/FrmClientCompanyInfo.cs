@@ -32,6 +32,8 @@ namespace BillPlex
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            string selectedValue = radBusinessNature.EditValue?.ToString() ?? "Default Value";
+
             // Calling the stored procedure for creating a new Company Profile
             SqlParameter[] parameters = new SqlParameter[]
             {
@@ -42,17 +44,17 @@ namespace BillPlex
                 new SqlParameter("@ComCoffAddress", txtOffAddress.Text),
                 new SqlParameter("@ComCstate", drpState.Text),
                 new SqlParameter("@ComCpin", txtPin.Text),
-                new SqlParameter("@ComCNature", radBusinessNature.Text),
-                new SqlParameter("@ComCDatestart", ddStartingDate.Text),
+                new SqlParameter("@ComCNature",selectedValue),
+                new SqlParameter("@ComCDatestart", ddStartingDate.Text.ToString()),
                 new SqlParameter("@ComStdcode", stdCodeTxt.Text),
                 new SqlParameter("@ComCPhone", txtClientCompanyPhone.Text),
                 new SqlParameter("@ComCEmail", txtEmail.Text),
                 new SqlParameter("@ComCWebsite", txtWebsite.Text),
-                new SqlParameter("@PfType", radPfType.Text),
+                new SqlParameter("@PfType", radPfType.Text.ToString()),
                 new SqlParameter("@ComCPFno", txtPFCode.Text),
-                new SqlParameter("@ComCPFdate", ddPfDate.Text),
+                new SqlParameter("@ComCPFdate", ddPfDate.Text.ToString()),
                 new SqlParameter("@ComCESIno", txtEsiCode.Text),
-                new SqlParameter("@ComCESIdate", ddEsiCode.Text),
+                new SqlParameter("@ComCESIdate", ddEsiCode.Text.ToString()),
                 new SqlParameter("@ComCFactoryno", txtFactoryAct.Text),
                 new SqlParameter("@ComCTINno", txtTin.Text),
                 new SqlParameter("@ComCCSTno", txtCst.Text),
@@ -62,9 +64,9 @@ namespace BillPlex
                 new SqlParameter("@ComCLicenseno", LicenseTxt.Text),
                 new SqlParameter("@ComCPname", txtName.Text),
                 new SqlParameter("@CCPFathername", txtFathers.Text),
-                new SqlParameter("@CCPGender", radGender.Text),
+                new SqlParameter("@CCPGender", radGender.Text.ToString()),
                 new SqlParameter("@CCPblood", DrpBloodGroup.Text),
-                new SqlParameter("@CCPDOB", ddDOB.Text),
+                new SqlParameter("@CCPDOB", ddDOB.Text.ToString()),
                 new SqlParameter("@CCPEmail", txtEmailID.Text),
                 new SqlParameter("@CCPAddress", TxtAuthAddress.Text),
                 new SqlParameter("@CCPstate", drpAuthState.Text),
@@ -72,7 +74,7 @@ namespace BillPlex
                 new SqlParameter("@CCPMobile", txtmobile.Text),
                 new SqlParameter("@CCPPan", txtAuthPanNo.Text),
                 new SqlParameter("@CCPpercent", txtPercent.Text),
-                new SqlParameter("@CCPactive", radActiveStatus.Text),
+                new SqlParameter("@CCPactive", radActiveStatus.Text.ToString()),
                 new SqlParameter("@CCPFathername", txtBankDetails.Text),
                 new SqlParameter("@CCPImage",AuthImg.SvgImage)
                 // new SqlParameter("", drpAuthorStartingdate.Text),
@@ -90,6 +92,9 @@ namespace BillPlex
         private void UpdateBtn_Click(object sender, EventArgs e)
         {
             var Id = 0;
+
+            string selectedValue = radBusinessNature.EditValue?.ToString() ?? "Default Value";
+
             // Calling the stored procedure for creating a new Company Profile
             SqlParameter[] parameters = new SqlParameter[]
             {
@@ -100,17 +105,17 @@ namespace BillPlex
                 new SqlParameter("@ComCoffAddress", txtOffAddress.Text),
                 new SqlParameter("@ComCstate", drpState.Text),
                 new SqlParameter("@ComCpin", txtPin.Text),
-                new SqlParameter("@ComCNature", radBusinessNature.Text),
+                new SqlParameter("@ComCNature",selectedValue),
                 new SqlParameter("@ComCDatestart", ddStartingDate.Text.ToString()),
                 new SqlParameter("@ComStdcode", stdCodeTxt.Text),
                 new SqlParameter("@ComCPhone", txtClientCompanyPhone.Text),
                 new SqlParameter("@ComCEmail", txtEmail.Text),
                 new SqlParameter("@ComCWebsite", txtWebsite.Text),
-                new SqlParameter("@PfType", radPfType.Text),
+                new SqlParameter("@PfType", radPfType.Text.ToString()),
                 new SqlParameter("@ComCPFno", txtPFCode.Text),
                 new SqlParameter("@ComCPFdate", ddPfDate.Text.ToString()),
                 new SqlParameter("@ComCESIno", txtEsiCode.Text),
-                new SqlParameter("@ComCESIdate", ddEsiCode.Text),
+                new SqlParameter("@ComCESIdate", ddEsiCode.Text.ToString()),
                 new SqlParameter("@ComCFactoryno", txtFactoryAct.Text),
                 new SqlParameter("@ComCTINno", txtTin.Text),
                 new SqlParameter("@ComCCSTno", txtCst.Text),
@@ -120,7 +125,7 @@ namespace BillPlex
                 new SqlParameter("@ComCLicenseno", LicenseTxt.Text),
                 new SqlParameter("@ComCPname", txtName.Text),
                 new SqlParameter("@CCPFathername", txtFathers.Text),
-                new SqlParameter("@CCPGender", radGender.Text),
+                new SqlParameter("@CCPGender", radGender.Text.ToString()),
                 new SqlParameter("@CCPblood", DrpBloodGroup.Text),
                 new SqlParameter("@CCPDOB", ddDOB.Text.ToString()),
                 new SqlParameter("@CCPEmail", txtEmailID.Text),
@@ -130,7 +135,7 @@ namespace BillPlex
                 new SqlParameter("@CCPMobile", txtmobile.Text),
                 new SqlParameter("@CCPPan", txtAuthPanNo.Text),
                 new SqlParameter("@CCPpercent", txtPercent.Text),
-                new SqlParameter("@CCPactive", radActiveStatus.Text),
+                new SqlParameter("@CCPactive", radActiveStatus.Text.ToString()),
                 new SqlParameter("@CCPFathername", txtBankDetails.Text),
                 new SqlParameter("@CCPImage", AuthImg.SvgImage)
              };
