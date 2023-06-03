@@ -29,6 +29,9 @@ namespace BillPlex
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmClientCompanyBankInfo));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -36,19 +39,19 @@ namespace BillPlex
             this.txtSearchComapnyName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
             this.txtIfsCode = new DevExpress.XtraEditors.TextEdit();
             this.TxtBranchName = new DevExpress.XtraEditors.TextEdit();
             this.txtBranchCode = new DevExpress.XtraEditors.TextEdit();
             this.txtAddress = new DevExpress.XtraEditors.MemoEdit();
             this.txtAccountNo = new DevExpress.XtraEditors.TextEdit();
-            this.dDbankName = new DevExpress.XtraEditors.DropDownButton();
-            this.dDclientCompany = new DevExpress.XtraEditors.DropDownButton();
-            this.dDmainCompany = new DevExpress.XtraEditors.DropDownButton();
+            this.drpBankName = new DevExpress.XtraEditors.DropDownButton();
+            this.drpClientCompany = new DevExpress.XtraEditors.DropDownButton();
+            this.drpMainCompany = new DevExpress.XtraEditors.DropDownButton();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
@@ -59,6 +62,18 @@ namespace BillPlex
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
+            this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colComName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colComCname = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMainCompanyId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colClientCompanyId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBankName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBankAcNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBranchCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBranchName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIFSCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAddress = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -81,19 +96,19 @@ namespace BillPlex
             this.panelControl1.Controls.Add(this.txtSearchComapnyName);
             this.panelControl1.Controls.Add(this.labelControl10);
             this.panelControl1.Controls.Add(this.pictureEdit1);
-            this.panelControl1.Controls.Add(this.simpleButton5);
-            this.panelControl1.Controls.Add(this.simpleButton4);
-            this.panelControl1.Controls.Add(this.simpleButton3);
-            this.panelControl1.Controls.Add(this.simpleButton2);
-            this.panelControl1.Controls.Add(this.simpleButton1);
+            this.panelControl1.Controls.Add(this.btn);
+            this.panelControl1.Controls.Add(this.btnCancel);
+            this.panelControl1.Controls.Add(this.btnUpdate);
+            this.panelControl1.Controls.Add(this.btnAdd);
+            this.panelControl1.Controls.Add(this.btnSearch);
             this.panelControl1.Controls.Add(this.txtIfsCode);
             this.panelControl1.Controls.Add(this.TxtBranchName);
             this.panelControl1.Controls.Add(this.txtBranchCode);
             this.panelControl1.Controls.Add(this.txtAddress);
             this.panelControl1.Controls.Add(this.txtAccountNo);
-            this.panelControl1.Controls.Add(this.dDbankName);
-            this.panelControl1.Controls.Add(this.dDclientCompany);
-            this.panelControl1.Controls.Add(this.dDmainCompany);
+            this.panelControl1.Controls.Add(this.drpBankName);
+            this.panelControl1.Controls.Add(this.drpClientCompany);
+            this.panelControl1.Controls.Add(this.drpMainCompany);
             this.panelControl1.Controls.Add(this.labelControl9);
             this.panelControl1.Controls.Add(this.labelControl8);
             this.panelControl1.Controls.Add(this.labelControl7);
@@ -112,6 +127,8 @@ namespace BillPlex
             // 
             // gridControl1
             // 
+            this.gridControl1.DataMember = "PRO_GetClientBankInfo";
+            this.gridControl1.DataSource = this.sqlDataSource1;
             this.gridControl1.Location = new System.Drawing.Point(7, 448);
             this.gridControl1.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.gridControl1.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightBlue;
@@ -128,6 +145,18 @@ namespace BillPlex
             // gridView1
             // 
             this.gridView1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colId,
+            this.colComName,
+            this.colComCname,
+            this.colMainCompanyId,
+            this.colClientCompanyId,
+            this.colBankName,
+            this.colBankAcNo,
+            this.colBranchCode,
+            this.colBranchName,
+            this.colIFSCode,
+            this.colAddress});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
@@ -158,58 +187,62 @@ namespace BillPlex
             this.pictureEdit1.Size = new System.Drawing.Size(1047, 338);
             this.pictureEdit1.TabIndex = 23;
             // 
-            // simpleButton5
+            // btn
             // 
-            this.simpleButton5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
-            this.simpleButton5.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.simpleButton5.Location = new System.Drawing.Point(368, 318);
-            this.simpleButton5.LookAndFeel.SkinName = "DevExpress Style";
-            this.simpleButton5.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(74, 73);
-            this.simpleButton5.TabIndex = 22;
+            this.btn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn.ImageOptions.Image")));
+            this.btn.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
+            this.btn.Location = new System.Drawing.Point(368, 318);
+            this.btn.LookAndFeel.SkinName = "DevExpress Style";
+            this.btn.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btn.Name = "btn";
+            this.btn.Size = new System.Drawing.Size(74, 73);
+            this.btn.TabIndex = 22;
             // 
-            // simpleButton4
+            // btnCancel
             // 
-            this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
-            this.simpleButton4.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.simpleButton4.Location = new System.Drawing.Point(368, 231);
-            this.simpleButton4.LookAndFeel.SkinName = "DevExpress Style";
-            this.simpleButton4.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(74, 73);
-            this.simpleButton4.TabIndex = 21;
+            this.btnCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.ImageOptions.Image")));
+            this.btnCancel.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
+            this.btnCancel.Location = new System.Drawing.Point(368, 231);
+            this.btnCancel.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnCancel.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(74, 73);
+            this.btnCancel.TabIndex = 21;
             // 
-            // simpleButton3
+            // btnUpdate
             // 
-            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.simpleButton3.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.simpleButton3.Location = new System.Drawing.Point(368, 152);
-            this.simpleButton3.LookAndFeel.SkinName = "DevExpress Style";
-            this.simpleButton3.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(74, 73);
-            this.simpleButton3.TabIndex = 20;
+            this.btnUpdate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.ImageOptions.Image")));
+            this.btnUpdate.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
+            this.btnUpdate.Location = new System.Drawing.Point(368, 152);
+            this.btnUpdate.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnUpdate.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(74, 73);
+            this.btnUpdate.TabIndex = 20;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // simpleButton2
+            // btnAdd
             // 
-            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.simpleButton2.Location = new System.Drawing.Point(368, 73);
-            this.simpleButton2.LookAndFeel.SkinName = "DevExpress Style";
-            this.simpleButton2.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(74, 73);
-            this.simpleButton2.TabIndex = 19;
+            this.btnAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageOptions.Image")));
+            this.btnAdd.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
+            this.btnAdd.Location = new System.Drawing.Point(368, 73);
+            this.btnAdd.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnAdd.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(74, 73);
+            this.btnAdd.TabIndex = 19;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // simpleButton1
+            // btnSearch
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(335, 123);
-            this.simpleButton1.LookAndFeel.SkinName = "DevExpress Style";
-            this.simpleButton1.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(23, 23);
-            this.simpleButton1.TabIndex = 18;
+            this.btnSearch.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.ImageOptions.Image")));
+            this.btnSearch.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnSearch.Location = new System.Drawing.Point(335, 123);
+            this.btnSearch.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnSearch.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(23, 23);
+            this.btnSearch.TabIndex = 18;
             // 
             // txtIfsCode
             // 
@@ -246,28 +279,28 @@ namespace BillPlex
             this.txtAccountNo.Size = new System.Drawing.Size(209, 20);
             this.txtAccountNo.TabIndex = 13;
             // 
-            // dDbankName
+            // drpBankName
             // 
-            this.dDbankName.Location = new System.Drawing.Point(149, 123);
-            this.dDbankName.Name = "dDbankName";
-            this.dDbankName.Size = new System.Drawing.Size(179, 23);
-            this.dDbankName.TabIndex = 12;
+            this.drpBankName.Location = new System.Drawing.Point(149, 123);
+            this.drpBankName.Name = "drpBankName";
+            this.drpBankName.Size = new System.Drawing.Size(179, 23);
+            this.drpBankName.TabIndex = 12;
             // 
-            // dDclientCompany
+            // drpClientCompany
             // 
-            this.dDclientCompany.Location = new System.Drawing.Point(149, 88);
-            this.dDclientCompany.Name = "dDclientCompany";
-            this.dDclientCompany.Size = new System.Drawing.Size(209, 23);
-            this.dDclientCompany.TabIndex = 11;
+            this.drpClientCompany.Location = new System.Drawing.Point(149, 88);
+            this.drpClientCompany.Name = "drpClientCompany";
+            this.drpClientCompany.Size = new System.Drawing.Size(209, 23);
+            this.drpClientCompany.TabIndex = 11;
             // 
-            // dDmainCompany
+            // drpMainCompany
             // 
-            this.dDmainCompany.Location = new System.Drawing.Point(149, 53);
-            this.dDmainCompany.LookAndFeel.SkinName = "DevExpress Style";
-            this.dDmainCompany.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.dDmainCompany.Name = "dDmainCompany";
-            this.dDmainCompany.Size = new System.Drawing.Size(209, 23);
-            this.dDmainCompany.TabIndex = 10;
+            this.drpMainCompany.Location = new System.Drawing.Point(149, 53);
+            this.drpMainCompany.LookAndFeel.SkinName = "DevExpress Style";
+            this.drpMainCompany.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.drpMainCompany.Name = "drpMainCompany";
+            this.drpMainCompany.Size = new System.Drawing.Size(209, 23);
+            this.drpMainCompany.TabIndex = 10;
             // 
             // labelControl9
             // 
@@ -373,6 +406,96 @@ namespace BillPlex
             this.labelControl1.TabIndex = 1;
             this.labelControl1.Text = "Main Company";
             // 
+            // sqlDataSource1
+            // 
+            this.sqlDataSource1.ConnectionName = "BillPlex";
+            this.sqlDataSource1.Name = "sqlDataSource1";
+            storedProcQuery1.Name = "PRO_GetClientBankInfo";
+            queryParameter1.Name = "@SearchKey";
+            queryParameter1.Type = typeof(string);
+            storedProcQuery1.Parameters.Add(queryParameter1);
+            storedProcQuery1.StoredProcName = "PRO_GetClientBankInfo";
+            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
+            storedProcQuery1});
+            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
+            // 
+            // colId
+            // 
+            this.colId.FieldName = "Id";
+            this.colId.Name = "colId";
+            this.colId.Visible = true;
+            this.colId.VisibleIndex = 0;
+            // 
+            // colComName
+            // 
+            this.colComName.FieldName = "ComName";
+            this.colComName.Name = "colComName";
+            this.colComName.Visible = true;
+            this.colComName.VisibleIndex = 1;
+            // 
+            // colComCname
+            // 
+            this.colComCname.FieldName = "ComCname";
+            this.colComCname.Name = "colComCname";
+            this.colComCname.Visible = true;
+            this.colComCname.VisibleIndex = 2;
+            // 
+            // colMainCompanyId
+            // 
+            this.colMainCompanyId.FieldName = "MainCompanyId";
+            this.colMainCompanyId.Name = "colMainCompanyId";
+            this.colMainCompanyId.Visible = true;
+            this.colMainCompanyId.VisibleIndex = 3;
+            // 
+            // colClientCompanyId
+            // 
+            this.colClientCompanyId.FieldName = "ClientCompanyId";
+            this.colClientCompanyId.Name = "colClientCompanyId";
+            this.colClientCompanyId.Visible = true;
+            this.colClientCompanyId.VisibleIndex = 4;
+            // 
+            // colBankName
+            // 
+            this.colBankName.FieldName = "BankName";
+            this.colBankName.Name = "colBankName";
+            this.colBankName.Visible = true;
+            this.colBankName.VisibleIndex = 5;
+            // 
+            // colBankAcNo
+            // 
+            this.colBankAcNo.FieldName = "BankAcNo";
+            this.colBankAcNo.Name = "colBankAcNo";
+            this.colBankAcNo.Visible = true;
+            this.colBankAcNo.VisibleIndex = 6;
+            // 
+            // colBranchCode
+            // 
+            this.colBranchCode.FieldName = "BranchCode";
+            this.colBranchCode.Name = "colBranchCode";
+            this.colBranchCode.Visible = true;
+            this.colBranchCode.VisibleIndex = 7;
+            // 
+            // colBranchName
+            // 
+            this.colBranchName.FieldName = "BranchName";
+            this.colBranchName.Name = "colBranchName";
+            this.colBranchName.Visible = true;
+            this.colBranchName.VisibleIndex = 8;
+            // 
+            // colIFSCode
+            // 
+            this.colIFSCode.FieldName = "IFSCode";
+            this.colIFSCode.Name = "colIFSCode";
+            this.colIFSCode.Visible = true;
+            this.colIFSCode.VisibleIndex = 9;
+            // 
+            // colAddress
+            // 
+            this.colAddress.FieldName = "Address";
+            this.colAddress.Name = "colAddress";
+            this.colAddress.Visible = true;
+            this.colAddress.VisibleIndex = 10;
+            // 
             // FrmClientCompanyBankInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -408,19 +531,19 @@ namespace BillPlex
         private DevExpress.XtraEditors.TextEdit txtSearchComapnyName;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton5;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btn;
+        private DevExpress.XtraEditors.SimpleButton btnCancel;
+        private DevExpress.XtraEditors.SimpleButton btnUpdate;
+        private DevExpress.XtraEditors.SimpleButton btnAdd;
+        private DevExpress.XtraEditors.SimpleButton btnSearch;
         private DevExpress.XtraEditors.TextEdit txtIfsCode;
         private DevExpress.XtraEditors.TextEdit TxtBranchName;
         private DevExpress.XtraEditors.TextEdit txtBranchCode;
         private DevExpress.XtraEditors.MemoEdit txtAddress;
         private DevExpress.XtraEditors.TextEdit txtAccountNo;
-        private DevExpress.XtraEditors.DropDownButton dDbankName;
-        private DevExpress.XtraEditors.DropDownButton dDclientCompany;
-        private DevExpress.XtraEditors.DropDownButton dDmainCompany;
+        private DevExpress.XtraEditors.DropDownButton drpBankName;
+        private DevExpress.XtraEditors.DropDownButton drpClientCompany;
+        private DevExpress.XtraEditors.DropDownButton drpMainCompany;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.LabelControl labelControl7;
@@ -431,5 +554,17 @@ namespace BillPlex
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
+        private DevExpress.XtraGrid.Columns.GridColumn colId;
+        private DevExpress.XtraGrid.Columns.GridColumn colComName;
+        private DevExpress.XtraGrid.Columns.GridColumn colComCname;
+        private DevExpress.XtraGrid.Columns.GridColumn colMainCompanyId;
+        private DevExpress.XtraGrid.Columns.GridColumn colClientCompanyId;
+        private DevExpress.XtraGrid.Columns.GridColumn colBankName;
+        private DevExpress.XtraGrid.Columns.GridColumn colBankAcNo;
+        private DevExpress.XtraGrid.Columns.GridColumn colBranchCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colBranchName;
+        private DevExpress.XtraGrid.Columns.GridColumn colIFSCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colAddress;
     }
 }

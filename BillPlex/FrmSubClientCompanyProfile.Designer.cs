@@ -30,8 +30,8 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSubClientCompanyProfile));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -48,10 +48,6 @@ namespace BillPlex
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Claerbtn = new DevExpress.XtraEditors.SimpleButton();
-            this.Findbtn = new DevExpress.XtraEditors.SimpleButton();
-            this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
-            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.colMasterCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMasterCompanyId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colClientCompanyId = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -92,6 +88,10 @@ namespace BillPlex
             this.colAuthorPan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAuthorPercent = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAuthorActive = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Claerbtn = new DevExpress.XtraEditors.SimpleButton();
+            this.Findbtn = new DevExpress.XtraEditors.SimpleButton();
+            this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
+            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -342,54 +342,6 @@ namespace BillPlex
             this.gridView2.Name = "gridView2";
             this.gridView2.PaintStyleName = "Flat";
             this.gridView2.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
-            // 
-            // Claerbtn
-            // 
-            this.Claerbtn.Appearance.BackColor = System.Drawing.Color.LightBlue;
-            this.Claerbtn.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Claerbtn.Appearance.Options.UseBackColor = true;
-            this.Claerbtn.Appearance.Options.UseFont = true;
-            this.Claerbtn.Location = new System.Drawing.Point(951, 23);
-            this.Claerbtn.LookAndFeel.SkinName = "DevExpress Style";
-            this.Claerbtn.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.Claerbtn.Name = "Claerbtn";
-            this.Claerbtn.Size = new System.Drawing.Size(75, 23);
-            this.Claerbtn.TabIndex = 4;
-            this.Claerbtn.Text = "Clear";
-            // 
-            // Findbtn
-            // 
-            this.Findbtn.Appearance.BackColor = System.Drawing.Color.LightBlue;
-            this.Findbtn.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Findbtn.Appearance.Options.UseBackColor = true;
-            this.Findbtn.Appearance.Options.UseFont = true;
-            this.Findbtn.Location = new System.Drawing.Point(798, 23);
-            this.Findbtn.LookAndFeel.SkinName = "DevExpress Style";
-            this.Findbtn.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.Findbtn.Name = "Findbtn";
-            this.Findbtn.Size = new System.Drawing.Size(75, 23);
-            this.Findbtn.TabIndex = 3;
-            this.Findbtn.Text = "Find";
-            // 
-            // dropDownButton1
-            // 
-            this.dropDownButton1.Location = new System.Drawing.Point(23, 23);
-            this.dropDownButton1.Name = "dropDownButton1";
-            this.dropDownButton1.Size = new System.Drawing.Size(721, 23);
-            this.dropDownButton1.TabIndex = 2;
-            // 
-            // sqlDataSource1
-            // 
-            this.sqlDataSource1.ConnectionName = "BillPlex";
-            this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery2.Name = "PRO_GetSubClientCompanyProfileInfo";
-            queryParameter2.Name = "@SearchKey";
-            queryParameter2.Type = typeof(string);
-            storedProcQuery2.Parameters.Add(queryParameter2);
-            storedProcQuery2.StoredProcName = "PRO_GetSubClientCompanyProfileInfo";
-            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery2});
-            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // colMasterCode
             // 
@@ -751,6 +703,54 @@ namespace BillPlex
             this.colAuthorActive.VisibleIndex = 39;
             this.colAuthorActive.Width = 80;
             // 
+            // Claerbtn
+            // 
+            this.Claerbtn.Appearance.BackColor = System.Drawing.Color.LightBlue;
+            this.Claerbtn.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Claerbtn.Appearance.Options.UseBackColor = true;
+            this.Claerbtn.Appearance.Options.UseFont = true;
+            this.Claerbtn.Location = new System.Drawing.Point(951, 23);
+            this.Claerbtn.LookAndFeel.SkinName = "DevExpress Style";
+            this.Claerbtn.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.Claerbtn.Name = "Claerbtn";
+            this.Claerbtn.Size = new System.Drawing.Size(75, 23);
+            this.Claerbtn.TabIndex = 4;
+            this.Claerbtn.Text = "Clear";
+            // 
+            // Findbtn
+            // 
+            this.Findbtn.Appearance.BackColor = System.Drawing.Color.LightBlue;
+            this.Findbtn.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Findbtn.Appearance.Options.UseBackColor = true;
+            this.Findbtn.Appearance.Options.UseFont = true;
+            this.Findbtn.Location = new System.Drawing.Point(798, 23);
+            this.Findbtn.LookAndFeel.SkinName = "DevExpress Style";
+            this.Findbtn.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.Findbtn.Name = "Findbtn";
+            this.Findbtn.Size = new System.Drawing.Size(75, 23);
+            this.Findbtn.TabIndex = 3;
+            this.Findbtn.Text = "Find";
+            // 
+            // dropDownButton1
+            // 
+            this.dropDownButton1.Location = new System.Drawing.Point(23, 23);
+            this.dropDownButton1.Name = "dropDownButton1";
+            this.dropDownButton1.Size = new System.Drawing.Size(721, 23);
+            this.dropDownButton1.TabIndex = 2;
+            // 
+            // sqlDataSource1
+            // 
+            this.sqlDataSource1.ConnectionName = "BillPlex";
+            this.sqlDataSource1.Name = "sqlDataSource1";
+            storedProcQuery1.Name = "PRO_GetSubClientCompanyProfileInfo";
+            queryParameter1.Name = "@SearchKey";
+            queryParameter1.Type = typeof(string);
+            storedProcQuery1.Parameters.Add(queryParameter1);
+            storedProcQuery1.StoredProcName = "PRO_GetSubClientCompanyProfileInfo";
+            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
+            storedProcQuery1});
+            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
+            // 
             // FrmSubClientCompanyProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -797,7 +797,6 @@ namespace BillPlex
         private DevExpress.XtraEditors.SimpleButton Newbtn;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
-        private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
         private DevExpress.XtraGrid.Columns.GridColumn colMasterCode;
         private DevExpress.XtraGrid.Columns.GridColumn colMasterCompanyId;
         private DevExpress.XtraGrid.Columns.GridColumn colClientCompanyId;
@@ -838,5 +837,6 @@ namespace BillPlex
         private DevExpress.XtraGrid.Columns.GridColumn colAuthorPan;
         private DevExpress.XtraGrid.Columns.GridColumn colAuthorPercent;
         private DevExpress.XtraGrid.Columns.GridColumn colAuthorActive;
+        private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
     }
 }

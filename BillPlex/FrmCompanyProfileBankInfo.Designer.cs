@@ -30,8 +30,8 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery3 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter3 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCompanyProfileBankInfo));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.datagrid = new DevExpress.XtraGrid.GridControl();
@@ -139,13 +139,13 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery3.Name = "PRO_GetMainBankInfo";
-            queryParameter3.Name = "@SearchKey";
-            queryParameter3.Type = typeof(string);
-            storedProcQuery3.Parameters.Add(queryParameter3);
-            storedProcQuery3.StoredProcName = "PRO_GetMainBankInfo";
+            storedProcQuery1.Name = "PRO_GetMainBankInfo";
+            queryParameter1.Name = "@SearchKey";
+            queryParameter1.Type = typeof(string);
+            storedProcQuery1.Parameters.Add(queryParameter1);
+            storedProcQuery1.StoredProcName = "PRO_GetMainBankInfo";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery3});
+            storedProcQuery1});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // gridView1
@@ -248,7 +248,7 @@ namespace BillPlex
             // 
             // btn
             // 
-            this.btn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
+            this.btn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn.ImageOptions.Image")));
             this.btn.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
             this.btn.Location = new System.Drawing.Point(368, 297);
             this.btn.LookAndFeel.SkinName = "DevExpress Style";
@@ -259,7 +259,7 @@ namespace BillPlex
             // 
             // btnCancel
             // 
-            this.btnCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
+            this.btnCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.ImageOptions.Image")));
             this.btnCancel.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
             this.btnCancel.Location = new System.Drawing.Point(368, 218);
             this.btnCancel.LookAndFeel.SkinName = "DevExpress Style";
@@ -270,7 +270,7 @@ namespace BillPlex
             // 
             // btnUpdate
             // 
-            this.btnUpdate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.btnUpdate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.ImageOptions.Image")));
             this.btnUpdate.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
             this.btnUpdate.Location = new System.Drawing.Point(368, 135);
             this.btnUpdate.LookAndFeel.SkinName = "DevExpress Style";
@@ -294,6 +294,7 @@ namespace BillPlex
             // 
             // simpleButton1
             // 
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
             this.simpleButton1.Location = new System.Drawing.Point(335, 92);
             this.simpleButton1.LookAndFeel.SkinName = "DevExpress Style";
             this.simpleButton1.LookAndFeel.UseDefaultLookAndFeel = false;
