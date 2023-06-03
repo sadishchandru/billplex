@@ -69,6 +69,7 @@ namespace BillPlex
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.btnSelect = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid)).BeginInit();
@@ -87,6 +88,7 @@ namespace BillPlex
             // panelControl1
             // 
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl1.Controls.Add(this.btnSelect);
             this.panelControl1.Controls.Add(this.datagrid);
             this.panelControl1.Controls.Add(this.txtSearchComapnyName);
             this.panelControl1.Controls.Add(this.labelControl10);
@@ -249,7 +251,7 @@ namespace BillPlex
             // btn
             // 
             this.btn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn.ImageOptions.Image")));
-            this.btn.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
+            this.btn.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btn.Location = new System.Drawing.Point(368, 297);
             this.btn.LookAndFeel.SkinName = "DevExpress Style";
             this.btn.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -259,6 +261,7 @@ namespace BillPlex
             // 
             // btnCancel
             // 
+            this.btnCancel.Enabled = false;
             this.btnCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.ImageOptions.Image")));
             this.btnCancel.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
             this.btnCancel.Location = new System.Drawing.Point(368, 218);
@@ -445,6 +448,18 @@ namespace BillPlex
             this.labelControl1.TabIndex = 1;
             this.labelControl1.Text = "Main Company";
             // 
+            // btnSelect
+            // 
+            this.btnSelect.Location = new System.Drawing.Point(7, 411);
+            this.btnSelect.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btnSelect.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightBlue;
+            this.btnSelect.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnSelect.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.Size = new System.Drawing.Size(75, 23);
+            this.btnSelect.TabIndex = 27;
+            this.btnSelect.Text = "SELECT";
+            // 
             // FrmCompanyProfileBankInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -510,5 +525,6 @@ namespace BillPlex
         private DevExpress.XtraGrid.Columns.GridColumn colBranchName;
         private DevExpress.XtraGrid.Columns.GridColumn colIFSCode;
         private DevExpress.XtraGrid.Columns.GridColumn colAddress;
+        private DevExpress.XtraEditors.SimpleButton btnSelect;
     }
 }
