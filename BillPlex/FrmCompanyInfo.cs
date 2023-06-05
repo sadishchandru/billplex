@@ -128,5 +128,50 @@ namespace BillPlex
 
             var i = _conn.ExecuteNonQuery("PRO_UpdateCompanyProfileInfo", parameters);
         }
+
+        private void panelControl2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void CopyBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Findbtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddClearBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnNew_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Addbtn_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Editbtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ClearBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

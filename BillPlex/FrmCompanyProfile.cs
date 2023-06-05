@@ -23,9 +23,14 @@ namespace BillPlex
 
         private void Newbtn_Click(object sender, EventArgs e)
         {
-            FrmCompanyInfo newMDIChild = new FrmCompanyInfo();
-            //newMDIChild.MdiParent = this;
-            newMDIChild.ShowDialog();
+            FrmCompanyInfo child = new FrmCompanyInfo();
+            child.MdiParent = FrmCompanyInfo.ActiveForm;
+            child.Show();
+        }
+
+        private void Addbtn_Click(object sender, EventArgs e)
+        {
+          
         }
     }
 }
