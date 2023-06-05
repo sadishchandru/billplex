@@ -47,5 +47,11 @@ namespace BillPlex
             FrmSubClientCompanyProfile CP = new FrmSubClientCompanyProfile();
             CP.ShowDialog();
         }
+
+        private void btnCustomerDetails_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FrmCustomerMaster CP = new FrmCustomerMaster();
+            CP.ShowDialog();
+        }
     }
 }

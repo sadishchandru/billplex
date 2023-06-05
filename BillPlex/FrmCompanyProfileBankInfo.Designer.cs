@@ -34,6 +34,7 @@ namespace BillPlex
             DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCompanyProfileBankInfo));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.btnSelect = new DevExpress.XtraEditors.SimpleButton();
             this.datagrid = new DevExpress.XtraGrid.GridControl();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -69,7 +70,6 @@ namespace BillPlex
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.btnSelect = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid)).BeginInit();
@@ -119,6 +119,18 @@ namespace BillPlex
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1576, 808);
             this.panelControl1.TabIndex = 1;
+            // 
+            // btnSelect
+            // 
+            this.btnSelect.Location = new System.Drawing.Point(7, 411);
+            this.btnSelect.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btnSelect.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightBlue;
+            this.btnSelect.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnSelect.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.Size = new System.Drawing.Size(75, 23);
+            this.btnSelect.TabIndex = 27;
+            this.btnSelect.Text = "SELECT";
             // 
             // datagrid
             // 
@@ -242,6 +254,7 @@ namespace BillPlex
             // 
             // imgbox
             // 
+            this.imgbox.EditValue = ((object)(resources.GetObject("imgbox.EditValue")));
             this.imgbox.Location = new System.Drawing.Point(524, 53);
             this.imgbox.Name = "imgbox";
             this.imgbox.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
@@ -447,18 +460,6 @@ namespace BillPlex
             this.labelControl1.Size = new System.Drawing.Size(93, 16);
             this.labelControl1.TabIndex = 1;
             this.labelControl1.Text = "Main Company";
-            // 
-            // btnSelect
-            // 
-            this.btnSelect.Location = new System.Drawing.Point(7, 411);
-            this.btnSelect.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
-            this.btnSelect.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightBlue;
-            this.btnSelect.LookAndFeel.SkinName = "DevExpress Style";
-            this.btnSelect.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(75, 23);
-            this.btnSelect.TabIndex = 27;
-            this.btnSelect.Text = "SELECT";
             // 
             // FrmCompanyProfileBankInfo
             // 

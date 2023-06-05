@@ -82,12 +82,18 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FrmClientCompanyBankInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,12 @@
     <Compile Include="FrmCompanyProfile.Designer.cs">
       <DependentUpon>FrmCompanyProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmCustomerMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCustomerMaster.Designer.cs">
+      <DependentUpon>FrmCustomerMaster.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmSubClientCompanyBankInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,6 +207,9 @@
     <EmbeddedResource Include="FrmCompanyProfile.resx">
       <DependentUpon>FrmCompanyProfile.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmCustomerMaster.resx">
+      <DependentUpon>FrmCustomerMaster.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmSubClientCompanyBankInfo.resx">
       <DependentUpon>FrmSubClientCompanyBankInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -219,6 +234,17 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="App.config" />
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
