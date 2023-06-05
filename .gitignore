@@ -1,0 +1,57 @@
+# Compiled files
+*.exe
+*.dll
+*.pdb
+
+# NuGet packages
+*.nupkg
+packages/
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+Debug/
+v16/
+
+# Visual Studio files
+*.obj
+*.user
+*.suo
+*.cache
+*.vs
+*.vscode
+
+# Visual Studio profiler
+*.psess
+*.vsp
+*.vspx
+*.sap
+
+# Visual Studio cache files
+# files ending in .cache can be ignored
+*.[Cc]ache
+# but keep track of directories ending in .cache
+!*.[Cc]ache/
+
+
+# Test Results
+TestResults/
+
+# Resharper files
+_ReSharper*
+
+# DevExpress-specific files
+*.licx
+*.v12.suo
+*.v14.suo
+*.v16.suo
+*.v19.suo
+*.v21.suo

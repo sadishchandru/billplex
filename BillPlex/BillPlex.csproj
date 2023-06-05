@@ -51,22 +51,36 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.ExpressApp.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Office.v21.1.Core, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Persistent.Base.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v21.1.Core, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.RichEdit.v21.1.Core, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Sparkline.v21.1.Core, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.SpellChecker.v21.1.Core, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.Desktop.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraRichEdit.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraSpellChecker.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExtreme.AspNet.Data, Version=2.9.2.0, Culture=neutral, PublicKeyToken=982f5dab1439d0f7, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExtreme.AspNet.Data.2.9.2\lib\net452\DevExtreme.AspNet.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
@@ -74,6 +88,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmClientCompanyBankInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmClientCompanyBankInfo.Designer.cs">
+      <DependentUpon>FrmClientCompanyBankInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCompanyProfileBankInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCompanyProfileBankInfo.Designer.cs">
+      <DependentUpon>FrmCompanyProfileBankInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmClientCompanyInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmClientCompanyInfo.Designer.cs">
+      <DependentUpon>FrmClientCompanyInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="CompanyInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,11 +118,47 @@
     <Compile Include="CompanyProfile.Designer.cs">
       <DependentUpon>CompanyProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="ClientCompanyProfile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="ClientCompanyProfile.Designer.cs">
+      <DependentUpon>ClientCompanyProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmClientCompanyProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmClientCompanyProfile.Designer.cs">
+      <DependentUpon>FrmClientCompanyProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCompanyInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCompanyInfo.Designer.cs">
+      <DependentUpon>FrmCompanyInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCompanyProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCompanyProfile.Designer.cs">
+      <DependentUpon>FrmCompanyProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSubClientCompanyBankInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSubClientCompanyBankInfo.Designer.cs">
+      <DependentUpon>FrmSubClientCompanyBankInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSubClientCompanyInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSubClientCompanyInfo.Designer.cs">
+      <DependentUpon>FrmSubClientCompanyInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSubClientCompanyProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSubClientCompanyProfile.Designer.cs">
+      <DependentUpon>FrmSubClientCompanyProfile.cs</DependentUpon>
     </Compile>
     <Compile Include="NavBar.cs">
       <SubType>Form</SubType>
@@ -100,15 +168,41 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmClientCompanyBankInfo.resx">
+      <DependentUpon>FrmClientCompanyBankInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCompanyProfileBankInfo.resx">
+      <DependentUpon>FrmCompanyProfileBankInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmClientCompanyInfo.resx">
+      <DependentUpon>FrmClientCompanyInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CompanyInfo.resx">
       <DependentUpon>CompanyInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CompanyProfile.resx">
       <DependentUpon>CompanyProfile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-      <SubType>Designer</SubType>
+    <EmbeddedResource Include="ClientCompanyProfile.resx">
+      <DependentUpon>ClientCompanyProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmClientCompanyProfile.resx">
+      <DependentUpon>FrmClientCompanyProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCompanyInfo.resx">
+      <DependentUpon>FrmCompanyInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCompanyProfile.resx">
+      <DependentUpon>FrmCompanyProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSubClientCompanyBankInfo.resx">
+      <DependentUpon>FrmSubClientCompanyBankInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSubClientCompanyInfo.resx">
+      <DependentUpon>FrmSubClientCompanyInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSubClientCompanyProfile.resx">
+      <DependentUpon>FrmSubClientCompanyProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NavBar.resx">
       <DependentUpon>NavBar.cs</DependentUpon>
@@ -125,6 +219,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="App.config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -146,6 +241,15 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataLayer\DataLayer.csproj">
+      <Project>{3e0a50bd-920e-4c49-a2fd-506bdba90a12}</Project>
+      <Name>DataLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

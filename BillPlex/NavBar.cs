@@ -30,11 +30,31 @@ namespace BillPlex
 
         }
 
-        private void MasterButtonClicked(object sender, DevExpress.XtraBars.Ribbon.RibbonPageGroupEventArgs e)
-        {
-            CompanyProfile CP = new CompanyProfile();
+        //private void MasterButtonClicked(object sender, DevExpress.XtraBars.Ribbon.RibbonPageGroupEventArgs e)
+        //{
+        //    FrmCompanyProfile CP = new FrmCompanyProfile();
+        //    CP.ShowDialog();
+        //}
 
+        private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FrmClientCompanyProfile CP = new FrmClientCompanyProfile();
             CP.ShowDialog();
+        }
+
+        private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FrmSubClientCompanyProfile CP = new FrmSubClientCompanyProfile();
+            CP.ShowDialog();
+        }
+
+        private void barButtonItem5_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FrmCompanyProfile newMDIChild = new FrmCompanyProfile();
+            newMDIChild.MdiParent = this;
+            newMDIChild.Show();
+            //FrmCompanyProfile CP = new FrmCompanyProfile();
+            //CP.ShowDialog(this);
         }
     }
 }
