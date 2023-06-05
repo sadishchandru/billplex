@@ -30,12 +30,10 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCompanyProfile));
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.Exitbtn = new DevExpress.XtraEditors.SimpleButton();
             this.Clearbtn = new DevExpress.XtraEditors.SimpleButton();
@@ -44,7 +42,6 @@ namespace BillPlex
             this.Editbtn = new DevExpress.XtraEditors.SimpleButton();
             this.Addbtn = new DevExpress.XtraEditors.SimpleButton();
             this.Newbtn = new DevExpress.XtraEditors.SimpleButton();
-            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.drpClientprofile = new DevExpress.XtraEditors.DropDownButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -94,50 +91,26 @@ namespace BillPlex
             this.Printbtn = new DevExpress.XtraEditors.SimpleButton();
             this.Claerbtn = new DevExpress.XtraEditors.SimpleButton();
             this.Findbtn = new DevExpress.XtraEditors.SimpleButton();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
-            this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
             this.panelControl5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
-            this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.SuspendLayout();
             // 
-            // panelControl1
-            // 
-            this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.panelControl1.Controls.Add(this.labelControl1);
-            this.panelControl1.Location = new System.Drawing.Point(3, 0);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1576, 72);
-            this.panelControl1.TabIndex = 2;
-            // 
             // labelControl1
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.MidnightBlue;
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(634, 23);
+            this.labelControl1.LineVisible = true;
+            this.labelControl1.Location = new System.Drawing.Point(12, 12);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(151, 24);
+            this.labelControl1.Size = new System.Drawing.Size(143, 26);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Company Profile";
-            // 
-            // panelControl2
-            // 
-            this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.panelControl2.Controls.Add(this.panelControl5);
-            this.panelControl2.Controls.Add(this.panelControl3);
-            this.panelControl2.Location = new System.Drawing.Point(3, 78);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1576, 658);
-            this.panelControl2.TabIndex = 3;
             // 
             // panelControl5
             // 
@@ -148,20 +121,20 @@ namespace BillPlex
             this.panelControl5.Controls.Add(this.Editbtn);
             this.panelControl5.Controls.Add(this.Addbtn);
             this.panelControl5.Controls.Add(this.Newbtn);
-            this.panelControl5.Location = new System.Drawing.Point(1456, 110);
+            this.panelControl5.Location = new System.Drawing.Point(1444, 58);
             this.panelControl5.Name = "panelControl5";
             this.panelControl5.Size = new System.Drawing.Size(98, 281);
             this.panelControl5.TabIndex = 1;
             // 
             // Exitbtn
             // 
-            this.Exitbtn.Appearance.BackColor = System.Drawing.Color.LightBlue;
-            this.Exitbtn.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Exitbtn.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.Exitbtn.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Exitbtn.Appearance.Options.UseBackColor = true;
             this.Exitbtn.Appearance.Options.UseFont = true;
             this.Exitbtn.Enabled = false;
             this.Exitbtn.Location = new System.Drawing.Point(12, 246);
-            this.Exitbtn.LookAndFeel.SkinName = "DevExpress Style";
+            this.Exitbtn.LookAndFeel.SkinName = "Office 2019 Dark Gray";
             this.Exitbtn.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Exitbtn.Name = "Exitbtn";
             this.Exitbtn.Size = new System.Drawing.Size(75, 23);
@@ -170,13 +143,13 @@ namespace BillPlex
             // 
             // Clearbtn
             // 
-            this.Clearbtn.Appearance.BackColor = System.Drawing.Color.LightBlue;
-            this.Clearbtn.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Clearbtn.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.Clearbtn.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Clearbtn.Appearance.Options.UseBackColor = true;
             this.Clearbtn.Appearance.Options.UseFont = true;
             this.Clearbtn.Enabled = false;
             this.Clearbtn.Location = new System.Drawing.Point(12, 207);
-            this.Clearbtn.LookAndFeel.SkinName = "DevExpress Style";
+            this.Clearbtn.LookAndFeel.SkinName = "Office 2019 Dark Gray";
             this.Clearbtn.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Clearbtn.Name = "Clearbtn";
             this.Clearbtn.Size = new System.Drawing.Size(75, 23);
@@ -185,15 +158,15 @@ namespace BillPlex
             // 
             // Deletebtn
             // 
-            this.Deletebtn.Appearance.BackColor = System.Drawing.Color.LightBlue;
-            this.Deletebtn.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Deletebtn.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.Deletebtn.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Deletebtn.Appearance.Options.UseBackColor = true;
             this.Deletebtn.Appearance.Options.UseFont = true;
             this.Deletebtn.Enabled = false;
             this.Deletebtn.Location = new System.Drawing.Point(12, 168);
             this.Deletebtn.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.Deletebtn.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightBlue;
-            this.Deletebtn.LookAndFeel.SkinName = "DevExpress Style";
+            this.Deletebtn.LookAndFeel.SkinName = "Office 2019 Dark Gray";
             this.Deletebtn.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Deletebtn.Name = "Deletebtn";
             this.Deletebtn.Size = new System.Drawing.Size(75, 23);
@@ -202,13 +175,13 @@ namespace BillPlex
             // 
             // Updatebtn
             // 
-            this.Updatebtn.Appearance.BackColor = System.Drawing.Color.LightBlue;
-            this.Updatebtn.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Updatebtn.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.Updatebtn.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Updatebtn.Appearance.Options.UseBackColor = true;
             this.Updatebtn.Appearance.Options.UseFont = true;
             this.Updatebtn.Enabled = false;
             this.Updatebtn.Location = new System.Drawing.Point(12, 126);
-            this.Updatebtn.LookAndFeel.SkinName = "DevExpress Style";
+            this.Updatebtn.LookAndFeel.SkinName = "Office 2019 Dark Gray";
             this.Updatebtn.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Updatebtn.Name = "Updatebtn";
             this.Updatebtn.Size = new System.Drawing.Size(75, 23);
@@ -217,13 +190,13 @@ namespace BillPlex
             // 
             // Editbtn
             // 
-            this.Editbtn.Appearance.BackColor = System.Drawing.Color.LightBlue;
-            this.Editbtn.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Editbtn.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.Editbtn.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Editbtn.Appearance.Options.UseBackColor = true;
             this.Editbtn.Appearance.Options.UseFont = true;
             this.Editbtn.Enabled = false;
             this.Editbtn.Location = new System.Drawing.Point(12, 86);
-            this.Editbtn.LookAndFeel.SkinName = "DevExpress Style";
+            this.Editbtn.LookAndFeel.SkinName = "Office 2019 Dark Gray";
             this.Editbtn.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Editbtn.Name = "Editbtn";
             this.Editbtn.Size = new System.Drawing.Size(75, 23);
@@ -232,13 +205,13 @@ namespace BillPlex
             // 
             // Addbtn
             // 
-            this.Addbtn.Appearance.BackColor = System.Drawing.Color.LightBlue;
-            this.Addbtn.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Addbtn.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.Addbtn.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Addbtn.Appearance.Options.UseBackColor = true;
             this.Addbtn.Appearance.Options.UseFont = true;
             this.Addbtn.Enabled = false;
             this.Addbtn.Location = new System.Drawing.Point(12, 43);
-            this.Addbtn.LookAndFeel.SkinName = "DevExpress Style";
+            this.Addbtn.LookAndFeel.SkinName = "Office 2019 Dark Gray";
             this.Addbtn.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Addbtn.Name = "Addbtn";
             this.Addbtn.Size = new System.Drawing.Size(75, 23);
@@ -247,12 +220,12 @@ namespace BillPlex
             // 
             // Newbtn
             // 
-            this.Newbtn.Appearance.BackColor = System.Drawing.Color.LightBlue;
-            this.Newbtn.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Newbtn.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.Newbtn.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Newbtn.Appearance.Options.UseBackColor = true;
             this.Newbtn.Appearance.Options.UseFont = true;
             this.Newbtn.Location = new System.Drawing.Point(12, 5);
-            this.Newbtn.LookAndFeel.SkinName = "DevExpress Style";
+            this.Newbtn.LookAndFeel.SkinName = "Office 2019 Dark Gray";
             this.Newbtn.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Newbtn.Name = "Newbtn";
             this.Newbtn.Size = new System.Drawing.Size(75, 23);
@@ -260,45 +233,38 @@ namespace BillPlex
             this.Newbtn.Text = "NEW";
             this.Newbtn.Click += new System.EventHandler(this.Newbtn_Click);
             // 
-            // panelControl3
-            // 
-            this.panelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.panelControl3.Controls.Add(this.panelControl4);
-            this.panelControl3.Location = new System.Drawing.Point(5, 5);
-            this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(1429, 648);
-            this.panelControl3.TabIndex = 0;
-            // 
             // panelControl4
             // 
             this.panelControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.panelControl4.Controls.Add(this.panelControl5);
             this.panelControl4.Controls.Add(this.drpClientprofile);
             this.panelControl4.Controls.Add(this.gridControl1);
             this.panelControl4.Controls.Add(this.Printbtn);
             this.panelControl4.Controls.Add(this.Claerbtn);
             this.panelControl4.Controls.Add(this.Findbtn);
-            this.panelControl4.Location = new System.Drawing.Point(6, 5);
+            this.panelControl4.Location = new System.Drawing.Point(12, 42);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(1406, 622);
+            this.panelControl4.Size = new System.Drawing.Size(1547, 377);
             this.panelControl4.TabIndex = 0;
             // 
             // drpClientprofile
             // 
-            this.drpClientprofile.Location = new System.Drawing.Point(184, 22);
+            this.drpClientprofile.Location = new System.Drawing.Point(5, 5);
             this.drpClientprofile.Name = "drpClientprofile";
-            this.drpClientprofile.Size = new System.Drawing.Size(503, 23);
+            this.drpClientprofile.Size = new System.Drawing.Size(706, 23);
             this.drpClientprofile.TabIndex = 9;
             // 
             // gridControl1
             // 
             this.gridControl1.DataMember = "PRO_GetMasterCompanyProfileInfo";
             this.gridControl1.DataSource = this.sqlDataSource1;
-            this.gridControl1.Location = new System.Drawing.Point(5, 68);
+            this.gridControl1.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridControl1.Location = new System.Drawing.Point(5, 34);
             this.gridControl1.LookAndFeel.SkinName = "DevExpress Style";
             this.gridControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.gridControl1.MainView = this.gridView2;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1401, 553);
+            this.gridControl1.Size = new System.Drawing.Size(1433, 328);
             this.gridControl1.TabIndex = 8;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -307,13 +273,13 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery1.Name = "PRO_GetMasterCompanyProfileInfo";
-            queryParameter1.Name = "@SearchKey";
-            queryParameter1.Type = typeof(string);
-            storedProcQuery1.Parameters.Add(queryParameter1);
-            storedProcQuery1.StoredProcName = "PRO_GetMasterCompanyProfileInfo";
+            storedProcQuery2.Name = "PRO_GetMasterCompanyProfileInfo";
+            queryParameter2.Name = "@SearchKey";
+            queryParameter2.Type = typeof(string);
+            storedProcQuery2.Parameters.Add(queryParameter2);
+            storedProcQuery2.StoredProcName = "PRO_GetMasterCompanyProfileInfo";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery1});
+            storedProcQuery2});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // gridView2
@@ -369,6 +335,7 @@ namespace BillPlex
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsPrint.ExpandAllDetails = true;
             this.gridView2.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView2.OptionsView.ShowFooter = true;
             this.gridView2.PaintStyleName = "Flat";
             this.gridView2.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colCreatedDate, DevExpress.Data.ColumnSortOrder.Ascending)});
@@ -745,15 +712,15 @@ namespace BillPlex
             // 
             // Printbtn
             // 
-            this.Printbtn.Appearance.BackColor = System.Drawing.Color.LightBlue;
+            this.Printbtn.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
             this.Printbtn.Appearance.BackColor2 = System.Drawing.Color.White;
             this.Printbtn.Appearance.BorderColor = System.Drawing.Color.White;
-            this.Printbtn.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Printbtn.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Printbtn.Appearance.Options.UseBackColor = true;
             this.Printbtn.Appearance.Options.UseBorderColor = true;
             this.Printbtn.Appearance.Options.UseFont = true;
-            this.Printbtn.Location = new System.Drawing.Point(1286, 23);
-            this.Printbtn.LookAndFeel.SkinName = "DevExpress Style";
+            this.Printbtn.Location = new System.Drawing.Point(1456, 17);
+            this.Printbtn.LookAndFeel.SkinName = "Office 2019 Dark Gray";
             this.Printbtn.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Printbtn.Name = "Printbtn";
             this.Printbtn.Size = new System.Drawing.Size(75, 23);
@@ -762,13 +729,13 @@ namespace BillPlex
             // 
             // Claerbtn
             // 
-            this.Claerbtn.Appearance.BackColor = System.Drawing.Color.LightBlue;
+            this.Claerbtn.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
             this.Claerbtn.Appearance.BackColor2 = System.Drawing.SystemColors.Highlight;
-            this.Claerbtn.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Claerbtn.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Claerbtn.Appearance.Options.UseBackColor = true;
             this.Claerbtn.Appearance.Options.UseFont = true;
-            this.Claerbtn.Location = new System.Drawing.Point(951, 23);
-            this.Claerbtn.LookAndFeel.SkinName = "DevExpress Style";
+            this.Claerbtn.Location = new System.Drawing.Point(798, 5);
+            this.Claerbtn.LookAndFeel.SkinName = "Office 2019 Dark Gray";
             this.Claerbtn.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Claerbtn.Name = "Claerbtn";
             this.Claerbtn.Size = new System.Drawing.Size(75, 23);
@@ -777,10 +744,10 @@ namespace BillPlex
             // 
             // Findbtn
             // 
-            this.Findbtn.Appearance.BackColor = System.Drawing.Color.LightBlue;
+            this.Findbtn.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
             this.Findbtn.Appearance.BackColor2 = System.Drawing.SystemColors.Highlight;
             this.Findbtn.Appearance.BorderColor = System.Drawing.Color.White;
-            this.Findbtn.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Findbtn.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Findbtn.Appearance.ForeColor = System.Drawing.Color.Black;
             this.Findbtn.Appearance.Options.UseBackColor = true;
             this.Findbtn.Appearance.Options.UseBorderColor = true;
@@ -806,8 +773,8 @@ namespace BillPlex
             this.Findbtn.AppearancePressed.Options.UseBorderColor = true;
             this.Findbtn.AppearancePressed.Options.UseForeColor = true;
             this.Findbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Findbtn.Location = new System.Drawing.Point(798, 23);
-            this.Findbtn.LookAndFeel.SkinName = "DevExpress Style";
+            this.Findbtn.Location = new System.Drawing.Point(717, 5);
+            this.Findbtn.LookAndFeel.SkinName = "Office 2019 Dark Gray";
             this.Findbtn.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Findbtn.Name = "Findbtn";
             this.Findbtn.Size = new System.Drawing.Size(75, 23);
@@ -818,33 +785,26 @@ namespace BillPlex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1584, 742);
-            this.Controls.Add(this.panelControl2);
-            this.Controls.Add(this.panelControl1);
+            this.ClientSize = new System.Drawing.Size(1571, 442);
+            this.Controls.Add(this.labelControl1);
+            this.Controls.Add(this.panelControl4);
             this.Name = "FrmCompanyProfile";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCompanyProfile";
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
-            this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
-            this.panelControl2.ResumeLayout(false);
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
             this.panelControl5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
-            this.panelControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraEditors.PanelControl panelControl5;
         private DevExpress.XtraEditors.SimpleButton Exitbtn;
         private DevExpress.XtraEditors.SimpleButton Clearbtn;
@@ -853,7 +813,6 @@ namespace BillPlex
         private DevExpress.XtraEditors.SimpleButton Editbtn;
         private DevExpress.XtraEditors.SimpleButton Addbtn;
         private DevExpress.XtraEditors.SimpleButton Newbtn;
-        private DevExpress.XtraEditors.PanelControl panelControl3;
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraEditors.SimpleButton Claerbtn;
         private DevExpress.XtraEditors.SimpleButton Findbtn;

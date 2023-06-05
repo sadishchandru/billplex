@@ -37,7 +37,6 @@ namespace BillPlex
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.NewButton = new DevExpress.XtraEditors.SimpleButton();
-            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.simpleButton11 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton10 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton9 = new DevExpress.XtraEditors.SimpleButton();
@@ -49,26 +48,33 @@ namespace BillPlex
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
-            this.groupControl2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupControl1
             // 
+            this.groupControl1.AutoSize = true;
+            this.groupControl1.Controls.Add(this.simpleButton11);
             this.groupControl1.Controls.Add(this.simpleButton3);
+            this.groupControl1.Controls.Add(this.simpleButton10);
             this.groupControl1.Controls.Add(this.simpleButton2);
+            this.groupControl1.Controls.Add(this.simpleButton9);
+            this.groupControl1.Controls.Add(this.gridControl1);
+            this.groupControl1.Controls.Add(this.simpleButton7);
             this.groupControl1.Controls.Add(this.simpleButton1);
+            this.groupControl1.Controls.Add(this.simpleButton6);
             this.groupControl1.Controls.Add(this.dropDownButton1);
-            this.groupControl1.Location = new System.Drawing.Point(1, 101);
+            this.groupControl1.Controls.Add(this.simpleButton5);
+            this.groupControl1.Controls.Add(this.NewButton);
+            this.groupControl1.Location = new System.Drawing.Point(1, 51);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(779, 81);
+            this.groupControl1.Size = new System.Drawing.Size(777, 355);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "Main Company";
             this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
             // 
             // simpleButton3
             // 
-            this.simpleButton3.Location = new System.Drawing.Point(674, 26);
+            this.simpleButton3.Location = new System.Drawing.Point(699, 26);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(75, 23);
             this.simpleButton3.TabIndex = 4;
@@ -76,7 +82,7 @@ namespace BillPlex
             // 
             // simpleButton2
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(451, 26);
+            this.simpleButton2.Location = new System.Drawing.Point(618, 26);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(75, 23);
             this.simpleButton2.TabIndex = 4;
@@ -84,7 +90,7 @@ namespace BillPlex
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(370, 26);
+            this.simpleButton1.Location = new System.Drawing.Point(537, 26);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(75, 23);
             this.simpleButton1.TabIndex = 3;
@@ -92,18 +98,18 @@ namespace BillPlex
             // 
             // dropDownButton1
             // 
-            this.dropDownButton1.Location = new System.Drawing.Point(71, 26);
+            this.dropDownButton1.Location = new System.Drawing.Point(5, 26);
             this.dropDownButton1.Name = "dropDownButton1";
-            this.dropDownButton1.Size = new System.Drawing.Size(293, 23);
+            this.dropDownButton1.Size = new System.Drawing.Size(526, 23);
             this.dropDownButton1.TabIndex = 5;
             this.dropDownButton1.Text = "dropDownButton1";
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(12, 188);
+            this.gridControl1.Location = new System.Drawing.Point(5, 52);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(601, 200);
+            this.gridControl1.Size = new System.Drawing.Size(607, 295);
             this.gridControl1.TabIndex = 2;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -115,30 +121,16 @@ namespace BillPlex
             // 
             // NewButton
             // 
-            this.NewButton.Location = new System.Drawing.Point(10, 26);
+            this.NewButton.Location = new System.Drawing.Point(655, 117);
             this.NewButton.Name = "NewButton";
             this.NewButton.Size = new System.Drawing.Size(75, 23);
             this.NewButton.TabIndex = 5;
             this.NewButton.Text = "New";
             this.NewButton.Click += new System.EventHandler(this.NewButton_Click);
             // 
-            // groupControl2
-            // 
-            this.groupControl2.Controls.Add(this.simpleButton11);
-            this.groupControl2.Controls.Add(this.simpleButton10);
-            this.groupControl2.Controls.Add(this.simpleButton9);
-            this.groupControl2.Controls.Add(this.simpleButton7);
-            this.groupControl2.Controls.Add(this.simpleButton6);
-            this.groupControl2.Controls.Add(this.simpleButton5);
-            this.groupControl2.Controls.Add(this.NewButton);
-            this.groupControl2.Location = new System.Drawing.Point(665, 200);
-            this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(103, 239);
-            this.groupControl2.TabIndex = 6;
-            // 
             // simpleButton11
             // 
-            this.simpleButton11.Location = new System.Drawing.Point(10, 200);
+            this.simpleButton11.Location = new System.Drawing.Point(655, 291);
             this.simpleButton11.Name = "simpleButton11";
             this.simpleButton11.Size = new System.Drawing.Size(75, 23);
             this.simpleButton11.TabIndex = 12;
@@ -146,7 +138,7 @@ namespace BillPlex
             // 
             // simpleButton10
             // 
-            this.simpleButton10.Location = new System.Drawing.Point(10, 171);
+            this.simpleButton10.Location = new System.Drawing.Point(655, 262);
             this.simpleButton10.Name = "simpleButton10";
             this.simpleButton10.Size = new System.Drawing.Size(75, 23);
             this.simpleButton10.TabIndex = 11;
@@ -154,7 +146,7 @@ namespace BillPlex
             // 
             // simpleButton9
             // 
-            this.simpleButton9.Location = new System.Drawing.Point(10, 142);
+            this.simpleButton9.Location = new System.Drawing.Point(655, 233);
             this.simpleButton9.Name = "simpleButton9";
             this.simpleButton9.Size = new System.Drawing.Size(75, 23);
             this.simpleButton9.TabIndex = 10;
@@ -162,7 +154,7 @@ namespace BillPlex
             // 
             // simpleButton7
             // 
-            this.simpleButton7.Location = new System.Drawing.Point(10, 113);
+            this.simpleButton7.Location = new System.Drawing.Point(655, 204);
             this.simpleButton7.Name = "simpleButton7";
             this.simpleButton7.Size = new System.Drawing.Size(75, 23);
             this.simpleButton7.TabIndex = 8;
@@ -170,7 +162,7 @@ namespace BillPlex
             // 
             // simpleButton6
             // 
-            this.simpleButton6.Location = new System.Drawing.Point(10, 84);
+            this.simpleButton6.Location = new System.Drawing.Point(655, 175);
             this.simpleButton6.Name = "simpleButton6";
             this.simpleButton6.Size = new System.Drawing.Size(75, 23);
             this.simpleButton6.TabIndex = 7;
@@ -178,7 +170,7 @@ namespace BillPlex
             // 
             // simpleButton5
             // 
-            this.simpleButton5.Location = new System.Drawing.Point(10, 55);
+            this.simpleButton5.Location = new System.Drawing.Point(655, 146);
             this.simpleButton5.Name = "simpleButton5";
             this.simpleButton5.Size = new System.Drawing.Size(75, 23);
             this.simpleButton5.TabIndex = 6;
@@ -187,10 +179,10 @@ namespace BillPlex
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
-            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Black;
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(266, 34);
+            this.labelControl1.Location = new System.Drawing.Point(12, 12);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(224, 33);
             this.labelControl1.TabIndex = 7;
@@ -200,10 +192,9 @@ namespace BillPlex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(780, 447);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(783, 415);
             this.Controls.Add(this.labelControl1);
-            this.Controls.Add(this.groupControl2);
-            this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.groupControl1);
             this.Name = "CompanyProfile";
             this.Text = "CompanyProfile";
@@ -212,8 +203,6 @@ namespace BillPlex
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
-            this.groupControl2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,7 +217,6 @@ namespace BillPlex
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.SimpleButton NewButton;
-        private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.SimpleButton simpleButton11;
         private DevExpress.XtraEditors.SimpleButton simpleButton10;
         private DevExpress.XtraEditors.SimpleButton simpleButton9;
