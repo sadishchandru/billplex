@@ -96,7 +96,6 @@ namespace BillPlex
             this.txtEsiCode = new DevExpress.XtraEditors.TextEdit();
             this.txtPinNo = new DevExpress.XtraEditors.TextEdit();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
-            this.drpState = new DevExpress.XtraEditors.DropDownButton();
             this.radBusinessNature = new DevExpress.XtraEditors.RadioGroup();
             this.txtPFCode = new DevExpress.XtraEditors.TextEdit();
             this.txtEmail = new DevExpress.XtraEditors.TextEdit();
@@ -120,6 +119,7 @@ namespace BillPlex
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.ddStartingdate = new DevExpress.XtraEditors.DateEdit();
+            this.drpState = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -173,6 +173,7 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddStartingdate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddStartingdate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpState.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -729,6 +730,7 @@ namespace BillPlex
             // panelControl3
             // 
             this.panelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.panelControl3.Controls.Add(this.drpState);
             this.panelControl3.Controls.Add(this.ddEsiDate);
             this.panelControl3.Controls.Add(this.ddPfDate);
             this.panelControl3.Controls.Add(this.txtOfficeAddress);
@@ -750,7 +752,6 @@ namespace BillPlex
             this.panelControl3.Controls.Add(this.txtEsiCode);
             this.panelControl3.Controls.Add(this.txtPinNo);
             this.panelControl3.Controls.Add(this.labelControl17);
-            this.panelControl3.Controls.Add(this.drpState);
             this.panelControl3.Controls.Add(this.radBusinessNature);
             this.panelControl3.Controls.Add(this.txtPFCode);
             this.panelControl3.Controls.Add(this.txtEmail);
@@ -987,13 +988,6 @@ namespace BillPlex
             this.labelControl17.Size = new System.Drawing.Size(20, 19);
             this.labelControl17.TabIndex = 27;
             this.labelControl17.Text = "Pin";
-            // 
-            // drpState
-            // 
-            this.drpState.Location = new System.Drawing.Point(138, 193);
-            this.drpState.Name = "drpState";
-            this.drpState.Size = new System.Drawing.Size(168, 23);
-            this.drpState.TabIndex = 26;
             // 
             // radBusinessNature
             // 
@@ -1235,6 +1229,53 @@ namespace BillPlex
             this.ddStartingdate.Size = new System.Drawing.Size(300, 20);
             this.ddStartingdate.TabIndex = 47;
             // 
+            // drpState
+            // 
+            this.drpState.Location = new System.Drawing.Point(138, 192);
+            this.drpState.Name = "drpState";
+            this.drpState.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpState.Properties.Items.AddRange(new object[] {
+            "Andaman and Nicobar Islands",
+            "Andhra Pradesh",
+            "Arunachal Pradesh",
+            "Assam",
+            "Bihar",
+            "Chandigarh",
+            "Chhattisgarh",
+            "Dadra and Nagar Haveli and Daman and Diu",
+            "Delhi",
+            "Goa",
+            "Gujarat",
+            "Haryana",
+            "Himachal Pradesh",
+            "Jammu and Kashmir",
+            "Jharkhand",
+            "Karnataka",
+            "Kerala",
+            "Ladakh",
+            "Lakshadweep",
+            "Madhya Pradesh",
+            "Maharashtra",
+            "Manipur",
+            "Meghalaya",
+            "Mizoram",
+            "Nagaland",
+            "Odisha",
+            "Puducherry",
+            "Punjab",
+            "Rajasthan",
+            "Sikkim",
+            "Tamil Nadu",
+            "Telangana",
+            "Tripura",
+            "Uttar Pradesh",
+            "Uttarakhand",
+            "West Bengal"});
+            this.drpState.Properties.Sorted = true;
+            this.drpState.Size = new System.Drawing.Size(168, 20);
+            this.drpState.TabIndex = 50;
+            // 
             // FrmCompanyInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1303,6 +1344,7 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddStartingdate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddStartingdate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpState.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1337,7 +1379,6 @@ namespace BillPlex
         private DevExpress.XtraEditors.TextEdit txtEsiCode;
         private DevExpress.XtraEditors.TextEdit txtPinNo;
         private DevExpress.XtraEditors.LabelControl labelControl17;
-        private DevExpress.XtraEditors.DropDownButton drpState;
         private DevExpress.XtraEditors.TextEdit txtPFCode;
         private DevExpress.XtraEditors.TextEdit txtEmail;
         private DevExpress.XtraEditors.TextEdit txtWebsite;
@@ -1400,5 +1441,6 @@ namespace BillPlex
         private DevExpress.XtraEditors.DateEdit ddAuthDOB;
         private DevExpress.XtraEditors.TextEdit txtAuthorPhoneNo;
         private DevExpress.XtraEditors.TextEdit txtAuthorStdCode;
+        private DevExpress.XtraEditors.ComboBoxEdit drpState;
     }
 }

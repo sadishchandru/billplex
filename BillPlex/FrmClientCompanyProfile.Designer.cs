@@ -89,7 +89,7 @@ namespace BillPlex
             this.colCBankAddress = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Claerbtn = new DevExpress.XtraEditors.SimpleButton();
             this.Findbtn = new DevExpress.XtraEditors.SimpleButton();
-            this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
+            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -102,6 +102,7 @@ namespace BillPlex
             this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -188,10 +189,10 @@ namespace BillPlex
             // panelControl4
             // 
             this.panelControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.panelControl4.Controls.Add(this.comboBoxEdit1);
             this.panelControl4.Controls.Add(this.gridControl1);
             this.panelControl4.Controls.Add(this.Claerbtn);
             this.panelControl4.Controls.Add(this.Findbtn);
-            this.panelControl4.Controls.Add(this.dropDownButton1);
             this.panelControl4.Location = new System.Drawing.Point(6, 6);
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Size = new System.Drawing.Size(1408, 621);
@@ -697,17 +698,20 @@ namespace BillPlex
             this.Findbtn.TabIndex = 3;
             this.Findbtn.Text = "Find";
             // 
-            // dropDownButton1
+            // comboBoxEdit1
             // 
-            this.dropDownButton1.Location = new System.Drawing.Point(23, 23);
-            this.dropDownButton1.Name = "dropDownButton1";
-            this.dropDownButton1.Size = new System.Drawing.Size(721, 23);
-            this.dropDownButton1.TabIndex = 2;
+            this.comboBoxEdit1.Location = new System.Drawing.Point(26, 20);
+            this.comboBoxEdit1.Name = "comboBoxEdit1";
+            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEdit1.Size = new System.Drawing.Size(721, 20);
+            this.comboBoxEdit1.TabIndex = 1;
             // 
             // FrmClientCompanyProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1583, 742);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
@@ -727,6 +731,7 @@ namespace BillPlex
             this.panelControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -743,7 +748,6 @@ namespace BillPlex
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraEditors.SimpleButton Claerbtn;
         private DevExpress.XtraEditors.SimpleButton Findbtn;
-        private DevExpress.XtraEditors.DropDownButton dropDownButton1;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
@@ -790,5 +794,6 @@ namespace BillPlex
         private DevExpress.XtraGrid.Columns.GridColumn colCBankname;
         private DevExpress.XtraGrid.Columns.GridColumn colCBankACNo;
         private DevExpress.XtraGrid.Columns.GridColumn colCBankAddress;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
     }
 }

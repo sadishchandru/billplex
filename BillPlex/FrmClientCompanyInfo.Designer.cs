@@ -34,7 +34,6 @@ namespace BillPlex
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.ddDOB = new DevExpress.XtraEditors.DateEdit();
-            this.DrpBloodGroup = new DevExpress.XtraEditors.DropDownButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.AuthClearImageBtn = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl26 = new DevExpress.XtraEditors.LabelControl();
@@ -50,7 +49,6 @@ namespace BillPlex
             this.TxtAuthAddress = new DevExpress.XtraEditors.MemoEdit();
             this.txtAuthpin = new DevExpress.XtraEditors.TextEdit();
             this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
-            this.drpAuthState = new DevExpress.XtraEditors.DropDownButton();
             this.labelControl22 = new DevExpress.XtraEditors.LabelControl();
             this.EmailCpyBtn = new DevExpress.XtraEditors.SimpleButton();
             this.AuthAddClearBtn = new DevExpress.XtraEditors.SimpleButton();
@@ -83,7 +81,6 @@ namespace BillPlex
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.ddPfDate = new DevExpress.XtraEditors.DateEdit();
             this.ddEsiCode = new DevExpress.XtraEditors.DateEdit();
-            this.drpDirector = new DevExpress.XtraEditors.DropDownButton();
             this.txtCst = new DevExpress.XtraEditors.TextEdit();
             this.txtSsi = new DevExpress.XtraEditors.TextEdit();
             this.txtPanNo = new DevExpress.XtraEditors.TextEdit();
@@ -116,7 +113,6 @@ namespace BillPlex
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.txtPin = new DevExpress.XtraEditors.TextEdit();
             this.PinLbl = new DevExpress.XtraEditors.LabelControl();
-            this.drpState = new DevExpress.XtraEditors.DropDownButton();
             this.StateLbl = new DevExpress.XtraEditors.LabelControl();
             this.txtOffAddress = new DevExpress.XtraEditors.MemoEdit();
             this.OfficeAddressTxt = new DevExpress.XtraEditors.LabelControl();
@@ -126,7 +122,6 @@ namespace BillPlex
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.drpMainCompany = new DevExpress.XtraEditors.DropDownButton();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
@@ -134,6 +129,11 @@ namespace BillPlex
             this.radPfType = new DevExpress.XtraEditors.RadioGroup();
             this.LicenseTxt = new DevExpress.XtraEditors.TextEdit();
             this.ddStartingDate = new DevExpress.XtraEditors.DateEdit();
+            this.drpMainCompany = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.drpDirector = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.drpAuthBloodGroup = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.drpState = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.drpAuthState = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -187,6 +187,11 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.LicenseTxt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddStartingDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddStartingDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpMainCompany.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpDirector.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpAuthBloodGroup.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpState.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpAuthState.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -222,8 +227,9 @@ namespace BillPlex
             // panelControl4
             // 
             this.panelControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.panelControl4.Controls.Add(this.drpAuthState);
+            this.panelControl4.Controls.Add(this.drpAuthBloodGroup);
             this.panelControl4.Controls.Add(this.ddDOB);
-            this.panelControl4.Controls.Add(this.DrpBloodGroup);
             this.panelControl4.Controls.Add(this.simpleButton1);
             this.panelControl4.Controls.Add(this.AuthClearImageBtn);
             this.panelControl4.Controls.Add(this.labelControl26);
@@ -239,7 +245,6 @@ namespace BillPlex
             this.panelControl4.Controls.Add(this.TxtAuthAddress);
             this.panelControl4.Controls.Add(this.txtAuthpin);
             this.panelControl4.Controls.Add(this.labelControl20);
-            this.panelControl4.Controls.Add(this.drpAuthState);
             this.panelControl4.Controls.Add(this.labelControl22);
             this.panelControl4.Controls.Add(this.EmailCpyBtn);
             this.panelControl4.Controls.Add(this.AuthAddClearBtn);
@@ -283,13 +288,6 @@ namespace BillPlex
             this.ddDOB.Properties.UseMaskAsDisplayFormat = true;
             this.ddDOB.Size = new System.Drawing.Size(263, 20);
             this.ddDOB.TabIndex = 78;
-            // 
-            // DrpBloodGroup
-            // 
-            this.DrpBloodGroup.Location = new System.Drawing.Point(138, 147);
-            this.DrpBloodGroup.Name = "DrpBloodGroup";
-            this.DrpBloodGroup.Size = new System.Drawing.Size(263, 23);
-            this.DrpBloodGroup.TabIndex = 77;
             // 
             // simpleButton1
             // 
@@ -443,13 +441,6 @@ namespace BillPlex
             this.labelControl20.Size = new System.Drawing.Size(19, 16);
             this.labelControl20.TabIndex = 58;
             this.labelControl20.Text = "Pin";
-            // 
-            // drpAuthState
-            // 
-            this.drpAuthState.Location = new System.Drawing.Point(525, 113);
-            this.drpAuthState.Name = "drpAuthState";
-            this.drpAuthState.Size = new System.Drawing.Size(152, 23);
-            this.drpAuthState.TabIndex = 57;
             // 
             // labelControl22
             // 
@@ -813,9 +804,11 @@ namespace BillPlex
             // 
             // panelControl3
             // 
+            this.panelControl3.Controls.Add(this.drpState);
+            this.panelControl3.Controls.Add(this.drpDirector);
+            this.panelControl3.Controls.Add(this.drpMainCompany);
             this.panelControl3.Controls.Add(this.ddPfDate);
             this.panelControl3.Controls.Add(this.ddEsiCode);
-            this.panelControl3.Controls.Add(this.drpDirector);
             this.panelControl3.Controls.Add(this.txtCst);
             this.panelControl3.Controls.Add(this.txtSsi);
             this.panelControl3.Controls.Add(this.txtPanNo);
@@ -848,7 +841,6 @@ namespace BillPlex
             this.panelControl3.Controls.Add(this.labelControl11);
             this.panelControl3.Controls.Add(this.txtPin);
             this.panelControl3.Controls.Add(this.PinLbl);
-            this.panelControl3.Controls.Add(this.drpState);
             this.panelControl3.Controls.Add(this.StateLbl);
             this.panelControl3.Controls.Add(this.txtOffAddress);
             this.panelControl3.Controls.Add(this.OfficeAddressTxt);
@@ -858,7 +850,6 @@ namespace BillPlex
             this.panelControl3.Controls.Add(this.labelControl7);
             this.panelControl3.Controls.Add(this.labelControl5);
             this.panelControl3.Controls.Add(this.labelControl6);
-            this.panelControl3.Controls.Add(this.drpMainCompany);
             this.panelControl3.Controls.Add(this.labelControl4);
             this.panelControl3.Controls.Add(this.labelControl2);
             this.panelControl3.Controls.Add(this.panelControl5);
@@ -907,13 +898,6 @@ namespace BillPlex
             this.ddEsiCode.Properties.UseMaskAsDisplayFormat = true;
             this.ddEsiCode.Size = new System.Drawing.Size(207, 20);
             this.ddEsiCode.TabIndex = 63;
-            // 
-            // drpDirector
-            // 
-            this.drpDirector.Location = new System.Drawing.Point(181, 64);
-            this.drpDirector.Name = "drpDirector";
-            this.drpDirector.Size = new System.Drawing.Size(220, 23);
-            this.drpDirector.TabIndex = 61;
             // 
             // txtCst
             // 
@@ -1220,13 +1204,6 @@ namespace BillPlex
             this.PinLbl.TabIndex = 19;
             this.PinLbl.Text = "Pin";
             // 
-            // drpState
-            // 
-            this.drpState.Location = new System.Drawing.Point(116, 226);
-            this.drpState.Name = "drpState";
-            this.drpState.Size = new System.Drawing.Size(168, 23);
-            this.drpState.TabIndex = 18;
-            // 
             // StateLbl
             // 
             this.StateLbl.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1312,14 +1289,6 @@ namespace BillPlex
             this.labelControl6.Size = new System.Drawing.Size(95, 16);
             this.labelControl6.TabIndex = 7;
             this.labelControl6.Text = "Company Code";
-            // 
-            // drpMainCompany
-            // 
-            this.drpMainCompany.Location = new System.Drawing.Point(6, 65);
-            this.drpMainCompany.Name = "drpMainCompany";
-            this.drpMainCompany.Size = new System.Drawing.Size(151, 23);
-            this.drpMainCompany.TabIndex = 5;
-            this.drpMainCompany.Click += new System.EventHandler(this.MainCompanyDd_Click);
             // 
             // labelControl4
             // 
@@ -1412,6 +1381,127 @@ namespace BillPlex
             this.ddStartingDate.Size = new System.Drawing.Size(285, 20);
             this.ddStartingDate.TabIndex = 62;
             // 
+            // drpMainCompany
+            // 
+            this.drpMainCompany.Location = new System.Drawing.Point(5, 66);
+            this.drpMainCompany.Name = "drpMainCompany";
+            this.drpMainCompany.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpMainCompany.Size = new System.Drawing.Size(152, 20);
+            this.drpMainCompany.TabIndex = 1;
+            // 
+            // drpDirector
+            // 
+            this.drpDirector.Location = new System.Drawing.Point(177, 66);
+            this.drpDirector.Name = "drpDirector";
+            this.drpDirector.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpDirector.Size = new System.Drawing.Size(224, 20);
+            this.drpDirector.TabIndex = 65;
+            // 
+            // drpAuthBloodGroup
+            // 
+            this.drpAuthBloodGroup.Location = new System.Drawing.Point(138, 154);
+            this.drpAuthBloodGroup.Name = "drpAuthBloodGroup";
+            this.drpAuthBloodGroup.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpAuthBloodGroup.Size = new System.Drawing.Size(263, 20);
+            this.drpAuthBloodGroup.TabIndex = 79;
+            // 
+            // drpState
+            // 
+            this.drpState.Location = new System.Drawing.Point(116, 229);
+            this.drpState.Name = "drpState";
+            this.drpState.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpState.Properties.Items.AddRange(new object[] {
+            "Andaman and Nicobar Islands",
+            "Andhra Pradesh",
+            "Arunachal Pradesh",
+            "Assam",
+            "Bihar",
+            "Chandigarh",
+            "Chhattisgarh",
+            "Dadra and Nagar Haveli and Daman and Diu",
+            "Delhi",
+            "Goa",
+            "Gujarat",
+            "Haryana",
+            "Himachal Pradesh",
+            "Jammu and Kashmir",
+            "Jharkhand",
+            "Karnataka",
+            "Kerala",
+            "Ladakh",
+            "Lakshadweep",
+            "Madhya Pradesh",
+            "Maharashtra",
+            "Manipur",
+            "Meghalaya",
+            "Mizoram",
+            "Nagaland",
+            "Odisha",
+            "Puducherry",
+            "Punjab",
+            "Rajasthan",
+            "Sikkim",
+            "Tamil Nadu",
+            "Telangana",
+            "Tripura",
+            "Uttar Pradesh",
+            "Uttarakhand",
+            "West Bengal"});
+            this.drpState.Properties.Sorted = true;
+            this.drpState.Size = new System.Drawing.Size(168, 20);
+            this.drpState.TabIndex = 66;
+            // 
+            // drpAuthState
+            // 
+            this.drpAuthState.Location = new System.Drawing.Point(525, 114);
+            this.drpAuthState.Name = "drpAuthState";
+            this.drpAuthState.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpAuthState.Properties.Items.AddRange(new object[] {
+            "Andaman and Nicobar Islands",
+            "Andhra Pradesh",
+            "Arunachal Pradesh",
+            "Assam",
+            "Bihar",
+            "Chandigarh",
+            "Chhattisgarh",
+            "Dadra and Nagar Haveli and Daman and Diu",
+            "Delhi",
+            "Goa",
+            "Gujarat",
+            "Haryana",
+            "Himachal Pradesh",
+            "Jammu and Kashmir",
+            "Jharkhand",
+            "Karnataka",
+            "Kerala",
+            "Ladakh",
+            "Lakshadweep",
+            "Madhya Pradesh",
+            "Maharashtra",
+            "Manipur",
+            "Meghalaya",
+            "Mizoram",
+            "Nagaland",
+            "Odisha",
+            "Puducherry",
+            "Punjab",
+            "Rajasthan",
+            "Sikkim",
+            "Tamil Nadu",
+            "Telangana",
+            "Tripura",
+            "Uttar Pradesh",
+            "Uttarakhand",
+            "West Bengal"});
+            this.drpAuthState.Properties.Sorted = true;
+            this.drpAuthState.Size = new System.Drawing.Size(157, 20);
+            this.drpAuthState.TabIndex = 80;
+            // 
             // FrmClientCompanyInfo
             // 
             this.Appearance.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -1482,6 +1572,11 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.LicenseTxt.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddStartingDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddStartingDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpMainCompany.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpDirector.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpAuthBloodGroup.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpState.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpAuthState.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1496,14 +1591,12 @@ namespace BillPlex
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.DropDownButton drpMainCompany;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.TextEdit txtPin;
         private DevExpress.XtraEditors.LabelControl PinLbl;
-        private DevExpress.XtraEditors.DropDownButton drpState;
         private DevExpress.XtraEditors.LabelControl StateLbl;
         private DevExpress.XtraEditors.MemoEdit txtOffAddress;
         private DevExpress.XtraEditors.LabelControl OfficeAddressTxt;
@@ -1568,7 +1661,6 @@ namespace BillPlex
         private DevExpress.XtraEditors.LabelControl labelControl21;
         private DevExpress.XtraEditors.TextEdit txtAuthpin;
         private DevExpress.XtraEditors.LabelControl labelControl20;
-        private DevExpress.XtraEditors.DropDownButton drpAuthState;
         private DevExpress.XtraEditors.LabelControl labelControl22;
         private DevExpress.XtraEditors.SimpleButton EmailCpyBtn;
         private DevExpress.XtraEditors.SimpleButton AuthClearImageBtn;
@@ -1580,18 +1672,21 @@ namespace BillPlex
         private DevExpress.XtraEditors.LabelControl labelControl24;
         private DevExpress.XtraEditors.RadioGroup radActiveStatus;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.DropDownButton DrpBloodGroup;
         private DevExpress.XtraEditors.SimpleButton btnAdd;
         private DevExpress.XtraEditors.SimpleButton ClearBtn;
         private DevExpress.XtraEditors.SimpleButton DeleteBtn;
         private DevExpress.XtraEditors.SimpleButton UpdateBtn;
         private DevExpress.XtraEditors.SimpleButton EditBtn;
-        private DevExpress.XtraEditors.DropDownButton drpDirector;
         private DevExpress.XtraEditors.MemoEdit TxtAuthAddress;
         private DevExpress.XtraEditors.TextEdit LicenseTxt;
         private DevExpress.XtraEditors.DateEdit ddStartingDate;
         private DevExpress.XtraEditors.DateEdit ddDOB;
         private DevExpress.XtraEditors.DateEdit ddPfDate;
         private DevExpress.XtraEditors.DateEdit ddEsiCode;
+        private DevExpress.XtraEditors.ComboBoxEdit drpAuthBloodGroup;
+        private DevExpress.XtraEditors.ComboBoxEdit drpDirector;
+        private DevExpress.XtraEditors.ComboBoxEdit drpMainCompany;
+        private DevExpress.XtraEditors.ComboBoxEdit drpAuthState;
+        private DevExpress.XtraEditors.ComboBoxEdit drpState;
     }
 }
