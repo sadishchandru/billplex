@@ -68,6 +68,7 @@ namespace BillPlex
             this.txtSearchCustomer = new DevExpress.XtraEditors.TextEdit();
             this.labelControl24 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.drpCountry = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl23 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl22 = new DevExpress.XtraEditors.LabelControl();
             this.txtWebsite = new DevExpress.XtraEditors.TextEdit();
@@ -80,10 +81,8 @@ namespace BillPlex
             this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
-            this.drpCDCountry = new DevExpress.XtraEditors.DropDownButton();
             this.txtPin = new DevExpress.XtraEditors.TextEdit();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
-            this.drpState2 = new DevExpress.XtraEditors.DropDownButton();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
@@ -95,10 +94,8 @@ namespace BillPlex
             this.txtPhoneNo = new DevExpress.XtraEditors.TextEdit();
             this.txtCode = new DevExpress.XtraEditors.TextEdit();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            this.drpCountry = new DevExpress.XtraEditors.DropDownButton();
             this.txtStatePin = new DevExpress.XtraEditors.TextEdit();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.drpState = new DevExpress.XtraEditors.DropDownButton();
             this.txtOffAddress = new DevExpress.XtraEditors.MemoEdit();
             this.txtCustomerName = new DevExpress.XtraEditors.TextEdit();
             this.txtCustomerCode = new DevExpress.XtraEditors.TextEdit();
@@ -113,6 +110,9 @@ namespace BillPlex
             this.ddTINDate = new DevExpress.XtraEditors.DateEdit();
             this.ddCSTDate = new DevExpress.XtraEditors.DateEdit();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
+            this.drpState = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.drpState2 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.drpCDCountry = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -124,6 +124,7 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchCustomer.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.drpCountry.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtWebsite.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLicenseNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCSTno.Properties)).BeginInit();
@@ -143,6 +144,9 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.ddCSTDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddCSTDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpState.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpState2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpCDCountry.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -482,6 +486,10 @@ namespace BillPlex
             // panelControl3
             // 
             this.panelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.panelControl3.Controls.Add(this.drpCDCountry);
+            this.panelControl3.Controls.Add(this.drpState2);
+            this.panelControl3.Controls.Add(this.drpState);
+            this.panelControl3.Controls.Add(this.drpCountry);
             this.panelControl3.Controls.Add(this.labelControl23);
             this.panelControl3.Controls.Add(this.labelControl22);
             this.panelControl3.Controls.Add(this.txtWebsite);
@@ -494,10 +502,8 @@ namespace BillPlex
             this.panelControl3.Controls.Add(this.labelControl19);
             this.panelControl3.Controls.Add(this.labelControl18);
             this.panelControl3.Controls.Add(this.labelControl17);
-            this.panelControl3.Controls.Add(this.drpCDCountry);
             this.panelControl3.Controls.Add(this.txtPin);
             this.panelControl3.Controls.Add(this.labelControl14);
-            this.panelControl3.Controls.Add(this.drpState2);
             this.panelControl3.Controls.Add(this.labelControl15);
             this.panelControl3.Controls.Add(this.labelControl16);
             this.panelControl3.Controls.Add(this.labelControl13);
@@ -509,10 +515,8 @@ namespace BillPlex
             this.panelControl3.Controls.Add(this.txtPhoneNo);
             this.panelControl3.Controls.Add(this.txtCode);
             this.panelControl3.Controls.Add(this.labelControl11);
-            this.panelControl3.Controls.Add(this.drpCountry);
             this.panelControl3.Controls.Add(this.txtStatePin);
             this.panelControl3.Controls.Add(this.labelControl10);
-            this.panelControl3.Controls.Add(this.drpState);
             this.panelControl3.Controls.Add(this.txtOffAddress);
             this.panelControl3.Controls.Add(this.txtCustomerName);
             this.panelControl3.Controls.Add(this.txtCustomerCode);
@@ -530,6 +534,18 @@ namespace BillPlex
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(1343, 275);
             this.panelControl3.TabIndex = 0;
+            // 
+            // drpCountry
+            // 
+            this.drpCountry.Location = new System.Drawing.Point(153, 232);
+            this.drpCountry.Name = "drpCountry";
+            this.drpCountry.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpCountry.Properties.Items.AddRange(new object[] {
+            "India"});
+            this.drpCountry.Properties.Sorted = true;
+            this.drpCountry.Size = new System.Drawing.Size(237, 20);
+            this.drpCountry.TabIndex = 43;
             // 
             // labelControl23
             // 
@@ -636,14 +652,6 @@ namespace BillPlex
             this.labelControl17.TabIndex = 30;
             this.labelControl17.Text = "Mobile No";
             // 
-            // drpCDCountry
-            // 
-            this.drpCDCountry.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sqlDataSource1, "PRO_GetCustomerInfo.Code", true));
-            this.drpCDCountry.Location = new System.Drawing.Point(550, 235);
-            this.drpCDCountry.Name = "drpCDCountry";
-            this.drpCDCountry.Size = new System.Drawing.Size(237, 23);
-            this.drpCDCountry.TabIndex = 29;
-            // 
             // txtPin
             // 
             this.txtPin.Location = new System.Drawing.Point(722, 180);
@@ -660,13 +668,6 @@ namespace BillPlex
             this.labelControl14.Size = new System.Drawing.Size(21, 14);
             this.labelControl14.TabIndex = 27;
             this.labelControl14.Text = "PIN";
-            // 
-            // drpState2
-            // 
-            this.drpState2.Location = new System.Drawing.Point(550, 177);
-            this.drpState2.Name = "drpState2";
-            this.drpState2.Size = new System.Drawing.Size(139, 23);
-            this.drpState2.TabIndex = 26;
             // 
             // labelControl15
             // 
@@ -771,14 +772,6 @@ namespace BillPlex
             this.labelControl11.TabIndex = 15;
             this.labelControl11.Text = "Phone No";
             // 
-            // drpCountry
-            // 
-            this.drpCountry.Location = new System.Drawing.Point(153, 230);
-            this.drpCountry.Name = "drpCountry";
-            this.drpCountry.Size = new System.Drawing.Size(237, 23);
-            this.drpCountry.TabIndex = 14;
-            this.drpCountry.Text = "cvggg\r\ndfgfgfg\r\nfgfgfgfgfg";
-            // 
             // txtStatePin
             // 
             this.txtStatePin.Location = new System.Drawing.Point(325, 175);
@@ -795,13 +788,6 @@ namespace BillPlex
             this.labelControl10.Size = new System.Drawing.Size(21, 14);
             this.labelControl10.TabIndex = 12;
             this.labelControl10.Text = "PIN";
-            // 
-            // drpState
-            // 
-            this.drpState.Location = new System.Drawing.Point(153, 172);
-            this.drpState.Name = "drpState";
-            this.drpState.Size = new System.Drawing.Size(139, 23);
-            this.drpState.TabIndex = 11;
             // 
             // txtOffAddress
             // 
@@ -957,6 +943,112 @@ namespace BillPlex
             this.panelControl4.Size = new System.Drawing.Size(230, 51);
             this.panelControl4.TabIndex = 48;
             // 
+            // drpState
+            // 
+            this.drpState.Location = new System.Drawing.Point(153, 173);
+            this.drpState.Name = "drpState";
+            this.drpState.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpState.Properties.Items.AddRange(new object[] {
+            "Andaman and Nicobar Islands",
+            "Andhra Pradesh",
+            "Arunachal Pradesh",
+            "Assam",
+            "Bihar",
+            "Chandigarh",
+            "Chhattisgarh",
+            "Dadra and Nagar Haveli and Daman and Diu",
+            "Delhi",
+            "Goa",
+            "Gujarat",
+            "Haryana",
+            "Himachal Pradesh",
+            "Jammu and Kashmir",
+            "Jharkhand",
+            "Karnataka",
+            "Kerala",
+            "Ladakh",
+            "Lakshadweep",
+            "Madhya Pradesh",
+            "Maharashtra",
+            "Manipur",
+            "Meghalaya",
+            "Mizoram",
+            "Nagaland",
+            "Odisha",
+            "Puducherry",
+            "Punjab",
+            "Rajasthan",
+            "Sikkim",
+            "Tamil Nadu",
+            "Telangana",
+            "Tripura",
+            "Uttar Pradesh",
+            "Uttarakhand",
+            "West Bengal"});
+            this.drpState.Properties.Sorted = true;
+            this.drpState.Size = new System.Drawing.Size(127, 20);
+            this.drpState.TabIndex = 44;
+            // 
+            // drpState2
+            // 
+            this.drpState2.Location = new System.Drawing.Point(550, 181);
+            this.drpState2.Name = "drpState2";
+            this.drpState2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpState2.Properties.Items.AddRange(new object[] {
+            "Andaman and Nicobar Islands",
+            "Andhra Pradesh",
+            "Arunachal Pradesh",
+            "Assam",
+            "Bihar",
+            "Chandigarh",
+            "Chhattisgarh",
+            "Dadra and Nagar Haveli and Daman and Diu",
+            "Delhi",
+            "Goa",
+            "Gujarat",
+            "Haryana",
+            "Himachal Pradesh",
+            "Jammu and Kashmir",
+            "Jharkhand",
+            "Karnataka",
+            "Kerala",
+            "Ladakh",
+            "Lakshadweep",
+            "Madhya Pradesh",
+            "Maharashtra",
+            "Manipur",
+            "Meghalaya",
+            "Mizoram",
+            "Nagaland",
+            "Odisha",
+            "Puducherry",
+            "Punjab",
+            "Rajasthan",
+            "Sikkim",
+            "Tamil Nadu",
+            "Telangana",
+            "Tripura",
+            "Uttar Pradesh",
+            "Uttarakhand",
+            "West Bengal"});
+            this.drpState2.Properties.Sorted = true;
+            this.drpState2.Size = new System.Drawing.Size(127, 20);
+            this.drpState2.TabIndex = 45;
+            // 
+            // drpCDCountry
+            // 
+            this.drpCDCountry.Location = new System.Drawing.Point(550, 233);
+            this.drpCDCountry.Name = "drpCDCountry";
+            this.drpCDCountry.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpCDCountry.Properties.Items.AddRange(new object[] {
+            "India"});
+            this.drpCDCountry.Properties.Sorted = true;
+            this.drpCDCountry.Size = new System.Drawing.Size(237, 20);
+            this.drpCDCountry.TabIndex = 46;
+            // 
             // FrmCustomerMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -965,7 +1057,9 @@ namespace BillPlex
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Name = "FrmCustomerMaster";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCustomerMaster";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
@@ -980,6 +1074,7 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.panelControl3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.drpCountry.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtWebsite.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLicenseNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCSTno.Properties)).EndInit();
@@ -999,6 +1094,9 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.ddCSTDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddCSTDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpState.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpState2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpCDCountry.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1017,11 +1115,9 @@ namespace BillPlex
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.DropDownButton drpState;
         private DevExpress.XtraEditors.MemoEdit txtOffAddress;
         private DevExpress.XtraEditors.TextEdit txtCustomerName;
         private DevExpress.XtraEditors.TextEdit txtCustomerCode;
-        private DevExpress.XtraEditors.DropDownButton drpCountry;
         private DevExpress.XtraEditors.TextEdit txtStatePin;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.SimpleButton btnCopy;
@@ -1033,10 +1129,8 @@ namespace BillPlex
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.MemoEdit txtCDAddress;
         private DevExpress.XtraEditors.LabelControl labelControl13;
-        private DevExpress.XtraEditors.DropDownButton drpCDCountry;
         private DevExpress.XtraEditors.TextEdit txtPin;
         private DevExpress.XtraEditors.LabelControl labelControl14;
-        private DevExpress.XtraEditors.DropDownButton drpState2;
         private DevExpress.XtraEditors.LabelControl labelControl15;
         private DevExpress.XtraEditors.LabelControl labelControl16;
         private DevExpress.XtraEditors.LabelControl labelControl21;
@@ -1085,5 +1179,9 @@ namespace BillPlex
         private DevExpress.XtraGrid.Columns.GridColumn colCstDate;
         private DevExpress.XtraGrid.Columns.GridColumn collicenseNo;
         private DevExpress.XtraGrid.Columns.GridColumn colWebsite;
+        private DevExpress.XtraEditors.ComboBoxEdit drpCountry;
+        private DevExpress.XtraEditors.ComboBoxEdit drpState;
+        private DevExpress.XtraEditors.ComboBoxEdit drpCDCountry;
+        private DevExpress.XtraEditors.ComboBoxEdit drpState2;
     }
 }

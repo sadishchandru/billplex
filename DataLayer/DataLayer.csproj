@@ -43,8 +43,13 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="DataAccessLayer.cs" />
+    <Compile Include="DataBaseType.cs" />
+    <Compile Include="DbFactory.cs" />
+    <Compile Include="DbParams.cs" />
+    <Compile Include="GetDbType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlConnector.cs" />
+    <Compile Include="SQlDataBaseType.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

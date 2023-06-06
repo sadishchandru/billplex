@@ -30,28 +30,42 @@ namespace BillPlex
 
         }
 
-        private void MasterButtonClicked(object sender, DevExpress.XtraBars.Ribbon.RibbonPageGroupEventArgs e)
-        {
-            FrmCompanyProfile CP = new FrmCompanyProfile();
-            CP.ShowDialog();
-        }
-
         private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
         {
-            FrmClientCompanyProfile CP = new FrmClientCompanyProfile();
-            CP.ShowDialog();
+            
         }
 
         private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
         {
-            FrmSubClientCompanyProfile CP = new FrmSubClientCompanyProfile();
-            CP.ShowDialog();
+            
         }
 
-        private void btnCustomerDetails_ItemClick(object sender, ItemClickEventArgs e)
+        private void ClientCompany_ItemClick(object sender, ItemClickEventArgs e)
         {
-            FrmCustomerMaster CP = new FrmCustomerMaster();
-            CP.ShowDialog();
+            FrmClientCompanyProfile ClientCompanyInfo = new FrmClientCompanyProfile();
+            ClientCompanyInfo.MdiParent = this;
+            ClientCompanyInfo.Show();
+        }
+
+        private void MasterCompany_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FrmCompanyProfile MasterCompanyInfo = new FrmCompanyProfile();
+            MasterCompanyInfo.MdiParent = this;
+            MasterCompanyInfo.Show();
+        }
+
+        private void SubClient_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FrmSubClientCompanyProfile SubClientCompanyInfo = new FrmSubClientCompanyProfile();
+            SubClientCompanyInfo.MdiParent = this;
+            SubClientCompanyInfo.Show();
+        }
+
+        private void CustomerMaster_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FrmCustomerMaster CustomerMasterInfo = new FrmCustomerMaster();
+            CustomerMasterInfo.MdiParent = this;
+            CustomerMasterInfo.Show();
         }
     }
 }

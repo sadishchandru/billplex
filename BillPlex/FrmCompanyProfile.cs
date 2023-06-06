@@ -23,8 +23,9 @@ namespace BillPlex
 
         private void Newbtn_Click(object sender, EventArgs e)
         {
-            FrmCompanyInfo CP = new FrmCompanyInfo();
-            CP.ShowDialog();
+            FrmCompanyInfo CompanyInfo = new FrmCompanyInfo();
+            CompanyInfo.MdiParent = this;
+            CompanyInfo.Show();
         }
     }
 }

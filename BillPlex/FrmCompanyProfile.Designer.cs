@@ -823,6 +823,7 @@ namespace BillPlex
             this.Controls.Add(this.panelControl1);
             this.Name = "FrmCompanyProfile";
             this.Text = "FrmCompanyProfile";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();

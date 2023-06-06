@@ -1244,6 +1244,7 @@ namespace BillPlex
             this.Controls.Add(this.panelControl1);
             this.Name = "FrmCompanyInfo";
             this.Text = "FrmCompanyInfo";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();

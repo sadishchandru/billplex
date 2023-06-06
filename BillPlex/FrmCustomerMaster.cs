@@ -41,7 +41,7 @@ namespace BillPlex
             new SqlParameter("@PhonePin", txtCode.Text),
             new SqlParameter("@OffPhone", txtPhoneNo.Text),
             new SqlParameter("@Email", txtEmailID.Text),
-            new SqlParameter("@ResAddress", txtCDAddress),
+            new SqlParameter("@ResAddress", txtCDAddress.Text),
             new SqlParameter("@ResState", drpState2.Text),
             new SqlParameter("@ResPin", txtPin.Text),
             new SqlParameter("@ResCountry", drpCDCountry.Text),
@@ -51,10 +51,10 @@ namespace BillPlex
             new SqlParameter("@CstNo", txtCSTno.Text),
             new SqlParameter("@CstDate", ddCSTDate.Text.ToString()),
             new SqlParameter("@LicenseNo", txtLicenseNo.Text),
-            new SqlParameter("@Website", txtWebsite.Text),
+            new SqlParameter("@Website", txtWebsite.Text)
             };
 
-            var i = _conn.ExecuteNonQuery("PRO_UpdateCompanyProfileInfo", parameters);
+            var i = _conn.ExecuteNonQuery("PRO_UpdateCustomerInfo", parameters);
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -97,6 +97,12 @@ namespace BillPlex
                 if (view.IsDataRow(rowHandle))
                     view.DeleteRow(rowHandle);
             }
+        }
+
+        private void drpCountry_Click(object sender, EventArgs e)
+        {
+            //List<string> countryNames = GetCountryNames(); // Retrieve the country names dynamically
+            //comboBoxEdit1.Properties.DataSource = countryNames;
         }
     }
 }
