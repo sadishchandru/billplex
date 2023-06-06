@@ -30,14 +30,15 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCompanyProfile));
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.Exitbtn = new DevExpress.XtraEditors.SimpleButton();
             this.Clearbtn = new DevExpress.XtraEditors.SimpleButton();
             this.Deletebtn = new DevExpress.XtraEditors.SimpleButton();
+            this.Printbtn = new DevExpress.XtraEditors.SimpleButton();
             this.Updatebtn = new DevExpress.XtraEditors.SimpleButton();
             this.Editbtn = new DevExpress.XtraEditors.SimpleButton();
             this.Addbtn = new DevExpress.XtraEditors.SimpleButton();
@@ -88,7 +89,6 @@ namespace BillPlex
             this.colCBankAddress = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCreatedDate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Printbtn = new DevExpress.XtraEditors.SimpleButton();
             this.Claerbtn = new DevExpress.XtraEditors.SimpleButton();
             this.Findbtn = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
@@ -101,6 +101,9 @@ namespace BillPlex
             // 
             // labelControl1
             // 
+            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.ForeColor = System.Drawing.Color.MidnightBlue;
             this.labelControl1.Appearance.Options.UseFont = true;
@@ -122,7 +125,7 @@ namespace BillPlex
             this.panelControl5.Controls.Add(this.Editbtn);
             this.panelControl5.Controls.Add(this.Addbtn);
             this.panelControl5.Controls.Add(this.Newbtn);
-            this.panelControl5.Location = new System.Drawing.Point(1368, 173);
+            this.panelControl5.Location = new System.Drawing.Point(1085, 233);
             this.panelControl5.Name = "panelControl5";
             this.panelControl5.Size = new System.Drawing.Size(98, 242);
             this.panelControl5.TabIndex = 1;
@@ -173,6 +176,23 @@ namespace BillPlex
             this.Deletebtn.Size = new System.Drawing.Size(75, 23);
             this.Deletebtn.TabIndex = 9;
             this.Deletebtn.Text = "DELETE";
+            // 
+            // Printbtn
+            // 
+            this.Printbtn.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.Printbtn.Appearance.BackColor2 = System.Drawing.Color.White;
+            this.Printbtn.Appearance.BorderColor = System.Drawing.Color.White;
+            this.Printbtn.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Printbtn.Appearance.Options.UseBackColor = true;
+            this.Printbtn.Appearance.Options.UseBorderColor = true;
+            this.Printbtn.Appearance.Options.UseFont = true;
+            this.Printbtn.Location = new System.Drawing.Point(12, 208);
+            this.Printbtn.LookAndFeel.SkinName = "Office 2019 Dark Gray";
+            this.Printbtn.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.Printbtn.Name = "Printbtn";
+            this.Printbtn.Size = new System.Drawing.Size(75, 23);
+            this.Printbtn.TabIndex = 7;
+            this.Printbtn.Text = "Print";
             // 
             // Updatebtn
             // 
@@ -237,15 +257,18 @@ namespace BillPlex
             // 
             // panelControl4
             // 
+            this.panelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.panelControl4.Controls.Add(this.panelControl5);
             this.panelControl4.Controls.Add(this.drpClientprofile);
             this.panelControl4.Controls.Add(this.gridControl1);
             this.panelControl4.Controls.Add(this.Claerbtn);
             this.panelControl4.Controls.Add(this.Findbtn);
-            this.panelControl4.Location = new System.Drawing.Point(0, 33);
+            this.panelControl4.Location = new System.Drawing.Point(12, 38);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(1480, 622);
+            this.panelControl4.Size = new System.Drawing.Size(1192, 711);
             this.panelControl4.TabIndex = 0;
             // 
             // drpClientprofile
@@ -265,7 +288,7 @@ namespace BillPlex
             this.gridControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.gridControl1.MainView = this.gridView2;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1350, 566);
+            this.gridControl1.Size = new System.Drawing.Size(1067, 672);
             this.gridControl1.TabIndex = 8;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -274,13 +297,13 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery2.Name = "PRO_GetMasterCompanyProfileInfo";
-            queryParameter2.Name = "@SearchKey";
-            queryParameter2.Type = typeof(string);
-            storedProcQuery2.Parameters.Add(queryParameter2);
-            storedProcQuery2.StoredProcName = "PRO_GetMasterCompanyProfileInfo";
+            storedProcQuery1.Name = "PRO_GetMasterCompanyProfileInfo";
+            queryParameter1.Name = "@SearchKey";
+            queryParameter1.Type = typeof(string);
+            storedProcQuery1.Parameters.Add(queryParameter1);
+            storedProcQuery1.StoredProcName = "PRO_GetMasterCompanyProfileInfo";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery2});
+            storedProcQuery1});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // gridView2
@@ -711,23 +734,6 @@ namespace BillPlex
             this.colCreatedDate.VisibleIndex = 40;
             this.colCreatedDate.Width = 80;
             // 
-            // Printbtn
-            // 
-            this.Printbtn.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.Printbtn.Appearance.BackColor2 = System.Drawing.Color.White;
-            this.Printbtn.Appearance.BorderColor = System.Drawing.Color.White;
-            this.Printbtn.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Printbtn.Appearance.Options.UseBackColor = true;
-            this.Printbtn.Appearance.Options.UseBorderColor = true;
-            this.Printbtn.Appearance.Options.UseFont = true;
-            this.Printbtn.Location = new System.Drawing.Point(12, 208);
-            this.Printbtn.LookAndFeel.SkinName = "Office 2019 Dark Gray";
-            this.Printbtn.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.Printbtn.Name = "Printbtn";
-            this.Printbtn.Size = new System.Drawing.Size(75, 23);
-            this.Printbtn.TabIndex = 7;
-            this.Printbtn.Text = "Print";
-            // 
             // Claerbtn
             // 
             this.Claerbtn.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
@@ -787,7 +793,7 @@ namespace BillPlex
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1493, 668);
+            this.ClientSize = new System.Drawing.Size(1218, 764);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.panelControl4);
             this.Name = "FrmCompanyProfile";
