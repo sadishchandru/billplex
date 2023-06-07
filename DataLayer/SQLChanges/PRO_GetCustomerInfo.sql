@@ -63,7 +63,8 @@ SET NOCOUNT ON;
 	--EXEC(@Query)
 
 
-			SELECT [Code],
+			SELECT Id,
+				[Code],
 				[Name],
 				[OffAddress],
 				[State],
@@ -83,5 +84,5 @@ SET NOCOUNT ON;
 				[CstDate],
 				[licenseNo],
 				[Website]
-			FROM CustomerMaster CM
+			FROM tblCustomerMaster CM
 END

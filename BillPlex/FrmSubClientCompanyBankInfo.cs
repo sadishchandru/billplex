@@ -10,13 +10,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
-using DataLayer;
+//using DataLayer;
 
 namespace BillPlex
 {
     public partial class FrmSubClientCompanyBankInfo : DevExpress.XtraEditors.XtraForm
     {
-        private readonly SqlConnector _conn;
+        //private readonly SqlConnector _conn;
         public FrmSubClientCompanyBankInfo()
         {
             InitializeComponent();
@@ -24,7 +24,7 @@ namespace BillPlex
             // Fill the SqlDataSource asynchronously
             sqlDataSource1.FillAsync();
             string connectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
-            _conn = new SqlConnector(connectionString);
+            //_conn = new SqlConnector(connectionString);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -41,7 +41,7 @@ namespace BillPlex
                 new SqlParameter("@Address", TxtAddress.Text),
             };
 
-            var i = _conn.ExecuteNonQuery("PRO_UpdateClientBankInfo", parameters);
+            //var i = _conn.ExecuteNonQuery("PRO_UpdateClientBankInfo", parameters);
         }
     }
 }

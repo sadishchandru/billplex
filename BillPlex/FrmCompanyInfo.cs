@@ -1,4 +1,4 @@
-﻿using DataLayer;
+﻿//using DataLayer;
 using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
@@ -16,12 +16,12 @@ namespace BillPlex
 {
     public partial class FrmCompanyInfo : DevExpress.XtraEditors.XtraForm
     {
-        private readonly SqlConnector _conn;
+        //private readonly SqlConnector _conn;
         public FrmCompanyInfo()
         {
             InitializeComponent();
             string connectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
-            _conn = new SqlConnector(connectionString);
+            //_conn = new SqlConnector(connectionString);
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -78,7 +78,7 @@ namespace BillPlex
             new SqlParameter("@CAPan", txtAuthorPanNo.Text)
             };
 
-            var i = _conn.ExecuteNonQuery("PRO_UpdateCompanyProfileInfo", parameters);
+            //var i = _conn.ExecuteNonQuery("PRO_UpdateCompanyProfileInfo", parameters);
         }
 
         private void UpdateBtn_Click(object sender, EventArgs e)
@@ -126,7 +126,7 @@ namespace BillPlex
             new SqlParameter("@CAPan", txtAuthorPanNo.Text)
             };
 
-            var i = _conn.ExecuteNonQuery("PRO_UpdateCompanyProfileInfo", parameters);
+            //var i = _conn.ExecuteNonQuery("PRO_UpdateCompanyProfileInfo", parameters);
         }
     }
 }

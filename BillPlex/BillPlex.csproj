@@ -272,9 +272,9 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataLayer\DataLayer.csproj">
-      <Project>{3e0a50bd-920e-4c49-a2fd-506bdba90a12}</Project>
-      <Name>DataLayer</Name>
+    <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj">
+      <Project>{d996ce2a-9cf9-443b-ab9a-0bda64807152}</Project>
+      <Name>BusinessLayer</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

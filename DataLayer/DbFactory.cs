@@ -57,70 +57,6 @@ namespace DataLayer
             this._Conn = (DbConnection)null;
         }
 
-        public void GetCommand(string QueryorProcName, bool IsQuery)
-        {
-            DbCommand dbCommand = (DbCommand)null;
-            try
-            {
-                dbCommand = this.InitializeCommand(QueryorProcName, IsQuery);
-                dbCommand.CommandTimeout = this._iCMDTimeout;
-                dbCommand.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                dbCommand?.Dispose();
-            }
-        }
-
-        public void GetCommand(string QueryorProcName, bool IsQuery, List<DbParams> DbList)
-        {
-            DbCommand MyCommand = (DbCommand)null;
-            try
-            {
-                MyCommand = this.InitializeCommand(QueryorProcName, IsQuery);
-                this.AddParameter(DbList, ref MyCommand);
-                MyCommand.CommandTimeout = this._iCMDTimeout;
-                MyCommand.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                MyCommand?.Dispose();
-            }
-        }
-
-        public void GetCommand(
-          string QueryorProcName,
-          bool IsQuery,
-          List<DbParams> DbList,
-          DbTransaction Tran)
-        {
-            DbCommand MyCommand = (DbCommand)null;
-            try
-            {
-                MyCommand = this.InitializeCommand(QueryorProcName, IsQuery);
-                MyCommand.Transaction = Tran;
-                MyCommand.CommandTimeout = this._iCMDTimeout;
-                this.AddParameter(DbList, ref MyCommand);
-                MyCommand.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                MyCommand?.Dispose();
-            }
-        }
-
         private void GetConnection()
         {
             try
@@ -158,88 +94,6 @@ namespace DataLayer
             }
         }
 
-        public DataSet GetData(string QueryorProcName, bool IsQuery)
-        {
-            DbCommand dbCommand = (DbCommand)null;
-            try
-            {
-                dbCommand = this.InitializeCommand(QueryorProcName, IsQuery);
-                dbCommand.CommandTimeout = this._iCMDTimeout;
-                DataSet dataSet = new DataSet();
-                using (DbDataAdapter dataAdapter = this._DbProviderFactory.CreateDataAdapter())
-                {
-                    dataAdapter.SelectCommand = dbCommand;
-                    dataAdapter.Fill(dataSet);
-                }
-                return dataSet;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                dbCommand?.Dispose();
-            }
-        }
-
-        public DataSet GetData(string QueryorProcName, bool IsQuery, List<DbParams> DbList)
-        {
-            DbCommand MyCommand = (DbCommand)null;
-            try
-            {
-                MyCommand = this.InitializeCommand(QueryorProcName, IsQuery);
-                MyCommand.CommandTimeout = this._iCMDTimeout;
-                this.AddParameter(DbList, ref MyCommand);
-                DataSet dataSet = new DataSet();
-                using (DbDataAdapter dataAdapter = this._DbProviderFactory.CreateDataAdapter())
-                {
-                    dataAdapter.SelectCommand = MyCommand;
-                    dataAdapter.Fill(dataSet);
-                }
-                return dataSet;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                MyCommand?.Dispose();
-            }
-        }
-
-        public DataSet GetData(
-          string QueryorProcName,
-          bool IsQuery,
-          List<DbParams> DbList,
-          DbTransaction Tran)
-        {
-            DbCommand MyCommand = (DbCommand)null;
-            try
-            {
-                MyCommand = this.InitializeCommand(QueryorProcName, IsQuery);
-                MyCommand.CommandTimeout = this._iCMDTimeout;
-                MyCommand.Transaction = Tran;
-                this.AddParameter(DbList, ref MyCommand);
-                DataSet dataSet = new DataSet();
-                using (DbDataAdapter dataAdapter = this._DbProviderFactory.CreateDataAdapter())
-                {
-                    dataAdapter.SelectCommand = MyCommand;
-                    dataAdapter.Fill(dataSet);
-                }
-                return dataSet;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                MyCommand?.Dispose();
-            }
-        }
-
         private void GetProvider()
         {
             try
@@ -251,27 +105,6 @@ namespace DataLayer
             {
                 throw new Exception(ex.Message);
             }
-        }
-
-        public DbDataReader GetReader(string QueryorProcName, bool IsQuery)
-        {
-            DbDataReader dbDataReader = (DbDataReader)null;
-            DbCommand dbCommand = (DbCommand)null;
-            try
-            {
-                dbCommand = this.InitializeCommand(QueryorProcName, IsQuery);
-                dbCommand.CommandTimeout = this._iCMDTimeout;
-                dbDataReader = dbCommand.ExecuteReader();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                dbCommand?.Dispose();
-            }
-            return dbDataReader;
         }
 
         public DbDataReader GetReader(
@@ -298,49 +131,6 @@ namespace DataLayer
                 MyCommand?.Dispose();
             }
             return dbDataReader;
-        }
-
-        public object GetScalarValue(string QueryorProcName, bool IsQuery)
-        {
-            object obj = (object)null;
-            DbCommand dbCommand = (DbCommand)null;
-            try
-            {
-                dbCommand = this.InitializeCommand(QueryorProcName, IsQuery);
-                dbCommand.CommandTimeout = this._iCMDTimeout;
-                obj = dbCommand.ExecuteScalar();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                dbCommand?.Dispose();
-            }
-            return obj;
-        }
-
-        public object GetScalarValue(string QueryorProcName, bool IsQuery, List<DbParams> DbList)
-        {
-            object obj = (object)null;
-            DbCommand MyCommand = (DbCommand)null;
-            try
-            {
-                MyCommand = this.InitializeCommand(QueryorProcName, IsQuery);
-                MyCommand.CommandTimeout = this._iCMDTimeout;
-                this.AddParameter(DbList, ref MyCommand);
-                obj = MyCommand.ExecuteScalar();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                MyCommand?.Dispose();
-            }
-            return obj;
         }
 
         private DbCommand InitializeCommand(string QueryorProcName, bool IsQuery)

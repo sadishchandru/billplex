@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BillPlex", "BillPlex\BillPl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "DataLayer\DataLayer.csproj", "{3E0A50BD-920E-4C49-A2FD-506BDBA90A12}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{D996CE2A-9CF9-443B-AB9A-0BDA64807152}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{3E0A50BD-920E-4C49-A2FD-506BDBA90A12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E0A50BD-920E-4C49-A2FD-506BDBA90A12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E0A50BD-920E-4C49-A2FD-506BDBA90A12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D996CE2A-9CF9-443B-AB9A-0BDA64807152}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D996CE2A-9CF9-443B-AB9A-0BDA64807152}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D996CE2A-9CF9-443B-AB9A-0BDA64807152}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D996CE2A-9CF9-443B-AB9A-0BDA64807152}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

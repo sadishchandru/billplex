@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer
 {
-    public class Class1
+    public enum ResultStatus
     {
+        Error = 0,
+        Success = 1
     }
 }

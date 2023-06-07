@@ -43,7 +43,7 @@ BEGIN
 
 	IF(@Id = 0)
 	BEGIN
-		INSERT INTO CustomerMaster
+		INSERT INTO tblCustomerMaster
 		(
 			[Code],
             [Name],
@@ -94,7 +94,7 @@ BEGIN
 	END
 	ELSE
 	BEGIN
-		UPDATE CustomerMaster 
+		UPDATE tblCustomerMaster 
 		SET	[Code] = @Code,
             [Name] = @Name,
             [OffAddress] = @OffAddress,

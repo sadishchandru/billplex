@@ -1,4 +1,3 @@
-D:\Bill Plex\Source\billplex\BillPlex\bin\Debug\BillPlex.exe
 D:\billplex\billplex\BillPlex\bin\Debug\BillPlex.exe.config
 D:\billplex\billplex\BillPlex\bin\Debug\BillPlex.exe
 D:\billplex\billplex\BillPlex\bin\Debug\BillPlex.pdb
@@ -288,6 +287,8 @@ D:\billplex\billplex\BillPlex\obj\Debug\BillPlex.csproj.AssemblyReference.cache
 D:\billplex\billplex\BillPlex\obj\Debug\BillPlex.FrmCompanyProfileBankInfo.resources
 D:\billplex\billplex\BillPlex\obj\Debug\BillPlex.FrmSubClientCompanyBankInfo.resources
 D:\Bill Plex\Source\billplex\BillPlex\bin\Debug\BillPlex.exe.config
+D:\Bill Plex\Source\billplex\BillPlex\bin\Debug\BillPlex.exe
+D:\Bill Plex\Source\billplex\BillPlex\bin\Debug\BillPlex.pdb
 D:\Bill Plex\Source\billplex\BillPlex\bin\Debug\DataLayer.dll
 D:\Bill Plex\Source\billplex\BillPlex\bin\Debug\DevExpress.BonusSkins.v21.1.dll
 D:\Bill Plex\Source\billplex\BillPlex\bin\Debug\DevExpress.CodeParser.v21.1.dll
@@ -453,6 +454,7 @@ D:\Bill Plex\Source\billplex\BillPlex\obj\Debug\BillPlex.ClientCompanyProfile.re
 D:\Bill Plex\Source\billplex\BillPlex\obj\Debug\BillPlex.FrmClientCompanyProfile.resources
 D:\Bill Plex\Source\billplex\BillPlex\obj\Debug\BillPlex.FrmCompanyInfo.resources
 D:\Bill Plex\Source\billplex\BillPlex\obj\Debug\BillPlex.FrmCompanyProfile.resources
+D:\Bill Plex\Source\billplex\BillPlex\obj\Debug\BillPlex.FrmCustomerMaster.resources
 D:\Bill Plex\Source\billplex\BillPlex\obj\Debug\BillPlex.FrmSubClientCompanyBankInfo.resources
 D:\Bill Plex\Source\billplex\BillPlex\obj\Debug\BillPlex.FrmSubClientCompanyInfo.resources
 D:\Bill Plex\Source\billplex\BillPlex\obj\Debug\BillPlex.FrmSubClientCompanyProfile.resources
@@ -464,4 +466,5 @@ D:\Bill Plex\Source\billplex\BillPlex\obj\Debug\BillPlex.csproj.CoreCompileInput
 D:\Bill Plex\Source\billplex\BillPlex\obj\Debug\BillPlex.csproj.CopyComplete
 D:\Bill Plex\Source\billplex\BillPlex\obj\Debug\BillPlex.exe
 D:\Bill Plex\Source\billplex\BillPlex\obj\Debug\BillPlex.pdb
-D:\Bill Plex\Source\billplex\BillPlex\bin\Debug\BillPlex.pdb
+D:\Bill Plex\Source\billplex\BillPlex\bin\Debug\BusinessLayer.dll
+D:\Bill Plex\Source\billplex\BillPlex\bin\Debug\BusinessLayer.pdb

@@ -55,3 +55,9 @@ _ReSharper*
 *.v16.suo
 *.v19.suo
 *.v21.suo
+
+obj/Debug/
+bin/Debug/
+
+BillPlex/obj/Debug/
+BillPlex/bin/Debug/

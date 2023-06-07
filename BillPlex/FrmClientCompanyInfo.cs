@@ -1,4 +1,4 @@
-﻿using DataLayer;
+﻿//using DataLayer;
 using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
@@ -16,12 +16,12 @@ namespace BillPlex
 {
     public partial class FrmClientCompanyInfo : DevExpress.XtraEditors.XtraForm
     {
-        private readonly SqlConnector _conn;
+        //private readonly SqlConnector _conn;
         public FrmClientCompanyInfo()
         {
             InitializeComponent();
-            string connectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
-            _conn = new SqlConnector(connectionString);
+           // string connectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
+           // _conn = new SqlConnector(connectionString);
         }
 
         private void InsertBankInfoBtn_Click(object sender, EventArgs e)
@@ -81,7 +81,7 @@ namespace BillPlex
 
             };
 
-            var i = _conn.ExecuteNonQuery("PRO_UpdateClientCompanyProfileInfo", parameters);
+           // var i = _conn.ExecuteNonQuery("PRO_UpdateClientCompanyProfileInfo", parameters);
         }
 
         private void MainCompanyDd_Click(object sender, EventArgs e)
@@ -140,7 +140,7 @@ namespace BillPlex
                 new SqlParameter("@CCPImage", AuthImg.SvgImage)
              };
 
-            var i = _conn.ExecuteNonQuery("PRO_UpdateClientCompanyProfileInfo", parameters);
+           // var i = _conn.ExecuteNonQuery("PRO_UpdateClientCompanyProfileInfo", parameters);
         }
     }
 }
