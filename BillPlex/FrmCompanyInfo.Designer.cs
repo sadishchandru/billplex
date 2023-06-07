@@ -75,6 +75,7 @@ namespace BillPlex
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.drpState = new DevExpress.XtraEditors.ComboBoxEdit();
             this.ddEsiDate = new DevExpress.XtraEditors.DateEdit();
             this.ddPfDate = new DevExpress.XtraEditors.DateEdit();
             this.txtOfficeAddress = new DevExpress.XtraEditors.MemoEdit();
@@ -119,7 +120,6 @@ namespace BillPlex
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.ddStartingdate = new DevExpress.XtraEditors.DateEdit();
-            this.drpState = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -149,6 +149,7 @@ namespace BillPlex
             this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.drpState.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddEsiDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddEsiDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddPfDate.Properties.CalendarTimeProperties)).BeginInit();
@@ -173,7 +174,6 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddStartingdate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddStartingdate.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.drpState.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -276,7 +276,7 @@ namespace BillPlex
             this.btnUpdate.Size = new System.Drawing.Size(81, 23);
             this.btnUpdate.TabIndex = 56;
             this.btnUpdate.Text = "UPDATE";
-            this.btnUpdate.Click += new System.EventHandler(this.UpdateBtn_Click);
+            this.btnUpdate.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // btnEdit
             // 
@@ -780,6 +780,53 @@ namespace BillPlex
             this.panelControl3.Size = new System.Drawing.Size(1309, 308);
             this.panelControl3.TabIndex = 0;
             // 
+            // drpState
+            // 
+            this.drpState.Location = new System.Drawing.Point(138, 192);
+            this.drpState.Name = "drpState";
+            this.drpState.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpState.Properties.Items.AddRange(new object[] {
+            "Andaman and Nicobar Islands",
+            "Andhra Pradesh",
+            "Arunachal Pradesh",
+            "Assam",
+            "Bihar",
+            "Chandigarh",
+            "Chhattisgarh",
+            "Dadra and Nagar Haveli and Daman and Diu",
+            "Delhi",
+            "Goa",
+            "Gujarat",
+            "Haryana",
+            "Himachal Pradesh",
+            "Jammu and Kashmir",
+            "Jharkhand",
+            "Karnataka",
+            "Kerala",
+            "Ladakh",
+            "Lakshadweep",
+            "Madhya Pradesh",
+            "Maharashtra",
+            "Manipur",
+            "Meghalaya",
+            "Mizoram",
+            "Nagaland",
+            "Odisha",
+            "Puducherry",
+            "Punjab",
+            "Rajasthan",
+            "Sikkim",
+            "Tamil Nadu",
+            "Telangana",
+            "Tripura",
+            "Uttar Pradesh",
+            "Uttarakhand",
+            "West Bengal"});
+            this.drpState.Properties.Sorted = true;
+            this.drpState.Size = new System.Drawing.Size(168, 20);
+            this.drpState.TabIndex = 50;
+            // 
             // ddEsiDate
             // 
             this.ddEsiDate.EditValue = "";
@@ -1229,53 +1276,6 @@ namespace BillPlex
             this.ddStartingdate.Size = new System.Drawing.Size(300, 20);
             this.ddStartingdate.TabIndex = 47;
             // 
-            // drpState
-            // 
-            this.drpState.Location = new System.Drawing.Point(138, 192);
-            this.drpState.Name = "drpState";
-            this.drpState.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.drpState.Properties.Items.AddRange(new object[] {
-            "Andaman and Nicobar Islands",
-            "Andhra Pradesh",
-            "Arunachal Pradesh",
-            "Assam",
-            "Bihar",
-            "Chandigarh",
-            "Chhattisgarh",
-            "Dadra and Nagar Haveli and Daman and Diu",
-            "Delhi",
-            "Goa",
-            "Gujarat",
-            "Haryana",
-            "Himachal Pradesh",
-            "Jammu and Kashmir",
-            "Jharkhand",
-            "Karnataka",
-            "Kerala",
-            "Ladakh",
-            "Lakshadweep",
-            "Madhya Pradesh",
-            "Maharashtra",
-            "Manipur",
-            "Meghalaya",
-            "Mizoram",
-            "Nagaland",
-            "Odisha",
-            "Puducherry",
-            "Punjab",
-            "Rajasthan",
-            "Sikkim",
-            "Tamil Nadu",
-            "Telangana",
-            "Tripura",
-            "Uttar Pradesh",
-            "Uttarakhand",
-            "West Bengal"});
-            this.drpState.Properties.Sorted = true;
-            this.drpState.Size = new System.Drawing.Size(168, 20);
-            this.drpState.TabIndex = 50;
-            // 
             // FrmCompanyInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1320,6 +1320,7 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.panelControl3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.drpState.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddEsiDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddEsiDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddPfDate.Properties.CalendarTimeProperties)).EndInit();
@@ -1344,7 +1345,6 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddStartingdate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddStartingdate.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.drpState.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

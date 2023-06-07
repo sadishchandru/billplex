@@ -55,7 +55,7 @@ namespace BillPlex
             new SqlParameter("@ComState", drpState.Text),
             new SqlParameter("@ComPin", txtPin.Text),
             new SqlParameter("@ComNature", selectedValue),
-            new SqlParameter("@Director", txtEmail.Text),
+            new SqlParameter("@Director", drpDirector.Text),
             new SqlParameter("@ComStartDate", ddStartingDate.Text.ToString()),
             new SqlParameter("@ComStdCode", txtOffPin.Text),
             new SqlParameter("@ComPhone", txtOfficePhone.Text),
