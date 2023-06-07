@@ -46,7 +46,6 @@ namespace BillPlex
             this.Newbtn = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
-            this.drpClientprofile = new DevExpress.XtraEditors.DropDownButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -94,6 +93,7 @@ namespace BillPlex
             this.Printbtn = new DevExpress.XtraEditors.SimpleButton();
             this.Claerbtn = new DevExpress.XtraEditors.SimpleButton();
             this.Findbtn = new DevExpress.XtraEditors.SimpleButton();
+            this.drpClientProfile = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -106,6 +106,7 @@ namespace BillPlex
             this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpClientProfile.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -272,7 +273,7 @@ namespace BillPlex
             // panelControl4
             // 
             this.panelControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.panelControl4.Controls.Add(this.drpClientprofile);
+            this.panelControl4.Controls.Add(this.drpClientProfile);
             this.panelControl4.Controls.Add(this.gridControl1);
             this.panelControl4.Controls.Add(this.Printbtn);
             this.panelControl4.Controls.Add(this.Claerbtn);
@@ -281,13 +282,6 @@ namespace BillPlex
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Size = new System.Drawing.Size(1406, 622);
             this.panelControl4.TabIndex = 0;
-            // 
-            // drpClientprofile
-            // 
-            this.drpClientprofile.Location = new System.Drawing.Point(184, 22);
-            this.drpClientprofile.Name = "drpClientprofile";
-            this.drpClientprofile.Size = new System.Drawing.Size(503, 23);
-            this.drpClientprofile.TabIndex = 9;
             // 
             // gridControl1
             // 
@@ -814,6 +808,15 @@ namespace BillPlex
             this.Findbtn.TabIndex = 3;
             this.Findbtn.Text = "Find";
             // 
+            // drpClientProfile
+            // 
+            this.drpClientProfile.Location = new System.Drawing.Point(383, 25);
+            this.drpClientProfile.Name = "drpClientProfile";
+            this.drpClientProfile.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpClientProfile.Size = new System.Drawing.Size(364, 20);
+            this.drpClientProfile.TabIndex = 9;
+            // 
             // FrmCompanyProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -837,6 +840,7 @@ namespace BillPlex
             this.panelControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpClientProfile.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -861,7 +865,6 @@ namespace BillPlex
         private DevExpress.XtraEditors.SimpleButton Printbtn;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
-        private DevExpress.XtraEditors.DropDownButton drpClientprofile;
         private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
         private DevExpress.XtraGrid.Columns.GridColumn colComName;
         private DevExpress.XtraGrid.Columns.GridColumn colComType;
@@ -904,5 +907,6 @@ namespace BillPlex
         private DevExpress.XtraGrid.Columns.GridColumn colCBankAddress;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colCreatedDate;
+        private DevExpress.XtraEditors.ComboBoxEdit drpClientProfile;
     }
 }
