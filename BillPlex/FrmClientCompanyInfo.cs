@@ -1,6 +1,9 @@
 ﻿//using DataLayer;
+using BusinessLayer;
 using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Controls;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -17,11 +20,27 @@ namespace BillPlex
     public partial class FrmClientCompanyInfo : DevExpress.XtraEditors.XtraForm
     {
         //private readonly SqlConnector _conn;
+        private ClientCompanyInfo ClientCompanyRequest;
         public FrmClientCompanyInfo()
+
         {
             InitializeComponent();
-           // string connectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
-           // _conn = new SqlConnector(connectionString);
+            // string connectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
+            // _conn = new SqlConnector(connectionString);
+
+            ClientCompanyRequest = new ClientCompanyInfo();
+
+            ClientCompanyRequest.ConnectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
+
+            Dictionary<string, bool> dropDownList = new Dictionary<string, bool>        {
+                    { "MasterCompanyRequired", true }
+                };
+            Hashtable dropdownlist =  ClientCompanyRequest.GetDropdownValues(dropDownList);
+
+            foreach (DictionaryEntry item in dropdownlist)
+            {
+                drpMainCompany.Properties.Items.Add(new ImageComboBoxItem(item.Value.ToString(), item.Key));
+            }
         }
 
         private void InsertBankInfoBtn_Click(object sender, EventArgs e)
@@ -81,7 +100,7 @@ namespace BillPlex
 
             };
 
-           // var i = _conn.ExecuteNonQuery("PRO_UpdateClientCompanyProfileInfo", parameters);
+            // var i = _conn.ExecuteNonQuery("PRO_UpdateClientCompanyProfileInfo", parameters);
         }
 
         private void MainCompanyDd_Click(object sender, EventArgs e)
@@ -140,7 +159,7 @@ namespace BillPlex
                 new SqlParameter("@CCPImage", AuthImg.SvgImage)
              };
 
-           // var i = _conn.ExecuteNonQuery("PRO_UpdateClientCompanyProfileInfo", parameters);
+            // var i = _conn.ExecuteNonQuery("PRO_UpdateClientCompanyProfileInfo", parameters);
         }
     }
 }

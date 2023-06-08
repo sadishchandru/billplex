@@ -26,7 +26,7 @@ namespace BillPlex
             InitializeComponent();
             string connectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
             //_conn = new SqlConnector(connectionString);
-            CompanyRequest = new CompanyMasterInfo();
+            CompanyRequest = new CompanyMasterInfo();           
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)

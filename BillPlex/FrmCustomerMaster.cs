@@ -58,6 +58,9 @@ namespace BillPlex
                 if (CustomerRequest.Result.Status == ResultStatus.Success)
                 {
                     XtraMessageBox.Show(CustomerRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                } else
+                {
+                    XtraMessageBox.Show(CustomerRequest.Result.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
             }

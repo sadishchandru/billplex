@@ -41,9 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClientCompanyInfo.cs" />
     <Compile Include="Common.cs" />
     <Compile Include="CompanyMasterInfo.cs" />
     <Compile Include="CustomerMasterInfo.cs" />
+    <Compile Include="DropDownItemInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResultDetail.cs" />
     <Compile Include="ResultStatus.cs" />

@@ -1,6 +1,8 @@
 ﻿using DataLayer;
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Common;
 using System.Linq;
 using System.Text;
@@ -126,6 +128,90 @@ namespace BusinessLayer
                     return "";
                 }
             }
+        }
+        #endregion
+
+        #region Static conversion methods
+        public static class Conversion
+        {
+            public static string ToString(object Value)
+            {
+                if (Value == null || Value == DBNull.Value)
+                    return "";
+                else
+                    return Value.ToString();
+            }
+            public static int ToInteger(object Value)
+            {
+                if (Value == null || Value == DBNull.Value)
+                    return 0;
+                else if (Value.ToString() == "")
+                    return 0;
+                else
+                    return Convert.ToInt32(Value);
+            }
+            public static bool ToBool(object Value)
+            {
+                if (Value == null || Value == DBNull.Value)
+                    return false;
+                else
+                {
+                    try
+                    {
+                        return Convert.ToBoolean(Value);
+                    }
+                    catch
+                    {
+                        return false;
+                    }
+                }
+            }
+        }
+        #endregion
+
+
+        #region GetDropDownList
+
+        public Hashtable GetDropdownValues(Dictionary<string, bool> RequiredDropdownFields)
+        {
+
+            dbReader = null;
+            Result = new ResultDetail();
+
+            Hashtable DropdownItemLists = new Hashtable();
+
+            try
+            {
+                InitializeDb();
+
+                List<DbParams> objLstDbParams = new List<DbParams>();
+                foreach (var item in RequiredDropdownFields)
+                {
+                    objLstDbParams.Add(new DbParams(DbType.Boolean, 15, item.Value, "@" + item.Key, ParameterDirection.Input));
+                }
+
+                dbReader = ObjDbfactory.GetReader("PRO_GetdropdownItems", false, objLstDbParams);
+
+                foreach (var item in RequiredDropdownFields)
+                {
+                    DropdownItemLists.Add(item.Key, DropDownItemInfo.PreparedItemList(ref dbReader, true));
+                    dbReader.NextResult();
+                }
+
+               //esult.Status = ResultStatus.Success;
+               //return  ;
+            }
+            catch (Exception ex)
+            {
+                Result.Status = ResultStatus.Error;
+                Result.Message = ex.Message;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+
+            return DropdownItemLists;
         }
         #endregion
     }

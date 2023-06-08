@@ -30,6 +30,8 @@ namespace BusinessLayer
         public string CSTDate { get; set; }
         public string LicenseNo { get; set; }
         public string Website { get; set; }
+        
+        
         #region Update
 
         public void Update()
