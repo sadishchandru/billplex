@@ -10,7 +10,6 @@ namespace BusinessLayer
 {
     public class CompanyMasterInfo : Common
     {
-
         public string Code { get; set; }
         public string CompanyName { get; set; }
         public string OffAddress { get; set; }
@@ -59,7 +58,7 @@ namespace BusinessLayer
 
                 // Calling the stored procedure for creating a new Company Profile
                 List<DbParams> objLstDbParams = new List<DbParams>();
-                objLstDbParams.Add(new DbParams(DbType.String, 50, Code, "@Code", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.String, 50, Code, "@ComCcode", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, CompanyName, "@ComName", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 200, OffAddress, "@ComOffAdd", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, State, "@Comstate", ParameterDirection.Input));
@@ -67,7 +66,7 @@ namespace BusinessLayer
                 objLstDbParams.Add(new DbParams(DbType.String, 50, StdCode, "@ComStdCode", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, PhoneNo, "@ComPhone", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, Startingdate, "@ComDatestart", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.String, 50, BusinessNature, "@radBusinessNature", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.String, 50, BusinessNature, "@ComNature", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, EmailID, "@ComEmail", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 200, Website, "@ComWebsite", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, PFCode, "@ComPFno", ParameterDirection.Input));
@@ -95,7 +94,7 @@ namespace BusinessLayer
                 objLstDbParams.Add(new DbParams(DbType.String, 50, AuthMobile, "@CAMobile", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, AuthorPanNo, "@CAPan", ParameterDirection.Input));
 
-                dbReader = ObjDbfactory.GetReader("PRO_UpdateCustomerInfo", false, objLstDbParams);
+                dbReader = ObjDbfactory.GetReader("PRO_UpdateCompanyProfileInfo", false, objLstDbParams);
 
                 while (dbReader.Read())
                 {

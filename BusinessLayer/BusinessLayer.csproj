@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="ClientCompanyInfo.cs" />
     <Compile Include="Common.cs" />
+    <Compile Include="CompanyBankInfo.cs" />
     <Compile Include="CompanyMasterInfo.cs" />
     <Compile Include="CustomerMasterInfo.cs" />
     <Compile Include="DropDownItemInfo.cs" />
