@@ -26,5 +26,17 @@ namespace BillPlex
             FrmSubClientCompanyInfo CP = new FrmSubClientCompanyInfo();
             CP.ShowDialog();
         }
+
+        private void Deletebtn_Click(object sender, EventArgs e)
+        {
+            var selectedRows = gridView2.GetSelectedRows();
+
+            foreach (var rowHandle in selectedRows)
+            {
+                var id = gridView2.GetRowCellValue(rowHandle, "Id");
+            }
+            var Id = 0;
+            //SqlParameter[] parameters = new SqlParameter[];
+        }
     }
 }

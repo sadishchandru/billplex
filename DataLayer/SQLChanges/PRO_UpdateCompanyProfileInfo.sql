@@ -42,7 +42,7 @@ ALTER PROCEDURE PRO_UpdateCompanyProfileInfo
 ,@CAPhoneno VARCHAR(50) = ''
 ,@CAMobile VARCHAR(100) = ''
 ,@CAblood VARCHAR(50) = ''
-,@CADOB VARCHAR(50) = ''
+,@CADOB DATE = NULL
 ,@CAEmail VARCHAR(100) = ''
 ,@CAPan VARCHAR(50) = ''
 ,@CBankname VARCHAR(100) = ''
