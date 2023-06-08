@@ -50,6 +50,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResultDetail.cs" />
     <Compile Include="ResultStatus.cs" />
+    <Compile Include="SubClientCompanyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataLayer\DataLayer.csproj">

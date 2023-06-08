@@ -1,6 +1,6 @@
 USE [BillPlex]
 GO
-/****** Object:  StoredProcedure [dbo].[PRO_UpdateCompanyProfileInfo]    Script Date: 01/06/2023 14:27:01 ******/
+--****** Object:  StoredProcedure [dbo].[PRO_UpdateCompanyProfileInfo]    Script Date: 01-06-2023 14:27:01 ******-
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -11,10 +11,10 @@ GO
 -- Description:	Insert & Update Company Profile Info
 -- =============================================
 CREATE OR ALTER PROCEDURE [dbo].[PRO_UpdateSubClientCompanyProfileInfo]
-@Id bigint ='',
-@MasterCode int='',
-@MasterCompanyld bigint='',
-@ClientCompanyld  bigint='',
+@Id bigint = 0 ,
+@MasterCompanyld bigint= 0,
+@ClientCompanyld  bigint = 0,
+@ContractorName varchar(100)= '',
 @SubComCode varchar(50)='',
 @SubComName varchar(100)='',
 @ComOffAdd varchar(250)='',
@@ -22,16 +22,16 @@ CREATE OR ALTER PROCEDURE [dbo].[PRO_UpdateSubClientCompanyProfileInfo]
 @ComPin varchar(50)='',
 @ComNature varchar(100)='',
 @Director varchar(100)='',
-@ComDatestart date='',
+@ComDatestart date=Null,
 @ComStdCode varchar(20)='',
 @ComPhone varchar(20)='',
 @ComEmail varchar(50)='',
 @ComWebsite varchar(50)='',
 @PfType varchar(100)='',
 @ComPfNo varchar(100)='',
-@ComPfDate date='',
+@ComPfDate date=Null,
 @ComEsiNo varchar(100)='',
-@ComEsiDate date='',
+@ComEsiDate date=Null,
 @ComFactoryNo varchar(100)='',
 @ComCstNo varchar(100)='',
 @ComSsINo varchar(100)='',
@@ -43,7 +43,7 @@ CREATE OR ALTER PROCEDURE [dbo].[PRO_UpdateSubClientCompanyProfileInfo]
 @AuthorFathername varchar(100)='',
 @AuthorGender varchar(100)='',
 @AuthorBlood varchar(50)='',
-@AuthorDOB date='',
+@AuthorDOB date=Null,
 @AuthorEmail varchar(100)='',
 @AuthorAddress varchar(250)='',
 @AuthorState varchar(50)='', 
@@ -64,10 +64,9 @@ BEGIN
 	BEGIN
 		INSERT INTO SubClientMaster
 		(
-			
-			 [MasterCode]
-			,[MasterCompanyId]
+			 [MasterCompanyId]
 			,[ClientCompanyId]
+			,[ContractorName]
 			,[SubComCode]
 			,[SubComName]
 			,[ComOffAdd]
@@ -107,9 +106,9 @@ BEGIN
 			,[AuthorActive]
 		) VALUES
 		(
-			@MasterCode,
 			@MasterCompanyld,
 			@ClientCompanyld,
+			@ContractorName,
 			@SubComCode,
 			@SubComName,
 			@ComOffAdd,
@@ -156,9 +155,9 @@ BEGIN
 	BEGIN
 		UPDATE SubClientMaster 
 		SET	
-			[MasterCode]=@MasterCode,
 			[MasterCompanyId]=@MasterCompanyld,
 			[ClientCompanyId]=@ClientCompanyld,
+			[ContractorName]=@ContractorName,
 			[SubComCode]=@SubComCode,
 			[SubComName]=@SubComName,
 			[ComOffAdd]=@ComOffAdd,
