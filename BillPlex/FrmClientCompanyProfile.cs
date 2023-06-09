@@ -26,5 +26,10 @@ namespace BillPlex
             FrmClientCompanyInfo CP = new FrmClientCompanyInfo();
             CP.ShowDialog();
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -34,18 +34,21 @@ namespace BillPlex
             DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCompanyProfileBankInfo));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.btnSelect = new DevExpress.XtraEditors.SimpleButton();
-            this.datagrid = new DevExpress.XtraGrid.GridControl();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMainCompany = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colComName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMainCompanyId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBankName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBankAcNo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBranchCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBranchName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIFSCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAddress = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.drpBankName = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.drpMainCompany = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.btnSelect = new DevExpress.XtraEditors.SimpleButton();
             this.txtSearchComapnyName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.imgbox = new DevExpress.XtraEditors.PictureEdit();
@@ -68,12 +71,12 @@ namespace BillPlex
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.drpMainCompany = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.drpBankName = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datagrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpBankName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpMainCompany.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchComapnyName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgbox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtIfsCode.Properties)).BeginInit();
@@ -83,17 +86,15 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.TxtBankAccountNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.drpMainCompany.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.drpBankName.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
             // 
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl1.Controls.Add(this.gridControl1);
             this.panelControl1.Controls.Add(this.drpBankName);
             this.panelControl1.Controls.Add(this.drpMainCompany);
             this.panelControl1.Controls.Add(this.btnSelect);
-            this.panelControl1.Controls.Add(this.datagrid);
             this.panelControl1.Controls.Add(this.txtSearchComapnyName);
             this.panelControl1.Controls.Add(this.labelControl10);
             this.panelControl1.Controls.Add(this.imgbox);
@@ -122,33 +123,16 @@ namespace BillPlex
             this.panelControl1.Size = new System.Drawing.Size(1576, 808);
             this.panelControl1.TabIndex = 1;
             // 
-            // btnSelect
+            // gridControl1
             // 
-            this.btnSelect.Location = new System.Drawing.Point(7, 411);
-            this.btnSelect.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
-            this.btnSelect.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightBlue;
-            this.btnSelect.LookAndFeel.SkinName = "DevExpress Style";
-            this.btnSelect.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(75, 23);
-            this.btnSelect.TabIndex = 27;
-            this.btnSelect.Text = "SELECT";
-            // 
-            // datagrid
-            // 
-            this.datagrid.DataMember = "PRO_GetMainBankInfo";
-            this.datagrid.DataSource = this.sqlDataSource1;
-            this.datagrid.Location = new System.Drawing.Point(7, 448);
-            this.datagrid.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
-            this.datagrid.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightBlue;
-            this.datagrid.LookAndFeel.SkinName = "DevExpress Style";
-            this.datagrid.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Style3D;
-            this.datagrid.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.datagrid.MainView = this.gridView1;
-            this.datagrid.Name = "datagrid";
-            this.datagrid.Size = new System.Drawing.Size(1566, 354);
-            this.datagrid.TabIndex = 26;
-            this.datagrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridControl1.DataMember = "PRO_GetMainBankInfo";
+            this.gridControl1.DataSource = this.sqlDataSource1;
+            this.gridControl1.Location = new System.Drawing.Point(7, 450);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(1563, 352);
+            this.gridControl1.TabIndex = 30;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // sqlDataSource1
@@ -166,20 +150,19 @@ namespace BillPlex
             // 
             // gridView1
             // 
-            this.gridView1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colId,
-            this.colMainCompany,
+            this.colComName,
+            this.colMainCompanyId,
             this.colBankName,
             this.colBankAcNo,
             this.colBranchCode,
             this.colBranchName,
             this.colIFSCode,
             this.colAddress});
-            this.gridView1.GridControl = this.datagrid;
+            this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.PaintStyleName = "Office2003";
+            this.gridView1.PaintStyleName = "Flat";
             // 
             // colId
             // 
@@ -188,54 +171,91 @@ namespace BillPlex
             this.colId.Visible = true;
             this.colId.VisibleIndex = 0;
             // 
-            // colMainCompany
+            // colComName
             // 
-            this.colMainCompany.FieldName = "MainCompany";
-            this.colMainCompany.Name = "colMainCompany";
-            this.colMainCompany.Visible = true;
-            this.colMainCompany.VisibleIndex = 1;
+            this.colComName.FieldName = "ComName";
+            this.colComName.Name = "colComName";
+            this.colComName.Visible = true;
+            this.colComName.VisibleIndex = 1;
+            // 
+            // colMainCompanyId
+            // 
+            this.colMainCompanyId.FieldName = "MainCompanyId";
+            this.colMainCompanyId.Name = "colMainCompanyId";
+            this.colMainCompanyId.Visible = true;
+            this.colMainCompanyId.VisibleIndex = 2;
             // 
             // colBankName
             // 
             this.colBankName.FieldName = "BankName";
             this.colBankName.Name = "colBankName";
             this.colBankName.Visible = true;
-            this.colBankName.VisibleIndex = 2;
+            this.colBankName.VisibleIndex = 3;
             // 
             // colBankAcNo
             // 
             this.colBankAcNo.FieldName = "BankAcNo";
             this.colBankAcNo.Name = "colBankAcNo";
             this.colBankAcNo.Visible = true;
-            this.colBankAcNo.VisibleIndex = 3;
+            this.colBankAcNo.VisibleIndex = 4;
             // 
             // colBranchCode
             // 
             this.colBranchCode.FieldName = "BranchCode";
             this.colBranchCode.Name = "colBranchCode";
             this.colBranchCode.Visible = true;
-            this.colBranchCode.VisibleIndex = 4;
+            this.colBranchCode.VisibleIndex = 5;
             // 
             // colBranchName
             // 
             this.colBranchName.FieldName = "BranchName";
             this.colBranchName.Name = "colBranchName";
             this.colBranchName.Visible = true;
-            this.colBranchName.VisibleIndex = 5;
+            this.colBranchName.VisibleIndex = 6;
             // 
             // colIFSCode
             // 
             this.colIFSCode.FieldName = "IFSCode";
             this.colIFSCode.Name = "colIFSCode";
             this.colIFSCode.Visible = true;
-            this.colIFSCode.VisibleIndex = 6;
+            this.colIFSCode.VisibleIndex = 7;
             // 
             // colAddress
             // 
             this.colAddress.FieldName = "Address";
             this.colAddress.Name = "colAddress";
             this.colAddress.Visible = true;
-            this.colAddress.VisibleIndex = 7;
+            this.colAddress.VisibleIndex = 8;
+            // 
+            // drpBankName
+            // 
+            this.drpBankName.Location = new System.Drawing.Point(149, 95);
+            this.drpBankName.Name = "drpBankName";
+            this.drpBankName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpBankName.Size = new System.Drawing.Size(180, 20);
+            this.drpBankName.TabIndex = 29;
+            // 
+            // drpMainCompany
+            // 
+            this.drpMainCompany.Location = new System.Drawing.Point(149, 60);
+            this.drpMainCompany.Name = "drpMainCompany";
+            this.drpMainCompany.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpMainCompany.Size = new System.Drawing.Size(209, 20);
+            this.drpMainCompany.TabIndex = 28;
+            // 
+            // btnSelect
+            // 
+            this.btnSelect.Location = new System.Drawing.Point(7, 411);
+            this.btnSelect.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btnSelect.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightBlue;
+            this.btnSelect.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnSelect.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.Size = new System.Drawing.Size(75, 23);
+            this.btnSelect.TabIndex = 27;
+            this.btnSelect.Text = "SELECT";
             // 
             // txtSearchComapnyName
             // 
@@ -296,7 +316,7 @@ namespace BillPlex
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(74, 73);
             this.btnUpdate.TabIndex = 20;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.btnUpdate.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // btnAdd
             // 
@@ -449,24 +469,6 @@ namespace BillPlex
             this.labelControl1.TabIndex = 1;
             this.labelControl1.Text = "Main Company";
             // 
-            // drpMainCompany
-            // 
-            this.drpMainCompany.Location = new System.Drawing.Point(149, 60);
-            this.drpMainCompany.Name = "drpMainCompany";
-            this.drpMainCompany.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.drpMainCompany.Size = new System.Drawing.Size(209, 20);
-            this.drpMainCompany.TabIndex = 28;
-            // 
-            // drpBankName
-            // 
-            this.drpBankName.Location = new System.Drawing.Point(149, 95);
-            this.drpBankName.Name = "drpBankName";
-            this.drpBankName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.drpBankName.Size = new System.Drawing.Size(180, 20);
-            this.drpBankName.TabIndex = 29;
-            // 
             // FrmCompanyProfileBankInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -478,8 +480,10 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datagrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpBankName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpMainCompany.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchComapnyName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgbox.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtIfsCode.Properties)).EndInit();
@@ -490,8 +494,6 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.drpMainCompany.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.drpBankName.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -499,8 +501,6 @@ namespace BillPlex
         #endregion
 
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraGrid.GridControl datagrid;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.TextEdit txtSearchComapnyName;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.PictureEdit imgbox;
@@ -523,17 +523,20 @@ namespace BillPlex
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.SimpleButton btnSelect;
+        private DevExpress.XtraEditors.ComboBoxEdit drpBankName;
+        private DevExpress.XtraEditors.ComboBoxEdit drpMainCompany;
+        private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
-        private DevExpress.XtraGrid.Columns.GridColumn colMainCompany;
+        private DevExpress.XtraGrid.Columns.GridColumn colComName;
+        private DevExpress.XtraGrid.Columns.GridColumn colMainCompanyId;
         private DevExpress.XtraGrid.Columns.GridColumn colBankName;
         private DevExpress.XtraGrid.Columns.GridColumn colBankAcNo;
         private DevExpress.XtraGrid.Columns.GridColumn colBranchCode;
         private DevExpress.XtraGrid.Columns.GridColumn colBranchName;
         private DevExpress.XtraGrid.Columns.GridColumn colIFSCode;
         private DevExpress.XtraGrid.Columns.GridColumn colAddress;
-        private DevExpress.XtraEditors.SimpleButton btnSelect;
-        private DevExpress.XtraEditors.ComboBoxEdit drpBankName;
-        private DevExpress.XtraEditors.ComboBoxEdit drpMainCompany;
     }
 }

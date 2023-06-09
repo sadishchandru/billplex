@@ -34,6 +34,9 @@ namespace BillPlex
             DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmClientCompanyBankInfo));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.drpBankName = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.drpClientCompany = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.drpMainCompany = new DevExpress.XtraEditors.ComboBoxEdit();
             this.btnSelect = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
@@ -72,11 +75,11 @@ namespace BillPlex
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.drpMainCompany = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.drpClientCompany = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.drpBankName = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.drpBankName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpClientCompany.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpMainCompany.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchComapnyName.Properties)).BeginInit();
@@ -88,9 +91,6 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.txtAccountNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.drpMainCompany.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.drpClientCompany.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.drpBankName.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -129,6 +129,33 @@ namespace BillPlex
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1576, 808);
             this.panelControl1.TabIndex = 1;
+            // 
+            // drpBankName
+            // 
+            this.drpBankName.Location = new System.Drawing.Point(149, 126);
+            this.drpBankName.Name = "drpBankName";
+            this.drpBankName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpBankName.Size = new System.Drawing.Size(180, 20);
+            this.drpBankName.TabIndex = 30;
+            // 
+            // drpClientCompany
+            // 
+            this.drpClientCompany.Location = new System.Drawing.Point(149, 91);
+            this.drpClientCompany.Name = "drpClientCompany";
+            this.drpClientCompany.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpClientCompany.Size = new System.Drawing.Size(209, 20);
+            this.drpClientCompany.TabIndex = 29;
+            // 
+            // drpMainCompany
+            // 
+            this.drpMainCompany.Location = new System.Drawing.Point(149, 59);
+            this.drpMainCompany.Name = "drpMainCompany";
+            this.drpMainCompany.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpMainCompany.Size = new System.Drawing.Size(209, 20);
+            this.drpMainCompany.TabIndex = 28;
             // 
             // btnSelect
             // 
@@ -492,33 +519,6 @@ namespace BillPlex
             this.labelControl1.TabIndex = 1;
             this.labelControl1.Text = "Main Company";
             // 
-            // drpMainCompany
-            // 
-            this.drpMainCompany.Location = new System.Drawing.Point(149, 59);
-            this.drpMainCompany.Name = "drpMainCompany";
-            this.drpMainCompany.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.drpMainCompany.Size = new System.Drawing.Size(209, 20);
-            this.drpMainCompany.TabIndex = 28;
-            // 
-            // drpClientCompany
-            // 
-            this.drpClientCompany.Location = new System.Drawing.Point(149, 91);
-            this.drpClientCompany.Name = "drpClientCompany";
-            this.drpClientCompany.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.drpClientCompany.Size = new System.Drawing.Size(209, 20);
-            this.drpClientCompany.TabIndex = 29;
-            // 
-            // drpBankName
-            // 
-            this.drpBankName.Location = new System.Drawing.Point(149, 126);
-            this.drpBankName.Name = "drpBankName";
-            this.drpBankName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.drpBankName.Size = new System.Drawing.Size(180, 20);
-            this.drpBankName.TabIndex = 30;
-            // 
             // FrmClientCompanyBankInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -530,6 +530,9 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.drpBankName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpClientCompany.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpMainCompany.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchComapnyName.Properties)).EndInit();
@@ -542,9 +545,6 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.drpMainCompany.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.drpClientCompany.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.drpBankName.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
