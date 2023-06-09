@@ -12,6 +12,7 @@ namespace BusinessLayer
 {
     public class Common
     {
+        public Int32 Id { get; set; }
         public DbDataReader dbReader;
         public DbFactory ObjDbfactory;
         public ResultDetail Result { get; set; }

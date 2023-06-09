@@ -130,6 +130,11 @@ namespace BusinessLayer
         }
         #endregion
 
+
+        public void Delete()
+        {
+
+        }
     }
 }
 
