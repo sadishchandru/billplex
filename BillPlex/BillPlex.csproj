@@ -101,6 +101,12 @@
     <Compile Include="FrmClientCompanyBankInfo.Designer.cs">
       <DependentUpon>FrmClientCompanyBankInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmColorMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmColorMaster.Designer.cs">
+      <DependentUpon>FrmColorMaster.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCompanyProfileBankInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +161,24 @@
     <Compile Include="FrmCustomerMaster.Designer.cs">
       <DependentUpon>FrmCustomerMaster.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmProductMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProductMaster.Designer.cs">
+      <DependentUpon>FrmProductMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRawMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRawMaterial.Designer.cs">
+      <DependentUpon>FrmRawMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSizeMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSizeMaster.Designer.cs">
+      <DependentUpon>FrmSizeMaster.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmSubClientCompanyBankInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +208,9 @@
     <EmbeddedResource Include="FrmClientCompanyBankInfo.resx">
       <DependentUpon>FrmClientCompanyBankInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmColorMaster.resx">
+      <DependentUpon>FrmColorMaster.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCompanyProfileBankInfo.resx">
       <DependentUpon>FrmCompanyProfileBankInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -210,6 +237,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCustomerMaster.resx">
       <DependentUpon>FrmCustomerMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProductMaster.resx">
+      <DependentUpon>FrmProductMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRawMaterial.resx">
+      <DependentUpon>FrmRawMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSizeMaster.resx">
+      <DependentUpon>FrmSizeMaster.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSubClientCompanyBankInfo.resx">
       <DependentUpon>FrmSubClientCompanyBankInfo.cs</DependentUpon>

@@ -90,14 +90,14 @@ namespace BillPlex
             this.colCBankAddress = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Claerbtn = new DevExpress.XtraEditors.SimpleButton();
             this.Findbtn = new DevExpress.XtraEditors.SimpleButton();
-<<<<<<< HEAD
-=======
+//<<<<<<< HEAD
+//=======
             this.bnUpdate = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.btnClear = new DevExpress.XtraEditors.SimpleButton();
             this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
->>>>>>> 3800cad6446cbc69d8a5cb78aa9c3ad9d797ca6c
+//>>>>>>> 3800cad6446cbc69d8a5cb78aa9c3ad9d797ca6c
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -221,20 +221,20 @@ namespace BillPlex
             // 
             // comboBoxEdit1
             // 
-<<<<<<< HEAD
+//<<<<<<< HEAD
             this.comboBoxEdit1.Location = new System.Drawing.Point(30, 25);
             this.comboBoxEdit1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBoxEdit1.Name = "comboBoxEdit1";
             this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEdit1.Size = new System.Drawing.Size(841, 22);
-=======
+//=======
             this.comboBoxEdit1.Location = new System.Drawing.Point(26, 20);
             this.comboBoxEdit1.Name = "comboBoxEdit1";
             this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEdit1.Size = new System.Drawing.Size(721, 20);
->>>>>>> 3800cad6446cbc69d8a5cb78aa9c3ad9d797ca6c
+//>>>>>>> 3800cad6446cbc69d8a5cb78aa9c3ad9d797ca6c
             this.comboBoxEdit1.TabIndex = 1;
             // 
             // gridControl1
@@ -742,8 +742,8 @@ namespace BillPlex
             this.Findbtn.TabIndex = 3;
             this.Findbtn.Text = "Find";
             // 
-<<<<<<< HEAD
-=======
+//<<<<<<< HEAD
+//=======
             // bnUpdate
             // 
             this.bnUpdate.Appearance.BackColor = System.Drawing.Color.LightBlue;
@@ -820,7 +820,7 @@ namespace BillPlex
             this.btnAdd.TabIndex = 16;
             this.btnAdd.Text = "ADD";
             // 
->>>>>>> 3800cad6446cbc69d8a5cb78aa9c3ad9d797ca6c
+//>>>>>>> 3800cad6446cbc69d8a5cb78aa9c3ad9d797ca6c
             // FrmClientCompanyProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);

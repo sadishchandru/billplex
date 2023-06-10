@@ -62,7 +62,7 @@ namespace BillPlex
                 ClientCompanyRequest.Pin = txtPin.Text;
                 ClientCompanyRequest.BusinessNature = radBusinessNature.Text;
                 ClientCompanyRequest.Startingdate = ddStartingDate.Text;
-                ClientCompanyRequest.stdCode = txtstdCode.Text;
+                ClientCompanyRequest.stdCode = stdCodeTxt.Text;
                 ClientCompanyRequest.CompanyPhone = txtClientCompanyPhone.Text;
                 ClientCompanyRequest.Email = txtEmail.Text;
                 ClientCompanyRequest.Website = txtWebsite.Text;
