@@ -167,6 +167,30 @@
     <Compile Include="FrmEmployeeMaster.Designer.cs">
       <DependentUpon>FrmEmployeeMaster.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmEmployeeMasterList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEmployeeMasterList.Designer.cs">
+      <DependentUpon>FrmEmployeeMasterList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFinishingProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFinishingProduct.Designer.cs">
+      <DependentUpon>FrmFinishingProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOrderMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOrderMaster.Designer.cs">
+      <DependentUpon>FrmOrderMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOrderMasterInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOrderMasterInfo.Designer.cs">
+      <DependentUpon>FrmOrderMasterInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmProductMaster.cs">
       <SubType>Form</SubType>
     </Compile>
