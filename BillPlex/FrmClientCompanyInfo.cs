@@ -35,11 +35,27 @@ namespace BillPlex
             Dictionary<string, bool> dropDownList = new Dictionary<string, bool>        {
                     { "MasterCompanyRequired", true }
                 };
-            Hashtable dropdownlist =  ClientCompanyRequest.GetDropdownValues(dropDownList);
+            //ClientCompanyRequest.MasterCompanyList = ClientCompanyRequest.GetDropdownValues(dropDownList);
 
-            foreach (DictionaryEntry item in dropdownlist)
+            var dropdwonList = ClientCompanyRequest.GetDropdownValues(dropDownList);
+
+
+            foreach (DropDownItemInfo item in dropdwonList)
             {
-                drpMainCompany.Properties.Items.Add(new ImageComboBoxItem(item.Value.ToString(), item.Key));
+                //                var keyValue = item.Key.ToString();
+                //if (item == "MasterCompanyRequired")
+                //{
+                // var itemList = item.Value as List<DropDownItemInfo>;
+
+                //var itemsList = (DropDownItemInfo)item.Value;
+                //drpMainCompany.Properties.Items.Add();
+
+                ClientCompanyRequest.MasterCompanyList = dropdwonList;
+                //int index = 0;
+
+                drpMainCompany.Properties.Items.Add(new ImageComboBoxItem(item.Name));
+
+                //}
             }
         }
 
@@ -53,7 +69,15 @@ namespace BillPlex
         {
             try
             {
-                ClientCompanyRequest.MainCompany = drpMainCompany.Text;
+                var selectedItem = drpMainCompany.EditValue;
+                var selectedItems = drpMainCompany.Text;
+
+                if (selectedItem != null)
+                {
+                    ClientCompanyRequest.MainCompany = ClientCompanyRequest.MasterCompanyList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.Id ?? -1;
+                }
+
+                
                 ClientCompanyRequest.Director = drpDirector.Text;
                 ClientCompanyRequest.CompanyCode = txtCompanyCode.Text;
                 ClientCompanyRequest.CompanyName = txtCompanyName.Text;
@@ -62,7 +86,7 @@ namespace BillPlex
                 ClientCompanyRequest.Pin = txtPin.Text;
                 ClientCompanyRequest.BusinessNature = radBusinessNature.Text;
                 ClientCompanyRequest.Startingdate = ddStartingDate.Text;
-                ClientCompanyRequest.stdCode = stdCodeTxt.Text;
+                ClientCompanyRequest.stdCode = txtstdCode.Text;
                 ClientCompanyRequest.CompanyPhone = txtClientCompanyPhone.Text;
                 ClientCompanyRequest.Email = txtEmail.Text;
                 ClientCompanyRequest.Website = txtWebsite.Text;

@@ -173,13 +173,13 @@ namespace BusinessLayer
 
         #region GetDropDownList
 
-        public Hashtable GetDropdownValues(Dictionary<string, bool> RequiredDropdownFields)
+        public List<DropDownItemInfo> GetDropdownValues(Dictionary<string, bool> RequiredDropdownFields)
         {
 
             dbReader = null;
             Result = new ResultDetail();
 
-            Hashtable DropdownItemLists = new Hashtable();
+            List<DropDownItemInfo> DropdownItemLists = new List<DropDownItemInfo>();
 
             try
             {
@@ -195,7 +195,7 @@ namespace BusinessLayer
 
                 foreach (var item in RequiredDropdownFields)
                 {
-                    DropdownItemLists.Add(item.Key, DropDownItemInfo.PreparedItemList(ref dbReader, true));
+                    DropdownItemLists = DropDownItemInfo.PreparedItemList(ref dbReader, true);
                     dbReader.NextResult();
                 }
 

@@ -10,7 +10,7 @@ namespace BusinessLayer
 {
     public class ClientCompanyInfo : Common
     {
-        public string MainCompany { get; set; }
+        public Int64 MainCompany { get; set; }
         public string Director { get; set; }
         public string CompanyCode { get; set; }
         public string CompanyName { get; set; }
@@ -48,6 +48,7 @@ namespace BusinessLayer
         public string AuthPanNo { get; set; }
         public string Percent { get; set; }
         public string ActiveStatus { get; set; }
+        public List<DropDownItemInfo> MasterCompanyList { get; set; }
         #region Update
 
         public void Update()
