@@ -67,5 +67,12 @@ namespace BillPlex
             CustomerMasterInfo.MdiParent = this;
             CustomerMasterInfo.Show();
         }
+
+        private void btn_Employee_Master(object sender, ItemClickEventArgs e)
+        {
+            FrmEmployeeMaster employeeMaster = new FrmEmployeeMaster();
+            employeeMaster.MdiParent = this;
+            employeeMaster.Show();
+        }
     }
 }

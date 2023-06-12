@@ -37,13 +37,13 @@ namespace BillPlex
             this.SubClient_Btn_Click = new DevExpress.XtraBars.BarButtonItem();
             this.btnCustomerDetails = new DevExpress.XtraBars.BarButtonItem();
             this.MasterCompany_Btn_Click = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_EmployeeMaster = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Master_Group_btn_Click = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +59,7 @@ namespace BillPlex
             this.SubClient_Btn_Click,
             this.btnCustomerDetails,
             this.MasterCompany_Btn_Click,
-            this.barButtonItem2});
+            this.btn_EmployeeMaster});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.MaxItemId = 12;
             this.ribbon.Name = "ribbon";
@@ -112,6 +112,13 @@ namespace BillPlex
             this.MasterCompany_Btn_Click.Name = "MasterCompany_Btn_Click";
             this.MasterCompany_Btn_Click.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.MasterCompany_ItemClick);
             // 
+            // btn_EmployeeMaster
+            // 
+            this.btn_EmployeeMaster.Caption = "Employee Master";
+            this.btn_EmployeeMaster.Id = 11;
+            this.btn_EmployeeMaster.Name = "btn_EmployeeMaster";
+            this.btn_EmployeeMaster.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Employee_Master);
+            // 
             // ribbonPageCategory1
             // 
             this.ribbonPageCategory1.Name = "ribbonPageCategory1";
@@ -129,7 +136,7 @@ namespace BillPlex
             // ribbonPageGroup1
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.btnCustomerDetails, true);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem2, true);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btn_EmployeeMaster, true);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Masters";
             // 
@@ -154,12 +161,6 @@ namespace BillPlex
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
             this.ribbonStatusBar.Size = new System.Drawing.Size(1055, 24);
-            // 
-            // barButtonItem2
-            // 
-            this.barButtonItem2.Caption = "Employee Master";
-            this.barButtonItem2.Id = 11;
-            this.barButtonItem2.Name = "barButtonItem2";
             // 
             // NavBar
             // 
@@ -196,6 +197,6 @@ namespace BillPlex
         private DevExpress.XtraBars.BarButtonItem btnCustomerDetails;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarButtonItem MasterCompany_Btn_Click;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem btn_EmployeeMaster;
     }
 }
