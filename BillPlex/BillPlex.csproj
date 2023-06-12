@@ -173,6 +173,12 @@
     <Compile Include="FrmProductMaster.Designer.cs">
       <DependentUpon>FrmProductMaster.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmProductModel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProductModel.Designer.cs">
+      <DependentUpon>FrmProductModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmRawMaterial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmProductMaster.resx">
       <DependentUpon>FrmProductMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProductModel.resx">
+      <DependentUpon>FrmProductModel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRawMaterial.resx">
       <DependentUpon>FrmRawMaterial.cs</DependentUpon>
