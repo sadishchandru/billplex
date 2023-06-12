@@ -38,7 +38,7 @@ BEGIN
 	BEGIN
 		UPDATE Productmodeltemp 
 		SET	
-		[Id] = @Id,
+		--[Id] = @Id,
 		[Productmodel] = @Productmodel
 		WHERE Id = @Id
 		SET @ResultMessage = 'Productmodeltemp Updated Successfully';
