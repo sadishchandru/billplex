@@ -74,5 +74,12 @@ namespace BillPlex
             employeeMaster.MdiParent = this;
             employeeMaster.Show();
         }
+
+        private void barButtonItem4_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FrmCompanyProfileBankInfo masterbanking = new FrmCompanyProfileBankInfo();
+            masterbanking.MdiParent = this; 
+            masterbanking.Show();
+        }
     }
 }
