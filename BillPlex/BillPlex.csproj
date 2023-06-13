@@ -280,6 +280,12 @@
     <EmbeddedResource Include="FrmEmployeeMasterList.resx">
       <DependentUpon>FrmEmployeeMasterList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmOrderMaster.resx">
+      <DependentUpon>FrmOrderMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOrderMasterInfo.resx">
+      <DependentUpon>FrmOrderMasterInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmProductMaster.resx">
       <DependentUpon>FrmProductMaster.cs</DependentUpon>
     </EmbeddedResource>
