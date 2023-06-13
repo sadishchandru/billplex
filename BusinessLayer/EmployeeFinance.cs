@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 namespace BusinessLayer
 {
-    class EmployeeFinance: Common
+   public  class EmployeeFinance: Common
     {
         public Int32 FEmpId { get; set; }
         public string FBankName { get; set; }

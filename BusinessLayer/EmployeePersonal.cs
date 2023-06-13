@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace BusinessLayer
 
 {
-    class EmployeePersonal: Common
+    public class EmployeePersonal: Common
     {
         public string EmployeeCode { get; set; }
         public string EMasterCompany { get; set; }
@@ -96,7 +96,7 @@ namespace BusinessLayer
                 objLstDbParams.Add(new DbParams(DbType.String, 50, EGender, "@Gender", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, EBloodGroup, "@BloodGroup", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 200, EEmailId, "@Email", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.String, 50, EmobileNo, "@PaymentMode", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.String, 50, EmobileNo, "@Mobile", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, EFatherName, "@FName", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, EMotherName, "@MName", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, EMaritalStatus, "@MStatus", ParameterDirection.Input));
@@ -110,7 +110,7 @@ namespace BusinessLayer
                 objLstDbParams.Add(new DbParams(DbType.String, 50, EConfirmDate, "@EConfirmationDate", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, EResigningDate, "@EResigningDate", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, ESelectWithReason, "@Reason", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.String, 50, EPhoto, "@EmpImage", ParameterDirection.Input));
+                //objLstDbParams.Add(new DbParams(DbType.String, 50, EPhoto, "@EmpImage", ParameterDirection.Input));
 
 
 

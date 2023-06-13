@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer
 {
-    class EmployeeFamily:Common
+    public class EmployeeFamily:Common
     {
         public Int32 EFEmpId { get; set; }
         public string EFEmpCode { get; set; }

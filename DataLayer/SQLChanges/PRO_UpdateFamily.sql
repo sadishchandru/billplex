@@ -12,7 +12,7 @@ GO
 -- =============================================
 CREATE OR ALTER PROCEDURE [dbo].[PRO_UpdateFamily]
 @Id bigint=0,
-@EmpCode varchar(100)='',
+@EmpCode Bigint=0,
 @EmpId Bigint = 0,
 @SNo varchar(50)='',
 @Name varchar(250)='',
