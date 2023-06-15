@@ -151,7 +151,7 @@ namespace BillPlex
                 #region Nominee Detail Update
                 else if (tabIndex == 3)
                 {
-                    // Employee Nominee Detail Update
+                    //Employee Nominee Detail Update
                     //EmployeeNomineeReqest.ENEmpCode = txtId.Text;
                     //EmployeeNomineeReqest.ENEmpId = txtEmpId.Text;
                     EmployeeNomineeReqest.ENSno = txtNSno.Text;

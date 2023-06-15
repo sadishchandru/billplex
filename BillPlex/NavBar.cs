@@ -70,7 +70,7 @@ namespace BillPlex
 
         private void btn_Employee_Master(object sender, ItemClickEventArgs e)
         {
-            FrmEmployeeMaster employeeMaster = new FrmEmployeeMaster();
+            FrmEmployeeMasterList employeeMaster = new FrmEmployeeMasterList();
             employeeMaster.MdiParent = this;
             employeeMaster.Show();
         }
@@ -79,6 +79,13 @@ namespace BillPlex
         {
             FrmCompanyProfileBankInfo masterbanking = new FrmCompanyProfileBankInfo();
             masterbanking.MdiParent = this; 
+            masterbanking.Show();
+        }
+
+        private void barButtonItem5_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FrmOrderMaster masterbanking = new FrmOrderMaster();
+            masterbanking.MdiParent = this;
             masterbanking.Show();
         }
     }
