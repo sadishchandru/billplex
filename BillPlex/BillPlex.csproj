@@ -179,6 +179,12 @@
     <Compile Include="FrmFinishingProduct.Designer.cs">
       <DependentUpon>FrmFinishingProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmFinishingProductModel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFinishingProductModel.Designer.cs">
+      <DependentUpon>FrmFinishingProductModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmOrderMaster.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -279,6 +285,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmEmployeeMasterList.resx">
       <DependentUpon>FrmEmployeeMasterList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFinishingProductModel.resx">
+      <DependentUpon>FrmFinishingProductModel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmOrderMaster.resx">
       <DependentUpon>FrmOrderMaster.cs</DependentUpon>
