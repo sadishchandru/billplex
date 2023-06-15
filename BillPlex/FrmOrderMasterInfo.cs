@@ -15,11 +15,11 @@ namespace BillPlex
 {
     public partial class FrmOrderMasterInfo : DevExpress.XtraEditors.XtraForm
     {
-        private OrderMaster OrderMasterRequest;
+        private OrderMasterInfo OrderMasterRequest;
         public FrmOrderMasterInfo()
         {
             InitializeComponent();
-            OrderMasterRequest = new OrderMaster();
+            OrderMasterRequest = new OrderMasterInfo();
             OrderMasterRequest.ConnectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
         }
 
@@ -31,21 +31,22 @@ namespace BillPlex
         private void simpleButton6_Click(object sender, EventArgs e)
         {
             txtOrderNo.ResetText();
-            DdOrderDate.ResetText();
-            DdCustCode.ResetText();
-            DdCustName.ResetText();
-            DdProductName.ResetText();
-            DdModelName.ResetText();
-            DdProductSize.ResetText();
-            txtMaterialwt.ResetText();
-            txtType.ResetText();
-            txtTotRawmat.ResetText();
-            drpProColor.ResetText();
+            drpOrderDate.ResetText();
+            drpCustCode.ResetText();
+            drpCustName.ResetText();
+            drpProductName.ResetText();
             txtQuantity.ResetText();
-            ddProDate.ResetText();
-            drpStatus.ResetText();
             txtTotRawmat.ResetText();
+            txtType.ResetText();
+            drpProColor.ResetText();
+            txtTotRawmat.ResetText();
+            ddProDate.ResetText();
             txtWages.ResetText();
+            drpStatus.ResetText();
+            txtMaterialwt.ResetText();
+            //DdModelName.ResetText();
+            //DdProductSize.ResetText();
+           
         }
 
         private void simpleButton5_Click(object sender, EventArgs e)
@@ -53,21 +54,26 @@ namespace BillPlex
             try
             {
                 OrderMasterRequest.OrderNo = txtOrderNo.Text;
-                OrderMasterRequest.OrderDate = DdOrderDate.Text;
-                OrderMasterRequest.CustomerCode = DdCustCode.Text;
-                OrderMasterRequest.CustomerName = DdCustName.Text;
-                OrderMasterRequest.ProductName = DdProductName.Text;
-                OrderMasterRequest.ModelName = DdModelName.Text;
-                OrderMasterRequest.ProductSize = DdProductSize.Text;
-                OrderMasterRequest.MaterialWeight = txtMaterialwt.Text;
-                OrderMasterRequest.Type = txtType.Text;
-                OrderMasterRequest.RawMaterialName = txtTotRawmat.Text;
-                OrderMasterRequest.ProductColor = drpProColor.Text;
-                OrderMasterRequest.Quantity = txtQuantity.Text;
-                OrderMasterRequest.DeliveryDate = ddProDate.Text;
-                OrderMasterRequest.status = drpStatus.Text;
-                OrderMasterRequest.TotalRawMaterial = txtTotRawmat.Text;
-                OrderMasterRequest.WagesForEmployee = txtWages.Text;
+                OrderMasterRequest.OrderDate = drpOrderDate.Text;
+                OrderMasterRequest.CustomerCodeId = drpCustCode.Text;
+                OrderMasterRequest.CustomerId = int.Parse(drpCustName.Text);
+                OrderMasterRequest.ProductNameId = int.Parse(drpProductName.Text);
+                OrderMasterRequest.Quantity = txtMaterialwt.Text;   
+                OrderMasterRequest.RawMaterialId = int.Parse(txtTotRawmat.Text);   
+                OrderMasterRequest.RawType = txtType.Text;
+                OrderMasterRequest.ColorId = int.Parse(drpProColor.Text);
+                OrderMasterRequest.RawQty = txtQuantity.Text;
+                OrderMasterRequest.TotalRaw = txtTotRawmat.Text;
+                OrderMasterRequest.Deliverydate = ddProDate.Text;
+                OrderMasterRequest.WagesforEmp = txtWages.Text;
+                OrderMasterRequest.status = int.Parse(drpStatus.Text);
+                OrderMasterRequest.Avlweight = txtMaterialwt.Text;
+
+                //OrderMasterRequest.ModelName = DdModelName.Text;
+                //model code
+                //product size
+                //product date
+                //OrderMasterRequest.ProductSize = DdProductSize.Text;
 
                 OrderMasterRequest.Update();
 
@@ -85,16 +91,7 @@ namespace BillPlex
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            var selectedRows = gridView1.GetSelectedRows();
-
-            foreach (var rowHandle in selectedRows)
-            {
-                var id = gridView1.GetRowCellValue(rowHandle, "Id");
-
-                OrderMasterRequest.Id = (int)id;
-            }
-
-            OrderMasterRequest.Delete();
+            
         }
     }
 }

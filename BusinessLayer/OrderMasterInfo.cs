@@ -8,24 +8,24 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer
 {
-    public class OrderMaster : Common
+    public class OrderMasterInfo : Common
     {
         public string OrderNo { get; set; }
         public string OrderDate { get; set; }
-        public string CustomerCode { get; set; }
-        public string CustomerName { get; set; }
-        public string ProductName { get; set; }
-        public string ModelName { get; set; }
-        public string ProductSize { get; set; }
-        public string MaterialWeight { get; set; }
-        public string Type { get; set; }
-        public string RawMaterialName { get; set; }
-        public string ProductColor { get; set; }
+        public string CustomerCodeId { get; set; }
+        public int CustomerId { get; set; }
+        public string ProductId { get; set; }
+        public int ProductNameId { get; set; }
         public string Quantity { get; set; }
-        public string DeliveryDate { get; set; }
-        public string status { get; set; }
-        public string TotalRawMaterial { get; set; }
-        public string WagesForEmployee { get; set; }
+        public int RawMaterialId { get; set; }
+        public string RawType { get; set; }
+        public int ColorId { get; set; }
+        public string RawQty { get; set; }
+        public string TotalRaw { get; set; }
+        public string Deliverydate { get; set; }
+        public string WagesforEmp { get; set; }
+        public int status { get; set; }
+        public string Avlweight { get; set; }
 
         #region Update
         public void Update()
@@ -40,20 +40,20 @@ namespace BusinessLayer
                 List<DbParams> objLstdbParams = new List<DbParams>();
                 objLstdbParams.Add(new DbParams(DbType.String, 50, OrderNo, "@OrderNo", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, OrderDate, "@OrderDate", ParameterDirection.Input));
-                objLstdbParams.Add(new DbParams(DbType.String, 50, CustomerCode, "@CustomerCode", ParameterDirection.Input));
-                objLstdbParams.Add(new DbParams(DbType.String, 50, CustomerName, "@CustomerName", ParameterDirection.Input));
-                objLstdbParams.Add(new DbParams(DbType.String, 50, ProductName, "@ProductName", ParameterDirection.Input));
-                objLstdbParams.Add(new DbParams(DbType.String, 50, ModelName, "@ModelName", ParameterDirection.Input));
-                objLstdbParams.Add(new DbParams(DbType.String, 50, ProductSize, "@ProductSize", ParameterDirection.Input));
-                objLstdbParams.Add(new DbParams(DbType.String, 50, MaterialWeight, "@MaterialWeight", ParameterDirection.Input));
-                objLstdbParams.Add(new DbParams(DbType.String, 50, Type, "@Type", ParameterDirection.Input));
-                objLstdbParams.Add(new DbParams(DbType.String, 50, RawMaterialName, "@RawMaterialName", ParameterDirection.Input));
-                objLstdbParams.Add(new DbParams(DbType.String, 50, ProductColor, "@ProductColor", ParameterDirection.Input));
+                objLstdbParams.Add(new DbParams(DbType.String, 50, CustomerCodeId, "@CustomerCodeId", ParameterDirection.Input));
+                objLstdbParams.Add(new DbParams(DbType.String, 50, CustomerId, "@CustomerId", ParameterDirection.Input));
+                objLstdbParams.Add(new DbParams(DbType.String, 50, ProductId, "@ProductId", ParameterDirection.Input));
+                objLstdbParams.Add(new DbParams(DbType.String, 50, ProductNameId, "@ProductNameId", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, Quantity, "@Quantity", ParameterDirection.Input));
-                objLstdbParams.Add(new DbParams(DbType.String, 50, DeliveryDate, "@DeliveryDate", ParameterDirection.Input));
+                objLstdbParams.Add(new DbParams(DbType.String, 50, RawMaterialId, "@RawMaterialId", ParameterDirection.Input));
+                objLstdbParams.Add(new DbParams(DbType.String, 50, RawType, "@RawType", ParameterDirection.Input));
+                objLstdbParams.Add(new DbParams(DbType.String, 50, ColorId, "@ColorId", ParameterDirection.Input));
+                objLstdbParams.Add(new DbParams(DbType.String, 50, RawQty, "@RawQty", ParameterDirection.Input));
+                objLstdbParams.Add(new DbParams(DbType.String, 50, TotalRaw, "@TotalRaw", ParameterDirection.Input));
+                objLstdbParams.Add(new DbParams(DbType.String, 50, Deliverydate, "@Deliverydate", ParameterDirection.Input));
+                objLstdbParams.Add(new DbParams(DbType.String, 50, WagesforEmp, "@WagesforEmp", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, status, "@status", ParameterDirection.Input));
-                objLstdbParams.Add(new DbParams(DbType.String, 50, TotalRawMaterial, "@TotalRawMaterial", ParameterDirection.Input));
-                objLstdbParams.Add(new DbParams(DbType.String, 50, WagesForEmployee, "@WagesForEmployee", ParameterDirection.Input));
+                objLstdbParams.Add(new DbParams(DbType.String, 50, Avlweight, "@Avlweight", ParameterDirection.Input));
 
 
                 dbReader = ObjDbfactory.GetReader("PRO_UpdateOrderMaster", false, objLstdbParams);
