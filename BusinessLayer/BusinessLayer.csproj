@@ -59,6 +59,7 @@
     <Compile Include="EmployeeFinance.cs" />
     <Compile Include="EmployeeNominee.cs" />
     <Compile Include="EmployeePersonal.cs" />
+    <Compile Include="FinishingProductModel.cs" />
     <Compile Include="OrderMasterInfo.cs" />
     <Compile Include="ProductMaster.cs" />
     <Compile Include="ProductModel.cs" />
