@@ -65,14 +65,14 @@ namespace BusinessLayer
                 objLstDbParams.Add(new DbParams(DbType.String, 50, StatePin, "@ComPin", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, StdCode, "@ComStdCode", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, PhoneNo, "@ComPhone", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.String, 50, Startingdate, "@ComDatestart", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.DateTime, 50, Startingdate, "@ComDatestart", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, BusinessNature, "@ComNature", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, EmailID, "@ComEmail", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 200, Website, "@ComWebsite", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, PFCode, "@ComPFno", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.String, 50, PfDate, "@ComPFdate", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.DateTime, 50, PfDate, "@ComPFdate", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, EsiCode, "@ComESIno", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.String, 50, EsiDate, "@ComESIdate", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.DateTime, 50, EsiDate, "@ComESIdate", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, FactoryAct, "@ComFactoryNo", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, TinNo, "@ComTINno", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, CSTNo, "@ComCSTno", ParameterDirection.Input));
@@ -89,7 +89,7 @@ namespace BusinessLayer
                 objLstDbParams.Add(new DbParams(DbType.String, 50, AuthStdCode, "@CAStdCode", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, AuthPhoneNo, "@CAPhoneno", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, AuthorBloodGroup, "@CAblood", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.String, 50, DOB, "@CADOB", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.DateTime, 50, DOB, "@CADOB", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, AuthEmail, "@CAEmail", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, AuthMobile, "@CAMobile", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, AuthorPanNo, "@CAPan", ParameterDirection.Input));

@@ -7,7 +7,7 @@ GO
 -- Create date: 5th June
 -- Description:	Get dropdown items
 -- =============================================
--- EXEC PRO_GetdropdownItems @MasterCompanyRequired =1
+-- EXEC PRO_GetdropdownItems @MasterCompanyRequired =1,@ClientCompanyRequired =1
 CREATE OR ALTER PROCEDURE [dbo].[PRO_GetdropdownItems]
 	@MasterCompanyRequired BIT = 0,
 	@ClientCompanyRequired  BIT = 0
@@ -17,18 +17,20 @@ BEGIN
 
 	IF(@MasterCompanyRequired = 1) 
 		BEGIN
-			SELECT	id,
+			SELECT	Id,
 					ComCcode as code,
-					ComName as name
+					ComName as name,
+					CAuthorName as authorName
 			FROM	[dbo].[CompanyMasterInfo]
 		END
 
 	IF(@ClientCompanyRequired = 1) 
 		BEGIN
-			SELECT	id,
+			SELECT	Id,
 					ComCcode as code,
-					ComName as name
-			FROM	[dbo].[CompanyMasterInfo]
+					ComCname as name,
+					ComCPname as authorName
+			FROM	ClientMaster
 		END
 END
 GO

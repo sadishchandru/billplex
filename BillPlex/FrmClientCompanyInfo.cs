@@ -37,25 +37,23 @@ namespace BillPlex
                 };
             //ClientCompanyRequest.MasterCompanyList = ClientCompanyRequest.GetDropdownValues(dropDownList);
 
-            var dropdwonList = ClientCompanyRequest.GetDropdownValues(dropDownList);
+            var dropdwonList = ClientCompanyRequest.GetDropdownCollections(dropDownList);
 
 
-            foreach (DropDownItemInfo item in dropdwonList)
+            foreach (DictionaryEntry item in dropdwonList)
             {
-                //                var keyValue = item.Key.ToString();
-                //if (item == "MasterCompanyRequired")
-                //{
-                // var itemList = item.Value as List<DropDownItemInfo>;
+                if (item.Key == "MasterCompanyRequired")
+                {
+                    ClientCompanyRequest.MasterCompanyList = (List<DropDownItemInfo>)item.Value;
+                }
+            }
 
-                //var itemsList = (DropDownItemInfo)item.Value;
-                //drpMainCompany.Properties.Items.Add();
-
-                ClientCompanyRequest.MasterCompanyList = dropdwonList;
-                //int index = 0;
-
-                drpMainCompany.Properties.Items.Add(new ImageComboBoxItem(item.Name));
-
-                //}
+            if (ClientCompanyRequest.MasterCompanyList.Count() > 0)
+            {
+                foreach (DropDownItemInfo item in ClientCompanyRequest.MasterCompanyList)
+                {
+                    drpMainCompany.Properties.Items.Add(new ImageComboBoxItem(item.Name));
+                }
             }
         }
 

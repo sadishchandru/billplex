@@ -1,17 +1,19 @@
-﻿using DevExpress.XtraEditors;
+﻿//using DataLayer;
+using BusinessLayer;
+using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Controls;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-using System.Configuration;
-using BusinessLayer;
-//using DataLayer;
 
 namespace BillPlex
 {
@@ -27,7 +29,69 @@ namespace BillPlex
 
             SubClientRequest = new SubClientCompanyInfo();
 
-            SubClientRequest.ConnectionString= ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
+            SubClientRequest.ConnectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
+
+            Dictionary<string, bool> dropDownList = new Dictionary<string, bool>        {
+                    { "MasterCompanyRequired", true },
+                    {"ClientCompanyRequired",true}
+                };
+            //ClientCompanyRequest.MasterCompanyList = ClientCompanyRequest.GetDropdownValues(dropDownList);
+
+            var dropdwonList = SubClientRequest.GetDropdownCollections(dropDownList);
+
+
+            //SubClientRequest.MasterCompanyList = (List<DropDownItemInfo>)dropdwonList.Cast<Hashtable>()
+            //              .Where(entry => entry.Keys == "MasterCompanyRequired")
+            //              .Select(entry => entry.Value);
+
+
+            foreach (DictionaryEntry item in dropdwonList)
+            {
+                if (item.Key == "MasterCompanyRequired")
+                {
+                    SubClientRequest.MasterCompanyList = (List<DropDownItemInfo>)item.Value;
+                }
+
+                if (item.Key == "ClientCompanyRequired")
+                {
+                    SubClientRequest.ClientCompanyList = (List<DropDownItemInfo>)item.Value;
+                }
+                // SubClientRequest.MasterCompanyList = item;
+
+                //        drpMainCompany.Properties.Items.AddRange(new ImageComboBoxItem[] {
+                //new ImageComboBoxItem(item.Name)});
+                //                var keyValue = item.Key.ToString();
+                //if (item == "MasterCompanyRequired")
+                //{
+                // var itemList = item.Value as List<DropDownItemInfo>;
+
+                //var itemsList = (DropDownItemInfo)item.Value;
+                //drpMainCompany.Properties.Items.Add();
+                //SubClientRequest.MasterCompanyList = dropdwonList;
+                //SubClientRequest.ClientCompanyList = dropdwonList;
+                //int index = 0;
+
+                //drpMainCompany.Properties.Items.Add(new ImageComboBoxItem(item.Name));
+                //drpCCompany.Properties.Items.Add(new ImageComboBoxItem(item.Name));
+                //}
+            }
+
+            if (SubClientRequest.MasterCompanyList.Count() > 0)
+            {
+                foreach (DropDownItemInfo item in SubClientRequest.MasterCompanyList)
+                {
+                    drpMainCompany.Properties.Items.Add(new ImageComboBoxItem(item.Name));
+                }
+            }
+            
+            if (SubClientRequest.ClientCompanyList.Count() > 0)
+            {
+                foreach (DropDownItemInfo item in SubClientRequest.ClientCompanyList)
+                {
+                    drpCCompany.Properties.Items.Add(new ImageComboBoxItem(item.Name));
+                }
+            }
+
         }
 
         private void NewBtn_Click(object sender, EventArgs e)
@@ -43,12 +107,25 @@ namespace BillPlex
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            string selectedMasterItem = (string)drpMainCompany.SelectedItem;
+
+            if (selectedMasterItem != null)
+            {
+                SubClientRequest.MainCompany = SubClientRequest.MasterCompanyList.FirstOrDefault(item => item.Name == selectedMasterItem.ToString())?.Id ?? -1;
+            }
+
+            string selectedClientItem = (string)drpCCompany.SelectedItem;
+
+            if (selectedClientItem != null)
+            {
+                SubClientRequest.ClientCompany = SubClientRequest.ClientCompanyList.FirstOrDefault(item => item.Name == selectedClientItem.ToString())?.Id ?? -1;
+            }
             try
             {
-                SubClientRequest.MainCompany = drpMainCompany.Text;
-                SubClientRequest.Director = drpDirector.Text;
-                SubClientRequest.ClientCompany = drpCCompany.Text;
-                SubClientRequest.ContractorName = drpContractorName.Text;
+                //SubClientRequest.MainCompany = drpMainCompany.Text;
+                SubClientRequest.Director = txtDirector.Text;
+                //SubClientRequest.ClientCompany = drpCCompany.Text;
+                SubClientRequest.ContractorName = txtContName.Text;
                 SubClientRequest.SubCompanyCode = txtCompanyCode.Text;
                 SubClientRequest.SubCompanyName = txtCompanyName.Text;
                 SubClientRequest.OfficeAddress = txtOffAddress.Text;
@@ -104,6 +181,26 @@ namespace BillPlex
         private void drpDirector_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+        //drpMainCompany.SelectedIndexChanged += drpMainCompany_SelectedIndexChanged;
+        private void drpMainCompany_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedItem = (string)drpMainCompany.SelectedItem;
+
+            if (selectedItem != null)
+            {
+                txtDirector.Text = SubClientRequest.MasterCompanyList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.AuthorName ?? "";
+            }
+        }
+
+        private void drpCCompany_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedItem = (string)drpCCompany.SelectedItem;
+
+            if (selectedItem != null)
+            {
+                txtContName.Text = SubClientRequest.ClientCompanyList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.AuthorName ?? "";
+            }
         }
 
         //    private void btnUpdate_Click(object sender, EventArgs e)

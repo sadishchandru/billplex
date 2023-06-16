@@ -10,9 +10,9 @@ namespace BusinessLayer
 {
     public class SubClientCompanyInfo : Common
     {
-        public String MainCompany { get; set; }
+        public Int64 MainCompany { get; set; }
         public String Director { get; set; }
-        public String ClientCompany { get; set; }
+        public Int64 ClientCompany { get; set; }
         public String ContractorName { get; set; }
         public String SubCompanyCode { get; set; }
         public String SubCompanyName { get; set; }
@@ -51,6 +51,8 @@ namespace BusinessLayer
         public String AuthPanNo { get; set; }
         public String AuthPercent { get; set; }
         public String ActiveStatus { get; set; }
+        public List<DropDownItemInfo> MasterCompanyList { get; set; }
+        public List<DropDownItemInfo> ClientCompanyList { get; set; }
 
         #region Update
 

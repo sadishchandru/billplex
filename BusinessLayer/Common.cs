@@ -214,6 +214,45 @@ namespace BusinessLayer
 
             return DropdownItemLists;
         }
+
+        public Hashtable GetDropdownCollections(Dictionary<string, bool> RequiredDropdownFields)
+        {
+
+            dbReader = null;
+            Result = new ResultDetail();
+
+            Hashtable DropdownItemLists = new Hashtable();
+
+            try
+            {
+                InitializeDb();
+
+                List<DbParams> objLstDbParams = new List<DbParams>();
+                foreach (var item in RequiredDropdownFields)
+                {
+                    objLstDbParams.Add(new DbParams(DbType.Boolean, 15, item.Value, "@" + item.Key, ParameterDirection.Input));
+                }
+
+                dbReader = ObjDbfactory.GetReader("PRO_GetdropdownItems", false, objLstDbParams);
+
+                foreach (var item in RequiredDropdownFields)
+                {
+                    DropdownItemLists.Add( item.Key,DropDownItemInfo.PreparedItemByAuthorList(ref dbReader));
+                    dbReader.NextResult();
+                }
+            }
+            catch (Exception ex)
+            {
+                Result.Status = ResultStatus.Error;
+                Result.Message = ex.Message;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+
+            return DropdownItemLists;
+        }
         #endregion
     }
 }
