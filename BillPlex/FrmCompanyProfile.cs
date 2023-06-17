@@ -40,10 +40,10 @@ namespace BillPlex
 
             foreach (var rowHandle in selectedRows)
             {
-                CompanyMasterRequest.Id = (Int32)gridView2.GetRowCellValue(rowHandle, "Id");
+                var Id = gridView2.GetRowCellValue(rowHandle, "Id");
+                CompanyMasterRequest.Id = (int)Id;
+                //CompanyMasterRequest.Id = (Int32)gridView2.GetRowCellValue(rowHandle, "Id");
             }
-
-
             CompanyMasterRequest.Delete();
         }
     }

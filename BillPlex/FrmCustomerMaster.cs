@@ -116,6 +116,11 @@ namespace BillPlex
 
         private void gridControl1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
             var selectedRows = CustomerMaster_GridView.GetSelectedRows();
 
             foreach (var rowHandle in selectedRows)
@@ -146,6 +151,9 @@ namespace BillPlex
                 txtLicenseNo.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "licenseNo");
                 txtWebsite.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "Website");
             }
+            btnAdd.Enabled = false;
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
         }
     }
 }

@@ -48,7 +48,7 @@ namespace BillPlex
             foreach (var rowHandle in selectedRows)
             {
                 var Id = gridView1.GetRowCellValue(rowHandle, "Id");
-                //SubClientRequest.Id = (int)Id;
+                SubClientRequest.Id = (int)Id;
 
             }
 
