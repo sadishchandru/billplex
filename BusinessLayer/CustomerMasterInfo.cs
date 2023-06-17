@@ -87,5 +87,45 @@ namespace BusinessLayer
             }
         }
         #endregion
+
+        #region Delete
+        public void Delete()
+        {
+
+            dbReader = null;
+            Result = new ResultDetail();
+
+            try
+            {
+                InitializeDb();
+
+                // Calling the stored procedure for creating a new Company Profile
+                List<DbParams> objLstDbParams = new List<DbParams>();
+                objLstDbParams.Add(new DbParams(DbType.String, 50, Id, "@Id", ParameterDirection.Input));
+
+                dbReader = ObjDbfactory.GetReader("PRO_DeleteCustomerMasterInfo", false, objLstDbParams);
+
+                while (dbReader.Read())
+                {
+                    Result.Message = ToString(dbReader["ResultMessage"]);
+                    Result.Status = (ResultStatus)ToInteger(dbReader["ResultNo"]);
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                // Display a warning alert
+                // XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
+
+
+        #endregion
     }
 }

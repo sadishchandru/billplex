@@ -31,7 +31,7 @@ namespace BillPlex
         private void btnAdd_Click(object sender, EventArgs e)
         {
             try
-            {
+             {
                     productModelRequest.RawMaterialType = drpRawType.Text;
                     productModelRequest.RawMaterialName = drpRawName.Text;
                     productModelRequest.ProductName = drpProName.Text;
@@ -85,6 +85,40 @@ namespace BillPlex
             txtRawWeight.ResetText();
             txtWages.ResetText();
             ddDate.ResetText();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var selectedRows = grd_ProductModel.GetSelectedRows();
+
+                foreach (var rowHandle in selectedRows)
+                {
+                    productModelRequest.Id = (Int64)grd_ProductModel.GetRowCellValue(rowHandle, "Id");
+                    drpRawType.Text = grd_ProductModel.GetRowCellValue(rowHandle, "RawmaterialTypeId").ToString();
+                    drpRawName.Text = grd_ProductModel.GetRowCellValue(rowHandle, "RawMaterialId").ToString();
+                    drpProName.Text = grd_ProductModel.GetRowCellValue(rowHandle, "ProductId").ToString();
+                    txtModelCode.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "ProductCode");
+                    txtModelName.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "ProductModel");
+                    drpProSize.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "ProductSize");
+                    txtRawStock.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "RawMaterialStock");
+                    txtRawWeight.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "ReqRawMaterial");
+                    txtWages.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "WagesforItem");
+                    var datete = grd_ProductModel.GetRowCellValue(rowHandle, "Date").ToString();
+                    DateTime dat = DateTime.Parse(datete);
+                    ddDate.Text = dat.ToString();
+                }
+                btnAdd.Enabled = false;
+                btnEdit.Enabled = false;
+                btnDelete.Enabled = false;
+                btnUpdate.Enabled = true;
+
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
     }
 }
