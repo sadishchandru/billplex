@@ -26,26 +26,104 @@ namespace BillPlex
             OrderMasterRequest.ConnectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
 
             Dictionary<string, bool> dropDownList = new Dictionary<string, bool>        {
-                    { "CustomerMasterRequired", true }
-                    
+                    {"ProductModelRequest",true},
+                    {"ProductMasterRequest",true},
+                    {"SizeMasterRequest",true},
+                    { "CustomerMasterRequired", true },
+                    { "ColorMasterRequired", true }
                 };
 
             var dropdwonList = OrderMasterRequest.GetDropdownCollections(dropDownList);
 
             foreach (DictionaryEntry item in dropdwonList)
             {
-                if (item.Key == "CustomerMasterRequired")
+                if (item.Key == "ProductModelRequest")
                 {
-                    OrderMasterRequest.OrderMasterList = (List<DropDownItemInfo>)item.Value;
+                    OrderMasterRequest.ProductMasterList = (List<DropDownItemInfo>)item.Value;
+                }
+            }
+            foreach (DictionaryEntry item in dropdwonList)
+            {
+                if (item.Key == "ProductMasterRequest")
+                {
+                    OrderMasterRequest.ProductModelList = (List<DropDownItemInfo>)item.Value;
                 }
             }
 
-            if (OrderMasterRequest.OrderMasterList.Count() > 0)
+            foreach (DictionaryEntry item in dropdwonList)
             {
-                foreach (DropDownItemInfo item in OrderMasterRequest.OrderMasterList)
+                if (item.Key == "SizeMasterRequest")
                 {
-                    drpCustCode.Properties.Items.Add(new ImageComboBoxItem(item.Code));
-                    drpCustName.Properties.Items.Add(new ImageComboBoxItem(item.Name));
+                    OrderMasterRequest.SizeMasterList = (List<DropDownItemInfo>)item.Value;
+                }
+            }
+
+            foreach (DictionaryEntry item in dropdwonList)
+            {
+                if (item.Key == "CustomerMasterRequired")
+                {
+                    OrderMasterRequest.CustomerMasterList = (List<DropDownItemInfo>)item.Value;
+                }
+            }
+
+            foreach (DictionaryEntry item in dropdwonList)
+            {
+                if (item.Key == "ColorMasterRequired")
+                {
+                    OrderMasterRequest.ColourMasterList = (List<DropDownItemInfo>)item.Value;
+                }
+            }
+
+            if (OrderMasterRequest.ProductModelList != null)
+            {
+                if (OrderMasterRequest.ProductModelList.Count() > 0)
+                {
+                    foreach (DropDownItemInfo item in OrderMasterRequest.ProductModelList)
+                    {
+                        drpModelName.Properties.Items.Add(new ImageComboBoxItem(item.Name));
+                        drpModelCode.Properties.Items.Add(new ImageComboBoxItem(item.Code));
+                    }
+                }
+            }
+            if (OrderMasterRequest.ProductMasterList != null)
+            {
+                if (OrderMasterRequest.ProductMasterList.Count() > 0)
+                {
+                    foreach (DropDownItemInfo item in OrderMasterRequest.ProductMasterList)
+                    {
+                        drpProductName.Properties.Items.Add(new ImageComboBoxItem(item.Name));
+                    }
+                }
+            }
+            if (OrderMasterRequest.SizeMasterList != null)
+            {
+                if (OrderMasterRequest.SizeMasterList.Count() > 0)
+                {
+                    foreach (DropDownItemInfo item in OrderMasterRequest.SizeMasterList)
+                    {
+                        drpProductSize.Properties.Items.Add(new ImageComboBoxItem(item.Name));
+                    }
+                }
+            }
+            if (OrderMasterRequest.CustomerMasterList != null)
+            {
+                if (OrderMasterRequest.CustomerMasterList.Count() > 0)
+                {
+                    foreach (DropDownItemInfo item in OrderMasterRequest.CustomerMasterList)
+                    {
+                        drpCustCode.Properties.Items.Add(new ImageComboBoxItem(item.Code));
+                        drpCustName.Properties.Items.Add(new ImageComboBoxItem(item.Name));
+                    }
+                }
+            }
+            if (OrderMasterRequest.ColourMasterList != null)
+            {
+                if (OrderMasterRequest.ColourMasterList.Count() > 0)
+                {
+                    foreach (DropDownItemInfo item in OrderMasterRequest.ColourMasterList)
+                    {
+                        drpProColor.Properties.Items.Add(new ImageComboBoxItem(item.Name));
+                    }
                 }
             }
         }
@@ -131,36 +209,47 @@ namespace BillPlex
         {
             try
             {
-                var selectedItem = drpCustCode.EditValue;
                 var selectedItems = drpCustName.Text;
-
-                if (selectedItem != null)
-                {
-                    OrderMasterRequest.CustomerCodeId = OrderMasterRequest.OrderMasterList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.Id ?? -1;
-                }
 
                 string selectedMasterItem = (string)drpCustName.SelectedItem;
 
                 if (selectedMasterItem != null)
                 {
-                    OrderMasterRequest.CustomerId = OrderMasterRequest.OrderMasterList.FirstOrDefault(item => item.Name == selectedMasterItem.ToString())?.Id ?? -1;
+                    OrderMasterRequest.CustomerId = OrderMasterRequest.CustomerMasterList.FirstOrDefault(item => item.Name == selectedMasterItem.ToString())?.Id ?? -1;
+                }
+                var selectedPNameItems = drpProductName.Text;
+                
+                string selectedMastersItem = (string)drpProductName.SelectedItem;
+
+                if (selectedMastersItem != null)
+                {
+                    OrderMasterRequest.ProductNameId = OrderMasterRequest.ProductMasterList.FirstOrDefault(item => item.Name == selectedMastersItem.ToString())?.Id ?? -1;
+                }
+
+                var selectedProColorItems = drpProColor.Text;
+
+                string selectedCMasterItem = (string)drpProColor.SelectedItem;
+
+                if (selectedCMasterItem != null)
+                {
+                    OrderMasterRequest.ColorId = OrderMasterRequest.ColourMasterList.FirstOrDefault(item => item.Name == selectedCMasterItem.ToString())?.Id ?? -1;
                 }
 
                 OrderMasterRequest.OrderNo = txtOrderNo.Text;
                 OrderMasterRequest.OrderDate = ddOrderDate.Text;
-                //OrderMasterRequest.CustomerCodeId = drpCustCode.Text;
+                OrderMasterRequest.CustomerCodeId = drpCustCode.Text;
                 //OrderMasterRequest.CustomerId = int.Parse(drpCustName.Text);
-                OrderMasterRequest.ProductNameId = int.Parse(drpProductName.Text);
-                OrderMasterRequest.ProductModel = int.Parse(drpModelName.Text);
-                OrderMasterRequest.ProductCode = int.Parse(drpModelCode.Text);
-                OrderMasterRequest.ProductSize = int.Parse(drpProductSize.Text);
+                //OrderMasterRequest.ProductNameId = int.Parse(drpProductName.Text);
+                OrderMasterRequest.ProductModel = drpModelName.Text;
+                OrderMasterRequest.ProductCode = drpModelCode.Text;
+                OrderMasterRequest.ProductSize = drpProductSize.Text;
                 OrderMasterRequest.Quantity = txtMaterialwt.Text;
                 OrderMasterRequest.RawType = txtType.Text;
                 OrderMasterRequest.RawQty = txtRawmatName.Text;
-                OrderMasterRequest.ColorId = int.Parse(drpProColor.Text);
+                //OrderMasterRequest.ColorId = int.Parse(drpProColor.Text);
                 OrderMasterRequest.TotalRaw = txtQuantity.Text;
                 OrderMasterRequest.Deliverydate = ddProDate.Text;
-                OrderMasterRequest.status = int.Parse(drpStatus.Text);
+                OrderMasterRequest.status = drpStatus.Text;
                 OrderMasterRequest.TotalRaw = txtTotRawmat.Text;
                 OrderMasterRequest.WagesforEmp = txtWages.Text;
                 OrderMasterRequest.Update();
@@ -205,12 +294,12 @@ namespace BillPlex
 
         private void drpCustCode_Click(object sender, EventArgs e)
         {
-            string selectedItem = (string)drpCustCode.SelectedItem;
+            
+        }
 
-            if (selectedItem != null)
-            {
-                Text = OrderMasterRequest.CustomerMasterList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.AuthorName ?? "";
-            }
+        private void drpProductSize_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

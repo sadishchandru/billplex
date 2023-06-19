@@ -13,26 +13,27 @@ namespace BusinessLayer
         public Int64 Id { get; set; }
         public string OrderNo { get; set; }
         public string OrderDate { get; set; }
-        public Int64 CustomerCodeId { get; set; }
+        public string CustomerCodeId { get; set; }
         public Int64 CustomerId { get; set; }
         public string ProductId { get; set; }
-        public int ProductNameId { get; set; }
-        public int ProductModel { get; set; }
-        public int ProductCode { get; set; }
-        public int ProductSize { get; set; }
+        public Int64 ProductNameId { get; set; }
+        public string ProductModel { get; set; }
+        public string ProductCode { get; set; }
+        public string ProductSize { get; set; }
         public string Quantity { get; set; }
         public int RawMaterialId { get; set; }
         public string RawType { get; set; }
-        public int ColorId { get; set; }
+        public Int64 ColorId { get; set; }
         public string RawQty { get; set; }
         public string TotalRaw { get; set; }
         public string Deliverydate { get; set; }
         public string WagesforEmp { get; set; }
-        public int status { get; set; }
-
-        public List<DropDownItemInfo> OrderMasterList { get; set; }
+        public string status { get; set; }
 
         public List<DropDownItemInfo> CustomerMasterList { get; set; }
+        public List<DropDownItemInfo> ProductMasterList { get; set; }
+        public List<DropDownItemInfo> ProductModelList { get; set; }
+        public List<DropDownItemInfo> ColourMasterList { get; set; }
 
         #region Update
         public void Update()
@@ -46,7 +47,7 @@ namespace BusinessLayer
 
                 List<DbParams> objLstdbParams = new List<DbParams>();
                 objLstdbParams.Add(new DbParams(DbType.String, 50, OrderNo, "@OrderNo", ParameterDirection.Input));
-                objLstdbParams.Add(new DbParams(DbType.Date, 50, OrderDate, "@OrderDate", ParameterDirection.Input));
+                objLstdbParams.Add(new DbParams(DbType.DateTime, 50, OrderDate, "@OrderDate", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, CustomerCodeId, "@Customcode", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, CustomerId, "@CustomerId", ParameterDirection.Input));
                 //objLstdbParams.Add(new DbParams(DbType.String, 50, ProductId, "@ProductId", ParameterDirection.Input));
@@ -55,12 +56,12 @@ namespace BusinessLayer
                 objLstdbParams.Add(new DbParams(DbType.String, 50, ProductCode, "@productcode", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, ProductSize, "@productsize", ParameterDirection.Input));               
                 objLstdbParams.Add(new DbParams(DbType.String, 50, Quantity, "@Quantity", ParameterDirection.Input));
-                objLstdbParams.Add(new DbParams(DbType.String, 50, RawMaterialId, "@RawMaterialId", ParameterDirection.Input));
+                //objLstdbParams.Add(new DbParams(DbType.String, 50, RawMaterialId, "@RawMaterialId", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, RawType, "@RawType", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, ColorId, "@ColorId", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, RawQty, "@RawQty", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, TotalRaw, "@TotalRaw", ParameterDirection.Input));
-                objLstdbParams.Add(new DbParams(DbType.Date, 50, Deliverydate, "@Delivarydate", ParameterDirection.Input));
+                objLstdbParams.Add(new DbParams(DbType.DateTime, 50, Deliverydate, "@Delivarydate", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, WagesforEmp, "@WagesforEmp", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, status, "@status", ParameterDirection.Input));
            

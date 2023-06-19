@@ -37,17 +37,8 @@ namespace BillPlex
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
-            this.btnNew = new DevExpress.XtraEditors.SimpleButton();
-            this.btnExit = new DevExpress.XtraEditors.SimpleButton();
-            this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
-            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
-            this.btnClear = new DevExpress.XtraEditors.SimpleButton();
-            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
-            this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
-            this.radioGroup1 = new DevExpress.XtraEditors.RadioGroup();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colOrderNo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colOrderdate = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -66,6 +57,15 @@ namespace BillPlex
             this.colDelivarydate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colWagesforEmp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
+            this.btnNew = new DevExpress.XtraEditors.SimpleButton();
+            this.btnExit = new DevExpress.XtraEditors.SimpleButton();
+            this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
+            this.btnClear = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
+            this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
+            this.radioGroup1 = new DevExpress.XtraEditors.RadioGroup();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -93,7 +93,7 @@ namespace BillPlex
             this.labelControl1.Location = new System.Drawing.Point(753, 31);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(198, 36);
+            this.labelControl1.Size = new System.Drawing.Size(170, 31);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Order Master";
             // 
@@ -129,6 +129,19 @@ namespace BillPlex
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
+            // sqlDataSource1
+            // 
+            this.sqlDataSource1.ConnectionName = "BillPlex";
+            this.sqlDataSource1.Name = "sqlDataSource1";
+            storedProcQuery1.Name = "PRO_GetOrderMaster";
+            queryParameter1.Name = "@SearchKey";
+            queryParameter1.Type = typeof(string);
+            storedProcQuery1.Parameters.Add(queryParameter1);
+            storedProcQuery1.StoredProcName = "PRO_GetOrderMaster";
+            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
+            storedProcQuery1});
+            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
+            // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -153,132 +166,6 @@ namespace BillPlex
             this.gridView1.DetailHeight = 284;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.btnRefresh.Appearance.Options.UseFont = true;
-            this.btnRefresh.Location = new System.Drawing.Point(1386, 54);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(97, 82);
-            this.btnRefresh.TabIndex = 58;
-            this.btnRefresh.Text = "REFRESH";
-            // 
-            // btnNew
-            // 
-            this.btnNew.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.Appearance.Options.UseFont = true;
-            this.btnNew.Location = new System.Drawing.Point(1396, 168);
-            this.btnNew.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(78, 30);
-            this.btnNew.TabIndex = 57;
-            this.btnNew.Text = "NEW";
-            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.btnExit.Appearance.Options.UseFont = true;
-            this.btnExit.Location = new System.Drawing.Point(1396, 433);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(78, 30);
-            this.btnExit.TabIndex = 56;
-            this.btnExit.Text = "EXIT";
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.btnUpdate.Appearance.Options.UseFont = true;
-            this.btnUpdate.Location = new System.Drawing.Point(1396, 302);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(78, 30);
-            this.btnUpdate.TabIndex = 55;
-            this.btnUpdate.Text = "UPDATE";
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.btnDelete.Appearance.Options.UseFont = true;
-            this.btnDelete.Location = new System.Drawing.Point(1396, 345);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(78, 30);
-            this.btnDelete.TabIndex = 54;
-            this.btnDelete.Text = "DELETE";
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnClear
-            // 
-            this.btnClear.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.btnClear.Appearance.Options.UseFont = true;
-            this.btnClear.Location = new System.Drawing.Point(1396, 390);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(78, 30);
-            this.btnClear.TabIndex = 53;
-            this.btnClear.Text = "CLEAR";
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Appearance.Options.UseFont = true;
-            this.btnAdd.Location = new System.Drawing.Point(1396, 214);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(78, 30);
-            this.btnAdd.TabIndex = 52;
-            this.btnAdd.Text = "ADD";
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.btnEdit.Appearance.Options.UseFont = true;
-            this.btnEdit.Location = new System.Drawing.Point(1396, 260);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(78, 30);
-            this.btnEdit.TabIndex = 51;
-            this.btnEdit.Text = "EDIT";
-            // 
-            // radioGroup1
-            // 
-            this.radioGroup1.Location = new System.Drawing.Point(764, 28);
-            this.radioGroup1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.radioGroup1.Name = "radioGroup1";
-            this.radioGroup1.Properties.Appearance.BackColor = System.Drawing.SystemColors.Control;
-            this.radioGroup1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioGroup1.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.radioGroup1.Properties.Appearance.Options.UseBackColor = true;
-            this.radioGroup1.Properties.Appearance.Options.UseFont = true;
-            this.radioGroup1.Properties.Appearance.Options.UseForeColor = true;
-            this.radioGroup1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.radioGroup1.Properties.ColumnIndent = 5;
-            this.radioGroup1.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.radioGroup1.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Open", true, ((short)(1)), "open"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Cancel", true, ((short)(1)), "cancel"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Complete", true, ((short)(1)), "complete"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "All", true, ((short)(1)), "all")});
-            this.radioGroup1.Properties.ItemsLayout = DevExpress.XtraEditors.RadioGroupItemsLayout.Flow;
-            this.radioGroup1.Size = new System.Drawing.Size(502, 78);
-            this.radioGroup1.TabIndex = 0;
-            // 
-            // sqlDataSource1
-            // 
-            this.sqlDataSource1.ConnectionName = "BillPlex";
-            this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery1.Name = "PRO_GetOrderMaster";
-            queryParameter1.Name = "@SearchKey";
-            queryParameter1.Type = typeof(string);
-            storedProcQuery1.Parameters.Add(queryParameter1);
-            storedProcQuery1.StoredProcName = "PRO_GetOrderMaster";
-            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery1});
-            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // colId
             // 
@@ -441,6 +328,119 @@ namespace BillPlex
             this.colStatus.Visible = true;
             this.colStatus.VisibleIndex = 17;
             this.colStatus.Width = 86;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnRefresh.Appearance.Options.UseFont = true;
+            this.btnRefresh.Location = new System.Drawing.Point(1386, 54);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(97, 82);
+            this.btnRefresh.TabIndex = 58;
+            this.btnRefresh.Text = "REFRESH";
+            // 
+            // btnNew
+            // 
+            this.btnNew.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNew.Appearance.Options.UseFont = true;
+            this.btnNew.Location = new System.Drawing.Point(1396, 168);
+            this.btnNew.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(78, 30);
+            this.btnNew.TabIndex = 57;
+            this.btnNew.Text = "NEW";
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnExit.Appearance.Options.UseFont = true;
+            this.btnExit.Location = new System.Drawing.Point(1396, 433);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(78, 30);
+            this.btnExit.TabIndex = 56;
+            this.btnExit.Text = "EXIT";
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnUpdate.Appearance.Options.UseFont = true;
+            this.btnUpdate.Location = new System.Drawing.Point(1396, 302);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(78, 30);
+            this.btnUpdate.TabIndex = 55;
+            this.btnUpdate.Text = "UPDATE";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnDelete.Appearance.Options.UseFont = true;
+            this.btnDelete.Location = new System.Drawing.Point(1396, 345);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(78, 30);
+            this.btnDelete.TabIndex = 54;
+            this.btnDelete.Text = "DELETE";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnClear.Appearance.Options.UseFont = true;
+            this.btnClear.Location = new System.Drawing.Point(1396, 390);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(78, 30);
+            this.btnClear.TabIndex = 53;
+            this.btnClear.Text = "CLEAR";
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Appearance.Options.UseFont = true;
+            this.btnAdd.Location = new System.Drawing.Point(1396, 214);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(78, 30);
+            this.btnAdd.TabIndex = 52;
+            this.btnAdd.Text = "ADD";
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnEdit.Appearance.Options.UseFont = true;
+            this.btnEdit.Location = new System.Drawing.Point(1396, 260);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(78, 30);
+            this.btnEdit.TabIndex = 51;
+            this.btnEdit.Text = "EDIT";
+            // 
+            // radioGroup1
+            // 
+            this.radioGroup1.Location = new System.Drawing.Point(764, 28);
+            this.radioGroup1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radioGroup1.Name = "radioGroup1";
+            this.radioGroup1.Properties.Appearance.BackColor = System.Drawing.SystemColors.Control;
+            this.radioGroup1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioGroup1.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.radioGroup1.Properties.Appearance.Options.UseBackColor = true;
+            this.radioGroup1.Properties.Appearance.Options.UseFont = true;
+            this.radioGroup1.Properties.Appearance.Options.UseForeColor = true;
+            this.radioGroup1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.radioGroup1.Properties.ColumnIndent = 5;
+            this.radioGroup1.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.radioGroup1.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Open", true, ((short)(1)), "open"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Cancel", true, ((short)(1)), "cancel"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Complete", true, ((short)(1)), "complete"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "All", true, ((short)(1)), "all")});
+            this.radioGroup1.Properties.ItemsLayout = DevExpress.XtraEditors.RadioGroupItemsLayout.Flow;
+            this.radioGroup1.Size = new System.Drawing.Size(502, 78);
+            this.radioGroup1.TabIndex = 0;
             // 
             // FrmOrderMaster
             // 

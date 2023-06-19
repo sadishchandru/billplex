@@ -22,7 +22,7 @@ CREATE or ALTER   PROCEDURE [dbo].[PRO_UpdateOrderMaster]
 	@productsize varchar(100) = '',
 	@Quantity  varchar(100)='',
 	@RawType  varchar(100)='',
-	@RawmaterialId  INT='',	
+	--@RawmaterialId  INT='',	
 	@ColorId  INT='',
 	@RawQty  varchar(100)='',
 	@Delivarydate  date=NULL, 
@@ -33,7 +33,7 @@ CREATE or ALTER   PROCEDURE [dbo].[PRO_UpdateOrderMaster]
 	--@totalWt varchar(100) = '',
 	--@AvlQty  varchar(250)='',
 	--@Avlweight  varchar(100) ='',
-	@updateOn datetime = getdate
+	@updateOn datetime = null
 AS
 BEGIN
 	
@@ -56,7 +56,7 @@ BEGIN
 			,productcode
 			,productsize
 			,Quantity
-			,RawmaterialId
+			--,RawmaterialId
 			,RawType
 			,ColorId
 			,RawQty
@@ -78,7 +78,7 @@ BEGIN
 				@productcode,
 				@productsize,
 				@Quantity,
-				@RawmaterialId,
+				--@RawmaterialId,
 				@RawType,
 				@ColorId,
 				@RawQty,
