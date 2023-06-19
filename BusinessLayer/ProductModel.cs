@@ -34,7 +34,7 @@ namespace BusinessLayer
                 objLstdbParams.Add(new DbParams(DbType.String, 50, Id, "@Id", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, RawMaterialType, "@RawmaterialTypeId", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, RawMaterialName, "@RawMaterialId", ParameterDirection.Input));
-                objLstdbParams.Add(new DbParams(DbType.String, 50, ProductName, "@ProductId", ParameterDirection.Input));
+                objLstdbParams.Add(new DbParams(DbType.String, 50, ProductName, "@ProductNameId", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, ModelCode, "@ProductCode", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, ModelName, "@ProductModel", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, ProductSize, "@ProductSize", ParameterDirection.Input));

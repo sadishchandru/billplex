@@ -7,11 +7,12 @@ GO
 -- Create date: 5th June
 -- Description:	Get dropdown items
 -- =============================================
--- EXEC PRO_GetdropdownItems @MasterCompanyRequired =1,@ClientCompanyRequired =1
+-- EXEC PRO_GetdropdownItems @MasterCompanyRequired =1,@CustomerMasterRequired =1
 CREATE OR ALTER PROCEDURE [dbo].[PRO_GetdropdownItems]
 	@MasterCompanyRequired BIT = 0,
 	@ClientCompanyRequired  BIT = 0,
-	@SUbClientCompanyRequired BIT = 0
+	@SUbClientCompanyRequired BIT = 0,
+	@CustomerMasterRequired BIT = 0
 AS 
 BEGIN
     SET NOCOUNT ON;
@@ -41,6 +42,15 @@ BEGIN
 					SubComName as name,
 					AuthorName as authorName
 			FROM	SubClientMaster
+		END
+
+	IF(@CustomerMasterRequired = 1) 
+		BEGIN
+			SELECT	Id,
+					Code as code,
+					Name as name,
+					'' as authorName
+			FROM	CustomerMaster
 		END
 END
 GO

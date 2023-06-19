@@ -14,20 +14,26 @@ CREATE or ALTER   PROCEDURE [dbo].[PRO_UpdateOrderMaster]
 	@Id  BIGINT= 0,
 	@OrderNo  varchar(100)='',
 	@Orderdate  date = NULL, 
-	@CustomcodeId  varchar(100)='',
+	@Customcode  varchar(100)='',
 	@CustomerId  INT = '',
 	@ProductNameId  INT='',
+	@productmodel varchar(100) = '',
+	@productcode varchar(100) = '',
+	@productsize varchar(100) = '',
 	@Quantity  varchar(100)='',
-	@RawmaterialId  INT='',
 	@RawType  varchar(100)='',
+	@RawmaterialId  INT='',	
 	@ColorId  INT='',
 	@RawQty  varchar(100)='',
-	@TotalRaw  varchar(100) ='',
 	@Delivarydate  date=NULL, 
-	@WagesforEmp  varchar(100)='',
 	@Status  INT='', 
-	@AvlQty  varchar(250)='',
-	@Avlweight  varchar(100) ='' 
+	@TotalRaw  varchar(100) ='',
+	@WagesforEmp  varchar(100)='',
+
+	--@totalWt varchar(100) = '',
+	--@AvlQty  varchar(250)='',
+	--@Avlweight  varchar(100) ='',
+	@updateOn datetime = getdate
 AS
 BEGIN
 	
@@ -41,42 +47,49 @@ BEGIN
 		INSERT INTO OrderMaster
 		(		
 			
-				[OrderNo],
-				[Orderdate],
-				[CustomcodeId],
-				[CustomerId],
-				[ProductNameId],
-				[Quantity],
-				[RawmaterialId],
-				[RawType],
-				[ColorId],
-				[RawQty],
-				[TotalRaw],
-				[Delivarydate],
-				[WagesforEmp],
-				[Status],
-				[AvlQty],
-				[Avlweight]
+			OrderNo
+			,Orderdate
+			,Customcode
+			,CustomerId
+			,ProductNameId
+			,productmodel
+			,productcode
+			,productsize
+			,Quantity
+			,RawmaterialId
+			,RawType
+			,ColorId
+			,RawQty
+			,TotalRaw
+			--,totalWt
+			,Delivarydate
+			,WagesforEmp
+			,Status
+			--,AvlQty
+			--,Avlweight
 		) VALUES
 		(
-				
-				
 				@OrderNo,
 				@Orderdate,
-				@CustomcodeId,
+				@Customcode,
 				@CustomerId,
 				@ProductNameId,
+				@productmodel,
+				@productcode,
+				@productsize,
 				@Quantity,
 				@RawmaterialId,
 				@RawType,
 				@ColorId,
 				@RawQty,
 				@TotalRaw,
+				--@totalWt,
 				@Delivarydate,
 				@WagesforEmp,
-				@Status,
-				@AvlQty,
-				@Avlweight
+				@Status
+				--@AvlQty,
+				--@Avlweight
+				
 		)
 
 		SET @ResultMessage = 'Order Master Added Successfully';

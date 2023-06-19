@@ -67,10 +67,15 @@ namespace BillPlex
             {
                 var id = grd_ProductModel.GetRowCellValue(rowHandle, "Id");
 
-                productModelRequest.Id = (int)id;
+                productModelRequest.Id = (Int64)id;
             }
 
             productModelRequest.Delete();
+
+            if (productModelRequest.Result.Status == ResultStatus.Success)
+            {
+                XtraMessageBox.Show(productModelRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -111,7 +116,7 @@ namespace BillPlex
                 }
                 btnAdd.Enabled = false;
                 btnEdit.Enabled = false;
-                btnDelete.Enabled = false;
+                btnDelete.Enabled = true;
                 btnUpdate.Enabled = true;
 
             }
