@@ -37,30 +37,33 @@ namespace BillPlex
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
+            this.DrpModelName = new DevExpress.XtraEditors.TextEdit();
+            this.DrpDurationPeriod = new DevExpress.XtraEditors.TextEdit();
+            this.DrpModelSize = new DevExpress.XtraEditors.TextEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
-            this.dropDownButton2 = new DevExpress.XtraEditors.DropDownButton();
-            this.dropDownButton3 = new DevExpress.XtraEditors.DropDownButton();
-            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton9 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.simpleButtonProductName = new DevExpress.XtraEditors.SimpleButton();
+            this.DrpProductName = new DevExpress.XtraEditors.CheckedComboBoxEdit();
+            this.DrpModelCode = new DevExpress.XtraEditors.CheckedComboBoxEdit();
+            this.DDdate = new DevExpress.XtraEditors.DateTimeOffsetEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DrpModelName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DrpDurationPeriod.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DrpModelSize.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DrpProductName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DrpModelCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DDdate.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -118,7 +121,7 @@ namespace BillPlex
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(463, 144);
+            this.labelControl5.Location = new System.Drawing.Point(489, 145);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(68, 16);
             this.labelControl5.TabIndex = 4;
@@ -128,7 +131,7 @@ namespace BillPlex
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(463, 178);
+            this.labelControl6.Location = new System.Drawing.Point(490, 176);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(101, 16);
             this.labelControl6.TabIndex = 5;
@@ -144,26 +147,26 @@ namespace BillPlex
             this.labelControl7.TabIndex = 6;
             this.labelControl7.Text = "Date";
             // 
-            // textEdit1
+            // DrpModelName
             // 
-            this.textEdit1.Location = new System.Drawing.Point(178, 213);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(100, 20);
-            this.textEdit1.TabIndex = 14;
+            this.DrpModelName.Location = new System.Drawing.Point(178, 213);
+            this.DrpModelName.Name = "DrpModelName";
+            this.DrpModelName.Size = new System.Drawing.Size(214, 20);
+            this.DrpModelName.TabIndex = 14;
             // 
-            // textEdit3
+            // DrpDurationPeriod
             // 
-            this.textEdit3.Location = new System.Drawing.Point(600, 175);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(100, 20);
-            this.textEdit3.TabIndex = 16;
+            this.DrpDurationPeriod.Location = new System.Drawing.Point(629, 174);
+            this.DrpDurationPeriod.Name = "DrpDurationPeriod";
+            this.DrpDurationPeriod.Size = new System.Drawing.Size(232, 20);
+            this.DrpDurationPeriod.TabIndex = 16;
             // 
-            // textEdit4
+            // DrpModelSize
             // 
-            this.textEdit4.Location = new System.Drawing.Point(600, 138);
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Size = new System.Drawing.Size(100, 20);
-            this.textEdit4.TabIndex = 17;
+            this.DrpModelSize.Location = new System.Drawing.Point(629, 141);
+            this.DrpModelSize.Name = "DrpModelSize";
+            this.DrpModelSize.Size = new System.Drawing.Size(232, 20);
+            this.DrpModelSize.TabIndex = 17;
             // 
             // panelControl2
             // 
@@ -176,32 +179,6 @@ namespace BillPlex
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(449, 54);
             this.panelControl2.TabIndex = 18;
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Appearance.BackColor = System.Drawing.Color.Silver;
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton2.Appearance.Options.UseBackColor = true;
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.Location = new System.Drawing.Point(101, 17);
-            this.simpleButton2.LookAndFeel.SkinName = "DevExpress Style";
-            this.simpleButton2.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Style3D;
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton2.TabIndex = 1;
-            this.simpleButton2.Text = "Edit";
-            // 
-            // simpleButton3
-            // 
-            this.simpleButton3.Appearance.BackColor = System.Drawing.Color.Silver;
-            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton3.Appearance.Options.UseBackColor = true;
-            this.simpleButton3.Appearance.Options.UseFont = true;
-            this.simpleButton3.Location = new System.Drawing.Point(182, 17);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton3.TabIndex = 2;
-            this.simpleButton3.Text = "Update";
             // 
             // simpleButton4
             // 
@@ -217,54 +194,6 @@ namespace BillPlex
             this.simpleButton4.TabIndex = 3;
             this.simpleButton4.Text = "Delete";
             this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
-            // 
-            // gridControl1
-            // 
-            this.gridControl1.Location = new System.Drawing.Point(3, 391);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1331, 380);
-            this.gridControl1.TabIndex = 19;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            // 
-            // dropDownButton1
-            // 
-            this.dropDownButton1.Location = new System.Drawing.Point(178, 144);
-            this.dropDownButton1.Name = "dropDownButton1";
-            this.dropDownButton1.Size = new System.Drawing.Size(135, 23);
-            this.dropDownButton1.TabIndex = 20;
-            this.dropDownButton1.Text = "dropDownButton1";
-            this.dropDownButton1.Click += new System.EventHandler(this.dropDownButton1_Click);
-            // 
-            // dropDownButton2
-            // 
-            this.dropDownButton2.Location = new System.Drawing.Point(178, 184);
-            this.dropDownButton2.Name = "dropDownButton2";
-            this.dropDownButton2.Size = new System.Drawing.Size(135, 23);
-            this.dropDownButton2.TabIndex = 21;
-            this.dropDownButton2.Text = "dropDownButton2";
-            // 
-            // dropDownButton3
-            // 
-            this.dropDownButton3.Location = new System.Drawing.Point(848, 93);
-            this.dropDownButton3.Name = "dropDownButton3";
-            this.dropDownButton3.Size = new System.Drawing.Size(135, 23);
-            this.dropDownButton3.TabIndex = 22;
-            this.dropDownButton3.Text = "dropDownButton3";
-            // 
-            // simpleButton6
-            // 
-            this.simpleButton6.Location = new System.Drawing.Point(334, 144);
-            this.simpleButton6.Name = "simpleButton6";
-            this.simpleButton6.Size = new System.Drawing.Size(31, 23);
-            this.simpleButton6.TabIndex = 23;
-            this.simpleButton6.Text = "...";
             // 
             // simpleButton8
             // 
@@ -345,20 +274,97 @@ namespace BillPlex
             this.simpleButton9.TabIndex = 27;
             this.simpleButton9.Text = "Clear";
             // 
+            // simpleButton3
+            // 
+            this.simpleButton3.Appearance.BackColor = System.Drawing.Color.Silver;
+            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton3.Appearance.Options.UseBackColor = true;
+            this.simpleButton3.Appearance.Options.UseFont = true;
+            this.simpleButton3.Location = new System.Drawing.Point(182, 17);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton3.TabIndex = 2;
+            this.simpleButton3.Text = "Update";
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Appearance.BackColor = System.Drawing.Color.Silver;
+            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton2.Appearance.Options.UseBackColor = true;
+            this.simpleButton2.Appearance.Options.UseFont = true;
+            this.simpleButton2.Location = new System.Drawing.Point(101, 17);
+            this.simpleButton2.LookAndFeel.SkinName = "DevExpress Style";
+            this.simpleButton2.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Style3D;
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton2.TabIndex = 1;
+            this.simpleButton2.Text = "Edit";
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.Location = new System.Drawing.Point(3, 391);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(1331, 380);
+            this.gridControl1.TabIndex = 19;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            // 
+            // simpleButtonProductName
+            // 
+            this.simpleButtonProductName.Location = new System.Drawing.Point(398, 144);
+            this.simpleButtonProductName.Name = "simpleButtonProductName";
+            this.simpleButtonProductName.Size = new System.Drawing.Size(31, 19);
+            this.simpleButtonProductName.TabIndex = 23;
+            this.simpleButtonProductName.Text = "...";
+            // 
+            // DrpProductName
+            // 
+            this.DrpProductName.Location = new System.Drawing.Point(178, 143);
+            this.DrpProductName.Name = "DrpProductName";
+            this.DrpProductName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.DrpProductName.Size = new System.Drawing.Size(214, 20);
+            this.DrpProductName.TabIndex = 24;
+            // 
+            // DrpModelCode
+            // 
+            this.DrpModelCode.Location = new System.Drawing.Point(178, 177);
+            this.DrpModelCode.Name = "DrpModelCode";
+            this.DrpModelCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.DrpModelCode.Size = new System.Drawing.Size(214, 20);
+            this.DrpModelCode.TabIndex = 25;
+            // 
+            // DDdate
+            // 
+            this.DDdate.EditValue = null;
+            this.DDdate.Location = new System.Drawing.Point(838, 95);
+            this.DDdate.Name = "DDdate";
+            this.DDdate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.DDdate.Size = new System.Drawing.Size(138, 20);
+            this.DDdate.TabIndex = 27;
+            // 
             // IncentiveMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1540, 824);
-            this.Controls.Add(this.simpleButton6);
-            this.Controls.Add(this.dropDownButton3);
-            this.Controls.Add(this.dropDownButton2);
-            this.Controls.Add(this.dropDownButton1);
+            this.Controls.Add(this.DDdate);
+            this.Controls.Add(this.DrpModelCode);
+            this.Controls.Add(this.DrpProductName);
+            this.Controls.Add(this.simpleButtonProductName);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.panelControl2);
-            this.Controls.Add(this.textEdit4);
-            this.Controls.Add(this.textEdit3);
-            this.Controls.Add(this.textEdit1);
+            this.Controls.Add(this.DrpModelSize);
+            this.Controls.Add(this.DrpDurationPeriod);
+            this.Controls.Add(this.DrpModelName);
             this.Controls.Add(this.labelControl7);
             this.Controls.Add(this.labelControl6);
             this.Controls.Add(this.labelControl5);
@@ -371,13 +377,16 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DrpModelName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DrpDurationPeriod.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DrpModelSize.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DrpProductName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DrpModelCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DDdate.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -393,20 +402,20 @@ namespace BillPlex
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl7;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
+        private DevExpress.XtraEditors.TextEdit DrpModelName;
+        private DevExpress.XtraEditors.TextEdit DrpDurationPeriod;
+        private DevExpress.XtraEditors.TextEdit DrpModelSize;
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraEditors.DropDownButton dropDownButton1;
-        private DevExpress.XtraEditors.DropDownButton dropDownButton2;
-        private DevExpress.XtraEditors.DropDownButton dropDownButton3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton6;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonProductName;
         private DevExpress.XtraEditors.SimpleButton simpleButton8;
         private DevExpress.XtraEditors.SimpleButton simpleButton9;
+        private DevExpress.XtraEditors.CheckedComboBoxEdit DrpProductName;
+        private DevExpress.XtraEditors.CheckedComboBoxEdit DrpModelCode;
+        private DevExpress.XtraEditors.DateTimeOffsetEdit DDdate;
     }
 }
