@@ -22,6 +22,7 @@ namespace BusinessLayer
                 InitializeDb();
 
                 List<DbParams> objLstdbParams = new List<DbParams>();
+                objLstdbParams.Add(new DbParams(DbType.String, 50, Id, "@Id", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, ProductName, "@Productmodel", ParameterDirection.Input));
 
                 dbReader = ObjDbfactory.GetReader("PRO_UpdateProductmodeltemp", false, objLstdbParams);
@@ -43,5 +44,41 @@ namespace BusinessLayer
                 CloseConnection();
             }
         }
+
+        #region Delete
+
+        public void Delete()
+        {
+            dbReader = null;
+            Result = new ResultDetail();
+
+            try
+            {
+                InitializeDb();
+
+                List<DbParams> objLstdbParams = new List<DbParams>();
+                objLstdbParams.Add(new DbParams(DbType.String, 50, Id, "@Id", ParameterDirection.Input));
+
+                dbReader = ObjDbfactory.GetReader("PRO_DeleteProductModelTemp", false, objLstdbParams);
+
+                while (dbReader.Read())
+                {
+                    Result.Message = ToString(dbReader["ResultMessage"]);
+                    Result.Status = (ResultStatus)ToInteger(dbReader["ResultNo"]);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                // Display a warning alert
+                // XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
+
+        #endregion
     }
 }

@@ -29,10 +29,17 @@ namespace BillPlex
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery3 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter3 = new DevExpress.DataAccess.Sql.QueryParameter();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProductMaster));
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
+            this.grd_productmaster = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProductmodel = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtSearch = new DevExpress.XtraEditors.TextEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.svgImageBox1 = new DevExpress.XtraEditors.SvgImageBox();
@@ -50,7 +57,7 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_productmaster)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
@@ -86,27 +93,63 @@ namespace BillPlex
             this.labelControl1.Location = new System.Drawing.Point(249, 61);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(11, 22);
+            this.labelControl1.Size = new System.Drawing.Size(13, 25);
             this.labelControl1.TabIndex = 14;
             this.labelControl1.Text = "*";
             // 
             // gridControl1
             // 
+            this.gridControl1.DataMember = "PRO_GetProductmodeltemp";
+            this.gridControl1.DataSource = this.sqlDataSource1;
             this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControl1.Location = new System.Drawing.Point(55, 283);
-            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.MainView = this.grd_productmaster;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.Size = new System.Drawing.Size(1540, 369);
             this.gridControl1.TabIndex = 13;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.grd_productmaster});
             // 
-            // gridView1
+            // sqlDataSource1
             // 
-            this.gridView1.DetailHeight = 284;
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
+            this.sqlDataSource1.ConnectionName = "BillPlex";
+            this.sqlDataSource1.Name = "sqlDataSource1";
+            storedProcQuery3.Name = "PRO_GetProductmodeltemp";
+            queryParameter3.Name = "@SearchKey";
+            queryParameter3.Type = typeof(string);
+            storedProcQuery3.Parameters.Add(queryParameter3);
+            storedProcQuery3.StoredProcName = "PRO_GetProductmodeltemp";
+            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
+            storedProcQuery3});
+            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
+            // 
+            // grd_productmaster
+            // 
+            this.grd_productmaster.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colId,
+            this.colProductmodel});
+            this.grd_productmaster.DetailHeight = 284;
+            this.grd_productmaster.GridControl = this.gridControl1;
+            this.grd_productmaster.Name = "grd_productmaster";
+            // 
+            // colId
+            // 
+            this.colId.FieldName = "Id";
+            this.colId.MinWidth = 23;
+            this.colId.Name = "colId";
+            this.colId.Visible = true;
+            this.colId.VisibleIndex = 0;
+            this.colId.Width = 86;
+            // 
+            // colProductmodel
+            // 
+            this.colProductmodel.FieldName = "Productmodel";
+            this.colProductmodel.MinWidth = 23;
+            this.colProductmodel.Name = "colProductmodel";
+            this.colProductmodel.Visible = true;
+            this.colProductmodel.VisibleIndex = 1;
+            this.colProductmodel.Width = 86;
             // 
             // txtSearch
             // 
@@ -123,7 +166,7 @@ namespace BillPlex
             this.labelControl6.Location = new System.Drawing.Point(54, 240);
             this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(169, 19);
+            this.labelControl6.Size = new System.Drawing.Size(187, 22);
             this.labelControl6.TabIndex = 11;
             this.labelControl6.Text = "Search Raw Material";
             // 
@@ -158,6 +201,7 @@ namespace BillPlex
             this.btClear.Size = new System.Drawing.Size(81, 24);
             this.btClear.TabIndex = 5;
             this.btClear.Text = "CLEAR";
+            this.btClear.Click += new System.EventHandler(this.btClear_Click);
             // 
             // btExit
             // 
@@ -167,6 +211,7 @@ namespace BillPlex
             this.btExit.Size = new System.Drawing.Size(81, 24);
             this.btExit.TabIndex = 4;
             this.btExit.Text = "EXIT";
+            this.btExit.Click += new System.EventHandler(this.btExit_Click);
             // 
             // btDelete
             // 
@@ -176,6 +221,7 @@ namespace BillPlex
             this.btDelete.Size = new System.Drawing.Size(81, 24);
             this.btDelete.TabIndex = 3;
             this.btDelete.Text = "DELETE";
+            this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
             // 
             // btEdit
             // 
@@ -185,6 +231,7 @@ namespace BillPlex
             this.btEdit.Size = new System.Drawing.Size(81, 24);
             this.btEdit.TabIndex = 2;
             this.btEdit.Text = "EDIT";
+            this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
             // 
             // btUpdate
             // 
@@ -194,6 +241,7 @@ namespace BillPlex
             this.btUpdate.Size = new System.Drawing.Size(81, 24);
             this.btUpdate.TabIndex = 1;
             this.btUpdate.Text = "UPDATE";
+            this.btUpdate.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnAdd
             // 
@@ -220,7 +268,7 @@ namespace BillPlex
             this.labelControl2.Location = new System.Drawing.Point(121, 61);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(115, 19);
+            this.labelControl2.Size = new System.Drawing.Size(129, 22);
             this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "Product Name";
             // 
@@ -242,7 +290,7 @@ namespace BillPlex
             this.labelControl3.Location = new System.Drawing.Point(759, 31);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(182, 29);
+            this.labelControl3.Size = new System.Drawing.Size(207, 33);
             this.labelControl3.TabIndex = 1;
             this.labelControl3.Text = "Product Master";
             // 
@@ -260,7 +308,7 @@ namespace BillPlex
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_productmaster)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
@@ -277,7 +325,7 @@ namespace BillPlex
 
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView grd_productmaster;
         private DevExpress.XtraEditors.TextEdit txtSearch;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.SvgImageBox svgImageBox1;
@@ -293,5 +341,8 @@ namespace BillPlex
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
+        private DevExpress.XtraGrid.Columns.GridColumn colId;
+        private DevExpress.XtraGrid.Columns.GridColumn colProductmodel;
     }
 }

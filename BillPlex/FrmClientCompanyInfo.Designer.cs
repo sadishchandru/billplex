@@ -82,7 +82,6 @@ namespace BillPlex
             this.NewBtn = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.drpState = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.drpDirector = new DevExpress.XtraEditors.ComboBoxEdit();
             this.drpMainCompany = new DevExpress.XtraEditors.ComboBoxEdit();
             this.ddPfDate = new DevExpress.XtraEditors.DateEdit();
             this.ddEsiCode = new DevExpress.XtraEditors.DateEdit();
@@ -134,6 +133,7 @@ namespace BillPlex
             this.radPfType = new DevExpress.XtraEditors.RadioGroup();
             this.LicenseTxt = new DevExpress.XtraEditors.TextEdit();
             this.ddStartingDate = new DevExpress.XtraEditors.DateEdit();
+            this.txtDirector = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -163,7 +163,6 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.drpState.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.drpDirector.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpMainCompany.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddPfDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddPfDate.Properties)).BeginInit();
@@ -192,6 +191,7 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.LicenseTxt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddStartingDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddStartingDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDirector.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -861,7 +861,6 @@ namespace BillPlex
             // panelControl3
             // 
             this.panelControl3.Controls.Add(this.drpState);
-            this.panelControl3.Controls.Add(this.drpDirector);
             this.panelControl3.Controls.Add(this.drpMainCompany);
             this.panelControl3.Controls.Add(this.ddPfDate);
             this.panelControl3.Controls.Add(this.ddEsiCode);
@@ -912,6 +911,7 @@ namespace BillPlex
             this.panelControl3.Controls.Add(this.radPfType);
             this.panelControl3.Controls.Add(this.LicenseTxt);
             this.panelControl3.Controls.Add(this.ddStartingDate);
+            this.panelControl3.Controls.Add(this.txtDirector);
             this.panelControl3.Location = new System.Drawing.Point(21, 6);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(1230, 350);
@@ -964,15 +964,6 @@ namespace BillPlex
             this.drpState.Size = new System.Drawing.Size(168, 20);
             this.drpState.TabIndex = 66;
             // 
-            // drpDirector
-            // 
-            this.drpDirector.Location = new System.Drawing.Point(177, 66);
-            this.drpDirector.Name = "drpDirector";
-            this.drpDirector.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.drpDirector.Size = new System.Drawing.Size(224, 20);
-            this.drpDirector.TabIndex = 65;
-            // 
             // drpMainCompany
             // 
             this.drpMainCompany.Location = new System.Drawing.Point(5, 66);
@@ -982,6 +973,7 @@ namespace BillPlex
             this.drpMainCompany.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.drpMainCompany.Size = new System.Drawing.Size(152, 20);
             this.drpMainCompany.TabIndex = 1;
+            this.drpMainCompany.SelectedIndexChanged += new System.EventHandler(this.drpMainCompany_SelectedIndexChanged);
             // 
             // ddPfDate
             // 
@@ -1503,6 +1495,13 @@ namespace BillPlex
             this.ddStartingDate.Size = new System.Drawing.Size(285, 20);
             this.ddStartingDate.TabIndex = 62;
             // 
+            // txtDirector
+            // 
+            this.txtDirector.Location = new System.Drawing.Point(177, 66);
+            this.txtDirector.Name = "txtDirector";
+            this.txtDirector.Size = new System.Drawing.Size(224, 20);
+            this.txtDirector.TabIndex = 65;
+            // 
             // FrmClientCompanyInfo
             // 
             this.Appearance.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -1548,7 +1547,6 @@ namespace BillPlex
             this.panelControl3.ResumeLayout(false);
             this.panelControl3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.drpState.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.drpDirector.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpMainCompany.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddPfDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddPfDate.Properties)).EndInit();
@@ -1578,6 +1576,7 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.LicenseTxt.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddStartingDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddStartingDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDirector.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1685,9 +1684,9 @@ namespace BillPlex
         private DevExpress.XtraEditors.DateEdit ddPfDate;
         private DevExpress.XtraEditors.DateEdit ddEsiCode;
         private DevExpress.XtraEditors.ComboBoxEdit drpAuthBloodGroup;
-        private DevExpress.XtraEditors.ComboBoxEdit drpDirector;
         private DevExpress.XtraEditors.ComboBoxEdit drpMainCompany;
         private DevExpress.XtraEditors.ComboBoxEdit drpAuthState;
         private DevExpress.XtraEditors.ComboBoxEdit drpState;
+        private DevExpress.XtraEditors.TextEdit txtDirector;
     }
 }

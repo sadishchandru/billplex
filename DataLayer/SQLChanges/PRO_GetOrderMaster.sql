@@ -53,23 +53,23 @@ SET NOCOUNT ON;
 
 
 			SELECT 
-					
-				[Id],
-				[OrderNo],
-				[Orderdate],
-				[CustomcodeId],
-				[CustomerId],
-				[ProductNameId],
-				[Quantity],
-				[RawmaterialId],
-				[RawType],
-				[ColorId],
-				[RawQty],
-				[TotalRaw],
-				[Delivarydate],
-				[WagesforEmp],
-				[Status],
-				[AvlQty],
-				[Avlweight]
+				Id,
+				OrderNo,
+				Orderdate,
+				Customcode,
+				CustomerId,
+				ProductNameId,
+				productmodel,
+				productcode,
+				productsize,
+				Quantity,
+				RawmaterialId,
+				RawType,
+				ColorId,
+				RawQty,
+				TotalRaw,
+				Delivarydate,
+				WagesforEmp,
+				Status
 			FROM OrderMaster
 END

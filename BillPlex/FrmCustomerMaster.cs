@@ -104,8 +104,10 @@ namespace BillPlex
 
             foreach (var rowHandle in selectedRows)
             {
-                var id = CustomerMaster_GridView.GetRowCellValue(rowHandle, "Id");
+                CustomerRequest.Id = (int)CustomerMaster_GridView.GetRowCellValue(rowHandle, "Id");
             }
+            CustomerRequest.Delete();
+
         }
 
         private void drpCountry_Click(object sender, EventArgs e)
@@ -116,35 +118,50 @@ namespace BillPlex
 
         private void gridControl1_Click(object sender, EventArgs e)
         {
-            var selectedRows = CustomerMaster_GridView.GetSelectedRows();
 
-            foreach (var rowHandle in selectedRows)
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            try
             {
-                var id = CustomerMaster_GridView.GetRowCellValue(rowHandle, "Id");
-                txtCustomerCode.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "Code");
-                txtCustomerName.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "Name");
-                txtOffAddress.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "OffAddress");
-                drpState.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "State");
-                txtStatePin.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "Pin");
-                drpCountry.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "Country");
-                txtCode.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "PhonePin");
-                txtPhoneNo.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "OffPhone");
-                txtEmailID.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "Email");
-                txtCDAddress.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "ResAddress");
-                drpState2.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "ResState");
-                txtPin.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "ResPin");
-                drpCDCountry.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "ResCountry");
-                txtMobileNo.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "Mobile");
-                txtTINno.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "TinNo");
-                var datete = CustomerMaster_GridView.GetRowCellValue(rowHandle, "CstDate").ToString();
-                DateTime dat = DateTime.Parse(datete);
-                ddTINDate.Text = dat.ToString();
-                txtCSTno.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "CstNo");
-                var datet = CustomerMaster_GridView.GetRowCellValue(rowHandle, "CstDate").ToString();
-                DateTime date = DateTime.Parse(datet);
-                ddCSTDate.Text = date.ToString();
-                txtLicenseNo.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "licenseNo");
-                txtWebsite.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "Website");
+                var selectedRows = CustomerMaster_GridView.GetSelectedRows();
+
+                foreach (var rowHandle in selectedRows)
+                {
+                    CustomerRequest.Id = (Int64)CustomerMaster_GridView.GetRowCellValue(rowHandle, "Id");
+                    txtCustomerCode.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "Code");
+                    txtCustomerName.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "Name");
+                    txtOffAddress.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "OffAddress");
+                    drpState.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "State");
+                    txtStatePin.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "Pin");
+                    drpCountry.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "Country");
+                    txtCode.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "PhonePin");
+                    txtPhoneNo.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "OffPhone");
+                    txtEmailID.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "Email");
+                    txtCDAddress.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "ResAddress");
+                    drpState2.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "ResState");
+                    txtPin.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "ResPin");
+                    drpCDCountry.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "ResCountry");
+                    txtMobileNo.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "Mobile");
+                    txtTINno.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "TinNo");
+                    var datete = CustomerMaster_GridView.GetRowCellValue(rowHandle, "CstDate").ToString();
+                    DateTime dat = DateTime.Parse(datete);
+                    ddTINDate.Text = dat.ToString();
+                    txtCSTno.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "CstNo");
+                    var datet = CustomerMaster_GridView.GetRowCellValue(rowHandle, "CstDate").ToString();
+                    DateTime date = DateTime.Parse(datet);
+                    ddCSTDate.Text = date.ToString();
+                    txtLicenseNo.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "licenseNo");
+                    txtWebsite.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "Website");
+                }
+                btnAdd.Enabled = false;
+                btnEdit.Enabled = false;
+                btnDelete.Enabled = false;
+
+            }
+            catch(Exception ex) { 
+            
             }
         }
     }

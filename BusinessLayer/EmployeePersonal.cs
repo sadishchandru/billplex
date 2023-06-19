@@ -11,11 +11,11 @@ namespace BusinessLayer
     public class EmployeePersonal: Common
     {
         public string EmployeeCode { get; set; }
-        public string EMasterCompany { get; set; }
+        public Int64 EMasterCompany { get; set; }
         public string EProprietorName { get; set; }
-        public string EClientCompany { get; set; }
+        public Int64 EClientCompany { get; set; }
         public string EClientName { get; set; }
-        public string ESubClientCompany { get; set; }
+        public Int64 ESubClientCompany { get; set; }
         public string ESubClientName { get; set; }
         public string EEmployeeCode { get; set; }
         public string EEmployeeName { get; set; }
@@ -53,8 +53,10 @@ namespace BusinessLayer
         public string EResigningDate { get; set; }
         public string ESelectWithReason { get; set; }
         public string EPhoto { get; set; }
+        public List<DropDownItemInfo> MasterCompanyList { get; set; }
+        public List<DropDownItemInfo> ClientCompanyList { get; set; }
+        public List<DropDownItemInfo> SubClientCompanyList { get; set; }
 
-      
 
         #region Update
 
@@ -70,7 +72,7 @@ namespace BusinessLayer
                 // Calling the stored procedure for creating a Employee Personal
                 List<DbParams> objLstDbParams = new List<DbParams>();
                 objLstDbParams.Add(new DbParams(DbType.String, 50, EmployeeCode, "@EmployeeCode", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.String, 50, EMasterCompany, "@MasterCompanyld", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.Int64, 50, EMasterCompany, "@MasterCompanyld", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, EProprietorName, "@ContractorName", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 200, EClientCompany, "@ClientCompanyld", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, EClientName, "@ClientName", ParameterDirection.Input));
@@ -92,7 +94,7 @@ namespace BusinessLayer
                 objLstDbParams.Add(new DbParams(DbType.String, 50, ECDistrict, "@CDistrict", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, ECState, "@CState", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, ECPincode, "@CPincode", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.String, 50, EDOB, "@DoB", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.Date, 50, EDOB, "@DoB", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, EGender, "@Gender", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, EBloodGroup, "@BloodGroup", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 200, EEmailId, "@Email", ParameterDirection.Input));
@@ -107,8 +109,8 @@ namespace BusinessLayer
                 objLstDbParams.Add(new DbParams(DbType.String, 50, Enationality, "@Nationality", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, EJoiningDate, "@EJoiningDate", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, EProbPeriod, "@EProbationPeriod", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.String, 50, EConfirmDate, "@EConfirmationDate", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.String, 50, EResigningDate, "@EResigningDate", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.Date, 50, EConfirmDate, "@EConfirmationDate", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.Date, 50, EResigningDate, "@EResigningDate", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, ESelectWithReason, "@Reason", ParameterDirection.Input));
                 //objLstDbParams.Add(new DbParams(DbType.String, 50, EPhoto, "@EmpImage", ParameterDirection.Input));
 

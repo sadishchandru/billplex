@@ -76,7 +76,7 @@ namespace BillPlex
                 }
 
                 
-                ClientCompanyRequest.Director = drpDirector.Text;
+                ClientCompanyRequest.Director = txtDirector.Text;
                 ClientCompanyRequest.CompanyCode = txtCompanyCode.Text;
                 ClientCompanyRequest.CompanyName = txtCompanyName.Text;
                 ClientCompanyRequest.OffAddress = txtOffAddress.Text;
@@ -236,6 +236,16 @@ namespace BillPlex
             // };
 
             // var i = _conn.ExecuteNonQuery("PRO_UpdateClientCompanyProfileInfo", parameters);
+        }
+
+        private void drpMainCompany_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedItem = (string)drpMainCompany.SelectedItem;
+
+            if (selectedItem != null)
+            {
+                txtDirector.Text = ClientCompanyRequest.MasterCompanyList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.AuthorName ?? "";
+            }
         }
     }
 }
