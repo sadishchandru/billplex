@@ -7,12 +7,17 @@ GO
 -- Create date: 5th June
 -- Description:	Get dropdown items
 -- =============================================
--- EXEC PRO_GetdropdownItems @MasterCompanyRequired =1,@CustomerMasterRequired =1
+-- EXEC PRO_GetdropdownItems @MasterCompanyRequired =1,@ClientCompanyRequired =1,@RawMaterialRequest = 1,@ProductModelRequest = 1,@ProductMasterRequest = 1
+-- EXEC PRO_GetdropdownItems @ProductMasterRequest = 1
 CREATE OR ALTER PROCEDURE [dbo].[PRO_GetdropdownItems]
 	@MasterCompanyRequired BIT = 0,
 	@ClientCompanyRequired  BIT = 0,
 	@SUbClientCompanyRequired BIT = 0,
-	@CustomerMasterRequired BIT = 0
+	@ProductMasterRequest BIT =0,
+	@ProductModelRequest BIT =0,
+	@RawMaterialRequired BIT =0,
+	@SizeMasterRequest BIT =0,
+    @CustomerMasterRequired BIT = 0
 AS 
 BEGIN
     SET NOCOUNT ON;
@@ -43,8 +48,42 @@ BEGIN
 					AuthorName as authorName
 			FROM	SubClientMaster
 		END
+	IF(@RawMaterialRequired = 1) 
+		BEGIN
+			SELECT	Id,
+					RawMaterialType as code,
+					RawMaterials as name,
+					RawMaterialStock as authorName
+			FROM	RawMaterial
+		END
 
-	IF(@CustomerMasterRequired = 1) 
+	IF(@ProductModelRequest = 1) 
+		BEGIN
+			SELECT	Id,
+					'' as code,
+					Productmodel as name,
+					'' as authorName
+			FROM	Productmodeltemp
+		END
+
+	IF(@ProductMasterRequest = 1) 
+		BEGIN
+			SELECT	Id,
+					'' as code,
+					ProductSize as name,
+					WagesforItem as authorName
+			FROM	[dbo].[ProductModel]
+		END
+	IF(@SizeMasterRequest = 1) 
+		BEGIN
+			SELECT	Id,
+					Sizename as name,
+					'' as code,
+					'' as authorName
+			FROM SizeMaster
+		END
+
+IF(@CustomerMasterRequired = 1) 
 		BEGIN
 			SELECT	Id,
 					Code as code,

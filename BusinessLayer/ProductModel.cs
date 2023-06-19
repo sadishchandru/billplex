@@ -10,7 +10,7 @@ namespace BusinessLayer
 {
     public class ProductModel : Common
     {
-        public string RawMaterialType { get; set; }
+        public Int64 RawMaterialType { get; set; }
         public string RawMaterialName { get; set; }
         public string ProductName { get; set; }
         public string ModelCode { get; set; }
@@ -20,6 +20,10 @@ namespace BusinessLayer
         public string RequiredRawMaterialWeight { get; set; }
         public string WagesForProductModel { get; set; }
         public string PMDate { get; set; }
+
+        public List<DropDownItemInfo> RawMaterialList { get; set; }
+        public List<DropDownItemInfo> ProductModelList { get; set; }
+        public List<DropDownItemInfo> SizeMasterList { get; set; }
 
         public void Update()
         {

@@ -19,7 +19,7 @@ namespace BillPlex
     public partial class FrmEmployeeMaster : DevExpress.XtraEditors.XtraForm
     {
         private EmployeePersonal EmployeePersonalRequest;
-        
+
         private EmployeeFinance EmployeeFinanceRequest;
 
         private EmployeeFamily EmployeeFamilyRequest;
@@ -63,11 +63,14 @@ namespace BillPlex
                     EmployeePersonalRequest.SubClientCompanyList = (List<DropDownItemInfo>)item.Value;
                 }
             }
-            if (EmployeePersonalRequest.MasterCompanyList.Count() > 0)
+            if (EmployeePersonalRequest.MasterCompanyList != null)
             {
-                foreach (DropDownItemInfo item in EmployeePersonalRequest.MasterCompanyList)
+                if (EmployeePersonalRequest.MasterCompanyList.Count() > 0)
                 {
-                    drpMCompany.Properties.Items.Add(new ImageComboBoxItem(item.Name));
+                    foreach (DropDownItemInfo item in EmployeePersonalRequest.MasterCompanyList)
+                    {
+                        drpMCompany.Properties.Items.Add(new ImageComboBoxItem(item.Name));
+                    }
                 }
             }
 
@@ -251,7 +254,7 @@ namespace BillPlex
                 }
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 // Display a warning alert
                 XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

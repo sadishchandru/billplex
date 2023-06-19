@@ -88,5 +88,40 @@ namespace BillPlex
             masterbanking.MdiParent = this;
             masterbanking.Show();
         }
+
+        private void btn_RawMaterial_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FrmRawMaterial pc = new FrmRawMaterial();
+            pc.MdiParent = this;
+            pc.Show();
+        }
+
+        private void btn_ProductMaster_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FrmProductMaster pc = new FrmProductMaster();
+            pc.MdiParent = this;
+            pc.Show();
+        }
+
+        private void btn_SizeMaster_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FrmSizeMaster pc = new FrmSizeMaster();
+            pc.MdiParent = this;
+            pc.Show();
+        }
+
+        private void btn_ColorMaster_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FrmColorMaster pc = new FrmColorMaster();
+            pc.MdiParent = this;
+            pc.Show();
+        }
+
+        private void btn_ProductModel_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FrmProductModel pc = new FrmProductModel();
+            pc.MdiParent = this;
+            pc.Show();
+        }
     }
 }
