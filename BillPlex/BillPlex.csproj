@@ -176,12 +176,6 @@
     <Compile Include="FrmEmployeeMasterList.Designer.cs">
       <DependentUpon>FrmEmployeeMasterList.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmFinishingProduct.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmFinishingProduct.Designer.cs">
-      <DependentUpon>FrmFinishingProduct.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmFinishingProductModel.cs">
       <SubType>Form</SubType>
     </Compile>
