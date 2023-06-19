@@ -8,7 +8,8 @@ GO
 -- Description:	Insert & Update Company Profile Info
 -- =============================================
 ALTER PROCEDURE PRO_UpdateCompanyProfileInfo
-@ComId BIGINT = 0
+@Id BIGINT = 0
+,@ComId BIGINT = 0
 ,@ComCcode VARCHAR(50) = ''
 ,@ComName VARCHAR(100) = ''
 ,@ComType VARCHAR(50) = ''
@@ -48,6 +49,7 @@ ALTER PROCEDURE PRO_UpdateCompanyProfileInfo
 ,@CBankname VARCHAR(100) = ''
 ,@CBankACNo VARCHAR(100) = ''
 ,@CBankAddress  VARCHAR(250) = ''
+,@CAStartDate DATE = NULL
 	
 AS
 BEGIN
@@ -57,7 +59,7 @@ BEGIN
 	DECLARE @ResultNo BIT = 0
 	DECLARE @ResultMessage VARCHAR(MAX) = ''
 
-	IF(@ComId = 0)
+	IF(@Id = 0)
 	BEGIN
 		INSERT INTO CompanyMasterInfo
 		(
@@ -100,6 +102,7 @@ BEGIN
 			,[CBankname]
 			,[CBankACNo]
 			,[CBankAddress]
+			,CAStartDate
 		) VALUES
 		(
 			@ComCcode
@@ -140,7 +143,8 @@ BEGIN
 			,@CAPan
 			,@CBankname
 			,@CBankACNo
-			,@CBankAddress 
+			,@CBankAddress
+			,@CAStartDate
 		)
 
 		SET @ResultMessage = 'Company Profile Added Successfully';
@@ -188,7 +192,8 @@ BEGIN
 			,[CBankname] = @CBankname
 			,[CBankACNo] = @CBankACNo
 			,[CBankAddress] = @CBankAddress
-		WHERE Id = @ComId
+			,CAStartDate = @CAStartDate
+		WHERE Id = @Id
 
 		
 		SET @ResultMessage = 'Company Profile Updated Successfully';

@@ -80,6 +80,7 @@ namespace BillPlex
                 if (CompanyRequest.Result.Status == ResultStatus.Success)
                 {
                     XtraMessageBox.Show(CompanyRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
                 }
 
             }
@@ -87,102 +88,65 @@ namespace BillPlex
             {
                 // Display a warning alert
                 XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
-            //string selectedValue = radBusinessNature.EditValue?.ToString() ?? "Default Value";
-
-            // Calling the stored procedure for creating a new Company Profile
-
-
-
-            //SqlParameter[] parameters = new SqlParameter[]
-            //{
-            //new SqlParameter("@ComCcode", txtCode.Text),
-            //new SqlParameter("@ComName", txtCompanyName.Text),
-            //new SqlParameter("@ComOffAdd", txtOfficeAddress.Text),
-            //new SqlParameter("@Comstate", drpState.Text),
-            //new SqlParameter("@ComPin", txtPinNo.Text),
-            //new SqlParameter("@ComStdCode", txtStdCode.Text),
-            //new SqlParameter("@ComPhone", txtPhoneNo.Text),
-            //new SqlParameter("@ComDatestart", ddStartingdate.Text.ToString()),
-            //new SqlParameter("@ComNature", selectedValue),
-            //new SqlParameter("@ComEmail", txtEmail.Text),
-            //new SqlParameter("@ComWebsite", txtWebsite.Text),
-            //new SqlParameter("@ComPFno", txtPFCode.Text),
-            //new SqlParameter("@ComPFdate", ddPfDate.Text.ToString()),
-            //new SqlParameter("@ComESIno", txtEsiCode.Text),
-            //new SqlParameter("@ComESIdate", ddEsiDate.Text.ToString()),
-            //new SqlParameter("@ComFactoryNo", txtFactoryAct.Text),
-            //new SqlParameter("@ComTINno", txtTin.Text),
-            //new SqlParameter("@ComCSTno", txtCSTNo.Text),
-            //new SqlParameter("@ComSSLno", txtSSINo.Text),
-            //new SqlParameter("@ComPanno", txtPanNo.Text),
-            //new SqlParameter("@ComTanno", txtTanNo.Text),
-            //new SqlParameter("@ComLicenseno", txtLicense.Text),
-            //new SqlParameter("@CAuthorName", txtName.Text),
-            //new SqlParameter("@CAFathername", txtFathersName.Text),
-            //new SqlParameter("@CAGender", selectedValue),
-            //new SqlParameter("@CAAddress", txtAddress.Text),
-            //new SqlParameter("@CAstate", ddAuthstartingdate.Text.ToString()),
-            //new SqlParameter("@CApin", txtAuthorPin.Text),
-            //new SqlParameter("@CAStdCode", txtAuthorStdCode.Text),
-            //new SqlParameter("@CAPhoneno", txtAuthorPhoneNo.Text),
-            //new SqlParameter("@CAblood", txtAuthorBloodGroup.Text),
-            //new SqlParameter("@CADOB", ddAuthDOB.Text.ToString()),
-            //new SqlParameter("@CAEmail", txtAuthorEmailId.Text),
-            //new SqlParameter("@CAMobile", txtAuthorMobileNo.Text),
-            //new SqlParameter("@CAPan", txtAuthorPanNo.Text)
-            //};
-
-            //var i = _conn.ExecuteNonQuery("PRO_UpdateCompanyProfileInfo", parameters);
         }
 
-        //private void UpdateBtn_Click(object sender, EventArgs e)
-        //{
-        //    var Id = 0;
-        //    string selectedValue = radBusinessNature.EditValue?.ToString() ?? "Default Value";
-        //    // Calling the stored procedure for creating a new Company Profile
-        //    SqlParameter[] parameters = new SqlParameter[]
-        //    {
-        //    new SqlParameter("@Id", Id),
-        //    new SqlParameter("@ComCcode", txtCode.Text),
-        //    new SqlParameter("@ComName", txtCompanyName.Text),
-        //    new SqlParameter("@ComOffAdd", txtOfficeAddress.Text),
-        //    new SqlParameter("@Comstate", drpState.Text),
-        //    new SqlParameter("@ComPin", txtPinNo.Text),
-        //    new SqlParameter("@ComStdCode", txtStdCode.Text),
-        //    new SqlParameter("@ComPhone", txtPhoneNo.Text),
-        //    new SqlParameter("@ComDatestart", ddStartingdate.Text.ToString()),
-        //    new SqlParameter("@ComNature", selectedValue),
-        //    new SqlParameter("@ComEmail", txtEmail.Text),
-        //    new SqlParameter("@ComWebsite", txtWebsite.Text),
-        //    new SqlParameter("@ComPFno", txtPFCode.Text),
-        //    new SqlParameter("@ComPFdate", ddPfDate.Text.ToString()),
-        //    new SqlParameter("@ComESIno", txtEsiCode.Text),
-        //    new SqlParameter("@ComESIdate", ddEsiDate.Text.ToString()),
-        //    new SqlParameter("@ComFactoryNo", txtFactoryAct.Text),
-        //    new SqlParameter("@ComTINno", txtTin.Text),
-        //    new SqlParameter("@ComCSTno", txtCSTNo.Text),
-        //    new SqlParameter("@ComSSLno", txtSSINo.Text),
-        //    new SqlParameter("@ComPanno", txtPanNo.Text),
-        //    new SqlParameter("@ComTanno", txtTanNo.Text),
-        //    new SqlParameter("@ComLicenseno", txtLicense.Text),
-        //    new SqlParameter("@CAuthorName", txtName.Text),
-        //    new SqlParameter("@CAFathername", txtFathersName.Text),
-        //    new SqlParameter("@CAGender", selectedValue),
-        //    new SqlParameter("@CAAddress", txtAddress.Text),
-        //    new SqlParameter("@CAstate", ddAuthstartingdate.Text.ToString()),
-        //    new SqlParameter("@CApin", txtAuthorPin.Text),
-        //    new SqlParameter("@CAStdCode", txtAuthorStdCode.Text),
-        //    new SqlParameter("@CAPhoneno", txtAuthorPhoneNo.Text),
-        //    new SqlParameter("@CAblood", txtAuthorBloodGroup.Text),
-        //    new SqlParameter("@CADOB", ddAuthDOB.Text.ToString()),
-        //    new SqlParameter("@CAEmail", txtAuthorEmailId.Text),
-        //    new SqlParameter("@CAMobile", txtAuthorMobileNo.Text),
-        //    new SqlParameter("@CAPan", txtAuthorPanNo.Text)
-        //    };
+        public void BindData(dynamic selectedCompanyList)
+        {
+            var selectedRows = selectedCompanyList.GetSelectedRows();
 
-        //    //var i = _conn.ExecuteNonQuery("PRO_UpdateCompanyProfileInfo", parameters);
-        //}
+            foreach (var rowHandle in selectedRows)
+            {
+                CompanyRequest.Id = selectedCompanyList.GetRowCellValue(rowHandle, "Id");
+                txtCode.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComCcode");
+                //txtty = selectedCompanyList.GetRowCellValue(rowHandle, "ComType");
+                txtOfficeAddress.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComOffAdd");
+                drpState.Text = selectedCompanyList.GetRowCellValue(rowHandle, "Comstate");
+                txtPinNo.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComPin");
+                var datete = selectedCompanyList.GetRowCellValue(rowHandle, "ComDatestart").ToString();
+                DateTime dat = DateTime.Parse(datete);
+                ddStartingdate.Text = dat.ToString();
+                txtStdCode.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComStdCode");
+                txtPhoneNo.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComPhone");
+                txtEmail.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComEmail");
+                txtWebsite.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComWebsite");
+                txtPFCode.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComPFno");
+
+                datete = selectedCompanyList.GetRowCellValue(rowHandle, "ComPFdate");
+                ddPfDate.Text = datete.ToString();
+
+                txtEsiCode.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComESIno");
+                datete = selectedCompanyList.GetRowCellValue(rowHandle, "ComESIdate");
+                ddEsiDate.Text = datete.ToString();
+                txtFactoryAct.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComFactoryNo");
+                txtCSTNo.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComCSTno");
+                txtSSINo.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComSSLno");
+                txtTin.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComTINno");
+                txtLicense.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComLicenseno");
+                txtPanNo.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComPanno");
+                txtTanNo.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComTanno");
+                txtCompanyName.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComName");
+                txtName.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CAuthorName");
+                txtFathersName.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CAFathername");
+                radGender.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CAGender");
+                txtAddress.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CAAddress");
+                //drpState.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CAstate");
+                txtAuthorPin.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CApin");
+                txtAuthorStdCode.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CAStdCode");
+                txtAuthorPhoneNo.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CAPhoneno");
+                txtAuthorMobileNo.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CAMobile");
+                txtAuthorBloodGroup.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CAblood");
+                datete = selectedCompanyList.GetRowCellValue(rowHandle, "CADOB");
+                ddAuthDOB.Text = datete.ToString();
+                txtAuthorEmailId.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CAEmail");
+                txtAuthorPanNo.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CAPan");
+                datete = selectedCompanyList.GetRowCellValue(rowHandle, "CAStartDate");
+                ddAuthstartingdate.Text = datete.ToString();
+            }
+
+            btnAdd.Enabled = false;
+            BtnNew.Enabled = false;
+            btnUpdate.Enabled = true;
+        }
     }
 }

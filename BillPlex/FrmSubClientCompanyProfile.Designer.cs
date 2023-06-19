@@ -31,7 +31,6 @@ namespace BillPlex
         {
             this.components = new System.ComponentModel.Container();
             DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSubClientCompanyProfile));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -48,7 +47,7 @@ namespace BillPlex
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.SubClientGrid = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMasterCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMasterCompanyId = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -104,7 +103,7 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SubClientGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -124,7 +123,7 @@ namespace BillPlex
             this.labelControl1.Appearance.Options.UseForeColor = true;
             this.labelControl1.Location = new System.Drawing.Point(634, 23);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(248, 24);
+            this.labelControl1.Size = new System.Drawing.Size(288, 26);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Sub Client Company Profile";
             // 
@@ -226,6 +225,7 @@ namespace BillPlex
             this.Editbtn.Size = new System.Drawing.Size(75, 23);
             this.Editbtn.TabIndex = 7;
             this.Editbtn.Text = "EDIT";
+            this.Editbtn.Click += new System.EventHandler(this.btn_EditClick);
             // 
             // Addbtn
             // 
@@ -284,30 +284,27 @@ namespace BillPlex
             this.gridControl1.DataSource = this.sqlDataSource1;
             this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControl1.Location = new System.Drawing.Point(23, 99);
-            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.MainView = this.SubClientGrid;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.Size = new System.Drawing.Size(1383, 518);
             this.gridControl1.TabIndex = 5;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.SubClientGrid});
             // 
             // sqlDataSource1
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
             storedProcQuery1.Name = "PRO_GetSubClientCompanyProfileInfo";
-            queryParameter1.Name = "@SearchKey";
-            queryParameter1.Type = typeof(string);
-            storedProcQuery1.Parameters.Add(queryParameter1);
             storedProcQuery1.StoredProcName = "PRO_GetSubClientCompanyProfileInfo";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
             storedProcQuery1});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
-            // gridView1
+            // SubClientGrid
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.SubClientGrid.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colId,
             this.colMasterCode,
             this.colMasterCompanyId,
@@ -349,9 +346,10 @@ namespace BillPlex
             this.colAuthorPan,
             this.colAuthorPercent,
             this.colAuthorActive});
-            this.gridView1.DetailHeight = 284;
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
+            this.SubClientGrid.DetailHeight = 284;
+            this.SubClientGrid.GridControl = this.gridControl1;
+            this.SubClientGrid.Name = "SubClientGrid";
+            this.SubClientGrid.DoubleClick += new System.EventHandler(this.btn_EditClick);
             // 
             // colId
             // 
@@ -778,7 +776,7 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SubClientGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -803,7 +801,7 @@ namespace BillPlex
         private DevExpress.XtraEditors.SimpleButton Newbtn;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView SubClientGrid;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colMasterCode;
         private DevExpress.XtraGrid.Columns.GridColumn colMasterCompanyId;

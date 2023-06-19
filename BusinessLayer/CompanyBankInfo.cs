@@ -18,6 +18,9 @@ namespace BusinessLayer
         public String BranchName { get; set; }
         public String IFSCode { get; set; }
 
+        public List<DropDownItemInfo> MasterCompanyList { get; set; }
+
+        
 
         public void Update()
         {

@@ -31,20 +31,22 @@ namespace BusinessLayer
         public string SSINo { get; set; }
         public string PanNo { get; set; }
         public string TanNo { get; set; }
-        public string LicenseNo{ get; set; }
+        public string LicenseNo { get; set; }
         public string Name { get; set; }
         public string FathersName { get; set; }
-        public string Gender{ get; set; }
-        public string Address{ get; set; }
-        public string AuthStartingDate{ get; set; }
-        public string AuthPin{ get; set; }
-        public string AuthStdCode{ get; set; }
-        public string AuthPhoneNo{ get; set; }
+        public string Gender { get; set; }
+        public string Address { get; set; }
+        public string AuthStartingDate { get; set; }
+        public string AuthPin { get; set; }
+        public string AuthStdCode { get; set; }
+        public string AuthPhoneNo { get; set; }
         public string AuthorBloodGroup { get; set; }
         public string DOB { get; set; }
         public string AuthEmail { get; set; }
         public string AuthMobile { get; set; }
         public string AuthorPanNo { get; set; }
+
+        public string AuthorStartDate { get; set; }
         #region Update
 
         public void Update()
@@ -58,6 +60,7 @@ namespace BusinessLayer
 
                 // Calling the stored procedure for creating a new Company Profile
                 List<DbParams> objLstDbParams = new List<DbParams>();
+                objLstDbParams.Add(new DbParams(DbType.String, 50, Id, "@Id", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, Code, "@ComCcode", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, CompanyName, "@ComName", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 200, OffAddress, "@ComOffAdd", ParameterDirection.Input));
@@ -84,7 +87,7 @@ namespace BusinessLayer
                 objLstDbParams.Add(new DbParams(DbType.String, 50, FathersName, "@CAFathername", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, Gender, "@CAGender", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, Address, "@CAAddress", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.String, 50, AuthStartingDate, "@CAstate", ParameterDirection.Input));
+                //objLstDbParams.Add(new DbParams(DbType.String, 50, AuthStartingDate, "@CAstate", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, AuthPin, "@CApin", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, AuthStdCode, "@CAStdCode", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, AuthPhoneNo, "@CAPhoneno", ParameterDirection.Input));
@@ -93,6 +96,7 @@ namespace BusinessLayer
                 objLstDbParams.Add(new DbParams(DbType.String, 50, AuthEmail, "@CAEmail", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, AuthMobile, "@CAMobile", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, AuthorPanNo, "@CAPan", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.String, 50, AuthStartingDate, "@CAStartDate", ParameterDirection.Input));
 
                 dbReader = ObjDbfactory.GetReader("PRO_UpdateCompanyProfileInfo", false, objLstDbParams);
 
@@ -117,7 +121,8 @@ namespace BusinessLayer
         }
         #endregion
 
-        public void Delete() {
+        public void Delete()
+        {
 
             dbReader = null;
             Result = new ResultDetail();
@@ -132,11 +137,9 @@ namespace BusinessLayer
 
                 dbReader = ObjDbfactory.GetReader("PRO_DeleteCompanyMasterInfo", false, objLstDbParams);
 
-                while (dbReader.Read())
-                {
-                    Result.Message = ToString(dbReader["ResultMessage"]);
-                    Result.Status = (ResultStatus)ToInteger(dbReader["ResultNo"]);
-                }
+
+                Result.Message = "Company Master Deleted Successfully";
+                Result.Status = ResultStatus.Success;
 
 
             }

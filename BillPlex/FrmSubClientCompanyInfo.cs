@@ -2,6 +2,7 @@
 using BusinessLayer;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
+using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -21,9 +22,14 @@ namespace BillPlex
     {
         //private readonly SqlConnector _conn;
         private SubClientCompanyInfo SubClientRequest;
+        
+
+
         public FrmSubClientCompanyInfo()
         {
             InitializeComponent();
+
+         
 
             // _conn = new SqlConnector(connectionString);
 
@@ -167,6 +173,8 @@ namespace BillPlex
                 if (SubClientRequest.Result.Status == ResultStatus.Success)
                 {
                     XtraMessageBox.Show(SubClientRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    this.Close();
                 }
 
             }
@@ -203,61 +211,76 @@ namespace BillPlex
             }
         }
 
-        //    private void btnUpdate_Click(object sender, EventArgs e)
-        //{
-        //    var Id = 0;
-        //    string selectedValue = radBusinessNature.EditValue?.ToString() ?? "Default Value";
+        public void BindData(dynamic selectedCompanyList)
+        {
+            var selectedRows = selectedCompanyList.GetSelectedRows();
 
-        //    // Calling the stored procedure for creating a new Company Profile
-        //    SqlParameter[] parameters = new SqlParameter[]
-        //   {
-        //    new SqlParameter("@MasterCode", drpMainCompany.Text),
-        //    new SqlParameter("@MasterCompanyId", txtCompanyName.Text),
-        //    new SqlParameter("@ClientCompanyId", drpClientCompany.Text),
-        //    new SqlParameter("@SubComCode", txtCompanyCode.Text),
-        //    new SqlParameter("@SubComName", txtCompanyName.Text),
-        //    new SqlParameter("@ComOffAddress", txtOffAddress.Text),
-        //    new SqlParameter("@ComState", drpState.Text),
-        //    new SqlParameter("@ComPin", txtPin.Text),
-        //    new SqlParameter("@ComNature", selectedValue),
-        //    new SqlParameter("@Director", txtEmail.Text),
-        //    new SqlParameter("@ComStartDate", ddStartingDate.Text.ToString()),
-        //    new SqlParameter("@ComStdCode", txtOffPin.Text),
-        //    new SqlParameter("@ComPhone", txtOfficePhone.Text),
-        //    new SqlParameter("@ComEmail", txtEmail.Text),
-        //    new SqlParameter("@ComWebsite", txtWebsite.Text),
-        //    new SqlParameter("@PFType", radPfType.Text),
-        //    new SqlParameter("@ComPFNo", txtPFCode.Text),
-        //    new SqlParameter("@ComPfDate", ddPFDate.Text.ToString()),
-        //    new SqlParameter("@ComEsiNo", txtEsiCode.Text),
-        //    new SqlParameter("@ComEsiDate", ddESIDate.Text),
-        //    new SqlParameter("@ComFactoryNo", txtFactoryAct.Text),
-        //    new SqlParameter("@ComCstNo", txtCst.Text),
-        //    new SqlParameter("@ComSslNo", txtSsi.Text),
-        //    new SqlParameter("@ComTinNo", txtTin.Text),
-        //    new SqlParameter("@ComLicenseno", selectedValue),
-        //    new SqlParameter("@ComPanNo", txtPanNo.Text),
-        //    new SqlParameter("@ComTan_no", txttan.Text.ToString()),
-        //    new SqlParameter("@AuthorName", txtName.Text),
-        //    new SqlParameter("@AuthorFathername", txtFathers.Text),
-        //    new SqlParameter("@AuthorGender", radGender.Text),
-        //    new SqlParameter("@AuthorBlood", drpbloodGrop.Text),
-        //    new SqlParameter("@AuthorDOB", ddDOB.Text.ToString()),
-        //    new SqlParameter("@AuthorEmail", txtAuthEmailId.Text),
-        //    new SqlParameter("@AuthorAddress", txtAuthAddress.Text),
-        //    new SqlParameter("@AuthorState", drpAuthState.Text),
-        //    new SqlParameter("@AuthorPin", txtAuthpin.Text),
-        //    new SqlParameter("@AuthorMobile", txtAuthMobileNo.Text),
-        //    new SqlParameter("@AuthorPan", txtAuthPanNo.Text),
-        //    new SqlParameter("@AuthorPercent", txtAuthPercent.Text),
-        //    new SqlParameter("@AuthorActive",radActiveStatus.Text),
-        //    //new SqlParameter("@AuthorImage", AuthImg.Text),
-        //   // new SqlParameter("@BankName", txtBankDetails.Text),
-        //   // new SqlParameter("@BankAcNo", txtBankDetails.Text),
-        //    //new SqlParameter("@BankAddress", txtBankDetails.Text)
-        //   };
+            foreach (var rowHandle in selectedRows)
+            {
+                SubClientRequest.Id = selectedCompanyList.GetRowCellValue(rowHandle, "Id");
+                txtCompanyCode.Text = selectedCompanyList.GetRowCellValue(rowHandle, "MasterCode") == DBNull.Value ? string.Empty : selectedCompanyList.GetRowCellValue(rowHandle, "MasterCode").ToString();
+                
+                drpMainCompany.Text = selectedCompanyList.GetRowCellValue(rowHandle, "MasterCompanyId").ToString();
+                drpCCompany.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ClientCompanyId").ToString();
+                txtCompanyCode.Text = selectedCompanyList.GetRowCellValue(rowHandle, "SubComCode");
+                txtCompanyName.Text = selectedCompanyList.GetRowCellValue(rowHandle, "SubComName");
+                txtOffAddress.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComOffAdd");
+                drpState.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComState");
+                txtPin.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComPin");
+                radBusinessNature.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComNature");
+                txtDirector.Text = selectedCompanyList.GetRowCellValue(rowHandle, "Director");
+                var datete = selectedCompanyList.GetRowCellValue(rowHandle, "ComDatestart");
+                
+                ddStartingDate.Text = datete.ToString();
 
-        //   // var i = _conn.ExecuteNonQuery("PRO_UpdateCompanyProfileInfo", parameters);
-        //}
+                txtOffPin.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComStdCode");
+                txtOfficePhone.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComPhone");
+                txtEmail.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComEmail");
+                txtWebsite.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComWebsite");
+                radPfType.Text = selectedCompanyList.GetRowCellValue(rowHandle, "PfType");
+                txtPFCode.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComPfNo");
+
+                datete = selectedCompanyList.GetRowCellValue(rowHandle, "ComPfDate");
+                ddPFDate.Text = datete.ToString();
+
+                txtEsiCode.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComEsiNo");
+
+                datete = selectedCompanyList.GetRowCellValue(rowHandle, "ComEsiDate");
+                ddESIDate.Text = datete.ToString();
+
+                txtFactoryAct.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComFactoryNo");
+                txtCst.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComCstNo");
+                txtSsi.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComSslNo");
+                txtTin.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComTinNo");
+                txtLicense.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComLicenseno");
+                txtPanNo.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComPanNo");
+                txttan.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComTanNo");
+                txtName.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorName");
+                txtFathers.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorFathername");
+                radGender.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorGender");
+                txtBlood.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorBlood");
+
+                datete = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorDOB");
+                ddDOB.Text = datete.ToString();
+
+                txtAuthEmailId.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorEmail");
+                txtAuthAddress.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorAddress");
+                drpAuthState.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorState");
+                txtAuthpin.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorPin");
+                txtAuthMobileNo.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorMobile");
+                txtAuthPanNo.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorPan");
+                txtAuthPercent.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorPercent");
+                radActiveStatus.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorActive");
+
+
+
+                
+
+            }
+
+            btnAdd.Enabled = false;
+            btnNew.Enabled = false;
+            btnUpdate.Enabled = true;
+        }
     }
 }

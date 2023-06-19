@@ -1,5 +1,6 @@
 ﻿using BusinessLayer;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,9 +17,16 @@ namespace BillPlex
     public partial class FrmCompanyProfile : DevExpress.XtraEditors.XtraForm
     {
         private CompanyMasterInfo CompanyMasterRequest;
+
+        private FrmCompanyInfo CompanyInfoRequest;
+        private GridView gridView;
         public FrmCompanyProfile()
         {
             InitializeComponent();
+
+            gridView = CompanyGridView;
+            //gridView.DoubleClick += Editbtn_Click;
+
 
             CompanyMasterRequest = new CompanyMasterInfo();
             CompanyMasterRequest.ConnectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
@@ -36,15 +44,32 @@ namespace BillPlex
 
         private void Deletebtn_Click(object sender, EventArgs e)
         {
-            var selectedRows = gridView2.GetSelectedRows();
+            var selectedRows = CompanyGridView.GetSelectedRows();
 
             foreach (var rowHandle in selectedRows)
             {
-                var Id = gridView2.GetRowCellValue(rowHandle, "Id");
-                CompanyMasterRequest.Id = (int)Id;
+                CompanyMasterRequest.Id = (Int64)CompanyGridView.GetRowCellValue(rowHandle, "Id");
+                
                 //CompanyMasterRequest.Id = (Int32)gridView2.GetRowCellValue(rowHandle, "Id");
             }
             CompanyMasterRequest.Delete();
+
+            if (CompanyMasterRequest.Result.Status == ResultStatus.Success)
+            {
+                XtraMessageBox.Show(CompanyMasterRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void Editbtn_Click(object sender, EventArgs e)
+        {
+            var selectedRow = CompanyGridView.GetSelectedRows();
+
+            CompanyInfoRequest = new FrmCompanyInfo();
+
+            CompanyInfoRequest.BindData(CompanyGridView);
+
+            //CompanyInfo.MdiParent = this;
+            CompanyInfoRequest.Show();
         }
     }
 }

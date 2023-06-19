@@ -7,6 +7,7 @@ GO
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
+--EXEC PRO_GetMasterCompanyProfileInfo
 ALTER PROCEDURE PRO_GetMasterCompanyProfileInfo
 @SearchKey VARCHAR(200) = ''
 
@@ -20,65 +21,51 @@ SET NOCOUNT ON;
 	--DECLARE @MaximumRows NVARCHAR(10) = CONVERT(NVARCHAR(10),@PageNo * @PageSize)	
     
 	
-	SET @Query = '
-	;With MasterCompanyProfileInfo AS
-		(
-			SELECT	ComCcode
-					ComName
-					ComType
-					ComOffAdd
-					Comstate
-					ComPin
-					ComNature
-					ComDatestart
-					ComStdCode
-					ComPhone
-					ComEmail
-					ComWebsite
-					ComPFno
-					ComPFdate
-					ComESIno
-					ComESIdate
-					ComFactoryNo
-					ComCSTno
-					ComSSLno
-					ComTINno
-					ComLicenseno
-					ComPanno
-					ComTanno
-					CAuthorName
-					CAFathername
-					CAGender
-					CAAddress
-					CAstate
-					CApin
-					CAStdCode
-					CAPhoneno
-					CAMobile
-					CAblood
-					CADOB
-					CAEmail
-					CAPan
-					CBankname
-					CBankACNo
-					CBankAddress
-					Id
-					CreatedDate
+	
+			SELECT	Id
+					,ComCcode
+					,ComName
+					,ComType
+					,ComOffAdd
+					,Comstate
+					,ComPin
+					,ComNature
+					,ComDatestart
+					,ComStdCode
+					,ComPhone
+					,ComEmail
+					,ComWebsite
+					,ComPFno
+					,ComPFdate
+					,ComESIno
+					,ComESIdate
+					,ComFactoryNo
+					,ComCSTno
+					,ComSSLno
+					,ComTINno
+					,ComLicenseno
+					,ComPanno
+					,ComTanno
+					,CAuthorName
+					,CAFathername
+					,CAGender
+					,CAAddress
+					,CAstate
+					,CApin
+					,CAStdCode
+					,CAPhoneno
+					,CAMobile
+					,CAblood
+					,CADOB
+					,CAEmail
+					,CAPan
+					,CBankname
+					,CBankACNo
+					,CBankAddress
+					,CreatedDate
+					,CAStartDate
 			FROM	CompanyMasterInfo CMI
-			'
-
-	IF(@SearchKey != '')
-		BEGIN
-			SET	@Query = @Query + ' AND  CMI.ComName LIKE ''%'+@SearchKey+'%'''
-		END
-
-	SET	@Query = @Query + ' )
-			SELECT	CASE WHEN ROW_NUMBER() OVER(ORDER BY row_no) = 1 then (select count(*) from MasterCompanyProfileInfo) else 0 end as total_count,
-					*		
-			FROM	MasterCompanyProfileInfo '
-
-	PRINT (@Query)
-	EXEC(@Query)
+			
 
 END
 GO
