@@ -29,11 +29,20 @@ namespace BillPlex
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRawMaterial));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRawMaterials = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRawMaterialType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRawMaterialStock = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtSearch = new DevExpress.XtraEditors.TextEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.svgImageBox1 = new DevExpress.XtraEditors.SvgImageBox();
@@ -110,9 +119,12 @@ namespace BillPlex
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(1515, 734);
             this.panelControl2.TabIndex = 1;
+            this.panelControl2.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // gridControl1
             // 
+            this.gridControl1.DataMember = "PRO_GetRawMaterial";
+            this.gridControl1.DataSource = this.sqlDataSource1;
             this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControl1.Location = new System.Drawing.Point(48, 396);
             this.gridControl1.MainView = this.gridView1;
@@ -123,11 +135,57 @@ namespace BillPlex
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
+            // sqlDataSource1
+            // 
+            this.sqlDataSource1.ConnectionName = "BillPlex";
+            this.sqlDataSource1.Name = "sqlDataSource1";
+            storedProcQuery2.Name = "PRO_GetRawMaterial";
+            queryParameter2.Name = "@SearchKey";
+            queryParameter2.Type = typeof(string);
+            storedProcQuery2.Parameters.Add(queryParameter2);
+            storedProcQuery2.StoredProcName = "PRO_GetRawMaterial";
+            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
+            storedProcQuery2});
+            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
+            // 
             // gridView1
             // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colId,
+            this.colRawMaterials,
+            this.colRawMaterialType,
+            this.colRawMaterialStock});
             this.gridView1.DetailHeight = 284;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            // 
+            // colId
+            // 
+            this.colId.FieldName = "Id";
+            this.colId.Name = "colId";
+            this.colId.Visible = true;
+            this.colId.VisibleIndex = 0;
+            // 
+            // colRawMaterials
+            // 
+            this.colRawMaterials.FieldName = "RawMaterials";
+            this.colRawMaterials.Name = "colRawMaterials";
+            this.colRawMaterials.Visible = true;
+            this.colRawMaterials.VisibleIndex = 1;
+            // 
+            // colRawMaterialType
+            // 
+            this.colRawMaterialType.FieldName = "RawMaterialType";
+            this.colRawMaterialType.Name = "colRawMaterialType";
+            this.colRawMaterialType.Visible = true;
+            this.colRawMaterialType.VisibleIndex = 2;
+            // 
+            // colRawMaterialStock
+            // 
+            this.colRawMaterialStock.FieldName = "RawMaterialStock";
+            this.colRawMaterialStock.Name = "colRawMaterialStock";
+            this.colRawMaterialStock.Visible = true;
+            this.colRawMaterialStock.VisibleIndex = 3;
             // 
             // txtSearch
             // 
@@ -179,6 +237,7 @@ namespace BillPlex
             this.btClear.Size = new System.Drawing.Size(81, 24);
             this.btClear.TabIndex = 5;
             this.btClear.Text = "CLEAR";
+            this.btClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btExit
             // 
@@ -197,6 +256,7 @@ namespace BillPlex
             this.btDelete.Size = new System.Drawing.Size(81, 24);
             this.btDelete.TabIndex = 3;
             this.btDelete.Text = "DELETE";
+            this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
             // 
             // btEdit
             // 
@@ -206,6 +266,7 @@ namespace BillPlex
             this.btEdit.Size = new System.Drawing.Size(81, 24);
             this.btEdit.TabIndex = 2;
             this.btEdit.Text = "EDIT";
+            this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
             // 
             // btUpdate
             // 
@@ -215,6 +276,7 @@ namespace BillPlex
             this.btUpdate.Size = new System.Drawing.Size(81, 24);
             this.btUpdate.TabIndex = 1;
             this.btUpdate.Text = "UPDATE";
+            this.btUpdate.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnAdd
             // 
@@ -313,7 +375,7 @@ namespace BillPlex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1536, 722);
+            this.ClientSize = new System.Drawing.Size(1536, 916);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -363,5 +425,10 @@ namespace BillPlex
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
+        private DevExpress.XtraGrid.Columns.GridColumn colId;
+        private DevExpress.XtraGrid.Columns.GridColumn colRawMaterials;
+        private DevExpress.XtraGrid.Columns.GridColumn colRawMaterialType;
+        private DevExpress.XtraGrid.Columns.GridColumn colRawMaterialStock;
     }
 }

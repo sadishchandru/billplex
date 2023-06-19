@@ -123,5 +123,12 @@ namespace BillPlex
             pc.MdiParent = this;
             pc.Show();
         }
+
+        private void barButtonItem12_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            IncentiveMaster pc = new IncentiveMaster();
+            pc.MdiParent = this;
+            pc.Show();
+        }
     }
 }

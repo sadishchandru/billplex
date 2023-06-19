@@ -30,8 +30,8 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery3 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter3 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProductMaster));
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -93,7 +93,7 @@ namespace BillPlex
             this.labelControl1.Location = new System.Drawing.Point(249, 61);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(13, 25);
+            this.labelControl1.Size = new System.Drawing.Size(11, 22);
             this.labelControl1.TabIndex = 14;
             this.labelControl1.Text = "*";
             // 
@@ -115,13 +115,13 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery3.Name = "PRO_GetProductmodeltemp";
-            queryParameter3.Name = "@SearchKey";
-            queryParameter3.Type = typeof(string);
-            storedProcQuery3.Parameters.Add(queryParameter3);
-            storedProcQuery3.StoredProcName = "PRO_GetProductmodeltemp";
+            storedProcQuery1.Name = "PRO_GetProductmodeltemp";
+            queryParameter1.Name = "@SearchKey";
+            queryParameter1.Type = typeof(string);
+            storedProcQuery1.Parameters.Add(queryParameter1);
+            storedProcQuery1.StoredProcName = "PRO_GetProductmodeltemp";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery3});
+            storedProcQuery1});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // grd_productmaster
@@ -158,6 +158,7 @@ namespace BillPlex
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(432, 20);
             this.txtSearch.TabIndex = 12;
+            this.txtSearch.EditValueChanged += new System.EventHandler(this.txtSearch_EditValueChanged);
             // 
             // labelControl6
             // 
@@ -166,7 +167,7 @@ namespace BillPlex
             this.labelControl6.Location = new System.Drawing.Point(54, 240);
             this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(187, 22);
+            this.labelControl6.Size = new System.Drawing.Size(169, 19);
             this.labelControl6.TabIndex = 11;
             this.labelControl6.Text = "Search Raw Material";
             // 
@@ -268,7 +269,7 @@ namespace BillPlex
             this.labelControl2.Location = new System.Drawing.Point(121, 61);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(129, 22);
+            this.labelControl2.Size = new System.Drawing.Size(115, 19);
             this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "Product Name";
             // 
@@ -290,7 +291,7 @@ namespace BillPlex
             this.labelControl3.Location = new System.Drawing.Point(759, 31);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(207, 33);
+            this.labelControl3.Size = new System.Drawing.Size(182, 29);
             this.labelControl3.TabIndex = 1;
             this.labelControl3.Text = "Product Master";
             // 

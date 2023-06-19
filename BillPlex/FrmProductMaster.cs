@@ -98,5 +98,10 @@ namespace BillPlex
             productMasterRequest.CloseConnection();
 
         }
+
+        private void txtSearch_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

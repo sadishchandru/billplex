@@ -92,7 +92,7 @@ namespace BillPlex
             this.ribbonPageCategory1});
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbon.Size = new System.Drawing.Size(1752, 178);
+            this.ribbon.Size = new System.Drawing.Size(1752, 158);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
             // 
@@ -230,6 +230,7 @@ namespace BillPlex
             this.barButtonItem12.Caption = "Incentive Master";
             this.barButtonItem12.Id = 26;
             this.barButtonItem12.Name = "barButtonItem12";
+            this.barButtonItem12.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem12_ItemClick);
             // 
             // ribbonPageCategory1
             // 
@@ -284,10 +285,10 @@ namespace BillPlex
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 657);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 661);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1752, 28);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1752, 24);
             // 
             // NavBar
             // 

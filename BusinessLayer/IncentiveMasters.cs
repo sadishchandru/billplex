@@ -1,18 +1,22 @@
-﻿using System;
+﻿using DevExpress.Xpo;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using DataLayer;
 using System.Data;
 using System.Threading.Tasks;
 
 namespace BusinessLayer
 {
-    public class RawMaterial: Common
+    public class IncentiveMasters : Common
     {
-        public string RawMaterials { get; set; }
-        public string RawMaterialType { get; set; }
-        public string RawMaterialStock { get; set; }
+
+        public string ProductName { get; set; }
+        public string ModelCode { get; set; }
+        public string ModelName { get; set; }
+        public string ModelSize { get; set; }
+        public string DurationPeriod { get; set; }
+        public string Date { get; set; }
+
 
         public void Update()
         {
@@ -25,11 +29,13 @@ namespace BusinessLayer
 
                 List<DbParams> objLstdbParams = new List<DbParams>();
                 objLstdbParams.Add(new DbParams(DbType.String, 50, Id, "@Id", ParameterDirection.Input));
-                objLstdbParams.Add(new DbParams(DbType.String, 50, RawMaterialType, "@RawMaterialType", ParameterDirection.Input));
-                objLstdbParams.Add(new DbParams(DbType.String, 50, RawMaterials, "@RawMaterials", ParameterDirection.Input));
-                objLstdbParams.Add(new DbParams(DbType.String, 50, RawMaterialStock, "@RawMaterialStock", ParameterDirection.Input));
-
-                dbReader = ObjDbfactory.GetReader("PRO_UpdateRawMaterial", false, objLstdbParams);
+                objLstdbParams.Add(new DbParams(DbType.String, 50, ProductName, "@ProductName", ParameterDirection.Input));
+                objLstdbParams.Add(new DbParams(DbType.String, 50, ModelCode, "@ModelCode", ParameterDirection.Input));
+                objLstdbParams.Add(new DbParams(DbType.String, 50, ModelName, "@ModelName", ParameterDirection.Input));
+                objLstdbParams.Add(new DbParams(DbType.String, 50, ModelSize, "@ModelSize", ParameterDirection.Input));
+                objLstdbParams.Add(new DbParams(DbType.String, 50, DurationPeriod, "@DurationPeriod", ParameterDirection.Input));
+                objLstdbParams.Add(new DbParams(DbType.String, 50, Date, "@Date", ParameterDirection.Input));
+                dbReader = ObjDbfactory.GetReader("PRO_UpdateIncentiveMaster", false, objLstdbParams);
 
                 while (dbReader.Read())
                 {
@@ -38,7 +44,7 @@ namespace BusinessLayer
                 }
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 // Display a warning alert
                 // XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -61,7 +67,7 @@ namespace BusinessLayer
                 List<DbParams> objLstdbParams = new List<DbParams>();
                 objLstdbParams.Add(new DbParams(DbType.String, 50, Id, "@Id", ParameterDirection.Input));
 
-                dbReader = ObjDbfactory.GetReader("PRO_DeleteRawMaterials", false, objLstdbParams);
+                dbReader = ObjDbfactory.GetReader("PRO_DeleteIncentiveMaster", false, objLstdbParams);
 
                 while (dbReader.Read())
                 {
@@ -80,5 +86,8 @@ namespace BusinessLayer
                 CloseConnection();
             }
         }
+
+
     }
+
 }
