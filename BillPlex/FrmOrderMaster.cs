@@ -1,9 +1,14 @@
 ﻿using BusinessLayer;
 using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Controls;
+using DevExpress.XtraGrid.Views.Grid;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +20,9 @@ namespace BillPlex
     public partial class FrmOrderMaster : DevExpress.XtraEditors.XtraForm
     {
         private OrderMasterInfo OrderMasterRequest;
+
+        private FrmOrderMasterInfo OrderMasterInfoRequest;
+        private GridView gridView;
         public FrmOrderMaster()
         {
             InitializeComponent();
@@ -43,6 +51,18 @@ namespace BillPlex
             FrmOrderMasterInfo cp = new FrmOrderMasterInfo();
             cp.ShowDialog();
 
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            var selectedRow = gridView1.GetSelectedRows();
+
+            OrderMasterInfoRequest = new FrmOrderMasterInfo();
+
+            OrderMasterInfoRequest.BindData(gridView1);
+
+            //CompanyInfo.MdiParent = this;
+            OrderMasterInfoRequest.Show();
         }
     }
 }

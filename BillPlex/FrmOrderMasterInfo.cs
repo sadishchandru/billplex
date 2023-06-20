@@ -301,5 +301,37 @@ namespace BillPlex
         {
 
         }
+        public void BindData(dynamic SelectedOrderList)
+        {
+            var selectedRows = SelectedOrderList.GetSelectedRows();
+
+            foreach (var rowHandle in selectedRows)
+            {
+                OrderMasterRequest.Id = SelectedOrderList.GetRowCellValue(rowHandle, "Id");
+                txtOrderNo.Text = SelectedOrderList.GetRowCellValue(rowHandle, "OrderNo");
+                var datete = SelectedOrderList.GetRowCellValue(rowHandle, "Orderdate");
+
+                ddOrderDate.Text = datete.ToString();
+                //ddOrderDate.Text = SelectedOrderList.GetRowCellValue(rowHandle, "Orderdate");
+                drpCustCode.Text = SelectedOrderList.GetRowCellValue(rowHandle, "Customcode");
+                //drpCustName.Text = SelectedOrderList.GetRowCellValue(rowHandle, "CustomerId") == Value ? string.Empty : SelectedOrderList.GetRowCellValue(rowHandle, "CustomerId").ToString();
+                drpProductName.Text = SelectedOrderList.GetRowCellValue(rowHandle, "ProductNameId");
+                drpModelName.Text = SelectedOrderList.GetRowCellValue(rowHandle, "productmodel");
+                drpModelCode.Text = SelectedOrderList.GetRowCellValue(rowHandle, "productcode");
+                drpProductSize.Text = SelectedOrderList.GetRowCellValue(rowHandle, "productsize");
+                txtMaterialwt.Text = SelectedOrderList.GetRowCellValue(rowHandle, "Quantity");
+                txtType.Text = SelectedOrderList.GetRowCellValue(rowHandle, "RawType");
+                drpProColor.Text = SelectedOrderList.GetRowCellValue(rowHandle, "ColorId");
+                txtQuantity.Text = SelectedOrderList.GetRowCellValue(rowHandle, "RawQty");
+                ddProDate.Text = SelectedOrderList.GetRowCellValue(rowHandle, "Delivarydate");
+                drpStatus.Text = SelectedOrderList.GetRowCellValue(rowHandle, "Status");
+                txtTotRawmat.Text = SelectedOrderList.GetRowCellValue(rowHandle, "TotalRaw");
+                txtWages.Text = SelectedOrderList.GetRowCellValue(rowHandle, "WagesforEmp");
+            }
+
+            btnAdd.Enabled = false;
+            btnNew.Enabled = false;
+            btnUpdate.Enabled = true;
+        }
     }
 }
