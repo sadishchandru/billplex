@@ -40,48 +40,48 @@ namespace BillPlex
         {
             try
             {
-                CompanyRequest.Code = txtCode.Text;
-                CompanyRequest.CompanyName = txtCompanyName.Text;
-                CompanyRequest.OffAddress = txtAddress.Text;
-                CompanyRequest.State = drpState.Text;
-                CompanyRequest.StatePin = txtPinNo.Text;
-                CompanyRequest.StdCode = txtCode.Text;
-                CompanyRequest.PhoneNo = txtPhoneNo.Text;
-                CompanyRequest.Startingdate = ddStartingdate.Text.ToString();
-                CompanyRequest.BusinessNature = radBusinessNature.Text;
-                CompanyRequest.EmailID = txtEmail.Text;
-                CompanyRequest.Website = txtWebsite.Text;
-                CompanyRequest.PFCode = txtPFCode.Text;
-                CompanyRequest.PfDate = ddPfDate.Text.ToString();
-                CompanyRequest.EsiCode = txtEsiCode.Text;
-                CompanyRequest.EsiDate = ddEsiDate.Text.ToString();
-                CompanyRequest.FactoryAct = txtFactoryAct.Text;
-                CompanyRequest.TinNo = txtTin.Text;
-                CompanyRequest.CSTNo = txtCSTNo.Text;
-                CompanyRequest.SSINo = txtSSINo.Text;
-                CompanyRequest.PanNo = txtPanNo.Text;
-                CompanyRequest.TanNo = txtTanNo.Text;
-                CompanyRequest.LicenseNo = txtLicense.Text;
-                CompanyRequest.Name = txtName.Text;
-                CompanyRequest.FathersName = txtFathersName.Text;
-                CompanyRequest.Gender = radGender.Text;
-                CompanyRequest.Address = txtAddress.Text;
-                CompanyRequest.AuthStartingDate = ddAuthstartingdate.Text.ToString();
-                CompanyRequest.AuthPin = txtAuthorPin.Text;
-                CompanyRequest.AuthStdCode = txtAuthorStdCode.Text;
-                CompanyRequest.AuthPhoneNo = txtAuthorPhoneNo.Text;
-                CompanyRequest.AuthorBloodGroup = txtAuthorBloodGroup.Text;
-                CompanyRequest.DOB = ddAuthDOB.Text.ToString();
-                CompanyRequest.AuthEmail = txtAuthorEmailId.Text;
-                CompanyRequest.AuthMobile = txtAuthorMobileNo.Text;
-                CompanyRequest.AuthorPanNo = txtAuthorPanNo.Text;
-                CompanyRequest.Update();
+                    CompanyRequest.Code = txtCode.Text;
+                    CompanyRequest.CompanyName = txtCompanyName.Text;
+                    CompanyRequest.OffAddress = txtAddress.Text;
+                    CompanyRequest.State = drpState.Text;
+                    CompanyRequest.StatePin = txtPinNo.Text;
+                    CompanyRequest.StdCode = txtCode.Text;
+                    CompanyRequest.PhoneNo = txtPhoneNo.Text;
+                    CompanyRequest.Startingdate = ddStartingdate.Text.ToString();
+                    CompanyRequest.BusinessNature = radBusinessNature.Text;
+                    CompanyRequest.EmailID = txtEmail.Text;
+                    CompanyRequest.Website = txtWebsite.Text;
+                    CompanyRequest.PFCode = txtPFCode.Text;
+                    CompanyRequest.PfDate = ddPfDate.Text.ToString();
+                    CompanyRequest.EsiCode = txtEsiCode.Text;
+                    CompanyRequest.EsiDate = ddEsiDate.Text.ToString();
+                    CompanyRequest.FactoryAct = txtFactoryAct.Text;
+                    CompanyRequest.TinNo = txtTin.Text;
+                    CompanyRequest.CSTNo = txtCSTNo.Text;
+                    CompanyRequest.SSINo = txtSSINo.Text;
+                    CompanyRequest.PanNo = txtPanNo.Text;
+                    CompanyRequest.TanNo = txtTanNo.Text;
+                    CompanyRequest.LicenseNo = txtLicense.Text;
+                    CompanyRequest.Name = txtName.Text;
+                    CompanyRequest.FathersName = txtFathersName.Text;
+                    CompanyRequest.Gender = radGender.Text;
+                    CompanyRequest.Address = txtAddress.Text;
+                    CompanyRequest.AuthStartingDate = ddAuthstartingdate.Text.ToString();
+                    CompanyRequest.AuthPin = txtAuthorPin.Text;
+                    CompanyRequest.AuthStdCode = txtAuthorStdCode.Text;
+                    CompanyRequest.AuthPhoneNo = txtAuthorPhoneNo.Text;
+                    CompanyRequest.AuthorBloodGroup = txtAuthorBloodGroup.Text;
+                    CompanyRequest.DOB = ddAuthDOB.Text.ToString();
+                    CompanyRequest.AuthEmail = txtAuthorEmailId.Text;
+                    CompanyRequest.AuthMobile = txtAuthorMobileNo.Text;
+                    CompanyRequest.AuthorPanNo = txtAuthorPanNo.Text;
+                    CompanyRequest.Update();
 
-                if (CompanyRequest.Result.Status == ResultStatus.Success)
-                {
-                    XtraMessageBox.Show(CompanyRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
-                }
+                    if (CompanyRequest.Result.Status == ResultStatus.Success)
+                    {
+                        XtraMessageBox.Show(CompanyRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
 
             }
             catch (Exception ex)

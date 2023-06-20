@@ -94,6 +94,8 @@ namespace BillPlex
             this.Printbtn = new DevExpress.XtraEditors.SimpleButton();
             this.Claerbtn = new DevExpress.XtraEditors.SimpleButton();
             this.Findbtn = new DevExpress.XtraEditors.SimpleButton();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCAStartDate = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -126,7 +128,7 @@ namespace BillPlex
             this.labelControl1.Appearance.Options.UseForeColor = true;
             this.labelControl1.Location = new System.Drawing.Point(634, 23);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(174, 26);
+            this.labelControl1.Size = new System.Drawing.Size(151, 24);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Company Profile";
             // 
@@ -365,7 +367,9 @@ namespace BillPlex
             this.colCBankACNo,
             this.colCBankAddress,
             this.colId,
-            this.colCreatedDate});
+            this.colCreatedDate,
+            this.gridColumn1,
+            this.colCAStartDate});
             this.CompanyGridView.GridControl = this.gridControl1;
             this.CompanyGridView.HorzScrollStep = 10;
             this.CompanyGridView.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
@@ -818,6 +822,20 @@ namespace BillPlex
             this.Findbtn.TabIndex = 3;
             this.Findbtn.Text = "Find";
             // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "gridColumn1";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 41;
+            // 
+            // colCAStartDate
+            // 
+            this.colCAStartDate.FieldName = "CAStartDate";
+            this.colCAStartDate.Name = "colCAStartDate";
+            this.colCAStartDate.Visible = true;
+            this.colCAStartDate.VisibleIndex = 42;
+            // 
             // FrmCompanyProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -909,5 +927,7 @@ namespace BillPlex
         private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colCreatedDate;
         private DevExpress.XtraEditors.ComboBoxEdit drpClientProfile;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn colCAStartDate;
     }
 }

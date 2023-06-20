@@ -191,17 +191,17 @@ namespace BillPlex
             this.panelControl2.Location = new System.Drawing.Point(11, 106);
             this.panelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1551, 755);
+            this.panelControl2.Size = new System.Drawing.Size(1551, 707);
             this.panelControl2.TabIndex = 1;
             // 
             // gridControl1
             // 
             this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gridControl1.Location = new System.Drawing.Point(38, 480);
+            this.gridControl1.Location = new System.Drawing.Point(38, 448);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1132, 267);
+            this.gridControl1.Size = new System.Drawing.Size(1132, 234);
             this.gridControl1.TabIndex = 51;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -255,6 +255,7 @@ namespace BillPlex
             this.btnUpdate.Size = new System.Drawing.Size(78, 30);
             this.btnUpdate.TabIndex = 47;
             this.btnUpdate.Text = "UPDATE";
+            this.btnUpdate.Click += new System.EventHandler(this.btnAdd_click);
             // 
             // btnDelete
             // 
@@ -278,7 +279,7 @@ namespace BillPlex
             this.btnClear.Size = new System.Drawing.Size(78, 30);
             this.btnClear.TabIndex = 45;
             this.btnClear.Text = "CLEAR";
-            this.btnClear.Click += new System.EventHandler(this.Reset_Click);
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnAdd
             // 
@@ -296,6 +297,7 @@ namespace BillPlex
             // 
             this.btnEdit.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.btnEdit.Appearance.Options.UseFont = true;
+            this.btnEdit.Enabled = false;
             this.btnEdit.Location = new System.Drawing.Point(1283, 272);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEdit.Name = "btnEdit";
@@ -454,7 +456,7 @@ namespace BillPlex
             // 
             this.labelControl20.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl20.Appearance.Options.UseFont = true;
-            this.labelControl20.Location = new System.Drawing.Point(38, 445);
+            this.labelControl20.Location = new System.Drawing.Point(38, 426);
             this.labelControl20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl20.Name = "labelControl20";
             this.labelControl20.Size = new System.Drawing.Size(412, 17);
@@ -463,7 +465,7 @@ namespace BillPlex
             // 
             // txtsearch
             // 
-            this.txtsearch.Location = new System.Drawing.Point(510, 443);
+            this.txtsearch.Location = new System.Drawing.Point(510, 424);
             this.txtsearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtsearch.Name = "txtsearch";
             this.txtsearch.Size = new System.Drawing.Size(585, 20);
@@ -771,7 +773,7 @@ namespace BillPlex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1387, 888);
+            this.ClientSize = new System.Drawing.Size(1387, 822);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

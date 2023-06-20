@@ -123,7 +123,7 @@ namespace BillPlex
             this.labelControl1.Appearance.Options.UseForeColor = true;
             this.labelControl1.Location = new System.Drawing.Point(634, 23);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(288, 26);
+            this.labelControl1.Size = new System.Drawing.Size(248, 24);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Sub Client Company Profile";
             // 

@@ -269,27 +269,27 @@ namespace BillPlex
         #endregion
 
         #region Reset
-        private void Reset_Click(object sender, EventArgs e)
-        {
-            txtOrderNo.ResetText();
-            ddOrderDate.ResetText();
-            drpCustCode.ResetText();
-            drpCustName.ResetText();
-            drpProductName.ResetText();
-            drpModelCode.ResetText();
-            drpModelName.ResetText();
-            drpProductSize.ResetText();
-            txtMaterialwt.ResetText();
-            txtType.ResetText();
-            txtRawmatName.ResetText();
-            drpProColor.ResetText();
-            txtQuantity.ResetText();
-            ddProDate.ResetText();
-            drpStatus.ResetText();
-            txtTotRawmat.ResetText();
-            txtWages.ResetText();
+        //private void Reset_Click(object sender, EventArgs e)
+        //{
+        //    txtOrderNo.ResetText();
+        //    ddOrderDate.ResetText();
+        //    drpCustCode.ResetText();
+        //    drpCustName.ResetText();
+        //    drpProductName.ResetText();
+        //    drpModelCode.ResetText();
+        //    drpModelName.ResetText();
+        //    drpProductSize.ResetText();
+        //    txtMaterialwt.ResetText();
+        //    txtType.ResetText();
+        //    txtRawmatName.ResetText();
+        //    drpProColor.ResetText();
+        //    txtQuantity.ResetText();
+        //    ddProDate.ResetText();
+        //    drpStatus.ResetText();
+        //    txtTotRawmat.ResetText();
+        //    txtWages.ResetText();
 
-        }
+        //}
         #endregion
 
         private void drpCustCode_Click(object sender, EventArgs e)
@@ -314,16 +314,19 @@ namespace BillPlex
                 ddOrderDate.Text = datete.ToString();
                 //ddOrderDate.Text = SelectedOrderList.GetRowCellValue(rowHandle, "Orderdate");
                 drpCustCode.Text = SelectedOrderList.GetRowCellValue(rowHandle, "Customcode");
-                //drpCustName.Text = SelectedOrderList.GetRowCellValue(rowHandle, "CustomerId") == Value ? string.Empty : SelectedOrderList.GetRowCellValue(rowHandle, "CustomerId").ToString();
-                drpProductName.Text = SelectedOrderList.GetRowCellValue(rowHandle, "ProductNameId");
+                drpCustName.Text = SelectedOrderList.GetRowCellValue(rowHandle, "CustomerId") == 0 ? string.Empty : SelectedOrderList.GetRowCellValue(rowHandle, "CustomerId").ToString();
+                drpProductName.Text = SelectedOrderList.GetRowCellValue(rowHandle, "ProductNameId") == 0 ? string.Empty : SelectedOrderList.GetRowCellValue(rowHandle, "CustomerId").ToString();
                 drpModelName.Text = SelectedOrderList.GetRowCellValue(rowHandle, "productmodel");
                 drpModelCode.Text = SelectedOrderList.GetRowCellValue(rowHandle, "productcode");
                 drpProductSize.Text = SelectedOrderList.GetRowCellValue(rowHandle, "productsize");
                 txtMaterialwt.Text = SelectedOrderList.GetRowCellValue(rowHandle, "Quantity");
                 txtType.Text = SelectedOrderList.GetRowCellValue(rowHandle, "RawType");
-                drpProColor.Text = SelectedOrderList.GetRowCellValue(rowHandle, "ColorId");
+                drpProColor.Text = SelectedOrderList.GetRowCellValue(rowHandle, "ColorId") == 0 ? string.Empty : SelectedOrderList.GetRowCellValue(rowHandle, "CustomerId").ToString();
                 txtQuantity.Text = SelectedOrderList.GetRowCellValue(rowHandle, "RawQty");
-                ddProDate.Text = SelectedOrderList.GetRowCellValue(rowHandle, "Delivarydate");
+                //ddProDate.Text = SelectedOrderList.GetRowCellValue(rowHandle, "Delivarydate");
+                var datet = SelectedOrderList.GetRowCellValue(rowHandle, "Delivarydate");
+
+                ddProDate.Text = datet.ToString();
                 drpStatus.Text = SelectedOrderList.GetRowCellValue(rowHandle, "Status");
                 txtTotRawmat.Text = SelectedOrderList.GetRowCellValue(rowHandle, "TotalRaw");
                 txtWages.Text = SelectedOrderList.GetRowCellValue(rowHandle, "WagesforEmp");
@@ -333,5 +336,28 @@ namespace BillPlex
             btnNew.Enabled = false;
             btnUpdate.Enabled = true;
         }
+
+        #region Reset
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtOrderNo.ResetText();
+            ddOrderDate.ResetText();
+            drpCustCode.ResetText();
+            drpCustName.ResetText();
+            drpProductName.ResetText();
+            drpModelCode.ResetText();
+            drpModelName.ResetText();
+            drpProductSize.ResetText();
+            txtMaterialwt.ResetText();
+            txtType.ResetText();
+            txtRawmatName.ResetText();
+            drpProColor.ResetText();
+            txtQuantity.ResetText();
+            ddProDate.ResetText();
+            drpStatus.ResetText();
+            txtTotRawmat.ResetText();
+            txtWages.ResetText();
+        }
+        #endregion
     }
 }

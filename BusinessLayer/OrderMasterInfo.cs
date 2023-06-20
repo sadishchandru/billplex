@@ -47,6 +47,7 @@ namespace BusinessLayer
                 InitializeDb();
 
                 List<DbParams> objLstdbParams = new List<DbParams>();
+                objLstdbParams.Add(new DbParams(DbType.Int64, 50, Id, "@Id", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, OrderNo, "@OrderNo", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.DateTime, 50, OrderDate, "@OrderDate", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, CustomerCodeId, "@Customcode", ParameterDirection.Input));
