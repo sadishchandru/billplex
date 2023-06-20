@@ -268,30 +268,6 @@ namespace BillPlex
 
         #endregion
 
-        #region Reset
-        //private void Reset_Click(object sender, EventArgs e)
-        //{
-        //    txtOrderNo.ResetText();
-        //    ddOrderDate.ResetText();
-        //    drpCustCode.ResetText();
-        //    drpCustName.ResetText();
-        //    drpProductName.ResetText();
-        //    drpModelCode.ResetText();
-        //    drpModelName.ResetText();
-        //    drpProductSize.ResetText();
-        //    txtMaterialwt.ResetText();
-        //    txtType.ResetText();
-        //    txtRawmatName.ResetText();
-        //    drpProColor.ResetText();
-        //    txtQuantity.ResetText();
-        //    ddProDate.ResetText();
-        //    drpStatus.ResetText();
-        //    txtTotRawmat.ResetText();
-        //    txtWages.ResetText();
-
-        //}
-        #endregion
-
         private void drpCustCode_Click(object sender, EventArgs e)
         {
             

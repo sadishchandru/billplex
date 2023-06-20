@@ -49,7 +49,7 @@ namespace BusinessLayer
                 List<DbParams> objLstdbParams = new List<DbParams>();
                 objLstdbParams.Add(new DbParams(DbType.Int64, 50, Id, "@Id", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, OrderNo, "@OrderNo", ParameterDirection.Input));
-                objLstdbParams.Add(new DbParams(DbType.DateTime, 50, OrderDate, "@OrderDate", ParameterDirection.Input));
+                objLstdbParams.Add(new DbParams(DbType.Date, 50, OrderDate, "@OrderDate", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, CustomerCodeId, "@Customcode", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, CustomerId, "@CustomerId", ParameterDirection.Input));
                 //objLstdbParams.Add(new DbParams(DbType.String, 50, ProductId, "@ProductId", ParameterDirection.Input));
@@ -63,7 +63,7 @@ namespace BusinessLayer
                 objLstdbParams.Add(new DbParams(DbType.String, 50, ColorId, "@ColorId", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, RawQty, "@RawQty", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, TotalRaw, "@TotalRaw", ParameterDirection.Input));
-                objLstdbParams.Add(new DbParams(DbType.DateTime, 50, Deliverydate, "@Delivarydate", ParameterDirection.Input));
+                objLstdbParams.Add(new DbParams(DbType.Date, 50, Deliverydate, "@Delivarydate", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, WagesforEmp, "@WagesforEmp", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, status, "@status", ParameterDirection.Input));
            

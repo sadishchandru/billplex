@@ -77,16 +77,16 @@ namespace BusinessLayer
                 objLstDbParams.Add(new DbParams(DbType.String, 50, State, "@ComState", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, Pin, "@ComPin", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 200, BusinessNature, "@ComNature", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.Date, 50, StartingDate, "@ComDatestart", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.Date, 50, StartingDate == "" ? null : StartingDate, "@ComDatestart", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, STDCode, "@ComStdCode", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, PhoneNo, "@ComPhone", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, EmailId, "@ComEmail", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, Website, "@ComWebsite", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, PfType, "@PfType", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, PFCode, "@ComPfNo", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.Date, 50, PFDate, "@ComPfDate", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.Date, 50, PFDate == "" ? null : PFDate, "@ComPfDate", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, EsiCode, "@ComEsiNo", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.Date, 50, ESIDate, "@ComEsiDate", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.Date, 50, ESIDate == "" ? null : ESIDate, "@ComEsiDate", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, FactoryActNo, "@ComFactoryNo", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, TinNo, "@ComTinNo", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, CstNo, "@ComCstNo", ParameterDirection.Input));
@@ -98,7 +98,7 @@ namespace BusinessLayer
                 objLstDbParams.Add(new DbParams(DbType.String, 50, FathersName, "@AuthorFathername", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, Gender, "@AuthorGender", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, BloodGroup, "@AuthorBlood", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.Date, 50, DOB, "@AuthorDOB", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.Date, 50, DOB == "" ? null : DOB, "@AuthorDOB", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, AuthEmailId, "@AuthorEmail", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, AuthAddress, "@AuthorAddress", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, AuthState, "@AuthorState", ParameterDirection.Input));

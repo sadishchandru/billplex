@@ -26,7 +26,7 @@ CREATE or ALTER   PROCEDURE [dbo].[PRO_UpdateOrderMaster]
 	@ColorId  INT='',
 	@RawQty  varchar(100)='',
 	@Delivarydate  date=NULL, 
-	@Status  INT='', 
+	@Status  Varchar(50)='', 
 	@TotalRaw  varchar(100) ='',
 	@WagesforEmp  varchar(100)='',
 
@@ -119,8 +119,8 @@ BEGIN
 
 	--	WHERE Id = @Id
 		
-	--	SET @ResultMessage = 'OrderMaster Updated Successfully';
-	--	SET @ResultNo = 1
+		SET @ResultMessage = 'OrderMaster Updated Successfully';
+		SET @ResultNo = 1
 	--END
 
 	SELECT  @ResultMessage AS ResultMessage,

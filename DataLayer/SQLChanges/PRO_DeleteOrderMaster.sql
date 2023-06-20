@@ -17,8 +17,13 @@ CREATE OR ALTER   PROCEDURE [dbo].[PRO_DeleteOrderMaster]
 AS
 BEGIN
     SET NOCOUNT ON;
+	DECLARE @ResultNo BIT = 0
+	DECLARE @ResultMessage VARCHAR(MAX) = ''
 
     -- Delete the record based on the @Id parameter
     DELETE FROM [dbo].[OrderMaster]
     WHERE [Id] = @Id;
+
+	SET @ResultMessage = 'OrderMaster Deleted Successfully';
+	SET @ResultNo = 1
 END

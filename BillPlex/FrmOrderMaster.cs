@@ -38,9 +38,9 @@ namespace BillPlex
 
             foreach (var rowHandle in selectedRows)
             {
-                var id = gridView1.GetRowCellValue(rowHandle, "Id");
+                var Id = gridView1.GetRowCellValue(rowHandle, "Id");
 
-                OrderMasterRequest.Id = (int)id;
+                OrderMasterRequest.Id = (int)Id;
             }
 
             OrderMasterRequest.Delete();
