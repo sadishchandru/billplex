@@ -17,8 +17,8 @@ CREATE OR ALTER PROCEDURE [dbo].[PRO_GetdropdownItems]
 	@ProductModelRequest BIT =0,
 	@RawMaterialRequired BIT =0,
 	@SizeMasterRequest BIT =0,
-    @CustomerMasterRequired BIT = 0,
-	@ColorMasterRequired Bit = 0
+	@ColorMasterRequired Bit = 0,
+	@CustomerMasterRequired Bit = 0
 AS 
 BEGIN
     SET NOCOUNT ON;
@@ -76,7 +76,7 @@ BEGIN
 					WagesforItem as authorName
 			FROM	[dbo].[ProductModel]
 		END
-	IF(@ProductModelRequest = 1) 
+	IF(@SizeMasterRequest = 1) 
 		BEGIN
 			SELECT	Id,
 					Sizename as name,
