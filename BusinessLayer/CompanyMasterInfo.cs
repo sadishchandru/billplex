@@ -96,7 +96,7 @@ namespace BusinessLayer
                 objLstDbParams.Add(new DbParams(DbType.String, 50, AuthEmail, "@CAEmail", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, AuthMobile, "@CAMobile", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, AuthorPanNo, "@CAPan", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.String, 50, AuthStartingDate, "@CAStartDate", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.DateTime, 50, AuthStartingDate, "@CAStartDate", ParameterDirection.Input));
 
                 dbReader = ObjDbfactory.GetReader("PRO_UpdateCompanyProfileInfo", false, objLstDbParams);
 
