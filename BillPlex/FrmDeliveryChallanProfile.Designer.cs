@@ -34,9 +34,6 @@ namespace BillPlex
             this.cmbFind = new DevExpress.XtraEditors.CheckedComboBoxEdit();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.panelDeliveryChallan = new DevExpress.XtraEditors.PanelControl();
-            this.gridSplitContainer1 = new DevExpress.XtraGrid.GridSplitContainer();
-            this.gridSplitContainer1Grid = new DevExpress.XtraGrid.GridControl();
-            this.gridSplitContainer1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.btnclr = new DevExpress.XtraEditors.SimpleButton();
             this.btnFind = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
@@ -48,6 +45,8 @@ namespace BillPlex
             this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
             this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
             this.btnNew = new DevExpress.XtraEditors.SimpleButton();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbFind.Properties)).BeginInit();
@@ -55,17 +54,12 @@ namespace BillPlex
             this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelDeliveryChallan)).BeginInit();
             this.panelDeliveryChallan.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSplitContainer1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSplitContainer1.Panel1)).BeginInit();
-            this.gridSplitContainer1.Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSplitContainer1.Panel2)).BeginInit();
-            this.gridSplitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSplitContainer1Grid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSplitContainer1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -108,7 +102,7 @@ namespace BillPlex
             // 
             // panelDeliveryChallan
             // 
-            this.panelDeliveryChallan.Controls.Add(this.gridSplitContainer1);
+            this.panelDeliveryChallan.Controls.Add(this.gridControl1);
             this.panelDeliveryChallan.Controls.Add(this.cmbFind);
             this.panelDeliveryChallan.Controls.Add(this.btnclr);
             this.panelDeliveryChallan.Controls.Add(this.btnFind);
@@ -116,40 +110,6 @@ namespace BillPlex
             this.panelDeliveryChallan.Name = "panelDeliveryChallan";
             this.panelDeliveryChallan.Size = new System.Drawing.Size(1123, 660);
             this.panelDeliveryChallan.TabIndex = 1;
-            // 
-            // gridSplitContainer1
-            // 
-            this.gridSplitContainer1.Grid = this.gridSplitContainer1Grid;
-            this.gridSplitContainer1.Location = new System.Drawing.Point(19, 83);
-            this.gridSplitContainer1.Name = "gridSplitContainer1";
-            // 
-            // gridSplitContainer1.Panel1
-            // 
-            this.gridSplitContainer1.Panel1.Controls.Add(this.gridSplitContainer1Grid);
-            this.gridSplitContainer1.Panel1.Text = "Panel1";
-            // 
-            // gridSplitContainer1.Panel2
-            // 
-            this.gridSplitContainer1.Panel2.Text = "Panel2";
-            this.gridSplitContainer1.Size = new System.Drawing.Size(1076, 560);
-            this.gridSplitContainer1.TabIndex = 3;
-            // 
-            // gridSplitContainer1Grid
-            // 
-            this.gridSplitContainer1Grid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridSplitContainer1Grid.Location = new System.Drawing.Point(0, 0);
-            this.gridSplitContainer1Grid.MainView = this.gridSplitContainer1View;
-            this.gridSplitContainer1Grid.Name = "gridSplitContainer1Grid";
-            this.gridSplitContainer1Grid.Size = new System.Drawing.Size(1076, 560);
-            this.gridSplitContainer1Grid.TabIndex = 0;
-            this.gridSplitContainer1Grid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridSplitContainer1View});
-            this.gridSplitContainer1Grid.Click += new System.EventHandler(this.grid_click);
-            // 
-            // gridSplitContainer1View
-            // 
-            this.gridSplitContainer1View.GridControl = this.gridSplitContainer1Grid;
-            this.gridSplitContainer1View.Name = "gridSplitContainer1View";
             // 
             // btnclr
             // 
@@ -359,6 +319,21 @@ namespace BillPlex
             this.btnNew.Text = "NEW";
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
+            // gridControl1
+            // 
+            this.gridControl1.Location = new System.Drawing.Point(37, 116);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(1069, 539);
+            this.gridControl1.TabIndex = 3;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            // 
             // FrmDeliveryChallanProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -375,17 +350,12 @@ namespace BillPlex
             this.panelControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelDeliveryChallan)).EndInit();
             this.panelDeliveryChallan.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridSplitContainer1.Panel1)).EndInit();
-            this.gridSplitContainer1.Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridSplitContainer1.Panel2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSplitContainer1)).EndInit();
-            this.gridSplitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridSplitContainer1Grid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSplitContainer1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -400,9 +370,6 @@ namespace BillPlex
         private DevExpress.XtraEditors.SimpleButton btnclr;
         private DevExpress.XtraEditors.SimpleButton btnFind;
         private DevExpress.XtraEditors.PanelControl panelControl3;
-        private DevExpress.XtraGrid.GridSplitContainer gridSplitContainer1;
-        private DevExpress.XtraGrid.GridControl gridSplitContainer1Grid;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridSplitContainer1View;
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraEditors.SimpleButton btnExit;
         private DevExpress.XtraEditors.SimpleButton btnAdd;
@@ -411,5 +378,7 @@ namespace BillPlex
         private DevExpress.XtraEditors.SimpleButton btnUpdate;
         private DevExpress.XtraEditors.SimpleButton btnEdit;
         private DevExpress.XtraEditors.SimpleButton btnNew;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
     }
 }
