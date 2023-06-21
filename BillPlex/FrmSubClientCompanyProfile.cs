@@ -73,5 +73,15 @@ namespace BillPlex
             //CompanyInfo.MdiParent = this;
             SubCompanyInfoRequest.Show();
         }
+
+        //private void Clearbtn_Click(object sender, EventArgs e)
+        //{
+
+        //}
+
+        //private void Exitbtn_Click(object sender, EventArgs e)
+        //{
+
+        //}
     }
 }

@@ -148,5 +148,54 @@ namespace BillPlex
             BtnNew.Enabled = false;
             btnUpdate.Enabled = true;
         }
+
+        private void ClearBtn_Click(object sender, EventArgs e)
+        {
+            txtCode.ResetText();
+            txtCompanyName.ResetText();
+            txtAddress.ResetText();
+            drpState.ResetText();
+            txtPinNo.ResetText();
+            txtCode.ResetText();
+            txtPhoneNo.ResetText();
+            ddStartingdate.ResetText();
+            radBusinessNature.ResetText();
+            txtEmail.ResetText();
+            txtWebsite.ResetText();
+            txtPFCode.ResetText();
+            ddPfDate.ResetText();
+            txtEsiCode.ResetText();
+            ddEsiDate.ResetText();
+            txtFactoryAct.ResetText();
+            txtTin.ResetText();
+            txtCSTNo.ResetText();
+            txtSSINo.ResetText();
+            txtPanNo.ResetText();
+            txtTanNo.ResetText();
+            txtLicense.ResetText();
+            txtName.ResetText();
+            txtFathersName.ResetText();
+            radGender.ResetText();
+            txtAddress.ResetText();
+            ddAuthstartingdate.ResetText();
+            txtAuthorPin.ResetText();
+            txtAuthorStdCode.ResetText();
+            txtAuthorPhoneNo.ResetText();
+            txtAuthorBloodGroup.ResetText();
+            ddAuthDOB.ResetText();
+            txtAuthorEmailId.ResetText();
+            txtAuthorMobileNo.ResetText();
+            txtAuthorPanNo.ResetText();
+
+        }
+
+        private void ExitBtn_Click(object sender, EventArgs e)
+        {
+            //int exitCode = 0; // Set your desired exit code value
+
+            //Environment.ExitCode = exitCode;
+
+            this.Close();
+        }
     }
 }

@@ -32,6 +32,12 @@ namespace BusinessLayer
         public string Tin { get; set; }
         public string CSTno { get; set; }
         public string Ssi { get; set; }
+
+        //public void BindDatas(DevExpress.XtraGrid.Views.Grid.GridView gridView2)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
         public string PanNo { get; set; }
         public string Tan { get; set; }
         public string License { get; set; }
@@ -63,7 +69,7 @@ namespace BusinessLayer
                 // Calling the stored procedure for creating a new Company Profile
                 List<DbParams> objLstDbParams = new List<DbParams>();
                 objLstDbParams.Add(new DbParams(DbType.String, 50, MainCompany, "@MasterCompanyId", ParameterDirection.Input));
-                //objLstDbParams.Add(new DbParams(DbType.String, 50, Director, "@ComName", ParameterDirection.Input));
+                // objLstDbParams.Add(new DbParams(DbType.String, 50, Director, "@ComName", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 200, CompanyCode, "@ComCcode", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, CompanyName, "@ComCname", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, OffAddress, "@ComCoffAddress", ParameterDirection.Input));
@@ -121,6 +127,44 @@ namespace BusinessLayer
                 CloseConnection();
             }
         }
+        #endregion
+
+        #region Delete
+
+        public void Delete()
+        {
+
+            dbReader = null;
+            Result = new ResultDetail();
+
+            try
+            {
+                InitializeDb();
+
+                // Calling the stored procedure for creating a new Company Profile
+                List<DbParams> objLstDbParams = new List<DbParams>();
+                objLstDbParams.Add(new DbParams(DbType.String, 50, Id, "@Id", ParameterDirection.Input));
+
+                dbReader = ObjDbfactory.GetReader("PRO_DeleteClientMaster", false, objLstDbParams);
+
+
+                Result.Message = "Client Company Master Deleted Successfully";
+                Result.Status = ResultStatus.Success;
+
+
+            }
+            catch (Exception ex)
+            {
+                // Display a warning alert
+                // XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
+
         #endregion
     }
 }

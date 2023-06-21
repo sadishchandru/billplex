@@ -72,6 +72,11 @@ namespace BillPlex
                 XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
+            btnAdd.Enabled = false;
+            btnEdit.Enabled = true;
+            btnDelete.Enabled = true;
+            btnUpdate.Enabled = true;
+
         }
 
         private void btnClear_Click(object sender, EventArgs e)

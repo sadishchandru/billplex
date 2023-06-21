@@ -30,8 +30,8 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRawMaterial));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -94,7 +94,7 @@ namespace BillPlex
             this.labelControl1.Location = new System.Drawing.Point(658, 46);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(212, 39);
+            this.labelControl1.Size = new System.Drawing.Size(245, 45);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Raw Material";
             // 
@@ -139,13 +139,13 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery2.Name = "PRO_GetRawMaterial";
-            queryParameter2.Name = "@SearchKey";
-            queryParameter2.Type = typeof(string);
-            storedProcQuery2.Parameters.Add(queryParameter2);
-            storedProcQuery2.StoredProcName = "PRO_GetRawMaterial";
+            storedProcQuery1.Name = "PRO_GetRawMaterial";
+            queryParameter1.Name = "@SearchKey";
+            queryParameter1.Type = typeof(string);
+            storedProcQuery1.Parameters.Add(queryParameter1);
+            storedProcQuery1.StoredProcName = "PRO_GetRawMaterial";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery2});
+            storedProcQuery1});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // gridView1
@@ -202,7 +202,7 @@ namespace BillPlex
             this.labelControl6.Location = new System.Drawing.Point(53, 354);
             this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(169, 19);
+            this.labelControl6.Size = new System.Drawing.Size(187, 22);
             this.labelControl6.TabIndex = 11;
             this.labelControl6.Text = "Search Raw Material";
             // 
@@ -321,7 +321,7 @@ namespace BillPlex
             this.labelControl7.Location = new System.Drawing.Point(232, 165);
             this.labelControl7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(14, 27);
+            this.labelControl7.Size = new System.Drawing.Size(16, 30);
             this.labelControl7.TabIndex = 5;
             this.labelControl7.Text = "*";
             // 
@@ -334,7 +334,7 @@ namespace BillPlex
             this.labelControl5.Location = new System.Drawing.Point(219, 96);
             this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(14, 27);
+            this.labelControl5.Size = new System.Drawing.Size(16, 30);
             this.labelControl5.TabIndex = 3;
             this.labelControl5.Text = "*";
             // 
@@ -345,7 +345,7 @@ namespace BillPlex
             this.labelControl4.Location = new System.Drawing.Point(48, 100);
             this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(158, 19);
+            this.labelControl4.Size = new System.Drawing.Size(173, 22);
             this.labelControl4.TabIndex = 2;
             this.labelControl4.Text = "Enter Raw Material";
             // 
@@ -356,7 +356,7 @@ namespace BillPlex
             this.labelControl3.Location = new System.Drawing.Point(48, 167);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(167, 19);
+            this.labelControl3.Size = new System.Drawing.Size(185, 22);
             this.labelControl3.TabIndex = 1;
             this.labelControl3.Text = "Enter Stock Qty (Kg)";
             // 
@@ -367,7 +367,7 @@ namespace BillPlex
             this.labelControl2.Location = new System.Drawing.Point(48, 40);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(125, 19);
+            this.labelControl2.Size = new System.Drawing.Size(136, 22);
             this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "Enter The Type";
             // 
@@ -375,7 +375,7 @@ namespace BillPlex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1536, 916);
+            this.ClientSize = new System.Drawing.Size(1714, 916);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

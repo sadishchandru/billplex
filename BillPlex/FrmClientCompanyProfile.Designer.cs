@@ -127,7 +127,7 @@ namespace BillPlex
             this.clientcompanyprofilebtn.Appearance.Options.UseForeColor = true;
             this.clientcompanyprofilebtn.Location = new System.Drawing.Point(634, 23);
             this.clientcompanyprofilebtn.Name = "clientcompanyprofilebtn";
-            this.clientcompanyprofilebtn.Size = new System.Drawing.Size(209, 24);
+            this.clientcompanyprofilebtn.Size = new System.Drawing.Size(243, 26);
             this.clientcompanyprofilebtn.TabIndex = 0;
             this.clientcompanyprofilebtn.Text = "Client Company Profile";
             // 
@@ -154,7 +154,7 @@ namespace BillPlex
             this.panelControl5.LookAndFeel.SkinName = "DevExpress Style";
             this.panelControl5.LookAndFeel.UseDefaultLookAndFeel = false;
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(98, 226);
+            this.panelControl5.Size = new System.Drawing.Size(98, 318);
             this.panelControl5.TabIndex = 1;
             // 
             // btnAdd
@@ -164,12 +164,12 @@ namespace BillPlex
             this.btnAdd.Appearance.Options.UseBackColor = true;
             this.btnAdd.Appearance.Options.UseFont = true;
             this.btnAdd.Enabled = false;
-            this.btnAdd.Location = new System.Drawing.Point(10, 28);
+            this.btnAdd.Location = new System.Drawing.Point(10, 67);
             this.btnAdd.LookAndFeel.SkinName = "DevExpress Style";
             this.btnAdd.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(64, 19);
+            this.btnAdd.Size = new System.Drawing.Size(75, 22);
             this.btnAdd.TabIndex = 16;
             this.btnAdd.Text = "ADD";
             // 
@@ -179,13 +179,12 @@ namespace BillPlex
             this.btnEdit.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.Appearance.Options.UseBackColor = true;
             this.btnEdit.Appearance.Options.UseFont = true;
-            this.btnEdit.Enabled = false;
-            this.btnEdit.Location = new System.Drawing.Point(10, 51);
+            this.btnEdit.Location = new System.Drawing.Point(10, 106);
             this.btnEdit.LookAndFeel.SkinName = "DevExpress Style";
             this.btnEdit.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(64, 19);
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 15;
             this.btnEdit.Text = "EDIT";
             // 
@@ -196,12 +195,12 @@ namespace BillPlex
             this.btnClear.Appearance.Options.UseBackColor = true;
             this.btnClear.Appearance.Options.UseFont = true;
             this.btnClear.Enabled = false;
-            this.btnClear.Location = new System.Drawing.Point(10, 133);
+            this.btnClear.Location = new System.Drawing.Point(12, 228);
             this.btnClear.LookAndFeel.SkinName = "DevExpress Style";
             this.btnClear.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(64, 19);
+            this.btnClear.Size = new System.Drawing.Size(73, 25);
             this.btnClear.TabIndex = 14;
             this.btnClear.Text = "CLEAR";
             // 
@@ -212,12 +211,12 @@ namespace BillPlex
             this.btnDelete.Appearance.Options.UseBackColor = true;
             this.btnDelete.Appearance.Options.UseFont = true;
             this.btnDelete.Enabled = false;
-            this.btnDelete.Location = new System.Drawing.Point(10, 104);
+            this.btnDelete.Location = new System.Drawing.Point(12, 185);
             this.btnDelete.LookAndFeel.SkinName = "DevExpress Style";
             this.btnDelete.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(64, 19);
+            this.btnDelete.Size = new System.Drawing.Size(73, 27);
             this.btnDelete.TabIndex = 13;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -229,12 +228,12 @@ namespace BillPlex
             this.bnUpdate.Appearance.Options.UseBackColor = true;
             this.bnUpdate.Appearance.Options.UseFont = true;
             this.bnUpdate.Enabled = false;
-            this.bnUpdate.Location = new System.Drawing.Point(10, 76);
+            this.bnUpdate.Location = new System.Drawing.Point(10, 145);
             this.bnUpdate.LookAndFeel.SkinName = "DevExpress Style";
             this.bnUpdate.LookAndFeel.UseDefaultLookAndFeel = false;
             this.bnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bnUpdate.Name = "bnUpdate";
-            this.bnUpdate.Size = new System.Drawing.Size(64, 19);
+            this.bnUpdate.Size = new System.Drawing.Size(75, 24);
             this.bnUpdate.TabIndex = 12;
             this.bnUpdate.Text = "UPDATE";
             // 
@@ -245,7 +244,7 @@ namespace BillPlex
             this.Exitbtn.Appearance.Options.UseBackColor = true;
             this.Exitbtn.Appearance.Options.UseFont = true;
             this.Exitbtn.Enabled = false;
-            this.Exitbtn.Location = new System.Drawing.Point(12, 196);
+            this.Exitbtn.Location = new System.Drawing.Point(10, 267);
             this.Exitbtn.LookAndFeel.SkinName = "DevExpress Style";
             this.Exitbtn.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Exitbtn.Name = "Exitbtn";
@@ -259,7 +258,7 @@ namespace BillPlex
             this.Newbtn.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Newbtn.Appearance.Options.UseBackColor = true;
             this.Newbtn.Appearance.Options.UseFont = true;
-            this.Newbtn.Location = new System.Drawing.Point(12, 5);
+            this.Newbtn.Location = new System.Drawing.Point(10, 26);
             this.Newbtn.LookAndFeel.SkinName = "DevExpress Style";
             this.Newbtn.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Newbtn.Name = "Newbtn";
@@ -308,7 +307,7 @@ namespace BillPlex
             this.gridControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.gridControl1.MainView = this.gridView2;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1402, 569);
+            this.gridControl1.Size = new System.Drawing.Size(1373, 569);
             this.gridControl1.TabIndex = 7;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -383,6 +382,7 @@ namespace BillPlex
             this.gridView2.OptionsScrollAnnotations.ShowSelectedRows = DevExpress.Utils.DefaultBoolean.False;
             this.gridView2.PaintStyleName = "Flat";
             this.gridView2.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
+            this.gridView2.DoubleClick += new System.EventHandler(this.Editbtn_Click);
             // 
             // colMasterCode
             // 
@@ -804,7 +804,7 @@ namespace BillPlex
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1404, 756);
+            this.ClientSize = new System.Drawing.Size(1673, 775);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Name = "FrmClientCompanyProfile";

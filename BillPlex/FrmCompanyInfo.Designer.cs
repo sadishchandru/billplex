@@ -234,6 +234,7 @@ namespace BillPlex
             this.ExitBtn.Size = new System.Drawing.Size(81, 23);
             this.ExitBtn.TabIndex = 59;
             this.ExitBtn.Text = "EXIT";
+            this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
             // ClearBtn
             // 
@@ -248,11 +249,13 @@ namespace BillPlex
             this.ClearBtn.Size = new System.Drawing.Size(81, 23);
             this.ClearBtn.TabIndex = 58;
             this.ClearBtn.Text = "CLEAR";
+            this.ClearBtn.Click += new System.EventHandler(this.ClearBtn_Click);
             // 
             // btnDelete
             // 
             this.btnDelete.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Appearance.Options.UseFont = true;
+            this.btnDelete.Enabled = false;
             this.btnDelete.Location = new System.Drawing.Point(18, 176);
             this.btnDelete.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.btnDelete.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.White;
@@ -267,6 +270,7 @@ namespace BillPlex
             // 
             this.btnUpdate.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Appearance.Options.UseFont = true;
+            this.btnUpdate.Enabled = false;
             this.btnUpdate.Location = new System.Drawing.Point(18, 135);
             this.btnUpdate.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.btnUpdate.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.White;
@@ -282,6 +286,7 @@ namespace BillPlex
             // 
             this.btnEdit.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.Appearance.Options.UseFont = true;
+            this.btnEdit.Enabled = false;
             this.btnEdit.Location = new System.Drawing.Point(18, 89);
             this.btnEdit.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.btnEdit.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.White;
@@ -314,6 +319,7 @@ namespace BillPlex
             this.BtnNew.AppearanceDisabled.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.BtnNew.AppearanceDisabled.BackColor2 = System.Drawing.Color.LightBlue;
             this.BtnNew.AppearanceDisabled.Options.UseBackColor = true;
+            this.BtnNew.Enabled = false;
             this.BtnNew.Location = new System.Drawing.Point(18, 5);
             this.BtnNew.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.BtnNew.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.White;
