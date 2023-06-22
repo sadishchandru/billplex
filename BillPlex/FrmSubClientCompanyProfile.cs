@@ -54,8 +54,8 @@ namespace BillPlex
 
             foreach (var rowHandle in selectedRows)
             {
-                var Id = SubClientGrid.GetRowCellValue(rowHandle, "Id");
-                SubClientRequest.Id = (int)Id;
+                SubClientRequest.Id = (Int64)SubClientGrid.GetRowCellValue(rowHandle, "Id");
+                //SubClientRequest.Id = (int)Id;
 
             }
 

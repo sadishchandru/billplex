@@ -69,7 +69,7 @@ namespace BillPlex
         {
             try
             {
-                if (txtCompanyCode.Text != string.Empty || txtCompanyCode.Text != "Select" && txtCompanyName.Text != string.Empty && txtName.Text != string.Empty)
+                if ((txtCompanyCode.Text != string.Empty || txtCompanyCode.Text != "Select") && txtCompanyName.Text != string.Empty && txtName.Text != string.Empty)
                 {
 
                     var selectedItem = drpMainCompany.EditValue;
@@ -88,16 +88,16 @@ namespace BillPlex
                     ClientCompanyRequest.State = drpState.Text;
                     ClientCompanyRequest.Pin = txtPin.Text;
                     ClientCompanyRequest.BusinessNature = radBusinessNature.Text;
-                    ClientCompanyRequest.Startingdate = ddStartingDate.Text;
+                    ClientCompanyRequest.Startingdate = ddStartingDate.Text.ToString();
                     ClientCompanyRequest.stdCode = txtstdCode.Text;
                     ClientCompanyRequest.CompanyPhone = txtClientCompanyPhone.Text;
                     ClientCompanyRequest.Email = txtEmail.Text;
                     ClientCompanyRequest.Website = txtWebsite.Text;
                     ClientCompanyRequest.PfType = radPfType.Text;
                     ClientCompanyRequest.PFCode = txtPFCode.Text;
-                    ClientCompanyRequest.PFdate = ddPfDate.Text;
+                    ClientCompanyRequest.PFdate = ddPfDate.Text.ToString();
                     ClientCompanyRequest.EsiCode = txtEsiCode.Text;
-                    ClientCompanyRequest.ESIdate = ddEsiCode.Text;
+                    ClientCompanyRequest.ESIdate = ddEsiCode.Text.ToString();
                     ClientCompanyRequest.FactoryAct = txtFactoryAct.Text;
                     ClientCompanyRequest.Tin = txtTin.Text;
                     ClientCompanyRequest.CSTno = txtCst.Text;
@@ -109,7 +109,7 @@ namespace BillPlex
                     ClientCompanyRequest.Fathername = txtFathers.Text;
                     ClientCompanyRequest.Gender = radGender.Text;
                     ClientCompanyRequest.AuthBloodGroup = drpAuthBloodGroup.Text;
-                    ClientCompanyRequest.DOB = ddDOB.Text;
+                    ClientCompanyRequest.DOB = ddDOB.Text.ToString();
                     ClientCompanyRequest.AuthEmail = txtEmailID.Text;
                     ClientCompanyRequest.AuthAddress = TxtAuthAddress.Text;
                     ClientCompanyRequest.AuthState = drpAuthState.Text;
@@ -148,57 +148,7 @@ namespace BillPlex
                 // Display a warning alert
                 //XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            }
-            //string selectedValue = radBusinessNature.EditValue?.ToString() ?? "Default Value";
-
-            // Calling the stored procedure for creating a new Company Profile
-            //SqlParameter[] parameters = new SqlParameter[]
-            //{
-            //    new SqlParameter("@MasterCompanyId", drpMainCompany.Text),
-            //    new SqlParameter("@", drpDirector.Text),
-            //    new SqlParameter("@ComCcode", txtCompanyCode.Text),
-            //    new SqlParameter("@ComCname", txtCompanyName.Text),
-            //    new SqlParameter("@ComCoffAddress", txtOffAddress.Text),
-            //    new SqlParameter("@ComCstate", drpAuthState.Text),
-            //    new SqlParameter("@ComCpin", txtPin.Text),
-            //    new SqlParameter("@ComCNature",selectedValue),
-            //    new SqlParameter("@ComCDatestart", ddStartingDate.Text.ToString()),
-            //    new SqlParameter("@ComStdcode", stdCodeTxt.Text),
-            //    new SqlParameter("@ComCPhone", txtClientCompanyPhone.Text),
-            //    new SqlParameter("@ComCEmail", txtEmail.Text),
-            //    new SqlParameter("@ComCWebsite", txtWebsite.Text),
-            //    new SqlParameter("@PfType", radPfType.Text.ToString()),
-            //    new SqlParameter("@ComCPFno", txtPFCode.Text),
-            //    new SqlParameter("@ComCPFdate", ddPfDate.Text.ToString()),
-            //    new SqlParameter("@ComCESIno", txtEsiCode.Text),
-            //    new SqlParameter("@ComCESIdate", ddEsiCode.Text.ToString()),
-            //    new SqlParameter("@ComCFactoryno", txtFactoryAct.Text),
-            //    new SqlParameter("@ComCTINno", txtTin.Text),
-            //    new SqlParameter("@ComCCSTno", txtCst.Text),
-            //    new SqlParameter("@ComCSSLno", txtSsi.Text),
-            //    new SqlParameter("@ComCPanno", txtPanNo.Text),
-            //    new SqlParameter("@ComCTanno", txtTan.Text),
-            //    new SqlParameter("@ComCLicenseno", LicenseTxt.Text),
-            //    new SqlParameter("@ComCPname", txtName.Text),
-            //    new SqlParameter("@CCPFathername", txtFathers.Text),
-            //    new SqlParameter("@CCPGender", radGender.Text.ToString()),
-            //    new SqlParameter("@CCPblood", drpAuthBloodGroup.Text),
-            //    new SqlParameter("@CCPDOB", ddDOB.Text.ToString()),
-            //    new SqlParameter("@CCPEmail", txtEmailID.Text),
-            //    new SqlParameter("@CCPAddress", TxtAuthAddress.Text),
-            //    new SqlParameter("@CCPstate", drpAuthState.Text),
-            //    new SqlParameter("@CCPpin", txtAuthpin.Text),
-            //    new SqlParameter("@CCPMobile", txtmobile.Text),
-            //    new SqlParameter("@CCPPan", txtAuthPanNo.Text),
-            //    new SqlParameter("@CCPpercent", txtPercent.Text),
-            //    new SqlParameter("@CCPactive", radActiveStatus.Text.ToString()),
-            //    new SqlParameter("@CCPFathername", txtBankDetails.Text),
-            //    new SqlParameter("@CCPImage",AuthImg.SvgImage)
-                // new SqlParameter("", drpAuthorStartingdate.Text),
-
-            //};
-
-            // var i = _conn.ExecuteNonQuery("PRO_UpdateClientCompanyProfileInfo", parameters);
+            };
         }
 
         private void MainCompanyDd_Click(object sender, EventArgs e)
@@ -208,56 +158,6 @@ namespace BillPlex
 
         private void UpdateBtn_Click(object sender, EventArgs e)
         {
-            //var Id = 0;
-
-            //string selectedValue = radBusinessNature.EditValue?.ToString() ?? "Default Value";
-
-            // Calling the stored procedure for creating a new Company Profile
-            //SqlParameter[] parameters = new SqlParameter[]
-            //{
-            //    new SqlParameter("@MasterCompanyId", drpMainCompany.Text),
-            //    new SqlParameter("@", drpDirector.Text),
-            //    new SqlParameter("@ComCcode", txtCompanyCode.Text),
-            //    new SqlParameter("@ComCname", txtCompanyName.Text),
-            //    new SqlParameter("@ComCoffAddress", txtOffAddress.Text),
-            //    new SqlParameter("@ComCstate", drpAuthState.Text),
-            //    new SqlParameter("@ComCpin", txtPin.Text),
-            //    new SqlParameter("@ComCNature",selectedValue),
-            //    new SqlParameter("@ComCDatestart", ddStartingDate.Text.ToString()),
-            //    new SqlParameter("@ComStdcode", stdCodeTxt.Text),
-            //    new SqlParameter("@ComCPhone", txtClientCompanyPhone.Text),
-            //    new SqlParameter("@ComCEmail", txtEmail.Text),
-            //    new SqlParameter("@ComCWebsite", txtWebsite.Text),
-            //    new SqlParameter("@PfType", radPfType.Text.ToString()),
-            //    new SqlParameter("@ComCPFno", txtPFCode.Text),
-            //    new SqlParameter("@ComCPFdate", ddPfDate.Text.ToString()),
-            //    new SqlParameter("@ComCESIno", txtEsiCode.Text),
-            //    new SqlParameter("@ComCESIdate", ddEsiCode.Text.ToString()),
-            //    new SqlParameter("@ComCFactoryno", txtFactoryAct.Text),
-            //    new SqlParameter("@ComCTINno", txtTin.Text),
-            //    new SqlParameter("@ComCCSTno", txtCst.Text),
-            //    new SqlParameter("@ComCSSLno", txtSsi.Text),
-            //    new SqlParameter("@ComCPanno", txtPanNo.Text),
-            //    new SqlParameter("@ComCTanno", txtTan.Text),
-            //    new SqlParameter("@ComCLicenseno", LicenseTxt.Text),
-            //    new SqlParameter("@ComCPname", txtName.Text),
-            //    new SqlParameter("@CCPFathername", txtFathers.Text),
-            //    new SqlParameter("@CCPGender", radGender.Text.ToString()),
-            //    new SqlParameter("@CCPblood", drpAuthBloodGroup.Text),
-            //    new SqlParameter("@CCPDOB", ddDOB.Text.ToString()),
-            //    new SqlParameter("@CCPEmail", txtEmailID.Text),
-            //    new SqlParameter("@CCPAddress", TxtAuthAddress.Text),
-            //    new SqlParameter("@CCPstate", drpAuthState.Text),
-            //    new SqlParameter("@CCPpin", txtAuthpin.Text),
-            //    new SqlParameter("@CCPMobile", txtmobile.Text),
-            //    new SqlParameter("@CCPPan", txtAuthPanNo.Text),
-            //    new SqlParameter("@CCPpercent", txtPercent.Text),
-            //    new SqlParameter("@CCPactive", radActiveStatus.Text.ToString()),
-            //    new SqlParameter("@CCPFathername", txtBankDetails.Text),
-            //    new SqlParameter("@CCPImage", AuthImg.SvgImage)
-            // };
-
-            // var i = _conn.ExecuteNonQuery("PRO_UpdateClientCompanyProfileInfo", parameters);
         }
 
         private void drpMainCompany_SelectedIndexChanged(object sender, EventArgs e)
@@ -284,21 +184,27 @@ namespace BillPlex
                 drpState.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCstate");
                 drpMainCompany.SelectedIndex = Convert.ToInt32(selectedClientCompanyList.GetRowCellValue(rowHandle, "MasterCompanyId"));
                 txtPin.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCpin");
-                radBusinessNature.SelectedIndex = Convert.ToInt32(selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCNature"));
+                if (radBusinessNature.SelectedIndex != null && selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCNature") != "")
+                {
+                    radBusinessNature.SelectedIndex = Convert.ToInt32(selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCNature"));
+                }
                 //radBusinessNature.DataBindings.Add("radBusinessNature", selectedClientCompanyList, "ComCNature", true, DataSourceUpdateMode.OnPropertyChanged);
-                var datete = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCDatestart");
-                ddStartingDate.Text = datete.ToString();
+                var datete = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCDatestart").ToString();
+                ddStartingDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
                 txtstdCode.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComStdcode");
                 txtClientCompanyPhone.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCPhone");
                 txtEmail.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCEmail");
                 txtWebsite.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCWebsite");
-                radPfType.SelectedIndex =Convert.ToInt32(selectedClientCompanyList.GetRowCellValue(rowHandle, "PfType"));
+                if(radPfType.SelectedIndex != null && selectedClientCompanyList.GetRowCellValue(rowHandle, "PfType") != "")
+                {
+                    radPfType.SelectedIndex = Convert.ToInt32(selectedClientCompanyList.GetRowCellValue(rowHandle, "PfType"));
+                }
                 txtPFCode.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCPFno");
-                var datetes = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCPFdate");
-                ddPfDate.Text = datetes.ToString();
+                datete = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCPFdate").ToString();
+                ddPfDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
                 txtEsiCode.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCESIno");
-                datete = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCESIdate");
-                ddEsiCode.Text = datete.ToString();
+                datete = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCESIdate").ToString();
+                ddEsiCode.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
                 txtFactoryAct.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCFactoryno");
                 txtTin.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCTINno");
                 txtCst.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCCSTno");
@@ -308,10 +214,13 @@ namespace BillPlex
                 LicenseTxt.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCLicenseno");
                 txtName.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCPname");
                 txtFathers.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "CCPFathername");
-                radGender.SelectedIndex = Convert.ToInt32(selectedClientCompanyList.GetRowCellValue(rowHandle, "CCPGender"));
+                if (radGender.SelectedIndex != null && selectedClientCompanyList.GetRowCellValue(rowHandle, "CCPGender") != "")
+                {
+                    radGender.SelectedIndex = Convert.ToInt32(selectedClientCompanyList.GetRowCellValue(rowHandle, "CCPGender"));
+                }
                 drpAuthBloodGroup.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "CCPblood");
-                var dateted = selectedClientCompanyList.GetRowCellValue(rowHandle, "CCPDOB");
-                ddDOB.Text = dateted.ToString();
+                datete = selectedClientCompanyList.GetRowCellValue(rowHandle, "CCPDOB").ToString();
+                ddDOB.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
                 txtEmailID.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "CCPEmail");
                 TxtAuthAddress.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "CCPAddress");
                 drpAuthState.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "CCPstate");
@@ -319,7 +228,10 @@ namespace BillPlex
                 txtmobile.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "CCPMobile");
                 txtAuthPanNo.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "CCPPan");
                 txtPercent.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "CCPpercent");
-                radActiveStatus.SelectedIndex = Convert.ToInt32(selectedClientCompanyList.GetRowCellValue(rowHandle, "CCPactive"));
+                if (radActiveStatus.SelectedIndex != null && selectedClientCompanyList.GetRowCellValue(rowHandle, "CCPactive") != "")
+                {
+                    radActiveStatus.SelectedIndex = Convert.ToInt32(selectedClientCompanyList.GetRowCellValue(rowHandle, "CCPactive"));
+                }
             }
 
             btnAdd.Enabled = false;

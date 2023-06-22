@@ -17,7 +17,7 @@ ALTER PROCEDURE PRO_UpdateCompanyProfileInfo
 ,@Comstate VARCHAR(50) = ''
 ,@ComPin VARCHAR(50) = ''
 ,@ComNature VARCHAR(100) = ''
-,@ComDatestart DATE = NULL
+,@ComDatestart DATE = ''
 ,@ComStdCode VARCHAR(10) = ''
 ,@ComPhone VARCHAR(20) = ''
 ,@ComEmail VARCHAR(50) = ''

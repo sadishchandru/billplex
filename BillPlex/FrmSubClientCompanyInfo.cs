@@ -62,24 +62,6 @@ namespace BillPlex
                 {
                     SubClientRequest.ClientCompanyList = (List<DropDownItemInfo>)item.Value;
                 }
-                // SubClientRequest.MasterCompanyList = item;
-
-                //        drpMainCompany.Properties.Items.AddRange(new ImageComboBoxItem[] {
-                //new ImageComboBoxItem(item.Name)});
-                //                var keyValue = item.Key.ToString();
-                //if (item == "MasterCompanyRequired")
-                //{
-                // var itemList = item.Value as List<DropDownItemInfo>;
-
-                //var itemsList = (DropDownItemInfo)item.Value;
-                //drpMainCompany.Properties.Items.Add();
-                //SubClientRequest.MasterCompanyList = dropdwonList;
-                //SubClientRequest.ClientCompanyList = dropdwonList;
-                //int index = 0;
-
-                //drpMainCompany.Properties.Items.Add(new ImageComboBoxItem(item.Name));
-                //drpCCompany.Properties.Items.Add(new ImageComboBoxItem(item.Name));
-                //}
             }
 
             if (SubClientRequest.MasterCompanyList.Count() > 0)
@@ -173,6 +155,7 @@ namespace BillPlex
                     SubClientRequest.AuthPercent = txtAuthPercent.Text;
                     SubClientRequest.ActiveStatus = radActiveStatus.Text;
                     SubClientRequest.Update();
+                    this.Close();
 
                 }
                 else
@@ -232,33 +215,34 @@ namespace BillPlex
                 SubClientRequest.Id = selectedCompanyList.GetRowCellValue(rowHandle, "Id");
                 txtCompanyCode.Text = selectedCompanyList.GetRowCellValue(rowHandle, "MasterCode") == DBNull.Value ? string.Empty : selectedCompanyList.GetRowCellValue(rowHandle, "MasterCode").ToString();
                 
-                drpMainCompany.Text = selectedCompanyList.GetRowCellValue(rowHandle, "MasterCompanyId").ToString();
-                drpCCompany.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ClientCompanyId").ToString();
+                drpMainCompany.SelectedIndex = Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "MasterCompanyId").ToString());                drpCCompany.SelectedIndex = Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "ClientCompanyId").ToString());
                 txtCompanyCode.Text = selectedCompanyList.GetRowCellValue(rowHandle, "SubComCode");
                 txtCompanyName.Text = selectedCompanyList.GetRowCellValue(rowHandle, "SubComName");
                 txtOffAddress.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComOffAdd");
                 drpState.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComState");
                 txtPin.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComPin");
-                radBusinessNature.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComNature");
-                txtDirector.Text = selectedCompanyList.GetRowCellValue(rowHandle, "Director");
-                var datete = selectedCompanyList.GetRowCellValue(rowHandle, "ComDatestart");
+                radBusinessNature.SelectedIndex = Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "ComNature"));
                 
-                ddStartingDate.Text = datete.ToString();
+                txtDirector.Text = selectedCompanyList.GetRowCellValue(rowHandle, "Director");
+                var datete = selectedCompanyList.GetRowCellValue(rowHandle, "ComDatestart").ToString();
+                
+                ddStartingDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
 
                 txtOffPin.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComStdCode");
                 txtOfficePhone.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComPhone");
                 txtEmail.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComEmail");
                 txtWebsite.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComWebsite");
-                radPfType.Text = selectedCompanyList.GetRowCellValue(rowHandle, "PfType");
+
+                radPfType.SelectedIndex = Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "PfType"));
                 txtPFCode.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComPfNo");
 
-                datete = selectedCompanyList.GetRowCellValue(rowHandle, "ComPfDate");
-                ddPFDate.Text = datete.ToString();
+                datete = selectedCompanyList.GetRowCellValue(rowHandle, "ComPfDate").ToString();
+                ddPFDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
 
                 txtEsiCode.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComEsiNo");
 
-                datete = selectedCompanyList.GetRowCellValue(rowHandle, "ComEsiDate");
-                ddESIDate.Text = datete.ToString();
+                datete = selectedCompanyList.GetRowCellValue(rowHandle, "ComEsiDate").ToString();
+                ddESIDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
 
                 txtFactoryAct.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComFactoryNo");
                 txtCst.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComCstNo");
@@ -269,11 +253,13 @@ namespace BillPlex
                 txttan.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComTanNo");
                 txtName.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorName");
                 txtFathers.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorFathername");
-                radGender.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorGender");
+
+                radGender.SelectedIndex = Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "AuthorGender"));
+
                 txtBlood.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorBlood");
 
-                datete = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorDOB");
-                ddDOB.Text = datete.ToString();
+                datete = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorDOB").ToString();
+                ddDOB.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
 
                 txtAuthEmailId.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorEmail");
                 txtAuthAddress.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorAddress");
@@ -282,12 +268,7 @@ namespace BillPlex
                 txtAuthMobileNo.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorMobile");
                 txtAuthPanNo.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorPan");
                 txtAuthPercent.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorPercent");
-                radActiveStatus.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorActive");
-
-
-
-                
-
+                radActiveStatus.SelectedIndex = Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "AuthorActive"));
             }
 
             btnAdd.Enabled = false;
@@ -295,6 +276,55 @@ namespace BillPlex
             btnUpdate.Enabled = true;
             btnEdit.Enabled = true;
 
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            drpMainCompany.ResetText();
+            txtDirector.ResetText();
+            drpCCompany.ResetText();
+            txtContName.ResetText();
+            txtCompanyCode.ResetText();
+            txtCompanyName.ResetText();
+            txtOffAddress.ResetText();
+            drpState.ResetText();
+            txtPin.ResetText();
+            radBusinessNature.ResetText();
+            ddStartingDate.ResetText();
+            txtOffPin.ResetText();
+            txtOfficePhone.ResetText();
+            txtEmail.ResetText();
+            txtWebsite.ResetText();
+            radPfType.ResetText();
+            txtPFCode.ResetText();
+            ddPFDate.ResetText();
+            txtEsiCode.ResetText();
+            ddESIDate.ResetText();
+            txtFactoryAct.ResetText();
+            txtTin.ResetText();
+            txtCst.ResetText();
+            txtSsi.ResetText();
+            txtPanNo.ResetText();
+            txttan.ResetText();
+            txtLicense.ResetText();
+            txtName.ResetText();
+            txtFathers.ResetText();
+            radGender.ResetText();
+            txtBlood.ResetText();
+            ddDOB.ResetText();
+            txtAuthEmailId.ResetText();
+            txtAuthAddress.ResetText();
+            drpAuthState.ResetText();
+            txtAuthpin.ResetText();
+            txtAuthMobileNo.ResetText();
+            txtAuthPanNo.ResetText();
+            txtAuthPercent.ResetText();
+            radActiveStatus.ResetText();
+        }
+
+        private void btnExit_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

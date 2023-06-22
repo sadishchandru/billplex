@@ -91,7 +91,6 @@ namespace BillPlex
             this.colCBankAddress = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCreatedDate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCAStartDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Printbtn = new DevExpress.XtraEditors.SimpleButton();
             this.Claerbtn = new DevExpress.XtraEditors.SimpleButton();
@@ -368,7 +367,6 @@ namespace BillPlex
             this.colCBankAddress,
             this.colId,
             this.colCreatedDate,
-            this.gridColumn1,
             this.colCAStartDate});
             this.CompanyGridView.GridControl = this.gridControl1;
             this.CompanyGridView.HorzScrollStep = 10;
@@ -751,19 +749,14 @@ namespace BillPlex
             this.colCreatedDate.VisibleIndex = 40;
             this.colCreatedDate.Width = 80;
             // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "gridColumn1";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 41;
-            // 
             // colCAStartDate
             // 
             this.colCAStartDate.FieldName = "CAStartDate";
+            this.colCAStartDate.MinWidth = 80;
             this.colCAStartDate.Name = "colCAStartDate";
             this.colCAStartDate.Visible = true;
-            this.colCAStartDate.VisibleIndex = 42;
+            this.colCAStartDate.VisibleIndex = 41;
+            this.colCAStartDate.Width = 80;
             // 
             // Printbtn
             // 
@@ -927,7 +920,6 @@ namespace BillPlex
         private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colCreatedDate;
         private DevExpress.XtraEditors.ComboBoxEdit drpClientProfile;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn colCAStartDate;
     }
 }

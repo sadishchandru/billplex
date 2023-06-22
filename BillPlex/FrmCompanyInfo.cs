@@ -28,6 +28,7 @@ namespace BillPlex
             //_conn = new SqlConnector(connectionString);
             CompanyRequest = new CompanyMasterInfo();
             CompanyRequest.ConnectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
+            CompanyRequest.Result = new ResultDetail();
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -40,6 +41,8 @@ namespace BillPlex
         {
             try
             {
+                if (txtCode.Text != string.Empty && txtCompanyName.Text != string.Empty && txtName.Text != string.Empty)
+                {
                     CompanyRequest.Code = txtCode.Text;
                     CompanyRequest.CompanyName = txtCompanyName.Text;
                     CompanyRequest.OffAddress = txtAddress.Text;
@@ -70,24 +73,32 @@ namespace BillPlex
                     CompanyRequest.AuthPin = txtAuthorPin.Text;
                     CompanyRequest.AuthStdCode = txtAuthorStdCode.Text;
                     CompanyRequest.AuthPhoneNo = txtAuthorPhoneNo.Text;
-                    CompanyRequest.AuthorBloodGroup = txtAuthorBloodGroup.Text;
+                    CompanyRequest.AuthorBloodGroup = drpAuthBlood.Text;
                     CompanyRequest.DOB = ddAuthDOB.Text.ToString();
                     CompanyRequest.AuthEmail = txtAuthorEmailId.Text;
                     CompanyRequest.AuthMobile = txtAuthorMobileNo.Text;
                     CompanyRequest.AuthorPanNo = txtAuthorPanNo.Text;
                     CompanyRequest.Update();
 
-                    if (CompanyRequest.Result.Status == ResultStatus.Success)
-                    {
-                        XtraMessageBox.Show(CompanyRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Close();
-                    }
-
+                    this.Close();                    //FrmCompanyProfile CompanyInfo = new FrmCompanyProfile();
+                    //CompanyInfo.MdiParent = this;
+                    //CompanyInfo.FrmClientCompanyProfile_Load(sender, e);
+                }
+                else
+                {
+                    XtraMessageBox.Show(CompanyRequest.Result.Message, "please give the manditory field", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                if (CompanyRequest.Result.Status == ResultStatus.Success)
+                {
+                    XtraMessageBox.Show(CompanyRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                
             }
             catch (Exception ex)
             {
                 // Display a warning alert
-                XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -99,25 +110,26 @@ namespace BillPlex
             {
                 CompanyRequest.Id = selectedCompanyList.GetRowCellValue(rowHandle, "Id");
                 txtCode.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComCcode");
-                //txtty = selectedCompanyList.GetRowCellValue(rowHandle, "ComType");
                 txtOfficeAddress.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComOffAdd");
                 drpState.Text = selectedCompanyList.GetRowCellValue(rowHandle, "Comstate");
                 txtPinNo.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComPin");
                 var datete = selectedCompanyList.GetRowCellValue(rowHandle, "ComDatestart").ToString();
-                DateTime dat = DateTime.Parse(datete);
-                ddStartingdate.Text = dat.ToString();
+                ddStartingdate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
+                if (radBusinessNature.SelectedIndex != null && selectedCompanyList.GetRowCellValue(rowHandle, "ComNature") !="")
+                {
+                    radBusinessNature.SelectedIndex = Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "ComNature"));
+                }
                 txtStdCode.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComStdCode");
                 txtPhoneNo.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComPhone");
                 txtEmail.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComEmail");
                 txtWebsite.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComWebsite");
                 txtPFCode.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComPFno");
 
-                datete = selectedCompanyList.GetRowCellValue(rowHandle, "ComPFdate");
-                ddPfDate.Text = datete.ToString();
-
+                datete = selectedCompanyList.GetRowCellValue(rowHandle, "ComPFdate").ToString();
+                ddPfDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
                 txtEsiCode.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComESIno");
-                datete = selectedCompanyList.GetRowCellValue(rowHandle, "ComESIdate");
-                ddEsiDate.Text = datete.ToString();
+                datete = selectedCompanyList.GetRowCellValue(rowHandle, "ComESIdate").ToString();
+                ddEsiDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
                 txtFactoryAct.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComFactoryNo");
                 txtCSTNo.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComCSTno");
                 txtSSINo.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComSSLno");
@@ -128,25 +140,34 @@ namespace BillPlex
                 txtCompanyName.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComName");
                 txtName.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CAuthorName");
                 txtFathersName.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CAFathername");
-                radGender.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CAGender");
+                if (radGender.SelectedIndex != null && selectedCompanyList.GetRowCellValue(rowHandle, "CAGender") != "")
+                {
+                    radGender.SelectedIndex = Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "CAGender"));
+                }
                 txtAddress.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CAAddress");
                 //drpState.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CAstate");
                 txtAuthorPin.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CApin");
                 txtAuthorStdCode.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CAStdCode");
                 txtAuthorPhoneNo.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CAPhoneno");
                 txtAuthorMobileNo.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CAMobile");
-                txtAuthorBloodGroup.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CAblood");
-                datete = selectedCompanyList.GetRowCellValue(rowHandle, "CADOB");
-                ddAuthDOB.Text = datete.ToString();
+                drpAuthBlood.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CAblood");
+                datete = selectedCompanyList.GetRowCellValue(rowHandle, "CADOB").ToString();
+                ddAuthDOB.Text = datete != ""? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
                 txtAuthorEmailId.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CAEmail");
                 txtAuthorPanNo.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CAPan");
-                datete = selectedCompanyList.GetRowCellValue(rowHandle, "CAStartDate");
-                ddAuthstartingdate.Text = datete.ToString();
+                datete = selectedCompanyList.GetRowCellValue(rowHandle, "CAStartDate").ToString();
+                ddAuthstartingdate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
             }
 
             btnAdd.Enabled = false;
             BtnNew.Enabled = false;
             btnUpdate.Enabled = true;
+        }
+
+        void dropdownvalidate()
+        {
+            drpState.SelectedIndex = 0;
+            drpAuthBlood.SelectedIndex = 0;
         }
 
         private void ClearBtn_Click(object sender, EventArgs e)
@@ -181,7 +202,7 @@ namespace BillPlex
             txtAuthorPin.ResetText();
             txtAuthorStdCode.ResetText();
             txtAuthorPhoneNo.ResetText();
-            txtAuthorBloodGroup.ResetText();
+            drpAuthBlood.ResetText();
             ddAuthDOB.ResetText();
             txtAuthorEmailId.ResetText();
             txtAuthorMobileNo.ResetText();

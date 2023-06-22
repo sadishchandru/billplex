@@ -72,7 +72,13 @@ namespace BillPlex
         {
             try
             {
-                CompanyBankRequest.MainCompany = drpMainCompany.Text;
+                var selectedItem = drpMainCompany.EditValue;
+
+                if (selectedItem != null)
+                {
+                    CompanyBankRequest.MainCompany = CompanyBankRequest.MasterCompanyList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.Id ?? -1;
+                }
+                //CompanyBankRequest.MainCompany = drpMainCompany.Text;
                 CompanyBankRequest.BankName = drpBankName.Text;
                 CompanyBankRequest.BankAcNo = TxtBankAccountNo.Text;
                 CompanyBankRequest.Address = TxtAddress.Text;

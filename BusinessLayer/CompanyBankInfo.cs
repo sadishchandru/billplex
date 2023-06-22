@@ -10,7 +10,7 @@ namespace BusinessLayer
 {
     public class CompanyBankInfo : Common
     {
-        public String MainCompany { get; set; }
+        public Int64 MainCompany { get; set; }
         public String BankName { get; set; }
         public String BankAcNo { get; set; }
         public String Address { get; set; }
