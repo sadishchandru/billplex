@@ -32,12 +32,6 @@ namespace BusinessLayer
         public string Tin { get; set; }
         public string CSTno { get; set; }
         public string Ssi { get; set; }
-
-        //public void BindDatas(DevExpress.XtraGrid.Views.Grid.GridView gridView2)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
         public string PanNo { get; set; }
         public string Tan { get; set; }
         public string License { get; set; }

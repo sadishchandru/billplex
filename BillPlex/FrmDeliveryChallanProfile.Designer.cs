@@ -34,6 +34,8 @@ namespace BillPlex
             this.cmbFind = new DevExpress.XtraEditors.CheckedComboBoxEdit();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.panelDeliveryChallan = new DevExpress.XtraEditors.PanelControl();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.btnclr = new DevExpress.XtraEditors.SimpleButton();
             this.btnFind = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
@@ -43,10 +45,8 @@ namespace BillPlex
             this.btnClear = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
-            this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
             this.btnNew = new DevExpress.XtraEditors.SimpleButton();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbFind.Properties)).BeginInit();
@@ -54,12 +54,12 @@ namespace BillPlex
             this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelDeliveryChallan)).BeginInit();
             this.panelDeliveryChallan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -90,7 +90,6 @@ namespace BillPlex
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cmbFind.Size = new System.Drawing.Size(433, 20);
             this.cmbFind.TabIndex = 2;
-            this.cmbFind.Click += new System.EventHandler(this.cmbFind_txt);
             // 
             // panelControl4
             // 
@@ -111,6 +110,21 @@ namespace BillPlex
             this.panelDeliveryChallan.Size = new System.Drawing.Size(1123, 660);
             this.panelDeliveryChallan.TabIndex = 1;
             // 
+            // gridControl1
+            // 
+            this.gridControl1.Location = new System.Drawing.Point(37, 116);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(1069, 539);
+            this.gridControl1.TabIndex = 3;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            // 
             // btnclr
             // 
             this.btnclr.Location = new System.Drawing.Point(574, 31);
@@ -118,7 +132,6 @@ namespace BillPlex
             this.btnclr.Size = new System.Drawing.Size(75, 23);
             this.btnclr.TabIndex = 2;
             this.btnclr.Text = "Clear";
-            this.btnclr.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnFind
             // 
@@ -127,7 +140,6 @@ namespace BillPlex
             this.btnFind.Size = new System.Drawing.Size(75, 23);
             this.btnFind.TabIndex = 1;
             this.btnFind.Text = "Find";
-            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // panelControl3
             // 
@@ -141,12 +153,12 @@ namespace BillPlex
             // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(this.btnEdit);
             this.panelControl2.Controls.Add(this.btnExit);
             this.panelControl2.Controls.Add(this.btnAdd);
             this.panelControl2.Controls.Add(this.btnClear);
             this.panelControl2.Controls.Add(this.btnDelete);
             this.panelControl2.Controls.Add(this.btnUpdate);
-            this.panelControl2.Controls.Add(this.btnEdit);
             this.panelControl2.Controls.Add(this.btnNew);
             this.panelControl2.Location = new System.Drawing.Point(1233, 251);
             this.panelControl2.Name = "panelControl2";
@@ -191,7 +203,6 @@ namespace BillPlex
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 30;
             this.btnExit.Text = "EXIT";
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnAdd
             // 
@@ -231,7 +242,6 @@ namespace BillPlex
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 29;
             this.btnAdd.Text = "ADD";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnClear
             // 
@@ -271,7 +281,6 @@ namespace BillPlex
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 28;
             this.btnClear.Text = "CLEAR";
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnDelete
             // 
@@ -293,18 +302,6 @@ namespace BillPlex
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 7;
             this.btnUpdate.Text = "Update";
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Appearance.Options.UseFont = true;
-            this.btnEdit.Location = new System.Drawing.Point(25, 74);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnEdit.TabIndex = 6;
-            this.btnEdit.Text = "EDIT";
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnNew
             // 
@@ -319,20 +316,16 @@ namespace BillPlex
             this.btnNew.Text = "NEW";
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
-            // gridControl1
+            // btnEdit
             // 
-            this.gridControl1.Location = new System.Drawing.Point(37, 116);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1069, 539);
-            this.gridControl1.TabIndex = 3;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
+            this.btnEdit.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Appearance.Options.UseFont = true;
+            this.btnEdit.Location = new System.Drawing.Point(25, 75);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 31;
+            this.btnEdit.Text = "EDIT";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // FrmDeliveryChallanProfile
             // 
@@ -350,12 +343,12 @@ namespace BillPlex
             this.panelControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelDeliveryChallan)).EndInit();
             this.panelDeliveryChallan.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -376,9 +369,9 @@ namespace BillPlex
         private DevExpress.XtraEditors.SimpleButton btnClear;
         private DevExpress.XtraEditors.SimpleButton btnDelete;
         private DevExpress.XtraEditors.SimpleButton btnUpdate;
-        private DevExpress.XtraEditors.SimpleButton btnEdit;
         private DevExpress.XtraEditors.SimpleButton btnNew;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraEditors.SimpleButton btnEdit;
     }
 }

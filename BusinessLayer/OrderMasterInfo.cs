@@ -30,11 +30,10 @@ namespace BusinessLayer
         public string WagesforEmp { get; set; }
         public string status { get; set; }
 
+        public List<DropDownItemInfo> ProductModelList { get; set; }
         public List<DropDownItemInfo> CustomerMasterList { get; set; }
         public List<DropDownItemInfo> ProductMasterList { get; set; }
-        public List<DropDownItemInfo> ProductModelList { get; set; }
         public List<DropDownItemInfo> ColourMasterList { get; set; }
-        public List<DropDownItemInfo> SizeMasterList { get; set; }
 
         #region Update
         public void Update()

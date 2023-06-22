@@ -24,64 +24,41 @@ namespace BillPlex
             InitializeComponent();
             OrderMasterRequest = new OrderMasterInfo();
             OrderMasterRequest.ConnectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
-
-            Dictionary<string, bool> dropDownList = new Dictionary<string, bool>        {
-                    {"ProductModelRequest",true},
-                    {"ProductMasterRequest",true},
-                    {"SizeMasterRequest",true},
-                    { "CustomerMasterRequired", true },
-                    { "ColorMasterRequired", true }
-                };
-
+            Dictionary<string, bool> dropDownList = new Dictionary<string, bool>
+            {
+                {"ProductModelRequired",true},
+                {"ProductMasterRequired",true},
+                {"CustomerMasterRequired",true},
+                {"ColorMasterRequired",true}
+            };
             var dropdwonList = OrderMasterRequest.GetDropdownCollections(dropDownList);
 
             foreach (DictionaryEntry item in dropdwonList)
             {
-                if (item.Key == "ProductModelRequest")
-                {
-                    OrderMasterRequest.ProductMasterList = (List<DropDownItemInfo>)item.Value;
-                }
-            }
-            foreach (DictionaryEntry item in dropdwonList)
-            {
-                if (item.Key == "ProductMasterRequest")
+                if (item.Key == "ProductModelRequired")
                 {
                     OrderMasterRequest.ProductModelList = (List<DropDownItemInfo>)item.Value;
                 }
-            }
-
-            foreach (DictionaryEntry item in dropdwonList)
-            {
-                if (item.Key == "SizeMasterRequest")
+                if (item.Key == "ProductMasterRequired")
                 {
-                    OrderMasterRequest.SizeMasterList = (List<DropDownItemInfo>)item.Value;
+                    OrderMasterRequest.ProductMasterList = (List<DropDownItemInfo>)item.Value;
                 }
-            }
-
-            foreach (DictionaryEntry item in dropdwonList)
-            {
                 if (item.Key == "CustomerMasterRequired")
                 {
                     OrderMasterRequest.CustomerMasterList = (List<DropDownItemInfo>)item.Value;
                 }
-            }
-
-            foreach (DictionaryEntry item in dropdwonList)
-            {
                 if (item.Key == "ColorMasterRequired")
                 {
                     OrderMasterRequest.ColourMasterList = (List<DropDownItemInfo>)item.Value;
                 }
             }
-
             if (OrderMasterRequest.ProductModelList != null)
             {
                 if (OrderMasterRequest.ProductModelList.Count() > 0)
                 {
                     foreach (DropDownItemInfo item in OrderMasterRequest.ProductModelList)
                     {
-                        drpModelName.Properties.Items.Add(new ImageComboBoxItem(item.Name));
-                        drpModelCode.Properties.Items.Add(new ImageComboBoxItem(item.Code));
+                        drpProductName.Properties.Items.Add(new ImageComboBoxItem(item.Name));
                     }
                 }
             }
@@ -91,16 +68,8 @@ namespace BillPlex
                 {
                     foreach (DropDownItemInfo item in OrderMasterRequest.ProductMasterList)
                     {
-                        drpProductName.Properties.Items.Add(new ImageComboBoxItem(item.Name));
-                    }
-                }
-            }
-            if (OrderMasterRequest.SizeMasterList != null)
-            {
-                if (OrderMasterRequest.SizeMasterList.Count() > 0)
-                {
-                    foreach (DropDownItemInfo item in OrderMasterRequest.SizeMasterList)
-                    {
+                        drpModelCode.Properties.Items.Add(new ImageComboBoxItem(item.Code));
+                        drpModelName.Properties.Items.Add(new ImageComboBoxItem(item.proModel));
                         drpProductSize.Properties.Items.Add(new ImageComboBoxItem(item.Name));
                     }
                 }
@@ -127,9 +96,6 @@ namespace BillPlex
                 }
             }
         }
-
-        
-
         private void comboBoxEdit10_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -280,6 +246,9 @@ namespace BillPlex
             if (selectedItem != null)
             {
                 txtMaterialwt.Text = OrderMasterRequest.ProductMasterList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.AuthorName ?? "";
+                txtType.Text = OrderMasterRequest.ProductMasterList.FirstOrDefault(item => item.Name == selectedItem.ToString())? .Name?? "";
+                txtRawmatName.Text = OrderMasterRequest.ProductMasterList.FirstOrDefault(item => item.Name == selectedItem.ToString())? .Name?? "";
+                txtWages.Text = OrderMasterRequest.ProductMasterList.FirstOrDefault(item => item.Name == selectedItem.ToString())? .AuthorName ?? "";
             }
         }
         public void BindData(dynamic SelectedOrderList)

@@ -55,7 +55,7 @@
     <Compile Include="CompanyBankInfo.cs" />
     <Compile Include="CompanyMasterInfo.cs" />
     <Compile Include="CustomerMasterInfo.cs" />
-    <Compile Include="DeliveryChallanProfile.cs" />
+    <Compile Include="DeliveryChallanInfro.cs" />
     <Compile Include="DropDownItemInfo.cs" />
     <Compile Include="EmployeeFamily.cs" />
     <Compile Include="EmployeeFinance.cs" />

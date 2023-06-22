@@ -237,7 +237,7 @@ namespace BusinessLayer
 
                 foreach (var item in RequiredDropdownFields)
                 {
-                    DropdownItemLists.Add( item.Key,DropDownItemInfo.PreparedItemByAuthorList(ref dbReader));
+                    DropdownItemLists.Add( item.Key,DropDownItemInfo.PreparedItemByProModelList(ref dbReader));
                     dbReader.NextResult();
                 }
             }
