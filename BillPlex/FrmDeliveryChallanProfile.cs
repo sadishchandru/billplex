@@ -30,10 +30,12 @@ namespace BillPlex
         }
 
 
+        
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-
+            FrmDeliveryChallanInfo CI = new FrmDeliveryChallanInfo();
+            CI.Show();
         }
 
 

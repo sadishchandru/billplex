@@ -32,25 +32,24 @@ namespace BillPlex
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.cmbSubContractor = new DevExpress.XtraEditors.PanelControl();
-            this.cmbSubContract = new DevExpress.XtraEditors.CheckedComboBoxEdit();
-            this.cmbSubClientCompany = new DevExpress.XtraEditors.CheckedComboBoxEdit();
-            this.cmbClientCompany = new DevExpress.XtraEditors.CheckedComboBoxEdit();
-            this.cmbDirector = new DevExpress.XtraEditors.CheckedComboBoxEdit();
-            this.cmbContractor = new DevExpress.XtraEditors.CheckedComboBoxEdit();
-            this.cmbCompName = new DevExpress.XtraEditors.CheckedComboBoxEdit();
+            this.labelControl32 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.cmbModelName = new DevExpress.XtraEditors.CheckedComboBoxEdit();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.txtDCNo = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.DDdcDate = new DevExpress.XtraEditors.DateTimeOffsetEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl33 = new DevExpress.XtraEditors.LabelControl();
+            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl30 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl9 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl12 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
@@ -58,7 +57,6 @@ namespace BillPlex
             this.panelControl10 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.cmbCompanyName = new DevExpress.XtraEditors.PanelControl();
-            this.cmbColor = new DevExpress.XtraEditors.CheckedComboBoxEdit();
             this.labelControl27 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl29 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl28 = new DevExpress.XtraEditors.LabelControl();
@@ -75,14 +73,8 @@ namespace BillPlex
             this.txtType = new DevExpress.XtraEditors.TextEdit();
             this.txtRawMaterial = new DevExpress.XtraEditors.TextEdit();
             this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
-            this.DDdate = new DevExpress.XtraEditors.DateTimeOffsetEdit();
             this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
-            this.cmbOrderCode = new DevExpress.XtraEditors.CheckedComboBoxEdit();
-            this.cmbProductSize = new DevExpress.XtraEditors.CheckedComboBoxEdit();
-            this.cmbCustomerName = new DevExpress.XtraEditors.CheckedComboBoxEdit();
             this.txtProductName = new DevExpress.XtraEditors.TextEdit();
-            this.cmbCustomerCode = new DevExpress.XtraEditors.CheckedComboBoxEdit();
-            this.cmbModelCode = new DevExpress.XtraEditors.CheckedComboBoxEdit();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
@@ -101,30 +93,36 @@ namespace BillPlex
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl30 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl32 = new DevExpress.XtraEditors.LabelControl();
-            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl33 = new DevExpress.XtraEditors.LabelControl();
-            this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.drpCName = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.drpDirector = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.drpCCom = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.drpSCCom = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.drpContractor = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.drpSCon = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.drpCCode = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.drpComName = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.drpOrderCode = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.drpMName = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.drpMCode = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.drpPSize = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.ddODate = new DevExpress.XtraEditors.DateEdit();
+            this.drpColor = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.drpDCDate = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbSubContractor)).BeginInit();
             this.cmbSubContractor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbSubContract.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbSubClientCompany.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbClientCompany.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbDirector.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbContractor.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbCompName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbModelName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtDCNo.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DDdcDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
+            this.panelControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
+            this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl9)).BeginInit();
             this.panelControl9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl12)).BeginInit();
@@ -135,7 +133,6 @@ namespace BillPlex
             this.panelControl10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbCompanyName)).BeginInit();
             this.cmbCompanyName.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbColor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtShortage.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtExcess.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtWeight.Properties)).BeginInit();
@@ -143,23 +140,27 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.txtQuantity.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRawMaterial.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DDdate.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbOrderCode.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbProductSize.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbCustomerName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtProductName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbCustomerCode.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbModelCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl11)).BeginInit();
             this.panelControl11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
-            this.panelControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
-            this.panelControl5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpCName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpDirector.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpCCom.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpSCCom.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpContractor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpSCon.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpCCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpComName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpOrderCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpMName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpMCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpPSize.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddODate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddODate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpColor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpDCDate.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl2
@@ -184,13 +185,13 @@ namespace BillPlex
             // 
             // cmbSubContractor
             // 
+            this.cmbSubContractor.Controls.Add(this.drpSCon);
+            this.cmbSubContractor.Controls.Add(this.drpContractor);
+            this.cmbSubContractor.Controls.Add(this.drpSCCom);
+            this.cmbSubContractor.Controls.Add(this.drpCCom);
+            this.cmbSubContractor.Controls.Add(this.drpDirector);
+            this.cmbSubContractor.Controls.Add(this.drpCName);
             this.cmbSubContractor.Controls.Add(this.labelControl32);
-            this.cmbSubContractor.Controls.Add(this.cmbSubContract);
-            this.cmbSubContractor.Controls.Add(this.cmbSubClientCompany);
-            this.cmbSubContractor.Controls.Add(this.cmbClientCompany);
-            this.cmbSubContractor.Controls.Add(this.cmbDirector);
-            this.cmbSubContractor.Controls.Add(this.cmbContractor);
-            this.cmbSubContractor.Controls.Add(this.cmbCompName);
             this.cmbSubContractor.Controls.Add(this.labelControl19);
             this.cmbSubContractor.Controls.Add(this.labelControl18);
             this.cmbSubContractor.Controls.Add(this.labelControl17);
@@ -202,59 +203,14 @@ namespace BillPlex
             this.cmbSubContractor.Size = new System.Drawing.Size(1101, 209);
             this.cmbSubContractor.TabIndex = 2;
             // 
-            // cmbSubContract
+            // labelControl32
             // 
-            this.cmbSubContract.Location = new System.Drawing.Point(695, 142);
-            this.cmbSubContract.Name = "cmbSubContract";
-            this.cmbSubContract.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbSubContract.Size = new System.Drawing.Size(251, 20);
-            this.cmbSubContract.TabIndex = 25;
-            // 
-            // cmbSubClientCompany
-            // 
-            this.cmbSubClientCompany.Location = new System.Drawing.Point(214, 142);
-            this.cmbSubClientCompany.Name = "cmbSubClientCompany";
-            this.cmbSubClientCompany.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbSubClientCompany.Size = new System.Drawing.Size(255, 20);
-            this.cmbSubClientCompany.TabIndex = 24;
-            // 
-            // cmbClientCompany
-            // 
-            this.cmbClientCompany.Location = new System.Drawing.Point(214, 90);
-            this.cmbClientCompany.Name = "cmbClientCompany";
-            this.cmbClientCompany.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbClientCompany.Size = new System.Drawing.Size(255, 20);
-            this.cmbClientCompany.TabIndex = 23;
-            // 
-            // cmbDirector
-            // 
-            this.cmbDirector.Location = new System.Drawing.Point(695, 39);
-            this.cmbDirector.Name = "cmbDirector";
-            this.cmbDirector.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbDirector.Size = new System.Drawing.Size(251, 20);
-            this.cmbDirector.TabIndex = 22;
-            // 
-            // cmbContractor
-            // 
-            this.cmbContractor.Location = new System.Drawing.Point(695, 87);
-            this.cmbContractor.Name = "cmbContractor";
-            this.cmbContractor.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbContractor.Size = new System.Drawing.Size(251, 20);
-            this.cmbContractor.TabIndex = 21;
-            // 
-            // cmbCompName
-            // 
-            this.cmbCompName.Location = new System.Drawing.Point(214, 44);
-            this.cmbCompName.Name = "cmbCompName";
-            this.cmbCompName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbCompName.Size = new System.Drawing.Size(255, 20);
-            this.cmbCompName.TabIndex = 20;
+            this.labelControl32.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl32.Appearance.Options.UseFont = true;
+            this.labelControl32.Location = new System.Drawing.Point(20, -6);
+            this.labelControl32.Name = "labelControl32";
+            this.labelControl32.Size = new System.Drawing.Size(0, 18);
+            this.labelControl32.TabIndex = 26;
             // 
             // labelControl19
             // 
@@ -317,21 +273,12 @@ namespace BillPlex
             this.labelControl2.TabIndex = 4;
             this.labelControl2.Text = "Company Name";
             // 
-            // cmbModelName
-            // 
-            this.cmbModelName.Location = new System.Drawing.Point(153, 156);
-            this.cmbModelName.Name = "cmbModelName";
-            this.cmbModelName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbModelName.Size = new System.Drawing.Size(270, 20);
-            this.cmbModelName.TabIndex = 3;
-            // 
             // panelControl4
             // 
+            this.panelControl4.Controls.Add(this.drpDCDate);
             this.panelControl4.Controls.Add(this.txtDCNo);
             this.panelControl4.Controls.Add(this.labelControl3);
             this.panelControl4.Controls.Add(this.labelControl4);
-            this.panelControl4.Controls.Add(this.DDdcDate);
             this.panelControl4.Location = new System.Drawing.Point(1125, 137);
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Size = new System.Drawing.Size(308, 127);
@@ -364,16 +311,6 @@ namespace BillPlex
             this.labelControl4.TabIndex = 7;
             this.labelControl4.Text = "DC Date";
             // 
-            // DDdcDate
-            // 
-            this.DDdcDate.EditValue = null;
-            this.DDdcDate.Location = new System.Drawing.Point(119, 86);
-            this.DDdcDate.Name = "DDdcDate";
-            this.DDdcDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.DDdcDate.Size = new System.Drawing.Size(100, 20);
-            this.DDdcDate.TabIndex = 6;
-            // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.gridControl1);
@@ -390,6 +327,61 @@ namespace BillPlex
             this.panelControl1.Size = new System.Drawing.Size(1454, 808);
             this.panelControl1.TabIndex = 0;
             this.panelControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl1_Paint);
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.Location = new System.Drawing.Point(18, 590);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(1415, 213);
+            this.gridControl1.TabIndex = 47;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            // 
+            // panelControl5
+            // 
+            this.panelControl5.Controls.Add(this.labelControl33);
+            this.panelControl5.Location = new System.Drawing.Point(31, 292);
+            this.panelControl5.Name = "panelControl5";
+            this.panelControl5.Size = new System.Drawing.Size(141, 29);
+            this.panelControl5.TabIndex = 46;
+            // 
+            // labelControl33
+            // 
+            this.labelControl33.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl33.Appearance.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.labelControl33.Appearance.Options.UseFont = true;
+            this.labelControl33.Appearance.Options.UseForeColor = true;
+            this.labelControl33.Location = new System.Drawing.Point(11, 5);
+            this.labelControl33.Name = "labelControl33";
+            this.labelControl33.Size = new System.Drawing.Size(101, 18);
+            this.labelControl33.TabIndex = 9;
+            this.labelControl33.Text = "Order Details";
+            // 
+            // panelControl3
+            // 
+            this.panelControl3.Controls.Add(this.labelControl30);
+            this.panelControl3.Location = new System.Drawing.Point(38, 68);
+            this.panelControl3.Name = "panelControl3";
+            this.panelControl3.Size = new System.Drawing.Size(211, 29);
+            this.panelControl3.TabIndex = 27;
+            // 
+            // labelControl30
+            // 
+            this.labelControl30.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl30.Appearance.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.labelControl30.Appearance.Options.UseFont = true;
+            this.labelControl30.Appearance.Options.UseForeColor = true;
+            this.labelControl30.Location = new System.Drawing.Point(11, 3);
+            this.labelControl30.Name = "labelControl30";
+            this.labelControl30.Size = new System.Drawing.Size(195, 18);
+            this.labelControl30.TabIndex = 8;
+            this.labelControl30.Text = "Assign order to contractor";
             // 
             // panelControl9
             // 
@@ -454,7 +446,13 @@ namespace BillPlex
             // 
             // cmbCompanyName
             // 
-            this.cmbCompanyName.Controls.Add(this.cmbColor);
+            this.cmbCompanyName.Controls.Add(this.drpColor);
+            this.cmbCompanyName.Controls.Add(this.drpPSize);
+            this.cmbCompanyName.Controls.Add(this.drpMCode);
+            this.cmbCompanyName.Controls.Add(this.drpMName);
+            this.cmbCompanyName.Controls.Add(this.drpOrderCode);
+            this.cmbCompanyName.Controls.Add(this.drpComName);
+            this.cmbCompanyName.Controls.Add(this.drpCCode);
             this.cmbCompanyName.Controls.Add(this.labelControl27);
             this.cmbCompanyName.Controls.Add(this.labelControl29);
             this.cmbCompanyName.Controls.Add(this.labelControl28);
@@ -471,14 +469,8 @@ namespace BillPlex
             this.cmbCompanyName.Controls.Add(this.txtType);
             this.cmbCompanyName.Controls.Add(this.txtRawMaterial);
             this.cmbCompanyName.Controls.Add(this.labelControl21);
-            this.cmbCompanyName.Controls.Add(this.DDdate);
             this.cmbCompanyName.Controls.Add(this.labelControl20);
-            this.cmbCompanyName.Controls.Add(this.cmbOrderCode);
-            this.cmbCompanyName.Controls.Add(this.cmbProductSize);
-            this.cmbCompanyName.Controls.Add(this.cmbCustomerName);
             this.cmbCompanyName.Controls.Add(this.txtProductName);
-            this.cmbCompanyName.Controls.Add(this.cmbCustomerCode);
-            this.cmbCompanyName.Controls.Add(this.cmbModelCode);
             this.cmbCompanyName.Controls.Add(this.labelControl11);
             this.cmbCompanyName.Controls.Add(this.labelControl10);
             this.cmbCompanyName.Controls.Add(this.labelControl9);
@@ -489,20 +481,11 @@ namespace BillPlex
             this.cmbCompanyName.Controls.Add(this.labelControl7);
             this.cmbCompanyName.Controls.Add(this.panelControl8);
             this.cmbCompanyName.Controls.Add(this.panelControl7);
-            this.cmbCompanyName.Controls.Add(this.cmbModelName);
+            this.cmbCompanyName.Controls.Add(this.ddODate);
             this.cmbCompanyName.Location = new System.Drawing.Point(18, 297);
             this.cmbCompanyName.Name = "cmbCompanyName";
             this.cmbCompanyName.Size = new System.Drawing.Size(1209, 287);
             this.cmbCompanyName.TabIndex = 3;
-            // 
-            // cmbColor
-            // 
-            this.cmbColor.Location = new System.Drawing.Point(932, 57);
-            this.cmbColor.Name = "cmbColor";
-            this.cmbColor.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbColor.Size = new System.Drawing.Size(169, 20);
-            this.cmbColor.TabIndex = 25;
             // 
             // labelControl27
             // 
@@ -646,16 +629,6 @@ namespace BillPlex
             this.labelControl21.Text = "DATE";
             this.labelControl21.Click += new System.EventHandler(this.labelControl21_Click);
             // 
-            // DDdate
-            // 
-            this.DDdate.EditValue = null;
-            this.DDdate.Location = new System.Drawing.Point(335, 106);
-            this.DDdate.Name = "DDdate";
-            this.DDdate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.DDdate.Size = new System.Drawing.Size(100, 20);
-            this.DDdate.TabIndex = 8;
-            // 
             // labelControl20
             // 
             this.labelControl20.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -666,57 +639,12 @@ namespace BillPlex
             this.labelControl20.TabIndex = 28;
             this.labelControl20.Text = "Order Code";
             // 
-            // cmbOrderCode
-            // 
-            this.cmbOrderCode.Location = new System.Drawing.Point(153, 104);
-            this.cmbOrderCode.Name = "cmbOrderCode";
-            this.cmbOrderCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbOrderCode.Size = new System.Drawing.Size(120, 20);
-            this.cmbOrderCode.TabIndex = 27;
-            // 
-            // cmbProductSize
-            // 
-            this.cmbProductSize.Location = new System.Drawing.Point(688, 54);
-            this.cmbProductSize.Name = "cmbProductSize";
-            this.cmbProductSize.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbProductSize.Size = new System.Drawing.Size(120, 20);
-            this.cmbProductSize.TabIndex = 26;
-            // 
-            // cmbCustomerName
-            // 
-            this.cmbCustomerName.Location = new System.Drawing.Point(275, 60);
-            this.cmbCustomerName.Name = "cmbCustomerName";
-            this.cmbCustomerName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbCustomerName.Size = new System.Drawing.Size(160, 20);
-            this.cmbCustomerName.TabIndex = 25;
-            // 
             // txtProductName
             // 
             this.txtProductName.Location = new System.Drawing.Point(153, 258);
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(270, 20);
             this.txtProductName.TabIndex = 14;
-            // 
-            // cmbCustomerCode
-            // 
-            this.cmbCustomerCode.Location = new System.Drawing.Point(153, 60);
-            this.cmbCustomerCode.Name = "cmbCustomerCode";
-            this.cmbCustomerCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbCustomerCode.Size = new System.Drawing.Size(85, 20);
-            this.cmbCustomerCode.TabIndex = 20;
-            // 
-            // cmbModelCode
-            // 
-            this.cmbModelCode.Location = new System.Drawing.Point(153, 208);
-            this.cmbModelCode.Name = "cmbModelCode";
-            this.cmbModelCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbModelCode.Size = new System.Drawing.Size(270, 20);
-            this.cmbModelCode.TabIndex = 21;
             // 
             // labelControl11
             // 
@@ -990,69 +918,148 @@ namespace BillPlex
             this.simpleButton1.Text = "NEW";
             this.simpleButton1.Click += new System.EventHandler(this.btnNew_Click);
             // 
-            // labelControl30
+            // drpCName
             // 
-            this.labelControl30.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl30.Appearance.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.labelControl30.Appearance.Options.UseFont = true;
-            this.labelControl30.Appearance.Options.UseForeColor = true;
-            this.labelControl30.Location = new System.Drawing.Point(11, 3);
-            this.labelControl30.Name = "labelControl30";
-            this.labelControl30.Size = new System.Drawing.Size(195, 18);
-            this.labelControl30.TabIndex = 8;
-            this.labelControl30.Text = "Assign order to contractor";
+            this.drpCName.Location = new System.Drawing.Point(237, 44);
+            this.drpCName.Name = "drpCName";
+            this.drpCName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpCName.Size = new System.Drawing.Size(257, 20);
+            this.drpCName.TabIndex = 27;
             // 
-            // labelControl32
+            // drpDirector
             // 
-            this.labelControl32.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl32.Appearance.Options.UseFont = true;
-            this.labelControl32.Location = new System.Drawing.Point(20, -6);
-            this.labelControl32.Name = "labelControl32";
-            this.labelControl32.Size = new System.Drawing.Size(0, 18);
-            this.labelControl32.TabIndex = 26;
+            this.drpDirector.Location = new System.Drawing.Point(729, 41);
+            this.drpDirector.Name = "drpDirector";
+            this.drpDirector.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpDirector.Size = new System.Drawing.Size(257, 20);
+            this.drpDirector.TabIndex = 28;
             // 
-            // panelControl3
+            // drpCCom
             // 
-            this.panelControl3.Controls.Add(this.labelControl30);
-            this.panelControl3.Location = new System.Drawing.Point(38, 68);
-            this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(211, 29);
-            this.panelControl3.TabIndex = 27;
+            this.drpCCom.Location = new System.Drawing.Point(237, 85);
+            this.drpCCom.Name = "drpCCom";
+            this.drpCCom.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpCCom.Size = new System.Drawing.Size(257, 20);
+            this.drpCCom.TabIndex = 28;
             // 
-            // labelControl33
+            // drpSCCom
             // 
-            this.labelControl33.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl33.Appearance.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.labelControl33.Appearance.Options.UseFont = true;
-            this.labelControl33.Appearance.Options.UseForeColor = true;
-            this.labelControl33.Location = new System.Drawing.Point(11, 5);
-            this.labelControl33.Name = "labelControl33";
-            this.labelControl33.Size = new System.Drawing.Size(101, 18);
-            this.labelControl33.TabIndex = 9;
-            this.labelControl33.Text = "Order Details";
+            this.drpSCCom.Location = new System.Drawing.Point(237, 138);
+            this.drpSCCom.Name = "drpSCCom";
+            this.drpSCCom.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpSCCom.Size = new System.Drawing.Size(257, 20);
+            this.drpSCCom.TabIndex = 29;
             // 
-            // panelControl5
+            // drpContractor
             // 
-            this.panelControl5.Controls.Add(this.labelControl33);
-            this.panelControl5.Location = new System.Drawing.Point(31, 292);
-            this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(141, 29);
-            this.panelControl5.TabIndex = 46;
+            this.drpContractor.Location = new System.Drawing.Point(729, 94);
+            this.drpContractor.Name = "drpContractor";
+            this.drpContractor.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpContractor.Size = new System.Drawing.Size(257, 20);
+            this.drpContractor.TabIndex = 30;
             // 
-            // gridControl1
+            // drpSCon
             // 
-            this.gridControl1.Location = new System.Drawing.Point(18, 590);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1415, 213);
-            this.gridControl1.TabIndex = 47;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.drpSCon.Location = new System.Drawing.Point(729, 142);
+            this.drpSCon.Name = "drpSCon";
+            this.drpSCon.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpSCon.Size = new System.Drawing.Size(257, 20);
+            this.drpSCon.TabIndex = 31;
             // 
-            // gridView1
+            // drpCCode
             // 
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
+            this.drpCCode.Location = new System.Drawing.Point(153, 60);
+            this.drpCCode.Name = "drpCCode";
+            this.drpCCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpCCode.Size = new System.Drawing.Size(120, 20);
+            this.drpCCode.TabIndex = 32;
+            // 
+            // drpComName
+            // 
+            this.drpComName.Location = new System.Drawing.Point(284, 60);
+            this.drpComName.Name = "drpComName";
+            this.drpComName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpComName.Size = new System.Drawing.Size(139, 20);
+            this.drpComName.TabIndex = 46;
+            // 
+            // drpOrderCode
+            // 
+            this.drpOrderCode.Location = new System.Drawing.Point(153, 104);
+            this.drpOrderCode.Name = "drpOrderCode";
+            this.drpOrderCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpOrderCode.Size = new System.Drawing.Size(120, 20);
+            this.drpOrderCode.TabIndex = 47;
+            // 
+            // drpMName
+            // 
+            this.drpMName.Location = new System.Drawing.Point(153, 159);
+            this.drpMName.Name = "drpMName";
+            this.drpMName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpMName.Size = new System.Drawing.Size(270, 20);
+            this.drpMName.TabIndex = 49;
+            // 
+            // drpMCode
+            // 
+            this.drpMCode.Location = new System.Drawing.Point(153, 208);
+            this.drpMCode.Name = "drpMCode";
+            this.drpMCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpMCode.Size = new System.Drawing.Size(270, 20);
+            this.drpMCode.TabIndex = 50;
+            // 
+            // drpPSize
+            // 
+            this.drpPSize.Location = new System.Drawing.Point(688, 60);
+            this.drpPSize.Name = "drpPSize";
+            this.drpPSize.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpPSize.Size = new System.Drawing.Size(100, 20);
+            this.drpPSize.TabIndex = 51;
+            // 
+            // ddODate
+            // 
+            this.ddODate.EditValue = null;
+            this.ddODate.Location = new System.Drawing.Point(335, 104);
+            this.ddODate.Name = "ddODate";
+            this.ddODate.Properties.BeepOnError = false;
+            this.ddODate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ddODate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ddODate.Properties.DisplayFormat.FormatString = "";
+            this.ddODate.Properties.EditFormat.FormatString = "";
+            this.ddODate.Properties.MaskSettings.Set("mask", "d");
+            this.ddODate.Properties.UseMaskAsDisplayFormat = true;
+            this.ddODate.Size = new System.Drawing.Size(88, 20);
+            this.ddODate.TabIndex = 48;
+            // 
+            // drpColor
+            // 
+            this.drpColor.Location = new System.Drawing.Point(933, 56);
+            this.drpColor.Name = "drpColor";
+            this.drpColor.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpColor.Size = new System.Drawing.Size(168, 20);
+            this.drpColor.TabIndex = 52;
+            // 
+            // drpDCDate
+            // 
+            this.drpDCDate.Location = new System.Drawing.Point(119, 78);
+            this.drpDCDate.Name = "drpDCDate";
+            this.drpDCDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpDCDate.Size = new System.Drawing.Size(100, 20);
+            this.drpDCDate.TabIndex = 53;
             // 
             // FrmDeliveryChallanInfo
             // 
@@ -1069,20 +1076,20 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.cmbSubContractor)).EndInit();
             this.cmbSubContractor.ResumeLayout(false);
             this.cmbSubContractor.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbSubContract.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbSubClientCompany.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbClientCompany.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbDirector.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbContractor.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbCompName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbModelName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
             this.panelControl4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtDCNo.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DDdcDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
+            this.panelControl5.ResumeLayout(false);
+            this.panelControl5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
+            this.panelControl3.ResumeLayout(false);
+            this.panelControl3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl9)).EndInit();
             this.panelControl9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl12)).EndInit();
@@ -1096,7 +1103,6 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.cmbCompanyName)).EndInit();
             this.cmbCompanyName.ResumeLayout(false);
             this.cmbCompanyName.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbColor.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtShortage.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtExcess.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtWeight.Properties)).EndInit();
@@ -1104,25 +1110,27 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.txtQuantity.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRawMaterial.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DDdate.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbOrderCode.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbProductSize.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbCustomerName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtProductName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbCustomerCode.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbModelCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl11)).EndInit();
             this.panelControl11.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
-            this.panelControl3.ResumeLayout(false);
-            this.panelControl3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
-            this.panelControl5.ResumeLayout(false);
-            this.panelControl5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpCName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpDirector.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpCCom.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpSCCom.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpContractor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpSCon.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpCCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpComName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpOrderCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpMName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpMCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpPSize.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddODate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddODate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpColor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpDCDate.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1133,13 +1141,11 @@ namespace BillPlex
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.PanelControl cmbSubContractor;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.CheckedComboBoxEdit cmbModelName;
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraEditors.PanelControl panelControl6;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.DateTimeOffsetEdit DDdcDate;
         private DevExpress.XtraEditors.PanelControl panelControl10;
         private DevExpress.XtraEditors.PanelControl cmbCompanyName;
         private DevExpress.XtraEditors.LabelControl labelControl11;
@@ -1155,9 +1161,6 @@ namespace BillPlex
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.CheckedComboBoxEdit cmbDirector;
-        private DevExpress.XtraEditors.CheckedComboBoxEdit cmbContractor;
-        private DevExpress.XtraEditors.CheckedComboBoxEdit cmbCompName;
         private DevExpress.XtraEditors.LabelControl labelControl19;
         private DevExpress.XtraEditors.LabelControl labelControl18;
         private DevExpress.XtraEditors.LabelControl labelControl17;
@@ -1174,18 +1177,10 @@ namespace BillPlex
         private DevExpress.XtraEditors.TextEdit txtType;
         private DevExpress.XtraEditors.TextEdit txtRawMaterial;
         private DevExpress.XtraEditors.LabelControl labelControl21;
-        private DevExpress.XtraEditors.DateTimeOffsetEdit DDdate;
         private DevExpress.XtraEditors.LabelControl labelControl20;
-        private DevExpress.XtraEditors.CheckedComboBoxEdit cmbOrderCode;
-        private DevExpress.XtraEditors.CheckedComboBoxEdit cmbProductSize;
-        private DevExpress.XtraEditors.CheckedComboBoxEdit cmbCustomerName;
         private DevExpress.XtraEditors.TextEdit txtProductName;
-        private DevExpress.XtraEditors.CheckedComboBoxEdit cmbCustomerCode;
-        private DevExpress.XtraEditors.CheckedComboBoxEdit cmbModelCode;
         private DevExpress.XtraEditors.LabelControl labelControl14;
         private DevExpress.XtraEditors.PanelControl panelControl8;
-        private DevExpress.XtraEditors.CheckedComboBoxEdit cmbSubClientCompany;
-        private DevExpress.XtraEditors.CheckedComboBoxEdit cmbClientCompany;
         private DevExpress.XtraEditors.LabelControl labelControl29;
         private DevExpress.XtraEditors.LabelControl labelControl28;
         private DevExpress.XtraEditors.LabelControl labelControl26;
@@ -1196,8 +1191,6 @@ namespace BillPlex
         private DevExpress.XtraEditors.TextEdit txtExcess;
         private DevExpress.XtraEditors.LabelControl labelControl22;
         private DevExpress.XtraEditors.LabelControl labelControl27;
-        private DevExpress.XtraEditors.CheckedComboBoxEdit cmbColor;
-        private DevExpress.XtraEditors.CheckedComboBoxEdit cmbSubContract;
         private DevExpress.XtraEditors.SimpleButton btnExit;
         private DevExpress.XtraEditors.SimpleButton btnAdd;
         private DevExpress.XtraEditors.SimpleButton btnClear;
@@ -1208,5 +1201,20 @@ namespace BillPlex
         private DevExpress.XtraEditors.LabelControl labelControl33;
         private DevExpress.XtraEditors.PanelControl panelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl30;
+        private DevExpress.XtraEditors.ComboBoxEdit drpSCon;
+        private DevExpress.XtraEditors.ComboBoxEdit drpContractor;
+        private DevExpress.XtraEditors.ComboBoxEdit drpSCCom;
+        private DevExpress.XtraEditors.ComboBoxEdit drpCCom;
+        private DevExpress.XtraEditors.ComboBoxEdit drpDirector;
+        private DevExpress.XtraEditors.ComboBoxEdit drpCName;
+        private DevExpress.XtraEditors.ComboBoxEdit drpComName;
+        private DevExpress.XtraEditors.ComboBoxEdit drpCCode;
+        private DevExpress.XtraEditors.ComboBoxEdit drpMName;
+        private DevExpress.XtraEditors.ComboBoxEdit drpOrderCode;
+        private DevExpress.XtraEditors.ComboBoxEdit drpMCode;
+        private DevExpress.XtraEditors.ComboBoxEdit drpPSize;
+        private DevExpress.XtraEditors.DateEdit ddODate;
+        private DevExpress.XtraEditors.ComboBoxEdit drpDCDate;
+        private DevExpress.XtraEditors.ComboBoxEdit drpColor;
     }
 }

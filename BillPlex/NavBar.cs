@@ -130,5 +130,12 @@ namespace BillPlex
             pc.MdiParent = this;
             pc.Show();
         }
+
+        private void barButtonItem7_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FrmDeliveryChallanProfile cp = new FrmDeliveryChallanProfile();
+            cp.MdiParent = this;
+            cp.Show();
+        }
     }
 }
