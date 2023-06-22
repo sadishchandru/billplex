@@ -36,7 +36,7 @@ namespace BillPlex
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.MainBankInfoGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colComName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMainCompanyId = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -74,7 +74,7 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MainBankInfoGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpBankName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpMainCompany.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchComapnyName.Properties)).BeginInit();
@@ -128,12 +128,12 @@ namespace BillPlex
             this.gridControl1.DataMember = "PRO_GetMainBankInfo";
             this.gridControl1.DataSource = this.sqlDataSource1;
             this.gridControl1.Location = new System.Drawing.Point(7, 450);
-            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.MainView = this.MainBankInfoGridView;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.Size = new System.Drawing.Size(1563, 352);
             this.gridControl1.TabIndex = 30;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.MainBankInfoGridView});
             // 
             // sqlDataSource1
             // 
@@ -148,9 +148,9 @@ namespace BillPlex
             storedProcQuery1});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
-            // gridView1
+            // MainBankInfoGridView
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.MainBankInfoGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colId,
             this.colComName,
             this.colMainCompanyId,
@@ -160,9 +160,9 @@ namespace BillPlex
             this.colBranchName,
             this.colIFSCode,
             this.colAddress});
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.PaintStyleName = "Flat";
+            this.MainBankInfoGridView.GridControl = this.gridControl1;
+            this.MainBankInfoGridView.Name = "MainBankInfoGridView";
+            this.MainBankInfoGridView.PaintStyleName = "Flat";
             // 
             // colId
             // 
@@ -481,7 +481,7 @@ namespace BillPlex
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MainBankInfoGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpBankName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpMainCompany.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchComapnyName.Properties)).EndInit();
@@ -528,7 +528,7 @@ namespace BillPlex
         private DevExpress.XtraEditors.ComboBoxEdit drpMainCompany;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView MainBankInfoGridView;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colComName;
         private DevExpress.XtraGrid.Columns.GridColumn colMainCompanyId;

@@ -71,7 +71,8 @@ namespace BusinessLayer
 
                 // Calling the stored procedure for creating a Employee Personal
                 List<DbParams> objLstDbParams = new List<DbParams>();
-                objLstDbParams.Add(new DbParams(DbType.String, 50, EmployeeCode, "@EmployeeCode", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.String, 50, Id, "@Id", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.String, 50, EEmployeeCode, "@EmployeeCode", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.Int64, 50, EMasterCompany, "@MasterCompanyld", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, EProprietorName, "@ContractorName", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 200, EClientCompany, "@ClientCompanyld", ParameterDirection.Input));
@@ -129,8 +130,8 @@ namespace BusinessLayer
             }
             catch (Exception ex)
             {
-                // Display a warning alert
-                // XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Result.Message = ex.Message;
+                Result.Status = ResultStatus.Error;
 
             }
             finally

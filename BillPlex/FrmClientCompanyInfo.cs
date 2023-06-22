@@ -287,7 +287,6 @@ namespace BillPlex
             txtAuthPanNo.ResetText();
             txtPercent.ResetText();
             radActiveStatus.ResetText();
-
         }
 
         private void ExitBtn_Click(object sender, EventArgs e)

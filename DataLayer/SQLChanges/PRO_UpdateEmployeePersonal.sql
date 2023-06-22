@@ -157,58 +157,58 @@ BEGIN
 		SET @ResultMessage = 'Employee Personal Added Successfully';
 		SET @ResultNo = 1
 	END
-	--ELSE
-	--BEGIN
-	--	UPDATE EmployeePersonal 
-	--	SET	
-	--	[EmployeeCode]=@EmployeeCode,
-	--	[MasterCompanyId]=@MasterCompanyld,
-	--	[ContractorName]=@ContractorName,
-	--	[ClientCompanyId]=@ClientCompanyld,
-	--	[ClientName]=@ClientName,
-	--	[SubCompanyId]=@SubCompanyld,
-	--	[SubCompanyName]=@SubCompanyName,
-	--	[EmployeeName]=@EmployeeName,
-	--	[PAddress]=@PAddress,
-	--	[PArea]=@PArea,
-	--	[PDistrict]=@PDistrict,
-	--	[PPincode]=@PPincode,
-	--	[PState]=@PState,
-	--	[CAddress]=@CAddress,
-	--	[CArea]=CArea,
-	--	[CDistrict]=@CDistrict,
-	--	[CPincode]=@CPincode,
-	--	[CState]=@CState,
-	--	[VoterId]=@Voterld,
-	--	[DrivingNo]=@DrivingNo,
-	--	[Pan]=@Pan,
-	--	[PassportNo]=@PassportNo,
-	--	[IdentityMark]=@IdentityMark,
-	--	[DoB]=@DoB,
-	--	[Gender]=@Gender,
-	--	[BloodGroup]=@BloodGroup,
-	--	[Email]=@Email,
-	--	[FName]=@FName,
-	--	[MName]=@MName,
-	--	[MStatus]=@MStatus,
-	--	[Religion]=@Religion,
-	--	[Caste]=@Caste,
-	--	[Nationality]=@Nationality,
-	--	[SCode]=@SCode,
-	--	[Phone]=@Phone,
-	--	[Mobile]=@Mobile,
-	--	[EJoiningDate]=@EJoiningDate,
-	--	[EProbationPeriod]=@EProbationPeriod,
-	--	[EConfirmationDate]=@EConfirmationDate,
-	--	[EResigningDate]=@EResigningDate,
-	--	[Reason]=@Reason,
-	--	[EmpImage]=@EmpImage
-	--	WHERE Id = @Id
+	ELSE
+	BEGIN
+		UPDATE EmployeePersonal 
+		SET	
+		[EmployeeCode]=@EmployeeCode,
+		[MasterCompanyId]=@MasterCompanyld,
+		[ContractorName]=@ContractorName,
+		[ClientCompanyId]=@ClientCompanyld,
+		[ClientName]=@ClientName,
+		[SubCompanyId]=@SubCompanyld,
+		[SubCompanyName]=@SubCompanyName,
+		[EmployeeName]=@EmployeeName,
+		[PAddress]=@PAddress,
+		[PArea]=@PArea,
+		[PDistrict]=@PDistrict,
+		[PPincode]=@PPincode,
+		[PState]=@PState,
+		[CAddress]=@CAddress,
+		[CArea]=CArea,
+		[CDistrict]=@CDistrict,
+		[CPincode]=@CPincode,
+		[CState]=@CState,
+		[VoterId]=@Voterld,
+		[DrivingNo]=@DrivingNo,
+		[Pan]=@Pan,
+		[PassportNo]=@PassportNo,
+		[IdentityMark]=@IdentityMark,
+		[DoB]=@DoB,
+		[Gender]=@Gender,
+		[BloodGroup]=@BloodGroup,
+		[Email]=@Email,
+		[FName]=@FName,
+		[MName]=@MName,
+		[MStatus]=@MStatus,
+		[Religion]=@Religion,
+		[Caste]=@Caste,
+		[Nationality]=@Nationality,
+		[SCode]=@SCode,
+		[Phone]=@Phone,
+		[Mobile]=@Mobile,
+		[EJoiningDate]=@EJoiningDate,
+		[EProbationPeriod]=@EProbationPeriod,
+		[EConfirmationDate]=@EConfirmationDate,
+		[EResigningDate]=@EResigningDate,
+		[Reason]=@Reason,
+		[EmpImage]=@EmpImage
+		WHERE Id = @Id
 
 		
-	--	SET @ResultMessage = 'Employee Personal Updated Successfully';
-	--	SET @ResultNo = 1
-	--END
+		SET @ResultMessage = 'Employee Personal Updated Successfully';
+		SET @ResultNo = 1
+	END
 
 	SELECT  @ResultMessage AS ResultMessage,
 			@ResultNo AS ResultNo

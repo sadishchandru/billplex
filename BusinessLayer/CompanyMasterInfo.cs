@@ -46,6 +46,8 @@ namespace BusinessLayer
         public string AuthMobile { get; set; }
         public string AuthorPanNo { get; set; }
 
+        public List<DropDownItemInfo> MasterBankList { get; set; }
+
         public string AuthorStartDate { get; set; }
         #region Update
 

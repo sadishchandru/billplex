@@ -1,6 +1,7 @@
 ﻿using BusinessLayer;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
+using DevExpress.XtraGrid;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -25,6 +26,10 @@ namespace BillPlex
         private EmployeeFamily EmployeeFamilyRequest;
 
         private EmployeeNominee EmployeeNomineeReqest;
+
+
+        private List<EmployeeFamily> EmployeeFamilySource;
+
         public FrmEmployeeMaster()
         {
             InitializeComponent();
@@ -34,10 +39,11 @@ namespace BillPlex
             EmployeeFamilyRequest = new EmployeeFamily();
             EmployeeNomineeReqest = new EmployeeNominee();
 
-            EmployeePersonalRequest.ConnectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
-            EmployeeFinanceRequest.ConnectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
-            EmployeeFamilyRequest.ConnectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
-            EmployeeNomineeReqest.ConnectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
+            var connectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
+            EmployeePersonalRequest.ConnectionString = connectionString;
+            EmployeeFinanceRequest.ConnectionString = connectionString;
+            EmployeeFamilyRequest.ConnectionString = connectionString;
+            EmployeeNomineeReqest.ConnectionString = connectionString;
 
             Dictionary<string, bool> dropDownList = new Dictionary<string, bool>        {
                     { "MasterCompanyRequired", true },
@@ -63,30 +69,39 @@ namespace BillPlex
                     EmployeePersonalRequest.SubClientCompanyList = (List<DropDownItemInfo>)item.Value;
                 }
             }
+
             if (EmployeePersonalRequest.MasterCompanyList != null)
             {
                 if (EmployeePersonalRequest.MasterCompanyList.Count() > 0)
                 {
                     foreach (DropDownItemInfo item in EmployeePersonalRequest.MasterCompanyList)
                     {
-                        drpMCompany.Properties.Items.Add(new ImageComboBoxItem(item.Name));
+                        drpMCompany.Properties.Items.Add(item.Name);
                     }
                 }
             }
 
-            if (EmployeePersonalRequest.ClientCompanyList.Count() > 0)
+            if (EmployeePersonalRequest.ClientCompanyList != null)
             {
-                foreach (DropDownItemInfo item in EmployeePersonalRequest.ClientCompanyList)
+                if (EmployeePersonalRequest.ClientCompanyList.Count() > 0)
                 {
-                    drpCCompany.Properties.Items.Add(new ImageComboBoxItem(item.Name));
+                    foreach (DropDownItemInfo item in EmployeePersonalRequest.ClientCompanyList)
+                    {
+                        drpCCompany.Properties.Items.Add(new ImageComboBoxItem(item.Name));
+                    }
                 }
+
             }
-            if (EmployeePersonalRequest.SubClientCompanyList.Count() > 0)
+            if (EmployeePersonalRequest.SubClientCompanyList != null)
             {
-                foreach (DropDownItemInfo item in EmployeePersonalRequest.SubClientCompanyList)
+                if (EmployeePersonalRequest.SubClientCompanyList.Count() > 0)
                 {
-                    drpSCCom.Properties.Items.Add(new ImageComboBoxItem(item.Name));
+                    foreach (DropDownItemInfo item in EmployeePersonalRequest.SubClientCompanyList)
+                    {
+                        drpSCCom.Properties.Items.Add(new ImageComboBoxItem(item.Name));
+                    }
                 }
+
             }
         }
 
@@ -114,18 +129,15 @@ namespace BillPlex
                         EmployeePersonalRequest.EClientCompany = EmployeePersonalRequest.ClientCompanyList.FirstOrDefault(item => item.Name == selectedClientItem.ToString())?.Id ?? -1;
                     }
 
-                    string selectedSubClientItem = (string)drpMCompany.SelectedItem;
+                    string selectedSubClientItem = (string)drpSCCom.SelectedItem;
 
                     if (selectedSubClientItem != null)
                     {
-                        EmployeePersonalRequest.ESubClientCompany = EmployeePersonalRequest.MasterCompanyList.FirstOrDefault(item => item.Name == selectedSubClientItem.ToString())?.Id ?? -1;
+                        EmployeePersonalRequest.ESubClientCompany = EmployeePersonalRequest.SubClientCompanyList.FirstOrDefault(item => item.Name == selectedSubClientItem.ToString())?.Id ?? -1;
                     }
 
-                    //EmployeePersonalRequest.EMasterCompany = drpMCompany.Text;
                     EmployeePersonalRequest.EProprietorName = txtPName.Text;
-                    //EmployeePersonalRequest.EClientCompany = drpCCompany.Text;
                     EmployeePersonalRequest.EClientName = txtCName.Text;
-                    //EmployeePersonalRequest.ESubClientCompany = drpSCCom.Text;
                     EmployeePersonalRequest.ESubClientName = txtSCName.Text;
                     EmployeePersonalRequest.EEmployeeCode = txtEmpCode.Text;
                     EmployeePersonalRequest.EEmployeeName = txtEmpName.Text;
@@ -162,7 +174,18 @@ namespace BillPlex
                     EmployeePersonalRequest.EResigningDate = ddRDate.Text;
                     EmployeePersonalRequest.ESelectWithReason = drpReason.Text;
                     //EmployeePersonalRequest.EPhoto = svgPhoto.Text;
+
                     EmployeePersonalRequest.Update();
+
+                    if (EmployeePersonalRequest.Result.Status == ResultStatus.Success)
+                    {
+                        this.Close();
+                        XtraMessageBox.Show(EmployeePersonalRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show(EmployeePersonalRequest.Result.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 #endregion
 
@@ -170,7 +193,7 @@ namespace BillPlex
                 else if (tabIndex == 1)
                 {
                     // Employee Finance Detail Update
-                    //EmployeeFinanceRequest.FEmpId = Id.Text;
+                    EmployeeFinanceRequest.FEmpId = (int)EmployeePersonalRequest.Id;
                     EmployeeFinanceRequest.FBankName = drpBName.Text;
                     EmployeeFinanceRequest.FAddress = txtAddress.Text;
                     EmployeeFinanceRequest.FSalaryAcNo = txtSalaryAC.Text;
@@ -182,19 +205,29 @@ namespace BillPlex
                     EmployeeFinanceRequest.FPolicyTerm = txtPolicyName.Text;
                     EmployeeFinanceRequest.FLicId = txtLic.Text;
                     EmployeeFinanceRequest.FARenewableDate = ddRDate.Text;
-                    EmployeeFinanceRequest.FPfApplication = chPF.Text;
+                    EmployeeFinanceRequest.FPfApplication = chPF.Text == "" ? false : true;
                     EmployeeFinanceRequest.FPfJoiningDate = ddPFJDate.Text;
                     EmployeeFinanceRequest.FPfNo = txtPFNo.Text;
                     EmployeeFinanceRequest.FPfLastDate = ddPFlastDate.Text;
-                    EmployeeFinanceRequest.FPensionApplication = chPension.Text;
+                    EmployeeFinanceRequest.FPensionApplication = chPension.Text == "" ? false : true;
                     EmployeeFinanceRequest.FJoiningDate = ddJDate.Text;
-                    EmployeeFinanceRequest.FEsiApplication = chESI.Text;
+                    EmployeeFinanceRequest.FEsiApplication = chESI.Text == "" ? false : true;
                     EmployeeFinanceRequest.FEsiJoiningDate = ddESIDate.Text;
                     EmployeeFinanceRequest.FEsiNo = txtBIEsiNo.Text;
                     EmployeeFinanceRequest.FEsiLastDate = ddESILastDate.Text;
                     EmployeeFinanceRequest.FLocalOffice = drpLOffice.Text;
                     EmployeeFinanceRequest.FEsiDespensary = drpESIDispensary.Text;
                     EmployeeFinanceRequest.Update();
+
+                    if (EmployeeFinanceRequest.Result.Status == ResultStatus.Success)
+                    {
+                        this.Close();
+                        XtraMessageBox.Show(EmployeeFinanceRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show(EmployeeFinanceRequest.Result.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 #endregion
 
@@ -248,10 +281,7 @@ namespace BillPlex
                 #endregion
 
 
-                if (EmployeePersonalRequest.Result.Status == ResultStatus.Success)
-                {
-                    XtraMessageBox.Show(EmployeePersonalRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                
 
             }
             catch (Exception ex)
@@ -294,6 +324,249 @@ namespace BillPlex
             {
                 txtSCName.Text = EmployeePersonalRequest.SubClientCompanyList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.AuthorName ?? "";
             }
+        }
+
+        private void Exitbtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Clearbtn_Click(object sender, EventArgs e)
+        {
+            drpMCompany.ResetText();
+            drpCCompany.ResetText();
+            drpSCCom.ResetText();
+            txtPName.ResetText();
+            txtCName.ResetText();
+            txtSCName.ResetText();
+            txtEmpCode.ResetText();
+            txtEmpName.ResetText();
+            txtVoterID.ResetText();
+            txtDriving.ResetText();
+            txtPANCard.ResetText();
+            txtPassport.ResetText();
+            txtIdentity.ResetText();
+            txtPerAddress.ResetText();
+            txtPerArea.ResetText();
+            drpPState.ResetText();
+            drpDistrict.ResetText();
+            txtPinCode.ResetText();
+            txtCPAddress.ResetText();
+            txtPArea.ResetText();
+            drpCDistrict.ResetText();
+            drpState.ResetText();
+            txtPPincode.ResetText();
+            ddDOB.ResetText();
+            radGender.ResetText();
+            drpBlood.ResetText();
+            txtEmailId.ResetText();
+            txtMobile.ResetText();
+            txtFathers.ResetText();
+            txtMotherName.ResetText();
+            drpMarital.ResetText();
+            txtStdCode.ResetText();
+            txtPhone.ResetText();
+            drpReligion.ResetText();
+            drpCast.ResetText();
+            drpNationlity.ResetText();
+            ddJDate.ResetText();
+            txtProb.ResetText();
+            ddCDate.ResetText();
+            drpReason.ResetText();
+            ddRDate.ResetText();
+        }
+
+        public void BindData(dynamic selectedClientCompanyList)
+        {
+            var selectedRows = selectedClientCompanyList.GetSelectedRows();
+
+            foreach (var rowHandle in selectedRows)
+            {
+
+                // Employee Details
+                EmployeePersonalRequest.Id = selectedClientCompanyList.GetRowCellValue(rowHandle, "Id");
+                txtEmpCode.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "EmployeeCode");
+                drpMCompany.SelectedIndex = EmployeePersonalRequest.MasterCompanyList.FindIndex(e => e.Id ==  Convert.ToInt32(selectedClientCompanyList.GetRowCellValue(rowHandle, "MasterCompanyId")));
+                txtPName.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ContractorName");
+
+                //drpCCompany.SelectedIndex = Convert.ToInt32(selectedClientCompanyList.GetRowCellValue(rowHandle, "ClientCompanyId"));
+                drpCCompany.SelectedIndex = EmployeePersonalRequest.ClientCompanyList.FindIndex(e => e.Id == Convert.ToInt32(selectedClientCompanyList.GetRowCellValue(rowHandle, "ClientCompanyId")));
+                txtCName.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ClientName");
+
+                //drpSCCom.SelectedIndex = Convert.ToInt32(selectedClientCompanyList.GetRowCellValue(rowHandle, "SubCompanyId"));
+                drpSCCom.SelectedIndex = EmployeePersonalRequest.SubClientCompanyList.FindIndex(e => e.Id == Convert.ToInt32(selectedClientCompanyList.GetRowCellValue(rowHandle, "SubCompanyId")));
+
+
+                txtSCName.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "SubCompanyName");
+                txtEmpName.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "EmployeeName");
+                txtPerAddress.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "PAddress");
+                txtPerArea.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "PArea");
+                drpDistrict.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "PDistrict");
+                txtPinCode.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "PPincode");
+                drpPState.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "PState");
+                txtCPAddress.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "CAddress");
+                txtPArea.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "CArea");
+                drpCDistrict.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "CDistrict");
+                txtPPincode.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "CPincode");
+                drpState.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "CState");
+                txtVoterID.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "VoterId");
+                txtDriving.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "DrivingNo");
+                txtPANCard.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "Pan");
+                txtPassport.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "PassportNo");
+                txtIdentity.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "IdentityMark");
+
+
+                var datete = selectedClientCompanyList.GetRowCellValue(rowHandle, "DoB").ToString();
+                ddDOB.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
+
+                if (radGender.SelectedIndex != null && selectedClientCompanyList.GetRowCellValue(rowHandle, "Gender") != "")
+                {
+                    radGender.SelectedIndex = Convert.ToInt32(selectedClientCompanyList.GetRowCellValue(rowHandle, "Gender"));
+                }
+
+                drpBlood.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "BloodGroup");
+                txtEmailId.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "Email");
+                txtFName.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "FName");
+                txtMotherName.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "MName");
+                drpMarital.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "MStatus");
+                drpReligion.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "Religion");
+                drpCast.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "Caste");
+                drpNationlity.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "Nationality");
+                txtSCName.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "SCode");
+                txtPhone.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "Phone");
+                txtMobile.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "Mobile");
+
+                datete = selectedClientCompanyList.GetRowCellValue(rowHandle, "EJoiningDate").ToString();
+                ddJDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
+
+
+                txtProb.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "EProbationPeriod");
+
+                datete = selectedClientCompanyList.GetRowCellValue(rowHandle, "EConfirmationDate").ToString();
+                ddCDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
+
+                datete = selectedClientCompanyList.GetRowCellValue(rowHandle, "EResigningDate").ToString();
+                ddRDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
+
+                drpReason.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "Reason");
+
+
+                // Finance Details Bind
+                //txtSCName.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "EmpId");
+                EmployeeFinanceRequest.Id = selectedClientCompanyList.GetRowCellValue(rowHandle, "Id");
+                drpBName.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "BankName");
+                txtAddress.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "BankAddress");
+                txtSalaryAC.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "SalaryNo");
+                drpPayMode.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "PaymentMode");
+                txtACTypes.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "AccountType");
+                txtBankRef.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "BankRef");
+                txtWard.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "Ward");
+                txtPolicyNo.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "PolicyNo");
+                txtPolicyName.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "PolicyTerm");
+                txtLic.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "LicId");
+
+
+                var annualDate = selectedClientCompanyList.GetRowCellValue(rowHandle, "AnnualDate").ToString();
+                txtRDate.Text = annualDate != "" ? DateTime.Parse(annualDate).ToString("MM-dd-yyyy") : "";
+
+
+                //txtRDate.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "AnnualDate");
+                //if (radGender.SelectedIndex != null && selectedClientCompanyList.GetRowCellValue(rowHandle, "Gender") != "")
+                //{
+                //    radGender.SelectedIndex = Convert.ToInt32(selectedClientCompanyList.GetRowCellValue(rowHandle, "Gender"));
+                //}
+                chPF.Checked = selectedClientCompanyList.GetRowCellValue(rowHandle, "PFApplicable");
+
+
+                datete = selectedClientCompanyList.GetRowCellValue(rowHandle, "PFJoiningDate").ToString();
+                ddPFJDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
+
+
+                //txtSCName.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "PFJoiningDate");
+
+
+                datete = selectedClientCompanyList.GetRowCellValue(rowHandle, "PFLastDate").ToString();
+                ddPFlastDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
+
+
+                //txtSCName.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "PFLastDate");
+                txtPFNo.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "PFNo");
+
+                chPension.Checked = selectedClientCompanyList.GetRowCellValue(rowHandle, "PensionApplicable");
+
+
+                datete = selectedClientCompanyList.GetRowCellValue(rowHandle, "PensionJoiningDate").ToString();
+                ddPenDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
+
+
+                //txtSCName.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "PensionJoiningDate");
+
+                chESI.Checked = selectedClientCompanyList.GetRowCellValue(rowHandle, "ESIApplicable");
+
+                datete = selectedClientCompanyList.GetRowCellValue(rowHandle, "ESIJoiningDate").ToString();
+                ddESIDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
+
+
+                //txtSCName.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ESIJoiningDate");
+
+                txtBIEsiNo.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ESINo");
+
+
+                datete = selectedClientCompanyList.GetRowCellValue(rowHandle, "ESILastDate").ToString();
+                ddESILastDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
+
+
+                //txtSCName.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ESILastDate");
+                drpLOffice.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ESIOffice");
+                drpESIDispensary.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ESIDispensary");
+
+            }
+
+            if (EmployeePersonalRequest.Id > 0)
+            {
+                Addbtn.Enabled = false;
+                Newbtn.Enabled = false;
+                Updatebtn.Enabled = true;
+                Deletebtn.Enabled = false;
+            } else if (EmployeeFinanceRequest.Id > 0)
+            {
+                Addbtn.Enabled = false;
+                Newbtn.Enabled = false;
+                Updatebtn.Enabled = true;
+                Deletebtn.Enabled = false;
+            } else
+            {
+                Addbtn.Enabled = true;
+                Newbtn.Enabled = false;
+                Updatebtn.Enabled = false;
+                Deletebtn.Enabled = false;
+            }
+
+        }
+
+        private void bntAddRow_Click(object sender, EventArgs e)
+        {
+            EmployeeFamilySource = new List<EmployeeFamily>();
+
+            EmployeeFamily EmployeeFamilyDetails = new EmployeeFamily();
+
+            EmployeeFamilyDetails.SNo = txtFSno.Text;
+            EmployeeFamilyDetails.EFName = txtFName.Text;
+            EmployeeFamilyDetails.EFAddress = txtFAddress.Text;
+            EmployeeFamilyDetails.EFArea = txtFArea.Text;
+            EmployeeFamilyDetails.EFDistrict = drpFDistrict.Text;
+            EmployeeFamilyDetails.EFPin = txtFPin.Text;
+            EmployeeFamilyDetails.EFRelation = txtFEmp.Text;
+            EmployeeFamilyDetails.EFDOB = ddFDOB.Text;
+            EmployeeFamilyDetails.EFAge = txtFAge.Text;
+            EmployeeFamilyDetails.EFResiding = drpResiding.Text;
+            EmployeeFamilyDetails.EFRemark = txtRemarks.Text;
+
+
+            EmployeeFamilySource.Add(EmployeeFamilyDetails);
+
+             //= EmployeeFamilySource;
+
         }
     }
 }

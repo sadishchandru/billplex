@@ -17,6 +17,8 @@ namespace BillPlex
     {
 
         private EmployeePersonal EmployeePersonalRequest;
+
+        private FrmEmployeeMaster FrmEmployeeRequest;
         public FrmEmployeeMasterList()
         {
             InitializeComponent();
@@ -52,6 +54,22 @@ namespace BillPlex
             //    colMasterCompanyId.SearchText = value1;
             //    colEmpCode.SearchText = value2;
             //}
+        }
+
+        private void btn_EmployeeGridView_Click(object sender, EventArgs e)
+        {
+
+            var selectedRow = EmployeeGrodView.GetSelectedRows();
+
+            if (selectedRow.Count() > 0)
+            {
+                FrmEmployeeRequest = new FrmEmployeeMaster();
+
+                FrmEmployeeRequest.BindData(EmployeeGrodView);
+
+                FrmEmployeeRequest.Show();
+
+            }
         }
     }
 }

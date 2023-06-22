@@ -45,7 +45,7 @@ BEGIN
 	DECLARE @ResultNo BIT = 0
 	DECLARE @ResultMessage VARCHAR(MAX) = ''
 
-	IF(@Id = 0)
+	IF(@EmpId = 0)
 	BEGIN
 		INSERT INTO EmployeeFinance
 		(

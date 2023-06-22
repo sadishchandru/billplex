@@ -89,6 +89,8 @@ namespace BillPlex
 
                 if (CompanyBankRequest.Result.Status == ResultStatus.Success)
                 {
+                    MainBankInfoGridView.RefreshData();
+
                     XtraMessageBox.Show(CompanyBankRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }

@@ -2,6 +2,7 @@
 using BusinessLayer;
 using DevExpress.XtraEditors;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -29,6 +30,20 @@ namespace BillPlex
             CompanyRequest = new CompanyMasterInfo();
             CompanyRequest.ConnectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
             CompanyRequest.Result = new ResultDetail();
+
+            Dictionary<string, bool> dropDownList = new Dictionary<string, bool>        {
+                    { "MasterBankRequired", true }
+                };
+
+            CompanyRequest.MasterBankList = CompanyRequest.GetDropdownValues(dropDownList);
+
+            //foreach (DropDownItemInfo item in dropdwonList)
+            //{
+            //    if (item.Code == "MasterBankRequired")
+            //    {
+            //        CompanyRequest.MasterBankList = (List<DropDownItemInfo>)item.Name;
+            //    }
+            //}
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -93,7 +108,7 @@ namespace BillPlex
                     XtraMessageBox.Show(CompanyRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
-                
+
             }
             catch (Exception ex)
             {
@@ -115,7 +130,7 @@ namespace BillPlex
                 txtPinNo.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComPin");
                 var datete = selectedCompanyList.GetRowCellValue(rowHandle, "ComDatestart").ToString();
                 ddStartingdate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
-                if (radBusinessNature.SelectedIndex != null && selectedCompanyList.GetRowCellValue(rowHandle, "ComNature") !="")
+                if (radBusinessNature.SelectedIndex != null && selectedCompanyList.GetRowCellValue(rowHandle, "ComNature") != "")
                 {
                     radBusinessNature.SelectedIndex = Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "ComNature"));
                 }
@@ -152,11 +167,23 @@ namespace BillPlex
                 txtAuthorMobileNo.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CAMobile");
                 drpAuthBlood.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CAblood");
                 datete = selectedCompanyList.GetRowCellValue(rowHandle, "CADOB").ToString();
-                ddAuthDOB.Text = datete != ""? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
+                ddAuthDOB.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
                 txtAuthorEmailId.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CAEmail");
                 txtAuthorPanNo.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CAPan");
                 datete = selectedCompanyList.GetRowCellValue(rowHandle, "CAStartDate").ToString();
                 ddAuthstartingdate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
+            }
+
+            if (CompanyRequest.MasterBankList.Count() > 0)
+            {
+                foreach (DropDownItemInfo item in CompanyRequest.MasterBankList)
+                {
+                    if (item.Code == CompanyRequest.Id.ToString())
+                    {
+                        txtBankDetails.Text = string.Join(Environment.NewLine, item.Name);
+                    }
+                }
+                txtBankDetails.Enabled = false;
             }
 
             btnAdd.Enabled = false;
