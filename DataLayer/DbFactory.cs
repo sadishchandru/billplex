@@ -133,6 +133,28 @@ namespace DataLayer
             return dbDataReader;
         }
 
+
+        public DbDataReader GetReader(string QueryorProcName, bool IsQuery)
+        {
+            DbDataReader dbDataReader = (DbDataReader)null;
+            DbCommand dbCommand = (DbCommand)null;
+            try
+            {
+                dbCommand = this.InitializeCommand(QueryorProcName, IsQuery);
+                dbCommand.CommandTimeout = this._iCMDTimeout;
+                dbDataReader = dbCommand.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                dbCommand?.Dispose();
+            }
+            return dbDataReader;
+        }
+
         private DbCommand InitializeCommand(string QueryorProcName, bool IsQuery)
         {
             using (DbCommand command = this._DbProviderFactory.CreateCommand())
