@@ -478,6 +478,7 @@ namespace BillPlex
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(285, 20);
             this.txtQuantity.TabIndex = 25;
+            this.txtQuantity.EditValueChanged += new System.EventHandler(this.txtQuantity_EditValueChanged);
             // 
             // txtTotRawmat
             // 

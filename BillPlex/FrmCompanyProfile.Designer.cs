@@ -30,8 +30,8 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCompanyProfile));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -91,11 +91,11 @@ namespace BillPlex
             this.colCBankAddress = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCreatedDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCAStartDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Printbtn = new DevExpress.XtraEditors.SimpleButton();
             this.Claerbtn = new DevExpress.XtraEditors.SimpleButton();
             this.Findbtn = new DevExpress.XtraEditors.SimpleButton();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCAStartDate = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -312,13 +312,13 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery2.Name = "PRO_GetMasterCompanyProfileInfo";
-            queryParameter2.Name = "@SearchKey";
-            queryParameter2.Type = typeof(string);
-            storedProcQuery2.Parameters.Add(queryParameter2);
-            storedProcQuery2.StoredProcName = "PRO_GetMasterCompanyProfileInfo";
+            storedProcQuery1.Name = "PRO_GetMasterCompanyProfileInfo";
+            queryParameter1.Name = "@SearchKey";
+            queryParameter1.Type = typeof(string);
+            storedProcQuery1.Parameters.Add(queryParameter1);
+            storedProcQuery1.StoredProcName = "PRO_GetMasterCompanyProfileInfo";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery2});
+            storedProcQuery1});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // CompanyGridView
@@ -751,6 +751,20 @@ namespace BillPlex
             this.colCreatedDate.VisibleIndex = 40;
             this.colCreatedDate.Width = 80;
             // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "gridColumn1";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 41;
+            // 
+            // colCAStartDate
+            // 
+            this.colCAStartDate.FieldName = "CAStartDate";
+            this.colCAStartDate.Name = "colCAStartDate";
+            this.colCAStartDate.Visible = true;
+            this.colCAStartDate.VisibleIndex = 42;
+            // 
             // Printbtn
             // 
             this.Printbtn.Appearance.BackColor = System.Drawing.Color.LightBlue;
@@ -821,20 +835,6 @@ namespace BillPlex
             this.Findbtn.Size = new System.Drawing.Size(75, 23);
             this.Findbtn.TabIndex = 3;
             this.Findbtn.Text = "Find";
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "gridColumn1";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 41;
-            // 
-            // colCAStartDate
-            // 
-            this.colCAStartDate.FieldName = "CAStartDate";
-            this.colCAStartDate.Name = "colCAStartDate";
-            this.colCAStartDate.Visible = true;
-            this.colCAStartDate.VisibleIndex = 42;
             // 
             // FrmCompanyProfile
             // 

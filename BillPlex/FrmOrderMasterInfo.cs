@@ -275,7 +275,12 @@ namespace BillPlex
 
         private void drpProductSize_SelectedIndexChanged(object sender, EventArgs e)
         {
+            string selectedItem = (string)drpProductSize.SelectedItem;
 
+            if (selectedItem != null)
+            {
+                txtMaterialwt.Text = OrderMasterRequest.ProductMasterList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.AuthorName ?? "";
+            }
         }
         public void BindData(dynamic SelectedOrderList)
         {
@@ -335,5 +340,19 @@ namespace BillPlex
             txtWages.ResetText();
         }
         #endregion
+
+        //private void txtTotRawmat_EditValueChanged(object sender, EventArgs e)
+        //{
+        //    int a = Convert.ToInt32(txtMaterialwt.Text);
+        //    int b = Convert.ToInt32(txtQuantity.Text);
+        //    txtTotRawmat.Text = Convert.ToString(a * b);
+        //}
+
+        private void txtQuantity_EditValueChanged(object sender, EventArgs e)
+        {
+            int a = Convert.ToInt32(txtMaterialwt.Text);
+            int b = Convert.ToInt32(txtQuantity.Text);
+            txtTotRawmat.Text = Convert.ToString(a * b);
+        }
     }
 }
