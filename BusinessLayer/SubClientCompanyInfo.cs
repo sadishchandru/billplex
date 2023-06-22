@@ -61,12 +61,13 @@ namespace BusinessLayer
             dbReader = null;
             Result = new ResultDetail();
 
-            try
+            try        
             {
                 InitializeDb();
 
                 // Calling the stored procedure for creating a new Company Profile
                 List<DbParams> objLstDbParams = new List<DbParams>();
+                objLstDbParams.Add(new DbParams(DbType.String, 50, Id, "@Id", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, MainCompany, "@MasterCompanyld", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, Director, "@Director", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 200, ClientCompany, "@ClientCompanyld", ParameterDirection.Input));
@@ -111,11 +112,16 @@ namespace BusinessLayer
 
                 dbReader = ObjDbfactory.GetReader("PRO_UpdateSubClientCompanyProfileInfo", false, objLstDbParams);
 
-                while (dbReader.Read())
-                {
-                    Result.Message = ToString(dbReader["ResultMessage"]);
-                    Result.Status = (ResultStatus)ToInteger(dbReader["ResultNo"]);
-                }
+                Result.Message = "SubClient Company Updated Successfully";
+                Result.Status = ResultStatus.Success;
+
+               
+
+                //while (dbReader.Read())
+                //{
+                //    Result.Message = ToString(dbReader["ResultMessage"]);
+                //    Result.Status = (ResultStatus)ToInteger(dbReader["ResultNo"]);
+                //}
 
 
             }
@@ -146,6 +152,9 @@ namespace BusinessLayer
                 List<DbParams> objLstDbParams = new List<DbParams>();
                 objLstDbParams.Add(new DbParams(DbType.String, 50, Id, "@Id", ParameterDirection.Input));
                 dbReader = ObjDbfactory.GetReader("PRO_DeleteSubClientMaster", false, objLstDbParams);
+
+                Result.Message = "Sub Client Master Deleted Successfully";
+                Result.Status = ResultStatus.Success;
 
                 while (dbReader.Read())
                 {

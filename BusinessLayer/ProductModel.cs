@@ -35,17 +35,17 @@ namespace BusinessLayer
                 InitializeDb();
 
                 List<DbParams> objLstdbParams = new List<DbParams>();
-                objLstdbParams.Add(new DbParams(DbType.String, 50, Id, "@Id", ParameterDirection.Input));
+                objLstdbParams.Add(new DbParams(DbType.Int64, 50, Id, "@Id", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, RawMaterialType, "@RawmaterialTypeId", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, RawMaterialName, "@RawMaterialId", ParameterDirection.Input));
-                objLstdbParams.Add(new DbParams(DbType.String, 50, ProductName, "@ProductNameId", ParameterDirection.Input));
+                objLstdbParams.Add(new DbParams(DbType.String, 50, ProductName, "@ProductId", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, ModelCode, "@ProductCode", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, ModelName, "@ProductModel", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, ProductSize, "@ProductSize", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, RawMaterialStock, "@RawMaterialStock", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, RequiredRawMaterialWeight, "@ReqRawMaterial", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, WagesForProductModel, "@WagesforItem", ParameterDirection.Input));
-                objLstdbParams.Add(new DbParams(DbType.String, 50, PMDate, "@Date", ParameterDirection.Input));
+                objLstdbParams.Add(new DbParams(DbType.DateTime, 50, PMDate == "" ? null : PMDate, "@Date", ParameterDirection.Input));
 
                 dbReader = ObjDbfactory.GetReader("PRO_UpdateProductModel", false, objLstdbParams);
 

@@ -239,6 +239,7 @@ namespace BillPlex
             this.CustomerMaster_GridView.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             this.CustomerMaster_GridView.Name = "CustomerMaster_GridView";
             this.CustomerMaster_GridView.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
+            this.CustomerMaster_GridView.DoubleClick += new System.EventHandler(this.btnEdit_Click);
             // 
             // colCode
             // 
@@ -455,7 +456,6 @@ namespace BillPlex
             // 
             this.btnDelete.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Appearance.Options.UseFont = true;
-            this.btnDelete.Enabled = false;
             this.btnDelete.Location = new System.Drawing.Point(1333, 323);
             this.btnDelete.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.btnDelete.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightBlue;

@@ -29,13 +29,15 @@ namespace BillPlex
             sqlDataSource1.FillAsync();
             CustomerRequest = new CustomerMasterInfo();
             CustomerRequest.ConnectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
-
+            CustomerRequest.Result = new ResultDetail();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             try
             {
+                if (txtCustomerCode.Text != string.Empty && txtCustomerName.Text != string.Empty)
+                {
                 CustomerRequest.CustomerCode = txtCustomerCode.Text;
                 CustomerRequest.CustomerName = txtCustomerName.Text;
                 CustomerRequest.OffAddress = txtOffAddress.Text;
@@ -57,13 +59,22 @@ namespace BillPlex
                 CustomerRequest.Website = txtWebsite.Text;
                 CustomerRequest.Update();
 
+                }
+                else
+                {
+                    XtraMessageBox.Show(CustomerRequest.Result.Message, "please give the manditory field", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+
+
                 if (CustomerRequest.Result.Status == ResultStatus.Success)
                 {
                     XtraMessageBox.Show(CustomerRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                } else
-                {
-                    XtraMessageBox.Show(CustomerRequest.Result.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+                //else
+                //{
+                //    XtraMessageBox.Show(CustomerRequest.Result.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //}
 
             }
             catch (Exception ex)
@@ -72,10 +83,7 @@ namespace BillPlex
                 XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
-            btnAdd.Enabled = false;
-            btnEdit.Enabled = true;
-            btnDelete.Enabled = true;
-            btnUpdate.Enabled = true;
+            
 
         }
 
@@ -106,14 +114,29 @@ namespace BillPlex
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            // Get the selected rows from the GridView control
             var selectedRows = CustomerMaster_GridView.GetSelectedRows();
 
             foreach (var rowHandle in selectedRows)
             {
-                CustomerRequest.Id = (int)CustomerMaster_GridView.GetRowCellValue(rowHandle, "Id");
+                CustomerRequest.Id = (Int64)CustomerMaster_GridView.GetRowCellValue(rowHandle, "Id");
+
+                //CompanyMasterRequest.Id = (Int32)gridView2.GetRowCellValue(rowHandle, "Id");
             }
             CustomerRequest.Delete();
+
+            if (CustomerRequest.Result.Status == ResultStatus.Success)
+            {
+                XtraMessageBox.Show(CustomerRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            //// Get the selected rows from the GridView control
+            //var selectedRows = CustomerMaster_GridView.GetSelectedRows();
+
+            //foreach (var rowHandle in selectedRows)
+            //{
+            //    CustomerRequest.Id = (int)CustomerMaster_GridView.GetRowCellValue(rowHandle, "Id");
+            //}
+            //CustomerRequest.Delete();
 
         }
 
@@ -165,6 +188,7 @@ namespace BillPlex
                 btnAdd.Enabled = false;
                 btnEdit.Enabled = false;
                 btnDelete.Enabled = false;
+                btnUpdate.Enabled = true;
 
             }
             catch(Exception ex) {

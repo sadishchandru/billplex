@@ -152,6 +152,12 @@ namespace BusinessLayer
                 Result.Message = "Client Company Master Deleted Successfully";
                 Result.Status = ResultStatus.Success;
 
+                while (dbReader.Read())
+                {
+                    Result.Message = ToString(dbReader["ResultMessage"]);
+                    Result.Status = (ResultStatus)ToInteger(dbReader["ResultNo"]);
+                }
+
 
             }
             catch (Exception ex)

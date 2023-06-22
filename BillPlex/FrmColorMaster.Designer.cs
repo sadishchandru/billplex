@@ -29,12 +29,19 @@ namespace BillPlex
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmColorMaster));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.sqlDataSource2 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
+            this.ColormasterGrid = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colColournname = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtSearch = new DevExpress.XtraEditors.TextEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.svgImageBox1 = new DevExpress.XtraEditors.SvgImageBox();
@@ -47,12 +54,13 @@ namespace BillPlex
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.txtCName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ColormasterGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
@@ -63,9 +71,10 @@ namespace BillPlex
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.labelControl3);
-            this.panelControl1.Location = new System.Drawing.Point(12, 1);
+            this.panelControl1.Location = new System.Drawing.Point(10, 1);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1913, 100);
+            this.panelControl1.Size = new System.Drawing.Size(1640, 81);
             this.panelControl1.TabIndex = 5;
             // 
             // labelControl3
@@ -74,9 +83,10 @@ namespace BillPlex
             this.labelControl3.Appearance.ForeColor = System.Drawing.SystemColors.Highlight;
             this.labelControl3.Appearance.Options.UseFont = true;
             this.labelControl3.Appearance.Options.UseForeColor = true;
-            this.labelControl3.Location = new System.Drawing.Point(885, 38);
+            this.labelControl3.Location = new System.Drawing.Point(759, 31);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(211, 36);
+            this.labelControl3.Size = new System.Drawing.Size(190, 33);
             this.labelControl3.TabIndex = 1;
             this.labelControl3.Text = "Colour Master";
             // 
@@ -91,9 +101,10 @@ namespace BillPlex
             this.panelControl2.Controls.Add(this.panelControl3);
             this.panelControl2.Controls.Add(this.txtCName);
             this.panelControl2.Controls.Add(this.labelControl2);
-            this.panelControl2.Location = new System.Drawing.Point(12, 118);
+            this.panelControl2.Location = new System.Drawing.Point(10, 96);
+            this.panelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1913, 784);
+            this.panelControl2.Size = new System.Drawing.Size(1640, 637);
             this.panelControl2.TabIndex = 6;
             // 
             // labelControl1
@@ -102,49 +113,93 @@ namespace BillPlex
             this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(276, 71);
+            this.labelControl1.Location = new System.Drawing.Point(237, 58);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(15, 28);
+            this.labelControl1.Size = new System.Drawing.Size(13, 25);
             this.labelControl1.TabIndex = 14;
             this.labelControl1.Text = "*";
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(64, 348);
-            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.DataMember = "PRO_GetColourMaster";
+            this.gridControl1.DataSource = this.sqlDataSource2;
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gridControl1.Location = new System.Drawing.Point(55, 283);
+            this.gridControl1.MainView = this.ColormasterGrid;
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(899, 410);
+            this.gridControl1.Size = new System.Drawing.Size(771, 333);
             this.gridControl1.TabIndex = 13;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.ColormasterGrid});
             // 
-            // gridView1
+            // sqlDataSource2
             // 
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
+            this.sqlDataSource2.ConnectionName = "BillPlex";
+            this.sqlDataSource2.Name = "sqlDataSource2";
+            storedProcQuery1.Name = "PRO_GetColourMaster";
+            queryParameter1.Name = "@SearchKey";
+            queryParameter1.Type = typeof(string);
+            storedProcQuery1.Parameters.Add(queryParameter1);
+            storedProcQuery1.StoredProcName = "PRO_GetColourMaster";
+            this.sqlDataSource2.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
+            storedProcQuery1});
+            this.sqlDataSource2.ResultSchemaSerializable = resources.GetString("sqlDataSource2.ResultSchemaSerializable");
+            // 
+            // ColormasterGrid
+            // 
+            this.ColormasterGrid.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colID,
+            this.colColournname});
+            this.ColormasterGrid.DetailHeight = 284;
+            this.ColormasterGrid.GridControl = this.gridControl1;
+            this.ColormasterGrid.Name = "ColormasterGrid";
+            this.ColormasterGrid.DoubleClick += new System.EventHandler(this.btEdit_Click);
+            // 
+            // colID
+            // 
+            this.colID.FieldName = "ID";
+            this.colID.MinWidth = 23;
+            this.colID.Name = "colID";
+            this.colID.Visible = true;
+            this.colID.VisibleIndex = 0;
+            this.colID.Width = 64;
+            // 
+            // colColournname
+            // 
+            this.colColournname.FieldName = "Colournname";
+            this.colColournname.MinWidth = 23;
+            this.colColournname.Name = "colColournname";
+            this.colColournname.Visible = true;
+            this.colColournname.VisibleIndex = 1;
+            this.colColournname.Width = 64;
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(338, 299);
+            this.txtSearch.Location = new System.Drawing.Point(290, 243);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(504, 22);
+            this.txtSearch.Size = new System.Drawing.Size(432, 20);
             this.txtSearch.TabIndex = 12;
             // 
             // labelControl6
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(63, 295);
+            this.labelControl6.Location = new System.Drawing.Point(54, 240);
+            this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(205, 24);
+            this.labelControl6.Size = new System.Drawing.Size(185, 22);
             this.labelControl6.TabIndex = 11;
             this.labelControl6.Text = "Search Colour Name";
             // 
             // svgImageBox1
             // 
-            this.svgImageBox1.Location = new System.Drawing.Point(1033, 21);
+            this.svgImageBox1.Location = new System.Drawing.Point(885, 17);
+            this.svgImageBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.svgImageBox1.Name = "svgImageBox1";
-            this.svgImageBox1.Size = new System.Drawing.Size(828, 298);
+            this.svgImageBox1.Size = new System.Drawing.Size(710, 242);
             this.svgImageBox1.TabIndex = 10;
             this.svgImageBox1.Text = "svgImageBox1";
             // 
@@ -156,84 +211,103 @@ namespace BillPlex
             this.panelControl3.Controls.Add(this.btEdit);
             this.panelControl3.Controls.Add(this.btUpdate);
             this.panelControl3.Controls.Add(this.btnAdd);
-            this.panelControl3.Location = new System.Drawing.Point(226, 163);
+            this.panelControl3.Location = new System.Drawing.Point(194, 132);
+            this.panelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(737, 100);
+            this.panelControl3.Size = new System.Drawing.Size(632, 81);
             this.panelControl3.TabIndex = 9;
             // 
             // btClear
             // 
-            this.btClear.Location = new System.Drawing.Point(486, 33);
+            this.btClear.Location = new System.Drawing.Point(417, 27);
+            this.btClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btClear.Name = "btClear";
-            this.btClear.Size = new System.Drawing.Size(94, 29);
+            this.btClear.Size = new System.Drawing.Size(81, 24);
             this.btClear.TabIndex = 5;
             this.btClear.Text = "CLEAR";
+            this.btClear.Click += new System.EventHandler(this.btClear_Click);
             // 
             // btExit
             // 
-            this.btExit.Location = new System.Drawing.Point(600, 33);
+            this.btExit.Location = new System.Drawing.Point(514, 27);
+            this.btExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btExit.Name = "btExit";
-            this.btExit.Size = new System.Drawing.Size(94, 29);
+            this.btExit.Size = new System.Drawing.Size(81, 24);
             this.btExit.TabIndex = 4;
             this.btExit.Text = "EXIT";
+            this.btExit.Click += new System.EventHandler(this.btExit_Click);
             // 
             // btDelete
             // 
-            this.btDelete.Location = new System.Drawing.Point(360, 33);
+            this.btDelete.Location = new System.Drawing.Point(309, 27);
+            this.btDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btDelete.Name = "btDelete";
-            this.btDelete.Size = new System.Drawing.Size(94, 29);
+            this.btDelete.Size = new System.Drawing.Size(81, 24);
             this.btDelete.TabIndex = 3;
             this.btDelete.Text = "DELETE";
+            this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
             // 
             // btEdit
             // 
-            this.btEdit.Location = new System.Drawing.Point(127, 33);
+            this.btEdit.Location = new System.Drawing.Point(109, 27);
+            this.btEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btEdit.Name = "btEdit";
-            this.btEdit.Size = new System.Drawing.Size(94, 29);
+            this.btEdit.Size = new System.Drawing.Size(81, 24);
             this.btEdit.TabIndex = 2;
             this.btEdit.Text = "EDIT";
+            this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
             // 
             // btUpdate
             // 
-            this.btUpdate.Location = new System.Drawing.Point(243, 33);
+            this.btUpdate.Location = new System.Drawing.Point(208, 27);
+            this.btUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btUpdate.Name = "btUpdate";
-            this.btUpdate.Size = new System.Drawing.Size(94, 29);
+            this.btUpdate.Size = new System.Drawing.Size(81, 24);
             this.btUpdate.TabIndex = 1;
             this.btUpdate.Text = "UPDATE";
+            this.btUpdate.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(10, 33);
+            this.btnAdd.Location = new System.Drawing.Point(9, 27);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(94, 29);
+            this.btnAdd.Size = new System.Drawing.Size(81, 24);
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "ADD";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtCName
             // 
-            this.txtCName.Location = new System.Drawing.Point(416, 79);
+            this.txtCName.Location = new System.Drawing.Point(357, 64);
+            this.txtCName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCName.Name = "txtCName";
-            this.txtCName.Size = new System.Drawing.Size(504, 22);
+            this.txtCName.Size = new System.Drawing.Size(432, 20);
             this.txtCName.TabIndex = 6;
             // 
             // labelControl2
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(141, 75);
+            this.labelControl2.Location = new System.Drawing.Point(121, 61);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(129, 24);
+            this.labelControl2.Size = new System.Drawing.Size(117, 22);
             this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "Colour Name";
             // 
+            // sqlDataSource1
+            // 
+            this.sqlDataSource1.Name = "sqlDataSource1";
+            // 
             // FrmColorMaster
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1940, 1062);
+            this.ClientSize = new System.Drawing.Size(1663, 863);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmColorMaster";
             this.Text = "FrmColorMaster";
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
@@ -243,7 +317,7 @@ namespace BillPlex
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ColormasterGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
@@ -260,7 +334,7 @@ namespace BillPlex
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView ColormasterGrid;
         private DevExpress.XtraEditors.TextEdit txtSearch;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.SvgImageBox svgImageBox1;
@@ -273,5 +347,9 @@ namespace BillPlex
         private DevExpress.XtraEditors.SimpleButton btnAdd;
         private DevExpress.XtraEditors.TextEdit txtCName;
         private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource2;
+        private DevExpress.XtraGrid.Columns.GridColumn colID;
+        private DevExpress.XtraGrid.Columns.GridColumn colColournname;
+        private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
     }
 }

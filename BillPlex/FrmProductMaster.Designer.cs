@@ -93,7 +93,7 @@ namespace BillPlex
             this.labelControl1.Location = new System.Drawing.Point(249, 61);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(11, 22);
+            this.labelControl1.Size = new System.Drawing.Size(13, 25);
             this.labelControl1.TabIndex = 14;
             this.labelControl1.Text = "*";
             // 
@@ -132,6 +132,7 @@ namespace BillPlex
             this.grd_productmaster.DetailHeight = 284;
             this.grd_productmaster.GridControl = this.gridControl1;
             this.grd_productmaster.Name = "grd_productmaster";
+            this.grd_productmaster.DoubleClick += new System.EventHandler(this.btEdit_Click);
             // 
             // colId
             // 
@@ -167,7 +168,7 @@ namespace BillPlex
             this.labelControl6.Location = new System.Drawing.Point(54, 240);
             this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(169, 19);
+            this.labelControl6.Size = new System.Drawing.Size(187, 22);
             this.labelControl6.TabIndex = 11;
             this.labelControl6.Text = "Search Raw Material";
             // 
@@ -269,7 +270,7 @@ namespace BillPlex
             this.labelControl2.Location = new System.Drawing.Point(121, 61);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(115, 19);
+            this.labelControl2.Size = new System.Drawing.Size(129, 22);
             this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "Product Name";
             // 
@@ -291,7 +292,7 @@ namespace BillPlex
             this.labelControl3.Location = new System.Drawing.Point(759, 31);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(182, 29);
+            this.labelControl3.Size = new System.Drawing.Size(207, 33);
             this.labelControl3.TabIndex = 1;
             this.labelControl3.Text = "Product Master";
             // 

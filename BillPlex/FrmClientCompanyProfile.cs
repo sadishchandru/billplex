@@ -10,7 +10,9 @@ namespace BillPlex
         public FrmClientCompanyProfile()
 
         {
+            ClientCompanyinfoRequest  = new ClientCompanyInfo();
             InitializeComponent();
+            ClientCompanyinfoRequest.ConnectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
             loadgrid();
         }
 

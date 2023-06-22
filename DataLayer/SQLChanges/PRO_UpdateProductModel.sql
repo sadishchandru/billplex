@@ -12,16 +12,16 @@ GO
 -- =============================================
 CREATE OR ALTER PROCEDURE [dbo].[PRO_UpdateProductModel]
 @Id  BIGINT = 0,
-@RawmaterialTypeId int= '', 
-@RawMaterialId  int= '',
-@ProductId int= '',	
+@RawmaterialTypeId int= 0, 
+@RawMaterialId  int= 0,
+@ProductId int= 0,	
 @ProductCode  varchar(100)= '',
 @ProductModel  varchar(100)= '',
 @ProductSize  varchar(100)= '',
 @RawMaterialStock  varchar(200)= '',
 @ReqRawMaterial  varchar(100)= '',
 @WagesforItem  varchar(100)= '',
-@Date  date  = '' 
+@Date  date  = Null 
 AS
 BEGIN
 	

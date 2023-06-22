@@ -101,36 +101,46 @@ namespace BillPlex
         {
             try
             {
-
-                string selectedMasterItem = (string)drpRawType.SelectedItem;
-
-                if (selectedMasterItem != null)
+                if ((drpProName.Text != string.Empty || drpProName.Text != "Select") && txtModelCode.Text != string.Empty && txtModelName.Text != string.Empty)
                 {
-                    productModelRequest.RawMaterialType = productModelRequest.RawMaterialList.FirstOrDefault(item => item.Name == selectedMasterItem.ToString())?.Id ?? -1;
-                }
 
-                if (selectedMasterItem != null)
+                    string selectedMasterItem = (string)drpRawType.SelectedItem;
+
+                    if (selectedMasterItem != null)
+                    {
+                        productModelRequest.RawMaterialType = productModelRequest.RawMaterialList.FirstOrDefault(item => item.Name == selectedMasterItem.ToString())?.Id ?? -1;
+                    }
+
+                    if (selectedMasterItem != null)
+                    {
+                        productModelRequest.RawMaterialName = productModelRequest.RawMaterialList.FirstOrDefault(item => item.Name == selectedMasterItem.ToString())?.Name ?? "";
+                    }
+
+                    if (selectedMasterItem != null)
+                    {
+                        productModelRequest.RawMaterialType = productModelRequest.ProductModelList.FirstOrDefault(item => item.Name == selectedMasterItem.ToString())?.Id ?? -1;
+                    }
+
+                
+
+                    //productModelRequest.RawMaterialType = drpRawType.Text;
+                    //productModelRequest.RawMaterialName = drpRawName.Text;
+                    productModelRequest.ProductName = drpProName.Text;
+                    productModelRequest.ModelCode = txtModelCode.Text;
+                    productModelRequest.ModelName = txtModelName.Text;
+                    productModelRequest.ProductSize = drpProSize.Text;
+                    productModelRequest.RawMaterialStock = txtRawStock.Text;
+                    productModelRequest.RequiredRawMaterialWeight = txtRawWeight.Text;
+                    productModelRequest.WagesForProductModel = txtWages.Text;
+                    productModelRequest.PMDate = ddDate.Text;
+                    productModelRequest.Update();
+
+                }
+                else
                 {
-                    productModelRequest.RawMaterialName = productModelRequest.RawMaterialList.FirstOrDefault(item => item.Name == selectedMasterItem.ToString())?.Name ?? "";
+                    XtraMessageBox.Show(productModelRequest.Result.Message, "please give the manditory field", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 }
-
-                if (selectedMasterItem != null)
-                {
-                    productModelRequest.RawMaterialType = productModelRequest.ProductModelList.FirstOrDefault(item => item.Name == selectedMasterItem.ToString())?.Id ?? -1;
-                }
-
-                //productModelRequest.RawMaterialType = drpRawType.Text;
-                //productModelRequest.RawMaterialName = drpRawName.Text;
-                productModelRequest.ProductName = drpProName.Text;
-                productModelRequest.ModelCode = txtModelCode.Text;
-                productModelRequest.ModelName = txtModelName.Text;
-                productModelRequest.ProductSize = drpProSize.Text;
-                productModelRequest.RawMaterialStock = txtRawStock.Text;
-                productModelRequest.RequiredRawMaterialWeight = txtRawWeight.Text;
-                productModelRequest.WagesForProductModel = txtWages.Text;
-                productModelRequest.PMDate = ddDate.Text;
-                productModelRequest.Update();
-
 
                 if (productModelRequest.Result.Status == ResultStatus.Success)
                 {

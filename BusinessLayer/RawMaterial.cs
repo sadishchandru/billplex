@@ -63,6 +63,9 @@ namespace BusinessLayer
 
                 dbReader = ObjDbfactory.GetReader("PRO_DeleteRawMaterials", false, objLstdbParams);
 
+                Result.Message = "Raw Materials Deleted Successfully";
+                Result.Status = ResultStatus.Success;
+
                 while (dbReader.Read())
                 {
                     Result.Message = ToString(dbReader["ResultMessage"]);

@@ -189,7 +189,10 @@ namespace BusinessLayer
                 List<DbParams> objLstDbParams = new List<DbParams>();
                 objLstDbParams.Add(new DbParams(DbType.String, 50, Id, "@Id", ParameterDirection.Input));
 
-                dbReader = ObjDbfactory.GetReader("PRO_DeleteCustomerMasterInfo", false, objLstDbParams);
+                dbReader = ObjDbfactory.GetReader("PRO_DeleteCustomerInfo", false, objLstDbParams);
+
+                Result.Message = "Customer Master Deleted Successfully";
+                Result.Status = ResultStatus.Success;
 
                 while (dbReader.Read())
                 {
