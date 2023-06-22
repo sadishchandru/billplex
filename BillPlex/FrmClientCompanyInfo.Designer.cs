@@ -81,6 +81,7 @@ namespace BillPlex
             this.ExitBtn = new DevExpress.XtraEditors.SimpleButton();
             this.NewBtn = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl28 = new DevExpress.XtraEditors.LabelControl();
             this.drpState = new DevExpress.XtraEditors.ComboBoxEdit();
             this.drpMainCompany = new DevExpress.XtraEditors.ComboBoxEdit();
             this.ddPfDate = new DevExpress.XtraEditors.DateEdit();
@@ -134,7 +135,6 @@ namespace BillPlex
             this.LicenseTxt = new DevExpress.XtraEditors.TextEdit();
             this.ddStartingDate = new DevExpress.XtraEditors.DateEdit();
             this.txtDirector = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl28 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -307,6 +307,7 @@ namespace BillPlex
             "Puducherry",
             "Punjab",
             "Rajasthan",
+            "Select",
             "Sikkim",
             "Tamil Nadu",
             "Telangana",
@@ -324,6 +325,16 @@ namespace BillPlex
             this.drpAuthBloodGroup.Name = "drpAuthBloodGroup";
             this.drpAuthBloodGroup.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpAuthBloodGroup.Properties.Items.AddRange(new object[] {
+            "Select",
+            "A+",
+            "B+",
+            "O+",
+            "AB+",
+            "A-",
+            "B-",
+            "O-",
+            "AB-"});
             this.drpAuthBloodGroup.Size = new System.Drawing.Size(263, 20);
             this.drpAuthBloodGroup.TabIndex = 79;
             // 
@@ -920,8 +931,21 @@ namespace BillPlex
             this.panelControl3.Size = new System.Drawing.Size(1230, 350);
             this.panelControl3.TabIndex = 0;
             // 
+            // labelControl28
+            // 
+            this.labelControl28.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl28.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl28.Appearance.Options.UseFont = true;
+            this.labelControl28.Appearance.Options.UseForeColor = true;
+            this.labelControl28.Location = new System.Drawing.Point(117, 38);
+            this.labelControl28.Name = "labelControl28";
+            this.labelControl28.Size = new System.Drawing.Size(11, 21);
+            this.labelControl28.TabIndex = 67;
+            this.labelControl28.Text = "*";
+            // 
             // drpState
             // 
+            this.drpState.EditValue = "--Select--";
             this.drpState.Location = new System.Drawing.Point(116, 229);
             this.drpState.Name = "drpState";
             this.drpState.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -1504,18 +1528,6 @@ namespace BillPlex
             this.txtDirector.Name = "txtDirector";
             this.txtDirector.Size = new System.Drawing.Size(224, 20);
             this.txtDirector.TabIndex = 65;
-            // 
-            // labelControl28
-            // 
-            this.labelControl28.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl28.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl28.Appearance.Options.UseFont = true;
-            this.labelControl28.Appearance.Options.UseForeColor = true;
-            this.labelControl28.Location = new System.Drawing.Point(117, 38);
-            this.labelControl28.Name = "labelControl28";
-            this.labelControl28.Size = new System.Drawing.Size(11, 21);
-            this.labelControl28.TabIndex = 67;
-            this.labelControl28.Text = "*";
             // 
             // FrmClientCompanyInfo
             // 

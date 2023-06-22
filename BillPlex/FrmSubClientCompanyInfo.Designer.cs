@@ -81,6 +81,8 @@ namespace BillPlex
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.btnNew = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl34 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl33 = new DevExpress.XtraEditors.LabelControl();
             this.drpCCompany = new DevExpress.XtraEditors.ComboBoxEdit();
             this.drpMainCompany = new DevExpress.XtraEditors.ComboBoxEdit();
             this.drpState = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -320,6 +322,7 @@ namespace BillPlex
             "Puducherry",
             "Punjab",
             "Rajasthan",
+            "Select",
             "Sikkim",
             "Tamil Nadu",
             "Telangana",
@@ -776,6 +779,7 @@ namespace BillPlex
             // 
             this.btnDelete.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Appearance.Options.UseFont = true;
+            this.btnDelete.Enabled = false;
             this.btnDelete.Location = new System.Drawing.Point(18, 173);
             this.btnDelete.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.btnDelete.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.White;
@@ -790,6 +794,7 @@ namespace BillPlex
             // 
             this.btnUpdate.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Appearance.Options.UseFont = true;
+            this.btnUpdate.Enabled = false;
             this.btnUpdate.Location = new System.Drawing.Point(18, 128);
             this.btnUpdate.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.btnUpdate.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.White;
@@ -805,6 +810,7 @@ namespace BillPlex
             // 
             this.btnEdit.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.Appearance.Options.UseFont = true;
+            this.btnEdit.Enabled = false;
             this.btnEdit.Location = new System.Drawing.Point(18, 87);
             this.btnEdit.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.btnEdit.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.White;
@@ -848,6 +854,7 @@ namespace BillPlex
             // 
             this.btnNew.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNew.Appearance.Options.UseFont = true;
+            this.btnNew.Enabled = false;
             this.btnNew.Location = new System.Drawing.Point(18, 5);
             this.btnNew.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.btnNew.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.White;
@@ -861,6 +868,8 @@ namespace BillPlex
             // 
             // panelControl3
             // 
+            this.panelControl3.Controls.Add(this.labelControl34);
+            this.panelControl3.Controls.Add(this.labelControl33);
             this.panelControl3.Controls.Add(this.drpCCompany);
             this.panelControl3.Controls.Add(this.drpMainCompany);
             this.panelControl3.Controls.Add(this.drpState);
@@ -922,6 +931,30 @@ namespace BillPlex
             this.panelControl3.Size = new System.Drawing.Size(1230, 350);
             this.panelControl3.TabIndex = 0;
             // 
+            // labelControl34
+            // 
+            this.labelControl34.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl34.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl34.Appearance.Options.UseFont = true;
+            this.labelControl34.Appearance.Options.UseForeColor = true;
+            this.labelControl34.Location = new System.Drawing.Point(330, 140);
+            this.labelControl34.Name = "labelControl34";
+            this.labelControl34.Size = new System.Drawing.Size(12, 27);
+            this.labelControl34.TabIndex = 85;
+            this.labelControl34.Text = "*";
+            // 
+            // labelControl33
+            // 
+            this.labelControl33.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl33.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl33.Appearance.Options.UseFont = true;
+            this.labelControl33.Appearance.Options.UseForeColor = true;
+            this.labelControl33.Location = new System.Drawing.Point(150, 141);
+            this.labelControl33.Name = "labelControl33";
+            this.labelControl33.Size = new System.Drawing.Size(12, 27);
+            this.labelControl33.TabIndex = 79;
+            this.labelControl33.Text = "*";
+            // 
             // drpCCompany
             // 
             this.drpCCompany.Location = new System.Drawing.Point(6, 117);
@@ -980,6 +1013,7 @@ namespace BillPlex
             "Puducherry",
             "Punjab",
             "Rajasthan",
+            "Select",
             "Sikkim",
             "Tamil Nadu",
             "Telangana",
@@ -1409,14 +1443,14 @@ namespace BillPlex
             // 
             // txtCompanyName
             // 
-            this.txtCompanyName.Location = new System.Drawing.Point(177, 161);
+            this.txtCompanyName.Location = new System.Drawing.Point(177, 168);
             this.txtCompanyName.Name = "txtCompanyName";
             this.txtCompanyName.Size = new System.Drawing.Size(224, 20);
             this.txtCompanyName.TabIndex = 14;
             // 
             // txtCompanyCode
             // 
-            this.txtCompanyCode.Location = new System.Drawing.Point(6, 163);
+            this.txtCompanyCode.Location = new System.Drawing.Point(6, 170);
             this.txtCompanyCode.Name = "txtCompanyCode";
             this.txtCompanyCode.Size = new System.Drawing.Size(151, 20);
             this.txtCompanyCode.TabIndex = 13;
@@ -1736,5 +1770,7 @@ namespace BillPlex
         private DevExpress.XtraEditors.ComboBoxEdit drpMainCompany;
         private DevExpress.XtraEditors.TextEdit txtDirector;
         private DevExpress.XtraEditors.TextEdit txtContName;
+        private DevExpress.XtraEditors.LabelControl labelControl34;
+        private DevExpress.XtraEditors.LabelControl labelControl33;
     }
 }

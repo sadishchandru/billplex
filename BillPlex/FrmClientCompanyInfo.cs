@@ -38,7 +38,7 @@ namespace BillPlex
             //ClientCompanyRequest.MasterCompanyList = ClientCompanyRequest.GetDropdownValues(dropDownList);
 
             var dropdwonList = ClientCompanyRequest.GetDropdownCollections(dropDownList);
-
+            
 
             foreach (DictionaryEntry item in dropdwonList)
             {
@@ -55,6 +55,8 @@ namespace BillPlex
                     drpMainCompany.Properties.Items.Add(new ImageComboBoxItem(item.Name));
                 }
             }
+
+            dropdownvalidate();
         }
 
         private void InsertBankInfoBtn_Click(object sender, EventArgs e)
@@ -67,63 +69,78 @@ namespace BillPlex
         {
             try
             {
-                var selectedItem = drpMainCompany.EditValue;
-                var selectedItems = drpMainCompany.Text;
-
-                if (selectedItem != null)
+                if (txtCompanyCode.Text != string.Empty || txtCompanyCode.Text != "Select" && txtCompanyName.Text != string.Empty && txtName.Text != string.Empty)
                 {
-                    ClientCompanyRequest.MainCompany = ClientCompanyRequest.MasterCompanyList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.Id ?? -1;
+
+                    var selectedItem = drpMainCompany.EditValue;
+                    var selectedItems = drpMainCompany.Text;
+
+                    if (selectedItem != null)
+                    {
+                        ClientCompanyRequest.MainCompany = ClientCompanyRequest.MasterCompanyList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.Id ?? -1;
+                    }
+
+
+                    ClientCompanyRequest.Director = txtDirector.Text;
+                    ClientCompanyRequest.CompanyCode = txtCompanyCode.Text;
+                    ClientCompanyRequest.CompanyName = txtCompanyName.Text;
+                    ClientCompanyRequest.OffAddress = txtOffAddress.Text;
+                    ClientCompanyRequest.State = drpState.Text;
+                    ClientCompanyRequest.Pin = txtPin.Text;
+                    ClientCompanyRequest.BusinessNature = radBusinessNature.Text;
+                    ClientCompanyRequest.Startingdate = ddStartingDate.Text;
+                    ClientCompanyRequest.stdCode = txtstdCode.Text;
+                    ClientCompanyRequest.CompanyPhone = txtClientCompanyPhone.Text;
+                    ClientCompanyRequest.Email = txtEmail.Text;
+                    ClientCompanyRequest.Website = txtWebsite.Text;
+                    ClientCompanyRequest.PfType = radPfType.Text;
+                    ClientCompanyRequest.PFCode = txtPFCode.Text;
+                    ClientCompanyRequest.PFdate = ddPfDate.Text;
+                    ClientCompanyRequest.EsiCode = txtEsiCode.Text;
+                    ClientCompanyRequest.ESIdate = ddEsiCode.Text;
+                    ClientCompanyRequest.FactoryAct = txtFactoryAct.Text;
+                    ClientCompanyRequest.Tin = txtTin.Text;
+                    ClientCompanyRequest.CSTno = txtCst.Text;
+                    ClientCompanyRequest.Ssi = txtSsi.Text;
+                    ClientCompanyRequest.PanNo = txtPanNo.Text;
+                    ClientCompanyRequest.Tan = txtTan.Text;
+                    ClientCompanyRequest.License = LicenseTxt.Text;
+                    ClientCompanyRequest.Name = txtName.Text;
+                    ClientCompanyRequest.Fathername = txtFathers.Text;
+                    ClientCompanyRequest.Gender = radGender.Text;
+                    ClientCompanyRequest.AuthBloodGroup = drpAuthBloodGroup.Text;
+                    ClientCompanyRequest.DOB = ddDOB.Text;
+                    ClientCompanyRequest.AuthEmail = txtEmailID.Text;
+                    ClientCompanyRequest.AuthAddress = TxtAuthAddress.Text;
+                    ClientCompanyRequest.AuthState = drpAuthState.Text;
+                    ClientCompanyRequest.Authpin = txtAuthpin.Text;
+                    ClientCompanyRequest.mobile = txtmobile.Text;
+                    ClientCompanyRequest.AuthPanNo = txtAuthPanNo.Text;
+                    ClientCompanyRequest.Percent = txtPercent.Text;
+                    ClientCompanyRequest.ActiveStatus = radActiveStatus.Text;
+                    ClientCompanyRequest.Update();
+                    this.Close();
+
+                    FrmClientCompanyProfile CompanyInfo = new FrmClientCompanyProfile();
+                    //CompanyInfo.MdiParent = this;
+                    CompanyInfo.FrmClientCompanyProfile_Load(sender, e);
+                }
+                else
+                {
+                    XtraMessageBox.Show(ClientCompanyRequest.Result.Message, "please give the manditory field", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
-                
-                ClientCompanyRequest.Director = txtDirector.Text;
-                ClientCompanyRequest.CompanyCode = txtCompanyCode.Text;
-                ClientCompanyRequest.CompanyName = txtCompanyName.Text;
-                ClientCompanyRequest.OffAddress = txtOffAddress.Text;
-                ClientCompanyRequest.State = drpState.Text;
-                ClientCompanyRequest.Pin = txtPin.Text;
-                ClientCompanyRequest.BusinessNature = radBusinessNature.Text;
-                ClientCompanyRequest.Startingdate = ddStartingDate.Text;
-                ClientCompanyRequest.stdCode = txtstdCode.Text;
-                ClientCompanyRequest.CompanyPhone = txtClientCompanyPhone.Text;
-                ClientCompanyRequest.Email = txtEmail.Text;
-                ClientCompanyRequest.Website = txtWebsite.Text;
-                ClientCompanyRequest.PfType = radPfType.Text;
-                ClientCompanyRequest.PFCode = txtPFCode.Text;
-                ClientCompanyRequest.PFdate = ddPfDate.Text;
-                ClientCompanyRequest.EsiCode = txtEsiCode.Text;
-                ClientCompanyRequest.ESIdate = ddEsiCode.Text;
-                ClientCompanyRequest.FactoryAct = txtFactoryAct.Text;
-                ClientCompanyRequest.Tin = txtTin.Text;
-                ClientCompanyRequest.CSTno = txtCst.Text;
-                ClientCompanyRequest.Ssi = txtSsi.Text;
-                ClientCompanyRequest.PanNo = txtPanNo.Text;
-                ClientCompanyRequest.Tan = txtTan.Text;
-                ClientCompanyRequest.License = LicenseTxt.Text;
-                ClientCompanyRequest.Name = txtName.Text;
-                ClientCompanyRequest.Fathername = txtFathers.Text;
-                ClientCompanyRequest.Gender = radGender.Text;
-                ClientCompanyRequest.AuthBloodGroup = drpAuthBloodGroup.Text;
-                ClientCompanyRequest.DOB = ddDOB.Text;
-                ClientCompanyRequest.AuthEmail = txtEmailID.Text;
-                ClientCompanyRequest.AuthAddress = TxtAuthAddress.Text;
-                ClientCompanyRequest.AuthState = drpAuthState.Text;
-                ClientCompanyRequest.Authpin = txtAuthpin.Text;
-                ClientCompanyRequest.mobile = txtmobile.Text;
-                ClientCompanyRequest.AuthPanNo = txtAuthPanNo.Text;
-                ClientCompanyRequest.Percent = txtPercent.Text;
-                ClientCompanyRequest.ActiveStatus = radActiveStatus.Text;
-                ClientCompanyRequest.Update();
+                //if (ClientCompanyRequest.CompanyCode == string.Empty)
+                //{
+                //    XtraMessageBox.Show(ClientCompanyRequest.Result.Message, "please Select Main Company", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                //}
 
                 if (ClientCompanyRequest.Result.Status == ResultStatus.Success)
                 {
                     XtraMessageBox.Show(ClientCompanyRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
-                if(ClientCompanyRequest.CompanyCode == string.Empty)
-                {
-                    XtraMessageBox.Show(ClientCompanyRequest.Result.Message, "please Select Main Company", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
 
             }
             catch (Exception ex)
@@ -265,15 +282,17 @@ namespace BillPlex
                 txtCompanyName.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCname");
                 txtOffAddress.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCoffAddress");
                 drpState.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCstate");
+                drpMainCompany.SelectedIndex = Convert.ToInt32(selectedClientCompanyList.GetRowCellValue(rowHandle, "MasterCompanyId"));
                 txtPin.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCpin");
-                radBusinessNature.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCNature");
+                radBusinessNature.SelectedIndex = Convert.ToInt32(selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCNature"));
+                //radBusinessNature.DataBindings.Add("radBusinessNature", selectedClientCompanyList, "ComCNature", true, DataSourceUpdateMode.OnPropertyChanged);
                 var datete = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCDatestart");
                 ddStartingDate.Text = datete.ToString();
                 txtstdCode.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComStdcode");
                 txtClientCompanyPhone.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCPhone");
                 txtEmail.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCEmail");
                 txtWebsite.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCWebsite");
-                radPfType.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "PfType");
+                radPfType.SelectedIndex =Convert.ToInt32(selectedClientCompanyList.GetRowCellValue(rowHandle, "PfType"));
                 txtPFCode.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCPFno");
                 var datetes = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCPFdate");
                 ddPfDate.Text = datetes.ToString();
@@ -289,7 +308,7 @@ namespace BillPlex
                 LicenseTxt.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCLicenseno");
                 txtName.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCPname");
                 txtFathers.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "CCPFathername");
-                radGender.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "CCPGender");
+                radGender.SelectedIndex = Convert.ToInt32(selectedClientCompanyList.GetRowCellValue(rowHandle, "CCPGender"));
                 drpAuthBloodGroup.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "CCPblood");
                 var dateted = selectedClientCompanyList.GetRowCellValue(rowHandle, "CCPDOB");
                 ddDOB.Text = dateted.ToString();
@@ -300,7 +319,7 @@ namespace BillPlex
                 txtmobile.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "CCPMobile");
                 txtAuthPanNo.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "CCPPan");
                 txtPercent.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "CCPpercent");
-                radActiveStatus.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "CCPactive");
+                radActiveStatus.SelectedIndex = Convert.ToInt32(selectedClientCompanyList.GetRowCellValue(rowHandle, "CCPactive"));
             }
 
             btnAdd.Enabled = false;
@@ -308,6 +327,15 @@ namespace BillPlex
             UpdateBtn.Enabled = true;
         }
 
+        void dropdownvalidate()
+        {
+            drpMainCompany.SelectedIndex = 0;
+            drpState.SelectedIndex = 0;
+            drpAuthBloodGroup.SelectedIndex = 0;
+            drpAuthState.SelectedIndex = 0;
+
+
+        }
         private void ClearBtn_Click(object sender, EventArgs e)
         {
             txtDirector.ResetText();

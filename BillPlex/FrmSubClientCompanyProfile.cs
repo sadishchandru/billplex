@@ -45,6 +45,7 @@ namespace BillPlex
         {
             FrmSubClientCompanyInfo CP = new FrmSubClientCompanyInfo();
             CP.ShowDialog();
+
         }
 
         private void Deletebtn_Click(object sender, EventArgs e)
@@ -60,6 +61,11 @@ namespace BillPlex
 
            // SubClientRequest.Id = Id;
             SubClientRequest.Delete();
+
+            if (SubClientRequest.Result.Status == ResultStatus.Success)
+            {
+                XtraMessageBox.Show(SubClientRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void btn_EditClick(object sender, EventArgs e)

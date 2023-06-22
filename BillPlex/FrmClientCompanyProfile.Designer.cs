@@ -810,6 +810,7 @@ namespace BillPlex
             this.Name = "FrmClientCompanyProfile";
             this.Text = "FrmClientCompanyProfile";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmClientCompanyProfile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();

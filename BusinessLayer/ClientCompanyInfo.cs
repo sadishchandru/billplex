@@ -68,6 +68,7 @@ namespace BusinessLayer
 
                 // Calling the stored procedure for creating a new Company Profile
                 List<DbParams> objLstDbParams = new List<DbParams>();
+                objLstDbParams.Add(new DbParams(DbType.String, 50, Id, "@Id", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, MainCompany, "@MasterCompanyId", ParameterDirection.Input));
                 // objLstDbParams.Add(new DbParams(DbType.String, 50, Director, "@ComName", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 200, CompanyCode, "@ComCcode", ParameterDirection.Input));
@@ -76,16 +77,16 @@ namespace BusinessLayer
                 objLstDbParams.Add(new DbParams(DbType.String, 50, State, "@ComCstate", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, Pin, "@ComCPin", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, BusinessNature, "@ComCNature", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.String, 50, Startingdate, "@ComCDatestart", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.DateTime, 50, Startingdate == "" ? null : Startingdate, "@ComCDatestart", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, stdCode, "@ComStdCode", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 200, CompanyPhone, "@ComCPhone", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, Email, "@ComCEmail", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, Website, "@ComCWebsite", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, PfType, "@PfType", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, PFCode, "@ComCPFno", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.String, 50, PFdate, "@ComCPFdate", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.DateTime, 50, PFdate == ""? null : PFdate, "@ComCPFdate", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, EsiCode, "@ComCESino", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.String, 50, ESIdate, "@ComCESIdate", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.DateTime, 50, ESIdate == "" ? null : ESIdate, "@ComCESIdate", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, FactoryAct, "@ComCFactoryNo", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, Tin, "@ComCTINno", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, CSTno, "@ComCCSTno", ParameterDirection.Input));
@@ -97,7 +98,7 @@ namespace BusinessLayer
                 objLstDbParams.Add(new DbParams(DbType.String, 50, Fathername, "@CCPFathername", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, Gender, "@CCPGender", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, AuthBloodGroup, "@CCPblood", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.String, 50, DOB, "@CCPDOB", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.DateTime, 50, DOB == "" ? null : DOB, "@CCPDOB", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, AuthEmail, "@CCPEmail", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, AuthAddress, "@CCPAddress", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, AuthState, "@CCPstate", ParameterDirection.Input));
