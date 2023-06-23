@@ -38,7 +38,7 @@ namespace BillPlex
             //ClientCompanyRequest.MasterCompanyList = ClientCompanyRequest.GetDropdownValues(dropDownList);
 
             var dropdwonList = ClientCompanyRequest.GetDropdownCollections(dropDownList);
-            
+
 
             foreach (DictionaryEntry item in dropdwonList)
             {
@@ -48,13 +48,19 @@ namespace BillPlex
                 }
             }
 
-            if (ClientCompanyRequest.MasterCompanyList.Count() > 0)
+            if (ClientCompanyRequest.MasterCompanyList != null)
             {
-                foreach (DropDownItemInfo item in ClientCompanyRequest.MasterCompanyList)
+
+                if (ClientCompanyRequest.MasterCompanyList.Count() > 0)
                 {
-                    drpMainCompany.Properties.Items.Add(new ImageComboBoxItem(item.Name));
+                    foreach (DropDownItemInfo item in ClientCompanyRequest.MasterCompanyList)
+                    {
+                        drpMainCompany.Properties.Items.Add(new ImageComboBoxItem(item.Name));
+                    }
                 }
             }
+
+
 
             dropdownvalidate();
         }
@@ -195,7 +201,7 @@ namespace BillPlex
                 txtClientCompanyPhone.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCPhone");
                 txtEmail.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCEmail");
                 txtWebsite.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCWebsite");
-                if(radPfType.SelectedIndex != null && selectedClientCompanyList.GetRowCellValue(rowHandle, "PfType") != "")
+                if (radPfType.SelectedIndex != null && selectedClientCompanyList.GetRowCellValue(rowHandle, "PfType") != "")
                 {
                     radPfType.SelectedIndex = Convert.ToInt32(selectedClientCompanyList.GetRowCellValue(rowHandle, "PfType"));
                 }

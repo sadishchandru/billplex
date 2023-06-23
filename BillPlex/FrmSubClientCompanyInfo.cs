@@ -22,14 +22,14 @@ namespace BillPlex
     {
         //private readonly SqlConnector _conn;
         private SubClientCompanyInfo SubClientRequest;
-        
+
 
 
         public FrmSubClientCompanyInfo()
         {
             InitializeComponent();
 
-         
+
 
             // _conn = new SqlConnector(connectionString);
 
@@ -64,19 +64,26 @@ namespace BillPlex
                 }
             }
 
-            if (SubClientRequest.MasterCompanyList.Count() > 0)
+            if (SubClientRequest.MasterCompanyList != null)
             {
-                foreach (DropDownItemInfo item in SubClientRequest.MasterCompanyList)
+                if (SubClientRequest.MasterCompanyList.Count() > 0)
                 {
-                    drpMainCompany.Properties.Items.Add(new ImageComboBoxItem(item.Name));
+                    foreach (DropDownItemInfo item in SubClientRequest.MasterCompanyList)
+                    {
+                        drpMainCompany.Properties.Items.Add(new ImageComboBoxItem(item.Name));
+                    }
                 }
+
             }
-            
-            if (SubClientRequest.ClientCompanyList.Count() > 0)
+
+            if (SubClientRequest.ClientCompanyList != null)
             {
-                foreach (DropDownItemInfo item in SubClientRequest.ClientCompanyList)
+                if (SubClientRequest.ClientCompanyList.Count() > 0)
                 {
-                    drpCCompany.Properties.Items.Add(new ImageComboBoxItem(item.Name));
+                    foreach (DropDownItemInfo item in SubClientRequest.ClientCompanyList)
+                    {
+                        drpCCompany.Properties.Items.Add(new ImageComboBoxItem(item.Name));
+                    }
                 }
             }
 
@@ -95,7 +102,7 @@ namespace BillPlex
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            
+
             try
             {
 
@@ -172,7 +179,7 @@ namespace BillPlex
 
 
             }
-            
+
             catch (Exception ex)
             {
                 // Display a warning alert
@@ -214,7 +221,7 @@ namespace BillPlex
             {
                 SubClientRequest.Id = selectedCompanyList.GetRowCellValue(rowHandle, "Id");
                 txtCompanyCode.Text = selectedCompanyList.GetRowCellValue(rowHandle, "MasterCode") == DBNull.Value ? string.Empty : selectedCompanyList.GetRowCellValue(rowHandle, "MasterCode").ToString();
-                
+
                 drpMainCompany.SelectedIndex = Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "MasterCompanyId").ToString());                drpCCompany.SelectedIndex = Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "ClientCompanyId").ToString());
                 txtCompanyCode.Text = selectedCompanyList.GetRowCellValue(rowHandle, "SubComCode");
                 txtCompanyName.Text = selectedCompanyList.GetRowCellValue(rowHandle, "SubComName");
@@ -222,10 +229,10 @@ namespace BillPlex
                 drpState.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComState");
                 txtPin.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComPin");
                 radBusinessNature.SelectedIndex = Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "ComNature"));
-                
+
                 txtDirector.Text = selectedCompanyList.GetRowCellValue(rowHandle, "Director");
                 var datete = selectedCompanyList.GetRowCellValue(rowHandle, "ComDatestart").ToString();
-                
+
                 ddStartingDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
 
                 txtOffPin.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComStdCode");
