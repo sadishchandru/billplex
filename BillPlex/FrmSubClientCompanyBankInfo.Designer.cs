@@ -34,8 +34,10 @@ namespace BillPlex
             DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSubClientCompanyBankInfo));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.drpBankName = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.drpClientCompany = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.drpSubCompany = new DevExpress.XtraEditors.ComboBoxEdit();
             this.btnSelect = new DevExpress.XtraEditors.SimpleButton();
-            this.drpSubClient = new DevExpress.XtraEditors.DropDownButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
@@ -56,7 +58,6 @@ namespace BillPlex
             this.imgImage = new DevExpress.XtraEditors.PictureEdit();
             this.btn = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
-            this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
             this.TxtIfsCode = new DevExpress.XtraEditors.TextEdit();
@@ -64,8 +65,6 @@ namespace BillPlex
             this.TxtBranchCode = new DevExpress.XtraEditors.TextEdit();
             this.TxtAddress = new DevExpress.XtraEditors.MemoEdit();
             this.TxtBankAccountNo = new DevExpress.XtraEditors.TextEdit();
-            this.drpBankName = new DevExpress.XtraEditors.DropDownButton();
-            this.drpClientCompany = new DevExpress.XtraEditors.DropDownButton();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
@@ -75,8 +74,12 @@ namespace BillPlex
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.drpBankName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpClientCompany.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpSubCompany.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SearchComapnyNameTxt.Properties)).BeginInit();
@@ -93,8 +96,11 @@ namespace BillPlex
             // panelControl1
             // 
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl1.Controls.Add(this.btnUpdate);
+            this.panelControl1.Controls.Add(this.drpBankName);
+            this.panelControl1.Controls.Add(this.drpClientCompany);
+            this.panelControl1.Controls.Add(this.drpSubCompany);
             this.panelControl1.Controls.Add(this.btnSelect);
-            this.panelControl1.Controls.Add(this.drpSubClient);
             this.panelControl1.Controls.Add(this.labelControl2);
             this.panelControl1.Controls.Add(this.gridControl1);
             this.panelControl1.Controls.Add(this.SearchComapnyNameTxt);
@@ -102,7 +108,6 @@ namespace BillPlex
             this.panelControl1.Controls.Add(this.imgImage);
             this.panelControl1.Controls.Add(this.btn);
             this.panelControl1.Controls.Add(this.btnCancel);
-            this.panelControl1.Controls.Add(this.btnUpdate);
             this.panelControl1.Controls.Add(this.btnAdd);
             this.panelControl1.Controls.Add(this.btnSearch);
             this.panelControl1.Controls.Add(this.TxtIfsCode);
@@ -110,8 +115,6 @@ namespace BillPlex
             this.panelControl1.Controls.Add(this.TxtBranchCode);
             this.panelControl1.Controls.Add(this.TxtAddress);
             this.panelControl1.Controls.Add(this.TxtBankAccountNo);
-            this.panelControl1.Controls.Add(this.drpBankName);
-            this.panelControl1.Controls.Add(this.drpClientCompany);
             this.panelControl1.Controls.Add(this.labelControl9);
             this.panelControl1.Controls.Add(this.labelControl8);
             this.panelControl1.Controls.Add(this.labelControl7);
@@ -127,6 +130,33 @@ namespace BillPlex
             this.panelControl1.Size = new System.Drawing.Size(1576, 808);
             this.panelControl1.TabIndex = 2;
             // 
+            // drpBankName
+            // 
+            this.drpBankName.Location = new System.Drawing.Point(165, 128);
+            this.drpBankName.Name = "drpBankName";
+            this.drpBankName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpBankName.Size = new System.Drawing.Size(176, 20);
+            this.drpBankName.TabIndex = 32;
+            // 
+            // drpClientCompany
+            // 
+            this.drpClientCompany.Location = new System.Drawing.Point(165, 61);
+            this.drpClientCompany.Name = "drpClientCompany";
+            this.drpClientCompany.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpClientCompany.Size = new System.Drawing.Size(209, 20);
+            this.drpClientCompany.TabIndex = 31;
+            // 
+            // drpSubCompany
+            // 
+            this.drpSubCompany.Location = new System.Drawing.Point(165, 99);
+            this.drpSubCompany.Name = "drpSubCompany";
+            this.drpSubCompany.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpSubCompany.Size = new System.Drawing.Size(209, 20);
+            this.drpSubCompany.TabIndex = 30;
+            // 
             // btnSelect
             // 
             this.btnSelect.Location = new System.Drawing.Point(7, 411);
@@ -139,20 +169,13 @@ namespace BillPlex
             this.btnSelect.TabIndex = 29;
             this.btnSelect.Text = "Select";
             // 
-            // drpSubClient
-            // 
-            this.drpSubClient.Location = new System.Drawing.Point(149, 96);
-            this.drpSubClient.Name = "drpSubClient";
-            this.drpSubClient.Size = new System.Drawing.Size(225, 23);
-            this.drpSubClient.TabIndex = 28;
-            // 
             // labelControl2
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Location = new System.Drawing.Point(5, 103);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(127, 16);
+            this.labelControl2.Size = new System.Drawing.Size(148, 18);
             this.labelControl2.TabIndex = 27;
             this.labelControl2.Text = "Sub Client Company";
             // 
@@ -296,7 +319,7 @@ namespace BillPlex
             this.labelControl10.Appearance.Options.UseFont = true;
             this.labelControl10.Location = new System.Drawing.Point(667, 410);
             this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(147, 16);
+            this.labelControl10.Size = new System.Drawing.Size(171, 18);
             this.labelControl10.TabIndex = 24;
             this.labelControl10.Text = "Search Company Name";
             // 
@@ -331,17 +354,6 @@ namespace BillPlex
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(74, 73);
             this.btnCancel.TabIndex = 21;
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.ImageOptions.Image")));
-            this.btnUpdate.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.btnUpdate.Location = new System.Drawing.Point(392, 135);
-            this.btnUpdate.LookAndFeel.SkinName = "DevExpress Style";
-            this.btnUpdate.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(74, 73);
-            this.btnUpdate.TabIndex = 20;
             // 
             // btnAdd
             // 
@@ -401,27 +413,13 @@ namespace BillPlex
             this.TxtBankAccountNo.Size = new System.Drawing.Size(225, 20);
             this.TxtBankAccountNo.TabIndex = 13;
             // 
-            // drpBankName
-            // 
-            this.drpBankName.Location = new System.Drawing.Point(149, 125);
-            this.drpBankName.Name = "drpBankName";
-            this.drpBankName.Size = new System.Drawing.Size(192, 23);
-            this.drpBankName.TabIndex = 12;
-            // 
-            // drpClientCompany
-            // 
-            this.drpClientCompany.Location = new System.Drawing.Point(149, 53);
-            this.drpClientCompany.Name = "drpClientCompany";
-            this.drpClientCompany.Size = new System.Drawing.Size(225, 23);
-            this.drpClientCompany.TabIndex = 10;
-            // 
             // labelControl9
             // 
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl9.Appearance.Options.UseFont = true;
             this.labelControl9.Location = new System.Drawing.Point(5, 377);
             this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(55, 16);
+            this.labelControl9.Size = new System.Drawing.Size(67, 18);
             this.labelControl9.TabIndex = 9;
             this.labelControl9.Text = "IFS Code";
             // 
@@ -431,7 +429,7 @@ namespace BillPlex
             this.labelControl8.Appearance.Options.UseFont = true;
             this.labelControl8.Location = new System.Drawing.Point(5, 331);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(84, 16);
+            this.labelControl8.Size = new System.Drawing.Size(99, 18);
             this.labelControl8.TabIndex = 8;
             this.labelControl8.Text = "Branch Name";
             // 
@@ -441,7 +439,7 @@ namespace BillPlex
             this.labelControl7.Appearance.Options.UseFont = true;
             this.labelControl7.Location = new System.Drawing.Point(5, 283);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(81, 16);
+            this.labelControl7.Size = new System.Drawing.Size(93, 18);
             this.labelControl7.TabIndex = 7;
             this.labelControl7.Text = "Branch Code";
             // 
@@ -451,7 +449,7 @@ namespace BillPlex
             this.labelControl6.Appearance.Options.UseFont = true;
             this.labelControl6.Location = new System.Drawing.Point(5, 197);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(54, 16);
+            this.labelControl6.Size = new System.Drawing.Size(60, 18);
             this.labelControl6.TabIndex = 6;
             this.labelControl6.Text = "Address";
             // 
@@ -461,7 +459,7 @@ namespace BillPlex
             this.labelControl5.Appearance.Options.UseFont = true;
             this.labelControl5.Location = new System.Drawing.Point(5, 166);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(82, 16);
+            this.labelControl5.Size = new System.Drawing.Size(98, 18);
             this.labelControl5.TabIndex = 5;
             this.labelControl5.Text = "Bank A/C NO";
             // 
@@ -471,7 +469,7 @@ namespace BillPlex
             this.labelControl4.Appearance.Options.UseFont = true;
             this.labelControl4.Location = new System.Drawing.Point(5, 132);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(70, 16);
+            this.labelControl4.Size = new System.Drawing.Size(84, 18);
             this.labelControl4.TabIndex = 4;
             this.labelControl4.Text = "Bank Name";
             // 
@@ -495,7 +493,7 @@ namespace BillPlex
             this.labelControl3.Appearance.Options.UseForeColor = true;
             this.labelControl3.Location = new System.Drawing.Point(3, 8);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(79, 19);
+            this.labelControl3.Size = new System.Drawing.Size(90, 22);
             this.labelControl3.TabIndex = 5;
             this.labelControl3.Text = "Bank Info";
             // 
@@ -506,9 +504,20 @@ namespace BillPlex
             this.labelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.labelControl1.Location = new System.Drawing.Point(5, 60);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(99, 16);
+            this.labelControl1.Size = new System.Drawing.Size(116, 18);
             this.labelControl1.TabIndex = 1;
             this.labelControl1.Text = "Client Company";
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
+            this.btnUpdate.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnUpdate.ImageOptions.SvgImage")));
+            this.btnUpdate.Location = new System.Drawing.Point(392, 132);
+            this.btnUpdate.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnUpdate.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(74, 73);
+            this.btnUpdate.TabIndex = 33;
             // 
             // FrmSubClientCompanyBankInfo
             // 
@@ -521,6 +530,9 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.drpBankName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpClientCompany.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpSubCompany.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SearchComapnyNameTxt.Properties)).EndInit();
@@ -547,7 +559,6 @@ namespace BillPlex
         private DevExpress.XtraEditors.PictureEdit imgImage;
         private DevExpress.XtraEditors.SimpleButton btn;
         private DevExpress.XtraEditors.SimpleButton btnCancel;
-        private DevExpress.XtraEditors.SimpleButton btnUpdate;
         private DevExpress.XtraEditors.SimpleButton btnAdd;
         private DevExpress.XtraEditors.SimpleButton btnSearch;
         private DevExpress.XtraEditors.TextEdit TxtIfsCode;
@@ -555,8 +566,6 @@ namespace BillPlex
         private DevExpress.XtraEditors.TextEdit TxtBranchCode;
         private DevExpress.XtraEditors.MemoEdit TxtAddress;
         private DevExpress.XtraEditors.TextEdit TxtBankAccountNo;
-        private DevExpress.XtraEditors.DropDownButton drpBankName;
-        private DevExpress.XtraEditors.DropDownButton drpClientCompany;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.LabelControl labelControl7;
@@ -566,7 +575,6 @@ namespace BillPlex
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.DropDownButton drpSubClient;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
@@ -581,5 +589,9 @@ namespace BillPlex
         private DevExpress.XtraGrid.Columns.GridColumn colIFSCode;
         private DevExpress.XtraGrid.Columns.GridColumn colAddress;
         private DevExpress.XtraEditors.SimpleButton btnSelect;
+        private DevExpress.XtraEditors.ComboBoxEdit drpBankName;
+        private DevExpress.XtraEditors.ComboBoxEdit drpClientCompany;
+        private DevExpress.XtraEditors.ComboBoxEdit drpSubCompany;
+        private DevExpress.XtraEditors.SimpleButton btnUpdate;
     }
 }

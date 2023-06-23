@@ -33,7 +33,8 @@ namespace BillPlex
             ClientCompanyRequest.ConnectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
 
             Dictionary<string, bool> dropDownList = new Dictionary<string, bool>        {
-                    { "MasterCompanyRequired", true }
+                    { "MasterCompanyRequired", true },
+                    { "ClientMasterBankRequired", true }
                 };
             //ClientCompanyRequest.MasterCompanyList = ClientCompanyRequest.GetDropdownValues(dropDownList);
 
@@ -45,6 +46,11 @@ namespace BillPlex
                 if (item.Key == "MasterCompanyRequired")
                 {
                     ClientCompanyRequest.MasterCompanyList = (List<DropDownItemInfo>)item.Value;
+                }
+
+                if (item.Key == "ClientMasterBankRequired")
+                {
+                    ClientCompanyRequest.ClientBankList = (List<DropDownItemInfo>)item.Value;
                 }
             }
 
@@ -59,6 +65,18 @@ namespace BillPlex
                     }
                 }
             }
+
+            //if (ClientCompanyRequest.ClientBankList != null)
+            //{
+
+            //    if (ClientCompanyRequest.ClientBankList.Count() > 0)
+            //    {
+            //        foreach (DropDownItemInfo item in ClientCompanyRequest.ClientBankList)
+            //        {
+            //            drpMainCompany.Properties.Items.Add(new ImageComboBoxItem(item.Name));
+            //        }
+            //    }
+            //}
 
 
 
@@ -238,6 +256,18 @@ namespace BillPlex
                 {
                     radActiveStatus.SelectedIndex = Convert.ToInt32(selectedClientCompanyList.GetRowCellValue(rowHandle, "CCPactive"));
                 }
+            }
+
+            if (ClientCompanyRequest.ClientBankList != null)
+            {
+                foreach (DropDownItemInfo item in ClientCompanyRequest.ClientBankList)
+                {
+                    if (item.Code == ClientCompanyRequest.Id.ToString())
+                    {
+                        txtBankDetails.Text = string.Join(Environment.NewLine, item.Name);
+                    }
+                }
+                txtBankDetails.Enabled = false;
             }
 
             btnAdd.Enabled = false;

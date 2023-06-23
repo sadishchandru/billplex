@@ -53,6 +53,7 @@ namespace BusinessLayer
         public String ActiveStatus { get; set; }
         public List<DropDownItemInfo> MasterCompanyList { get; set; }
         public List<DropDownItemInfo> ClientCompanyList { get; set; }
+        public List<DropDownItemInfo> SubClientBankList { get; set; }
 
         #region Update
 
@@ -115,13 +116,13 @@ namespace BusinessLayer
                 Result.Message = "SubClient Company Updated Successfully";
                 Result.Status = ResultStatus.Success;
 
-               
 
-                //while (dbReader.Read())
-                //{
-                //    Result.Message = ToString(dbReader["ResultMessage"]);
-                //    Result.Status = (ResultStatus)ToInteger(dbReader["ResultNo"]);
-                //}
+
+                while (dbReader.Read())
+                {
+                    Result.Message = ToString(dbReader["ResultMessage"]);
+                    Result.Status = (ResultStatus)ToInteger(dbReader["ResultNo"]);
+                }
 
 
             }

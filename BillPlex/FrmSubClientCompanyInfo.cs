@@ -151,7 +151,7 @@ namespace BillPlex
                     SubClientRequest.Name = txtName.Text;
                     SubClientRequest.FathersName = txtFathers.Text;
                     SubClientRequest.Gender = radGender.Text;
-                    SubClientRequest.BloodGroup = txtBlood.Text;
+                    SubClientRequest.BloodGroup = drpAuthBlood.Text;
                     SubClientRequest.DOB = ddDOB.Text;
                     SubClientRequest.AuthEmailId = txtAuthEmailId.Text;
                     SubClientRequest.AuthAddress = txtAuthAddress.Text;
@@ -263,7 +263,7 @@ namespace BillPlex
 
                 radGender.SelectedIndex = Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "AuthorGender"));
 
-                txtBlood.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorBlood");
+                drpAuthBlood.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorBlood");
 
                 datete = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorDOB").ToString();
                 ddDOB.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
@@ -276,6 +276,18 @@ namespace BillPlex
                 txtAuthPanNo.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorPan");
                 txtAuthPercent.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorPercent");
                 radActiveStatus.SelectedIndex = Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "AuthorActive"));
+            }
+
+            if (SubClientRequest.SubClientBankList != null)
+            {
+                foreach (DropDownItemInfo item in SubClientRequest.SubClientBankList)
+                {
+                    if (item.Code == SubClientRequest.Id.ToString())
+                    {
+                        txtBankDetails.Text = string.Join(Environment.NewLine, item.Name);
+                    }
+                }
+                txtBankDetails.Enabled = false;
             }
 
             btnAdd.Enabled = false;
@@ -317,7 +329,7 @@ namespace BillPlex
             txtName.ResetText();
             txtFathers.ResetText();
             radGender.ResetText();
-            txtBlood.ResetText();
+            drpAuthBlood.ResetText();
             ddDOB.ResetText();
             txtAuthEmailId.ResetText();
             txtAuthAddress.ResetText();

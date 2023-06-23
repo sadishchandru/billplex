@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClientCompanyBankInfo.cs" />
     <Compile Include="ClientCompanyInfo.cs" />
     <Compile Include="ColorMaster.cs" />
     <Compile Include="Common.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="ResultDetail.cs" />
     <Compile Include="ResultStatus.cs" />
     <Compile Include="SizeMaster.cs" />
+    <Compile Include="SubClientCompanyBank.cs" />
     <Compile Include="SubClientCompanyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
