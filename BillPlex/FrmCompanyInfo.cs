@@ -174,16 +174,20 @@ namespace BillPlex
                 ddAuthstartingdate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
             }
 
-            if (CompanyRequest.MasterBankList.Count() > 0)
+            if (CompanyRequest.MasterBankList != null)
             {
-                foreach (DropDownItemInfo item in CompanyRequest.MasterBankList)
+                if (CompanyRequest.MasterBankList.Count() > 0)
                 {
-                    if (item.Code == CompanyRequest.Id.ToString())
+                    foreach (DropDownItemInfo item in CompanyRequest.MasterBankList)
                     {
-                        txtBankDetails.Text = string.Join(Environment.NewLine, item.Name);
+                        if (item.Code == CompanyRequest.Id.ToString())
+                        {
+                            txtBankDetails.Text = string.Join(Environment.NewLine, item.Name);
+                        }
                     }
+                    txtBankDetails.Enabled = false;
                 }
-                txtBankDetails.Enabled = false;
+
             }
 
             btnAdd.Enabled = false;

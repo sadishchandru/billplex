@@ -39,9 +39,9 @@ namespace BillPlex
             this.MasterCompany_Btn_Click = new DevExpress.XtraBars.BarButtonItem();
             this.btn_EmployeeMaster = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.MasterCompanyBankInfo = new DevExpress.XtraBars.BarButtonItem();
+            this.ClientBankInfo = new DevExpress.XtraBars.BarButtonItem();
+            this.SubClientBankInfo = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.btn_RawMaterial = new DevExpress.XtraBars.BarButtonItem();
             this.btn_ProductMaster = new DevExpress.XtraBars.BarButtonItem();
@@ -50,17 +50,17 @@ namespace BillPlex
             this.btn_ProductModel = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Master_Group_btn_Click = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,9 +78,9 @@ namespace BillPlex
             this.MasterCompany_Btn_Click,
             this.btn_EmployeeMaster,
             this.barSubItem2,
-            this.barButtonItem2,
-            this.barButtonItem3,
-            this.barButtonItem4,
+            this.ClientBankInfo,
+            this.SubClientBankInfo,
+            this.MasterCompanyBankInfo,
             this.barButtonItem5,
             this.btn_RawMaterial,
             this.btn_ProductMaster,
@@ -98,7 +98,7 @@ namespace BillPlex
             this.ribbonPageCategory1});
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbon.Size = new System.Drawing.Size(1752, 158);
+            this.ribbon.Size = new System.Drawing.Size(1618, 158);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // barButtonItem1
@@ -158,29 +158,31 @@ namespace BillPlex
             this.barSubItem2.Id = 14;
             this.barSubItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barSubItem2.ImageOptions.SvgImage")));
             this.barSubItem2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4, true),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.MasterCompanyBankInfo, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ClientBankInfo),
+            new DevExpress.XtraBars.LinkPersistInfo(this.SubClientBankInfo)});
             this.barSubItem2.Name = "barSubItem2";
             // 
-            // barButtonItem4
+            // MasterCompanyBankInfo
             // 
-            this.barButtonItem4.Caption = "Master";
-            this.barButtonItem4.Id = 18;
-            this.barButtonItem4.Name = "barButtonItem4";
-            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
+            this.MasterCompanyBankInfo.Caption = "Master";
+            this.MasterCompanyBankInfo.Id = 18;
+            this.MasterCompanyBankInfo.Name = "MasterCompanyBankInfo";
+            this.MasterCompanyBankInfo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_MasterBankInfo);
             // 
-            // barButtonItem2
+            // ClientBankInfo
             // 
-            this.barButtonItem2.Caption = "Client";
-            this.barButtonItem2.Id = 16;
-            this.barButtonItem2.Name = "barButtonItem2";
+            this.ClientBankInfo.Caption = "Client";
+            this.ClientBankInfo.Id = 16;
+            this.ClientBankInfo.Name = "ClientBankInfo";
+            this.ClientBankInfo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ClientBankInfo);
             // 
-            // barButtonItem3
+            // SubClientBankInfo
             // 
-            this.barButtonItem3.Caption = "Sub Clinet";
-            this.barButtonItem3.Id = 17;
-            this.barButtonItem3.Name = "barButtonItem3";
+            this.SubClientBankInfo.Caption = "Sub Clinet";
+            this.SubClientBankInfo.Id = 17;
+            this.SubClientBankInfo.Name = "SubClientBankInfo";
+            this.SubClientBankInfo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_SubClientBankInfo);
             // 
             // barButtonItem5
             // 
@@ -237,6 +239,18 @@ namespace BillPlex
             this.barButtonItem12.Name = "barButtonItem12";
             this.barButtonItem12.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem12_ItemClick);
             // 
+            // barButtonItem6
+            // 
+            this.barButtonItem6.Id = 27;
+            this.barButtonItem6.Name = "barButtonItem6";
+            // 
+            // barButtonItem7
+            // 
+            this.barButtonItem7.Caption = "Material Delivary Challan";
+            this.barButtonItem7.Id = 28;
+            this.barButtonItem7.Name = "barButtonItem7";
+            this.barButtonItem7.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem7_ItemClick);
+            // 
             // ribbonPageCategory1
             // 
             this.ribbonPageCategory1.Name = "ribbonPageCategory1";
@@ -267,6 +281,19 @@ namespace BillPlex
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Masters";
             // 
+            // ribbonPage3
+            // 
+            this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup3});
+            this.ribbonPage3.Name = "ribbonPage3";
+            this.ribbonPage3.Text = "Job Allocation";
+            // 
+            // ribbonPageGroup3
+            // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem6);
+            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem7);
+            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -294,38 +321,13 @@ namespace BillPlex
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 661);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1752, 24);
-            // 
-            // ribbonPage3
-            // 
-            this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup3});
-            this.ribbonPage3.Name = "ribbonPage3";
-            this.ribbonPage3.Text = "Job Allocation";
-            // 
-            // ribbonPageGroup3
-            // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem6);
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem7);
-            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            // 
-            // barButtonItem6
-            // 
-            this.barButtonItem6.Id = 27;
-            this.barButtonItem6.Name = "barButtonItem6";
-            // 
-            // barButtonItem7
-            // 
-            this.barButtonItem7.Caption = "Material Delivary Challan";
-            this.barButtonItem7.Id = 28;
-            this.barButtonItem7.Name = "barButtonItem7";
-            this.barButtonItem7.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem7_ItemClick);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1618, 24);
             // 
             // NavBar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1752, 685);
+            this.ClientSize = new System.Drawing.Size(1618, 685);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("NavBar.IconOptions.Icon")));
@@ -359,9 +361,9 @@ namespace BillPlex
         private DevExpress.XtraBars.BarButtonItem btn_EmployeeMaster;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.BarSubItem barSubItem2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem MasterCompanyBankInfo;
+        private DevExpress.XtraBars.BarButtonItem ClientBankInfo;
+        private DevExpress.XtraBars.BarButtonItem SubClientBankInfo;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem btn_RawMaterial;
         private DevExpress.XtraBars.BarButtonItem btn_ProductMaster;

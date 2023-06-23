@@ -62,9 +62,7 @@ namespace BillPlex
 
         private void barButtonItem4_ItemClick(object sender, ItemClickEventArgs e)
         {
-            FrmCompanyProfileBankInfo masterbanking = new FrmCompanyProfileBankInfo();
-            masterbanking.MdiParent = this; 
-            masterbanking.Show();
+            
         }
 
         private void barButtonItem5_ItemClick(object sender, ItemClickEventArgs e)
@@ -121,6 +119,32 @@ namespace BillPlex
             FrmDeliveryChallanProfile cp = new FrmDeliveryChallanProfile();
             cp.MdiParent = this;
             cp.Show();
+        }
+
+        private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void btn_MasterBankInfo(object sender, ItemClickEventArgs e)
+        {
+            FrmCompanyProfileBankInfo FrmCompanyProfileBankInfo = new FrmCompanyProfileBankInfo();
+            FrmCompanyProfileBankInfo.MdiParent = this;
+            FrmCompanyProfileBankInfo.Show();
+        }
+
+        private void btn_ClientBankInfo(object sender, ItemClickEventArgs e)
+        {
+            FrmClientCompanyBankInfo clientCompanyBankInfo = new FrmClientCompanyBankInfo();
+            clientCompanyBankInfo.MdiParent = this;
+            clientCompanyBankInfo.Show();
+        }
+
+        private void Btn_SubClientBankInfo(object sender, ItemClickEventArgs e)
+        {
+            FrmSubClientCompanyBankInfo subClientCompanyBankInfo = new FrmSubClientCompanyBankInfo();
+            subClientCompanyBankInfo.MdiParent = this;
+            subClientCompanyBankInfo.Show();
         }
     }
 }
