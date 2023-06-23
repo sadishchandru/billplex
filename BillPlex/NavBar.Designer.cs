@@ -100,7 +100,6 @@ namespace BillPlex
             this.ribbonPage1});
             this.ribbon.Size = new System.Drawing.Size(1752, 158);
             this.ribbon.StatusBar = this.ribbonStatusBar;
-            this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
             // 
             // barButtonItem1
             // 

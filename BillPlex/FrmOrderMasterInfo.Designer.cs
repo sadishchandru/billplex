@@ -29,6 +29,10 @@ namespace BillPlex
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmOrderMasterInfo));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
@@ -84,6 +88,28 @@ namespace BillPlex
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.ddOrderDate = new DevExpress.XtraEditors.DateEdit();
             this.ddProDate = new DevExpress.XtraEditors.DateEdit();
+            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
+            this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOffAddress = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colState = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPin = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCountry = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPhonePin = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOffPhone = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colEmail = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colResAddress = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colResState = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colResPin = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colResCountry = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMobile = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTinNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTinDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCstNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCstDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collicenseNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colWebsite = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -196,6 +222,8 @@ namespace BillPlex
             // 
             // gridControl1
             // 
+            this.gridControl1.DataMember = "PRO_GetCustomerInfo";
+            this.gridControl1.DataSource = this.sqlDataSource1;
             this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControl1.Location = new System.Drawing.Point(38, 448);
             this.gridControl1.MainView = this.gridView1;
@@ -208,6 +236,28 @@ namespace BillPlex
             // 
             // gridView1
             // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colId,
+            this.colCode,
+            this.colName,
+            this.colOffAddress,
+            this.colState,
+            this.colPin,
+            this.colCountry,
+            this.colPhonePin,
+            this.colOffPhone,
+            this.colEmail,
+            this.colResAddress,
+            this.colResState,
+            this.colResPin,
+            this.colResCountry,
+            this.colMobile,
+            this.colTinNo,
+            this.colTinDate,
+            this.colCstNo,
+            this.colCstDate,
+            this.collicenseNo,
+            this.colWebsite});
             this.gridView1.DetailHeight = 284;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
@@ -770,6 +820,166 @@ namespace BillPlex
             this.ddProDate.Size = new System.Drawing.Size(285, 20);
             this.ddProDate.TabIndex = 34;
             // 
+            // sqlDataSource1
+            // 
+            this.sqlDataSource1.ConnectionName = "BillPlex";
+            this.sqlDataSource1.Name = "sqlDataSource1";
+            storedProcQuery1.Name = "PRO_GetCustomerInfo";
+            queryParameter1.Name = "@SearchKey";
+            queryParameter1.Type = typeof(string);
+            storedProcQuery1.Parameters.Add(queryParameter1);
+            storedProcQuery1.StoredProcName = "PRO_GetCustomerInfo";
+            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
+            storedProcQuery1});
+            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
+            // 
+            // colId
+            // 
+            this.colId.FieldName = "Id";
+            this.colId.Name = "colId";
+            this.colId.Visible = true;
+            this.colId.VisibleIndex = 0;
+            // 
+            // colCode
+            // 
+            this.colCode.FieldName = "Code";
+            this.colCode.Name = "colCode";
+            this.colCode.Visible = true;
+            this.colCode.VisibleIndex = 1;
+            // 
+            // colName
+            // 
+            this.colName.FieldName = "Name";
+            this.colName.Name = "colName";
+            this.colName.Visible = true;
+            this.colName.VisibleIndex = 2;
+            // 
+            // colOffAddress
+            // 
+            this.colOffAddress.FieldName = "OffAddress";
+            this.colOffAddress.Name = "colOffAddress";
+            this.colOffAddress.Visible = true;
+            this.colOffAddress.VisibleIndex = 3;
+            // 
+            // colState
+            // 
+            this.colState.FieldName = "State";
+            this.colState.Name = "colState";
+            this.colState.Visible = true;
+            this.colState.VisibleIndex = 4;
+            // 
+            // colPin
+            // 
+            this.colPin.FieldName = "Pin";
+            this.colPin.Name = "colPin";
+            this.colPin.Visible = true;
+            this.colPin.VisibleIndex = 5;
+            // 
+            // colCountry
+            // 
+            this.colCountry.FieldName = "Country";
+            this.colCountry.Name = "colCountry";
+            this.colCountry.Visible = true;
+            this.colCountry.VisibleIndex = 6;
+            // 
+            // colPhonePin
+            // 
+            this.colPhonePin.FieldName = "PhonePin";
+            this.colPhonePin.Name = "colPhonePin";
+            this.colPhonePin.Visible = true;
+            this.colPhonePin.VisibleIndex = 7;
+            // 
+            // colOffPhone
+            // 
+            this.colOffPhone.FieldName = "OffPhone";
+            this.colOffPhone.Name = "colOffPhone";
+            this.colOffPhone.Visible = true;
+            this.colOffPhone.VisibleIndex = 8;
+            // 
+            // colEmail
+            // 
+            this.colEmail.FieldName = "Email";
+            this.colEmail.Name = "colEmail";
+            this.colEmail.Visible = true;
+            this.colEmail.VisibleIndex = 9;
+            // 
+            // colResAddress
+            // 
+            this.colResAddress.FieldName = "ResAddress";
+            this.colResAddress.Name = "colResAddress";
+            this.colResAddress.Visible = true;
+            this.colResAddress.VisibleIndex = 10;
+            // 
+            // colResState
+            // 
+            this.colResState.FieldName = "ResState";
+            this.colResState.Name = "colResState";
+            this.colResState.Visible = true;
+            this.colResState.VisibleIndex = 11;
+            // 
+            // colResPin
+            // 
+            this.colResPin.FieldName = "ResPin";
+            this.colResPin.Name = "colResPin";
+            this.colResPin.Visible = true;
+            this.colResPin.VisibleIndex = 12;
+            // 
+            // colResCountry
+            // 
+            this.colResCountry.FieldName = "ResCountry";
+            this.colResCountry.Name = "colResCountry";
+            this.colResCountry.Visible = true;
+            this.colResCountry.VisibleIndex = 13;
+            // 
+            // colMobile
+            // 
+            this.colMobile.FieldName = "Mobile";
+            this.colMobile.Name = "colMobile";
+            this.colMobile.Visible = true;
+            this.colMobile.VisibleIndex = 14;
+            // 
+            // colTinNo
+            // 
+            this.colTinNo.FieldName = "TinNo";
+            this.colTinNo.Name = "colTinNo";
+            this.colTinNo.Visible = true;
+            this.colTinNo.VisibleIndex = 15;
+            // 
+            // colTinDate
+            // 
+            this.colTinDate.FieldName = "TinDate";
+            this.colTinDate.Name = "colTinDate";
+            this.colTinDate.Visible = true;
+            this.colTinDate.VisibleIndex = 16;
+            // 
+            // colCstNo
+            // 
+            this.colCstNo.FieldName = "CstNo";
+            this.colCstNo.Name = "colCstNo";
+            this.colCstNo.Visible = true;
+            this.colCstNo.VisibleIndex = 17;
+            // 
+            // colCstDate
+            // 
+            this.colCstDate.FieldName = "CstDate";
+            this.colCstDate.Name = "colCstDate";
+            this.colCstDate.Visible = true;
+            this.colCstDate.VisibleIndex = 18;
+            // 
+            // collicenseNo
+            // 
+            this.collicenseNo.FieldName = "licenseNo";
+            this.collicenseNo.Name = "collicenseNo";
+            this.collicenseNo.Visible = true;
+            this.collicenseNo.VisibleIndex = 19;
+            // 
+            // colWebsite
+            // 
+            this.colWebsite.FieldName = "Website";
+            this.colWebsite.Name = "colWebsite";
+            this.colWebsite.Visible = true;
+            this.colWebsite.VisibleIndex = 20;
+            // 
             // FrmOrderMasterInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -869,5 +1079,27 @@ namespace BillPlex
         private DevExpress.XtraEditors.SimpleButton btnExit;
         private DevExpress.XtraEditors.DateEdit ddOrderDate;
         private DevExpress.XtraEditors.DateEdit ddProDate;
+        private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
+        private DevExpress.XtraGrid.Columns.GridColumn colId;
+        private DevExpress.XtraGrid.Columns.GridColumn colCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colName;
+        private DevExpress.XtraGrid.Columns.GridColumn colOffAddress;
+        private DevExpress.XtraGrid.Columns.GridColumn colState;
+        private DevExpress.XtraGrid.Columns.GridColumn colPin;
+        private DevExpress.XtraGrid.Columns.GridColumn colCountry;
+        private DevExpress.XtraGrid.Columns.GridColumn colPhonePin;
+        private DevExpress.XtraGrid.Columns.GridColumn colOffPhone;
+        private DevExpress.XtraGrid.Columns.GridColumn colEmail;
+        private DevExpress.XtraGrid.Columns.GridColumn colResAddress;
+        private DevExpress.XtraGrid.Columns.GridColumn colResState;
+        private DevExpress.XtraGrid.Columns.GridColumn colResPin;
+        private DevExpress.XtraGrid.Columns.GridColumn colResCountry;
+        private DevExpress.XtraGrid.Columns.GridColumn colMobile;
+        private DevExpress.XtraGrid.Columns.GridColumn colTinNo;
+        private DevExpress.XtraGrid.Columns.GridColumn colTinDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colCstNo;
+        private DevExpress.XtraGrid.Columns.GridColumn colCstDate;
+        private DevExpress.XtraGrid.Columns.GridColumn collicenseNo;
+        private DevExpress.XtraGrid.Columns.GridColumn colWebsite;
     }
 }

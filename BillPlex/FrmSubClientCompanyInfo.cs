@@ -106,7 +106,7 @@ namespace BillPlex
             try
             {
 
-                if (txtCompanyCode.Text != string.Empty && txtCompanyName.Text != string.Empty && txtName.Text != string.Empty)
+                if (drpMainCompany.Text != string.Empty && drpCCompany.Text != string.Empty && txtCompanyCode.Text != "" && txtCompanyName.Text != "")
 
                 {
                     string selectedMasterItem = (string)drpMainCompany.SelectedItem;
@@ -167,7 +167,7 @@ namespace BillPlex
                 }
                 else
                 {
-                    XtraMessageBox.Show(SubClientRequest.Result.Message, "please give the manditory field", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    XtraMessageBox.Show("Please Enter Manditory field", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 if (SubClientRequest.Result.Status == ResultStatus.Success)
@@ -220,7 +220,7 @@ namespace BillPlex
             foreach (var rowHandle in selectedRows)
             {
                 SubClientRequest.Id = selectedCompanyList.GetRowCellValue(rowHandle, "Id");
-                txtCompanyCode.Text = selectedCompanyList.GetRowCellValue(rowHandle, "MasterCode") == DBNull.Value ? string.Empty : selectedCompanyList.GetRowCellValue(rowHandle, "MasterCode").ToString();
+                //txtCompanyCode.Text = selectedCompanyList.GetRowCellValue(rowHandle, "MasterCode").toString() == DBNull.Value ? string.Empty : selectedCompanyList.GetRowCellValue(rowHandle, "MasterCode").ToString();
 
                 drpMainCompany.SelectedIndex = Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "MasterCompanyId").ToString());                drpCCompany.SelectedIndex = Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "ClientCompanyId").ToString());
                 txtCompanyCode.Text = selectedCompanyList.GetRowCellValue(rowHandle, "SubComCode");

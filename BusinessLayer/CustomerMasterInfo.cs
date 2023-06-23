@@ -63,9 +63,9 @@ namespace BusinessLayer
                 objLstDbParams.Add(new DbParams(DbType.String, 50, CDCountry, "@ResCountry", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, MobileNo, "@Mobile", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, TINno, "@TinNo", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.String, 50, TINDate, "@TinDate", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.DateTime, 50, TINDate == "" ? null : TINDate, "@TINDate", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, CSTno, "@CstNo", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.String, 50, CSTDate, "@CstDate", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.DateTime, 50, CSTDate == "" ? null : CSTDate, "@CstDate", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, LicenseNo, "@LicenseNo", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, Website, "@Website", ParameterDirection.Input));
 
@@ -80,7 +80,7 @@ namespace BusinessLayer
 
             }
             catch (Exception ex)
-            {
+             {
                 // Display a warning alert
                // XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 

@@ -25,21 +25,6 @@ namespace BillPlex
             MessageBox.Show("Master_Company button clicked!");
         }
 
-        private void ribbon_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            
-        }
-
-        private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            
-        }
-
         private void ClientCompany_ItemClick(object sender, ItemClickEventArgs e)
         {
             FrmClientCompanyProfile ClientCompanyInfo = new FrmClientCompanyProfile();

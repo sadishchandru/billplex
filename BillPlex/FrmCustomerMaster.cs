@@ -83,7 +83,13 @@ namespace BillPlex
                 XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
-            
+            finally
+            {
+                //CustomerMaster_GridView.RefreshRow(true);
+                CustomerMaster_GridView.RefreshData();
+                CustomerMaster_GridView.RefreshEditor(true);
+                
+            }
 
         }
 
