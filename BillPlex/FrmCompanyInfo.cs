@@ -205,7 +205,7 @@ namespace BillPlex
         {
             txtCode.ResetText();
             txtCompanyName.ResetText();
-            txtAddress.ResetText();
+            txtOfficeAddress.ResetText();
             drpState.ResetText();
             txtPinNo.ResetText();
             txtCode.ResetText();
@@ -248,6 +248,25 @@ namespace BillPlex
             //Environment.ExitCode = exitCode;
 
             this.Close();
+        }
+
+        private void AddClearBtn_Click(object sender, EventArgs e)
+        {
+            txtAddress.ResetText();
+        }
+
+        private void CopyBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string textToCopy = txtAddress.Text;
+                Clipboard.SetText(textToCopy);
+                MessageBox.Show("Text copied to clipboard.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while copying text: " + ex.Message);
+            }
         }
     }
 }

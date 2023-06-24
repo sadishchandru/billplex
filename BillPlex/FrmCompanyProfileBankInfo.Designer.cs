@@ -375,6 +375,11 @@ namespace BillPlex
             // 
             this.TxtBankAccountNo.Location = new System.Drawing.Point(149, 129);
             this.TxtBankAccountNo.Name = "TxtBankAccountNo";
+            this.TxtBankAccountNo.Properties.BeepOnError = false;
+            this.TxtBankAccountNo.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.TxtBankAccountNo.Properties.MaskSettings.Set("mask", "d");
+            this.TxtBankAccountNo.Properties.MaskSettings.Set("valueType", typeof(long));
+            this.TxtBankAccountNo.Properties.UseMaskAsDisplayFormat = true;
             this.TxtBankAccountNo.Size = new System.Drawing.Size(209, 20);
             this.TxtBankAccountNo.TabIndex = 13;
             // 

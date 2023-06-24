@@ -143,7 +143,7 @@ namespace BillPlex
                     ClientCompanyRequest.Percent = txtPercent.Text;
                     ClientCompanyRequest.ActiveStatus = radActiveStatus.Text;
                     ClientCompanyRequest.Update();
-                    this.Close();
+                    //this.Close();
 
                     FrmClientCompanyProfile CompanyInfo = new FrmClientCompanyProfile();
                     //CompanyInfo.MdiParent = this;
@@ -330,6 +330,25 @@ namespace BillPlex
         private void ExitBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void AuthCopyBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string textToCopy = TxtAuthAddress.Text;
+                Clipboard.SetText(textToCopy);
+                MessageBox.Show("Text copied to clipboard.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while copying text: " + ex.Message);
+            }
+        }
+
+        private void AuthAddClearBtn_Click(object sender, EventArgs e)
+        {
+            TxtAuthAddress.ResetText();
         }
     }
 }

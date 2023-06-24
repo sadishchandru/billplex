@@ -29,6 +29,7 @@ namespace BillPlex
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
@@ -135,6 +136,7 @@ namespace BillPlex
             this.LicenseTxt = new DevExpress.XtraEditors.TextEdit();
             this.ddStartingDate = new DevExpress.XtraEditors.DateEdit();
             this.txtDirector = new DevExpress.XtraEditors.TextEdit();
+            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -193,6 +195,7 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.ddStartingDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddStartingDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDirector.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -497,6 +500,12 @@ namespace BillPlex
             // 
             this.txtAuthpin.Location = new System.Drawing.Point(713, 116);
             this.txtAuthpin.Name = "txtAuthpin";
+            this.txtAuthpin.Properties.BeepOnError = false;
+            this.txtAuthpin.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtAuthpin.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txtAuthpin.Properties.MaskSettings.Set("mask", "d");
+            this.txtAuthpin.Properties.MaskSettings.Set("valueType", typeof(long));
+            this.txtAuthpin.Properties.UseMaskAsDisplayFormat = true;
             this.txtAuthpin.Size = new System.Drawing.Size(52, 20);
             this.txtAuthpin.TabIndex = 59;
             // 
@@ -547,6 +556,7 @@ namespace BillPlex
             this.AuthAddClearBtn.Size = new System.Drawing.Size(63, 23);
             this.AuthAddClearBtn.TabIndex = 54;
             this.AuthAddClearBtn.Text = "CLEAR";
+            this.AuthAddClearBtn.Click += new System.EventHandler(this.AuthAddClearBtn_Click);
             // 
             // AuthCopyBtn
             // 
@@ -561,6 +571,7 @@ namespace BillPlex
             this.AuthCopyBtn.Size = new System.Drawing.Size(63, 23);
             this.AuthCopyBtn.TabIndex = 53;
             this.AuthCopyBtn.Text = "COPY";
+            this.AuthCopyBtn.Click += new System.EventHandler(this.AuthCopyBtn_Click);
             // 
             // txtEmailID
             // 
@@ -612,6 +623,12 @@ namespace BillPlex
             // 
             this.txtmobile.Location = new System.Drawing.Point(525, 151);
             this.txtmobile.Name = "txtmobile";
+            this.txtmobile.Properties.BeepOnError = false;
+            this.txtmobile.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtmobile.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txtmobile.Properties.MaskSettings.Set("mask", "d");
+            this.txtmobile.Properties.MaskSettings.Set("valueType", typeof(long));
+            this.txtmobile.Properties.UseMaskAsDisplayFormat = true;
             this.txtmobile.Size = new System.Drawing.Size(240, 20);
             this.txtmobile.TabIndex = 30;
             // 
@@ -658,7 +675,7 @@ namespace BillPlex
             // txtFathers
             // 
             this.txtFathers.EditValue = "";
-            this.txtFathers.Location = new System.Drawing.Point(138, 70);
+            this.txtFathers.Location = new System.Drawing.Point(138, 81);
             this.txtFathers.Name = "txtFathers";
             this.txtFathers.Size = new System.Drawing.Size(263, 20);
             this.txtFathers.TabIndex = 10;
@@ -697,7 +714,7 @@ namespace BillPlex
             this.labelControl39.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl39.Appearance.Options.UseFont = true;
             this.labelControl39.Appearance.Options.UseForeColor = true;
-            this.labelControl39.Location = new System.Drawing.Point(45, 41);
+            this.labelControl39.Location = new System.Drawing.Point(49, 41);
             this.labelControl39.Name = "labelControl39";
             this.labelControl39.Size = new System.Drawing.Size(12, 27);
             this.labelControl39.TabIndex = 2;
@@ -1043,7 +1060,7 @@ namespace BillPlex
             // txtCst
             // 
             this.txtCst.EditValue = "";
-            this.txtCst.Location = new System.Drawing.Point(963, 131);
+            this.txtCst.Location = new System.Drawing.Point(976, 125);
             this.txtCst.Name = "txtCst";
             this.txtCst.Size = new System.Drawing.Size(207, 20);
             this.txtCst.TabIndex = 60;
@@ -1051,7 +1068,7 @@ namespace BillPlex
             // txtSsi
             // 
             this.txtSsi.EditValue = "";
-            this.txtSsi.Location = new System.Drawing.Point(963, 167);
+            this.txtSsi.Location = new System.Drawing.Point(976, 164);
             this.txtSsi.Name = "txtSsi";
             this.txtSsi.Size = new System.Drawing.Size(207, 20);
             this.txtSsi.TabIndex = 59;
@@ -1059,7 +1076,7 @@ namespace BillPlex
             // txtPanNo
             // 
             this.txtPanNo.EditValue = "";
-            this.txtPanNo.Location = new System.Drawing.Point(963, 202);
+            this.txtPanNo.Location = new System.Drawing.Point(976, 201);
             this.txtPanNo.Name = "txtPanNo";
             this.txtPanNo.Size = new System.Drawing.Size(207, 20);
             this.txtPanNo.TabIndex = 58;
@@ -1067,7 +1084,7 @@ namespace BillPlex
             // txtTan
             // 
             this.txtTan.EditValue = "";
-            this.txtTan.Location = new System.Drawing.Point(963, 234);
+            this.txtTan.Location = new System.Drawing.Point(976, 235);
             this.txtTan.Name = "txtTan";
             this.txtTan.Size = new System.Drawing.Size(207, 20);
             this.txtTan.TabIndex = 57;
@@ -1075,7 +1092,7 @@ namespace BillPlex
             // txtTin
             // 
             this.txtTin.EditValue = "";
-            this.txtTin.Location = new System.Drawing.Point(963, 88);
+            this.txtTin.Location = new System.Drawing.Point(976, 84);
             this.txtTin.Name = "txtTin";
             this.txtTin.Size = new System.Drawing.Size(207, 20);
             this.txtTin.TabIndex = 55;
@@ -1142,7 +1159,7 @@ namespace BillPlex
             // 
             // txtFactoryAct
             // 
-            this.txtFactoryAct.Location = new System.Drawing.Point(963, 49);
+            this.txtFactoryAct.Location = new System.Drawing.Point(976, 49);
             this.txtFactoryAct.Name = "txtFactoryAct";
             this.txtFactoryAct.Size = new System.Drawing.Size(207, 20);
             this.txtFactoryAct.TabIndex = 48;
@@ -1264,6 +1281,12 @@ namespace BillPlex
             this.txtClientCompanyPhone.EditValue = "";
             this.txtClientCompanyPhone.Location = new System.Drawing.Point(609, 49);
             this.txtClientCompanyPhone.Name = "txtClientCompanyPhone";
+            this.txtClientCompanyPhone.Properties.BeepOnError = false;
+            this.txtClientCompanyPhone.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtClientCompanyPhone.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txtClientCompanyPhone.Properties.MaskSettings.Set("mask", "d");
+            this.txtClientCompanyPhone.Properties.MaskSettings.Set("valueType", typeof(long));
+            this.txtClientCompanyPhone.Properties.UseMaskAsDisplayFormat = true;
             this.txtClientCompanyPhone.Size = new System.Drawing.Size(154, 20);
             this.txtClientCompanyPhone.TabIndex = 32;
             // 
@@ -1272,6 +1295,12 @@ namespace BillPlex
             this.txtstdCode.EditValue = "";
             this.txtstdCode.Location = new System.Drawing.Point(556, 49);
             this.txtstdCode.Name = "txtstdCode";
+            this.txtstdCode.Properties.BeepOnError = false;
+            this.txtstdCode.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtstdCode.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txtstdCode.Properties.MaskSettings.Set("mask", "d");
+            this.txtstdCode.Properties.MaskSettings.Set("valueType", typeof(long));
+            this.txtstdCode.Properties.UseMaskAsDisplayFormat = true;
             this.txtstdCode.Size = new System.Drawing.Size(52, 20);
             this.txtstdCode.TabIndex = 31;
             // 
@@ -1332,6 +1361,12 @@ namespace BillPlex
             // 
             this.txtPin.Location = new System.Drawing.Point(315, 229);
             this.txtPin.Name = "txtPin";
+            this.txtPin.Properties.BeepOnError = false;
+            this.txtPin.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtPin.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txtPin.Properties.MaskSettings.Set("mask", "d");
+            this.txtPin.Properties.MaskSettings.Set("valueType", typeof(long));
+            this.txtPin.Properties.UseMaskAsDisplayFormat = true;
             this.txtPin.Size = new System.Drawing.Size(86, 20);
             this.txtPin.TabIndex = 20;
             // 
@@ -1498,7 +1533,7 @@ namespace BillPlex
             // LicenseTxt
             // 
             this.LicenseTxt.EditValue = "";
-            this.LicenseTxt.Location = new System.Drawing.Point(963, 271);
+            this.LicenseTxt.Location = new System.Drawing.Point(976, 271);
             this.LicenseTxt.Name = "LicenseTxt";
             this.LicenseTxt.Size = new System.Drawing.Size(207, 20);
             this.LicenseTxt.TabIndex = 56;
@@ -1604,6 +1639,7 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.ddStartingDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddStartingDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDirector.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1716,5 +1752,6 @@ namespace BillPlex
         private DevExpress.XtraEditors.ComboBoxEdit drpState;
         private DevExpress.XtraEditors.TextEdit txtDirector;
         private DevExpress.XtraEditors.LabelControl labelControl28;
+        private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
     }
 }
