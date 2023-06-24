@@ -63,7 +63,7 @@ namespace BillPlex
                     CompanyRequest.OffAddress = txtAddress.Text;
                     CompanyRequest.State = drpState.Text;
                     CompanyRequest.StatePin = txtPinNo.Text;
-                    CompanyRequest.StdCode = txtCode.Text;
+                    CompanyRequest.StdCode = txtStdCode.Text;
                     CompanyRequest.PhoneNo = txtPhoneNo.Text;
                     CompanyRequest.Startingdate = ddStartingdate.Text.ToString();
                     CompanyRequest.BusinessNature = radBusinessNature.Text;
@@ -101,7 +101,7 @@ namespace BillPlex
                 }
                 else
                 {
-                    XtraMessageBox.Show(CompanyRequest.Result.Message, "please give the manditory field", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    XtraMessageBox.Show("please Enter the manditory field", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 if (CompanyRequest.Result.Status == ResultStatus.Success)
                 {

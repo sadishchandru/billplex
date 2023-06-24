@@ -29,7 +29,7 @@ namespace BusinessLayer
             return itemList;
         }
         public static List<DropDownItemInfo> PreparedItemList(ref DbDataReader dbReader, bool isMoreValue)
-        {
+            {
             List<DropDownItemInfo> itemList = new List<DropDownItemInfo>();
             while (dbReader.Read())
             {

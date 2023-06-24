@@ -127,7 +127,7 @@ namespace BillPlex
             this.clientcompanyprofilebtn.Appearance.Options.UseForeColor = true;
             this.clientcompanyprofilebtn.Location = new System.Drawing.Point(634, 23);
             this.clientcompanyprofilebtn.Name = "clientcompanyprofilebtn";
-            this.clientcompanyprofilebtn.Size = new System.Drawing.Size(243, 26);
+            this.clientcompanyprofilebtn.Size = new System.Drawing.Size(209, 24);
             this.clientcompanyprofilebtn.TabIndex = 0;
             this.clientcompanyprofilebtn.Text = "Client Company Profile";
             // 
@@ -804,7 +804,7 @@ namespace BillPlex
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1673, 775);
+            this.ClientSize = new System.Drawing.Size(1618, 775);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Name = "FrmClientCompanyProfile";
