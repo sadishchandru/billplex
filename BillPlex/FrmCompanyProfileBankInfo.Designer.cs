@@ -134,6 +134,7 @@ namespace BillPlex
             this.gridControl1.TabIndex = 30;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.MainBankInfoGridView});
+            this.gridControl1.DoubleClick += new System.EventHandler(this.btn_GridView);
             // 
             // sqlDataSource1
             // 
@@ -285,6 +286,7 @@ namespace BillPlex
             // 
             // btn
             // 
+            this.btn.Enabled = false;
             this.btn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn.ImageOptions.Image")));
             this.btn.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btn.Location = new System.Drawing.Point(368, 297);
@@ -308,6 +310,7 @@ namespace BillPlex
             // 
             // btnUpdate
             // 
+            this.btnUpdate.Enabled = false;
             this.btnUpdate.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
             this.btnUpdate.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnUpdate.ImageOptions.SvgImage")));
             this.btnUpdate.Location = new System.Drawing.Point(368, 135);

@@ -206,7 +206,9 @@ namespace BillPlex
                 txtCompanyName.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCname");
                 txtOffAddress.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCoffAddress");
                 drpState.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCstate");
-                drpMainCompany.SelectedIndex = Convert.ToInt32(selectedClientCompanyList.GetRowCellValue(rowHandle, "MasterCompanyId"));
+                //drpMainCompany.SelectedIndex = Convert.ToInt32(selectedClientCompanyList.GetRowCellValue(rowHandle, "MasterCompanyId"));
+                drpMainCompany.SelectedIndex = ClientCompanyRequest.MasterCompanyList.FindIndex(x => x.Id == Convert.ToInt32(selectedClientCompanyList.GetRowCellValue(rowHandle, "MasterCompanyId")));
+                
                 txtPin.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCpin");
                 if (radBusinessNature.SelectedIndex != null && selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCNature") != "")
                 {

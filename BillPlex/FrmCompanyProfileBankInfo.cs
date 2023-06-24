@@ -67,26 +67,34 @@ namespace BillPlex
         {
             try
             {
-                var selectedItem = drpMainCompany.EditValue;
-
-                if (selectedItem != null)
+                if (drpMainCompany.Text != string.Empty && drpBankName.Text != string.Empty && TxtBankAccountNo.Text != string.Empty && TxtAddress.Text != string.Empty && TxtBranchCode.Text != string.Empty && TxtBranchName.Text != string.Empty && TxtIfsCode.Text != string.Empty)
                 {
-                    CompanyBankRequest.MainCompany = CompanyBankRequest.MasterCompanyList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.Id ?? -1;
+                    var selectedItem = drpMainCompany.EditValue;
+
+                    if (selectedItem != null)
+                    {
+                        CompanyBankRequest.MainCompany = CompanyBankRequest.MasterCompanyList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.Id ?? -1;
+                    }
+                    //CompanyBankRequest.MainCompany = drpMainCompany.Text;
+                    CompanyBankRequest.BankName = drpBankName.Text;
+                    CompanyBankRequest.BankAcNo = TxtBankAccountNo.Text;
+                    CompanyBankRequest.Address = TxtAddress.Text;
+                    CompanyBankRequest.BranchCode = TxtBranchCode.Text;
+                    CompanyBankRequest.BranchName = TxtBranchName.Text;
+                    CompanyBankRequest.IFSCode = TxtIfsCode.Text;
+                    CompanyBankRequest.Update();
+
+                    if (CompanyBankRequest.Result.Status == ResultStatus.Success)
+                    {
+                        MainBankInfoGridView.RefreshData();
+
+                        XtraMessageBox.Show(CompanyBankRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
-                //CompanyBankRequest.MainCompany = drpMainCompany.Text;
-                CompanyBankRequest.BankName = drpBankName.Text;
-                CompanyBankRequest.BankAcNo = TxtBankAccountNo.Text;
-                CompanyBankRequest.Address = TxtAddress.Text;
-                CompanyBankRequest.BranchCode = TxtBranchCode.Text;
-                CompanyBankRequest.BranchName = TxtBranchName.Text;
-                CompanyBankRequest.IFSCode = TxtIfsCode.Text;
-                CompanyBankRequest.Update();
-
-                if (CompanyBankRequest.Result.Status == ResultStatus.Success)
+                else
                 {
-                    MainBankInfoGridView.RefreshData();
+                    XtraMessageBox.Show(CompanyBankRequest.Result.Message, "please give the manditory field", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    XtraMessageBox.Show(CompanyBankRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
@@ -125,5 +133,40 @@ namespace BillPlex
 
             //var i = _conn.ExecuteNonQuery("PRO_UpdateMainBankInfo", parameters);
         }
+
+        private void btn_GridView(object sender, EventArgs e)
+        {
+            try
+            {
+                
+                    var selectedRows = MainBankInfoGridView.GetSelectedRows();
+
+                    foreach (var rowHandle in selectedRows)
+                    {
+                        CompanyBankRequest.Id = (Int64)MainBankInfoGridView.GetRowCellValue(rowHandle, "MainCompanyId");
+                        drpMainCompany.SelectedIndex = Convert.ToInt32(MainBankInfoGridView.GetRowCellValue(rowHandle, "MainCompanyId").ToString());
+                        drpBankName.Text = MainBankInfoGridView.GetRowCellValue(rowHandle, "BankName").ToString();
+                        TxtBankAccountNo.Text = MainBankInfoGridView.GetRowCellValue(rowHandle, "BankAcNo").ToString();
+                        TxtAddress.Text = MainBankInfoGridView.GetRowCellValue(rowHandle, "Address").ToString();
+                        TxtBranchCode.Text = MainBankInfoGridView.GetRowCellValue(rowHandle, "BranchCode").ToString();
+                        TxtBranchName.Text = MainBankInfoGridView.GetRowCellValue(rowHandle, "BranchName").ToString();
+                        TxtIfsCode.Text = MainBankInfoGridView.GetRowCellValue(rowHandle, "IFSCode").ToString();
+
+                    }
+                    btnUpdate.Enabled = true;
+                    btnAdd.Enabled = false;
+
+                
+                
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            
+            
+            }
     }
 }

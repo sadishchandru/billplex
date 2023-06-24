@@ -81,36 +81,45 @@ namespace BillPlex
         {
             try
             {
-                var selectedMainItem = drpMainCompany.EditValue;
-
-                if (selectedMainItem != null)
+                if (drpMainCompany.Text != string.Empty && drpClientCompany.Text != string.Empty && drpBankName.Text != string.Empty && txtAccountNo.Text != string.Empty && txtAddress.Text != string.Empty && txtBranchCode.Text != string.Empty && TxtBranchName.Text != string.Empty && txtIfsCode.Text != string.Empty)
                 {
-                    ClientCompanyBankInfoRequest.MainCompanyId = ClientCompanyBankInfoRequest.MasterCompanyList.FirstOrDefault(item => item.Name == selectedMainItem.ToString())?.Id ?? -1;
+                    var selectedMainItem = drpMainCompany.EditValue;
+
+                    if (selectedMainItem != null)
+                    {
+                        ClientCompanyBankInfoRequest.MainCompanyId = ClientCompanyBankInfoRequest.MasterCompanyList.FirstOrDefault(item => item.Name == selectedMainItem.ToString())?.Id ?? -1;
+                    }
+
+                    var selectedClientItem = drpClientCompany.EditValue;
+                    if (selectedClientItem != null)
+                    {
+                        ClientCompanyBankInfoRequest.ClientCompanyId = ClientCompanyBankInfoRequest.ClientCompanyList.FirstOrDefault(item => item.Name == selectedClientItem.ToString())?.Id ?? -1;
+                    }
+                    // Calling the stored procedure for creating a new Company Profile
+                    {
+
+                        //ClientCompanyBankInfoRequest.ClientCompanyId = drpClientCompany.Text;
+                        ClientCompanyBankInfoRequest.BankName = drpBankName.Text;
+                        ClientCompanyBankInfoRequest.BankAcNo = txtAccountNo.Text;
+                        ClientCompanyBankInfoRequest.BranchCode = txtBranchCode.Text;
+                        ClientCompanyBankInfoRequest.BranchName = TxtBranchName.Text;
+                        ClientCompanyBankInfoRequest.IFSCode = txtIfsCode.Text;
+                        ClientCompanyBankInfoRequest.Address = txtAddress.Text;
+                        ClientCompanyBankInfoRequest.Update();
+                    };
+                    if (ClientCompanyBankInfoRequest.Result.Status == ResultStatus.Success)
+                    {
+                        //ClientCompanyBankInfoRequest.RefreshData();
+
+                        XtraMessageBox.Show(ClientCompanyBankInfoRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    XtraMessageBox.Show(ClientCompanyBankInfoRequest.Result.Message, "please give the manditory field", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 }
 
-                var selectedClientItem = drpClientCompany.EditValue;
-                if (selectedClientItem != null)
-                {
-                    ClientCompanyBankInfoRequest.ClientCompanyId = ClientCompanyBankInfoRequest.ClientCompanyList.FirstOrDefault(item => item.Name == selectedClientItem.ToString())?.Id ?? -1;
-                }
-                // Calling the stored procedure for creating a new Company Profile
-                {
-
-                    //ClientCompanyBankInfoRequest.ClientCompanyId = drpClientCompany.Text;
-                    ClientCompanyBankInfoRequest.BankName = drpBankName.Text;
-                    ClientCompanyBankInfoRequest.BankAcNo = txtAccountNo.Text;
-                    ClientCompanyBankInfoRequest.BranchCode = txtBranchCode.Text;
-                    ClientCompanyBankInfoRequest.BranchName = TxtBranchName.Text;
-                    ClientCompanyBankInfoRequest.IFSCode = txtIfsCode.Text;
-                    ClientCompanyBankInfoRequest.Address = txtAddress.Text;
-                    ClientCompanyBankInfoRequest.Update();
-                };
-                if (ClientCompanyBankInfoRequest.Result.Status == ResultStatus.Success)
-                {
-                    //ClientCompanyBankInfoRequest.RefreshData();
-
-                    XtraMessageBox.Show(ClientCompanyBankInfoRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
             }
             catch 
             {
@@ -119,22 +128,51 @@ namespace BillPlex
             //var i = _conn.ExecuteNonQuery("PRO_UpdateClientBankInfo", parameters);
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            var Id = 0;
-            SqlParameter[] parameters = new SqlParameter[]
-            {
-                new SqlParameter("@MainCompanyId", drpMainCompany.Text),
-                new SqlParameter("@ClientCompanyId", drpClientCompany.Text),
-                new SqlParameter("@BankName", drpBankName.Text),
-                new SqlParameter("@BankAcNo", txtAccountNo.Text),
-                new SqlParameter("@BranchCode",txtBranchCode.Text),
-                new SqlParameter("@BranchName", TxtBranchName.Text),
-                new SqlParameter("@IFSCode", txtIfsCode.Text),
-                new SqlParameter("@Address", txtAddress.Text),
-            };
+        //private void btnUpdate_Click(object sender, EventArgs e)
+        //{
+        //    var Id = 0;
+        //    SqlParameter[] parameters = new SqlParameter[]
+        //    {
+        //        new SqlParameter("@MainCompanyId", drpMainCompany.Text),
+        //        new SqlParameter("@ClientCompanyId", drpClientCompany.Text),
+        //        new SqlParameter("@BankName", drpBankName.Text),
+        //        new SqlParameter("@BankAcNo", txtAccountNo.Text),
+        //        new SqlParameter("@BranchCode",txtBranchCode.Text),
+        //        new SqlParameter("@BranchName", TxtBranchName.Text),
+        //        new SqlParameter("@IFSCode", txtIfsCode.Text),
+        //        new SqlParameter("@Address", txtAddress.Text),
+        //    };
 
-           // var i = _conn.ExecuteNonQuery("PRO_UpdateClientBankInfo", parameters);
+        //   // var i = _conn.ExecuteNonQuery("PRO_UpdateClientBankInfo", parameters);
+        //}
+
+        private void btn_GridView(object sender, EventArgs e)
+        {
+            try
+            {
+                var selectedRows = ClientCompanyBankGrid.GetSelectedRows();
+
+                foreach (var rowHandle in selectedRows)
+                {
+                    ClientCompanyBankInfoRequest.Id = (Int64)ClientCompanyBankGrid.GetRowCellValue(rowHandle, "MainCompanyId");
+                    drpMainCompany.SelectedIndex = Convert.ToInt32(ClientCompanyBankGrid.GetRowCellValue(rowHandle, "MainCompanyId").ToString());
+                    drpClientCompany.SelectedIndex = Convert.ToInt32(ClientCompanyBankGrid.GetRowCellValue(rowHandle, "ClientCompanyId").ToString());
+                    drpBankName.Text = ClientCompanyBankGrid.GetRowCellValue(rowHandle, "BankName").ToString();
+                    txtAccountNo.Text = ClientCompanyBankGrid.GetRowCellValue(rowHandle, "BankAcNo").ToString();
+                    txtAddress.Text = ClientCompanyBankGrid.GetRowCellValue(rowHandle, "Address").ToString();
+                    txtBranchCode.Text = ClientCompanyBankGrid.GetRowCellValue(rowHandle, "BranchCode").ToString();
+                    TxtBranchName.Text = ClientCompanyBankGrid.GetRowCellValue(rowHandle, "BranchName").ToString();
+                    txtIfsCode.Text = ClientCompanyBankGrid.GetRowCellValue(rowHandle, "IFSCode").ToString();
+
+                }
+                btnUpdate.Enabled = true;
+                btnAdd.Enabled = false;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

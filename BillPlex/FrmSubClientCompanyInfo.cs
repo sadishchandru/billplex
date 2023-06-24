@@ -39,7 +39,8 @@ namespace BillPlex
 
             Dictionary<string, bool> dropDownList = new Dictionary<string, bool>        {
                     { "MasterCompanyRequired", true },
-                    {"ClientCompanyRequired",true}
+                    {"ClientCompanyRequired",true},
+                { "SubClientBankRequired", true}
                 };
             //ClientCompanyRequest.MasterCompanyList = ClientCompanyRequest.GetDropdownValues(dropDownList);
 
@@ -222,13 +223,17 @@ namespace BillPlex
                 SubClientRequest.Id = selectedCompanyList.GetRowCellValue(rowHandle, "Id");
                 //txtCompanyCode.Text = selectedCompanyList.GetRowCellValue(rowHandle, "MasterCode").toString() == DBNull.Value ? string.Empty : selectedCompanyList.GetRowCellValue(rowHandle, "MasterCode").ToString();
 
-                drpMainCompany.SelectedIndex = Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "MasterCompanyId").ToString());                drpCCompany.SelectedIndex = Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "ClientCompanyId").ToString());
+                //drpMainCompany.SelectedIndex = Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "MasterCompanyId").ToString());
+                drpMainCompany.SelectedIndex = SubClientRequest.MasterCompanyList.FindIndex(x => x.Id == Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "MasterCompanyId").ToString()));                //drpCCompany.SelectedIndex = Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "ClientCompanyId").ToString());
+
+                drpCCompany.SelectedIndex = SubClientRequest.ClientCompanyList.FindIndex(x => x.Id == Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "ClientCompanyId").ToString()));
                 txtCompanyCode.Text = selectedCompanyList.GetRowCellValue(rowHandle, "SubComCode");
                 txtCompanyName.Text = selectedCompanyList.GetRowCellValue(rowHandle, "SubComName");
                 txtOffAddress.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComOffAdd");
                 drpState.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComState");
                 txtPin.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComPin");
-                radBusinessNature.SelectedIndex = Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "ComNature"));
+                if (radBusinessNature.SelectedIndex != null && selectedCompanyList.GetRowCellValue(rowHandle, "ComNature") != "")
+                    radBusinessNature.SelectedIndex = Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "ComNature"));
 
                 txtDirector.Text = selectedCompanyList.GetRowCellValue(rowHandle, "Director");
                 var datete = selectedCompanyList.GetRowCellValue(rowHandle, "ComDatestart").ToString();
@@ -240,7 +245,8 @@ namespace BillPlex
                 txtEmail.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComEmail");
                 txtWebsite.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComWebsite");
 
-                radPfType.SelectedIndex = Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "PfType"));
+                if (radPfType.SelectedIndex != null && selectedCompanyList.GetRowCellValue(rowHandle, "PfType") != "")
+                    radPfType.SelectedIndex = Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "PfType"));
                 txtPFCode.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComPfNo");
 
                 datete = selectedCompanyList.GetRowCellValue(rowHandle, "ComPfDate").ToString();
@@ -261,7 +267,8 @@ namespace BillPlex
                 txtName.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorName");
                 txtFathers.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorFathername");
 
-                radGender.SelectedIndex = Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "AuthorGender"));
+                if (radGender.SelectedIndex != null && selectedCompanyList.GetRowCellValue(rowHandle, "AuthorGender") != "")
+                    radGender.SelectedIndex = Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "AuthorGender"));
 
                 drpAuthBlood.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorBlood");
 
@@ -275,7 +282,9 @@ namespace BillPlex
                 txtAuthMobileNo.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorMobile");
                 txtAuthPanNo.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorPan");
                 txtAuthPercent.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorPercent");
-                radActiveStatus.SelectedIndex = Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "AuthorActive"));
+
+                if (radActiveStatus.SelectedIndex != null && selectedCompanyList.GetRowCellValue(rowHandle, "AuthorActive") != "")
+                    radActiveStatus.SelectedIndex = Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "AuthorActive"));
             }
 
             if (SubClientRequest.SubClientBankList != null)

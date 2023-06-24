@@ -29,6 +29,7 @@ namespace BusinessLayer
 
             try
             {
+
                 InitializeDb();
 
                 // Calling the stored procedure for creating a new Company Profile
