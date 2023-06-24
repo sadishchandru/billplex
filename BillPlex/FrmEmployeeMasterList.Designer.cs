@@ -46,7 +46,7 @@ namespace BillPlex
             this.btnClear = new DevExpress.XtraEditors.SimpleButton();
             this.btnFind = new DevExpress.XtraEditors.SimpleButton();
             this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.EmployeeGridControl = new DevExpress.XtraGrid.GridControl();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.EmployeeGrodView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -163,7 +163,7 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EmployeeGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeGrodView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -184,7 +184,7 @@ namespace BillPlex
             this.labelControl1.Appearance.Options.UseForeColor = true;
             this.labelControl1.Location = new System.Drawing.Point(780, 26);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(191, 27);
+            this.labelControl1.Size = new System.Drawing.Size(164, 23);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Employee Master";
             // 
@@ -306,7 +306,7 @@ namespace BillPlex
             this.panelControl3.Controls.Add(this.btnClear);
             this.panelControl3.Controls.Add(this.btnFind);
             this.panelControl3.Controls.Add(this.comboBoxEdit1);
-            this.panelControl3.Controls.Add(this.gridControl1);
+            this.panelControl3.Controls.Add(this.EmployeeGridControl);
             this.panelControl3.Location = new System.Drawing.Point(5, 17);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(1384, 613);
@@ -343,18 +343,18 @@ namespace BillPlex
             this.comboBoxEdit1.Size = new System.Drawing.Size(567, 20);
             this.comboBoxEdit1.TabIndex = 1;
             // 
-            // gridControl1
+            // EmployeeGridControl
             // 
-            this.gridControl1.DataMember = "PRO_GetEmployeeList";
-            this.gridControl1.DataSource = this.sqlDataSource1;
-            this.gridControl1.Location = new System.Drawing.Point(4, 41);
-            this.gridControl1.MainView = this.EmployeeGrodView;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1371, 552);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.EmployeeGridControl.DataMember = "PRO_GetEmployeeList";
+            this.EmployeeGridControl.DataSource = this.sqlDataSource1;
+            this.EmployeeGridControl.Location = new System.Drawing.Point(4, 41);
+            this.EmployeeGridControl.MainView = this.EmployeeGrodView;
+            this.EmployeeGridControl.Name = "EmployeeGridControl";
+            this.EmployeeGridControl.Size = new System.Drawing.Size(1371, 552);
+            this.EmployeeGridControl.TabIndex = 0;
+            this.EmployeeGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.EmployeeGrodView});
-            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
+            this.EmployeeGridControl.Click += new System.EventHandler(this.gridControl1_Click);
             // 
             // sqlDataSource1
             // 
@@ -474,7 +474,7 @@ namespace BillPlex
             this.colGuardianName,
             this.colGuardianAddress,
             this.colGuardianRelation});
-            this.EmployeeGrodView.GridControl = this.gridControl1;
+            this.EmployeeGrodView.GridControl = this.EmployeeGridControl;
             this.EmployeeGrodView.Name = "EmployeeGrodView";
             this.EmployeeGrodView.DoubleClick += new System.EventHandler(this.btn_EmployeeGridView_Click);
             // 
@@ -1338,7 +1338,7 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EmployeeGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeGrodView)).EndInit();
             this.ResumeLayout(false);
 
@@ -1350,7 +1350,7 @@ namespace BillPlex
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.PanelControl panelControl3;
-        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.GridControl EmployeeGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView EmployeeGrodView;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
         private DevExpress.XtraEditors.SimpleButton btnClear;

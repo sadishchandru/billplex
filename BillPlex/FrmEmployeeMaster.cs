@@ -2,6 +2,7 @@
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraGrid;
+using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -30,9 +31,14 @@ namespace BillPlex
 
         private List<EmployeeFamily> EmployeeFamilySource;
 
+        private GridControl EmployeeGridControl;
+
         public FrmEmployeeMaster()
         {
             InitializeComponent();
+
+            InitializeGridControl();
+            InitializeDataSource();
 
             EmployeePersonalRequest = new EmployeePersonal();
             EmployeeFinanceRequest = new EmployeeFinance();
@@ -104,6 +110,43 @@ namespace BillPlex
 
             }
         }
+
+        private void InitializeGridControl()
+        {
+            FamilyGridControl = new GridControl();
+
+            FamilyGridView = new GridView(FamilyGridControl);
+
+            // Assign the GridView to the GridControl
+            FamilyGridControl.MainView = FamilyGridView;
+            //FamilyGridControl.ViewCollection.Add(FamilyGridView);
+
+
+            // Add the GridControl to the form
+            Controls.Add(FamilyGridControl);
+        }
+
+        private void InitializeDataSource()
+        {
+            // Create an empty DataTable with the desired column structure
+            DataTable dataTable = new DataTable("Family");
+            dataTable.Columns.Add("SNo", typeof(string));
+            dataTable.Columns.Add("Name", typeof(string));
+            dataTable.Columns.Add("Address", typeof(string));
+            dataTable.Columns.Add("Area", typeof(string));
+            dataTable.Columns.Add("District", typeof(string));
+            dataTable.Columns.Add("State", typeof(string));
+            dataTable.Columns.Add("Pin", typeof(string));
+            dataTable.Columns.Add("RelationEmployee", typeof(string));
+            dataTable.Columns.Add("DateOfBirth", typeof(string));
+            dataTable.Columns.Add("WhetherResiding", typeof(string));
+            dataTable.Columns.Add("Remarks", typeof(string));
+                                   
+            // Set the empty DataTaRemarksble as the data source for the GridView
+            FamilyGridControl.DataSource = dataTable;
+
+        }
+
 
         private void Addbtn_Click(object sender, EventArgs e)
         {
@@ -546,26 +589,56 @@ namespace BillPlex
 
         private void bntAddRow_Click(object sender, EventArgs e)
         {
-            EmployeeFamilySource = new List<EmployeeFamily>();
 
-            EmployeeFamily EmployeeFamilyDetails = new EmployeeFamily();
+            DataTable dataTable = (DataTable)FamilyGridControl.DataSource;
 
-            EmployeeFamilyDetails.SNo = txtFSno.Text;
-            EmployeeFamilyDetails.EFName = txtFName.Text;
-            EmployeeFamilyDetails.EFAddress = txtFAddress.Text;
-            EmployeeFamilyDetails.EFArea = txtFArea.Text;
-            EmployeeFamilyDetails.EFDistrict = drpFDistrict.Text;
-            EmployeeFamilyDetails.EFPin = txtFPin.Text;
-            EmployeeFamilyDetails.EFRelation = txtFEmp.Text;
-            EmployeeFamilyDetails.EFDOB = ddFDOB.Text;
-            EmployeeFamilyDetails.EFAge = txtFAge.Text;
-            EmployeeFamilyDetails.EFResiding = drpResiding.Text;
-            EmployeeFamilyDetails.EFRemark = txtRemarks.Text;
+            // Create a new row object
+            // DataRow newRow = ((DataTable)FamilyGridView.DataSource).NewRow();
+            DataRow newRow = dataTable.NewRow();
+
+            // Populate the new row object with data from the GridView columns
+            newRow["SNo"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, txtFSno.Text);
+            newRow["Name"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, txtFName.Text);
+            newRow["Address"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, txtFAddress.Text);
+            newRow["Area"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, txtFArea.Text);
+            newRow["District"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, drpFDistrict.Text);
+            newRow["State"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, drpFState.Text);
+            newRow["Pin"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, txtFPin.Text);
+            newRow["RelationEmployee"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, txtFEmp.Text);
+            newRow["DateOfBirth"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, ddFDOB.Text.ToString());
+            newRow["WhetherResiding"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, drpResiding.Text);
+            newRow["Remarks"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, txtRemarks.Text);
+            // Add more columns as needed
+
+            // Add the new row to the GridView
+            ((DataTable)FamilyGridControl.DataSource).Rows.Add(newRow);
+
+            FamilyGridView.RefreshData();
+
+            // Insert the new row data into the SQL database
+            //InsertRowIntoDatabase(newRow);
 
 
-            EmployeeFamilySource.Add(EmployeeFamilyDetails);
+            //EmployeeFamilySource = new List<EmployeeFamily>();
 
-             //= EmployeeFamilySource;
+            //EmployeeFamily EmployeeFamilyDetails = new EmployeeFamily();
+
+            //EmployeeFamilyDetails.SNo = txtFSno.Text;
+            //EmployeeFamilyDetails.EFName = txtFName.Text;
+            //EmployeeFamilyDetails.EFAddress = txtFAddress.Text;
+            //EmployeeFamilyDetails.EFArea = txtFArea.Text;
+            //EmployeeFamilyDetails.EFDistrict = drpFDistrict.Text;
+            //EmployeeFamilyDetails.EFPin = txtFPin.Text;
+            //EmployeeFamilyDetails.EFRelation = txtFEmp.Text;
+            //EmployeeFamilyDetails.EFDOB = ddFDOB.Text;
+            //EmployeeFamilyDetails.EFAge = txtFAge.Text;
+            //EmployeeFamilyDetails.EFResiding = drpResiding.Text;
+            //EmployeeFamilyDetails.EFRemark = txtRemarks.Text;
+
+
+            //EmployeeFamilySource.Add(EmployeeFamilyDetails);
+
+            //= EmployeeFamilySource;
 
         }
     }
