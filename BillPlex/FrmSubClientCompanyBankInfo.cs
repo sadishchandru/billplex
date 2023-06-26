@@ -117,6 +117,7 @@ namespace BillPlex
                         //ClientCompanyBankInfoRequest.RefreshData();
 
                         XtraMessageBox.Show(SubClientCompanyBankRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        btnClear.Enabled = true;
                     }
                 }
                 else
@@ -157,6 +158,18 @@ namespace BillPlex
             {
                 throw ex;
             }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            drpClientCompany.ResetText();
+            drpSubCompany.ResetText();
+            drpBankName.ResetText();
+            TxtBankAccountNo.ResetText();
+            TxtAddress.ResetText();
+            TxtBranchCode.ResetText();
+            TxtBranchName.ResetText();
+            TxtIfsCode.ResetText();
         }
     }
 

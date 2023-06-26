@@ -27,23 +27,71 @@ namespace BillPlex
 
         private void ClientCompany_ItemClick(object sender, ItemClickEventArgs e)
         {
-            FrmClientCompanyProfile ClientCompanyInfo = new FrmClientCompanyProfile();
-            ClientCompanyInfo.MdiParent = this;
-            ClientCompanyInfo.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "FrmClientCompanyProfile")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                FrmClientCompanyProfile ClientCompanyInfo = new FrmClientCompanyProfile();
+                ClientCompanyInfo.MdiParent = this;
+                ClientCompanyInfo.Show();
+            }
+            //FrmClientCompanyProfile ClientCompanyInfo = new FrmClientCompanyProfile();
+            //ClientCompanyInfo.MdiParent = this;
+            //ClientCompanyInfo.Show();
         }
 
         private void MasterCompany_ItemClick(object sender, ItemClickEventArgs e)
         {
-            FrmCompanyProfile MasterCompanyInfo = new FrmCompanyProfile();
-            MasterCompanyInfo.MdiParent = this;
-            MasterCompanyInfo.Show();
+            bool IsOpen = false;
+            foreach(Form f in Application.OpenForms)
+            {
+                if(f.Text == "FrmCompanyProfile")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if(IsOpen == false)
+            {
+                FrmCompanyProfile MasterCompanyInfo = new FrmCompanyProfile();
+                MasterCompanyInfo.MdiParent = this;
+                MasterCompanyInfo.Show();
+            }
+            //FrmCompanyProfile MasterCompanyInfo = new FrmCompanyProfile();
+            //MasterCompanyInfo.MdiParent = this;
+            //MasterCompanyInfo.Show();
         }
 
         private void SubClient_ItemClick(object sender, ItemClickEventArgs e)
         {
-            FrmSubClientCompanyProfile SubClientCompanyInfo = new FrmSubClientCompanyProfile();
-            SubClientCompanyInfo.MdiParent = this;
-            SubClientCompanyInfo.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "FrmSubClientCompanyProfile")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                FrmSubClientCompanyProfile SubClientCompanyInfo = new FrmSubClientCompanyProfile();
+                SubClientCompanyInfo.MdiParent = this;
+                SubClientCompanyInfo.Show();
+            }
+            //FrmSubClientCompanyProfile SubClientCompanyInfo = new FrmSubClientCompanyProfile();
+            //SubClientCompanyInfo.MdiParent = this;
+            //SubClientCompanyInfo.Show();
         }
 
         private void CustomerMaster_ItemClick(object sender, ItemClickEventArgs e)

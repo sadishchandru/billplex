@@ -31,8 +31,8 @@ namespace BillPlex
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSubClientCompanyBankInfo));
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
             this.drpBankName = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -58,7 +58,7 @@ namespace BillPlex
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.imgImage = new DevExpress.XtraEditors.PictureEdit();
             this.btn = new DevExpress.XtraEditors.SimpleButton();
-            this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.btnClear = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
             this.TxtIfsCode = new DevExpress.XtraEditors.TextEdit();
@@ -107,7 +107,7 @@ namespace BillPlex
             this.panelControl1.Controls.Add(this.labelControl10);
             this.panelControl1.Controls.Add(this.imgImage);
             this.panelControl1.Controls.Add(this.btn);
-            this.panelControl1.Controls.Add(this.btnCancel);
+            this.panelControl1.Controls.Add(this.btnClear);
             this.panelControl1.Controls.Add(this.btnAdd);
             this.panelControl1.Controls.Add(this.btnSearch);
             this.panelControl1.Controls.Add(this.TxtIfsCode);
@@ -141,6 +141,7 @@ namespace BillPlex
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(74, 73);
             this.btnUpdate.TabIndex = 33;
+            this.btnUpdate.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // drpBankName
             // 
@@ -212,13 +213,13 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery2.Name = "PRO_GetSubClientBankInfo";
-            queryParameter2.Name = "@SearchKey";
-            queryParameter2.Type = typeof(string);
-            storedProcQuery2.Parameters.Add(queryParameter2);
-            storedProcQuery2.StoredProcName = "PRO_GetSubClientBankInfo";
+            storedProcQuery1.Name = "PRO_GetSubClientBankInfo";
+            queryParameter1.Name = "@SearchKey";
+            queryParameter1.Type = typeof(string);
+            storedProcQuery1.Parameters.Add(queryParameter1);
+            storedProcQuery1.StoredProcName = "PRO_GetSubClientBankInfo";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery2});
+            storedProcQuery1});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // SubClientBankGrid
@@ -357,17 +358,18 @@ namespace BillPlex
             this.btn.Size = new System.Drawing.Size(74, 73);
             this.btn.TabIndex = 22;
             // 
-            // btnCancel
+            // btnClear
             // 
-            this.btnCancel.Enabled = false;
-            this.btnCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.ImageOptions.Image")));
-            this.btnCancel.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.btnCancel.Location = new System.Drawing.Point(392, 218);
-            this.btnCancel.LookAndFeel.SkinName = "DevExpress Style";
-            this.btnCancel.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(74, 73);
-            this.btnCancel.TabIndex = 21;
+            this.btnClear.Enabled = false;
+            this.btnClear.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.ImageOptions.Image")));
+            this.btnClear.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
+            this.btnClear.Location = new System.Drawing.Point(392, 218);
+            this.btnClear.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnClear.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(74, 73);
+            this.btnClear.TabIndex = 21;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnAdd
             // 
@@ -561,7 +563,7 @@ namespace BillPlex
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.PictureEdit imgImage;
         private DevExpress.XtraEditors.SimpleButton btn;
-        private DevExpress.XtraEditors.SimpleButton btnCancel;
+        private DevExpress.XtraEditors.SimpleButton btnClear;
         private DevExpress.XtraEditors.SimpleButton btnAdd;
         private DevExpress.XtraEditors.SimpleButton btnSearch;
         private DevExpress.XtraEditors.TextEdit TxtIfsCode;
