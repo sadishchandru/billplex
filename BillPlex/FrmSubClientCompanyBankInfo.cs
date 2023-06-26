@@ -117,7 +117,7 @@ namespace BillPlex
                         //ClientCompanyBankInfoRequest.RefreshData();
 
                         XtraMessageBox.Show(SubClientCompanyBankRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        btnClear.Enabled = true;
+                        btnClear_Click();
                     }
                 }
                 else
@@ -140,8 +140,10 @@ namespace BillPlex
                 foreach (var rowHandle in selectedRows)
                 {
                     SubClientCompanyBankRequest.Id = (Int64)SubClientBankGrid.GetRowCellValue(rowHandle, "Id");
-                    drpClientCompany.SelectedIndex = Convert.ToInt32(SubClientBankGrid.GetRowCellValue(rowHandle, "ClientCompanyId").ToString());
-                    drpSubCompany.SelectedIndex = Convert.ToInt32(SubClientBankGrid.GetRowCellValue(rowHandle, "SubClientCompanyId").ToString());
+                    drpClientCompany.SelectedIndex = SubClientCompanyBankRequest.ClientCompanyList.FindIndex(x => x.Id == Convert.ToInt32(SubClientBankGrid.GetRowCellValue(rowHandle, "ClientCompanyId")));
+                    //drpClientCompany.SelectedIndex = Convert.ToInt32(SubClientBankGrid.GetRowCellValue(rowHandle, "ClientCompanyId").ToString());
+                    drpSubCompany.SelectedIndex = SubClientCompanyBankRequest.ClientCompanyList.FindIndex(x => x.Id == Convert.ToInt32(SubClientBankGrid.GetRowCellValue(rowHandle, "SubClientCompanyId")));
+                    //drpSubCompany.SelectedIndex = Convert.ToInt32(SubClientBankGrid.GetRowCellValue(rowHandle, "SubClientCompanyId").ToString());
                     drpBankName.Text = SubClientBankGrid.GetRowCellValue(rowHandle, "BankName").ToString();
                     TxtBankAccountNo.Text = SubClientBankGrid.GetRowCellValue(rowHandle, "BankAcNo").ToString();
                     TxtAddress.Text = SubClientBankGrid.GetRowCellValue(rowHandle, "Address").ToString();
@@ -152,6 +154,7 @@ namespace BillPlex
                 }
                 btnUpdate.Enabled = true;
                 btnAdd.Enabled = false;
+                
 
             }
             catch (Exception ex)
@@ -160,8 +163,9 @@ namespace BillPlex
             }
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
+        private void btnClear_Click(object sender = null, EventArgs e = null)
         {
+            SubClientCompanyBankRequest.Id = 0;
             drpClientCompany.ResetText();
             drpSubCompany.ResetText();
             drpBankName.ResetText();

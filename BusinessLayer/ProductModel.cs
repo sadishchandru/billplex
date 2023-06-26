@@ -11,8 +11,8 @@ namespace BusinessLayer
     public class ProductModel : Common
     {
         public Int64 RawMaterialType { get; set; }
-        public string RawMaterialName { get; set; }
-        public string ProductName { get; set; }
+        public Int64 RawMaterialId { get; set; }
+        public Int64 ProductId { get; set; }
         public string ModelCode { get; set; }
         public string ModelName { get; set; }
         public string ProductSize { get; set; }
@@ -37,8 +37,8 @@ namespace BusinessLayer
                 List<DbParams> objLstdbParams = new List<DbParams>();
                 objLstdbParams.Add(new DbParams(DbType.Int64, 50, Id, "@Id", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, RawMaterialType, "@RawmaterialTypeId", ParameterDirection.Input));
-                objLstdbParams.Add(new DbParams(DbType.String, 50, RawMaterialName, "@RawMaterialId", ParameterDirection.Input));
-                objLstdbParams.Add(new DbParams(DbType.String, 50, ProductName, "@ProductId", ParameterDirection.Input));
+                objLstdbParams.Add(new DbParams(DbType.String, 50, RawMaterialId, "@RawMaterialId", ParameterDirection.Input));
+                objLstdbParams.Add(new DbParams(DbType.String, 50, ProductId, "@ProductId", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, ModelCode, "@ProductCode", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, ModelName, "@ProductModel", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, ProductSize, "@ProductSize", ParameterDirection.Input));

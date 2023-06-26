@@ -1883,7 +1883,7 @@
         z5H/ghlQgP8HoUBLP89xbUcAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnCancel.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnClear.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAzpJREFUeF7t
         my1SJEEQhfEIBAKBQCA4BAfA4DgEArMRHGAPgECsQK5AIjkIYsUKDoBErFi5+15N1kTNzOum/ranh9yM
@@ -1992,6 +1992,6 @@
 </value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>25</value>
+    <value>64</value>
   </metadata>
 </root>

@@ -89,6 +89,8 @@ namespace BillPlex
                         MainBankInfoGridView.RefreshData();
 
                         XtraMessageBox.Show(CompanyBankRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        btnCancel_Click();
+                        btnCancel.Enabled = true;
                     }
                 }
                 else
@@ -115,6 +117,7 @@ namespace BillPlex
             //};
 
             //var i = _conn.ExecuteNonQuery("PRO_UpdateMainBankInfo", parameters);
+            btnCancel.Enabled = true;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -138,13 +141,13 @@ namespace BillPlex
         {
             try
             {
-                
                     var selectedRows = MainBankInfoGridView.GetSelectedRows();
 
                     foreach (var rowHandle in selectedRows)
                     {
                         CompanyBankRequest.Id = (Int64)MainBankInfoGridView.GetRowCellValue(rowHandle, "MainCompanyId");
-                        drpMainCompany.SelectedIndex = Convert.ToInt32(MainBankInfoGridView.GetRowCellValue(rowHandle, "MainCompanyId").ToString());
+                        drpMainCompany.SelectedIndex = CompanyBankRequest.MasterCompanyList.FindIndex(x => x.Id == Convert.ToInt32(MainBankInfoGridView.GetRowCellValue(rowHandle, "MainCompanyId")));
+                        //drpMainCompany.SelectedIndex = Convert.ToInt32(MainBankInfoGridView.GetRowCellValue(rowHandle, "MainCompanyId").ToString());
                         drpBankName.Text = MainBankInfoGridView.GetRowCellValue(rowHandle, "BankName").ToString();
                         TxtBankAccountNo.Text = MainBankInfoGridView.GetRowCellValue(rowHandle, "BankAcNo").ToString();
                         TxtAddress.Text = MainBankInfoGridView.GetRowCellValue(rowHandle, "Address").ToString();
@@ -155,10 +158,6 @@ namespace BillPlex
                     }
                     btnUpdate.Enabled = true;
                     btnAdd.Enabled = false;
-
-                
-                
-
             }
             catch (Exception ex)
             {
@@ -168,5 +167,17 @@ namespace BillPlex
             
             
             }
+
+        private void btnCancel_Click(object sender = null , EventArgs e = null)
+        {
+            CompanyBankRequest.Id = 0;
+            drpMainCompany.ResetText();
+            drpBankName.ResetText();
+            TxtBankAccountNo.ResetText();
+            TxtAddress.ResetText();
+            TxtBranchCode.ResetText();
+            TxtBranchName.ResetText();
+            TxtIfsCode.ResetText();
+        }
     }
 }

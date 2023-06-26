@@ -102,24 +102,28 @@ namespace BillPlex
 
                     if (selectedMasterItem != null)
                     {
-                        productModelRequest.RawMaterialType = productModelRequest.RawMaterialList.FirstOrDefault(item => item.Name == selectedMasterItem.ToString())?.Id ?? -1;
+                        productModelRequest.RawMaterialType = productModelRequest.RawMaterialList.FirstOrDefault(item => item.Code == selectedMasterItem.ToString())?.Id ?? -1;
                     }
+
+                    string selectedMaterialItem = (string)drpRawName.SelectedItem;
 
                     if (selectedMasterItem != null)
                     {
-                        productModelRequest.RawMaterialName = productModelRequest.RawMaterialList.FirstOrDefault(item => item.Name == selectedMasterItem.ToString())?.Name ?? "";
+                        productModelRequest.RawMaterialId = productModelRequest.RawMaterialList.FirstOrDefault(item => item.Name == selectedMaterialItem.ToString())?.Id ?? -1;
                     }
 
-                    if (selectedMasterItem != null)
+                    string selectedProductItem = (string)drpProName.SelectedItem;
+
+                    if (selectedProductItem != null)
                     {
-                        productModelRequest.RawMaterialType = productModelRequest.ProductModelList.FirstOrDefault(item => item.Name == selectedMasterItem.ToString())?.Id ?? -1;
+                        productModelRequest.ProductId = productModelRequest.ProductModelList.FirstOrDefault(item => item.Name == selectedProductItem.ToString())?.Id ?? -1;
                     }
 
-                
+
 
                     //productModelRequest.RawMaterialType = drpRawType.Text;
                     //productModelRequest.RawMaterialName = drpRawName.Text;
-                    productModelRequest.ProductName = drpProName.Text;
+                    //productModelRequest.ProductName = drpProName.Text;
                     productModelRequest.ModelCode = txtModelCode.Text;
                     productModelRequest.ModelName = txtModelName.Text;
                     productModelRequest.ProductSize = drpProSize.Text;
@@ -139,6 +143,7 @@ namespace BillPlex
                 if (productModelRequest.Result.Status == ResultStatus.Success)
                 {
                     XtraMessageBox.Show(productModelRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnClear_Click();
                 }
             }
 
@@ -169,8 +174,9 @@ namespace BillPlex
             }
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
+        private void btnClear_Click(object sender = null, EventArgs e = null)
         {
+            productModelRequest.Id = 0;
             drpRawType.ResetText();
             drpRawName.ResetText();
             drpProName.ResetText();
@@ -192,11 +198,22 @@ namespace BillPlex
                 foreach (var rowHandle in selectedRows)
                 {
                     productModelRequest.Id = (Int64)grd_ProductModel.GetRowCellValue(rowHandle, "Id");
-                    drpRawType.Text = grd_ProductModel.GetRowCellValue(rowHandle, "RawmaterialTypeId").ToString();
-                    drpRawName.Text = grd_ProductModel.GetRowCellValue(rowHandle, "RawMaterialId").ToString();
-                    drpProName.Text = grd_ProductModel.GetRowCellValue(rowHandle, "ProductId").ToString();
+
+
+                    drpRawType.SelectedIndex = productModelRequest.RawMaterialList.FindIndex(x => x.Id == Convert.ToInt32(grd_ProductModel.GetRowCellValue(rowHandle, "RawmaterialTypeId")));
+                    drpRawName.SelectedIndex = productModelRequest.RawMaterialList.FindIndex(x => x.Id == Convert.ToInt32(grd_ProductModel.GetRowCellValue(rowHandle, "RawMaterialId")));
+                    //drpRawType.Text = grd_ProductModel.GetRowCellValue(rowHandle, "RawmaterialTypeId").ToString();
+                    //drpRawName.Text = grd_ProductModel.GetRowCellValue(rowHandle, "RawMaterialId").ToString();
+
+                    drpProName.SelectedIndex = productModelRequest.ProductModelList.FindIndex(x => x.Id == Convert.ToInt32(grd_ProductModel.GetRowCellValue(rowHandle, "ProductId")));
+
+                    //drpProName.Text = grd_ProductModel.GetRowCellValue(rowHandle, "ProductId").ToString();
                     txtModelCode.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "ProductCode");
                     txtModelName.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "ProductModel");
+
+                    //drpProSize.SelectedIndex = productModelRequest.SizeMasterList.FindIndex(x => x.Id == Convert.ToInt32(grd_ProductModel.GetRowCellValue(rowHandle, "ProductSize")));
+
+
                     drpProSize.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "ProductSize");
                     txtRawStock.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "RawMaterialStock");
                     txtRawWeight.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "ReqRawMaterial");

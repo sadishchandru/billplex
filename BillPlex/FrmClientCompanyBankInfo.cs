@@ -113,6 +113,7 @@ namespace BillPlex
 
                         XtraMessageBox.Show(ClientCompanyBankInfoRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         //btnUpdate.Enabled = true;
+                        btnCancel_Click();
                         btnAdd.Enabled = false;
                         btnCancel.Enabled = true;
                     }
@@ -159,8 +160,10 @@ namespace BillPlex
                 foreach (var rowHandle in selectedRows)
                 {
                     ClientCompanyBankInfoRequest.Id = (Int64)ClientCompanyBankGrid.GetRowCellValue(rowHandle, "Id");
-                    drpMainCompany.SelectedIndex = Convert.ToInt32(ClientCompanyBankGrid.GetRowCellValue(rowHandle, "MainCompanyId").ToString());
-                    drpClientCompany.SelectedIndex = Convert.ToInt32(ClientCompanyBankGrid.GetRowCellValue(rowHandle, "ClientCompanyId").ToString());
+                    drpMainCompany.SelectedIndex = ClientCompanyBankInfoRequest.MasterCompanyList.FindIndex(x => x.Id == Convert.ToInt32(ClientCompanyBankGrid.GetRowCellValue(rowHandle, "MainCompanyId")));
+                    // drpMainCompany.SelectedIndex = Convert.ToInt32(ClientCompanyBankGrid.GetRowCellValue(rowHandle, "MainCompanyId").ToString());
+                    drpClientCompany.SelectedIndex = ClientCompanyBankInfoRequest.ClientCompanyList.FindIndex(x => x.Id == Convert.ToInt32(ClientCompanyBankGrid.GetRowCellValue(rowHandle, "ClientCompanyId")));
+                    //drpClientCompany.SelectedIndex = Convert.ToInt32(ClientCompanyBankGrid.GetRowCellValue(rowHandle, "ClientCompanyId").ToString());
                     drpBankName.Text = ClientCompanyBankGrid.GetRowCellValue(rowHandle, "BankName").ToString();
                     txtAccountNo.Text = ClientCompanyBankGrid.GetRowCellValue(rowHandle, "BankAcNo").ToString();
                     txtAddress.Text = ClientCompanyBankGrid.GetRowCellValue(rowHandle, "Address").ToString();
@@ -179,8 +182,9 @@ namespace BillPlex
             }
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender = null, EventArgs e = null)
         {
+            ClientCompanyBankInfoRequest.Id = 0;
             drpMainCompany.ResetText();
             drpClientCompany.ResetText();
             drpBankName.ResetText();

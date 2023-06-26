@@ -34,6 +34,7 @@ namespace BusinessLayer
 
                 // Calling the stored procedure for creating a new Company Profile
                 List<DbParams> objLstDbParams = new List<DbParams>();
+                objLstDbParams.Add(new DbParams(DbType.String, 50, Id, "@Id", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, MainCompany, "@MainCompanyId", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, BankName, "@BankName", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, BankAcNo, "@BankAcNo", ParameterDirection.Input));

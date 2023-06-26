@@ -271,7 +271,7 @@ namespace BillPlex
             this.labelControl10.Appearance.Options.UseFont = true;
             this.labelControl10.Location = new System.Drawing.Point(667, 410);
             this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(171, 18);
+            this.labelControl10.Size = new System.Drawing.Size(147, 16);
             this.labelControl10.TabIndex = 24;
             this.labelControl10.Text = "Search Company Name";
             // 
@@ -307,6 +307,7 @@ namespace BillPlex
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(74, 73);
             this.btnCancel.TabIndex = 21;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnUpdate
             // 
@@ -389,7 +390,7 @@ namespace BillPlex
             this.labelControl9.Appearance.Options.UseFont = true;
             this.labelControl9.Location = new System.Drawing.Point(5, 344);
             this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(67, 18);
+            this.labelControl9.Size = new System.Drawing.Size(55, 16);
             this.labelControl9.TabIndex = 9;
             this.labelControl9.Text = "IFS Code";
             // 
@@ -399,7 +400,7 @@ namespace BillPlex
             this.labelControl8.Appearance.Options.UseFont = true;
             this.labelControl8.Location = new System.Drawing.Point(5, 298);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(99, 18);
+            this.labelControl8.Size = new System.Drawing.Size(84, 16);
             this.labelControl8.TabIndex = 8;
             this.labelControl8.Text = "Branch Name";
             // 
@@ -409,7 +410,7 @@ namespace BillPlex
             this.labelControl7.Appearance.Options.UseFont = true;
             this.labelControl7.Location = new System.Drawing.Point(5, 250);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(93, 18);
+            this.labelControl7.Size = new System.Drawing.Size(81, 16);
             this.labelControl7.TabIndex = 7;
             this.labelControl7.Text = "Branch Code";
             // 
@@ -419,7 +420,7 @@ namespace BillPlex
             this.labelControl6.Appearance.Options.UseFont = true;
             this.labelControl6.Location = new System.Drawing.Point(5, 164);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(60, 18);
+            this.labelControl6.Size = new System.Drawing.Size(54, 16);
             this.labelControl6.TabIndex = 6;
             this.labelControl6.Text = "Address";
             // 
@@ -429,7 +430,7 @@ namespace BillPlex
             this.labelControl5.Appearance.Options.UseFont = true;
             this.labelControl5.Location = new System.Drawing.Point(5, 133);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(98, 18);
+            this.labelControl5.Size = new System.Drawing.Size(82, 16);
             this.labelControl5.TabIndex = 5;
             this.labelControl5.Text = "Bank A/C NO";
             // 
@@ -439,7 +440,7 @@ namespace BillPlex
             this.labelControl4.Appearance.Options.UseFont = true;
             this.labelControl4.Location = new System.Drawing.Point(5, 99);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(84, 18);
+            this.labelControl4.Size = new System.Drawing.Size(70, 16);
             this.labelControl4.TabIndex = 4;
             this.labelControl4.Text = "Bank Name";
             // 
@@ -463,7 +464,7 @@ namespace BillPlex
             this.labelControl3.Appearance.Options.UseForeColor = true;
             this.labelControl3.Location = new System.Drawing.Point(3, 8);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(90, 22);
+            this.labelControl3.Size = new System.Drawing.Size(79, 19);
             this.labelControl3.TabIndex = 5;
             this.labelControl3.Text = "Bank Info";
             // 
@@ -473,7 +474,7 @@ namespace BillPlex
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Location = new System.Drawing.Point(5, 60);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(108, 18);
+            this.labelControl1.Size = new System.Drawing.Size(93, 16);
             this.labelControl1.TabIndex = 1;
             this.labelControl1.Text = "Main Company";
             // 
