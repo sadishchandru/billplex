@@ -188,6 +188,8 @@ namespace BillPlex
             this.Family = new DevExpress.XtraTab.XtraTabPage();
             this.FamilyGridControl = new DevExpress.XtraGrid.GridControl();
             this.FamilyGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.SNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btndelete = new DevExpress.XtraEditors.SimpleButton();
             this.bntAddRow = new DevExpress.XtraEditors.SimpleButton();
             this.txtRemarks = new DevExpress.XtraEditors.TextEdit();
@@ -2517,8 +2519,25 @@ namespace BillPlex
             // 
             // FamilyGridView
             // 
+            this.FamilyGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.SNo,
+            this.SName});
             this.FamilyGridView.GridControl = this.FamilyGridControl;
             this.FamilyGridView.Name = "FamilyGridView";
+            // 
+            // SNo
+            // 
+            this.SNo.Caption = "SNo";
+            this.SNo.Name = "SNo";
+            this.SNo.Visible = true;
+            this.SNo.VisibleIndex = 0;
+            // 
+            // SName
+            // 
+            this.SName.Caption = "SName";
+            this.SName.Name = "SName";
+            this.SName.Visible = true;
+            this.SName.VisibleIndex = 1;
             // 
             // btndelete
             // 
@@ -3449,7 +3468,9 @@ namespace BillPlex
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Name = "FrmEmployeeMaster";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmEmployeeMaster";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
@@ -3811,5 +3832,7 @@ namespace BillPlex
         private DevExpress.XtraEditors.TextEdit txtPName;
         private DevExpress.XtraEditors.TextEdit txtCName;
         private DevExpress.XtraEditors.TextEdit txtSCName;
+        private DevExpress.XtraGrid.Columns.GridColumn SNo;
+        private DevExpress.XtraGrid.Columns.GridColumn SName;
     }
 }

@@ -60,7 +60,7 @@ SET NOCOUNT ON;
 			,EResigningDate
 			,Reason
 			,EmpImage
-			,EF.Id
+			,EF.Id as financeId
 			,EF.EmpId
 			,EF.BankName
 			,EF.BankAddress

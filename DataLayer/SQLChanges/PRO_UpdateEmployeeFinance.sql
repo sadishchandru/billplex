@@ -139,7 +139,7 @@ BEGIN
 				[ESIDispensary]=@ESIDispensary,
 				[DeleteOption]=@DeleteOption
 
-		WHERE Id = @Id
+		WHERE EmpId = @EmpId
 		
 		SET @ResultMessage = 'Employee Finance Updated Successfully';
 		SET @ResultNo = 1

@@ -29,9 +29,11 @@ namespace BillPlex
         private EmployeeNominee EmployeeNomineeReqest;
 
 
-        private List<EmployeeFamily> EmployeeFamilySource;
+        private List<dynamic> EmployeeFamilySource;
 
         private GridControl EmployeeGridControl;
+
+        private DataTable dt;
 
         public FrmEmployeeMaster()
         {
@@ -44,6 +46,8 @@ namespace BillPlex
             EmployeeFinanceRequest = new EmployeeFinance();
             EmployeeFamilyRequest = new EmployeeFamily();
             EmployeeNomineeReqest = new EmployeeNominee();
+
+            EmployeeFamilySource = new List<dynamic>();
 
             var connectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
             EmployeePersonalRequest.ConnectionString = connectionString;
@@ -128,22 +132,39 @@ namespace BillPlex
 
         private void InitializeDataSource()
         {
-            // Create an empty DataTable with the desired column structure
-            DataTable dataTable = new DataTable("Family");
-            dataTable.Columns.Add("SNo", typeof(string));
-            dataTable.Columns.Add("Name", typeof(string));
-            dataTable.Columns.Add("Address", typeof(string));
-            dataTable.Columns.Add("Area", typeof(string));
-            dataTable.Columns.Add("District", typeof(string));
-            dataTable.Columns.Add("State", typeof(string));
-            dataTable.Columns.Add("Pin", typeof(string));
-            dataTable.Columns.Add("RelationEmployee", typeof(string));
-            dataTable.Columns.Add("DateOfBirth", typeof(string));
-            dataTable.Columns.Add("WhetherResiding", typeof(string));
-            dataTable.Columns.Add("Remarks", typeof(string));
-                                   
+            FamilyGridView.Columns.Clear();
+
+            // Create columns and bind them to the object properties
+            FamilyGridView.Columns.AddVisible("SNo", "SNo");
+            FamilyGridView.Columns.AddVisible("Name", "Name");
+            FamilyGridView.Columns.AddVisible("Address", "Address");
+            FamilyGridView.Columns.AddVisible("Area", "Area");
+            FamilyGridView.Columns.AddVisible("District", "District");
+            FamilyGridView.Columns.AddVisible("State", "State");
+            FamilyGridView.Columns.AddVisible("Pin", "Pin");
+            FamilyGridView.Columns.AddVisible("RelationEmployee", "RelationEmployee");
+            FamilyGridView.Columns.AddVisible("DateOfBirth", "DateOfBirth");
+            FamilyGridView.Columns.AddVisible("WhetherResiding", "WhetherResiding");
+            FamilyGridView.Columns.AddVisible("Remarks", "Remarks");
+
+
+            //// Create an empty DataTable with the desired column structure
+            //dt = new DataTable();
+            //dt.Columns.Add("SNo", typeof(string));
+            //dt.Columns.Add("Name", typeof(string));
+            //dt.Columns.Add("Address", typeof(string));
+            //dt.Columns.Add("Area", typeof(string));
+            //dt.Columns.Add("District", typeof(string));
+            //dt.Columns.Add("State", typeof(string));
+            //dt.Columns.Add("Pin", typeof(string));
+            //dt.Columns.Add("RelationEmployee", typeof(string));
+            //dt.Columns.Add("DateOfBirth", typeof(string));
+            //dt.Columns.Add("WhetherResiding", typeof(string));
+            //dt.Columns.Add("Remarks", typeof(string));
+
             // Set the empty DataTaRemarksble as the data source for the GridView
-            FamilyGridControl.DataSource = dataTable;
+            //FamilyGridControl.DataSource = dt;
+            //FamilyGridView.DataSource = dataTable;
 
         }
 
@@ -323,9 +344,6 @@ namespace BillPlex
                 }
                 #endregion
 
-
-                
-
             }
             catch (Exception ex)
             {
@@ -429,7 +447,7 @@ namespace BillPlex
                 // Employee Details
                 EmployeePersonalRequest.Id = selectedClientCompanyList.GetRowCellValue(rowHandle, "Id");
                 txtEmpCode.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "EmployeeCode");
-                drpMCompany.SelectedIndex = EmployeePersonalRequest.MasterCompanyList.FindIndex(e => e.Id ==  Convert.ToInt32(selectedClientCompanyList.GetRowCellValue(rowHandle, "MasterCompanyId")));
+                drpMCompany.SelectedIndex = EmployeePersonalRequest.MasterCompanyList.FindIndex(e => e.Id == Convert.ToInt32(selectedClientCompanyList.GetRowCellValue(rowHandle, "MasterCompanyId")));
                 txtPName.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ContractorName");
 
                 //drpCCompany.SelectedIndex = Convert.ToInt32(selectedClientCompanyList.GetRowCellValue(rowHandle, "ClientCompanyId"));
@@ -469,13 +487,13 @@ namespace BillPlex
 
                 drpBlood.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "BloodGroup");
                 txtEmailId.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "Email");
-                txtFName.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "FName");
+                txtFathers.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "FName");
                 txtMotherName.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "MName");
                 drpMarital.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "MStatus");
                 drpReligion.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "Religion");
                 drpCast.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "Caste");
                 drpNationlity.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "Nationality");
-                txtSCName.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "SCode");
+                txtStdCode.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "SCode");
                 txtPhone.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "Phone");
                 txtMobile.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "Mobile");
 
@@ -495,73 +513,41 @@ namespace BillPlex
 
 
                 // Finance Details Bind
-                //txtSCName.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "EmpId");
-                EmployeeFinanceRequest.Id = selectedClientCompanyList.GetRowCellValue(rowHandle, "Id");
-                drpBName.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "BankName");
-                txtAddress.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "BankAddress");
-                txtSalaryAC.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "SalaryNo");
-                drpPayMode.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "PaymentMode");
-                txtACTypes.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "AccountType");
-                txtBankRef.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "BankRef");
-                txtWard.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "Ward");
-                txtPolicyNo.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "PolicyNo");
-                txtPolicyName.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "PolicyTerm");
-                txtLic.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "LicId");
-
-
-                var annualDate = selectedClientCompanyList.GetRowCellValue(rowHandle, "AnnualDate").ToString();
-                txtRDate.Text = annualDate != "" ? DateTime.Parse(annualDate).ToString("MM-dd-yyyy") : "";
-
-
-                //txtRDate.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "AnnualDate");
-                //if (radGender.SelectedIndex != null && selectedClientCompanyList.GetRowCellValue(rowHandle, "Gender") != "")
+                //if (selectedClientCompanyList.GetRowCellValue(rowHandle, "financeId") != DBNull.Value)
                 //{
-                //    radGender.SelectedIndex = Convert.ToInt32(selectedClientCompanyList.GetRowCellValue(rowHandle, "Gender"));
-                //}
-                chPF.Checked = selectedClientCompanyList.GetRowCellValue(rowHandle, "PFApplicable");
+                    EmployeeFinanceRequest.Id = selectedClientCompanyList.GetRowCellValue(rowHandle, "EmpId");
+                    //txtSCName.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "Id");
+                    drpBName.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "BankName");
+                    txtAddress.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "BankAddress");
+                    txtSalaryAC.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "SalaryNo");
+                    drpPayMode.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "PaymentMode");
+                    txtACTypes.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "AccountType");
+                    txtBankRef.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "BankRef");
+                    txtWard.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "Ward");
+                    txtPolicyNo.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "PolicyNo");
+                    txtPolicyName.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "PolicyTerm");
+                    txtLic.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "LicId");
 
-
-                datete = selectedClientCompanyList.GetRowCellValue(rowHandle, "PFJoiningDate").ToString();
-                ddPFJDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
-
-
-                //txtSCName.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "PFJoiningDate");
-
-
-                datete = selectedClientCompanyList.GetRowCellValue(rowHandle, "PFLastDate").ToString();
-                ddPFlastDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
-
-
-                //txtSCName.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "PFLastDate");
-                txtPFNo.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "PFNo");
-
-                chPension.Checked = selectedClientCompanyList.GetRowCellValue(rowHandle, "PensionApplicable");
-
-
-                datete = selectedClientCompanyList.GetRowCellValue(rowHandle, "PensionJoiningDate").ToString();
-                ddPenDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
-
-
-                //txtSCName.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "PensionJoiningDate");
-
-                chESI.Checked = selectedClientCompanyList.GetRowCellValue(rowHandle, "ESIApplicable");
-
-                datete = selectedClientCompanyList.GetRowCellValue(rowHandle, "ESIJoiningDate").ToString();
-                ddESIDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
-
-
-                //txtSCName.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ESIJoiningDate");
-
-                txtBIEsiNo.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ESINo");
-
-
-                datete = selectedClientCompanyList.GetRowCellValue(rowHandle, "ESILastDate").ToString();
-                ddESILastDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
-
-
-                //txtSCName.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ESILastDate");
-                drpLOffice.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ESIOffice");
-                drpESIDispensary.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ESIDispensary");
+                    var annualDate = selectedClientCompanyList.GetRowCellValue(rowHandle, "AnnualDate").ToString();
+                    txtRDate.Text = annualDate != "" ? DateTime.Parse(annualDate).ToString("MM-dd-yyyy") : "";
+                    chPF.Checked = selectedClientCompanyList.GetRowCellValue(rowHandle, "PFApplicable");
+                    datete = selectedClientCompanyList.GetRowCellValue(rowHandle, "PFJoiningDate").ToString();
+                    ddPFJDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
+                    datete = selectedClientCompanyList.GetRowCellValue(rowHandle, "PFLastDate").ToString();
+                    ddPFlastDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
+                    txtPFNo.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "PFNo");
+                    chPension.Checked = selectedClientCompanyList.GetRowCellValue(rowHandle, "PensionApplicable");
+                    datete = selectedClientCompanyList.GetRowCellValue(rowHandle, "PensionJoiningDate").ToString();
+                    ddPenDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
+                    chESI.Checked = selectedClientCompanyList.GetRowCellValue(rowHandle, "ESIApplicable");
+                    datete = selectedClientCompanyList.GetRowCellValue(rowHandle, "ESIJoiningDate").ToString();
+                    ddESIDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
+                    txtBIEsiNo.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ESINo");
+                    datete = selectedClientCompanyList.GetRowCellValue(rowHandle, "ESILastDate").ToString();
+                    ddESILastDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
+                    drpLOffice.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ESIOffice");
+                    drpESIDispensary.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ESIDispensary");
+                //}               
 
             }
 
@@ -571,13 +557,15 @@ namespace BillPlex
                 Newbtn.Enabled = false;
                 Updatebtn.Enabled = true;
                 Deletebtn.Enabled = false;
-            } else if (EmployeeFinanceRequest.Id > 0)
+            }
+            else if (EmployeeFinanceRequest.Id > 0)
             {
                 Addbtn.Enabled = false;
                 Newbtn.Enabled = false;
                 Updatebtn.Enabled = true;
                 Deletebtn.Enabled = false;
-            } else
+            }
+            else
             {
                 Addbtn.Enabled = true;
                 Newbtn.Enabled = false;
@@ -590,30 +578,67 @@ namespace BillPlex
         private void bntAddRow_Click(object sender, EventArgs e)
         {
 
-            DataTable dataTable = (DataTable)FamilyGridControl.DataSource;
+
+            var value = new 
+            {
+                SNo = "123",
+                SName = "123"
+                //Address =  "123",
+                //Area = "123",
+                //District = "123",
+                //State = "123",
+                //Pin = "123",
+                //RelationEmployee = "123",
+                //DateOfBirth = "123",
+                //WhetherResiding = "123",
+                //Remarks = "123"
+            };
+
+            //DataTable dataTable = (DataTable)FamilyGridControl.DataSource;
 
             // Create a new row object
             // DataRow newRow = ((DataTable)FamilyGridView.DataSource).NewRow();
-            DataRow newRow = dataTable.NewRow();
+            // DataRow newRow = dataTable.NewRow();
 
-            // Populate the new row object with data from the GridView columns
-            newRow["SNo"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, txtFSno.Text);
-            newRow["Name"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, txtFName.Text);
-            newRow["Address"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, txtFAddress.Text);
-            newRow["Area"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, txtFArea.Text);
-            newRow["District"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, drpFDistrict.Text);
-            newRow["State"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, drpFState.Text);
-            newRow["Pin"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, txtFPin.Text);
-            newRow["RelationEmployee"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, txtFEmp.Text);
-            newRow["DateOfBirth"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, ddFDOB.Text.ToString());
-            newRow["WhetherResiding"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, drpResiding.Text);
-            newRow["Remarks"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, txtRemarks.Text);
+            //EmployeeFamily newPerson = new EmployeeFamily();
+
+            //newPerson.SNo = txtFSno.Text;
+            //newPerson.EFName = txtFName.Text;
+            //newPerson.SNo = txtFSno.Text;
+            //newPerson.SNo = txtFSno.Text;
+            //newPerson.SNo = txtFSno.Text;
+            //newPerson.SNo = txtFSno.Text;
+            //newPerson.SNo = txtFSno.Text;
+            //newPerson.SNo = txtFSno.Text;
+            //newPerson.SNo = txtFSno.Text;
+            //newPerson.SNo = txtFSno.Text;
+            //{
+            //    Name = "John Doe", Age = 30, Email = "john@example.com" };
+            
+            
+            EmployeeFamilySource.Add(value);
+
+
+            //// Populate the new row object with data from the GridView columns
+            //newRow["SNo"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, txtFSno.Text);
+            //newRow["Name"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, txtFName.Text);
+            //newRow["Address"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, txtFAddress.Text);
+            //newRow["Area"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, txtFArea.Text);
+            //newRow["District"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, drpFDistrict.Text);
+            //newRow["State"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, drpFState.Text);
+            //newRow["Pin"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, txtFPin.Text);
+            //newRow["RelationEmployee"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, txtFEmp.Text);
+            //newRow["DateOfBirth"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, ddFDOB.Text.ToString());
+            //newRow["WhetherResiding"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, drpResiding.Text);
+            //newRow["Remarks"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, txtRemarks.Text);
             // Add more columns as needed
 
             // Add the new row to the GridView
-            ((DataTable)FamilyGridControl.DataSource).Rows.Add(newRow);
+         //   ((DataTable)FamilyGridControl.DataSource).Rows.Add(newRow);
 
+            FamilyGridControl.DataSource = EmployeeFamilySource;
             FamilyGridView.RefreshData();
+
 
             // Insert the new row data into the SQL database
             //InsertRowIntoDatabase(newRow);

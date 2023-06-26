@@ -62,6 +62,8 @@ BEGIN
 	DECLARE @ResultNo BIT = 0
 	DECLARE @ResultMessage VARCHAR(MAX) = ''
 
+	BEGIN TRY
+
 	IF(@Id = 0)
 	BEGIN
 		INSERT INTO EmployeePersonal
@@ -209,6 +211,25 @@ BEGIN
 		SET @ResultMessage = 'Employee Personal Updated Successfully';
 		SET @ResultNo = 1
 	END
+
+	END TRY
+
+	BEGIN CATCH 
+		--INSERT INTO dbo.SqlErrorLogs 
+		--(
+		--	ErrorMessage,
+		--	LogDate,
+		--	LogFrom
+		--)
+		--VALUES 
+		--(
+		--	ERROR_MESSAGE(), 
+		--	@CurrentDate,
+		--	'PRO_UpdateEnvPrograms'
+		--)
+
+		SET @ResultMessage = ERROR_MESSAGE()
+	END CATCH
 
 	SELECT  @ResultMessage AS ResultMessage,
 			@ResultNo AS ResultNo
