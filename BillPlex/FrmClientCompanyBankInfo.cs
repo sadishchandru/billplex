@@ -112,6 +112,9 @@ namespace BillPlex
                         //ClientCompanyBankInfoRequest.RefreshData();
 
                         XtraMessageBox.Show(ClientCompanyBankInfoRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //btnUpdate.Enabled = true;
+                        btnAdd.Enabled = false;
+                        btnCancel.Enabled = true;
                     }
                 }
                 else
@@ -119,6 +122,7 @@ namespace BillPlex
                     XtraMessageBox.Show(ClientCompanyBankInfoRequest.Result.Message, "please give the manditory field", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
+
 
             }
             catch 
@@ -154,7 +158,7 @@ namespace BillPlex
 
                 foreach (var rowHandle in selectedRows)
                 {
-                    ClientCompanyBankInfoRequest.Id = (Int64)ClientCompanyBankGrid.GetRowCellValue(rowHandle, "MainCompanyId");
+                    ClientCompanyBankInfoRequest.Id = (Int64)ClientCompanyBankGrid.GetRowCellValue(rowHandle, "Id");
                     drpMainCompany.SelectedIndex = Convert.ToInt32(ClientCompanyBankGrid.GetRowCellValue(rowHandle, "MainCompanyId").ToString());
                     drpClientCompany.SelectedIndex = Convert.ToInt32(ClientCompanyBankGrid.GetRowCellValue(rowHandle, "ClientCompanyId").ToString());
                     drpBankName.Text = ClientCompanyBankGrid.GetRowCellValue(rowHandle, "BankName").ToString();
@@ -173,6 +177,18 @@ namespace BillPlex
             {
                 throw ex;
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            drpMainCompany.ResetText();
+            drpClientCompany.ResetText();
+            drpBankName.ResetText();
+            txtAccountNo.ResetText();
+            txtAddress.ResetText();
+            txtBranchCode.ResetText();
+            TxtBranchName.ResetText();
+            txtIfsCode.ResetText();
         }
     }
 }

@@ -31,8 +31,8 @@ namespace BillPlex
 
             Dictionary<string, bool> dropDownList = new Dictionary<string, bool>        {
                     {"RawMaterialRequired",true},
-                    {"ProductModelRequest",true },
-                    {"SizeMasterRequest",true}
+                    {"ProductModelRequired",true },
+                    {"SizeMasterRequired",true}
                 };
 
             var dropdwonList = productModelRequest.GetDropdownCollections(dropDownList);
@@ -44,17 +44,11 @@ namespace BillPlex
                 {
                     productModelRequest.RawMaterialList = (List<DropDownItemInfo>)item.Value;
                 }
-            }
-            foreach (DictionaryEntry item in dropdwonList)
-            {
-                if (item.Key == "ProductModelRequest")
+                if (item.Key == "ProductModelRequired")
                 {
                     productModelRequest.ProductModelList = (List<DropDownItemInfo>)item.Value;
                 }
-            }
-            foreach (DictionaryEntry item in dropdwonList)
-            {
-                if (item.Key == "SizeMasterRequest")
+                if (item.Key == "SizeMasterRequired")
                 {
                     productModelRequest.SizeMasterList = (List<DropDownItemInfo>)item.Value;
                 }
