@@ -59,6 +59,13 @@ BEGIN
 	DECLARE @ResultNo BIT = 0
 	DECLARE @ResultMessage VARCHAR(MAX) = ''
 
+	IF EXISTS (SELECT NULL FROM CompanyMasterInfo WHERE ComCcode = @ComCcode AND Id != @Id)
+	BEGIN
+	SET @ResultMessage = 'Company Code already exists';
+    SET @ResultNo = 1;
+	END
+	ELSE
+	BEGIN
 	IF(@Id = 0)
 	BEGIN
 		INSERT INTO CompanyMasterInfo
@@ -199,10 +206,7 @@ BEGIN
 		SET @ResultMessage = 'Company Profile Updated Successfully';
 		SET @ResultNo = 1
 	END
-
+	END
 	SELECT  @ResultMessage AS ResultMessage,
 			@ResultNo AS ResultNo
-		
-
 END
-GO

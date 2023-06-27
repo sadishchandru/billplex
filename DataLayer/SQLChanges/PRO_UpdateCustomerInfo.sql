@@ -41,9 +41,16 @@ BEGIN
 	DECLARE @ResultNo BIT = 0
 	DECLARE @ResultMessage VARCHAR(MAX) = ''
 
+	IF EXISTS (SELECT NULL FROM CustomerMaster WHERE Code = @Code AND Id != @Id)
+	BEGIN
+	SET @ResultMessage = 'Customer Code already exists';
+    SET @ResultNo = 1;
+	END
+	ELSE
+	BEGIN
 	IF(@Id = 0)
 	BEGIN
-		INSERT INTO tblCustomerMaster
+		INSERT INTO CustomerMaster
 		(
 			[Code],
             [Name],
@@ -94,7 +101,7 @@ BEGIN
 	END
 	ELSE
 	BEGIN
-		UPDATE tblCustomerMaster 
+		UPDATE CustomerMaster 
 		SET	[Code] = @Code,
             [Name] = @Name,
             [OffAddress] = @OffAddress,
@@ -122,8 +129,8 @@ BEGIN
 		SET @ResultNo = 1
 	END
 
+	
+END
 	SELECT  @ResultMessage AS ResultMessage,
 			@ResultNo AS ResultNo
-		
-
 END

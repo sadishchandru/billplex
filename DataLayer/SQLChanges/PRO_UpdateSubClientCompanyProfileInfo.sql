@@ -60,6 +60,13 @@ BEGIN
 	DECLARE @ResultNo BIT = 0
 	DECLARE @ResultMessage VARCHAR(MAX) = ''
 
+	IF EXISTS (SELECT NULL FROM SubClientMaster WHERE SubComCode = @SubComCode AND Id != @Id)
+	BEGIN
+	SET @ResultMessage = 'SubCompany Code already exists';
+    SET @ResultNo = 1;
+	END
+	ELSE
+	BEGIN
 	IF(@Id = 0)
 	BEGIN
 		INSERT INTO SubClientMaster
@@ -202,8 +209,7 @@ BEGIN
 		SET @ResultNo = 1
 	END
 
-	SELECT  @ResultMessage AS ResultMessage,
-			@ResultNo AS ResultNo
-		
-
+END
+		SELECT  @ResultMessage AS ResultMessage,
+				@ResultNo AS ResultNo
 END

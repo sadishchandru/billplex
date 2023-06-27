@@ -48,6 +48,7 @@ namespace BillPlex
                 CustomerRequest.PhoneNo =txtPhoneNo.Text;
                 CustomerRequest.EmailID = txtEmailID.Text;
                 CustomerRequest.CDAddress = txtCDAddress.Text;
+                CustomerRequest.CState = drpCState.Text;
                 CustomerRequest.Pin = txtPin.Text;
                 CustomerRequest.CDCountry = drpCDCountry.Text;
                 CustomerRequest.MobileNo = txtMobileNo.Text;
@@ -80,7 +81,7 @@ namespace BillPlex
             catch (Exception ex)
             {
                 // Display a warning alert
-                XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             finally
@@ -106,7 +107,7 @@ namespace BillPlex
             txtPhoneNo.ResetText();
             txtEmailID.ResetText();
             txtCDAddress.ResetText();
-            drpState2.ResetText();
+            drpCState.ResetText();
             txtPin.ResetText();
             drpCDCountry.ResetText();
             txtMobileNo.ResetText();
@@ -176,7 +177,7 @@ namespace BillPlex
                     txtPhoneNo.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "OffPhone");
                     txtEmailID.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "Email");
                     txtCDAddress.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "ResAddress");
-                    drpState2.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "ResState");
+                    drpCState.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "ResState");
                     txtPin.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "ResPin");
                     drpCDCountry.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "ResCountry");
                     txtMobileNo.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "Mobile");

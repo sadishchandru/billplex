@@ -21,6 +21,7 @@ namespace BusinessLayer
         public string PhoneNo { get; set; }
         public string EmailID { get; set; }
         public string CDAddress { get; set; }
+        public string CState { get; set; }
         public string Pin { get; set; }
         public string CDCountry { get; set; }
         public string MobileNo { get; set; }
@@ -59,6 +60,7 @@ namespace BusinessLayer
                 objLstDbParams.Add(new DbParams(DbType.String, 50, PhoneNo, "@OffPhone", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, EmailID, "@Email", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 200,CDAddress, "@ResAddress", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.String, 200,CState, "@ResState", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, Pin, "@ResPin", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, CDCountry, "@ResCountry", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, MobileNo, "@Mobile", ParameterDirection.Input));

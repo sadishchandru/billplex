@@ -60,7 +60,7 @@ namespace BillPlex
                 {
                     CompanyRequest.Code = txtCode.Text;
                     CompanyRequest.CompanyName = txtCompanyName.Text;
-                    CompanyRequest.OffAddress = txtAddress.Text;
+                    CompanyRequest.OffAddress = txtOfficeAddress.Text;
                     CompanyRequest.State = drpState.Text;
                     CompanyRequest.StatePin = txtPinNo.Text;
                     CompanyRequest.StdCode = txtStdCode.Text;
@@ -84,7 +84,7 @@ namespace BillPlex
                     CompanyRequest.FathersName = txtFathersName.Text;
                     CompanyRequest.Gender = radGender.Text;
                     CompanyRequest.Address = txtAddress.Text;
-                    CompanyRequest.AuthStartingDate = ddAuthstartingdate.Text.ToString();
+                    CompanyRequest.AuthState = drpAuthState.Text;
                     CompanyRequest.AuthPin = txtAuthorPin.Text;
                     CompanyRequest.AuthStdCode = txtAuthorStdCode.Text;
                     CompanyRequest.AuthPhoneNo = txtAuthorPhoneNo.Text;
@@ -95,9 +95,7 @@ namespace BillPlex
                     CompanyRequest.AuthorPanNo = txtAuthorPanNo.Text;
                     CompanyRequest.Update();
 
-                    this.Close();                    //FrmCompanyProfile CompanyInfo = new FrmCompanyProfile();
-                    //CompanyInfo.MdiParent = this;
-                    //CompanyInfo.FrmClientCompanyProfile_Load(sender, e);
+                    this.Close();
                 }
                 else
                 {
@@ -160,7 +158,7 @@ namespace BillPlex
                     radGender.SelectedIndex = Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "CAGender"));
                 }
                 txtAddress.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CAAddress");
-                //drpState.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CAstate");
+                drpAuthState.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CAstate");
                 txtAuthorPin.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CApin");
                 txtAuthorStdCode.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CAStdCode");
                 txtAuthorPhoneNo.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CAPhoneno");
@@ -170,8 +168,6 @@ namespace BillPlex
                 ddAuthDOB.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
                 txtAuthorEmailId.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CAEmail");
                 txtAuthorPanNo.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CAPan");
-                datete = selectedCompanyList.GetRowCellValue(rowHandle, "CAStartDate").ToString();
-                ddAuthstartingdate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
             }
 
             if (CompanyRequest.MasterBankList != null)
@@ -229,7 +225,7 @@ namespace BillPlex
             txtFathersName.ResetText();
             radGender.ResetText();
             txtAddress.ResetText();
-            ddAuthstartingdate.ResetText();
+            drpAuthState.ResetText();
             txtAuthorPin.ResetText();
             txtAuthorStdCode.ResetText();
             txtAuthorPhoneNo.ResetText();

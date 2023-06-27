@@ -50,6 +50,7 @@ namespace BusinessLayer
         public string ActiveStatus { get; set; }
         public List<DropDownItemInfo> MasterCompanyList { get; set; }
         public List<DropDownItemInfo> ClientBankList { get; set; }
+        public List<DropDownItemInfo> ClientList { get; set; }
 
         #region Update
 
@@ -124,6 +125,58 @@ namespace BusinessLayer
             {
                 CloseConnection();
             }
+        }
+        public List<ClientCompanyInfo> MasterResult()
+        {
+            List<ClientCompanyInfo> ClientEntryList = new List<ClientCompanyInfo>();
+
+            while (dbReader.Read())
+            {
+                ClientCompanyInfo ClientCompanyDetails = new ClientCompanyInfo();
+                ClientCompanyDetails.Id = ToInteger(dbReader["Id"]);
+                ClientCompanyDetails.MainCompany = ToInteger(dbReader["MasterCode"]);
+                ClientCompanyDetails.Director = ToString(dbReader["MasterCompanyId"]);
+                ClientCompanyDetails.CompanyCode = ToString(dbReader["ComCcode"]);
+                ClientCompanyDetails.CompanyName = ToString(dbReader["ComCname"]);
+                ClientCompanyDetails.OffAddress = ToString(dbReader["ComCoffAddress"]);
+                ClientCompanyDetails.State = ToString(dbReader["ComCstate"]);
+                ClientCompanyDetails.Pin = ToString(dbReader["ComCPin"]);
+                ClientCompanyDetails.BusinessNature = ToString(dbReader["ComCNature"]);
+                ClientCompanyDetails.Startingdate = ToString(dbReader["ComCDatestart"]);
+                //ClientCompanyDetails.BusinessNature = ToString(dbReader["ComNature"]);
+                ClientCompanyDetails.stdCode = ToString(dbReader["ComStdCode"]);
+                ClientCompanyDetails.CompanyPhone = ToString(dbReader["ComCPhone"]);
+                ClientCompanyDetails.Email = ToString(dbReader["ComCEmail"]);
+                ClientCompanyDetails.Website = ToString(dbReader["ComCWebsite"]);
+                ClientCompanyDetails.PfType = ToString(dbReader["PfType"]);
+                ClientCompanyDetails.PFCode = ToString(dbReader["ComCPFno"]);
+                ClientCompanyDetails.PFdate = ToString(dbReader["ComCPFdate"]);
+                ClientCompanyDetails.EsiCode = ToString(dbReader["ComCESIno"]);
+                ClientCompanyDetails.ESIdate = ToString(dbReader["ComCESIdate"]);
+                ClientCompanyDetails.FactoryAct = ToString(dbReader["ComCFactoryNo"]);
+                ClientCompanyDetails.Tin = ToString(dbReader["ComCTINno"]);
+                ClientCompanyDetails.CSTno = ToString(dbReader["ComCCSTno"]);
+                ClientCompanyDetails.Ssi = ToString(dbReader["ComCSSLno"]);
+                ClientCompanyDetails.PanNo = ToString(dbReader["ComCPanno"]);
+                ClientCompanyDetails.Tan = ToString(dbReader["ComCTanno"]);
+                ClientCompanyDetails.License = ToString(dbReader["ComCLicenseno"]);
+                ClientCompanyDetails.Name = ToString(dbReader["ComCPname"]);
+                ClientCompanyDetails.Fathername = ToString(dbReader["CCPFathername"]);
+                ClientCompanyDetails.Gender = ToString(dbReader["CCPGender"]);
+                ClientCompanyDetails.AuthBloodGroup = ToString(dbReader["CCPblood"]);
+                ClientCompanyDetails.DOB = ToString(dbReader["CCPDOB"]);
+                ClientCompanyDetails.AuthEmail = ToString(dbReader["CCPEmail"]);
+                ClientCompanyDetails.AuthAddress = ToString(dbReader["CCPAddress"]);
+                ClientCompanyDetails.AuthState = ToString(dbReader["CCPstate"]);
+                ClientCompanyDetails.Authpin = ToString(dbReader["CCPpin"]);
+                ClientCompanyDetails.mobile = ToString(dbReader["CCPMobile"]);
+                ClientCompanyDetails.AuthPanNo = ToString(dbReader["CCPPan"]);
+                ClientCompanyDetails.Percent = ToString(dbReader["CCPpercent"]);
+                ClientCompanyDetails.ActiveStatus = ToString(dbReader["CCPactive"]);
+
+                ClientEntryList.Add(ClientCompanyDetails);
+            }
+            return ClientEntryList;
         }
         #endregion
 

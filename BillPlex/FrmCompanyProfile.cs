@@ -20,11 +20,12 @@ namespace BillPlex
 
         private FrmCompanyInfo CompanyInfoRequest;
         private GridView gridView;
+
         public FrmCompanyProfile()
         {
             InitializeComponent();
 
-            gridView = CompanyGridView;
+            gridView = gridView1;
             //gridView.DoubleClick += Editbtn_Click;
 
 
@@ -44,11 +45,11 @@ namespace BillPlex
 
         private void Deletebtn_Click(object sender, EventArgs e)
         {
-            var selectedRows = CompanyGridView.GetSelectedRows();
+            var selectedRows = gridView1.GetSelectedRows();
 
             foreach (var rowHandle in selectedRows)
             {
-                CompanyMasterRequest.Id = (Int64)CompanyGridView.GetRowCellValue(rowHandle, "Id");
+                CompanyMasterRequest.Id = (Int64)gridView1.GetRowCellValue(rowHandle, "Id");
                 
                 //CompanyMasterRequest.Id = (Int32)gridView2.GetRowCellValue(rowHandle, "Id");
             }
@@ -62,14 +63,21 @@ namespace BillPlex
 
         private void Editbtn_Click(object sender, EventArgs e)
         {
-            var selectedRow = CompanyGridView.GetSelectedRows();
+            var selectedRow = gridView1.GetSelectedRows();
 
             CompanyInfoRequest = new FrmCompanyInfo();
 
-            CompanyInfoRequest.BindData(CompanyGridView);
+            CompanyInfoRequest.BindData(gridView1);
 
             //CompanyInfo.MdiParent = this;
             CompanyInfoRequest.Show();
+        }
+
+        private void gridControl1_Click_1(object sender, EventArgs e)
+        {
+            //gridView1.Columns.Clear(); // Clear existing columns (optional)
+            //gridView1.Columns.AddVisible("Name", "Name");
+            //gridView1.Columns.AddVisible("Age", "Age");
         }
     }
 }

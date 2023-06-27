@@ -69,7 +69,7 @@ namespace BillPlex
             this.labelControl24 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.drpCDCountry = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.drpState2 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.drpCState = new DevExpress.XtraEditors.ComboBoxEdit();
             this.drpState = new DevExpress.XtraEditors.ComboBoxEdit();
             this.drpCountry = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl23 = new DevExpress.XtraEditors.LabelControl();
@@ -125,7 +125,7 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.drpCDCountry.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.drpState2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpCState.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpState.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpCountry.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtWebsite.Properties)).BeginInit();
@@ -490,7 +490,7 @@ namespace BillPlex
             // 
             this.panelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.panelControl3.Controls.Add(this.drpCDCountry);
-            this.panelControl3.Controls.Add(this.drpState2);
+            this.panelControl3.Controls.Add(this.drpCState);
             this.panelControl3.Controls.Add(this.drpState);
             this.panelControl3.Controls.Add(this.drpCountry);
             this.panelControl3.Controls.Add(this.labelControl23);
@@ -550,13 +550,13 @@ namespace BillPlex
             this.drpCDCountry.Size = new System.Drawing.Size(237, 20);
             this.drpCDCountry.TabIndex = 46;
             // 
-            // drpState2
+            // drpCState
             // 
-            this.drpState2.Location = new System.Drawing.Point(550, 181);
-            this.drpState2.Name = "drpState2";
-            this.drpState2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.drpCState.Location = new System.Drawing.Point(550, 181);
+            this.drpCState.Name = "drpCState";
+            this.drpCState.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.drpState2.Properties.Items.AddRange(new object[] {
+            this.drpCState.Properties.Items.AddRange(new object[] {
             "Andaman and Nicobar Islands",
             "Andhra Pradesh",
             "Arunachal Pradesh",
@@ -593,9 +593,9 @@ namespace BillPlex
             "Uttar Pradesh",
             "Uttarakhand",
             "West Bengal"});
-            this.drpState2.Properties.Sorted = true;
-            this.drpState2.Size = new System.Drawing.Size(127, 20);
-            this.drpState2.TabIndex = 45;
+            this.drpCState.Properties.Sorted = true;
+            this.drpCState.Size = new System.Drawing.Size(127, 20);
+            this.drpCState.TabIndex = 45;
             // 
             // drpState
             // 
@@ -1094,7 +1094,7 @@ namespace BillPlex
             this.panelControl3.ResumeLayout(false);
             this.panelControl3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.drpCDCountry.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.drpState2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpCState.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpState.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpCountry.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtWebsite.Properties)).EndInit();
@@ -1201,6 +1201,6 @@ namespace BillPlex
         private DevExpress.XtraEditors.ComboBoxEdit drpCountry;
         private DevExpress.XtraEditors.ComboBoxEdit drpState;
         private DevExpress.XtraEditors.ComboBoxEdit drpCDCountry;
-        private DevExpress.XtraEditors.ComboBoxEdit drpState2;
+        private DevExpress.XtraEditors.ComboBoxEdit drpCState;
     }
 }
