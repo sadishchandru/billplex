@@ -209,7 +209,7 @@ namespace BillPlex
                 //drpMainCompany.SelectedIndex = Convert.ToInt32(selectedClientCompanyList.GetRowCellValue(rowHandle, "MasterCompanyId"));
                 drpMainCompany.SelectedIndex = ClientCompanyRequest.MasterCompanyList.FindIndex(x => x.Id == Convert.ToInt32(selectedClientCompanyList.GetRowCellValue(rowHandle, "MasterCompanyId")));
                 
-                txtPin.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCpin");
+                txtPin.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCPin");
                 if (radBusinessNature.SelectedIndex != null && selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCNature") != "")
                 {
                     radBusinessNature.SelectedIndex = Convert.ToInt32(selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCNature"));
@@ -217,7 +217,7 @@ namespace BillPlex
                 //radBusinessNature.DataBindings.Add("radBusinessNature", selectedClientCompanyList, "ComCNature", true, DataSourceUpdateMode.OnPropertyChanged);
                 var datete = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCDatestart").ToString();
                 ddStartingDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
-                txtstdCode.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComStdcode");
+                txtstdCode.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComStdCode");
                 txtClientCompanyPhone.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCPhone");
                 txtEmail.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCEmail");
                 txtWebsite.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCWebsite");
@@ -231,7 +231,7 @@ namespace BillPlex
                 txtEsiCode.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCESIno");
                 datete = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCESIdate").ToString();
                 ddEsiCode.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
-                txtFactoryAct.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCFactoryno");
+                txtFactoryAct.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCFactoryNo");
                 txtTin.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCTINno");
                 txtCst.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCCSTno");
                 txtSsi.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ComCSSLno");
