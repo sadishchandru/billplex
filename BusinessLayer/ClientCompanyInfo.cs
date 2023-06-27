@@ -99,6 +99,7 @@ namespace BusinessLayer
                 objLstDbParams.Add(new DbParams(DbType.String, 50, AuthAddress, "@CCPAddress", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, AuthState, "@CCPstate", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, Authpin, "@CCPpin", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.String, 50, mobile, "@CCPMobile", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, AuthPanNo, "@CCPPan", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, Percent, "@CCPpercent", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, ActiveStatus, "@CCPactive", ParameterDirection.Input));

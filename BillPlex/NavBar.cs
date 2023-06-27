@@ -96,16 +96,48 @@ namespace BillPlex
 
         private void CustomerMaster_ItemClick(object sender, ItemClickEventArgs e)
         {
-            FrmCustomerMaster CustomerMasterInfo = new FrmCustomerMaster();
-            CustomerMasterInfo.MdiParent = this;
-            CustomerMasterInfo.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "FrmCustomerMaster")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                FrmCustomerMaster CustomerMasterInfo = new FrmCustomerMaster();
+                CustomerMasterInfo.MdiParent = this;
+                CustomerMasterInfo.Show();
+            }
+            //FrmCustomerMaster CustomerMasterInfo = new FrmCustomerMaster();
+            //CustomerMasterInfo.MdiParent = this;
+            //CustomerMasterInfo.Show();
         }
 
         private void btn_Employee_Master(object sender, ItemClickEventArgs e)
         {
-            FrmEmployeeMasterList employeeMaster = new FrmEmployeeMasterList();
-            employeeMaster.MdiParent = this;
-            employeeMaster.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "FrmCustomerMaster")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                FrmEmployeeMasterList employeeMaster = new FrmEmployeeMasterList();
+                employeeMaster.MdiParent = this;
+                employeeMaster.Show();
+            }
+            //FrmEmployeeMasterList employeeMaster = new FrmEmployeeMasterList();
+            //employeeMaster.MdiParent = this;
+            //employeeMaster.Show();
         }
 
         private void barButtonItem4_ItemClick(object sender, ItemClickEventArgs e)
@@ -115,58 +147,180 @@ namespace BillPlex
 
         private void barButtonItem5_ItemClick(object sender, ItemClickEventArgs e)
         {
-            FrmOrderMaster masterbanking = new FrmOrderMaster();
-            masterbanking.MdiParent = this;
-            masterbanking.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "FrmOrderMaster")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                FrmOrderMaster masterbanking = new FrmOrderMaster();
+                masterbanking.MdiParent = this;
+                masterbanking.Show();
+            }
+            //FrmOrderMaster masterbanking = new FrmOrderMaster();
+            //masterbanking.MdiParent = this;
+            //masterbanking.Show();
         }
 
         private void btn_RawMaterial_ItemClick(object sender, ItemClickEventArgs e)
         {
-            FrmRawMaterial pc = new FrmRawMaterial();
-            pc.MdiParent = this;
-            pc.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "FrmRawMaterial")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                FrmRawMaterial pc = new FrmRawMaterial();
+                pc.MdiParent = this;
+                pc.Show();
+            }
+            //FrmRawMaterial pc = new FrmRawMaterial();
+            //pc.MdiParent = this;
+            //pc.Show();
         }
 
         private void btn_ProductMaster_ItemClick(object sender, ItemClickEventArgs e)
         {
-            FrmProductMaster pc = new FrmProductMaster();
-            pc.MdiParent = this;
-            pc.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "FrmProductMaster")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                FrmProductMaster pc = new FrmProductMaster();
+                pc.MdiParent = this;
+                pc.Show();
+            }
+            //FrmProductMaster pc = new FrmProductMaster();
+            //pc.MdiParent = this;
+            //pc.Show();
         }
 
         private void btn_SizeMaster_ItemClick(object sender, ItemClickEventArgs e)
         {
-            FrmSizeMaster pc = new FrmSizeMaster();
-            pc.MdiParent = this;
-            pc.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "FrmSizeMaster")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                FrmSizeMaster pc = new FrmSizeMaster();
+                pc.MdiParent = this;
+                pc.Show();
+            }
+            //FrmSizeMaster pc = new FrmSizeMaster();
+            //pc.MdiParent = this;
+            //pc.Show();
         }
 
         private void btn_ColorMaster_ItemClick(object sender, ItemClickEventArgs e)
         {
-            FrmColorMaster pc = new FrmColorMaster();
-            pc.MdiParent = this;
-            pc.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "FrmColorMaster")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                FrmColorMaster pc = new FrmColorMaster();
+                pc.MdiParent = this;
+                pc.Show();
+            }
+            //FrmColorMaster pc = new FrmColorMaster();
+            //pc.MdiParent = this;
+            //pc.Show();
         }
 
         private void btn_ProductModel_ItemClick(object sender, ItemClickEventArgs e)
         {
-            FrmProductModel pc = new FrmProductModel();
-            pc.MdiParent = this;
-            pc.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "FrmColorMaster")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                FrmProductModel pc = new FrmProductModel();
+                pc.MdiParent = this;
+                pc.Show();
+            }
+            //FrmProductModel pc = new FrmProductModel();
+            //pc.MdiParent = this;
+            //pc.Show();
         }
 
         private void barButtonItem12_ItemClick(object sender, ItemClickEventArgs e)
         {
-            IncentiveMaster pc = new IncentiveMaster();
-            pc.MdiParent = this;
-            pc.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "FrmColorMaster")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                IncentiveMaster pc = new IncentiveMaster();
+                pc.MdiParent = this;
+                pc.Show();
+            }
         }
 
         private void barButtonItem7_ItemClick(object sender, ItemClickEventArgs e)
         {
-            FrmDeliveryChallanProfile cp = new FrmDeliveryChallanProfile();
-            cp.MdiParent = this;
-            cp.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "FrmColorMaster")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                FrmDeliveryChallanProfile cp = new FrmDeliveryChallanProfile();
+                cp.MdiParent = this;
+                cp.Show();
+            }
         }
 
         private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
@@ -176,16 +330,42 @@ namespace BillPlex
 
         private void btn_MasterBankInfo(object sender, ItemClickEventArgs e)
         {
-            FrmCompanyProfileBankInfo FrmCompanyProfileBankInfo = new FrmCompanyProfileBankInfo();
-            FrmCompanyProfileBankInfo.MdiParent = this;
-            FrmCompanyProfileBankInfo.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "FrmColorMaster")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                FrmCompanyProfileBankInfo FrmCompanyProfileBankInfo = new FrmCompanyProfileBankInfo();
+                FrmCompanyProfileBankInfo.MdiParent = this;
+                FrmCompanyProfileBankInfo.Show();
+            }
         }
 
         private void btn_ClientBankInfo(object sender, ItemClickEventArgs e)
         {
-            FrmClientCompanyBankInfo clientCompanyBankInfo = new FrmClientCompanyBankInfo();
-            clientCompanyBankInfo.MdiParent = this;
-            clientCompanyBankInfo.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "FrmColorMaster")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                FrmClientCompanyBankInfo clientCompanyBankInfo = new FrmClientCompanyBankInfo();
+                clientCompanyBankInfo.MdiParent = this;
+                clientCompanyBankInfo.Show();
+            }
         }
 
         private void Btn_SubClientBankInfo(object sender, ItemClickEventArgs e)
