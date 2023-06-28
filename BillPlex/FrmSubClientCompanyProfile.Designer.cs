@@ -349,282 +349,362 @@ namespace BillPlex
             // colId
             // 
             this.colId.FieldName = "Id";
+            this.colId.MinWidth = 80;
             this.colId.Name = "colId";
             this.colId.Visible = true;
             this.colId.VisibleIndex = 0;
+            this.colId.Width = 80;
             // 
             // colMasterCompanyId
             // 
             this.colMasterCompanyId.FieldName = "MasterCompanyId";
+            this.colMasterCompanyId.MinWidth = 80;
             this.colMasterCompanyId.Name = "colMasterCompanyId";
             this.colMasterCompanyId.Visible = true;
             this.colMasterCompanyId.VisibleIndex = 1;
+            this.colMasterCompanyId.Width = 80;
             // 
             // colClientCompanyId
             // 
             this.colClientCompanyId.FieldName = "ClientCompanyId";
+            this.colClientCompanyId.MinWidth = 80;
             this.colClientCompanyId.Name = "colClientCompanyId";
             this.colClientCompanyId.Visible = true;
             this.colClientCompanyId.VisibleIndex = 2;
+            this.colClientCompanyId.Width = 80;
             // 
             // colSubComCode
             // 
             this.colSubComCode.FieldName = "SubComCode";
+            this.colSubComCode.MinWidth = 80;
             this.colSubComCode.Name = "colSubComCode";
             this.colSubComCode.Visible = true;
             this.colSubComCode.VisibleIndex = 3;
+            this.colSubComCode.Width = 80;
             // 
             // colSubComName
             // 
             this.colSubComName.FieldName = "SubComName";
+            this.colSubComName.MinWidth = 80;
             this.colSubComName.Name = "colSubComName";
             this.colSubComName.Visible = true;
             this.colSubComName.VisibleIndex = 4;
+            this.colSubComName.Width = 80;
             // 
             // colComOffAdd
             // 
             this.colComOffAdd.FieldName = "ComOffAdd";
+            this.colComOffAdd.MinWidth = 80;
             this.colComOffAdd.Name = "colComOffAdd";
             this.colComOffAdd.Visible = true;
             this.colComOffAdd.VisibleIndex = 5;
+            this.colComOffAdd.Width = 80;
             // 
             // colComState
             // 
             this.colComState.FieldName = "ComState";
+            this.colComState.MinWidth = 80;
             this.colComState.Name = "colComState";
             this.colComState.Visible = true;
             this.colComState.VisibleIndex = 6;
+            this.colComState.Width = 80;
             // 
             // colComPin
             // 
             this.colComPin.FieldName = "ComPin";
+            this.colComPin.MinWidth = 80;
             this.colComPin.Name = "colComPin";
             this.colComPin.Visible = true;
             this.colComPin.VisibleIndex = 7;
+            this.colComPin.Width = 80;
             // 
             // colComNature
             // 
             this.colComNature.FieldName = "ComNature";
+            this.colComNature.MinWidth = 80;
             this.colComNature.Name = "colComNature";
             this.colComNature.Visible = true;
             this.colComNature.VisibleIndex = 8;
+            this.colComNature.Width = 80;
             // 
             // colDirector
             // 
             this.colDirector.FieldName = "Director";
+            this.colDirector.MinWidth = 80;
             this.colDirector.Name = "colDirector";
             this.colDirector.Visible = true;
             this.colDirector.VisibleIndex = 9;
+            this.colDirector.Width = 80;
             // 
             // colComDatestart
             // 
             this.colComDatestart.FieldName = "ComDatestart";
+            this.colComDatestart.MinWidth = 80;
             this.colComDatestart.Name = "colComDatestart";
             this.colComDatestart.Visible = true;
             this.colComDatestart.VisibleIndex = 10;
+            this.colComDatestart.Width = 80;
             // 
             // colComStdCode
             // 
             this.colComStdCode.FieldName = "ComStdCode";
+            this.colComStdCode.MinWidth = 80;
             this.colComStdCode.Name = "colComStdCode";
             this.colComStdCode.Visible = true;
             this.colComStdCode.VisibleIndex = 11;
+            this.colComStdCode.Width = 80;
             // 
             // colComPhone
             // 
             this.colComPhone.FieldName = "ComPhone";
+            this.colComPhone.MinWidth = 80;
             this.colComPhone.Name = "colComPhone";
             this.colComPhone.Visible = true;
             this.colComPhone.VisibleIndex = 12;
+            this.colComPhone.Width = 80;
             // 
             // colComEmail
             // 
             this.colComEmail.FieldName = "ComEmail";
+            this.colComEmail.MinWidth = 80;
             this.colComEmail.Name = "colComEmail";
             this.colComEmail.Visible = true;
             this.colComEmail.VisibleIndex = 13;
+            this.colComEmail.Width = 80;
             // 
             // colComWebsite
             // 
             this.colComWebsite.FieldName = "ComWebsite";
+            this.colComWebsite.MinWidth = 80;
             this.colComWebsite.Name = "colComWebsite";
             this.colComWebsite.Visible = true;
             this.colComWebsite.VisibleIndex = 14;
+            this.colComWebsite.Width = 80;
             // 
             // colPfType
             // 
             this.colPfType.FieldName = "PfType";
+            this.colPfType.MinWidth = 80;
             this.colPfType.Name = "colPfType";
             this.colPfType.Visible = true;
             this.colPfType.VisibleIndex = 15;
+            this.colPfType.Width = 80;
             // 
             // colComPfNo
             // 
             this.colComPfNo.FieldName = "ComPfNo";
+            this.colComPfNo.MinWidth = 80;
             this.colComPfNo.Name = "colComPfNo";
             this.colComPfNo.Visible = true;
             this.colComPfNo.VisibleIndex = 16;
+            this.colComPfNo.Width = 80;
             // 
             // colComPfDate
             // 
             this.colComPfDate.FieldName = "ComPfDate";
+            this.colComPfDate.MinWidth = 80;
             this.colComPfDate.Name = "colComPfDate";
             this.colComPfDate.Visible = true;
             this.colComPfDate.VisibleIndex = 17;
+            this.colComPfDate.Width = 80;
             // 
             // colComEsiNo
             // 
             this.colComEsiNo.FieldName = "ComEsiNo";
+            this.colComEsiNo.MinWidth = 80;
             this.colComEsiNo.Name = "colComEsiNo";
             this.colComEsiNo.Visible = true;
             this.colComEsiNo.VisibleIndex = 18;
+            this.colComEsiNo.Width = 80;
             // 
             // colComEsiDate
             // 
             this.colComEsiDate.FieldName = "ComEsiDate";
+            this.colComEsiDate.MinWidth = 80;
             this.colComEsiDate.Name = "colComEsiDate";
             this.colComEsiDate.Visible = true;
             this.colComEsiDate.VisibleIndex = 19;
+            this.colComEsiDate.Width = 80;
             // 
             // colComFactoryNo
             // 
             this.colComFactoryNo.FieldName = "ComFactoryNo";
+            this.colComFactoryNo.MinWidth = 80;
             this.colComFactoryNo.Name = "colComFactoryNo";
             this.colComFactoryNo.Visible = true;
             this.colComFactoryNo.VisibleIndex = 20;
+            this.colComFactoryNo.Width = 80;
             // 
             // colComCstNo
             // 
             this.colComCstNo.FieldName = "ComCstNo";
+            this.colComCstNo.MinWidth = 80;
             this.colComCstNo.Name = "colComCstNo";
             this.colComCstNo.Visible = true;
             this.colComCstNo.VisibleIndex = 21;
+            this.colComCstNo.Width = 80;
             // 
             // colComSslNo
             // 
             this.colComSslNo.FieldName = "ComSslNo";
+            this.colComSslNo.MinWidth = 80;
             this.colComSslNo.Name = "colComSslNo";
             this.colComSslNo.Visible = true;
             this.colComSslNo.VisibleIndex = 22;
+            this.colComSslNo.Width = 80;
             // 
             // colComTinNo
             // 
             this.colComTinNo.FieldName = "ComTinNo";
+            this.colComTinNo.MinWidth = 80;
             this.colComTinNo.Name = "colComTinNo";
             this.colComTinNo.Visible = true;
             this.colComTinNo.VisibleIndex = 23;
+            this.colComTinNo.Width = 80;
             // 
             // colComLicenseno
             // 
             this.colComLicenseno.FieldName = "ComLicenseno";
+            this.colComLicenseno.MinWidth = 80;
             this.colComLicenseno.Name = "colComLicenseno";
             this.colComLicenseno.Visible = true;
             this.colComLicenseno.VisibleIndex = 24;
+            this.colComLicenseno.Width = 80;
             // 
             // colComPanNo
             // 
             this.colComPanNo.FieldName = "ComPanNo";
+            this.colComPanNo.MinWidth = 80;
             this.colComPanNo.Name = "colComPanNo";
             this.colComPanNo.Visible = true;
             this.colComPanNo.VisibleIndex = 25;
+            this.colComPanNo.Width = 80;
             // 
             // colComTanNo
             // 
             this.colComTanNo.FieldName = "ComTanNo";
+            this.colComTanNo.MinWidth = 80;
             this.colComTanNo.Name = "colComTanNo";
             this.colComTanNo.Visible = true;
             this.colComTanNo.VisibleIndex = 26;
+            this.colComTanNo.Width = 80;
             // 
             // colAuthorName
             // 
             this.colAuthorName.FieldName = "AuthorName";
+            this.colAuthorName.MinWidth = 80;
             this.colAuthorName.Name = "colAuthorName";
             this.colAuthorName.Visible = true;
             this.colAuthorName.VisibleIndex = 27;
+            this.colAuthorName.Width = 80;
             // 
             // colAuthorFathername
             // 
             this.colAuthorFathername.FieldName = "AuthorFathername";
+            this.colAuthorFathername.MinWidth = 80;
             this.colAuthorFathername.Name = "colAuthorFathername";
             this.colAuthorFathername.Visible = true;
             this.colAuthorFathername.VisibleIndex = 28;
+            this.colAuthorFathername.Width = 80;
             // 
             // colAuthorGender
             // 
             this.colAuthorGender.FieldName = "AuthorGender";
+            this.colAuthorGender.MinWidth = 80;
             this.colAuthorGender.Name = "colAuthorGender";
             this.colAuthorGender.Visible = true;
             this.colAuthorGender.VisibleIndex = 29;
+            this.colAuthorGender.Width = 80;
             // 
             // colAuthorBlood
             // 
             this.colAuthorBlood.FieldName = "AuthorBlood";
+            this.colAuthorBlood.MinWidth = 80;
             this.colAuthorBlood.Name = "colAuthorBlood";
             this.colAuthorBlood.Visible = true;
             this.colAuthorBlood.VisibleIndex = 30;
+            this.colAuthorBlood.Width = 80;
             // 
             // colAuthorDOB
             // 
             this.colAuthorDOB.FieldName = "AuthorDOB";
+            this.colAuthorDOB.MinWidth = 80;
             this.colAuthorDOB.Name = "colAuthorDOB";
             this.colAuthorDOB.Visible = true;
             this.colAuthorDOB.VisibleIndex = 31;
+            this.colAuthorDOB.Width = 80;
             // 
             // colAuthorEmail
             // 
             this.colAuthorEmail.FieldName = "AuthorEmail";
+            this.colAuthorEmail.MinWidth = 80;
             this.colAuthorEmail.Name = "colAuthorEmail";
             this.colAuthorEmail.Visible = true;
             this.colAuthorEmail.VisibleIndex = 32;
+            this.colAuthorEmail.Width = 80;
             // 
             // colAuthorAddress
             // 
             this.colAuthorAddress.FieldName = "AuthorAddress";
+            this.colAuthorAddress.MinWidth = 80;
             this.colAuthorAddress.Name = "colAuthorAddress";
             this.colAuthorAddress.Visible = true;
             this.colAuthorAddress.VisibleIndex = 33;
+            this.colAuthorAddress.Width = 80;
             // 
             // colAuthorState
             // 
             this.colAuthorState.FieldName = "AuthorState";
+            this.colAuthorState.MinWidth = 80;
             this.colAuthorState.Name = "colAuthorState";
             this.colAuthorState.Visible = true;
             this.colAuthorState.VisibleIndex = 34;
+            this.colAuthorState.Width = 80;
             // 
             // colAuthorPin
             // 
             this.colAuthorPin.FieldName = "AuthorPin";
+            this.colAuthorPin.MinWidth = 80;
             this.colAuthorPin.Name = "colAuthorPin";
             this.colAuthorPin.Visible = true;
             this.colAuthorPin.VisibleIndex = 35;
+            this.colAuthorPin.Width = 80;
             // 
             // colAuthorMobile
             // 
             this.colAuthorMobile.FieldName = "AuthorMobile";
+            this.colAuthorMobile.MinWidth = 80;
             this.colAuthorMobile.Name = "colAuthorMobile";
             this.colAuthorMobile.Visible = true;
             this.colAuthorMobile.VisibleIndex = 36;
+            this.colAuthorMobile.Width = 80;
             // 
             // colAuthorPan
             // 
             this.colAuthorPan.FieldName = "AuthorPan";
+            this.colAuthorPan.MinWidth = 80;
             this.colAuthorPan.Name = "colAuthorPan";
             this.colAuthorPan.Visible = true;
             this.colAuthorPan.VisibleIndex = 37;
+            this.colAuthorPan.Width = 80;
             // 
             // colAuthorPercent
             // 
             this.colAuthorPercent.FieldName = "AuthorPercent";
+            this.colAuthorPercent.MinWidth = 80;
             this.colAuthorPercent.Name = "colAuthorPercent";
             this.colAuthorPercent.Visible = true;
             this.colAuthorPercent.VisibleIndex = 38;
+            this.colAuthorPercent.Width = 80;
             // 
             // colAuthorActive
             // 
             this.colAuthorActive.FieldName = "AuthorActive";
+            this.colAuthorActive.MinWidth = 80;
             this.colAuthorActive.Name = "colAuthorActive";
             this.colAuthorActive.Visible = true;
             this.colAuthorActive.VisibleIndex = 39;
+            this.colAuthorActive.Width = 80;
             // 
             // Claerbtn
             // 

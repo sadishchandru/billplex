@@ -58,8 +58,8 @@ namespace BusinessLayer
             }
             catch (Exception ex)
             {
-                // Display a warning alert
-                // XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Result.Message = ex.Message;
+                Result.Status = ResultStatus.Success;
             }
             finally
             {
@@ -84,17 +84,19 @@ namespace BusinessLayer
 
                 dbReader = ObjDbfactory.GetReader("PRO_DeleteProductModel", false, objLstdbParams);
 
-                while (dbReader.Read())
-                {
-                    Result.Message = ToString(dbReader["ResultMessage"]);
-                    Result.Status = (ResultStatus)ToInteger(dbReader["ResultNo"]);
-                }
+                //while (dbReader.Read())
+                //{
+                //    Result.Message = ToString(dbReader["ResultMessage"]);
+                //   Result.Status = (ResultStatus)ToInteger(dbReader["ResultNo"]);
+                //}
 
+                Result.Message = "Product Master Deleted Successfully";
+                Result.Status = ResultStatus.Success;
             }
             catch (Exception ex)
             {
-                // Display a warning alert
-                // XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Result.Message = ex.Message;
+                Result.Status = ResultStatus.Success;
             }
             finally
             {

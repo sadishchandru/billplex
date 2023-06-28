@@ -31,6 +31,12 @@ namespace BillPlex
             CustomerRequest.ConnectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
             CustomerRequest.Result = new ResultDetail();
         }
+        public void ReloadSqlDataSource()
+        {
+            sqlDataSource1.FillAsync();
+            CustomerMaster_GridView.RefreshData();
+
+        }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -38,65 +44,54 @@ namespace BillPlex
             {
                 if (txtCustomerCode.Text != string.Empty && txtCustomerName.Text != string.Empty)
                 {
-                CustomerRequest.CustomerCode = txtCustomerCode.Text;
-                CustomerRequest.CustomerName = txtCustomerName.Text;
-                CustomerRequest.OffAddress = txtOffAddress.Text;
-                CustomerRequest.State = drpState.Text;
-                CustomerRequest.StatePin =txtStatePin.Text;
-                CustomerRequest.Code =txtCode.Text;
-                CustomerRequest.Country =drpCountry.Text;
-                CustomerRequest.PhoneNo =txtPhoneNo.Text;
-                CustomerRequest.EmailID = txtEmailID.Text;
-                CustomerRequest.CDAddress = txtCDAddress.Text;
-                CustomerRequest.CState = drpCState.Text;
-                CustomerRequest.Pin = txtPin.Text;
-                CustomerRequest.CDCountry = drpCDCountry.Text;
-                CustomerRequest.MobileNo = txtMobileNo.Text;
-                CustomerRequest.TINno = txtTINno.Text;
-                CustomerRequest.TINDate = ddTINDate.Text;
-                CustomerRequest.CSTno = txtCSTno.Text;
-                CustomerRequest.CSTDate = ddCSTDate.Text;
-                CustomerRequest.LicenseNo = txtLicenseNo.Text;
-                CustomerRequest.Website = txtWebsite.Text;
-                CustomerRequest.Update();
+                    CustomerRequest.CustomerCode = txtCustomerCode.Text;
+                    CustomerRequest.CustomerName = txtCustomerName.Text;
+                    CustomerRequest.OffAddress = txtOffAddress.Text;
+                    CustomerRequest.State = drpState.Text;
+                    CustomerRequest.StatePin = txtStatePin.Text;
+                    CustomerRequest.Code = txtCode.Text;
+                    CustomerRequest.Country = drpCountry.Text;
+                    CustomerRequest.PhoneNo = txtPhoneNo.Text;
+                    CustomerRequest.EmailID = txtEmailID.Text;
+                    CustomerRequest.CDAddress = txtCDAddress.Text;
+                    CustomerRequest.CState = drpCState.Text;
+                    CustomerRequest.Pin = txtPin.Text;
+                    CustomerRequest.CDCountry = drpCDCountry.Text;
+                    CustomerRequest.MobileNo = txtMobileNo.Text;
+                    CustomerRequest.TINno = txtTINno.Text;
+                    CustomerRequest.TINDate = ddTINDate.Text;
+                    CustomerRequest.CSTno = txtCSTno.Text;
+                    CustomerRequest.CSTDate = ddCSTDate.Text;
+                    CustomerRequest.LicenseNo = txtLicenseNo.Text;
+                    CustomerRequest.Website = txtWebsite.Text;
+                    CustomerRequest.Update();
 
+                    if (CustomerRequest.Result.Status == ResultStatus.Success)
+                    {
+                        XtraMessageBox.Show(CustomerRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ReloadSqlDataSource();
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show(CustomerRequest.Result.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
                 else
                 {
                     XtraMessageBox.Show(CustomerRequest.Result.Message, "please give the manditory field", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
-
-
-                if (CustomerRequest.Result.Status == ResultStatus.Success)
-                {
-                    XtraMessageBox.Show(CustomerRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                //else
-                //{
-                //    XtraMessageBox.Show(CustomerRequest.Result.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                //}
-
             }
             catch (Exception ex)
             {
                 // Display a warning alert
-                //XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally
-            {
-                //CustomerMaster_GridView.RefreshRow(true);
-                CustomerMaster_GridView.RefreshData();
-                CustomerMaster_GridView.RefreshEditor(true);
-                
-            }
-
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
             // Clear the values in textboxes
+            CustomerRequest.Id = 0;
             txtCustomerCode.ResetText();
             txtCustomerName.ResetText();
             txtOffAddress.ResetText();

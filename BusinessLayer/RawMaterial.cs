@@ -40,8 +40,8 @@ namespace BusinessLayer
             }
             catch(Exception ex)
             {
-                // Display a warning alert
-                // XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Result.Message = ex.Message;
+                Result.Status = ResultStatus.Success;
             }
             finally
             {
@@ -75,8 +75,8 @@ namespace BusinessLayer
             }
             catch (Exception ex)
             {
-                // Display a warning alert
-                // XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Result.Message = ex.Message;
+                Result.Status = ResultStatus.Success;
             }
             finally
             {

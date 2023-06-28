@@ -27,7 +27,12 @@ namespace BillPlex
             // Fill the SqlDataSource asynchronously
             sqlDataSource1.FillAsync();
         }
+        public void ReloadSqlDataSource()
+        {
+            sqlDataSource1.FillAsync();
+            grd_productmaster.RefreshData();
 
+        }
         private void btnAdd_Click(object sender, EventArgs e)
         {
             try
@@ -45,6 +50,7 @@ namespace BillPlex
                 if (productMasterRequest.Result.Status == ResultStatus.Success)
                 {
                     XtraMessageBox.Show(productMasterRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ReloadSqlDataSource();
                 }
             }
 
@@ -65,9 +71,9 @@ namespace BillPlex
                     productMasterRequest.Id = (Int32)grd_productmaster.GetRowCellValue(rowHandle, "Id");
                     txtPName.Text = grd_productmaster.GetRowCellValue(rowHandle, "Productmodel").ToString();
                 }
-                btnAdd.Enabled = false;
+                btnAdd.Enabled = true;
                 btEdit.Enabled = false;
-                btDelete.Enabled = false;
+                btDelete.Enabled = true;
                 btUpdate.Enabled = true;
 
             }
@@ -93,6 +99,7 @@ namespace BillPlex
             if (productMasterRequest.Result.Status == ResultStatus.Success)
             {
                 XtraMessageBox.Show(productMasterRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ReloadSqlDataSource();
             }
         }
 
@@ -103,7 +110,8 @@ namespace BillPlex
 
         private void btExit_Click(object sender, EventArgs e)
         {
-            productMasterRequest.CloseConnection();
+            //productMasterRequest.CloseConnection();
+            this.Close();
 
         }
 

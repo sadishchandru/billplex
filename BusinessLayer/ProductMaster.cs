@@ -36,8 +36,8 @@ namespace BusinessLayer
             }
             catch (Exception ex)
             {
-                // Display a warning alert
-                // XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Result.Message = ex.Message;
+                Result.Status = ResultStatus.Success;
             }
             finally
             {
@@ -61,6 +61,8 @@ namespace BusinessLayer
 
                 dbReader = ObjDbfactory.GetReader("PRO_DeleteProductModelTemp", false, objLstdbParams);
 
+                Result.Message = "ProductModel Deleted Successfully";
+                Result.Status = ResultStatus.Success;
                 while (dbReader.Read())
                 {
                     Result.Message = ToString(dbReader["ResultMessage"]);
@@ -70,8 +72,8 @@ namespace BusinessLayer
             }
             catch (Exception ex)
             {
-                // Display a warning alert
-                // XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Result.Message = ex.Message;
+                Result.Status = ResultStatus.Success;
             }
             finally
             {

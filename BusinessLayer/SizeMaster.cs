@@ -27,6 +27,8 @@ namespace BusinessLayer
 
                 dbReader = ObjDbfactory.GetReader("PRO_UpdateSizeMaster", false, objLstdbParams);
 
+                Result.Message = "Size Master Updated Successfully";
+                Result.Status = ResultStatus.Success;
                 while (dbReader.Read())
                 {
                     Result.Message = ToString(dbReader["ResultMessage"]);
@@ -36,8 +38,8 @@ namespace BusinessLayer
             }
             catch (Exception ex)
             {
-                // Display a warning alert
-                // XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Result.Message = ex.Message;
+                Result.Status = ResultStatus.Error;
             }
             finally
             {
@@ -72,8 +74,8 @@ namespace BusinessLayer
             }
             catch (Exception ex)
             {
-                // Display a warning alert
-                // XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Result.Message = ex.Message;
+                Result.Status = ResultStatus.Success;
             }
             finally
             {

@@ -26,6 +26,11 @@ namespace BillPlex
             // Fill the SqlDataSource asynchronously
             sqlDataSource2.FillAsync();
         }
+        public void ReloadSqlDataSource()
+        {
+            sqlDataSource2.FillAsync();
+            ColormasterGrid.RefreshData();
+        }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -45,6 +50,7 @@ namespace BillPlex
                 if (ColorMasterRequest.Result.Status == ResultStatus.Success)
                 {
                     XtraMessageBox.Show(ColorMasterRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ReloadSqlDataSource();
                 }
             }
 
@@ -68,7 +74,7 @@ namespace BillPlex
                 }
                 btnAdd.Enabled = false;
                 btEdit.Enabled = false;
-                btDelete.Enabled = false;
+                btDelete.Enabled = true;
                 btUpdate.Enabled = true;
             }
             catch (Exception ex)
@@ -94,6 +100,7 @@ namespace BillPlex
             if (ColorMasterRequest.Result.Status == ResultStatus.Success)
             {
                 XtraMessageBox.Show(ColorMasterRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ReloadSqlDataSource();
             }
 
         }

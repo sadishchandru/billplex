@@ -73,6 +73,7 @@ namespace BillPlex
             if (SubClientRequest.Result.Status == ResultStatus.Success)
             {
                 XtraMessageBox.Show(SubClientRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ReloadSqlDataSource();
             }
             else
             {

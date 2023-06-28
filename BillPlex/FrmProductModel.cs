@@ -91,6 +91,12 @@ namespace BillPlex
             }
         }
 
+        public void ReloadSqlDataSource()
+        {
+            sqlDataSource1.FillAsync();
+            grd_ProductModel.RefreshData();
+
+        }
         private void btnAdd_Click(object sender, EventArgs e)
         {
             try
@@ -144,6 +150,7 @@ namespace BillPlex
                 {
                     XtraMessageBox.Show(productModelRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btnClear_Click();
+                    ReloadSqlDataSource();
                 }
             }
 
@@ -171,6 +178,7 @@ namespace BillPlex
             if (productModelRequest.Result.Status == ResultStatus.Success)
             {
                 XtraMessageBox.Show(productModelRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ReloadSqlDataSource();
             }
         }
 
@@ -218,14 +226,17 @@ namespace BillPlex
                     txtRawStock.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "RawMaterialStock");
                     txtRawWeight.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "ReqRawMaterial");
                     txtWages.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "WagesforItem");
+                    //var datete = grd_ProductModel.GetRowCellValue(rowHandle, "Date").ToString();
+                    //DateTime dat = DateTime.Parse(datete);
+                    //ddDate.Text = dat.ToString();
                     var datete = grd_ProductModel.GetRowCellValue(rowHandle, "Date").ToString();
-                    DateTime dat = DateTime.Parse(datete);
-                    ddDate.Text = dat.ToString();
+                    ddDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
                 }
                 btnAdd.Enabled = false;
                 btnEdit.Enabled = false;
                 btnDelete.Enabled = true;
                 btnUpdate.Enabled = true;
+                btnAdd.Enabled = true;
 
             }
             catch (Exception ex)
@@ -249,5 +260,19 @@ namespace BillPlex
             }
         }
 
+        private void drpRawName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedItem = (string)drpRawName.SelectedItem;
+
+            if (selectedItem != null)
+            {
+                txtRawStock.Text = productModelRequest.RawMaterialList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.AuthorName ?? "";
+            }
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

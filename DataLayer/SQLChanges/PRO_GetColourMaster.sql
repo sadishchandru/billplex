@@ -54,7 +54,7 @@ SET NOCOUNT ON;
 
 
 			SELECT 
-					ID,
+					Id,
 					Colournname
 			FROM ColourMaster 
 END

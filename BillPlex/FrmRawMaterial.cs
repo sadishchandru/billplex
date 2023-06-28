@@ -26,6 +26,12 @@ namespace BillPlex
             // Fill the SqlDataSource asynchronously
             sqlDataSource1.FillAsync();
         }
+        public void ReloadSqlDataSource()
+        {
+            sqlDataSource1.FillAsync();
+            gridView1.RefreshData();
+
+        }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -46,6 +52,7 @@ namespace BillPlex
                 if (RawMaterialRequest.Result.Status == ResultStatus.Success)
                 {
                     XtraMessageBox.Show(RawMaterialRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ReloadSqlDataSource();
                 }
             }
 
@@ -78,9 +85,9 @@ namespace BillPlex
                     txtRawMaterial.Text = gridView1.GetRowCellValue(rowHandle, "RawMaterialType").ToString();
                     txtStock.Text = gridView1.GetRowCellValue(rowHandle, "RawMaterialStock").ToString();
                 }
-                btnAdd.Enabled = false;
+                btnAdd.Enabled = true;
                 btEdit.Enabled = false;
-                btDelete.Enabled = false;
+                btDelete.Enabled = true;
                 btUpdate.Enabled = true;
             }
             catch (Exception ex)
@@ -105,6 +112,7 @@ namespace BillPlex
             if (RawMaterialRequest.Result.Status == ResultStatus.Success)
             {
                 XtraMessageBox.Show(RawMaterialRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ReloadSqlDataSource();
             }
         }
 
@@ -113,6 +121,11 @@ namespace BillPlex
             //RawMaterialRequest.CloseConnection();
             this.Close();
 
+        }
+
+        private void btExit_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

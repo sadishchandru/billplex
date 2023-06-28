@@ -373,6 +373,7 @@ namespace BillPlex
             this.simpleButton1.Size = new System.Drawing.Size(63, 23);
             this.simpleButton1.TabIndex = 73;
             this.simpleButton1.Text = "COPY";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // AuthClearImageBtn
             // 

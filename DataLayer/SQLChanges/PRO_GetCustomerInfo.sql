@@ -84,5 +84,5 @@ SET NOCOUNT ON;
 				[CstDate],
 				[licenseNo],
 				[Website]
-			FROM tblCustomerMaster CM
+			FROM CustomerMaster CM
 END

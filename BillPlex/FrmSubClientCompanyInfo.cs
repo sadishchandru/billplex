@@ -311,7 +311,7 @@ namespace BillPlex
                 txtBankDetails.Enabled = false;
             }
 
-            btnAdd.Enabled = false;
+            btnAdd.Enabled = true;
             btnNew.Enabled = false;
             btnUpdate.Enabled = true;
             btnEdit.Enabled = true;

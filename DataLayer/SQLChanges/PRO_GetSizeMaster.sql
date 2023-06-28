@@ -53,7 +53,7 @@ SET NOCOUNT ON;
 
 
 			SELECT 
-					ID,
+					Id,
 					Sizename
 			FROM SizeMaster 
 END

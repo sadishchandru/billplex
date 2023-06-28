@@ -199,7 +199,7 @@ namespace BillPlex
 
             }
 
-            btnAdd.Enabled = false;
+            btnAdd.Enabled = true;
             BtnNew.Enabled = false;
             btnUpdate.Enabled = true;
         }
@@ -212,6 +212,7 @@ namespace BillPlex
 
         private void ClearBtn_Click(object sender, EventArgs e)
         {
+            //CompanyRequest.Id = 0;
             txtCode.ResetText();
             txtCompanyName.ResetText();
             txtOfficeAddress.ResetText();

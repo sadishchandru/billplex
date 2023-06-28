@@ -68,6 +68,18 @@ namespace BillPlex
             if (CompanyMasterRequest.Result.Status == ResultStatus.Success)
             {
                 XtraMessageBox.Show(CompanyMasterRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                gridView1.RefreshData();
+            }
+            else
+            {
+                if (CompanyMasterRequest.Result.Message.Contains("FK__"))
+                {
+                    XtraMessageBox.Show("This Iteam has RelationShip with Another Model", "RelationShip Issues", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    XtraMessageBox.Show(CompanyMasterRequest.Result.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
         }
 

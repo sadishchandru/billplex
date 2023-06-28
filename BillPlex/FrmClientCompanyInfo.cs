@@ -279,7 +279,7 @@ namespace BillPlex
                 txtBankDetails.Enabled = false;
             }
 
-            btnAdd.Enabled = false;
+            btnAdd.Enabled = true;
             EditBtn.Enabled = false;
             UpdateBtn.Enabled = true;
         }
@@ -356,6 +356,16 @@ namespace BillPlex
         private void AuthAddClearBtn_Click(object sender, EventArgs e)
         {
             TxtAuthAddress.ResetText();
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            string textToCopy = txtAuthPanNo.Text;
+
+            if (!string.IsNullOrEmpty(textToCopy))
+            {
+                Clipboard.SetText(textToCopy);
+            }
         }
     }
 }

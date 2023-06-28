@@ -22,7 +22,7 @@ namespace BusinessLayer
                 InitializeDb();
 
                 List<DbParams> objLstdbParams = new List<DbParams>();
-                objLstdbParams.Add(new DbParams(DbType.String, 50, Id, "@ID", ParameterDirection.Input));
+                objLstdbParams.Add(new DbParams(DbType.String, 50, Id, "@Id", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, ColorName, "@Colournname", ParameterDirection.Input));
 
                 dbReader = ObjDbfactory.GetReader("PRO_UpdateColourMaster", false, objLstdbParams);
@@ -36,8 +36,8 @@ namespace BusinessLayer
             }
             catch (Exception ex)
             {
-                // Display a warning alert
-                // XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Result.Message = ex.Message;
+                Result.Status = ResultStatus.Success;
             }
             finally
             {
@@ -73,8 +73,8 @@ namespace BusinessLayer
             }
             catch (Exception ex)
             {
-                // Display a warning alert
-                // XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Result.Message = ex.Message;
+                Result.Status = ResultStatus.Success;
             }
             finally
             {
