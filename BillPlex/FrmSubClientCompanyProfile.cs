@@ -74,7 +74,18 @@ namespace BillPlex
             {
                 XtraMessageBox.Show(SubClientRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else            {                if (SubClientRequest.Result.Message.Contains("FK__"))                {                    XtraMessageBox.Show("This Iteam has RelationShip with Another Model", "RelationShip Issues", MessageBoxButtons.OK, MessageBoxIcon.Warning);                }                else                {                    XtraMessageBox.Show(SubClientRequest.Result.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);                }            }
+            else
+            {
+                if (SubClientRequest.Result.Message.Contains("FK__"))
+                {
+                    XtraMessageBox.Show("This Iteam has RelationShip with Another Model", "RelationShip Issues", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    XtraMessageBox.Show(SubClientRequest.Result.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+            }
         }
 
         private void btn_EditClick(object sender, EventArgs e)

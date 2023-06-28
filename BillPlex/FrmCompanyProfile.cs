@@ -73,7 +73,14 @@ namespace BillPlex
 
         private void Editbtn_Click(object sender, EventArgs e)
         {
+            var selectedRow = gridView1.GetSelectedRows();
 
+            CompanyInfoRequest = new FrmCompanyInfo();
+
+            CompanyInfoRequest.BindData(gridView1);
+
+
+            CompanyInfoRequest.Show();
         }
 
         private void gridControl1_Click_1(object sender, EventArgs e)
