@@ -171,6 +171,14 @@ namespace BillPlex
                         XtraMessageBox.Show(SubClientRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         this.Close();
+
+                        FrmSubClientCompanyProfile form = Application.OpenForms.OfType<FrmSubClientCompanyProfile>().FirstOrDefault();
+
+                        Form myForm = Application.OpenForms["FrmSubClientCompanyProfile"];
+                        if (myForm != null)
+                        {
+                            form.ReloadSqlDataSource();
+                        }
                     }
                     else
                     {

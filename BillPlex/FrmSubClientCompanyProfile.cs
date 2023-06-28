@@ -41,6 +41,14 @@ namespace BillPlex
             //sqlDataSource1.FillAsync();
         }
 
+
+        public void ReloadSqlDataSource()
+        {
+            sqlDataSource1.FillAsync();
+            SubClientGrid.RefreshData();
+
+        }
+
         private void Newbtn_Click(object sender, EventArgs e)
         {
             FrmSubClientCompanyInfo CP = new FrmSubClientCompanyInfo();

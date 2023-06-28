@@ -77,6 +77,14 @@ namespace BillPlex
             sqlDataSource1.FillAsync();
         }
 
+
+        public void ReloadSqlDataSource()
+        {
+            sqlDataSource1.FillAsync();
+            ClientCompanyBankGrid.RefreshData();
+
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             try
@@ -109,18 +117,22 @@ namespace BillPlex
                     };
                     if (ClientCompanyBankInfoRequest.Result.Status == ResultStatus.Success)
                     {
-                        //ClientCompanyBankInfoRequest.RefreshData();
 
                         XtraMessageBox.Show(ClientCompanyBankInfoRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         //btnUpdate.Enabled = true;
                         btnCancel_Click();
                         btnAdd.Enabled = false;
                         btnCancel.Enabled = true;
+                        ReloadSqlDataSource();
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show(ClientCompanyBankInfoRequest.Result.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 else
                 {
-                    XtraMessageBox.Show(ClientCompanyBankInfoRequest.Result.Message, "please give the manditory field", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    XtraMessageBox.Show("please give the manditory field", "Validating", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
 

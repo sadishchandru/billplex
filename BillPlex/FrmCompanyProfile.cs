@@ -39,6 +39,13 @@ namespace BillPlex
             sqlDataSource2.FillAsync();
         }
 
+        public void ReloadSqlDataSource()
+        {
+            sqlDataSource2.FillAsync();
+            gridView1.RefreshData();
+
+        }
+
         private void Newbtn_Click(object sender, EventArgs e)
         {
             FrmCompanyInfo CompanyInfo = new FrmCompanyInfo();

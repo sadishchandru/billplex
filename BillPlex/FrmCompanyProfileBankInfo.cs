@@ -63,6 +63,13 @@ namespace BillPlex
             sqlDataSource1.FillAsync();
         }
 
+        public void ReloadSqlDataSource()
+        {
+            sqlDataSource1.FillAsync();
+            MainBankInfoGridView.RefreshData();
+
+        }
+
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             try
@@ -86,11 +93,10 @@ namespace BillPlex
 
                     if (CompanyBankRequest.Result.Status == ResultStatus.Success)
                     {
-                        MainBankInfoGridView.RefreshData();
-
                         XtraMessageBox.Show(CompanyBankRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         btnCancel_Click();
                         btnCancel.Enabled = true;
+                        ReloadSqlDataSource();
                     }
                 }
                 else

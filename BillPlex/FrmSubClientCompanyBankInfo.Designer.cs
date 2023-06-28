@@ -340,10 +340,10 @@ namespace BillPlex
             // imgImage
             // 
             this.imgImage.EditValue = ((object)(resources.GetObject("imgImage.EditValue")));
-            this.imgImage.Location = new System.Drawing.Point(524, 53);
+            this.imgImage.Location = new System.Drawing.Point(572, 53);
             this.imgImage.Name = "imgImage";
             this.imgImage.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.imgImage.Size = new System.Drawing.Size(1047, 338);
+            this.imgImage.Size = new System.Drawing.Size(999, 338);
             this.imgImage.TabIndex = 23;
             // 
             // btn

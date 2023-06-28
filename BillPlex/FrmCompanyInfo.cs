@@ -99,6 +99,14 @@ namespace BillPlex
                     {
                         XtraMessageBox.Show(CompanyRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
+
+                        FrmCompanyProfile form = Application.OpenForms.OfType<FrmCompanyProfile>().FirstOrDefault();
+
+                        Form myForm = Application.OpenForms["FrmCompanyProfile"];
+                        if (myForm != null)
+                        {
+                            form.ReloadSqlDataSource();
+                        }
                     }
                     else
                     {
