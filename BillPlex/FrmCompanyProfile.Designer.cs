@@ -33,6 +33,8 @@ namespace BillPlex
             DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
             DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCompanyProfile));
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
@@ -47,8 +49,50 @@ namespace BillPlex
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.sqlDataSource2 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Id = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colComCcode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colComName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colComType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colComOffAdd = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colComstate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colComPin = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colComNature = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colComDatestart = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colComStdCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colComPhone = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colComEmail = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colComWebsite = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colComPFno = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colComPFdate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colComESIno = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colComESIdate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colComFactoryNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colComCSTno = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colComSSLno = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colComTINno = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colComLicenseno = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colComPanno = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colComTanno = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCAuthorName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCAFathername = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCAGender = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCAAddress = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCAstate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCApin = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCAStdCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCAPhoneno = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCAMobile = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCAblood = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCADOB = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCAEmail = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCAPan = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCBankname = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCBankACNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCBankAddress = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCreatedDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCAStartDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.drpClientProfile = new DevExpress.XtraEditors.ComboBoxEdit();
             this.Printbtn = new DevExpress.XtraEditors.SimpleButton();
             this.Claerbtn = new DevExpress.XtraEditors.SimpleButton();
@@ -245,27 +289,417 @@ namespace BillPlex
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(6, 143);
+            this.gridControl1.DataMember = "PRO_GetMasterCompanyProfileInfo";
+            this.gridControl1.DataSource = this.sqlDataSource2;
+            this.gridControl1.Location = new System.Drawing.Point(5, 90);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1395, 474);
-            this.gridControl1.TabIndex = 10;
+            this.gridControl1.Size = new System.Drawing.Size(1368, 527);
+            this.gridControl1.TabIndex = 11;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click_1);
+            // 
+            // sqlDataSource2
+            // 
+            this.sqlDataSource2.ConnectionName = "BillPlex";
+            this.sqlDataSource2.Name = "sqlDataSource2";
+            storedProcQuery1.Name = "PRO_GetMasterCompanyProfileInfo";
+            queryParameter1.Name = "@SearchKey";
+            queryParameter1.Type = typeof(string);
+            storedProcQuery1.Parameters.Add(queryParameter1);
+            storedProcQuery1.StoredProcName = "PRO_GetMasterCompanyProfileInfo";
+            this.sqlDataSource2.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
+            storedProcQuery1});
+            this.sqlDataSource2.ResultSchemaSerializable = resources.GetString("sqlDataSource2.ResultSchemaSerializable");
             // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.Id});
+            this.colId,
+            this.colComCcode,
+            this.colComName,
+            this.colComType,
+            this.colComOffAdd,
+            this.colComstate,
+            this.colComPin,
+            this.colComNature,
+            this.colComDatestart,
+            this.colComStdCode,
+            this.colComPhone,
+            this.colComEmail,
+            this.colComWebsite,
+            this.colComPFno,
+            this.colComPFdate,
+            this.colComESIno,
+            this.colComESIdate,
+            this.colComFactoryNo,
+            this.colComCSTno,
+            this.colComSSLno,
+            this.colComTINno,
+            this.colComLicenseno,
+            this.colComPanno,
+            this.colComTanno,
+            this.colCAuthorName,
+            this.colCAFathername,
+            this.colCAGender,
+            this.colCAAddress,
+            this.colCAstate,
+            this.colCApin,
+            this.colCAStdCode,
+            this.colCAPhoneno,
+            this.colCAMobile,
+            this.colCAblood,
+            this.colCADOB,
+            this.colCAEmail,
+            this.colCAPan,
+            this.colCBankname,
+            this.colCBankACNo,
+            this.colCBankAddress,
+            this.colCreatedDate,
+            this.colCAStartDate});
             this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsScrollAnnotations.ShowCustomAnnotations = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView1.OptionsScrollAnnotations.ShowErrors = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView1.OptionsScrollAnnotations.ShowFocusedRow = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView1.OptionsScrollAnnotations.ShowSelectedRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView1.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             // 
-            // Id
+            // colId
             // 
-            this.Id.Caption = "gridColumn1";
-            this.Id.FieldName = "Id";
-            this.Id.Name = "Id";
+            this.colId.FieldName = "Id";
+            this.colId.Name = "colId";
+            this.colId.Visible = true;
+            this.colId.VisibleIndex = 0;
+            this.colId.Width = 33;
+            // 
+            // colComCcode
+            // 
+            this.colComCcode.FieldName = "ComCcode";
+            this.colComCcode.Name = "colComCcode";
+            this.colComCcode.Visible = true;
+            this.colComCcode.VisibleIndex = 1;
+            this.colComCcode.Width = 77;
+            // 
+            // colComName
+            // 
+            this.colComName.FieldName = "ComName";
+            this.colComName.Name = "colComName";
+            this.colComName.Visible = true;
+            this.colComName.VisibleIndex = 2;
+            this.colComName.Width = 74;
+            // 
+            // colComType
+            // 
+            this.colComType.FieldName = "ComType";
+            this.colComType.Name = "colComType";
+            this.colComType.Visible = true;
+            this.colComType.VisibleIndex = 3;
+            this.colComType.Width = 71;
+            // 
+            // colComOffAdd
+            // 
+            this.colComOffAdd.FieldName = "ComOffAdd";
+            this.colComOffAdd.Name = "colComOffAdd";
+            this.colComOffAdd.Visible = true;
+            this.colComOffAdd.VisibleIndex = 4;
+            this.colComOffAdd.Width = 85;
+            // 
+            // colComstate
+            // 
+            this.colComstate.FieldName = "Comstate";
+            this.colComstate.Name = "colComstate";
+            this.colComstate.Visible = true;
+            this.colComstate.VisibleIndex = 5;
+            this.colComstate.Width = 69;
+            // 
+            // colComPin
+            // 
+            this.colComPin.FieldName = "ComPin";
+            this.colComPin.Name = "colComPin";
+            this.colComPin.Visible = true;
+            this.colComPin.VisibleIndex = 6;
+            this.colComPin.Width = 61;
+            // 
+            // colComNature
+            // 
+            this.colComNature.FieldName = "ComNature";
+            this.colComNature.Name = "colComNature";
+            this.colComNature.Visible = true;
+            this.colComNature.VisibleIndex = 7;
+            this.colComNature.Width = 80;
+            // 
+            // colComDatestart
+            // 
+            this.colComDatestart.FieldName = "ComDatestart";
+            this.colComDatestart.Name = "colComDatestart";
+            this.colComDatestart.Visible = true;
+            this.colComDatestart.VisibleIndex = 8;
+            this.colComDatestart.Width = 93;
+            // 
+            // colComStdCode
+            // 
+            this.colComStdCode.FieldName = "ComStdCode";
+            this.colComStdCode.Name = "colComStdCode";
+            this.colComStdCode.Visible = true;
+            this.colComStdCode.VisibleIndex = 9;
+            this.colComStdCode.Width = 91;
+            // 
+            // colComPhone
+            // 
+            this.colComPhone.FieldName = "ComPhone";
+            this.colComPhone.Name = "colComPhone";
+            this.colComPhone.Visible = true;
+            this.colComPhone.VisibleIndex = 10;
+            this.colComPhone.Width = 77;
+            // 
+            // colComEmail
+            // 
+            this.colComEmail.FieldName = "ComEmail";
+            this.colComEmail.Name = "colComEmail";
+            this.colComEmail.Visible = true;
+            this.colComEmail.VisibleIndex = 11;
+            this.colComEmail.Width = 71;
+            // 
+            // colComWebsite
+            // 
+            this.colComWebsite.FieldName = "ComWebsite";
+            this.colComWebsite.Name = "colComWebsite";
+            this.colComWebsite.Visible = true;
+            this.colComWebsite.VisibleIndex = 12;
+            this.colComWebsite.Width = 86;
+            // 
+            // colComPFno
+            // 
+            this.colComPFno.FieldName = "ComPFno";
+            this.colComPFno.Name = "colComPFno";
+            this.colComPFno.Visible = true;
+            this.colComPFno.VisibleIndex = 13;
+            this.colComPFno.Width = 71;
+            // 
+            // colComPFdate
+            // 
+            this.colComPFdate.FieldName = "ComPFdate";
+            this.colComPFdate.Name = "colComPFdate";
+            this.colComPFdate.Visible = true;
+            this.colComPFdate.VisibleIndex = 14;
+            this.colComPFdate.Width = 81;
+            // 
+            // colComESIno
+            // 
+            this.colComESIno.FieldName = "ComESIno";
+            this.colComESIno.Name = "colComESIno";
+            this.colComESIno.Visible = true;
+            this.colComESIno.VisibleIndex = 15;
+            this.colComESIno.Width = 78;
+            // 
+            // colComESIdate
+            // 
+            this.colComESIdate.FieldName = "ComESIdate";
+            this.colComESIdate.Name = "colComESIdate";
+            this.colComESIdate.Visible = true;
+            this.colComESIdate.VisibleIndex = 16;
+            this.colComESIdate.Width = 88;
+            // 
+            // colComFactoryNo
+            // 
+            this.colComFactoryNo.FieldName = "ComFactoryNo";
+            this.colComFactoryNo.Name = "colComFactoryNo";
+            this.colComFactoryNo.Visible = true;
+            this.colComFactoryNo.VisibleIndex = 17;
+            this.colComFactoryNo.Width = 100;
+            // 
+            // colComCSTno
+            // 
+            this.colComCSTno.FieldName = "ComCSTno";
+            this.colComCSTno.Name = "colComCSTno";
+            this.colComCSTno.Visible = true;
+            this.colComCSTno.VisibleIndex = 18;
+            this.colComCSTno.Width = 81;
+            // 
+            // colComSSLno
+            // 
+            this.colComSSLno.FieldName = "ComSSLno";
+            this.colComSSLno.Name = "colComSSLno";
+            this.colComSSLno.Visible = true;
+            this.colComSSLno.VisibleIndex = 19;
+            this.colComSSLno.Width = 79;
+            // 
+            // colComTINno
+            // 
+            this.colComTINno.FieldName = "ComTINno";
+            this.colComTINno.Name = "colComTINno";
+            this.colComTINno.Visible = true;
+            this.colComTINno.VisibleIndex = 20;
+            this.colComTINno.Width = 79;
+            // 
+            // colComLicenseno
+            // 
+            this.colComLicenseno.FieldName = "ComLicenseno";
+            this.colComLicenseno.Name = "colComLicenseno";
+            this.colComLicenseno.Visible = true;
+            this.colComLicenseno.VisibleIndex = 21;
+            this.colComLicenseno.Width = 94;
+            // 
+            // colComPanno
+            // 
+            this.colComPanno.FieldName = "ComPanno";
+            this.colComPanno.Name = "colComPanno";
+            this.colComPanno.Visible = true;
+            this.colComPanno.VisibleIndex = 22;
+            this.colComPanno.Width = 77;
+            // 
+            // colComTanno
+            // 
+            this.colComTanno.FieldName = "ComTanno";
+            this.colComTanno.Name = "colComTanno";
+            this.colComTanno.Visible = true;
+            this.colComTanno.VisibleIndex = 23;
+            this.colComTanno.Width = 77;
+            // 
+            // colCAuthorName
+            // 
+            this.colCAuthorName.FieldName = "CAuthorName";
+            this.colCAuthorName.Name = "colCAuthorName";
+            this.colCAuthorName.Visible = true;
+            this.colCAuthorName.VisibleIndex = 24;
+            this.colCAuthorName.Width = 93;
+            // 
+            // colCAFathername
+            // 
+            this.colCAFathername.FieldName = "CAFathername";
+            this.colCAFathername.Name = "colCAFathername";
+            this.colCAFathername.Visible = true;
+            this.colCAFathername.VisibleIndex = 25;
+            this.colCAFathername.Width = 98;
+            // 
+            // colCAGender
+            // 
+            this.colCAGender.FieldName = "CAGender";
+            this.colCAGender.Name = "colCAGender";
+            this.colCAGender.Visible = true;
+            this.colCAGender.VisibleIndex = 26;
+            // 
+            // colCAAddress
+            // 
+            this.colCAAddress.FieldName = "CAAddress";
+            this.colCAAddress.Name = "colCAAddress";
+            this.colCAAddress.Visible = true;
+            this.colCAAddress.VisibleIndex = 27;
+            this.colCAAddress.Width = 79;
+            // 
+            // colCAstate
+            // 
+            this.colCAstate.FieldName = "CAstate";
+            this.colCAstate.Name = "colCAstate";
+            this.colCAstate.Visible = true;
+            this.colCAstate.VisibleIndex = 28;
+            this.colCAstate.Width = 62;
+            // 
+            // colCApin
+            // 
+            this.colCApin.FieldName = "CApin";
+            this.colCApin.Name = "colCApin";
+            this.colCApin.Visible = true;
+            this.colCApin.VisibleIndex = 29;
+            this.colCApin.Width = 51;
+            // 
+            // colCAStdCode
+            // 
+            this.colCAStdCode.FieldName = "CAStdCode";
+            this.colCAStdCode.Name = "colCAStdCode";
+            this.colCAStdCode.Visible = true;
+            this.colCAStdCode.VisibleIndex = 30;
+            this.colCAStdCode.Width = 84;
+            // 
+            // colCAPhoneno
+            // 
+            this.colCAPhoneno.FieldName = "CAPhoneno";
+            this.colCAPhoneno.Name = "colCAPhoneno";
+            this.colCAPhoneno.Visible = true;
+            this.colCAPhoneno.VisibleIndex = 31;
+            this.colCAPhoneno.Width = 82;
+            // 
+            // colCAMobile
+            // 
+            this.colCAMobile.FieldName = "CAMobile";
+            this.colCAMobile.Name = "colCAMobile";
+            this.colCAMobile.Visible = true;
+            this.colCAMobile.VisibleIndex = 32;
+            this.colCAMobile.Width = 70;
+            // 
+            // colCAblood
+            // 
+            this.colCAblood.FieldName = "CAblood";
+            this.colCAblood.Name = "colCAblood";
+            this.colCAblood.Visible = true;
+            this.colCAblood.VisibleIndex = 33;
+            this.colCAblood.Width = 63;
+            // 
+            // colCADOB
+            // 
+            this.colCADOB.FieldName = "CADOB";
+            this.colCADOB.Name = "colCADOB";
+            this.colCADOB.Visible = true;
+            this.colCADOB.VisibleIndex = 34;
+            this.colCADOB.Width = 58;
+            // 
+            // colCAEmail
+            // 
+            this.colCAEmail.FieldName = "CAEmail";
+            this.colCAEmail.Name = "colCAEmail";
+            this.colCAEmail.Visible = true;
+            this.colCAEmail.VisibleIndex = 35;
+            this.colCAEmail.Width = 64;
+            // 
+            // colCAPan
+            // 
+            this.colCAPan.FieldName = "CAPan";
+            this.colCAPan.Name = "colCAPan";
+            this.colCAPan.Visible = true;
+            this.colCAPan.VisibleIndex = 36;
+            this.colCAPan.Width = 58;
+            // 
+            // colCBankname
+            // 
+            this.colCBankname.FieldName = "CBankname";
+            this.colCBankname.Name = "colCBankname";
+            this.colCBankname.Visible = true;
+            this.colCBankname.VisibleIndex = 37;
+            this.colCBankname.Width = 79;
+            // 
+            // colCBankACNo
+            // 
+            this.colCBankACNo.FieldName = "CBankACNo";
+            this.colCBankACNo.Name = "colCBankACNo";
+            this.colCBankACNo.Visible = true;
+            this.colCBankACNo.VisibleIndex = 38;
+            this.colCBankACNo.Width = 83;
+            // 
+            // colCBankAddress
+            // 
+            this.colCBankAddress.FieldName = "CBankAddress";
+            this.colCBankAddress.Name = "colCBankAddress";
+            this.colCBankAddress.Visible = true;
+            this.colCBankAddress.VisibleIndex = 39;
+            this.colCBankAddress.Width = 95;
+            // 
+            // colCreatedDate
+            // 
+            this.colCreatedDate.FieldName = "CreatedDate";
+            this.colCreatedDate.Name = "colCreatedDate";
+            this.colCreatedDate.Visible = true;
+            this.colCreatedDate.VisibleIndex = 40;
+            this.colCreatedDate.Width = 88;
+            // 
+            // colCAStartDate
+            // 
+            this.colCAStartDate.FieldName = "CAStartDate";
+            this.colCAStartDate.Name = "colCAStartDate";
+            this.colCAStartDate.Visible = true;
+            this.colCAStartDate.VisibleIndex = 41;
+            this.colCAStartDate.Width = 119;
             // 
             // drpClientProfile
             // 
@@ -351,14 +785,13 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery1.Name = "PRO_GetMasterCompanyProfileInfo";
-            queryParameter1.Name = "@SearchKey";
-            queryParameter1.Type = typeof(string);
-            storedProcQuery1.Parameters.Add(queryParameter1);
-            storedProcQuery1.StoredProcName = "PRO_GetMasterCompanyProfileInfo";
+            storedProcQuery2.Name = "PRO_GetMasterCompanyProfileInfo";
+            queryParameter2.Name = "@SearchKey";
+            queryParameter2.Type = typeof(string);
+            storedProcQuery2.Parameters.Add(queryParameter2);
+            storedProcQuery2.StoredProcName = "PRO_GetMasterCompanyProfileInfo";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery1});
-            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
+            storedProcQuery2});
             // 
             // FrmCompanyProfile
             // 
@@ -407,9 +840,51 @@ namespace BillPlex
         private DevExpress.XtraEditors.SimpleButton Findbtn;
         private DevExpress.XtraEditors.SimpleButton Printbtn;
         private DevExpress.XtraEditors.ComboBoxEdit drpClientProfile;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn Id;
         private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource2;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn colId;
+        private DevExpress.XtraGrid.Columns.GridColumn colComCcode;
+        private DevExpress.XtraGrid.Columns.GridColumn colComName;
+        private DevExpress.XtraGrid.Columns.GridColumn colComType;
+        private DevExpress.XtraGrid.Columns.GridColumn colComOffAdd;
+        private DevExpress.XtraGrid.Columns.GridColumn colComstate;
+        private DevExpress.XtraGrid.Columns.GridColumn colComPin;
+        private DevExpress.XtraGrid.Columns.GridColumn colComNature;
+        private DevExpress.XtraGrid.Columns.GridColumn colComDatestart;
+        private DevExpress.XtraGrid.Columns.GridColumn colComStdCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colComPhone;
+        private DevExpress.XtraGrid.Columns.GridColumn colComEmail;
+        private DevExpress.XtraGrid.Columns.GridColumn colComWebsite;
+        private DevExpress.XtraGrid.Columns.GridColumn colComPFno;
+        private DevExpress.XtraGrid.Columns.GridColumn colComPFdate;
+        private DevExpress.XtraGrid.Columns.GridColumn colComESIno;
+        private DevExpress.XtraGrid.Columns.GridColumn colComESIdate;
+        private DevExpress.XtraGrid.Columns.GridColumn colComFactoryNo;
+        private DevExpress.XtraGrid.Columns.GridColumn colComCSTno;
+        private DevExpress.XtraGrid.Columns.GridColumn colComSSLno;
+        private DevExpress.XtraGrid.Columns.GridColumn colComTINno;
+        private DevExpress.XtraGrid.Columns.GridColumn colComLicenseno;
+        private DevExpress.XtraGrid.Columns.GridColumn colComPanno;
+        private DevExpress.XtraGrid.Columns.GridColumn colComTanno;
+        private DevExpress.XtraGrid.Columns.GridColumn colCAuthorName;
+        private DevExpress.XtraGrid.Columns.GridColumn colCAFathername;
+        private DevExpress.XtraGrid.Columns.GridColumn colCAGender;
+        private DevExpress.XtraGrid.Columns.GridColumn colCAAddress;
+        private DevExpress.XtraGrid.Columns.GridColumn colCAstate;
+        private DevExpress.XtraGrid.Columns.GridColumn colCApin;
+        private DevExpress.XtraGrid.Columns.GridColumn colCAStdCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colCAPhoneno;
+        private DevExpress.XtraGrid.Columns.GridColumn colCAMobile;
+        private DevExpress.XtraGrid.Columns.GridColumn colCAblood;
+        private DevExpress.XtraGrid.Columns.GridColumn colCADOB;
+        private DevExpress.XtraGrid.Columns.GridColumn colCAEmail;
+        private DevExpress.XtraGrid.Columns.GridColumn colCAPan;
+        private DevExpress.XtraGrid.Columns.GridColumn colCBankname;
+        private DevExpress.XtraGrid.Columns.GridColumn colCBankACNo;
+        private DevExpress.XtraGrid.Columns.GridColumn colCBankAddress;
+        private DevExpress.XtraGrid.Columns.GridColumn colCreatedDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colCAStartDate;
     }
 }

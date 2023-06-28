@@ -63,7 +63,7 @@ BEGIN
 	IF EXISTS (SELECT NULL FROM SubClientMaster WHERE SubComCode = @SubComCode AND Id != @Id)
 	BEGIN
 	SET @ResultMessage = 'SubCompany Code already exists';
-    SET @ResultNo = 1;
+    SET @ResultNo = 0;
 	END
 	ELSE
 	BEGIN

@@ -107,7 +107,8 @@ namespace BillPlex
             try
             {
 
-                if (drpMainCompany.Text != string.Empty && drpCCompany.Text != string.Empty && txtCompanyCode.Text != "" && txtCompanyName.Text != "")
+                if (drpMainCompany.Text != string.Empty && drpCCompany.Text != string.Empty && txtCompanyCode.Text != "" && txtCompanyName.Text != "" && 
+                    (drpMainCompany.Text != string.Empty && drpMainCompany.Text != "Select") && (drpCCompany.Text != string.Empty && drpCCompany.Text != "Select"))
 
                 {
                     string selectedMasterItem = (string)drpMainCompany.SelectedItem;
@@ -163,22 +164,25 @@ namespace BillPlex
                     SubClientRequest.AuthPercent = txtAuthPercent.Text;
                     SubClientRequest.ActiveStatus = radActiveStatus.Text;
                     SubClientRequest.Update();
-                    this.Close();
+                    //this.Close();
+
+                    if (SubClientRequest.Result.Status == ResultStatus.Success)
+                    {
+                        XtraMessageBox.Show(SubClientRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        this.Close();
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show(SubClientRequest.Result.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    }
 
                 }
                 else
                 {
                     XtraMessageBox.Show("Please Enter Manditory field", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
-                if (SubClientRequest.Result.Status == ResultStatus.Success)
-                {
-                    XtraMessageBox.Show(SubClientRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    this.Close();
-                }
-
-
             }
 
             catch (Exception ex)

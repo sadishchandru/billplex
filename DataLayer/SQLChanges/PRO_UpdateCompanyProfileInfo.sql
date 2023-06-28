@@ -62,7 +62,7 @@ BEGIN
 	IF EXISTS (SELECT NULL FROM CompanyMasterInfo WHERE ComCcode = @ComCcode AND Id != @Id)
 	BEGIN
 	SET @ResultMessage = 'Company Code already exists';
-    SET @ResultNo = 1;
+    SET @ResultNo = 0;
 	END
 	ELSE
 	BEGIN

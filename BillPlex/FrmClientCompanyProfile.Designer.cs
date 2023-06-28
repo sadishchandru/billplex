@@ -381,7 +381,6 @@ namespace BillPlex
             this.gridView2.OptionsScrollAnnotations.ShowFocusedRow = DevExpress.Utils.DefaultBoolean.False;
             this.gridView2.OptionsScrollAnnotations.ShowSelectedRows = DevExpress.Utils.DefaultBoolean.False;
             this.gridView2.PaintStyleName = "Flat";
-            this.gridView2.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             this.gridView2.DoubleClick += new System.EventHandler(this.Editbtn_Click);
             // 
             // colMasterCode

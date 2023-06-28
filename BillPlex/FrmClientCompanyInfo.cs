@@ -93,7 +93,7 @@ namespace BillPlex
         {
             try
             {
-                if ((txtCompanyCode.Text != string.Empty || txtCompanyCode.Text != "Select") && txtCompanyName.Text != string.Empty && txtName.Text != string.Empty)
+                if ((txtCompanyCode.Text != string.Empty || txtCompanyCode.Text != "Select") && (txtCompanyName.Text != string.Empty && txtName.Text != string.Empty) && (drpMainCompany.Text != string.Empty && drpMainCompany.Text != "Select"))
                 {
 
                     var selectedItem = drpMainCompany.EditValue;
@@ -145,32 +145,31 @@ namespace BillPlex
                     ClientCompanyRequest.Update();
                     //this.Close();
 
-                    FrmClientCompanyProfile CompanyInfo = new FrmClientCompanyProfile();
-                    //CompanyInfo.MdiParent = this;
-                    CompanyInfo.FrmClientCompanyProfile_Load(sender, e);
+                    if (ClientCompanyRequest.Result.Status == ResultStatus.Success)
+                    {
+                        XtraMessageBox.Show(ClientCompanyRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Close();
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show(ClientCompanyRequest.Result.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    }
+
+                    //FrmClientCompanyProfile CompanyInfo = new FrmClientCompanyProfile();
+                    ////CompanyInfo.MdiParent = this;
+                    //CompanyInfo.FrmClientCompanyProfile_Load(sender, e);
                 }
                 else
                 {
-                    XtraMessageBox.Show(ClientCompanyRequest.Result.Message, "please give the manditory field", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    XtraMessageBox.Show("please give the manditory field", "Validating", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
-                //if (ClientCompanyRequest.CompanyCode == string.Empty)
-                //{
-                //    XtraMessageBox.Show(ClientCompanyRequest.Result.Message, "please Select Main Company", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                //}
-
-                if (ClientCompanyRequest.Result.Status == ResultStatus.Success)
-                {
-                    XtraMessageBox.Show(ClientCompanyRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-
 
             }
             catch (Exception ex)
             {
                 // Display a warning alert
-                //XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             };
         }

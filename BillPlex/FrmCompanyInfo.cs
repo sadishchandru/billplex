@@ -95,23 +95,28 @@ namespace BillPlex
                     CompanyRequest.AuthorPanNo = txtAuthorPanNo.Text;
                     CompanyRequest.Update();
 
-                    this.Close();
+                    if (CompanyRequest.Result.Status == ResultStatus.Success)
+                    {
+                        XtraMessageBox.Show(CompanyRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show(CompanyRequest.Result.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+
+                    //  this.Close();
                 }
                 else
                 {
                     XtraMessageBox.Show("please Enter the manditory field", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                if (CompanyRequest.Result.Status == ResultStatus.Success)
-                {
-                    XtraMessageBox.Show(CompanyRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
                 }
 
             }
             catch (Exception ex)
             {
                 // Display a warning alert
-                //XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

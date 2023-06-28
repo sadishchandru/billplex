@@ -13,9 +13,13 @@ namespace BillPlex
 {
     public partial class NavBar : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+
+        private FrmCompanyProfile MasterCompanyInfo;
         public NavBar()
         {
             InitializeComponent();
+
+            MasterCompanyInfo = new FrmCompanyProfile();
         }
 
         private void Master_Company_Click(object sender, ItemClickEventArgs e)
@@ -28,15 +32,25 @@ namespace BillPlex
         private void ClientCompany_ItemClick(object sender, ItemClickEventArgs e)
         {
             bool IsOpen = false;
-            foreach (Form f in Application.OpenForms)
+
+            Form myForm = Application.OpenForms["FrmClientCompanyProfile"];
+            if (myForm != null)
             {
-                if (f.Text == "FrmClientCompanyProfile")
-                {
-                    IsOpen = true;
-                    f.Focus();
-                    break;
-                }
+                myForm.Close();
+                myForm = new FrmCompanyProfile();
+                myForm.MdiParent = this;
+                myForm.Show();
+                IsOpen = true;
             }
+            //foreach (Form f in Application.OpenForms)
+            //{
+            //    if (f.Text == "FrmClientCompanyProfile")
+            //    {
+            //        IsOpen = true;
+            //        f.Focus();
+            //        break;
+            //    }
+            //}
             if (IsOpen == false)
             {
                 FrmClientCompanyProfile ClientCompanyInfo = new FrmClientCompanyProfile();
@@ -51,21 +65,39 @@ namespace BillPlex
         private void MasterCompany_ItemClick(object sender, ItemClickEventArgs e)
         {
             bool IsOpen = false;
-            foreach(Form f in Application.OpenForms)
+            Form myForm = Application.OpenForms["FrmCompanyProfile"];
+            if (myForm != null)
             {
-                if(f.Text == "FrmCompanyProfile")
-                {
-                    IsOpen = true;
-                    f.Focus();
-                    break;
-                }
+                myForm.Close();
+                myForm = new FrmCompanyProfile();
+                myForm.MdiParent = this;
+                myForm.Show();
+                IsOpen = true;
             }
-            if(IsOpen == false)
+            
+            //foreach(Form f in Application.OpenForms)
+            //{
+            //    Form myForm = Application.OpenForms["FrmCompanyProfile"];
+            //    myForm.Close();
+            //    myForm = new FrmCompanyProfile();
+            //    myForm.MdiParent = this;
+            //    myForm.Show();
+
+            //    //if (f.Text == "FrmCompanyProfile")
+            //    //{
+            //    //    IsOpen = true;
+            //    //    f.Focus();
+            //    //    break;
+            //    //}
+            //}
+            if (IsOpen == false)
             {
-                FrmCompanyProfile MasterCompanyInfo = new FrmCompanyProfile();
+                 MasterCompanyInfo = new FrmCompanyProfile();
                 MasterCompanyInfo.MdiParent = this;
                 MasterCompanyInfo.Show();
             }
+            
+            //MasterCompanyInfo.MdiParent = this;
             //FrmCompanyProfile MasterCompanyInfo = new FrmCompanyProfile();
             //MasterCompanyInfo.MdiParent = this;
             //MasterCompanyInfo.Show();
@@ -74,15 +106,28 @@ namespace BillPlex
         private void SubClient_ItemClick(object sender, ItemClickEventArgs e)
         {
             bool IsOpen = false;
-            foreach (Form f in Application.OpenForms)
+
+            Form myForm = Application.OpenForms["FrmSubClientCompanyProfile"];
+            if (myForm != null)
             {
-                if (f.Text == "FrmSubClientCompanyProfile")
-                {
-                    IsOpen = true;
-                    f.Focus();
-                    break;
-                }
+                myForm.Close();
+                myForm = new FrmCompanyProfile();
+                myForm.MdiParent = this;
+                myForm.Show();
+                IsOpen = true;
             }
+
+            //foreach (Form f in Application.OpenForms)
+            //{
+            //    if (f.Text == "FrmSubClientCompanyProfile")
+            //    {
+            //        IsOpen = true;
+            //        f.Focus();
+            //        break;
+            //    }
+            //}
+
+
             if (IsOpen == false)
             {
                 FrmSubClientCompanyProfile SubClientCompanyInfo = new FrmSubClientCompanyProfile();

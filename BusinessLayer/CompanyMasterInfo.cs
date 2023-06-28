@@ -102,7 +102,7 @@ namespace BusinessLayer
                 //objLstDbParams.Add(new DbParams(DbType.DateTime, 50, AuthStartingDate == "" ? null : AuthStartingDate, "@CAStartDate", ParameterDirection.Input));
 
                 dbReader = ObjDbfactory.GetReader("PRO_UpdateCompanyProfileInfo", false, objLstDbParams);
-                MasterList = MasterResult();
+                //MasterList = MasterResult();
 
                 while (dbReader.Read())
                 {
@@ -114,8 +114,8 @@ namespace BusinessLayer
             }
             catch (Exception ex)
             {
-                // Display a warning alert
-                // XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Result.Message = ex.Message;
+                Result.Status = ResultStatus.Error;
 
             }
             finally
