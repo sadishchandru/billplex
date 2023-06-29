@@ -49,6 +49,7 @@ namespace BusinessLayer
         public string Percent { get; set; }
         public string ActiveStatus { get; set; }
         public List<DropDownItemInfo> MasterCompanyList { get; set; }
+        public List<DropDownItemInfo> ClientCodeList { get; set; }
         public List<DropDownItemInfo> ClientBankList { get; set; }
         public List<DropDownItemInfo> ClientList { get; set; }
 

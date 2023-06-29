@@ -21,29 +21,54 @@ namespace BillPlex
         private readonly string _conn;
 
         private CompanyMasterInfo CompanyRequest;
+
+        private List<string> masterCodeList;
         //private readonly SqlConnector _conn;
         public FrmCompanyInfo()
         {
             InitializeComponent();
-            //string connectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
-            //_conn = new SqlConnector(connectionString);
             CompanyRequest = new CompanyMasterInfo();
             CompanyRequest.ConnectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
             CompanyRequest.Result = new ResultDetail();
 
+            masterCodeList = new List<string>();
+
+            labelAvailable.Visible = false;
+            labelCodeExist.Visible = false;
+
             Dictionary<string, bool> dropDownList = new Dictionary<string, bool>        {
+                    { "MasterCompanyRequired", true },
                     { "MasterBankRequired", true }
                 };
 
-            CompanyRequest.MasterBankList = CompanyRequest.GetDropdownValues(dropDownList);
+            var dropdwonList = CompanyRequest.GetDropdownCollections(dropDownList);
 
-            //foreach (DropDownItemInfo item in dropdwonList)
+            foreach (DictionaryEntry item in dropdwonList)
+            {
+                if (item.Key == "MasterCompanyRequired")
+                {
+                    CompanyRequest.MasterCodeList = (List<DropDownItemInfo>)item.Value;
+                }
+
+                if (item.Key == "MasterBankRequired")
+                {
+                    CompanyRequest.MasterBankList = (List<DropDownItemInfo>)item.Value;
+                }
+            }
+
+            //if (CompanyRequest.MasterCodeList != null)
             //{
-            //    if (item.Code == "MasterBankRequired")
+
+            //    if (CompanyRequest.MasterCodeList.Count() > 0)
             //    {
-            //        CompanyRequest.MasterBankList = (List<DropDownItemInfo>)item.Name;
+            //        foreach (DropDownItemInfo item in CompanyRequest.MasterCodeList)
+            //        {
+            //            drpMainCompany.Properties.Items.Add(new ImageComboBoxItem(item.Name));
+            //        }
             //    }
             //}
+
+            //CompanyRequest.MasterBankList = CompanyRequest.GetDropdownValues(dropDownList);
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -58,59 +83,67 @@ namespace BillPlex
             {
                 if (txtCode.Text != string.Empty && txtCompanyName.Text != string.Empty && txtName.Text != string.Empty)
                 {
-                    CompanyRequest.Code = txtCode.Text;
-                    CompanyRequest.CompanyName = txtCompanyName.Text;
-                    CompanyRequest.OffAddress = txtOfficeAddress.Text;
-                    CompanyRequest.State = drpState.Text;
-                    CompanyRequest.StatePin = txtPinNo.Text;
-                    CompanyRequest.StdCode = txtStdCode.Text;
-                    CompanyRequest.PhoneNo = txtPhoneNo.Text;
-                    CompanyRequest.Startingdate = ddStartingdate.Text.ToString();
-                    CompanyRequest.BusinessNature = radBusinessNature.Text;
-                    CompanyRequest.EmailID = txtEmail.Text;
-                    CompanyRequest.Website = txtWebsite.Text;
-                    CompanyRequest.PFCode = txtPFCode.Text;
-                    CompanyRequest.PfDate = ddPfDate.Text.ToString();
-                    CompanyRequest.EsiCode = txtEsiCode.Text;
-                    CompanyRequest.EsiDate = ddEsiDate.Text.ToString();
-                    CompanyRequest.FactoryAct = txtFactoryAct.Text;
-                    CompanyRequest.TinNo = txtTin.Text;
-                    CompanyRequest.CSTNo = txtCSTNo.Text;
-                    CompanyRequest.SSINo = txtSSINo.Text;
-                    CompanyRequest.PanNo = txtPanNo.Text;
-                    CompanyRequest.TanNo = txtTanNo.Text;
-                    CompanyRequest.LicenseNo = txtLicense.Text;
-                    CompanyRequest.Name = txtName.Text;
-                    CompanyRequest.FathersName = txtFathersName.Text;
-                    CompanyRequest.Gender = radGender.Text;
-                    CompanyRequest.Address = txtAddress.Text;
-                    CompanyRequest.AuthState = drpAuthState.Text;
-                    CompanyRequest.AuthPin = txtAuthorPin.Text;
-                    CompanyRequest.AuthStdCode = txtAuthorStdCode.Text;
-                    CompanyRequest.AuthPhoneNo = txtAuthorPhoneNo.Text;
-                    CompanyRequest.AuthorBloodGroup = drpAuthBlood.Text;
-                    CompanyRequest.DOB = ddAuthDOB.Text.ToString();
-                    CompanyRequest.AuthEmail = txtAuthorEmailId.Text;
-                    CompanyRequest.AuthMobile = txtAuthorMobileNo.Text;
-                    CompanyRequest.AuthorPanNo = txtAuthorPanNo.Text;
-                    CompanyRequest.Update();
-
-                    if (CompanyRequest.Result.Status == ResultStatus.Success)
+                    if (labelAvailable.Visible == true && labelCodeExist.Visible == false)
                     {
-                        XtraMessageBox.Show(CompanyRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Close();
 
-                        FrmCompanyProfile form = Application.OpenForms.OfType<FrmCompanyProfile>().FirstOrDefault();
+                        CompanyRequest.Code = txtCode.Text;
+                        CompanyRequest.CompanyName = txtCompanyName.Text;
+                        CompanyRequest.OffAddress = txtOfficeAddress.Text;
+                        CompanyRequest.State = drpState.Text;
+                        CompanyRequest.StatePin = txtPinNo.Text;
+                        CompanyRequest.StdCode = txtStdCode.Text;
+                        CompanyRequest.PhoneNo = txtPhoneNo.Text;
+                        CompanyRequest.Startingdate = ddStartingdate.Text.ToString();
+                        CompanyRequest.BusinessNature = radBusinessNature.Text;
+                        CompanyRequest.EmailID = txtEmail.Text;
+                        CompanyRequest.Website = txtWebsite.Text;
+                        CompanyRequest.PFCode = txtPFCode.Text;
+                        CompanyRequest.PfDate = ddPfDate.Text.ToString();
+                        CompanyRequest.EsiCode = txtEsiCode.Text;
+                        CompanyRequest.EsiDate = ddEsiDate.Text.ToString();
+                        CompanyRequest.FactoryAct = txtFactoryAct.Text;
+                        CompanyRequest.TinNo = txtTin.Text;
+                        CompanyRequest.CSTNo = txtCSTNo.Text;
+                        CompanyRequest.SSINo = txtSSINo.Text;
+                        CompanyRequest.PanNo = txtPanNo.Text;
+                        CompanyRequest.TanNo = txtTanNo.Text;
+                        CompanyRequest.LicenseNo = txtLicense.Text;
+                        CompanyRequest.Name = txtName.Text;
+                        CompanyRequest.FathersName = txtFathersName.Text;
+                        CompanyRequest.Gender = radGender.Text;
+                        CompanyRequest.Address = txtAddress.Text;
+                        CompanyRequest.AuthState = drpAuthState.Text;
+                        CompanyRequest.AuthPin = txtAuthorPin.Text;
+                        CompanyRequest.AuthStdCode = txtAuthorStdCode.Text;
+                        CompanyRequest.AuthPhoneNo = txtAuthorPhoneNo.Text;
+                        CompanyRequest.AuthorBloodGroup = drpAuthBlood.Text;
+                        CompanyRequest.DOB = ddAuthDOB.Text.ToString();
+                        CompanyRequest.AuthEmail = txtAuthorEmailId.Text;
+                        CompanyRequest.AuthMobile = txtAuthorMobileNo.Text;
+                        CompanyRequest.AuthorPanNo = txtAuthorPanNo.Text;
+                        CompanyRequest.Update();
 
-                        Form myForm = Application.OpenForms["FrmCompanyProfile"];
-                        if (myForm != null)
+                        if (CompanyRequest.Result.Status == ResultStatus.Success)
                         {
-                            form.ReloadSqlDataSource();
+                            XtraMessageBox.Show(CompanyRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+
+                            FrmCompanyProfile form = Application.OpenForms.OfType<FrmCompanyProfile>().FirstOrDefault();
+
+                            Form myForm = Application.OpenForms["FrmCompanyProfile"];
+                            if (myForm != null)
+                            {
+                                form.ReloadSqlDataSource();
+                            }
                         }
-                    }
-                    else
+                        else
+                        {
+                            XtraMessageBox.Show(CompanyRequest.Result.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+
+                    } else
                     {
-                        XtraMessageBox.Show(CompanyRequest.Result.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        XtraMessageBox.Show("Please check Code", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
 
                     //  this.Close();
@@ -199,9 +232,11 @@ namespace BillPlex
 
             }
 
-            btnAdd.Enabled = true;
+            btnAdd.Enabled = false;
             BtnNew.Enabled = false;
             btnUpdate.Enabled = true;
+            labelAvailable.Visible = true;
+            labelCodeExist.Visible = false;
         }
 
         void dropdownvalidate()
@@ -253,10 +288,6 @@ namespace BillPlex
 
         private void ExitBtn_Click(object sender, EventArgs e)
         {
-            //int exitCode = 0; // Set your desired exit code value
-
-            //Environment.ExitCode = exitCode;
-
             this.Close();
         }
 
@@ -276,6 +307,41 @@ namespace BillPlex
             catch (Exception ex)
             {
                 MessageBox.Show("An error occurred while copying text: " + ex.Message);
+            }
+        }
+
+        private void txtCode_EditValueChanged(object sender, EventArgs e)
+        {
+            if (txtCode.Text != string.Empty)
+            {
+                if (CompanyRequest.MasterCodeList != null)
+                {
+
+                    //var IsCode = CompanyRequest.MasterCodeList.FirstOrDefault(item => item.Code == txtCode.Text.ToString())?.Id ?? 0;
+                    var IsCode = CompanyRequest.MasterCodeList.FirstOrDefault(obj => obj.Code == txtCode.Text.ToString() && obj.Id != CompanyRequest.Id);
+
+                    if (IsCode != null)
+                    {
+                        labelAvailable.Visible = false;
+                        labelCodeExist.Visible = true;
+                    }
+                    else
+                    {
+                        labelAvailable.Visible = true;
+                        labelCodeExist.Visible = false;
+                    }
+                }
+                else
+                {
+                    labelAvailable.Visible = true;
+                    labelCodeExist.Visible = false;
+                }
+
+            }
+            else
+            {
+                labelAvailable.Visible = false;
+                labelCodeExist.Visible = false;
             }
         }
     }

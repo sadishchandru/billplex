@@ -25,7 +25,7 @@ SET NOCOUNT ON;
 			SELECT	Id
 					,ComCcode
 					,ComName
-					,ComType
+					--,ComType
 					,ComOffAdd
 					,Comstate
 					,ComPin

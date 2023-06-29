@@ -81,6 +81,8 @@ namespace BillPlex
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.btnNew = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl34 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl33 = new DevExpress.XtraEditors.LabelControl();
             this.drpCCompany = new DevExpress.XtraEditors.ComboBoxEdit();
             this.drpMainCompany = new DevExpress.XtraEditors.ComboBoxEdit();
             this.drpState = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -138,8 +140,8 @@ namespace BillPlex
             this.radPfType = new DevExpress.XtraEditors.RadioGroup();
             this.txtDirector = new DevExpress.XtraEditors.TextEdit();
             this.txtContName = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl33 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl34 = new DevExpress.XtraEditors.LabelControl();
+            this.labelAvailable = new DevExpress.XtraEditors.LabelControl();
+            this.labelCodeExist = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -229,7 +231,7 @@ namespace BillPlex
             this.panelControl2.Controls.Add(this.panelControl3);
             this.panelControl2.Location = new System.Drawing.Point(12, 70);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1725, 657);
+            this.panelControl2.Size = new System.Drawing.Size(1725, 694);
             this.panelControl2.TabIndex = 2;
             // 
             // panelControl4
@@ -273,7 +275,7 @@ namespace BillPlex
             this.panelControl4.Controls.Add(this.radGender);
             this.panelControl4.Controls.Add(this.radActiveStatus);
             this.panelControl4.Controls.Add(this.ddDOB);
-            this.panelControl4.Location = new System.Drawing.Point(21, 374);
+            this.panelControl4.Location = new System.Drawing.Point(21, 405);
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Size = new System.Drawing.Size(1230, 267);
             this.panelControl4.TabIndex = 63;
@@ -894,6 +896,8 @@ namespace BillPlex
             // 
             // panelControl3
             // 
+            this.panelControl3.Controls.Add(this.labelAvailable);
+            this.panelControl3.Controls.Add(this.labelCodeExist);
             this.panelControl3.Controls.Add(this.labelControl34);
             this.panelControl3.Controls.Add(this.labelControl33);
             this.panelControl3.Controls.Add(this.drpCCompany);
@@ -952,10 +956,34 @@ namespace BillPlex
             this.panelControl3.Controls.Add(this.radPfType);
             this.panelControl3.Controls.Add(this.txtDirector);
             this.panelControl3.Controls.Add(this.txtContName);
-            this.panelControl3.Location = new System.Drawing.Point(21, 6);
+            this.panelControl3.Location = new System.Drawing.Point(21, 18);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(1230, 350);
+            this.panelControl3.Size = new System.Drawing.Size(1230, 365);
             this.panelControl3.TabIndex = 0;
+            // 
+            // labelControl34
+            // 
+            this.labelControl34.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl34.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl34.Appearance.Options.UseFont = true;
+            this.labelControl34.Appearance.Options.UseForeColor = true;
+            this.labelControl34.Location = new System.Drawing.Point(110, 39);
+            this.labelControl34.Name = "labelControl34";
+            this.labelControl34.Size = new System.Drawing.Size(10, 18);
+            this.labelControl34.TabIndex = 86;
+            this.labelControl34.Text = "*";
+            // 
+            // labelControl33
+            // 
+            this.labelControl33.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl33.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl33.Appearance.Options.UseFont = true;
+            this.labelControl33.Appearance.Options.UseForeColor = true;
+            this.labelControl33.Location = new System.Drawing.Point(111, 90);
+            this.labelControl33.Name = "labelControl33";
+            this.labelControl33.Size = new System.Drawing.Size(10, 18);
+            this.labelControl33.TabIndex = 85;
+            this.labelControl33.Text = "*";
             // 
             // drpCCompany
             // 
@@ -981,7 +1009,7 @@ namespace BillPlex
             // 
             // drpState
             // 
-            this.drpState.Location = new System.Drawing.Point(116, 272);
+            this.drpState.Location = new System.Drawing.Point(116, 277);
             this.drpState.Name = "drpState";
             this.drpState.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -1088,7 +1116,7 @@ namespace BillPlex
             // 
             this.labelControl32.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl32.Appearance.Options.UseFont = true;
-            this.labelControl32.Location = new System.Drawing.Point(6, 144);
+            this.labelControl32.Location = new System.Drawing.Point(6, 145);
             this.labelControl32.Name = "labelControl32";
             this.labelControl32.Size = new System.Drawing.Size(123, 16);
             this.labelControl32.TabIndex = 62;
@@ -1098,7 +1126,7 @@ namespace BillPlex
             // 
             this.labelControl28.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl28.Appearance.Options.UseFont = true;
-            this.labelControl28.Location = new System.Drawing.Point(177, 144);
+            this.labelControl28.Location = new System.Drawing.Point(177, 145);
             this.labelControl28.Name = "labelControl28";
             this.labelControl28.Size = new System.Drawing.Size(126, 16);
             this.labelControl28.TabIndex = 61;
@@ -1382,7 +1410,7 @@ namespace BillPlex
             // 
             // radBusinessNature
             // 
-            this.radBusinessNature.Location = new System.Drawing.Point(116, 295);
+            this.radBusinessNature.Location = new System.Drawing.Point(116, 306);
             this.radBusinessNature.Name = "radBusinessNature";
             this.radBusinessNature.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.radBusinessNature.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1405,7 +1433,7 @@ namespace BillPlex
             // 
             this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl11.Appearance.Options.UseFont = true;
-            this.labelControl11.Location = new System.Drawing.Point(6, 310);
+            this.labelControl11.Location = new System.Drawing.Point(6, 321);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(104, 16);
             this.labelControl11.TabIndex = 26;
@@ -1413,7 +1441,7 @@ namespace BillPlex
             // 
             // txtPin
             // 
-            this.txtPin.Location = new System.Drawing.Point(315, 271);
+            this.txtPin.Location = new System.Drawing.Point(315, 277);
             this.txtPin.Name = "txtPin";
             this.txtPin.Properties.BeepOnError = false;
             this.txtPin.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
@@ -1428,7 +1456,7 @@ namespace BillPlex
             // 
             this.PinLbl.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PinLbl.Appearance.Options.UseFont = true;
-            this.PinLbl.Location = new System.Drawing.Point(290, 272);
+            this.PinLbl.Location = new System.Drawing.Point(290, 278);
             this.PinLbl.Name = "PinLbl";
             this.PinLbl.Size = new System.Drawing.Size(19, 16);
             this.PinLbl.TabIndex = 19;
@@ -1438,7 +1466,7 @@ namespace BillPlex
             // 
             this.StateLbl.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StateLbl.Appearance.Options.UseFont = true;
-            this.StateLbl.Location = new System.Drawing.Point(6, 271);
+            this.StateLbl.Location = new System.Drawing.Point(6, 276);
             this.StateLbl.Name = "StateLbl";
             this.StateLbl.Size = new System.Drawing.Size(36, 16);
             this.StateLbl.TabIndex = 17;
@@ -1446,7 +1474,7 @@ namespace BillPlex
             // 
             // txtOffAddress
             // 
-            this.txtOffAddress.Location = new System.Drawing.Point(116, 210);
+            this.txtOffAddress.Location = new System.Drawing.Point(116, 219);
             this.txtOffAddress.Name = "txtOffAddress";
             this.txtOffAddress.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
             this.txtOffAddress.Size = new System.Drawing.Size(285, 43);
@@ -1456,7 +1484,7 @@ namespace BillPlex
             // 
             this.OfficeAddressTxt.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OfficeAddressTxt.Appearance.Options.UseFont = true;
-            this.OfficeAddressTxt.Location = new System.Drawing.Point(6, 223);
+            this.OfficeAddressTxt.Location = new System.Drawing.Point(6, 232);
             this.OfficeAddressTxt.Name = "OfficeAddressTxt";
             this.OfficeAddressTxt.Size = new System.Drawing.Size(95, 16);
             this.OfficeAddressTxt.TabIndex = 15;
@@ -1464,17 +1492,18 @@ namespace BillPlex
             // 
             // txtCompanyName
             // 
-            this.txtCompanyName.Location = new System.Drawing.Point(177, 168);
+            this.txtCompanyName.Location = new System.Drawing.Point(177, 169);
             this.txtCompanyName.Name = "txtCompanyName";
             this.txtCompanyName.Size = new System.Drawing.Size(224, 20);
             this.txtCompanyName.TabIndex = 14;
             // 
             // txtCompanyCode
             // 
-            this.txtCompanyCode.Location = new System.Drawing.Point(6, 170);
+            this.txtCompanyCode.Location = new System.Drawing.Point(6, 171);
             this.txtCompanyCode.Name = "txtCompanyCode";
             this.txtCompanyCode.Size = new System.Drawing.Size(151, 20);
             this.txtCompanyCode.TabIndex = 13;
+            this.txtCompanyCode.EditValueChanged += new System.EventHandler(this.txtCompanyCode_EditValueChanged);
             // 
             // labelControl8
             // 
@@ -1482,7 +1511,7 @@ namespace BillPlex
             this.labelControl8.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl8.Appearance.Options.UseFont = true;
             this.labelControl8.Appearance.Options.UseForeColor = true;
-            this.labelControl8.Location = new System.Drawing.Point(133, 143);
+            this.labelControl8.Location = new System.Drawing.Point(133, 144);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(10, 18);
             this.labelControl8.TabIndex = 12;
@@ -1494,7 +1523,7 @@ namespace BillPlex
             this.labelControl7.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl7.Appearance.Options.UseFont = true;
             this.labelControl7.Appearance.Options.UseForeColor = true;
-            this.labelControl7.Location = new System.Drawing.Point(307, 144);
+            this.labelControl7.Location = new System.Drawing.Point(307, 145);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(10, 19);
             this.labelControl7.TabIndex = 11;
@@ -1601,36 +1630,33 @@ namespace BillPlex
             this.txtContName.Size = new System.Drawing.Size(225, 20);
             this.txtContName.TabIndex = 84;
             // 
-            // labelControl33
+            // labelAvailable
             // 
-            this.labelControl33.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl33.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl33.Appearance.Options.UseFont = true;
-            this.labelControl33.Appearance.Options.UseForeColor = true;
-            this.labelControl33.Location = new System.Drawing.Point(111, 90);
-            this.labelControl33.Name = "labelControl33";
-            this.labelControl33.Size = new System.Drawing.Size(10, 18);
-            this.labelControl33.TabIndex = 85;
-            this.labelControl33.Text = "*";
+            this.labelAvailable.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.labelAvailable.Appearance.Options.UseForeColor = true;
+            this.labelAvailable.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.labelAvailable.Location = new System.Drawing.Point(15, 196);
+            this.labelAvailable.Name = "labelAvailable";
+            this.labelAvailable.Size = new System.Drawing.Size(50, 13);
+            this.labelAvailable.TabIndex = 71;
+            this.labelAvailable.Text = "Available";
             // 
-            // labelControl34
+            // labelCodeExist
             // 
-            this.labelControl34.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl34.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl34.Appearance.Options.UseFont = true;
-            this.labelControl34.Appearance.Options.UseForeColor = true;
-            this.labelControl34.Location = new System.Drawing.Point(110, 39);
-            this.labelControl34.Name = "labelControl34";
-            this.labelControl34.Size = new System.Drawing.Size(10, 18);
-            this.labelControl34.TabIndex = 86;
-            this.labelControl34.Text = "*";
+            this.labelCodeExist.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelCodeExist.Appearance.Options.UseForeColor = true;
+            this.labelCodeExist.Location = new System.Drawing.Point(94, 198);
+            this.labelCodeExist.Name = "labelCodeExist";
+            this.labelCodeExist.Size = new System.Drawing.Size(63, 13);
+            this.labelCodeExist.TabIndex = 70;
+            this.labelCodeExist.Text = "Already Exist";
             // 
             // FrmSubClientCompanyInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1635, 811);
+            this.ClientSize = new System.Drawing.Size(1635, 845);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Name = "FrmSubClientCompanyInfo";
@@ -1818,5 +1844,7 @@ namespace BillPlex
         private DevExpress.XtraEditors.ComboBoxEdit drpAuthBlood;
         private DevExpress.XtraEditors.LabelControl labelControl34;
         private DevExpress.XtraEditors.LabelControl labelControl33;
+        private DevExpress.XtraEditors.LabelControl labelAvailable;
+        private DevExpress.XtraEditors.LabelControl labelCodeExist;
     }
 }

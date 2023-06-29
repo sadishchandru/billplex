@@ -51,6 +51,7 @@ namespace BillPlex
             this.colWagesforItem = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnClear = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
@@ -81,7 +82,6 @@ namespace BillPlex
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -303,6 +303,18 @@ namespace BillPlex
             this.panelControl3.Size = new System.Drawing.Size(472, 46);
             this.panelControl3.TabIndex = 31;
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(400, 14);
+            this.simpleButton1.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.simpleButton1.LookAndFeel.SkinName = "DevExpress Style";
+            this.simpleButton1.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(58, 19);
+            this.simpleButton1.TabIndex = 29;
+            this.simpleButton1.Text = "Exit";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
             // btnClear
             // 
             this.btnClear.Location = new System.Drawing.Point(324, 14);
@@ -437,6 +449,10 @@ namespace BillPlex
             // 
             this.txtRawStock.Location = new System.Drawing.Point(824, 77);
             this.txtRawStock.Name = "txtRawStock";
+            this.txtRawStock.Properties.BeepOnError = false;
+            this.txtRawStock.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtRawStock.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txtRawStock.Properties.MaskSettings.Set("mask", "d");
             this.txtRawStock.Size = new System.Drawing.Size(224, 20);
             this.txtRawStock.TabIndex = 18;
             // 
@@ -602,18 +618,6 @@ namespace BillPlex
             this.labelControl2.Size = new System.Drawing.Size(140, 18);
             this.labelControl2.TabIndex = 1;
             this.labelControl2.Text = "Raw Material Type";
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Location = new System.Drawing.Point(400, 14);
-            this.simpleButton1.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
-            this.simpleButton1.LookAndFeel.SkinName = "DevExpress Style";
-            this.simpleButton1.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(58, 19);
-            this.simpleButton1.TabIndex = 29;
-            this.simpleButton1.Text = "Exit";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // FrmProductModel
             // 

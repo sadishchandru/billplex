@@ -54,6 +54,7 @@ namespace BusinessLayer
         public List<DropDownItemInfo> MasterCompanyList { get; set; }
         public List<DropDownItemInfo> ClientCompanyList { get; set; }
         public List<DropDownItemInfo> SubClientBankList { get; set; }
+        public List<DropDownItemInfo> SubClientCodeList { get; set; }
 
         #region Update
 

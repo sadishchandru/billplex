@@ -20,18 +20,15 @@ namespace BillPlex
 {
     public partial class FrmSubClientCompanyInfo : DevExpress.XtraEditors.XtraForm
     {
-        //private readonly SqlConnector _conn;
         private SubClientCompanyInfo SubClientRequest;
-
-
 
         public FrmSubClientCompanyInfo()
         {
             InitializeComponent();
 
+            labelAvailable.Visible = false;
+            labelCodeExist.Visible = false;
 
-
-            // _conn = new SqlConnector(connectionString);
 
             SubClientRequest = new SubClientCompanyInfo();
 
@@ -40,17 +37,11 @@ namespace BillPlex
             Dictionary<string, bool> dropDownList = new Dictionary<string, bool>        {
                     { "MasterCompanyRequired", true },
                     {"ClientCompanyRequired",true},
+                    {"SubClientCompanyRequired",true},
                 { "SubClientBankRequired", true}
                 };
-            //ClientCompanyRequest.MasterCompanyList = ClientCompanyRequest.GetDropdownValues(dropDownList);
 
             var dropdwonList = SubClientRequest.GetDropdownCollections(dropDownList);
-
-
-            //SubClientRequest.MasterCompanyList = (List<DropDownItemInfo>)dropdwonList.Cast<Hashtable>()
-            //              .Where(entry => entry.Keys == "MasterCompanyRequired")
-            //              .Select(entry => entry.Value);
-
 
             foreach (DictionaryEntry item in dropdwonList)
             {
@@ -62,6 +53,16 @@ namespace BillPlex
                 if (item.Key == "ClientCompanyRequired")
                 {
                     SubClientRequest.ClientCompanyList = (List<DropDownItemInfo>)item.Value;
+                }
+
+                if (item.Key == "SubClientCompanyRequired")
+                {
+                    SubClientRequest.SubClientCodeList = (List<DropDownItemInfo>)item.Value;
+                }
+
+                if (item.Key == "SubClientBankRequired")
+                {
+                    SubClientRequest.SubClientBankList = (List<DropDownItemInfo>)item.Value;
                 }
             }
 
@@ -107,83 +108,89 @@ namespace BillPlex
             try
             {
 
-                if (drpMainCompany.Text != string.Empty && drpCCompany.Text != string.Empty && txtCompanyCode.Text != "" && txtCompanyName.Text != "" && 
+                if (drpMainCompany.Text != string.Empty && drpCCompany.Text != string.Empty && txtCompanyCode.Text != "" && txtCompanyName.Text != "" &&
                     (drpMainCompany.Text != string.Empty && drpMainCompany.Text != "Select") && (drpCCompany.Text != string.Empty && drpCCompany.Text != "Select"))
-
                 {
-                    string selectedMasterItem = (string)drpMainCompany.SelectedItem;
-
-                    if (selectedMasterItem != null)
+                    if (labelAvailable.Visible == true && labelCodeExist.Visible == false)
                     {
-                        SubClientRequest.MainCompany = SubClientRequest.MasterCompanyList.FirstOrDefault(item => item.Name == selectedMasterItem.ToString())?.Id ?? -1;
-                    }
-                    string selectedClientItem = (string)drpCCompany.SelectedItem;
+                        string selectedMasterItem = (string)drpMainCompany.SelectedItem;
 
-                    if (selectedClientItem != null)
-                    {
-                        SubClientRequest.ClientCompany = SubClientRequest.ClientCompanyList.FirstOrDefault(item => item.Name == selectedClientItem.ToString())?.Id ?? -1;
-                    }
-                    //SubClientRequest.MainCompany = drpMainCompany.Text;
-                    SubClientRequest.Director = txtDirector.Text;
-                    //SubClientRequest.ClientCompany = drpCCompany.Text;
-                    SubClientRequest.ContractorName = txtContName.Text;
-                    SubClientRequest.SubCompanyCode = txtCompanyCode.Text;
-                    SubClientRequest.SubCompanyName = txtCompanyName.Text;
-                    SubClientRequest.OfficeAddress = txtOffAddress.Text;
-                    SubClientRequest.State = drpState.Text;
-                    SubClientRequest.Pin = txtPin.Text;
-                    SubClientRequest.BusinessNature = radBusinessNature.Text;
-                    SubClientRequest.StartingDate = ddStartingDate.Text;
-                    SubClientRequest.STDCode = txtOffPin.Text;
-                    SubClientRequest.PhoneNo = txtOfficePhone.Text;
-                    SubClientRequest.EmailId = txtEmail.Text;
-                    SubClientRequest.Website = txtWebsite.Text;
-                    SubClientRequest.PfType = radPfType.Text;
-                    SubClientRequest.PFCode = txtPFCode.Text;
-                    SubClientRequest.PFDate = ddPFDate.Text;
-                    SubClientRequest.EsiCode = txtEsiCode.Text;
-                    SubClientRequest.ESIDate = ddESIDate.Text;
-                    SubClientRequest.FactoryActNo = txtFactoryAct.Text;
-                    SubClientRequest.TinNo = txtTin.Text;
-                    SubClientRequest.CstNo = txtCst.Text;
-                    SubClientRequest.SsiNo = txtSsi.Text;
-                    SubClientRequest.PanNo = txtPanNo.Text;
-                    SubClientRequest.TanNo = txttan.Text;
-                    SubClientRequest.LicenseNo = txtLicense.Text;
-                    SubClientRequest.Name = txtName.Text;
-                    SubClientRequest.FathersName = txtFathers.Text;
-                    SubClientRequest.Gender = radGender.Text;
-                    SubClientRequest.BloodGroup = drpAuthBlood.Text;
-                    SubClientRequest.DOB = ddDOB.Text;
-                    SubClientRequest.AuthEmailId = txtAuthEmailId.Text;
-                    SubClientRequest.AuthAddress = txtAuthAddress.Text;
-                    SubClientRequest.AuthState = drpAuthState.Text;
-                    SubClientRequest.Authpin = txtAuthpin.Text;
-                    SubClientRequest.AuthMobileNo = txtAuthMobileNo.Text;
-                    SubClientRequest.AuthPanNo = txtAuthPanNo.Text;
-                    SubClientRequest.AuthPercent = txtAuthPercent.Text;
-                    SubClientRequest.ActiveStatus = radActiveStatus.Text;
-                    SubClientRequest.Update();
-                    //this.Close();
-
-                    if (SubClientRequest.Result.Status == ResultStatus.Success)
-                    {
-                        XtraMessageBox.Show(SubClientRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        this.Close();
-
-                        FrmSubClientCompanyProfile form = Application.OpenForms.OfType<FrmSubClientCompanyProfile>().FirstOrDefault();
-
-                        Form myForm = Application.OpenForms["FrmSubClientCompanyProfile"];
-                        if (myForm != null)
+                        if (selectedMasterItem != null)
                         {
-                            form.ReloadSqlDataSource();
+                            SubClientRequest.MainCompany = SubClientRequest.MasterCompanyList.FirstOrDefault(item => item.Name == selectedMasterItem.ToString())?.Id ?? -1;
+                        }
+                        string selectedClientItem = (string)drpCCompany.SelectedItem;
+
+                        if (selectedClientItem != null)
+                        {
+                            SubClientRequest.ClientCompany = SubClientRequest.ClientCompanyList.FirstOrDefault(item => item.Name == selectedClientItem.ToString())?.Id ?? -1;
+                        }
+                        //SubClientRequest.MainCompany = drpMainCompany.Text;
+                        SubClientRequest.Director = txtDirector.Text;
+                        //SubClientRequest.ClientCompany = drpCCompany.Text;
+                        SubClientRequest.ContractorName = txtContName.Text;
+                        SubClientRequest.SubCompanyCode = txtCompanyCode.Text;
+                        SubClientRequest.SubCompanyName = txtCompanyName.Text;
+                        SubClientRequest.OfficeAddress = txtOffAddress.Text;
+                        SubClientRequest.State = drpState.Text;
+                        SubClientRequest.Pin = txtPin.Text;
+                        SubClientRequest.BusinessNature = radBusinessNature.Text;
+                        SubClientRequest.StartingDate = ddStartingDate.Text;
+                        SubClientRequest.STDCode = txtOffPin.Text;
+                        SubClientRequest.PhoneNo = txtOfficePhone.Text;
+                        SubClientRequest.EmailId = txtEmail.Text;
+                        SubClientRequest.Website = txtWebsite.Text;
+                        SubClientRequest.PfType = radPfType.Text;
+                        SubClientRequest.PFCode = txtPFCode.Text;
+                        SubClientRequest.PFDate = ddPFDate.Text;
+                        SubClientRequest.EsiCode = txtEsiCode.Text;
+                        SubClientRequest.ESIDate = ddESIDate.Text;
+                        SubClientRequest.FactoryActNo = txtFactoryAct.Text;
+                        SubClientRequest.TinNo = txtTin.Text;
+                        SubClientRequest.CstNo = txtCst.Text;
+                        SubClientRequest.SsiNo = txtSsi.Text;
+                        SubClientRequest.PanNo = txtPanNo.Text;
+                        SubClientRequest.TanNo = txttan.Text;
+                        SubClientRequest.LicenseNo = txtLicense.Text;
+                        SubClientRequest.Name = txtName.Text;
+                        SubClientRequest.FathersName = txtFathers.Text;
+                        SubClientRequest.Gender = radGender.Text;
+                        SubClientRequest.BloodGroup = drpAuthBlood.Text;
+                        SubClientRequest.DOB = ddDOB.Text;
+                        SubClientRequest.AuthEmailId = txtAuthEmailId.Text;
+                        SubClientRequest.AuthAddress = txtAuthAddress.Text;
+                        SubClientRequest.AuthState = drpAuthState.Text;
+                        SubClientRequest.Authpin = txtAuthpin.Text;
+                        SubClientRequest.AuthMobileNo = txtAuthMobileNo.Text;
+                        SubClientRequest.AuthPanNo = txtAuthPanNo.Text;
+                        SubClientRequest.AuthPercent = txtAuthPercent.Text;
+                        SubClientRequest.ActiveStatus = radActiveStatus.Text;
+                        SubClientRequest.Update();
+                        //this.Close();
+
+                        if (SubClientRequest.Result.Status == ResultStatus.Success)
+                        {
+                            XtraMessageBox.Show(SubClientRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            this.Close();
+
+                            FrmSubClientCompanyProfile form = Application.OpenForms.OfType<FrmSubClientCompanyProfile>().FirstOrDefault();
+
+                            Form myForm = Application.OpenForms["FrmSubClientCompanyProfile"];
+                            if (myForm != null)
+                            {
+                                form.ReloadSqlDataSource();
+                            }
+                        }
+                        else
+                        {
+                            XtraMessageBox.Show(SubClientRequest.Result.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                         }
                     }
                     else
                     {
-                        XtraMessageBox.Show(SubClientRequest.Result.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                        XtraMessageBox.Show("Please check Code", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
 
                 }
@@ -201,11 +208,6 @@ namespace BillPlex
             }
         }
 
-        private void drpDirector_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-        //drpMainCompany.SelectedIndexChanged += drpMainCompany_SelectedIndexChanged;
         private void drpMainCompany_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedItem = (string)drpMainCompany.SelectedItem;
@@ -311,10 +313,13 @@ namespace BillPlex
                 txtBankDetails.Enabled = false;
             }
 
-            btnAdd.Enabled = true;
+            btnAdd.Enabled = false;
             btnNew.Enabled = false;
             btnUpdate.Enabled = true;
             btnEdit.Enabled = true;
+
+            labelAvailable.Visible = true;
+            labelCodeExist.Visible = false;
 
         }
 
@@ -365,6 +370,41 @@ namespace BillPlex
         private void btnExit_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtCompanyCode_EditValueChanged(object sender, EventArgs e)
+        {
+            if (txtCompanyCode.Text != string.Empty)
+            {
+                if (SubClientRequest.SubClientCodeList != null)
+                {
+
+                    //var IsCode = CompanyRequest.MasterCodeList.FirstOrDefault(item => item.Code == txtCode.Text.ToString())?.Id ?? 0;
+                    var IsCode = SubClientRequest.SubClientCodeList.FirstOrDefault(obj => obj.Code == txtCompanyCode.Text.ToString() && obj.Id != SubClientRequest.Id);
+
+                    if (IsCode != null)
+                    {
+                        labelAvailable.Visible = false;
+                        labelCodeExist.Visible = true;
+                    }
+                    else
+                    {
+                        labelAvailable.Visible = true;
+                        labelCodeExist.Visible = false;
+                    }
+                }
+                else
+                {
+                    labelAvailable.Visible = true;
+                    labelCodeExist.Visible = false;
+                }
+
+            }
+            else
+            {
+                labelAvailable.Visible = false;
+                labelCodeExist.Visible = false;
+            }
         }
     }
 }

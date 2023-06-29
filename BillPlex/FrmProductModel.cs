@@ -61,8 +61,46 @@ namespace BillPlex
                 {
                     foreach (DropDownItemInfo item in productModelRequest.RawMaterialList)
                     {
-                        drpRawType.Properties.Items.Add(new ImageComboBoxItem(item.Code));
-                        drpRawName.Properties.Items.Add(new ImageComboBoxItem(item.Name));
+
+                        // var foundItem = drpRawType.Properties.Items.FindItem(item => item.ToString() == item.Name.ToString());
+
+                        //ComboBoxItem foundItem = drpRawType.Properties.Items.FirstOrDefault(item => item.ToString() == searchValue);
+
+                        var foundItem = "";
+
+                        foreach (string items in drpRawType.Properties.Items)
+                        {
+                            if (items.ToString() == item.Code.ToString())
+                            {
+                                foundItem = items;
+                                break;
+                            }
+                        }
+
+                        if (foundItem == "")
+                        {
+                            drpRawType.Properties.Items.Add(new ImageComboBoxItem(item.Code));
+                        }
+
+
+                        foundItem = "";
+
+                        foreach (string items in drpRawName.Properties.Items)
+                        {
+                            if (items.ToString() == item.Name.ToString())
+                            {
+                                foundItem = items;
+                                break;
+                            }
+                        }
+
+                        if (foundItem == "")
+                        {
+                            drpRawName.Properties.Items.Add(new ImageComboBoxItem(item.Name));
+                        }
+
+
+
                     }
                 }
             }
@@ -262,12 +300,44 @@ namespace BillPlex
 
         private void drpRawName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedItem = (string)drpRawName.SelectedItem;
+            string selectedRawItem = (string)drpRawName.SelectedItem;
+            
+            string selectedRawTypeItem = (string)drpRawType.SelectedItem;
 
-            if (selectedItem != null)
+            if ((selectedRawItem != null && selectedRawItem != "") && (selectedRawTypeItem != null && selectedRawTypeItem != ""))
             {
-                txtRawStock.Text = productModelRequest.RawMaterialList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.AuthorName ?? "";
+                int count = 0;
+
+                foreach (var item in productModelRequest.RawMaterialList)
+                {
+                    if (item.Code == selectedRawTypeItem.ToString() && item.Name == selectedRawItem.ToString())
+                    {
+                        count = int.Parse(item.AuthorName) + count;
+                    }
+                }
+                ////txtRawStock.Text = productModelRequest.RawMaterialList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.AuthorName ?? "";
+                //var modifiedList = productModelRequest.RawMaterialList.Where(item => item.Name == selectedItem.ToString()).Select(obj => 
+                //{
+                //   //obj.PropertyToSelect
+                //    count = int.Parse(obj.AuthorName) + count;
+                //    // Assign other properties as needed...
+                //});
+
+                txtRawStock.Text = count.ToString();
+
+                // var filteredItems = productModelRequest.RawMaterialList.Where(item => item.Name == selectedItem.ToString()).Select(obj => obj.AuthorName);
+                //var filteredItems = productModelRequest.RawMaterialList.Where(item => item.Name == selectedItem.ToString()).Select(obj =>
+                //{
+                //    // Calculate the value of obj.PropertyToSelect
+                //    int val = int.Parse(obj.AuthorName);
+                //    count = val + count;
+
+                //    // Return the calculated value
+                //    return count;
+                //});
             }
+
+
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)

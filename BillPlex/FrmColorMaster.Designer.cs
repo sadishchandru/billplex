@@ -40,7 +40,7 @@ namespace BillPlex
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.sqlDataSource2 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.ColormasterGrid = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colColournname = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtSearch = new DevExpress.XtraEditors.TextEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
@@ -149,21 +149,21 @@ namespace BillPlex
             // ColormasterGrid
             // 
             this.ColormasterGrid.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colID,
+            this.Id,
             this.colColournname});
             this.ColormasterGrid.DetailHeight = 284;
             this.ColormasterGrid.GridControl = this.gridControl1;
             this.ColormasterGrid.Name = "ColormasterGrid";
             this.ColormasterGrid.DoubleClick += new System.EventHandler(this.btEdit_Click);
             // 
-            // colID
+            // Id
             // 
-            this.colID.FieldName = "ID";
-            this.colID.MinWidth = 23;
-            this.colID.Name = "colID";
-            this.colID.Visible = true;
-            this.colID.VisibleIndex = 0;
-            this.colID.Width = 64;
+            this.Id.FieldName = "Id";
+            this.Id.MinWidth = 23;
+            this.Id.Name = "Id";
+            this.Id.Visible = true;
+            this.Id.VisibleIndex = 0;
+            this.Id.Width = 64;
             // 
             // colColournname
             // 
@@ -343,7 +343,7 @@ namespace BillPlex
         private DevExpress.XtraEditors.TextEdit txtCName;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource2;
-        private DevExpress.XtraGrid.Columns.GridColumn colID;
+        private DevExpress.XtraGrid.Columns.GridColumn Id;
         private DevExpress.XtraGrid.Columns.GridColumn colColournname;
     }
 }

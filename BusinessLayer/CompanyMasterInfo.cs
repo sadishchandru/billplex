@@ -47,6 +47,8 @@ namespace BusinessLayer
         public string AuthorPanNo { get; set; }
 
         public List<DropDownItemInfo> MasterBankList { get; set; }
+
+        public List<DropDownItemInfo> MasterCodeList { get; set; }
         public List<CompanyMasterInfo> MasterList { get; set; }
 
         public string AuthorStartDate { get; set; }
