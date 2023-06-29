@@ -69,6 +69,7 @@ namespace BillPlex
             {
                 XtraMessageBox.Show(CompanyMasterRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 gridView1.RefreshData();
+                ReloadSqlDataSource();
             }
             else
             {

@@ -114,8 +114,7 @@ namespace BillPlex
             }
             catch (Exception ex)
             {
-                Result.Message = ex.Message;
-                Result.Status = ResultStatus.Success;
+                XtraMessageBox.Show(ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
