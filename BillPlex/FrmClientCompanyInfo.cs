@@ -89,7 +89,7 @@ namespace BillPlex
             {
                 if ((txtClientCode.Text != string.Empty || txtClientCode.Text != "Select") && (txtCompanyName.Text != string.Empty && txtName.Text != string.Empty) && (drpMainCompany.Text != string.Empty && drpMainCompany.Text != "Select"))
                 {
-                    if (labelAvailable.Visible == true && labelCodeExist.Visible == false)
+                    if ((ClientCompanyRequest.Id != 0 || labelAvailable.Visible == true) && labelCodeExist.Visible == false)
                     {
 
                         var selectedItem = drpMainCompany.EditValue;

@@ -111,7 +111,7 @@ namespace BillPlex
                 if (drpMainCompany.Text != string.Empty && drpCCompany.Text != string.Empty && txtCompanyCode.Text != "" && txtCompanyName.Text != "" &&
                     (drpMainCompany.Text != string.Empty && drpMainCompany.Text != "Select") && (drpCCompany.Text != string.Empty && drpCCompany.Text != "Select"))
                 {
-                    if (labelAvailable.Visible == true && labelCodeExist.Visible == false)
+                    if ((SubClientRequest.Id != 0 || labelAvailable.Visible == true) && labelCodeExist.Visible == false)
                     {
                         string selectedMasterItem = (string)drpMainCompany.SelectedItem;
 

@@ -62,7 +62,7 @@ namespace BillPlex
             {
                 if (txtCustomerCode.Text != string.Empty && txtCustomerName.Text != string.Empty)
                 {
-                    if (labelAvailable.Visible == true && labelCodeExist.Visible == false)
+                    if ((CustomerRequest.Id != 0 || labelAvailable.Visible == true) && labelCodeExist.Visible == false)
                     {
                         CustomerRequest.CustomerCode = txtCustomerCode.Text;
                         CustomerRequest.CustomerName = txtCustomerName.Text;

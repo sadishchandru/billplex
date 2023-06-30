@@ -83,7 +83,7 @@ namespace BillPlex
             {
                 if (txtCode.Text != string.Empty && txtCompanyName.Text != string.Empty && txtName.Text != string.Empty)
                 {
-                    if (labelAvailable.Visible == true && labelCodeExist.Visible == false)
+                    if ((CompanyRequest.Id != 0 || labelAvailable.Visible == true) && labelCodeExist.Visible == false)
                     {
 
                         CompanyRequest.Code = txtCode.Text;
@@ -141,7 +141,8 @@ namespace BillPlex
                             XtraMessageBox.Show(CompanyRequest.Result.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
 
-                    } else
+                    }
+                    else
                     {
                         XtraMessageBox.Show("Please check Code", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
@@ -236,6 +237,7 @@ namespace BillPlex
             btnAdd.Enabled = false;
             BtnNew.Enabled = false;
             btnUpdate.Enabled = true;
+            btnEdit.Enabled = true;
             labelAvailable.Visible = false;
             labelCodeExist.Visible = false;
         }
@@ -344,6 +346,11 @@ namespace BillPlex
                 labelAvailable.Visible = false;
                 labelCodeExist.Visible = false;
             }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            txtCode.Enabled = true;
         }
     }
 }
