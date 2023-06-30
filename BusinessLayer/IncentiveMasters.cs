@@ -16,6 +16,8 @@ namespace BusinessLayer
         public string ModelSize { get; set; }
         public string DurationPeriod { get; set; }
         public string Date { get; set; }
+        public List<DropDownItemInfo> ProductModelList { get; set; }
+        public List<DropDownItemInfo> ProductMasterList { get; set; }
 
 
         public void Update()

@@ -30,8 +30,8 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCustomerMaster));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -113,6 +113,8 @@ namespace BillPlex
             this.ddTINDate = new DevExpress.XtraEditors.DateEdit();
             this.ddCSTDate = new DevExpress.XtraEditors.DateEdit();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
+            this.labelAvailable = new DevExpress.XtraEditors.LabelControl();
+            this.labelCodeExist = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -203,13 +205,13 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery1.Name = "PRO_GetCustomerInfo";
-            queryParameter1.Name = "@SearchKey";
-            queryParameter1.Type = typeof(string);
-            storedProcQuery1.Parameters.Add(queryParameter1);
-            storedProcQuery1.StoredProcName = "PRO_GetCustomerInfo";
+            storedProcQuery2.Name = "PRO_GetCustomerInfo";
+            queryParameter2.Name = "@SearchKey";
+            queryParameter2.Type = typeof(string);
+            storedProcQuery2.Parameters.Add(queryParameter2);
+            storedProcQuery2.StoredProcName = "PRO_GetCustomerInfo";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery1});
+            storedProcQuery2});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // CustomerMaster_GridView
@@ -489,6 +491,8 @@ namespace BillPlex
             // panelControl3
             // 
             this.panelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.panelControl3.Controls.Add(this.labelCodeExist);
+            this.panelControl3.Controls.Add(this.labelAvailable);
             this.panelControl3.Controls.Add(this.drpCDCountry);
             this.panelControl3.Controls.Add(this.drpCState);
             this.panelControl3.Controls.Add(this.drpState);
@@ -935,6 +939,7 @@ namespace BillPlex
             this.txtCustomerCode.Name = "txtCustomerCode";
             this.txtCustomerCode.Size = new System.Drawing.Size(237, 20);
             this.txtCustomerCode.TabIndex = 8;
+            this.txtCustomerCode.EditValueChanged += new System.EventHandler(this.txtCompanyCode_EditValueChanged);
             // 
             // labelControl9
             // 
@@ -1067,6 +1072,26 @@ namespace BillPlex
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Size = new System.Drawing.Size(230, 51);
             this.panelControl4.TabIndex = 48;
+            // 
+            // labelAvailable
+            // 
+            this.labelAvailable.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.labelAvailable.Appearance.Options.UseForeColor = true;
+            this.labelAvailable.Location = new System.Drawing.Point(155, 54);
+            this.labelAvailable.Name = "labelAvailable";
+            this.labelAvailable.Size = new System.Drawing.Size(43, 13);
+            this.labelAvailable.TabIndex = 47;
+            this.labelAvailable.Text = "Available";
+            // 
+            // labelCodeExist
+            // 
+            this.labelCodeExist.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelCodeExist.Appearance.Options.UseForeColor = true;
+            this.labelCodeExist.Location = new System.Drawing.Point(321, 53);
+            this.labelCodeExist.Name = "labelCodeExist";
+            this.labelCodeExist.Size = new System.Drawing.Size(63, 13);
+            this.labelCodeExist.TabIndex = 48;
+            this.labelCodeExist.Text = "Already Exist";
             // 
             // FrmCustomerMaster
             // 
@@ -1202,5 +1227,7 @@ namespace BillPlex
         private DevExpress.XtraEditors.ComboBoxEdit drpState;
         private DevExpress.XtraEditors.ComboBoxEdit drpCDCountry;
         private DevExpress.XtraEditors.ComboBoxEdit drpCState;
+        private DevExpress.XtraEditors.LabelControl labelCodeExist;
+        private DevExpress.XtraEditors.LabelControl labelAvailable;
     }
 }

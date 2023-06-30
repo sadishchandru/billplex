@@ -231,11 +231,12 @@ namespace BillPlex
                 }
 
             }
-
+            txtCode.Enabled = false;
+            txtCompanyName.Enabled = true;
             btnAdd.Enabled = false;
             BtnNew.Enabled = false;
             btnUpdate.Enabled = true;
-            labelAvailable.Visible = true;
+            labelAvailable.Visible = false;
             labelCodeExist.Visible = false;
         }
 

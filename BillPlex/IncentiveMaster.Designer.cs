@@ -30,7 +30,7 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IncentiveMaster));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -187,20 +187,20 @@ namespace BillPlex
             this.panelControl2.Controls.Add(this.btnClear);
             this.panelControl2.Controls.Add(this.btnUpdate);
             this.panelControl2.Controls.Add(this.btnEdit);
-            this.panelControl2.Location = new System.Drawing.Point(334, 274);
+            this.panelControl2.Location = new System.Drawing.Point(336, 250);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(449, 54);
             this.panelControl2.TabIndex = 18;
             // 
             // btnDelete
             // 
-            this.btnDelete.Appearance.BackColor = System.Drawing.Color.Silver;
             this.btnDelete.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Appearance.ForeColor = System.Drawing.Color.Transparent;
-            this.btnDelete.Appearance.Options.UseBackColor = true;
             this.btnDelete.Appearance.Options.UseFont = true;
-            this.btnDelete.Appearance.Options.UseForeColor = true;
             this.btnDelete.Location = new System.Drawing.Point(266, 17);
+            this.btnDelete.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btnDelete.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightBlue;
+            this.btnDelete.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnDelete.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 3;
@@ -239,6 +239,8 @@ namespace BillPlex
             this.btnAdd.AppearancePressed.Options.UseForeColor = true;
             this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnAdd.Location = new System.Drawing.Point(20, 17);
+            this.btnAdd.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btnAdd.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightBlue;
             this.btnAdd.LookAndFeel.SkinName = "DevExpress Style";
             this.btnAdd.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnAdd.Name = "btnAdd";
@@ -289,11 +291,13 @@ namespace BillPlex
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Appearance.BackColor = System.Drawing.Color.Silver;
             this.btnUpdate.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Appearance.Options.UseBackColor = true;
             this.btnUpdate.Appearance.Options.UseFont = true;
             this.btnUpdate.Location = new System.Drawing.Point(182, 17);
+            this.btnUpdate.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btnUpdate.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightBlue;
+            this.btnUpdate.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnUpdate.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 2;
@@ -302,13 +306,13 @@ namespace BillPlex
             // 
             // btnEdit
             // 
-            this.btnEdit.Appearance.BackColor = System.Drawing.Color.Silver;
             this.btnEdit.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Appearance.Options.UseBackColor = true;
             this.btnEdit.Appearance.Options.UseFont = true;
             this.btnEdit.Location = new System.Drawing.Point(101, 17);
+            this.btnEdit.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btnEdit.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightBlue;
             this.btnEdit.LookAndFeel.SkinName = "DevExpress Style";
-            this.btnEdit.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Style3D;
+            this.btnEdit.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 1;
@@ -345,7 +349,7 @@ namespace BillPlex
             // 
             this.gridControl1.DataMember = "PRO_GetIncentiveMaster";
             this.gridControl1.DataSource = this.sqlDataSource1;
-            this.gridControl1.Location = new System.Drawing.Point(32, 396);
+            this.gridControl1.Location = new System.Drawing.Point(47, 328);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.Size = new System.Drawing.Size(1185, 402);
@@ -357,10 +361,10 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery1.Name = "PRO_GetIncentiveMaster";
-            storedProcQuery1.StoredProcName = "PRO_GetIncentiveMaster";
+            storedProcQuery2.Name = "PRO_GetIncentiveMaster";
+            storedProcQuery2.StoredProcName = "PRO_GetIncentiveMaster";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery1});
+            storedProcQuery2});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // gridView1
@@ -436,7 +440,9 @@ namespace BillPlex
             this.DDdate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.DDdate.Properties.DisplayFormat.FormatString = "";
+            this.DDdate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.DDdate.Properties.EditFormat.FormatString = "";
+            this.DDdate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.DDdate.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
             this.DDdate.Properties.MaskSettings.Set("mask", "d");
             this.DDdate.Properties.UseMaskAsDisplayFormat = true;
@@ -447,7 +453,7 @@ namespace BillPlex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1540, 824);
+            this.ClientSize = new System.Drawing.Size(1540, 760);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.simpleButtonProductName);
             this.Controls.Add(this.panelControl2);

@@ -312,13 +312,14 @@ namespace BillPlex
                 }
                 txtBankDetails.Enabled = false;
             }
-
+            txtCompanyCode.Enabled = false;
+            txtCompanyName.Enabled = true;
             btnAdd.Enabled = false;
             btnNew.Enabled = false;
             btnUpdate.Enabled = true;
             btnEdit.Enabled = true;
 
-            labelAvailable.Visible = true;
+            labelAvailable.Visible = false;
             labelCodeExist.Visible = false;
 
         }

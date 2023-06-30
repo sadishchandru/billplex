@@ -266,11 +266,12 @@ namespace BillPlex
                 }
                 txtBankDetails.Enabled = false;
             }
-
+            txtClientCode.Enabled = false;
+            txtCompanyName.Enabled = true;
             btnAdd.Enabled = false;
             EditBtn.Enabled = false;
             UpdateBtn.Enabled = true;
-            labelAvailable.Visible = true;
+            labelAvailable.Visible = false;
             labelCodeExist.Visible = false;
         }
 

@@ -33,7 +33,8 @@ namespace BusinessLayer
         public string Website { get; set; }
         public object GridDetial { get; set; }
 
-       // public string List<GridViewEntireList> GridViewEntireList { get; set; } 
+        // public string List<GridViewEntireList> GridViewEntireList { get; set; } 
+        public List<DropDownItemInfo> CustomerMasterCodeList { get; set; }
 
 
         #region Update
