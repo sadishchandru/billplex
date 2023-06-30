@@ -99,6 +99,12 @@ namespace BillPlex
             // Fill the SqlDataSource asynchronously
             sqlDataSource1.FillAsync();
         }
+        public void ReloadSqlDataSource()
+        {
+            sqlDataSource1.FillAsync();
+            gridView1.RefreshData();
+
+        }
         private void comboBoxEdit10_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -121,6 +127,7 @@ namespace BillPlex
             if (OrderMasterRequest.Result.Status == ResultStatus.Success)
             {
                 XtraMessageBox.Show(OrderMasterRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ReloadSqlDataSource();
             }
 
         }
@@ -138,8 +145,10 @@ namespace BillPlex
                 {
                     txtOrderNo.Text = (string)gridView1.GetRowCellValue(rowHandle, "@OrderNo");
                     ddOrderDate.Text = (string)gridView1.GetRowCellValue(rowHandle, "Orderdate");
+
                     var datete = gridView1.GetRowCellValue(rowHandle, "Orderdate").ToString();
-                    DateTime dat = DateTime.Parse(datete);
+                    ddOrderDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
+
                     drpCustCode.Text = (string)gridView1.GetRowCellValue(rowHandle, "Customcode");
                     drpCustName.Text = (string)gridView1.GetRowCellValue(rowHandle, "CustomerId");
                     drpProductName.Text = (string)gridView1.GetRowCellValue(rowHandle, "ProductNameId");
@@ -152,8 +161,8 @@ namespace BillPlex
                     drpProColor.Text = (string)gridView1.GetRowCellValue(rowHandle, "ColorId");
                     txtQuantity.Text = (string)gridView1.GetRowCellValue(rowHandle, "RawQty");
                     ddProDate.Text = (string)gridView1.GetRowCellValue(rowHandle, "Delivarydate");
-                    var datet = gridView1.GetRowCellValue(rowHandle, "Delivarydate").ToString();
-                    DateTime date = DateTime.Parse(datete);
+                    datete = gridView1.GetRowCellValue(rowHandle, "Delivarydate").ToString();
+                    ddProDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
                     drpStatus.Text = (string)gridView1.GetRowCellValue(rowHandle, "Status");
                     txtTotRawmat.Text = (string)gridView1.GetRowCellValue(rowHandle, "TotalRaw");
                     txtWages.Text = (string)gridView1.GetRowCellValue(rowHandle, "WagesforEmp");
@@ -178,55 +187,66 @@ namespace BillPlex
         {
             try
             {
-                var selectedItems = drpCustName.Text;
-
-                string selectedMasterItem = (string)drpCustName.SelectedItem;
-
-                if (selectedMasterItem != null)
+                if (drpCustCode.Text != string.Empty && drpCustName.Text != string.Empty && txtOrderNo.Text != string.Empty)
                 {
-                    OrderMasterRequest.CustomerId = OrderMasterRequest.CustomerMasterList.FirstOrDefault(item => item.Name == selectedMasterItem.ToString())?.Id ?? -1;
-                }
-                var selectedPNameItems = drpProductName.Text;
-                
-                string selectedMastersItem = (string)drpProductName.SelectedItem;
 
-                if (selectedMastersItem != null)
+                    var selectedItems = drpCustName.Text;
+
+                    string selectedMasterItem = (string)drpCustName.SelectedItem;
+
+                    if (selectedMasterItem != null)
+                    {
+                        OrderMasterRequest.CustomerId = OrderMasterRequest.CustomerMasterList.FirstOrDefault(item => item.Name == selectedMasterItem.ToString())?.Id ?? -1;
+                    }
+                    var selectedPNameItems = drpProductName.Text;
+                    
+                    string selectedMastersItem = (string)drpProductName.SelectedItem;
+
+                    if (selectedMastersItem != null)
+                    {
+                        OrderMasterRequest.ProductNameId = OrderMasterRequest.ProductMasterList.FirstOrDefault(item => item.Name == selectedMastersItem.ToString())?.Id ?? -1;
+                    }
+
+                    var selectedProColorItems = drpProColor.Text;
+
+                    string selectedCMasterItem = (string)drpProColor.SelectedItem;
+
+                    if (selectedCMasterItem != null)
+                    {
+                        OrderMasterRequest.ColorId = OrderMasterRequest.ColourMasterList.FirstOrDefault(item => item.Name == selectedCMasterItem.ToString())?.Id ?? -1;
+                    }
+
+                    OrderMasterRequest.OrderNo = txtOrderNo.Text;
+                    OrderMasterRequest.OrderDate = ddOrderDate.Text;
+                    OrderMasterRequest.CustomerCodeId = drpCustCode.Text;
+                    OrderMasterRequest.ProductModel = drpModelName.Text;
+                    OrderMasterRequest.ProductCode = drpModelCode.Text;
+                    OrderMasterRequest.ProductSize = drpProductSize.Text;
+                    OrderMasterRequest.Quantity = txtMaterialwt.Text;
+                    OrderMasterRequest.RawType = txtType.Text;
+                    OrderMasterRequest.RawQty = txtRawmatName.Text;
+                    OrderMasterRequest.TotalRaw = txtQuantity.Text;
+                    OrderMasterRequest.Deliverydate = ddProDate.Text;
+                    OrderMasterRequest.status = drpStatus.Text;
+                    OrderMasterRequest.TotalRaw = txtTotRawmat.Text;
+                    OrderMasterRequest.WagesforEmp = txtWages.Text;
+                    OrderMasterRequest.Update();
+
+                    if (OrderMasterRequest.Result.Status == ResultStatus.Success)
+                    {
+                        XtraMessageBox.Show(OrderMasterRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ReloadSqlDataSource();
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show(OrderMasterRequest.Result.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
                 {
-                    OrderMasterRequest.ProductNameId = OrderMasterRequest.ProductMasterList.FirstOrDefault(item => item.Name == selectedMastersItem.ToString())?.Id ?? -1;
+                    XtraMessageBox.Show(OrderMasterRequest.Result.Message, "please give the manditory field", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
-                var selectedProColorItems = drpProColor.Text;
-
-                string selectedCMasterItem = (string)drpProColor.SelectedItem;
-
-                if (selectedCMasterItem != null)
-                {
-                    OrderMasterRequest.ColorId = OrderMasterRequest.ColourMasterList.FirstOrDefault(item => item.Name == selectedCMasterItem.ToString())?.Id ?? -1;
-                }
-
-                OrderMasterRequest.OrderNo = txtOrderNo.Text;
-                OrderMasterRequest.OrderDate = ddOrderDate.Text;
-                OrderMasterRequest.CustomerCodeId = drpCustCode.Text;
-                //OrderMasterRequest.CustomerId = int.Parse(drpCustName.Text);
-                //OrderMasterRequest.ProductNameId = int.Parse(drpProductName.Text);
-                OrderMasterRequest.ProductModel = drpModelName.Text;
-                OrderMasterRequest.ProductCode = drpModelCode.Text;
-                OrderMasterRequest.ProductSize = drpProductSize.Text;
-                OrderMasterRequest.Quantity = txtMaterialwt.Text;
-                OrderMasterRequest.RawType = txtType.Text;
-                OrderMasterRequest.RawQty = txtRawmatName.Text;
-                //OrderMasterRequest.ColorId = int.Parse(drpProColor.Text);
-                OrderMasterRequest.TotalRaw = txtQuantity.Text;
-                OrderMasterRequest.Deliverydate = ddProDate.Text;
-                OrderMasterRequest.status = drpStatus.Text;
-                OrderMasterRequest.TotalRaw = txtTotRawmat.Text;
-                OrderMasterRequest.WagesforEmp = txtWages.Text;
-                OrderMasterRequest.Update();
-
-                if (OrderMasterRequest.Result.Status == ResultStatus.Success)
-                {
-                    XtraMessageBox.Show(OrderMasterRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
             }
 
             catch (Exception ex)

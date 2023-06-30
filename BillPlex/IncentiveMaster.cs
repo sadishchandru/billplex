@@ -35,6 +35,7 @@ namespace BillPlex
 
             Dictionary<string, bool> dropDownList = new Dictionary<string, bool>        {
                     {"ProductModelRequired",true },
+                    {"ProductMasterRequired",true }
                 };
 
             var dropdwonList = IncentiveMasterRequest.GetDropdownCollections(dropDownList);
@@ -74,6 +75,13 @@ namespace BillPlex
             }
         }
 
+
+        public void ReloadSqlDataSource()
+        {
+            sqlDataSource1.FillAsync();
+            gridView1.RefreshData();
+
+        }
         //private void dropDownButton1_Click(object sender, EventArgs e)
         //{
 
@@ -83,17 +91,30 @@ namespace BillPlex
         {
             try
             {
-                IncentiveMasterRequest.ProductName = DrpProductName.Text;
-                IncentiveMasterRequest.ModelCode = DrpModelCode.Text;
-                IncentiveMasterRequest.ModelName = DrpModelName.Text;
-                IncentiveMasterRequest.ModelSize = DrpModelSize.Text;
-                IncentiveMasterRequest.DurationPeriod = DrpDurationPeriod.Text;
-                IncentiveMasterRequest.Date = DDdate.Text;
-                IncentiveMasterRequest.Update();
-
-                if (IncentiveMasterRequest.Result.Status == ResultStatus.Success)
+                if (DrpProductName.Text != string.Empty && DrpModelCode.Text != string.Empty)
                 {
-                    XtraMessageBox.Show(IncentiveMasterRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    IncentiveMasterRequest.ProductName = DrpProductName.Text;
+                    IncentiveMasterRequest.ModelCode = DrpModelCode.Text;
+                    IncentiveMasterRequest.ModelName = DrpModelName.Text;
+                    IncentiveMasterRequest.ModelSize = DrpModelSize.Text;
+                    IncentiveMasterRequest.DurationPeriod = DrpDurationPeriod.Text;
+                    IncentiveMasterRequest.Date = DDdate.Text;
+                    IncentiveMasterRequest.Update();
+
+                    if (IncentiveMasterRequest.Result.Status == ResultStatus.Success)
+                    {
+                        XtraMessageBox.Show(IncentiveMasterRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        btn_ClearClick();
+                        ReloadSqlDataSource();
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show(IncentiveMasterRequest.Result.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    XtraMessageBox.Show("please give the manditory field", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
 
@@ -118,15 +139,12 @@ namespace BillPlex
                     DrpModelSize.Text = gridView1.GetRowCellValue(rowHandle, "ModelSize").ToString();
                     DrpDurationPeriod.Text = gridView1.GetRowCellValue(rowHandle, "DurationPeriod").ToString();
                     DDdate.Text = gridView1.GetRowCellValue(rowHandle, "Date").ToString();
-
                 }
-                btnAdd.Enabled = false;
+                btnAdd.Enabled = true;
                 btnEdit.Enabled = false;
                 btnDelete.Enabled = false;
                 btnUpdate.Enabled = true;
-                btnClear.Enabled = false;
-
-
+                btnClear.Enabled = true;
             }
             catch (Exception ex)
             {
@@ -151,6 +169,7 @@ namespace BillPlex
                 if (IncentiveMasterRequest.Result.Status == ResultStatus.Success)
                 {
                     XtraMessageBox.Show(IncentiveMasterRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ReloadSqlDataSource();
                 }
             }
         }
@@ -178,9 +197,9 @@ namespace BillPlex
 
         
 
-        private void btn_ClearClick(object sender, EventArgs e)
+        private void btn_ClearClick(object sender = null, EventArgs e= null)
         {
-            // Clear the values in textboxes
+            IncentiveMasterRequest.Id = 0;
             DrpProductName.ResetText();
             DrpModelCode.ResetText();
             DrpModelName.ResetText();

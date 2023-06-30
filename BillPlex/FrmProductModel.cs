@@ -306,6 +306,20 @@ namespace BillPlex
 
             if ((selectedRawItem != null && selectedRawItem != "") && (selectedRawTypeItem != null && selectedRawTypeItem != ""))
             {
+
+                foreach (var row in sqlDataSource1.Result[0])
+                {
+                    //var model = new YourModel
+                    //{
+                    //    // Map the columns from the data source to properties in your model
+                    //    Property1 = Convert.ToString(row["ColumnName1"]),
+                    //    Property2 = Convert.ToString(row["ColumnName2"]),
+                    //    // Add more properties as needed
+                    //};
+
+                    //dataList.Add(model);
+                }
+
                 int count = 0;
 
                 foreach (var item in productModelRequest.RawMaterialList)
@@ -315,29 +329,25 @@ namespace BillPlex
                         count = int.Parse(item.AuthorName) + count;
                     }
                 }
-                ////txtRawStock.Text = productModelRequest.RawMaterialList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.AuthorName ?? "";
-                //var modifiedList = productModelRequest.RawMaterialList.Where(item => item.Name == selectedItem.ToString()).Select(obj => 
-                //{
-                //   //obj.PropertyToSelect
-                //    count = int.Parse(obj.AuthorName) + count;
-                //    // Assign other properties as needed...
-                //});
 
                 txtRawStock.Text = count.ToString();
-
-                // var filteredItems = productModelRequest.RawMaterialList.Where(item => item.Name == selectedItem.ToString()).Select(obj => obj.AuthorName);
-                //var filteredItems = productModelRequest.RawMaterialList.Where(item => item.Name == selectedItem.ToString()).Select(obj =>
-                //{
-                //    // Calculate the value of obj.PropertyToSelect
-                //    int val = int.Parse(obj.AuthorName);
-                //    count = val + count;
-
-                //    // Return the calculated value
-                //    return count;
-                //});
             }
 
 
+            //if ((selectedRawItem != null && selectedRawItem != "") && (selectedRawTypeItem != null && selectedRawTypeItem != ""))
+            //{
+            //    int count = 0;
+
+            //    foreach (var item in productModelRequest.RawMaterialList)
+            //    {
+            //        if (item.Code == selectedRawTypeItem.ToString() && item.Name == selectedRawItem.ToString())
+            //        {
+            //            count = int.Parse(item.AuthorName) - count;
+            //        }
+            //    }
+
+            //    txtRawStock.Text = count.ToString();
+            //}
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)

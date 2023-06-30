@@ -30,7 +30,7 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery4 = new DevExpress.DataAccess.Sql.StoredProcQuery();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IncentiveMaster));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -101,59 +101,59 @@ namespace BillPlex
             // 
             // labelControl2
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(47, 144);
+            this.labelControl2.Location = new System.Drawing.Point(264, 141);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(90, 16);
+            this.labelControl2.Size = new System.Drawing.Size(115, 19);
             this.labelControl2.TabIndex = 1;
             this.labelControl2.Text = "Product Name";
             // 
             // labelControl3
             // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(47, 178);
+            this.labelControl3.Location = new System.Drawing.Point(264, 178);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(74, 16);
+            this.labelControl3.Size = new System.Drawing.Size(95, 19);
             this.labelControl3.TabIndex = 2;
             this.labelControl3.Text = "Model Code";
             // 
             // labelControl4
             // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(47, 213);
+            this.labelControl4.Location = new System.Drawing.Point(264, 213);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(77, 16);
+            this.labelControl4.Size = new System.Drawing.Size(101, 19);
             this.labelControl4.TabIndex = 3;
             this.labelControl4.Text = "Model Name";
             // 
             // labelControl5
             // 
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(489, 145);
+            this.labelControl5.Location = new System.Drawing.Point(719, 137);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(68, 16);
+            this.labelControl5.Size = new System.Drawing.Size(88, 19);
             this.labelControl5.TabIndex = 4;
             this.labelControl5.Text = "Model Size";
             // 
             // labelControl6
             // 
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(490, 176);
+            this.labelControl6.Location = new System.Drawing.Point(719, 175);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(101, 16);
+            this.labelControl6.Size = new System.Drawing.Size(182, 19);
             this.labelControl6.TabIndex = 5;
-            this.labelControl6.Text = "Duration Period";
+            this.labelControl6.Text = "Duration Period(Days)";
             // 
             // labelControl7
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(801, 96);
+            this.labelControl7.Location = new System.Drawing.Point(1115, 97);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(31, 16);
             this.labelControl7.TabIndex = 6;
@@ -161,23 +161,23 @@ namespace BillPlex
             // 
             // DrpModelName
             // 
-            this.DrpModelName.Location = new System.Drawing.Point(178, 213);
+            this.DrpModelName.Location = new System.Drawing.Point(409, 212);
             this.DrpModelName.Name = "DrpModelName";
             this.DrpModelName.Size = new System.Drawing.Size(214, 20);
             this.DrpModelName.TabIndex = 14;
             // 
             // DrpDurationPeriod
             // 
-            this.DrpDurationPeriod.Location = new System.Drawing.Point(629, 174);
+            this.DrpDurationPeriod.Location = new System.Drawing.Point(909, 177);
             this.DrpDurationPeriod.Name = "DrpDurationPeriod";
-            this.DrpDurationPeriod.Size = new System.Drawing.Size(232, 20);
+            this.DrpDurationPeriod.Size = new System.Drawing.Size(281, 20);
             this.DrpDurationPeriod.TabIndex = 16;
             // 
             // DrpModelSize
             // 
-            this.DrpModelSize.Location = new System.Drawing.Point(629, 141);
+            this.DrpModelSize.Location = new System.Drawing.Point(909, 141);
             this.DrpModelSize.Name = "DrpModelSize";
-            this.DrpModelSize.Size = new System.Drawing.Size(232, 20);
+            this.DrpModelSize.Size = new System.Drawing.Size(281, 20);
             this.DrpModelSize.TabIndex = 17;
             // 
             // panelControl2
@@ -293,6 +293,7 @@ namespace BillPlex
             // 
             this.btnUpdate.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Appearance.Options.UseFont = true;
+            this.btnUpdate.Enabled = false;
             this.btnUpdate.Location = new System.Drawing.Point(182, 17);
             this.btnUpdate.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.btnUpdate.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightBlue;
@@ -321,7 +322,7 @@ namespace BillPlex
             // 
             // simpleButtonProductName
             // 
-            this.simpleButtonProductName.Location = new System.Drawing.Point(398, 144);
+            this.simpleButtonProductName.Location = new System.Drawing.Point(629, 140);
             this.simpleButtonProductName.Name = "simpleButtonProductName";
             this.simpleButtonProductName.Size = new System.Drawing.Size(31, 19);
             this.simpleButtonProductName.TabIndex = 23;
@@ -329,7 +330,7 @@ namespace BillPlex
             // 
             // DrpProductName
             // 
-            this.DrpProductName.Location = new System.Drawing.Point(178, 143);
+            this.DrpProductName.Location = new System.Drawing.Point(409, 139);
             this.DrpProductName.Name = "DrpProductName";
             this.DrpProductName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -338,7 +339,7 @@ namespace BillPlex
             // 
             // DrpModelCode
             // 
-            this.DrpModelCode.Location = new System.Drawing.Point(178, 177);
+            this.DrpModelCode.Location = new System.Drawing.Point(409, 177);
             this.DrpModelCode.Name = "DrpModelCode";
             this.DrpModelCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -352,7 +353,7 @@ namespace BillPlex
             this.gridControl1.Location = new System.Drawing.Point(47, 328);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1185, 402);
+            this.gridControl1.Size = new System.Drawing.Size(1455, 402);
             this.gridControl1.TabIndex = 28;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -361,10 +362,10 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery2.Name = "PRO_GetIncentiveMaster";
-            storedProcQuery2.StoredProcName = "PRO_GetIncentiveMaster";
+            storedProcQuery4.Name = "PRO_GetIncentiveMaster";
+            storedProcQuery4.StoredProcName = "PRO_GetIncentiveMaster";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery2});
+            storedProcQuery4});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // gridView1
@@ -432,7 +433,7 @@ namespace BillPlex
             // DDdate
             // 
             this.DDdate.EditValue = null;
-            this.DDdate.Location = new System.Drawing.Point(838, 95);
+            this.DDdate.Location = new System.Drawing.Point(1163, 96);
             this.DDdate.Name = "DDdate";
             this.DDdate.Properties.BeepOnError = false;
             this.DDdate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -446,7 +447,7 @@ namespace BillPlex
             this.DDdate.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
             this.DDdate.Properties.MaskSettings.Set("mask", "d");
             this.DDdate.Properties.UseMaskAsDisplayFormat = true;
-            this.DDdate.Size = new System.Drawing.Size(138, 20);
+            this.DDdate.Size = new System.Drawing.Size(183, 20);
             this.DDdate.TabIndex = 27;
             // 
             // IncentiveMaster

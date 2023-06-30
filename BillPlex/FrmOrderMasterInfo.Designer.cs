@@ -30,14 +30,36 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery5 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter5 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmOrderMasterInfo));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOffAddress = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colState = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPin = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCountry = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPhonePin = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOffPhone = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colEmail = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colResAddress = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colResState = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colResPin = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colResCountry = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMobile = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTinNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTinDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCstNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCstDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collicenseNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colWebsite = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.btnNew = new DevExpress.XtraEditors.SimpleButton();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
@@ -88,28 +110,6 @@ namespace BillPlex
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.ddOrderDate = new DevExpress.XtraEditors.DateEdit();
             this.ddProDate = new DevExpress.XtraEditors.DateEdit();
-            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
-            this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colOffAddress = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colState = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPin = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCountry = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPhonePin = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colOffPhone = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colEmail = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colResAddress = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colResState = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colResPin = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colResCountry = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMobile = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTinNo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTinDate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCstNo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCstDate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.collicenseNo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colWebsite = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -145,7 +145,7 @@ namespace BillPlex
             this.panelControl1.Location = new System.Drawing.Point(10, 11);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1640, 81);
+            this.panelControl1.Size = new System.Drawing.Size(1552, 81);
             this.panelControl1.TabIndex = 0;
             // 
             // labelControl1
@@ -234,6 +234,19 @@ namespace BillPlex
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
+            // sqlDataSource1
+            // 
+            this.sqlDataSource1.ConnectionName = "BillPlex";
+            this.sqlDataSource1.Name = "sqlDataSource1";
+            storedProcQuery5.Name = "PRO_GetCustomerInfo";
+            queryParameter5.Name = "@SearchKey";
+            queryParameter5.Type = typeof(string);
+            storedProcQuery5.Parameters.Add(queryParameter5);
+            storedProcQuery5.StoredProcName = "PRO_GetCustomerInfo";
+            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
+            storedProcQuery5});
+            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
+            // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -262,14 +275,161 @@ namespace BillPlex
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             // 
+            // colId
+            // 
+            this.colId.FieldName = "Id";
+            this.colId.Name = "colId";
+            this.colId.Visible = true;
+            this.colId.VisibleIndex = 0;
+            // 
+            // colCode
+            // 
+            this.colCode.FieldName = "Code";
+            this.colCode.Name = "colCode";
+            this.colCode.Visible = true;
+            this.colCode.VisibleIndex = 1;
+            // 
+            // colName
+            // 
+            this.colName.FieldName = "Name";
+            this.colName.Name = "colName";
+            this.colName.Visible = true;
+            this.colName.VisibleIndex = 2;
+            // 
+            // colOffAddress
+            // 
+            this.colOffAddress.FieldName = "OffAddress";
+            this.colOffAddress.Name = "colOffAddress";
+            this.colOffAddress.Visible = true;
+            this.colOffAddress.VisibleIndex = 3;
+            // 
+            // colState
+            // 
+            this.colState.FieldName = "State";
+            this.colState.Name = "colState";
+            this.colState.Visible = true;
+            this.colState.VisibleIndex = 4;
+            // 
+            // colPin
+            // 
+            this.colPin.FieldName = "Pin";
+            this.colPin.Name = "colPin";
+            this.colPin.Visible = true;
+            this.colPin.VisibleIndex = 5;
+            // 
+            // colCountry
+            // 
+            this.colCountry.FieldName = "Country";
+            this.colCountry.Name = "colCountry";
+            this.colCountry.Visible = true;
+            this.colCountry.VisibleIndex = 6;
+            // 
+            // colPhonePin
+            // 
+            this.colPhonePin.FieldName = "PhonePin";
+            this.colPhonePin.Name = "colPhonePin";
+            this.colPhonePin.Visible = true;
+            this.colPhonePin.VisibleIndex = 7;
+            // 
+            // colOffPhone
+            // 
+            this.colOffPhone.FieldName = "OffPhone";
+            this.colOffPhone.Name = "colOffPhone";
+            this.colOffPhone.Visible = true;
+            this.colOffPhone.VisibleIndex = 8;
+            // 
+            // colEmail
+            // 
+            this.colEmail.FieldName = "Email";
+            this.colEmail.Name = "colEmail";
+            this.colEmail.Visible = true;
+            this.colEmail.VisibleIndex = 9;
+            // 
+            // colResAddress
+            // 
+            this.colResAddress.FieldName = "ResAddress";
+            this.colResAddress.Name = "colResAddress";
+            this.colResAddress.Visible = true;
+            this.colResAddress.VisibleIndex = 10;
+            // 
+            // colResState
+            // 
+            this.colResState.FieldName = "ResState";
+            this.colResState.Name = "colResState";
+            this.colResState.Visible = true;
+            this.colResState.VisibleIndex = 11;
+            // 
+            // colResPin
+            // 
+            this.colResPin.FieldName = "ResPin";
+            this.colResPin.Name = "colResPin";
+            this.colResPin.Visible = true;
+            this.colResPin.VisibleIndex = 12;
+            // 
+            // colResCountry
+            // 
+            this.colResCountry.FieldName = "ResCountry";
+            this.colResCountry.Name = "colResCountry";
+            this.colResCountry.Visible = true;
+            this.colResCountry.VisibleIndex = 13;
+            // 
+            // colMobile
+            // 
+            this.colMobile.FieldName = "Mobile";
+            this.colMobile.Name = "colMobile";
+            this.colMobile.Visible = true;
+            this.colMobile.VisibleIndex = 14;
+            // 
+            // colTinNo
+            // 
+            this.colTinNo.FieldName = "TinNo";
+            this.colTinNo.Name = "colTinNo";
+            this.colTinNo.Visible = true;
+            this.colTinNo.VisibleIndex = 15;
+            // 
+            // colTinDate
+            // 
+            this.colTinDate.FieldName = "TinDate";
+            this.colTinDate.Name = "colTinDate";
+            this.colTinDate.Visible = true;
+            this.colTinDate.VisibleIndex = 16;
+            // 
+            // colCstNo
+            // 
+            this.colCstNo.FieldName = "CstNo";
+            this.colCstNo.Name = "colCstNo";
+            this.colCstNo.Visible = true;
+            this.colCstNo.VisibleIndex = 17;
+            // 
+            // colCstDate
+            // 
+            this.colCstDate.FieldName = "CstDate";
+            this.colCstDate.Name = "colCstDate";
+            this.colCstDate.Visible = true;
+            this.colCstDate.VisibleIndex = 18;
+            // 
+            // collicenseNo
+            // 
+            this.collicenseNo.FieldName = "licenseNo";
+            this.collicenseNo.Name = "collicenseNo";
+            this.collicenseNo.Visible = true;
+            this.collicenseNo.VisibleIndex = 19;
+            // 
+            // colWebsite
+            // 
+            this.colWebsite.FieldName = "Website";
+            this.colWebsite.Name = "colWebsite";
+            this.colWebsite.Visible = true;
+            this.colWebsite.VisibleIndex = 20;
+            // 
             // btnRefresh
             // 
             this.btnRefresh.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.btnRefresh.Appearance.Options.UseFont = true;
-            this.btnRefresh.Location = new System.Drawing.Point(1273, 66);
+            this.btnRefresh.Location = new System.Drawing.Point(1273, 74);
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(97, 82);
+            this.btnRefresh.Size = new System.Drawing.Size(97, 60);
             this.btnRefresh.TabIndex = 50;
             this.btnRefresh.Text = "REFRESH";
             // 
@@ -277,7 +437,12 @@ namespace BillPlex
             // 
             this.btnNew.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNew.Appearance.Options.UseFont = true;
+            this.btnNew.Enabled = false;
             this.btnNew.Location = new System.Drawing.Point(1283, 180);
+            this.btnNew.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btnNew.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightBlue;
+            this.btnNew.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnNew.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnNew.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(78, 30);
@@ -336,6 +501,10 @@ namespace BillPlex
             this.btnAdd.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Appearance.Options.UseFont = true;
             this.btnAdd.Location = new System.Drawing.Point(1283, 227);
+            this.btnAdd.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btnAdd.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightBlue;
+            this.btnAdd.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnAdd.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(78, 30);
@@ -347,8 +516,10 @@ namespace BillPlex
             // 
             this.btnEdit.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.btnEdit.Appearance.Options.UseFont = true;
-            this.btnEdit.Enabled = false;
             this.btnEdit.Location = new System.Drawing.Point(1283, 272);
+            this.btnEdit.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btnEdit.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnEdit.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(78, 30);
@@ -820,171 +991,11 @@ namespace BillPlex
             this.ddProDate.Size = new System.Drawing.Size(285, 20);
             this.ddProDate.TabIndex = 34;
             // 
-            // sqlDataSource1
-            // 
-            this.sqlDataSource1.ConnectionName = "BillPlex";
-            this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery1.Name = "PRO_GetCustomerInfo";
-            queryParameter1.Name = "@SearchKey";
-            queryParameter1.Type = typeof(string);
-            storedProcQuery1.Parameters.Add(queryParameter1);
-            storedProcQuery1.StoredProcName = "PRO_GetCustomerInfo";
-            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery1});
-            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
-            // 
-            // colId
-            // 
-            this.colId.FieldName = "Id";
-            this.colId.Name = "colId";
-            this.colId.Visible = true;
-            this.colId.VisibleIndex = 0;
-            // 
-            // colCode
-            // 
-            this.colCode.FieldName = "Code";
-            this.colCode.Name = "colCode";
-            this.colCode.Visible = true;
-            this.colCode.VisibleIndex = 1;
-            // 
-            // colName
-            // 
-            this.colName.FieldName = "Name";
-            this.colName.Name = "colName";
-            this.colName.Visible = true;
-            this.colName.VisibleIndex = 2;
-            // 
-            // colOffAddress
-            // 
-            this.colOffAddress.FieldName = "OffAddress";
-            this.colOffAddress.Name = "colOffAddress";
-            this.colOffAddress.Visible = true;
-            this.colOffAddress.VisibleIndex = 3;
-            // 
-            // colState
-            // 
-            this.colState.FieldName = "State";
-            this.colState.Name = "colState";
-            this.colState.Visible = true;
-            this.colState.VisibleIndex = 4;
-            // 
-            // colPin
-            // 
-            this.colPin.FieldName = "Pin";
-            this.colPin.Name = "colPin";
-            this.colPin.Visible = true;
-            this.colPin.VisibleIndex = 5;
-            // 
-            // colCountry
-            // 
-            this.colCountry.FieldName = "Country";
-            this.colCountry.Name = "colCountry";
-            this.colCountry.Visible = true;
-            this.colCountry.VisibleIndex = 6;
-            // 
-            // colPhonePin
-            // 
-            this.colPhonePin.FieldName = "PhonePin";
-            this.colPhonePin.Name = "colPhonePin";
-            this.colPhonePin.Visible = true;
-            this.colPhonePin.VisibleIndex = 7;
-            // 
-            // colOffPhone
-            // 
-            this.colOffPhone.FieldName = "OffPhone";
-            this.colOffPhone.Name = "colOffPhone";
-            this.colOffPhone.Visible = true;
-            this.colOffPhone.VisibleIndex = 8;
-            // 
-            // colEmail
-            // 
-            this.colEmail.FieldName = "Email";
-            this.colEmail.Name = "colEmail";
-            this.colEmail.Visible = true;
-            this.colEmail.VisibleIndex = 9;
-            // 
-            // colResAddress
-            // 
-            this.colResAddress.FieldName = "ResAddress";
-            this.colResAddress.Name = "colResAddress";
-            this.colResAddress.Visible = true;
-            this.colResAddress.VisibleIndex = 10;
-            // 
-            // colResState
-            // 
-            this.colResState.FieldName = "ResState";
-            this.colResState.Name = "colResState";
-            this.colResState.Visible = true;
-            this.colResState.VisibleIndex = 11;
-            // 
-            // colResPin
-            // 
-            this.colResPin.FieldName = "ResPin";
-            this.colResPin.Name = "colResPin";
-            this.colResPin.Visible = true;
-            this.colResPin.VisibleIndex = 12;
-            // 
-            // colResCountry
-            // 
-            this.colResCountry.FieldName = "ResCountry";
-            this.colResCountry.Name = "colResCountry";
-            this.colResCountry.Visible = true;
-            this.colResCountry.VisibleIndex = 13;
-            // 
-            // colMobile
-            // 
-            this.colMobile.FieldName = "Mobile";
-            this.colMobile.Name = "colMobile";
-            this.colMobile.Visible = true;
-            this.colMobile.VisibleIndex = 14;
-            // 
-            // colTinNo
-            // 
-            this.colTinNo.FieldName = "TinNo";
-            this.colTinNo.Name = "colTinNo";
-            this.colTinNo.Visible = true;
-            this.colTinNo.VisibleIndex = 15;
-            // 
-            // colTinDate
-            // 
-            this.colTinDate.FieldName = "TinDate";
-            this.colTinDate.Name = "colTinDate";
-            this.colTinDate.Visible = true;
-            this.colTinDate.VisibleIndex = 16;
-            // 
-            // colCstNo
-            // 
-            this.colCstNo.FieldName = "CstNo";
-            this.colCstNo.Name = "colCstNo";
-            this.colCstNo.Visible = true;
-            this.colCstNo.VisibleIndex = 17;
-            // 
-            // colCstDate
-            // 
-            this.colCstDate.FieldName = "CstDate";
-            this.colCstDate.Name = "colCstDate";
-            this.colCstDate.Visible = true;
-            this.colCstDate.VisibleIndex = 18;
-            // 
-            // collicenseNo
-            // 
-            this.collicenseNo.FieldName = "licenseNo";
-            this.collicenseNo.Name = "collicenseNo";
-            this.collicenseNo.Visible = true;
-            this.collicenseNo.VisibleIndex = 19;
-            // 
-            // colWebsite
-            // 
-            this.colWebsite.FieldName = "Website";
-            this.colWebsite.Name = "colWebsite";
-            this.colWebsite.Visible = true;
-            this.colWebsite.VisibleIndex = 20;
-            // 
             // FrmOrderMasterInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1387, 822);
+            this.ClientSize = new System.Drawing.Size(1668, 822);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

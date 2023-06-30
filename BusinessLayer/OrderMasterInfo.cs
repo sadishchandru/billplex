@@ -104,6 +104,8 @@ namespace BusinessLayer
 
                 dbReader = ObjDbfactory.GetReader("PRO_DeleteOrderMaster", false, objLstdbParams);
 
+                Result.Message = "Order Master Deleted Successfully";
+                Result.Status = ResultStatus.Success;
                 while (dbReader.Read())
                 {
                     Result.Message = ToString(dbReader["ResultMessage"]);

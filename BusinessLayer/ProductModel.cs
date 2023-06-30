@@ -24,6 +24,7 @@ namespace BusinessLayer
         public List<DropDownItemInfo> RawMaterialList { get; set; }
         public List<DropDownItemInfo> ProductModelList { get; set; }
         public List<DropDownItemInfo> SizeMasterList { get; set; }
+        public List<DropDownItemInfo> productMasterList { get; set; }
 
         public void Update()
         {

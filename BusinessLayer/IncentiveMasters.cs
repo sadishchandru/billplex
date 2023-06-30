@@ -71,6 +71,9 @@ namespace BusinessLayer
 
                 dbReader = ObjDbfactory.GetReader("PRO_DeleteIncentiveMaster", false, objLstdbParams);
 
+                Result.Message = "Incentive Master Deleted Successfully";
+                Result.Status = ResultStatus.Success;
+
                 while (dbReader.Read())
                 {
                     Result.Message = ToString(dbReader["ResultMessage"]);
