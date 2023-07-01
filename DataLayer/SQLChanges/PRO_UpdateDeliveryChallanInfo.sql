@@ -48,8 +48,7 @@ BEGIN
 	BEGIN
 		INSERT INTO DeliveryChallanProfileInfo
 		(
-			Id
-			,CompanyMasterId
+			CompanyMasterId
 			,Director
 			,ClientCompanyId
 			,Contractor
@@ -77,7 +76,6 @@ BEGIN
 			,OrderWeight
 		) VALUES
 		(
-			@Id,
 			@CompanyMasterId,
 			@Director,
 			@ClientCompanyId,
