@@ -63,7 +63,13 @@ BEGIN
 	DECLARE @ResultMessage VARCHAR(MAX) = ''
 
 	BEGIN TRY
-
+	IF EXISTS (SELECT NULL FROM EmployeePersonal WHERE EmployeeCode = @EmployeeCode AND Id != @Id)
+	BEGIN
+	SET @ResultMessage = 'Employee Code already exists';
+    SET @ResultNo = 0;
+	END
+	ELSE
+	BEGIN
 	IF(@Id = 0)
 	BEGIN
 		INSERT INTO EmployeePersonal
@@ -211,7 +217,9 @@ BEGIN
 		SET @ResultMessage = 'Employee Personal Updated Successfully';
 		SET @ResultNo = 1
 	END
-
+		SELECT  @ResultMessage AS ResultMessage,
+			@ResultNo AS ResultNo
+	END
 	END TRY
 
 	BEGIN CATCH 

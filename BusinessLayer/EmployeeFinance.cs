@@ -47,7 +47,7 @@ namespace BusinessLayer
 
                 // Calling the stored procedure for creating a Employee Finance
                 List<DbParams> objLstDbParams = new List<DbParams>();
-                objLstDbParams.Add(new DbParams(DbType.String, 50, Id, "@Id", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.String, 50, FEmpId, "@Id", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, FEmpId, "@EmpId", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, FBankName, "@BankName", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, FAddress, "@BankAddress", ParameterDirection.Input));
@@ -59,17 +59,22 @@ namespace BusinessLayer
                 objLstDbParams.Add(new DbParams(DbType.String, 50, FPolicyNo, "@PolicyNo", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, FPolicyTerm, "@PolicyTerm", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 200, FLicId, "@LicId", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.String, 50, FARenewableDate, "@AnnualDate", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.Date, 50, FARenewableDate == "" ? null : FARenewableDate, "@AnnualDate", ParameterDirection.Input));
+                //objLstDbParams.Add(new DbParams(DbType.String, 50, FARenewableDate, "@AnnualDate", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.Boolean, 5, FPfApplication, "@PFApplicable", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.String, 50, FPfJoiningDate, "@PFJoiningDate", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.Date, 50, FPfJoiningDate == "" ? null : FPfJoiningDate, "@PFJoiningDate", ParameterDirection.Input));
+                //objLstDbParams.Add(new DbParams(DbType.String, 50, FPfJoiningDate, "@PFJoiningDate", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, FPfNo, "@PFNo", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, FPfLastDate, "@PFLastDate", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.Boolean, 2, FPensionApplication, "@PensionApplicable", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.String, 50, FJoiningDate, "@PensionJoiningDate", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.Date, 50, FJoiningDate == "" ? null : FJoiningDate, "@PensionJoiningDate", ParameterDirection.Input));
+                //objLstDbParams.Add(new DbParams(DbType.String, 50, FJoiningDate, "@PensionJoiningDate", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.Boolean, 5, FEsiApplication, "@ESIApplicable", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.String, 50, FEsiJoiningDate, "@ESIJoiningDate", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.Date, 50, FEsiJoiningDate == "" ? null : FEsiJoiningDate, "@ESIJoiningDate", ParameterDirection.Input));
+                //objLstDbParams.Add(new DbParams(DbType.String, 50, FEsiJoiningDate, "@ESIJoiningDate", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, FEsiNo, "@ESINo", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.String, 50, FEsiLastDate, "@ESILastDate", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.Date, 50, FEsiLastDate == "" ? null : FEsiLastDate, "@ESILastDate", ParameterDirection.Input));
+                //objLstDbParams.Add(new DbParams(DbType.String, 50, FEsiLastDate, "@ESILastDate", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, FLocalOffice, "@ESIOffice", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, FEsiDespensary, "@ESIDispensary", ParameterDirection.Input));
                 

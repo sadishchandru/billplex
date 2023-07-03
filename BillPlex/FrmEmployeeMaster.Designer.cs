@@ -42,6 +42,8 @@ namespace BillPlex
             this.Newbtn = new DevExpress.XtraEditors.SimpleButton();
             this.EmployeeMasterTab = new DevExpress.XtraTab.XtraTabControl();
             this.PERSONAL = new DevExpress.XtraTab.XtraTabPage();
+            this.labelCodeExist = new DevExpress.XtraEditors.LabelControl();
+            this.labelAvailable = new DevExpress.XtraEditors.LabelControl();
             this.txtPhone = new DevExpress.XtraEditors.TextEdit();
             this.txtStdCode = new DevExpress.XtraEditors.TextEdit();
             this.txtProb = new DevExpress.XtraEditors.TextEdit();
@@ -85,7 +87,7 @@ namespace BillPlex
             this.labelControl27 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl28 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl29 = new DevExpress.XtraEditors.LabelControl();
-            this.txtPArea = new DevExpress.XtraEditors.TextEdit();
+            this.txtCArea = new DevExpress.XtraEditors.TextEdit();
             this.txtCPAddress = new DevExpress.XtraEditors.MemoEdit();
             this.drpCDistrict = new DevExpress.XtraEditors.ComboBoxEdit();
             this.drpState = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -188,8 +190,6 @@ namespace BillPlex
             this.Family = new DevExpress.XtraTab.XtraTabPage();
             this.FamilyGridControl = new DevExpress.XtraGrid.GridControl();
             this.FamilyGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.SNo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.SName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btndelete = new DevExpress.XtraEditors.SimpleButton();
             this.bntAddRow = new DevExpress.XtraEditors.SimpleButton();
             this.txtRemarks = new DevExpress.XtraEditors.TextEdit();
@@ -260,6 +260,13 @@ namespace BillPlex
             this.drpNDistrict = new DevExpress.XtraEditors.ComboBoxEdit();
             this.txtNAddress = new DevExpress.XtraEditors.MemoEdit();
             this.txtGAddress = new DevExpress.XtraEditors.MemoEdit();
+            this.Sno = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -283,7 +290,7 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.txtEmailId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGender.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPPincode.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPArea.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCArea.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCPAddress.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpCDistrict.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpState.Properties)).BeginInit();
@@ -553,6 +560,8 @@ namespace BillPlex
             // 
             // PERSONAL
             // 
+            this.PERSONAL.Controls.Add(this.labelCodeExist);
+            this.PERSONAL.Controls.Add(this.labelAvailable);
             this.PERSONAL.Controls.Add(this.txtPhone);
             this.PERSONAL.Controls.Add(this.txtStdCode);
             this.PERSONAL.Controls.Add(this.txtProb);
@@ -596,7 +605,7 @@ namespace BillPlex
             this.PERSONAL.Controls.Add(this.labelControl27);
             this.PERSONAL.Controls.Add(this.labelControl28);
             this.PERSONAL.Controls.Add(this.labelControl29);
-            this.PERSONAL.Controls.Add(this.txtPArea);
+            this.PERSONAL.Controls.Add(this.txtCArea);
             this.PERSONAL.Controls.Add(this.txtCPAddress);
             this.PERSONAL.Controls.Add(this.drpCDistrict);
             this.PERSONAL.Controls.Add(this.drpState);
@@ -650,6 +659,30 @@ namespace BillPlex
             this.PERSONAL.Name = "PERSONAL";
             this.PERSONAL.Size = new System.Drawing.Size(1414, 617);
             this.PERSONAL.Text = "PERSONAL";
+            // 
+            // labelCodeExist
+            // 
+            this.labelCodeExist.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCodeExist.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelCodeExist.Appearance.Options.UseFont = true;
+            this.labelCodeExist.Appearance.Options.UseForeColor = true;
+            this.labelCodeExist.Location = new System.Drawing.Point(121, 246);
+            this.labelCodeExist.Name = "labelCodeExist";
+            this.labelCodeExist.Size = new System.Drawing.Size(55, 13);
+            this.labelCodeExist.TabIndex = 131;
+            this.labelCodeExist.Text = "CodeExist";
+            // 
+            // labelAvailable
+            // 
+            this.labelAvailable.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAvailable.Appearance.ForeColor = System.Drawing.Color.Green;
+            this.labelAvailable.Appearance.Options.UseFont = true;
+            this.labelAvailable.Appearance.Options.UseForeColor = true;
+            this.labelAvailable.Location = new System.Drawing.Point(10, 246);
+            this.labelAvailable.Name = "labelAvailable";
+            this.labelAvailable.Size = new System.Drawing.Size(52, 13);
+            this.labelAvailable.TabIndex = 130;
+            this.labelAvailable.Text = "Available";
             // 
             // txtPhone
             // 
@@ -1103,12 +1136,12 @@ namespace BillPlex
             this.labelControl29.TabIndex = 71;
             this.labelControl29.Text = "Correspondence Address";
             // 
-            // txtPArea
+            // txtCArea
             // 
-            this.txtPArea.Location = new System.Drawing.Point(662, 215);
-            this.txtPArea.Name = "txtPArea";
-            this.txtPArea.Size = new System.Drawing.Size(169, 20);
-            this.txtPArea.TabIndex = 75;
+            this.txtCArea.Location = new System.Drawing.Point(662, 215);
+            this.txtCArea.Name = "txtCArea";
+            this.txtCArea.Size = new System.Drawing.Size(169, 20);
+            this.txtCArea.TabIndex = 75;
             // 
             // txtCPAddress
             // 
@@ -1547,6 +1580,7 @@ namespace BillPlex
             this.txtEmpCode.Name = "txtEmpCode";
             this.txtEmpCode.Size = new System.Drawing.Size(169, 20);
             this.txtEmpCode.TabIndex = 45;
+            this.txtEmpCode.EditValueChanged += new System.EventHandler(this.txtEmpCode_EditValueChanged);
             // 
             // txtPANCard
             // 
@@ -2509,10 +2543,10 @@ namespace BillPlex
             // 
             // FamilyGridControl
             // 
-            this.FamilyGridControl.Location = new System.Drawing.Point(17, 306);
+            this.FamilyGridControl.Location = new System.Drawing.Point(17, 338);
             this.FamilyGridControl.MainView = this.FamilyGridView;
             this.FamilyGridControl.Name = "FamilyGridControl";
-            this.FamilyGridControl.Size = new System.Drawing.Size(1391, 311);
+            this.FamilyGridControl.Size = new System.Drawing.Size(1382, 257);
             this.FamilyGridControl.TabIndex = 89;
             this.FamilyGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.FamilyGridView});
@@ -2520,24 +2554,15 @@ namespace BillPlex
             // FamilyGridView
             // 
             this.FamilyGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.SNo,
-            this.SName});
+            this.Sno,
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4,
+            this.gridColumn5,
+            this.gridColumn6,
+            this.gridColumn7});
             this.FamilyGridView.GridControl = this.FamilyGridControl;
             this.FamilyGridView.Name = "FamilyGridView";
-            // 
-            // SNo
-            // 
-            this.SNo.Caption = "SNo";
-            this.SNo.Name = "SNo";
-            this.SNo.Visible = true;
-            this.SNo.VisibleIndex = 0;
-            // 
-            // SName
-            // 
-            this.SName.Caption = "SName";
-            this.SName.Name = "SName";
-            this.SName.Visible = true;
-            this.SName.VisibleIndex = 1;
             // 
             // btndelete
             // 
@@ -2559,7 +2584,7 @@ namespace BillPlex
             this.bntAddRow.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bntAddRow.Appearance.Options.UseBackColor = true;
             this.bntAddRow.Appearance.Options.UseFont = true;
-            this.bntAddRow.Location = new System.Drawing.Point(783, 260);
+            this.bntAddRow.Location = new System.Drawing.Point(783, 257);
             this.bntAddRow.LookAndFeel.SkinName = "DevExpress Style";
             this.bntAddRow.LookAndFeel.UseDefaultLookAndFeel = false;
             this.bntAddRow.Name = "bntAddRow";
@@ -3460,6 +3485,49 @@ namespace BillPlex
             this.txtGAddress.Size = new System.Drawing.Size(252, 46);
             this.txtGAddress.TabIndex = 110;
             // 
+            // Sno
+            // 
+            this.Sno.FieldName = "S.no";
+            this.Sno.Name = "Sno";
+            this.Sno.Visible = true;
+            this.Sno.VisibleIndex = 0;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 2;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 3;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 4;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 5;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 6;
+            // 
             // FrmEmployeeMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3496,7 +3564,7 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.txtEmailId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGender.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPPincode.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPArea.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCArea.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCPAddress.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpCDistrict.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpState.Properties)).EndInit();
@@ -3655,7 +3723,7 @@ namespace BillPlex
         private DevExpress.XtraEditors.LabelControl labelControl27;
         private DevExpress.XtraEditors.LabelControl labelControl28;
         private DevExpress.XtraEditors.LabelControl labelControl29;
-        private DevExpress.XtraEditors.TextEdit txtPArea;
+        private DevExpress.XtraEditors.TextEdit txtCArea;
         private DevExpress.XtraEditors.MemoEdit txtCPAddress;
         private DevExpress.XtraEditors.ComboBoxEdit drpCDistrict;
         private DevExpress.XtraEditors.ComboBoxEdit drpState;
@@ -3769,8 +3837,6 @@ namespace BillPlex
         private DevExpress.XtraEditors.LabelControl labelControl86;
         private DevExpress.XtraEditors.SimpleButton btndelete;
         private DevExpress.XtraEditors.SimpleButton bntAddRow;
-        private DevExpress.XtraGrid.GridControl FamilyGridControl;
-        private DevExpress.XtraGrid.Views.Grid.GridView FamilyGridView;
         private DevExpress.XtraEditors.TextEdit txtNPin;
         private DevExpress.XtraEditors.LabelControl labelControl87;
         private DevExpress.XtraEditors.ComboBoxEdit drpNState;
@@ -3832,7 +3898,16 @@ namespace BillPlex
         private DevExpress.XtraEditors.TextEdit txtPName;
         private DevExpress.XtraEditors.TextEdit txtCName;
         private DevExpress.XtraEditors.TextEdit txtSCName;
-        private DevExpress.XtraGrid.Columns.GridColumn SNo;
-        private DevExpress.XtraGrid.Columns.GridColumn SName;
+        private DevExpress.XtraEditors.LabelControl labelCodeExist;
+        private DevExpress.XtraEditors.LabelControl labelAvailable;
+        private DevExpress.XtraGrid.GridControl FamilyGridControl;
+        private DevExpress.XtraGrid.Views.Grid.GridView FamilyGridView;
+        private DevExpress.XtraGrid.Columns.GridColumn Sno;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
     }
 }

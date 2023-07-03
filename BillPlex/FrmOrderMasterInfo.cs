@@ -147,7 +147,7 @@ namespace BillPlex
                 foreach (var rowHandle in selectedRows)
                 {
                     txtOrderNo.Text = (string)gridView1.GetRowCellValue(rowHandle, "@OrderNo");
-                    ddOrderDate.Text = (string)gridView1.GetRowCellValue(rowHandle, "Orderdate");
+                    //ddOrderDate.Text = (string)gridView1.GetRowCellValue(rowHandle, "Orderdate");
 
                     var datete = gridView1.GetRowCellValue(rowHandle, "Orderdate").ToString();
                     ddOrderDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
@@ -158,16 +158,16 @@ namespace BillPlex
                     drpModelCode.Text = (string)gridView1.GetRowCellValue(rowHandle, "productcode");
                     drpModelName.Text = (string)gridView1.GetRowCellValue(rowHandle, "productmodel");
                     drpProductSize.Text = (string)gridView1.GetRowCellValue(rowHandle, "productsize");
-                    txtMaterialwt.Text = (string)gridView1.GetRowCellValue(rowHandle, "Quantity");
+                    txtMaterialwt.Text = (string)gridView1.GetRowCellValue(rowHandle, "Quantity").ToString();
                     txtType.Text = (string)gridView1.GetRowCellValue(rowHandle, "RawType");
                     txtRawmatName.Text = (string)gridView1.GetRowCellValue(rowHandle, "RawmaterialId");
                     drpProColor.Text = (string)gridView1.GetRowCellValue(rowHandle, "ColorId");
-                    txtQuantity.Text = (string)gridView1.GetRowCellValue(rowHandle, "RawQty");
+                    txtQuantity.Text = (string)gridView1.GetRowCellValue(rowHandle, "RawQty").ToString();
                     ddProDate.Text = (string)gridView1.GetRowCellValue(rowHandle, "Delivarydate");
                     datete = gridView1.GetRowCellValue(rowHandle, "Delivarydate").ToString();
                     ddProDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
                     drpStatus.Text = (string)gridView1.GetRowCellValue(rowHandle, "Status");
-                    txtTotRawmat.Text = (string)gridView1.GetRowCellValue(rowHandle, "TotalRaw");
+                    txtTotRawmat.Text = (string)gridView1.GetRowCellValue(rowHandle, "TotalRaw").ToString();
                     txtWages.Text = (string)gridView1.GetRowCellValue(rowHandle, "WagesforEmp");
                     
                 }
@@ -203,20 +203,20 @@ namespace BillPlex
                     }
                     var selectedPNameItems = drpProductName.Text;
                     
-                    string selectedMastersItem = (string)drpProductName.SelectedItem;
+                    string selectedPNameItem = (string)drpProductName.SelectedItem;
 
-                    if (selectedMastersItem != null)
+                    if (selectedPNameItems != null)
                     {
-                        OrderMasterRequest.ProductNameId = OrderMasterRequest.ProductMasterList.FirstOrDefault(item => item.Name == selectedMastersItem.ToString())?.Id ?? -1;
+                        OrderMasterRequest.ProductNameId = OrderMasterRequest.ProductModelList.FirstOrDefault(item => item.Name == selectedPNameItem.ToString())?.Id ?? -1;
                     }
 
                     var selectedProColorItems = drpProColor.Text;
 
-                    string selectedCMasterItem = (string)drpProColor.SelectedItem;
+                    string selectedProColorItem = (string)drpProColor.SelectedItem;
 
-                    if (selectedCMasterItem != null)
+                    if (selectedProColorItems != null)
                     {
-                        OrderMasterRequest.ColorId = OrderMasterRequest.ColourMasterList.FirstOrDefault(item => item.Name == selectedCMasterItem.ToString())?.Id ?? -1;
+                        OrderMasterRequest.ColorId = OrderMasterRequest.ColourMasterList.FirstOrDefault(item => item.Name == selectedProColorItem.ToString())?.Id ?? -1;
                     }
 
                     OrderMasterRequest.OrderNo = txtOrderNo.Text;
@@ -343,9 +343,11 @@ namespace BillPlex
 
         private void txtQuantity_EditValueChanged(object sender, EventArgs e)
         {
-            int a = Convert.ToInt32(txtMaterialwt.Text);
-            int b = Convert.ToInt32(txtQuantity.Text);
-            txtTotRawmat.Text = Convert.ToString(a * b);
+            var count = 0;
+             var a=Convert.ToInt32(txtMaterialwt.Text);
+            var b= Convert.ToInt32(txtQuantity.Text);
+            count = (a * b);
+            txtTotRawmat.Text = count.ToString();
         }
     }
 }

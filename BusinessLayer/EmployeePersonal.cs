@@ -56,6 +56,7 @@ namespace BusinessLayer
         public List<DropDownItemInfo> MasterCompanyList { get; set; }
         public List<DropDownItemInfo> ClientCompanyList { get; set; }
         public List<DropDownItemInfo> SubClientCompanyList { get; set; }
+        public List<DropDownItemInfo> EmployeeCodeList { get; set; }
 
 
         #region Update
@@ -109,12 +110,11 @@ namespace BusinessLayer
                 objLstDbParams.Add(new DbParams(DbType.String, 200, EReligion, "@Religion", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, ECast, "@Caste", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, Enationality, "@Nationality", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.String, 50, EJoiningDate, "@EJoiningDate", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.Date, 50, EJoiningDate == "" ? null : EJoiningDate, "@EJoiningDate", ParameterDirection.Input));
+                //objLstDbParams.Add(new DbParams(DbType.String, 50, EJoiningDate, "@EJoiningDate", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, EProbPeriod, "@EProbationPeriod", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.Date, 50, EConfirmDate == "" ? null : EConfirmDate, "@EConfirmationDate", ParameterDirection.Input));
-                //objLstDbParams.Add(new DbParams(DbType.Date, 50, EConfirmDate, "@EConfirmationDate", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.Date, 50, EResigningDate == "" ? null : EResigningDate, "@EResigningDate", ParameterDirection.Input));
-                //objLstDbParams.Add(new DbParams(DbType.Date, 50, EResigningDate, "@EResigningDate", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, ESelectWithReason, "@Reason", ParameterDirection.Input));
                 //objLstDbParams.Add(new DbParams(DbType.String, 50, EPhoto, "@EmpImage", ParameterDirection.Input));
 

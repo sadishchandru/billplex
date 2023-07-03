@@ -38,7 +38,8 @@ namespace BillPlex
         public FrmEmployeeMaster()
         {
             InitializeComponent();
-
+            labelAvailable.Visible = false;
+            labelCodeExist.Visible = false;
             InitializeGridControl();
             InitializeDataSource();
 
@@ -58,7 +59,8 @@ namespace BillPlex
             Dictionary<string, bool> dropDownList = new Dictionary<string, bool>        {
                     { "MasterCompanyRequired", true },
                     {"ClientCompanyRequired",true},
-                    {"SubClientCompanyRequired",true}
+                    {"SubClientCompanyRequired",true},
+                    {"EmployeePersonalRequired",true}
                 };
             var dropdwonList = EmployeePersonalRequest.GetDropdownCollections(dropDownList);
 
@@ -77,6 +79,10 @@ namespace BillPlex
                 if (item.Key == "SubClientCompanyRequired")
                 {
                     EmployeePersonalRequest.SubClientCompanyList = (List<DropDownItemInfo>)item.Value;
+                }
+                if (item.Key == "EmployeePersonalRequired")
+                {
+                    EmployeePersonalRequest.EmployeeCodeList = (List<DropDownItemInfo>)item.Value;
                 }
             }
 
@@ -178,77 +184,100 @@ namespace BillPlex
                 #region Employee Personal Detail Update
                 if (tabIndex == 0)
                 {
-                    // Employee Personal Detail Update
-                    string selectedMasterItem = (string)drpMCompany.SelectedItem;
-
-                    if (selectedMasterItem != null)
+                    if (txtEmpCode.Text != string.Empty && txtEmpName.Text != string.Empty)
                     {
-                        EmployeePersonalRequest.EMasterCompany = EmployeePersonalRequest.MasterCompanyList.FirstOrDefault(item => item.Name == selectedMasterItem.ToString())?.Id ?? -1;
-                    }
+                        if ((EmployeePersonalRequest.Id != 0 || labelAvailable.Visible == true) && labelCodeExist.Visible == false)
+                        {
+                            // Employee Personal Detail Update
+                            string selectedMasterItem = (string)drpMCompany.SelectedItem;
 
-                    string selectedClientItem = (string)drpCCompany.SelectedItem;
+                            if (selectedMasterItem != null)
+                            {
+                                EmployeePersonalRequest.EMasterCompany = EmployeePersonalRequest.MasterCompanyList.FirstOrDefault(item => item.Name == selectedMasterItem.ToString())?.Id ?? -1;
+                            }
 
-                    if (selectedClientItem != null)
-                    {
-                        EmployeePersonalRequest.EClientCompany = EmployeePersonalRequest.ClientCompanyList.FirstOrDefault(item => item.Name == selectedClientItem.ToString())?.Id ?? -1;
-                    }
+                            string selectedClientItem = (string)drpCCompany.SelectedItem;
 
-                    string selectedSubClientItem = (string)drpSCCom.SelectedItem;
+                            if (selectedClientItem != null)
+                            {
+                                EmployeePersonalRequest.EClientCompany = EmployeePersonalRequest.ClientCompanyList.FirstOrDefault(item => item.Name == selectedClientItem.ToString())?.Id ?? -1;
+                            }
 
-                    if (selectedSubClientItem != null)
-                    {
-                        EmployeePersonalRequest.ESubClientCompany = EmployeePersonalRequest.SubClientCompanyList.FirstOrDefault(item => item.Name == selectedSubClientItem.ToString())?.Id ?? -1;
-                    }
+                            string selectedSubClientItem = (string)drpSCCom.SelectedItem;
 
-                    EmployeePersonalRequest.EProprietorName = txtPName.Text;
-                    EmployeePersonalRequest.EClientName = txtCName.Text;
-                    EmployeePersonalRequest.ESubClientName = txtSCName.Text;
-                    EmployeePersonalRequest.EEmployeeCode = txtEmpCode.Text;
-                    EmployeePersonalRequest.EEmployeeName = txtEmpName.Text;
-                    EmployeePersonalRequest.EVoterIdNo = txtVoterID.Text;
-                    EmployeePersonalRequest.EDrivingLicNo = txtDriving.Text;
-                    EmployeePersonalRequest.EPanNo = txtPANCard.Text;
-                    EmployeePersonalRequest.EPassportNo = txtPassport.Text;
-                    EmployeePersonalRequest.EIdentityMark = txtIdentity.Text;
-                    EmployeePersonalRequest.EPAddress = txtPerAddress.Text;
-                    EmployeePersonalRequest.EPVillageArea = txtPerArea.Text;
-                    EmployeePersonalRequest.EPState = drpPState.Text;
-                    EmployeePersonalRequest.EPDistrict = drpDistrict.Text;
-                    EmployeePersonalRequest.EPPincode = txtPinCode.Text;
-                    EmployeePersonalRequest.ECAddress = txtCPAddress.Text;
-                    EmployeePersonalRequest.ECDistrict = drpCDistrict.Text;
-                    EmployeePersonalRequest.ECState = drpState.Text;
-                    EmployeePersonalRequest.ECPincode = txtPPincode.Text;
-                    EmployeePersonalRequest.EDOB = ddDOB.Text;
-                    EmployeePersonalRequest.EGender = radGender.Text;
-                    EmployeePersonalRequest.EBloodGroup = drpBlood.Text;
-                    EmployeePersonalRequest.EEmailId = txtEmailId.Text;
-                    EmployeePersonalRequest.EmobileNo = txtMobile.Text;
-                    EmployeePersonalRequest.EFatherName = txtFathers.Text;
-                    EmployeePersonalRequest.EMotherName = txtMotherName.Text;
-                    EmployeePersonalRequest.EMaritalStatus = drpMarital.Text;
-                    EmployeePersonalRequest.EStdCode = txtStdCode.Text;
-                    EmployeePersonalRequest.EPhone = txtPhone.Text;
-                    EmployeePersonalRequest.EReligion = drpReligion.Text;
-                    EmployeePersonalRequest.ECast = drpCast.Text;
-                    EmployeePersonalRequest.Enationality = drpNationlity.Text;
-                    EmployeePersonalRequest.EJoiningDate = ddJDate.Text;
-                    EmployeePersonalRequest.EProbPeriod = txtProb.Text;
-                    EmployeePersonalRequest.EConfirmDate = ddCDate.Text;
-                    EmployeePersonalRequest.EResigningDate = ddRDate.Text;
-                    EmployeePersonalRequest.ESelectWithReason = drpReason.Text;
-                    //EmployeePersonalRequest.EPhoto = svgPhoto.Text;
+                            if (selectedSubClientItem != null)
+                            {
+                                EmployeePersonalRequest.ESubClientCompany = EmployeePersonalRequest.SubClientCompanyList.FirstOrDefault(item => item.Name == selectedSubClientItem.ToString())?.Id ?? -1;
+                            }
 
-                    EmployeePersonalRequest.Update();
+                            EmployeePersonalRequest.EProprietorName = txtPName.Text;
+                            EmployeePersonalRequest.EClientName = txtCName.Text;
+                            EmployeePersonalRequest.ESubClientName = txtSCName.Text;
+                            EmployeePersonalRequest.EEmployeeCode = txtEmpCode.Text;
+                            EmployeePersonalRequest.EEmployeeName = txtEmpName.Text;
+                            EmployeePersonalRequest.EVoterIdNo = txtVoterID.Text;
+                            EmployeePersonalRequest.EDrivingLicNo = txtDriving.Text;
+                            EmployeePersonalRequest.EPanNo = txtPANCard.Text;
+                            EmployeePersonalRequest.EPassportNo = txtPassport.Text;
+                            EmployeePersonalRequest.EIdentityMark = txtIdentity.Text;
+                            EmployeePersonalRequest.EPAddress = txtPerAddress.Text;
+                            EmployeePersonalRequest.EPVillageArea = txtPerArea.Text;
+                            EmployeePersonalRequest.EPState = drpPState.Text;
+                            EmployeePersonalRequest.EPDistrict = drpDistrict.Text;
+                            EmployeePersonalRequest.EPPincode = txtPinCode.Text;
+                            EmployeePersonalRequest.ECAddress = txtCPAddress.Text;
+                            EmployeePersonalRequest.ECVillageArea = txtCArea.Text;
+                            EmployeePersonalRequest.ECDistrict = drpCDistrict.Text;
+                            EmployeePersonalRequest.ECState = drpState.Text;
+                            EmployeePersonalRequest.ECPincode = txtPPincode.Text;
+                            EmployeePersonalRequest.EDOB = ddDOB.Text;
+                            EmployeePersonalRequest.EGender = radGender.Text;
+                            EmployeePersonalRequest.EBloodGroup = drpBlood.Text;
+                            EmployeePersonalRequest.EEmailId = txtEmailId.Text;
+                            EmployeePersonalRequest.EmobileNo = txtMobile.Text;
+                            EmployeePersonalRequest.EFatherName = txtFathers.Text;
+                            EmployeePersonalRequest.EMotherName = txtMotherName.Text;
+                            EmployeePersonalRequest.EMaritalStatus = drpMarital.Text;
+                            EmployeePersonalRequest.EStdCode = txtStdCode.Text;
+                            EmployeePersonalRequest.EPhone = txtPhone.Text;
+                            EmployeePersonalRequest.EReligion = drpReligion.Text;
+                            EmployeePersonalRequest.ECast = drpCast.Text;
+                            EmployeePersonalRequest.Enationality = drpNationlity.Text;
+                            EmployeePersonalRequest.EJoiningDate = ddJDate.Text;
+                            EmployeePersonalRequest.EProbPeriod = txtProb.Text;
+                            EmployeePersonalRequest.EConfirmDate = ddCDate.Text;
+                            EmployeePersonalRequest.EResigningDate = ddRDate.Text;
+                            EmployeePersonalRequest.ESelectWithReason = drpReason.Text;
+                            //EmployeePersonalRequest.EPhoto = svgPhoto.Text;
 
-                    if (EmployeePersonalRequest.Result.Status == ResultStatus.Success)
-                    {
-                        this.Close();
-                        XtraMessageBox.Show(EmployeePersonalRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            EmployeePersonalRequest.Update();
+
+                            if (EmployeePersonalRequest.Result.Status == ResultStatus.Success)
+                            {
+                                this.Close();
+                                XtraMessageBox.Show(EmployeePersonalRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                FrmEmployeeMasterList form = Application.OpenForms.OfType<FrmEmployeeMasterList>().FirstOrDefault();
+
+                                Form myForm = Application.OpenForms["FrmEmployeeMasterList"];
+                                if (myForm != null)
+                                {
+                                    form.ReloadSqlDataSource();
+                                }
+                            }
+                            else
+                            {
+                                XtraMessageBox.Show(EmployeePersonalRequest.Result.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        else
+                        {
+                            XtraMessageBox.Show("Please check Code", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
                     }
                     else
                     {
-                        XtraMessageBox.Show(EmployeePersonalRequest.Result.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        XtraMessageBox.Show(EmployeePersonalRequest.Result.Message, "please give the manditory field", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 #endregion
@@ -287,6 +316,13 @@ namespace BillPlex
                     {
                         this.Close();
                         XtraMessageBox.Show(EmployeeFinanceRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        FrmEmployeeMasterList form = Application.OpenForms.OfType<FrmEmployeeMasterList>().FirstOrDefault();
+                        Form myForm = Application.OpenForms["FrmEmployeeMasterList"];
+                        if (myForm != null)
+                        {
+                            form.ReloadSqlDataSource();
+                        }
                     }
                     else
                     {
@@ -314,6 +350,23 @@ namespace BillPlex
                     EmployeeFamilyRequest.EFResiding = drpResiding.Text;
                     EmployeeFamilyRequest.EFRemark = txtRemarks.Text;
                     EmployeeFamilyRequest.Update();
+
+                    if (EmployeeFamilyRequest.Result.Status == ResultStatus.Success)
+                    {
+                        this.Close();
+                        XtraMessageBox.Show(EmployeeFamilyRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        FrmEmployeeMasterList form = Application.OpenForms.OfType<FrmEmployeeMasterList>().FirstOrDefault();
+                        Form myForm = Application.OpenForms["FrmEmployeeMasterList"];
+                        if (myForm != null)
+                        {
+                            form.ReloadSqlDataSource();
+                        }
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show(EmployeeFamilyRequest.Result.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 #endregion
 
@@ -341,6 +394,23 @@ namespace BillPlex
                     EmployeeNomineeReqest.ENGAddress = txtFAddress.Text;
                     EmployeeNomineeReqest.ENGRelation = txtGREmp.Text;
                     EmployeeNomineeReqest.Update();
+
+                    if (EmployeeNomineeReqest.Result.Status == ResultStatus.Success)
+                    {
+                        this.Close();
+                        XtraMessageBox.Show(EmployeeNomineeReqest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        FrmEmployeeMasterList form = Application.OpenForms.OfType<FrmEmployeeMasterList>().FirstOrDefault();
+                        Form myForm = Application.OpenForms["FrmEmployeeMasterList"];
+                        if (myForm != null)
+                        {
+                            form.ReloadSqlDataSource();
+                        }
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show(EmployeeNomineeReqest.Result.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 #endregion
 
@@ -413,7 +483,7 @@ namespace BillPlex
             drpDistrict.ResetText();
             txtPinCode.ResetText();
             txtCPAddress.ResetText();
-            txtPArea.ResetText();
+            txtCArea.ResetText();
             drpCDistrict.ResetText();
             drpState.ResetText();
             txtPPincode.ResetText();
@@ -466,7 +536,7 @@ namespace BillPlex
                 txtPinCode.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "PPincode");
                 drpPState.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "PState");
                 txtCPAddress.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "CAddress");
-                txtPArea.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "CArea");
+                txtCArea.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "CArea");
                 drpCDistrict.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "CDistrict");
                 txtPPincode.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "CPincode");
                 drpState.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "CState");
@@ -511,11 +581,11 @@ namespace BillPlex
 
                 drpReason.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "Reason");
 
-
-                // Finance Details Bind
-                //if (selectedClientCompanyList.GetRowCellValue(rowHandle, "financeId") != DBNull.Value)
-                //{
-                    EmployeeFinanceRequest.Id = selectedClientCompanyList.GetRowCellValue(rowHandle, "EmpId");
+                int convertedValue = Convert.IsDBNull(selectedClientCompanyList.GetRowCellValue(rowHandle, "EmpId")) ? 0 : Convert.ToInt32(selectedClientCompanyList.GetRowCellValue(rowHandle, "EmpId"));
+                // Finance Details 
+                if (convertedValue != 0)
+                {
+                    EmployeeFinanceRequest.FEmpId = convertedValue;
                     //txtSCName.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "Id");
                     drpBName.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "BankName");
                     txtAddress.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "BankAddress");
@@ -547,7 +617,7 @@ namespace BillPlex
                     ddESILastDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
                     drpLOffice.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ESIOffice");
                     drpESIDispensary.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ESIDispensary");
-                //}               
+                }               
 
             }
 
@@ -557,6 +627,8 @@ namespace BillPlex
                 Newbtn.Enabled = false;
                 Updatebtn.Enabled = true;
                 Deletebtn.Enabled = false;
+                labelAvailable.Visible = false;
+                labelCodeExist.Visible = false;
             }
             else if (EmployeeFinanceRequest.Id > 0)
             {
@@ -578,93 +650,97 @@ namespace BillPlex
         private void bntAddRow_Click(object sender, EventArgs e)
         {
 
+            GridView gridView = FamilyGridView; // Replace gridView1 with the actual name of your GridView control
 
-            var value = new 
-            {
-                SNo = "123",
-                SName = "123"
-                //Address =  "123",
-                //Area = "123",
-                //District = "123",
-                //State = "123",
-                //Pin = "123",
-                //RelationEmployee = "123",
-                //DateOfBirth = "123",
-                //WhetherResiding = "123",
-                //Remarks = "123"
-            };
+            // Retrieve textbox values
+            string value1 = txtFSno.Text;
+            string value2 = txtFName.Text;
+            // Retrieve additional textbox values as needed
 
-            //DataTable dataTable = (DataTable)FamilyGridControl.DataSource;
+            // Add a new row to the GridView
+            gridView.AddNewRow();
 
-            // Create a new row object
-            // DataRow newRow = ((DataTable)FamilyGridView.DataSource).NewRow();
-            // DataRow newRow = dataTable.NewRow();
+            // Set values for each column in the new row
+            gridView.SetRowCellValue(gridView.FocusedRowHandle, "Sno", value1);
+            gridView.SetRowCellValue(gridView.FocusedRowHandle, "FName", value2);
+            // Set values for additional columns as needed
 
-            //EmployeeFamily newPerson = new EmployeeFamily();
+            // End the row editing
+            gridView.UpdateCurrentRow();
 
-            //newPerson.SNo = txtFSno.Text;
-            //newPerson.EFName = txtFName.Text;
-            //newPerson.SNo = txtFSno.Text;
-            //newPerson.SNo = txtFSno.Text;
-            //newPerson.SNo = txtFSno.Text;
-            //newPerson.SNo = txtFSno.Text;
-            //newPerson.SNo = txtFSno.Text;
-            //newPerson.SNo = txtFSno.Text;
-            //newPerson.SNo = txtFSno.Text;
-            //newPerson.SNo = txtFSno.Text;
+//          -----------------------------
+            //// Retrieve textbox values
+            //string value1 = txtFSno.Text;
+            //string value2 = txtFName.Text;
+            //// Retrieve additional textbox values as needed
+
+            //// Create a new row object
+            //EmployeeFamily newRow = new EmployeeFamily()
             //{
-            //    Name = "John Doe", Age = 30, Email = "john@example.com" };
-            
-            
-            EmployeeFamilySource.Add(value);
+            //    SNo = value1,
+            //    EFName = value2,
+            //    // Set additional properties as needed
+            //};
 
+            //// Access the GridView's data source
+            //List<EmployeeFamily> employeeFamilies = (List<EmployeeFamily>)FamilyGridControl.DataSource;
 
-            //// Populate the new row object with data from the GridView columns
-            //newRow["SNo"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, txtFSno.Text);
-            //newRow["Name"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, txtFName.Text);
-            //newRow["Address"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, txtFAddress.Text);
-            //newRow["Area"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, txtFArea.Text);
-            //newRow["District"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, drpFDistrict.Text);
-            //newRow["State"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, drpFState.Text);
-            //newRow["Pin"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, txtFPin.Text);
-            //newRow["RelationEmployee"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, txtFEmp.Text);
-            //newRow["DateOfBirth"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, ddFDOB.Text.ToString());
-            //newRow["WhetherResiding"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, drpResiding.Text);
-            //newRow["Remarks"] = FamilyGridView.GetRowCellValue(FamilyGridView.FocusedRowHandle, txtRemarks.Text);
-            // Add more columns as needed
+            //// Check if the data source is null or not assigned
+            //if (employeeFamilies == null)
+            //{
+            //    // Create a new list and assign it as the data source
+            //    employeeFamilies = new List<EmployeeFamily>();
+            //    FamilyGridControl.DataSource = employeeFamilies;
+            //}
 
-            // Add the new row to the GridView
-         //   ((DataTable)FamilyGridControl.DataSource).Rows.Add(newRow);
+            //// Add the new row object to the data source
+            //employeeFamilies.Add(newRow);
 
-            FamilyGridControl.DataSource = EmployeeFamilySource;
-            FamilyGridView.RefreshData();
+            //// Refresh the GridView to reflect the changes
+            //FamilyGridView.RefreshData();
 
+            //// Clear the textboxes
+            //txtFSno.Text = string.Empty;
+            //txtFName.Text = string.Empty;
+            //// Clear additional textboxes as needed
 
-            // Insert the new row data into the SQL database
-            //InsertRowIntoDatabase(newRow);
+            //FamilyGridControl.DataSource = EmployeeFamilySource;
+            //FamilyGridView.RefreshData();
+        }
 
+        private void txtEmpCode_EditValueChanged(object sender, EventArgs e)
+        {
+            if (txtEmpCode.Text != string.Empty)
+            {
+                if (EmployeePersonalRequest.EmployeeCodeList != null)
+                {
 
-            //EmployeeFamilySource = new List<EmployeeFamily>();
+                    //var IsCode = CompanyRequest.MasterCodeList.FirstOrDefault(item => item.Code == txtCode.Text.ToString())?.Id ?? 0;
+                    var IsCode = EmployeePersonalRequest.EmployeeCodeList.FirstOrDefault(obj => obj.Code == txtEmpCode.Text.ToString() && obj.Id != EmployeePersonalRequest.Id);
 
-            //EmployeeFamily EmployeeFamilyDetails = new EmployeeFamily();
+                    if (IsCode != null)
+                    {
+                        labelAvailable.Visible = false;
+                        labelCodeExist.Visible = true;
+                    }
+                    else
+                    {
+                        labelAvailable.Visible = true;
+                        labelCodeExist.Visible = false;
+                    }
+                }
+                else
+                {
+                    labelAvailable.Visible = true;
+                    labelCodeExist.Visible = false;
+                }
 
-            //EmployeeFamilyDetails.SNo = txtFSno.Text;
-            //EmployeeFamilyDetails.EFName = txtFName.Text;
-            //EmployeeFamilyDetails.EFAddress = txtFAddress.Text;
-            //EmployeeFamilyDetails.EFArea = txtFArea.Text;
-            //EmployeeFamilyDetails.EFDistrict = drpFDistrict.Text;
-            //EmployeeFamilyDetails.EFPin = txtFPin.Text;
-            //EmployeeFamilyDetails.EFRelation = txtFEmp.Text;
-            //EmployeeFamilyDetails.EFDOB = ddFDOB.Text;
-            //EmployeeFamilyDetails.EFAge = txtFAge.Text;
-            //EmployeeFamilyDetails.EFResiding = drpResiding.Text;
-            //EmployeeFamilyDetails.EFRemark = txtRemarks.Text;
-
-
-            //EmployeeFamilySource.Add(EmployeeFamilyDetails);
-
-            //= EmployeeFamilySource;
-
+            }
+            else
+            {
+                labelAvailable.Visible = false;
+                labelCodeExist.Visible = false;
+            }
         }
     }
 }

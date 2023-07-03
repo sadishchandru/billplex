@@ -32,6 +32,12 @@ namespace BillPlex
             sqlDataSource1.FillAsync();
         }
 
+        public void ReloadSqlDataSource()
+        {
+            sqlDataSource1.FillAsync();
+            EmployeeGridView.RefreshData();
+
+        }
         private void btnNew_Click(object sender, EventArgs e)
         {
             FrmEmployeeMaster CP = new FrmEmployeeMaster();
@@ -59,13 +65,13 @@ namespace BillPlex
         private void btn_EmployeeGridView_Click(object sender, EventArgs e)
         {
 
-            var selectedRow = EmployeeGrodView.GetSelectedRows();
+            var selectedRow = EmployeeGridView.GetSelectedRows();
 
             if (selectedRow.Count() > 0)
             {
                 FrmEmployeeRequest = new FrmEmployeeMaster();
 
-                FrmEmployeeRequest.BindData(EmployeeGrodView);
+                FrmEmployeeRequest.BindData(EmployeeGridView);
 
                 FrmEmployeeRequest.Show();
 
