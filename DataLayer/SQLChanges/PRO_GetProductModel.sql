@@ -53,16 +53,19 @@ SET NOCOUNT ON;
 
 
 			SELECT 
-					Id,
+					PM.Id,
 					RawmaterialTypeId,
+					RM.RawMaterialType,
 					RawMaterialId,
+					RM.RawMaterials,
 					ProductId,
 					ProductCode,
 					ProductModel,
 					ProductSize,
-					RawMaterialStock,
+					PM.RawMaterialStock,
 					ReqRawMaterial,
 					WagesforItem,
 					Date
-			FROM ProductModel
+			FROM ProductModel PM
+			LEFT JOIN RawMaterial RM ON RM.Id = PM.RawmaterialTypeId
 END

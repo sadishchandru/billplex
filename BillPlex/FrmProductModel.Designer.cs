@@ -30,12 +30,13 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProductModel));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.LabelExceed = new DevExpress.XtraEditors.LabelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.grd_ProductModel = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -127,6 +128,7 @@ namespace BillPlex
             // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(this.LabelExceed);
             this.panelControl2.Controls.Add(this.gridControl1);
             this.panelControl2.Controls.Add(this.panelControl3);
             this.panelControl2.Controls.Add(this.txtSearchModel);
@@ -159,6 +161,16 @@ namespace BillPlex
             this.panelControl2.Size = new System.Drawing.Size(1594, 780);
             this.panelControl2.TabIndex = 1;
             // 
+            // LabelExceed
+            // 
+            this.LabelExceed.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.LabelExceed.Appearance.Options.UseForeColor = true;
+            this.LabelExceed.Location = new System.Drawing.Point(826, 141);
+            this.LabelExceed.Name = "LabelExceed";
+            this.LabelExceed.Size = new System.Drawing.Size(64, 13);
+            this.LabelExceed.TabIndex = 33;
+            this.LabelExceed.Text = "CountExceed";
+            // 
             // gridControl1
             // 
             this.gridControl1.DataMember = "PRO_GetProductModel";
@@ -175,13 +187,13 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery1.Name = "PRO_GetProductModel";
-            queryParameter1.Name = "@SearchKey";
-            queryParameter1.Type = typeof(string);
-            storedProcQuery1.Parameters.Add(queryParameter1);
-            storedProcQuery1.StoredProcName = "PRO_GetProductModel";
+            storedProcQuery2.Name = "PRO_GetProductModel";
+            queryParameter2.Name = "@SearchKey";
+            queryParameter2.Type = typeof(string);
+            storedProcQuery2.Parameters.Add(queryParameter2);
+            storedProcQuery2.StoredProcName = "PRO_GetProductModel";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery1});
+            storedProcQuery2});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // grd_ProductModel
@@ -298,7 +310,7 @@ namespace BillPlex
             this.panelControl3.Controls.Add(this.btnEdit);
             this.panelControl3.Controls.Add(this.btnUpdate);
             this.panelControl3.Controls.Add(this.btnDelete);
-            this.panelControl3.Location = new System.Drawing.Point(698, 191);
+            this.panelControl3.Location = new System.Drawing.Point(700, 196);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(472, 46);
             this.panelControl3.TabIndex = 31;
@@ -433,17 +445,18 @@ namespace BillPlex
             // 
             // txtWages
             // 
-            this.txtWages.Location = new System.Drawing.Point(824, 155);
+            this.txtWages.Location = new System.Drawing.Point(826, 160);
             this.txtWages.Name = "txtWages";
             this.txtWages.Size = new System.Drawing.Size(224, 20);
             this.txtWages.TabIndex = 20;
             // 
             // txtRawWeight
             // 
-            this.txtRawWeight.Location = new System.Drawing.Point(824, 117);
+            this.txtRawWeight.Location = new System.Drawing.Point(824, 115);
             this.txtRawWeight.Name = "txtRawWeight";
             this.txtRawWeight.Size = new System.Drawing.Size(224, 20);
             this.txtRawWeight.TabIndex = 19;
+            this.txtRawWeight.EditValueChanged += new System.EventHandler(this.txtRawWeight_EditValueChanged);
             // 
             // txtRawStock
             // 
@@ -469,7 +482,7 @@ namespace BillPlex
             // 
             this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Location = new System.Drawing.Point(487, 153);
+            this.labelControl10.Location = new System.Drawing.Point(489, 158);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(217, 18);
             this.labelControl10.TabIndex = 16;
@@ -705,5 +718,6 @@ namespace BillPlex
         private DevExpress.XtraGrid.Columns.GridColumn colWagesforItem;
         private DevExpress.XtraGrid.Columns.GridColumn colDate;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.LabelControl LabelExceed;
     }
 }
