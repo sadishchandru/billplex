@@ -82,6 +82,8 @@ namespace BillPlex
             this.ExitBtn = new DevExpress.XtraEditors.SimpleButton();
             this.NewBtn = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.labelAvailable = new DevExpress.XtraEditors.LabelControl();
+            this.labelCodeExist = new DevExpress.XtraEditors.LabelControl();
             this.labelControl28 = new DevExpress.XtraEditors.LabelControl();
             this.drpState = new DevExpress.XtraEditors.ComboBoxEdit();
             this.drpMainCompany = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -137,8 +139,6 @@ namespace BillPlex
             this.ddStartingDate = new DevExpress.XtraEditors.DateEdit();
             this.txtDirector = new DevExpress.XtraEditors.TextEdit();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
-            this.labelAvailable = new DevExpress.XtraEditors.LabelControl();
-            this.labelCodeExist = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -953,6 +953,27 @@ namespace BillPlex
             this.panelControl3.Size = new System.Drawing.Size(1230, 367);
             this.panelControl3.TabIndex = 0;
             // 
+            // labelAvailable
+            // 
+            this.labelAvailable.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.labelAvailable.Appearance.Options.UseForeColor = true;
+            this.labelAvailable.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.labelAvailable.Location = new System.Drawing.Point(9, 145);
+            this.labelAvailable.Name = "labelAvailable";
+            this.labelAvailable.Size = new System.Drawing.Size(50, 13);
+            this.labelAvailable.TabIndex = 69;
+            this.labelAvailable.Text = "Available";
+            // 
+            // labelCodeExist
+            // 
+            this.labelCodeExist.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelCodeExist.Appearance.Options.UseForeColor = true;
+            this.labelCodeExist.Location = new System.Drawing.Point(94, 145);
+            this.labelCodeExist.Name = "labelCodeExist";
+            this.labelCodeExist.Size = new System.Drawing.Size(63, 13);
+            this.labelCodeExist.TabIndex = 68;
+            this.labelCodeExist.Text = "Already Exist";
+            // 
             // labelControl28
             // 
             this.labelControl28.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1569,27 +1590,6 @@ namespace BillPlex
             this.txtDirector.Name = "txtDirector";
             this.txtDirector.Size = new System.Drawing.Size(224, 20);
             this.txtDirector.TabIndex = 65;
-            // 
-            // labelAvailable
-            // 
-            this.labelAvailable.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.labelAvailable.Appearance.Options.UseForeColor = true;
-            this.labelAvailable.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.labelAvailable.Location = new System.Drawing.Point(9, 145);
-            this.labelAvailable.Name = "labelAvailable";
-            this.labelAvailable.Size = new System.Drawing.Size(50, 13);
-            this.labelAvailable.TabIndex = 69;
-            this.labelAvailable.Text = "Available";
-            // 
-            // labelCodeExist
-            // 
-            this.labelCodeExist.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelCodeExist.Appearance.Options.UseForeColor = true;
-            this.labelCodeExist.Location = new System.Drawing.Point(94, 145);
-            this.labelCodeExist.Name = "labelCodeExist";
-            this.labelCodeExist.Size = new System.Drawing.Size(63, 13);
-            this.labelCodeExist.TabIndex = 68;
-            this.labelCodeExist.Text = "Already Exist";
             // 
             // FrmClientCompanyInfo
             // 

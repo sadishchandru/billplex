@@ -55,8 +55,28 @@ namespace BillPlex
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            FrmOrderMasterInfo om = new FrmOrderMasterInfo();
-            om.Show();
+            bool IsOpen = false;
+
+            Form myForm = Application.OpenForms["FrmOrderMasterInfo"];
+            if (myForm != null)
+            {
+                myForm.Close();
+                myForm = new FrmOrderMasterInfo();
+                myForm.MdiParent = this.MdiParent;
+                myForm.Show();
+                IsOpen = true;
+            }
+
+            if (IsOpen == false)
+            {
+                FrmOrderMasterInfo CompanyInfo = new FrmOrderMasterInfo();
+                CompanyInfo.MdiParent = this.MdiParent;
+                CompanyInfo.Show();
+            }
+
+            //FrmOrderMasterInfo om = new FrmOrderMasterInfo();
+            //om.MdiParent = this.MdiParent;
+            //om.Show();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)

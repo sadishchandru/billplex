@@ -43,14 +43,31 @@ namespace BillPlex
         {
             sqlDataSource2.FillAsync();
             gridView1.RefreshData();
-
         }
 
         private void Newbtn_Click(object sender, EventArgs e)
         {
-            FrmCompanyInfo CompanyInfo = new FrmCompanyInfo();
-            //CompanyInfo.MdiParent = this;
-            CompanyInfo.Show();
+            bool IsOpen = false;
+
+            Form myForm = Application.OpenForms["FrmCompanyInfo"];
+            if (myForm != null)
+            {
+                myForm.Close();
+                myForm = new FrmCompanyInfo();
+                myForm.MdiParent = this.MdiParent;
+                myForm.Show();
+                IsOpen = true;
+            }
+
+            if (IsOpen == false)
+            {
+                FrmCompanyInfo CompanyInfo = new FrmCompanyInfo();
+                CompanyInfo.MdiParent = this.MdiParent;
+                CompanyInfo.Show();
+            }
+            //FrmCompanyInfo CompanyInfo = new FrmCompanyInfo();
+            //CompanyInfo.MdiParent = this.MdiParent;
+            //CompanyInfo.Show();
         }
 
         private void Deletebtn_Click(object sender, EventArgs e)

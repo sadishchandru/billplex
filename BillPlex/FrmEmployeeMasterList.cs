@@ -40,8 +40,27 @@ namespace BillPlex
         }
         private void btnNew_Click(object sender, EventArgs e)
         {
-            FrmEmployeeMaster CP = new FrmEmployeeMaster();
-            CP.ShowDialog();
+            bool IsOpen = false;
+
+            Form myForm = Application.OpenForms["FrmEmployeeMaster"];
+            if (myForm != null)
+            {
+                myForm.Close();
+                myForm = new FrmEmployeeMaster();
+                myForm.MdiParent = this.MdiParent;
+                myForm.Show();
+                IsOpen = true;
+            }
+
+            if (IsOpen == false)
+            {
+                FrmEmployeeMaster CP = new FrmEmployeeMaster();
+                CP.MdiParent = this.MdiParent;
+                CP.Show();
+            }
+            //FrmEmployeeMaster CP = new FrmEmployeeMaster();
+            //CP.MdiParent = this.MdiParent;
+            //CP.Show();
         }
 
         private void gridControl1_Click(object sender, EventArgs e)

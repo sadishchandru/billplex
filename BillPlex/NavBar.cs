@@ -167,7 +167,7 @@ namespace BillPlex
             bool IsOpen = false;
             foreach (Form f in Application.OpenForms)
             {
-                if (f.Text == "FrmCustomerMaster")
+                if (f.Text == "FrmEmployeeMasterList")
                 {
                     IsOpen = true;
                     f.Focus();
@@ -310,7 +310,7 @@ namespace BillPlex
             bool IsOpen = false;
             foreach (Form f in Application.OpenForms)
             {
-                if (f.Text == "FrmColorMaster")
+                if (f.Text == "FrmProductModel")
                 {
                     IsOpen = true;
                     f.Focus();
@@ -333,7 +333,7 @@ namespace BillPlex
             bool IsOpen = false;
             foreach (Form f in Application.OpenForms)
             {
-                if (f.Text == "FrmColorMaster")
+                if (f.Text == "IncentiveMaster")
                 {
                     IsOpen = true;
                     f.Focus();
@@ -353,7 +353,7 @@ namespace BillPlex
             bool IsOpen = false;
             foreach (Form f in Application.OpenForms)
             {
-                if (f.Text == "FrmColorMaster")
+                if (f.Text == "FrmDeliveryChallanProfile")
                 {
                     IsOpen = true;
                     f.Focus();
@@ -378,7 +378,7 @@ namespace BillPlex
             bool IsOpen = false;
             foreach (Form f in Application.OpenForms)
             {
-                if (f.Text == "FrmColorMaster")
+                if (f.Text == "FrmCompanyProfileBankInfo")
                 {
                     IsOpen = true;
                     f.Focus();
@@ -398,7 +398,7 @@ namespace BillPlex
             bool IsOpen = false;
             foreach (Form f in Application.OpenForms)
             {
-                if (f.Text == "FrmColorMaster")
+                if (f.Text == "FrmClientCompanyBankInfo")
                 {
                     IsOpen = true;
                     f.Focus();
@@ -415,9 +415,22 @@ namespace BillPlex
 
         private void Btn_SubClientBankInfo(object sender, ItemClickEventArgs e)
         {
-            FrmSubClientCompanyBankInfo subClientCompanyBankInfo = new FrmSubClientCompanyBankInfo();
-            subClientCompanyBankInfo.MdiParent = this;
-            subClientCompanyBankInfo.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "FrmSubClientCompanyBankInfo")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                FrmSubClientCompanyBankInfo subClientCompanyBankInfo = new FrmSubClientCompanyBankInfo();
+                subClientCompanyBankInfo.MdiParent = this;
+                subClientCompanyBankInfo.Show();
+            }
         }
     }
 }

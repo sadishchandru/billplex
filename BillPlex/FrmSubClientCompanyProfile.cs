@@ -52,7 +52,8 @@ namespace BillPlex
         private void Newbtn_Click(object sender, EventArgs e)
         {
             FrmSubClientCompanyInfo CP = new FrmSubClientCompanyInfo();
-            CP.ShowDialog();
+            CP.MdiParent = this.MdiParent;
+            CP.Show();
 
         }
 

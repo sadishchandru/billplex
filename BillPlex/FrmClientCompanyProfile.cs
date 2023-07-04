@@ -24,8 +24,28 @@ namespace BillPlex
         }
         private void Newbtn_Click(object sender, EventArgs e)
         {
-            FrmClientCompanyInfo CP = new FrmClientCompanyInfo();
-            CP.ShowDialog();
+            bool IsOpen = false;
+
+            Form myForm = Application.OpenForms["FrmClientCompanyInfo"];
+            if (myForm != null)
+            {
+                myForm.Close();
+                myForm = new FrmClientCompanyInfo();
+                myForm.MdiParent = this.MdiParent;
+                myForm.Show();
+                IsOpen = true;
+            }
+
+            if (IsOpen == false)
+            {
+                FrmClientCompanyInfo CompanyInfo = new FrmClientCompanyInfo();
+                CompanyInfo.MdiParent = this.MdiParent;
+                CompanyInfo.Show();
+            }
+
+            //FrmClientCompanyInfo CP = new FrmClientCompanyInfo();
+            //CP.MdiParent = this.MdiParent;
+            //CP.Show();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
