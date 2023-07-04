@@ -103,9 +103,6 @@ namespace BillPlex
                         {
                             drpRawName.Properties.Items.Add(new ImageComboBoxItem(item.Name));
                         }
-
-
-
                     }
                 }
             }
@@ -123,12 +120,25 @@ namespace BillPlex
 
             if (productModelRequest.SizeMasterList != null)
             {
-
                 if (productModelRequest.SizeMasterList.Count() > 0)
                 {
                     foreach (DropDownItemInfo item in productModelRequest.SizeMasterList)
                     {
-                        drpProSize.Properties.Items.Add(new ImageComboBoxItem(item.Name));
+                        var foundItem = "";
+
+                        foreach (string items in drpProSize.Properties.Items)
+                        {
+                            if (items.ToLower().ToString() == item.Name.ToLower().ToString())
+                            {
+                                foundItem = items;
+                                break;
+                            }
+                        }
+
+                        if (foundItem == "")
+                        {
+                            drpProSize.Properties.Items.Add(new ImageComboBoxItem(item.Name));
+                        }
                     }
                 }
             }
@@ -138,7 +148,6 @@ namespace BillPlex
         {
             sqlDataSource1.FillAsync();
             grd_ProductModel.RefreshData();
-
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -249,50 +258,50 @@ namespace BillPlex
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            try
-            {
-                var selectedRows = grd_ProductModel.GetSelectedRows();
+            //try
+            //{
+            //    var selectedRows = grd_ProductModel.GetSelectedRows();
 
-                foreach (var rowHandle in selectedRows)
-                {
-                    productModelRequest.Id = (Int64)grd_ProductModel.GetRowCellValue(rowHandle, "Id");
-
-
-                    drpRawType.SelectedIndex = productModelRequest.RawMaterialList.FindIndex(x => x.Id == Convert.ToInt32(grd_ProductModel.GetRowCellValue(rowHandle, "RawmaterialTypeId")));
-                    drpRawName.SelectedIndex = productModelRequest.RawMaterialList.FindIndex(x => x.Id == Convert.ToInt32(grd_ProductModel.GetRowCellValue(rowHandle, "RawMaterialId")));
-                    //drpRawType.Text = grd_ProductModel.GetRowCellValue(rowHandle, "RawmaterialTypeId").ToString();
-                    //drpRawName.Text = grd_ProductModel.GetRowCellValue(rowHandle, "RawMaterialId").ToString();
-
-                    drpProName.SelectedIndex = productModelRequest.ProductModelList.FindIndex(x => x.Id == Convert.ToInt32(grd_ProductModel.GetRowCellValue(rowHandle, "ProductId")));
-
-                    //drpProName.Text = grd_ProductModel.GetRowCellValue(rowHandle, "ProductId").ToString();
-                    txtModelCode.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "ProductCode");
-                    txtModelName.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "ProductModel");
-
-                    //drpProSize.SelectedIndex = productModelRequest.SizeMasterList.FindIndex(x => x.Id == Convert.ToInt32(grd_ProductModel.GetRowCellValue(rowHandle, "ProductSize")));
+            //    foreach (var rowHandle in selectedRows)
+            //    {
+            //        productModelRequest.Id = (Int64)grd_ProductModel.GetRowCellValue(rowHandle, "Id");
 
 
-                    drpProSize.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "ProductSize");
-                    txtRawStock.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "RawMaterialStock");
-                    txtRawWeight.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "ReqRawMaterial");
-                    txtWages.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "WagesforItem");
-                    //var datete = grd_ProductModel.GetRowCellValue(rowHandle, "Date").ToString();
-                    //DateTime dat = DateTime.Parse(datete);
-                    //ddDate.Text = dat.ToString();
-                    var datete = grd_ProductModel.GetRowCellValue(rowHandle, "Date").ToString();
-                    ddDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
-                }
-                btnAdd.Enabled = false;
-                btnEdit.Enabled = false;
-                btnDelete.Enabled = true;
-                btnUpdate.Enabled = true;
-                btnAdd.Enabled = true;
+            //        drpRawType.SelectedIndex = productModelRequest.RawMaterialList.FindIndex(x => x.Id == Convert.ToInt32(grd_ProductModel.GetRowCellValue(rowHandle, "RawmaterialTypeId")));
+            //        drpRawName.SelectedIndex = productModelRequest.RawMaterialList.FindIndex(x => x.Id == Convert.ToInt32(grd_ProductModel.GetRowCellValue(rowHandle, "RawMaterialId")));
+            //        //drpRawType.Text = grd_ProductModel.GetRowCellValue(rowHandle, "RawmaterialTypeId").ToString();
+            //        //drpRawName.Text = grd_ProductModel.GetRowCellValue(rowHandle, "RawMaterialId").ToString();
 
-            }
-            catch (Exception ex)
-            {
+            //        drpProName.SelectedIndex = productModelRequest.ProductModelList.FindIndex(x => x.Id == Convert.ToInt32(grd_ProductModel.GetRowCellValue(rowHandle, "ProductId")));
 
-            }
+            //        //drpProName.Text = grd_ProductModel.GetRowCellValue(rowHandle, "ProductId").ToString();
+            //        txtModelCode.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "ProductCode");
+            //        txtModelName.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "ProductModel");
+
+            //        //drpProSize.SelectedIndex = productModelRequest.SizeMasterList.FindIndex(x => x.Id == Convert.ToInt32(grd_ProductModel.GetRowCellValue(rowHandle, "ProductSize")));
+
+
+            //        drpProSize.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "ProductSize");
+            //        txtRawStock.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "RawMaterialStock");
+            //        txtRawWeight.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "ReqRawMaterial");
+            //        txtWages.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "WagesforItem");
+            //        //var datete = grd_ProductModel.GetRowCellValue(rowHandle, "Date").ToString();
+            //        //DateTime dat = DateTime.Parse(datete);
+            //        //ddDate.Text = dat.ToString();
+            //        var datete = grd_ProductModel.GetRowCellValue(rowHandle, "Date").ToString();
+            //        ddDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
+            //    }
+            //    btnAdd.Enabled = false;
+            //    btnEdit.Enabled = false;
+            //    btnDelete.Enabled = true;
+            //    btnUpdate.Enabled = true;
+            //    btnAdd.Enabled = true;
+
+            //}
+            //catch (Exception ex)
+            //{
+
+            //}
         }
 
         private void drpRawType_SelectedIndexChanged(object sender, EventArgs e)
@@ -536,6 +545,122 @@ namespace BillPlex
                 {
                     LabelExceed.Visible = false;
                 }
+            }
+        }
+
+        private void grd_ProductModel_RowClick(object sender, RowClickEventArgs e)
+        {
+
+        }
+
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                var selectedRows = grd_ProductModel.GetSelectedRows();
+
+                foreach (var rowHandle in selectedRows)
+                {
+                    productModelRequest.Id = (Int64)grd_ProductModel.GetRowCellValue(rowHandle, "Id");
+
+
+                    drpRawType.SelectedIndex = productModelRequest.RawMaterialList.FindIndex(x => x.Id == Convert.ToInt32(grd_ProductModel.GetRowCellValue(rowHandle, "RawmaterialTypeId")));
+                    drpRawName.SelectedIndex = productModelRequest.RawMaterialList.FindIndex(x => x.Id == Convert.ToInt32(grd_ProductModel.GetRowCellValue(rowHandle, "RawMaterialId")));
+                    //drpRawType.Text = grd_ProductModel.GetRowCellValue(rowHandle, "RawmaterialTypeId").ToString();
+                    //drpRawName.Text = grd_ProductModel.GetRowCellValue(rowHandle, "RawMaterialId").ToString();
+
+                    drpProName.SelectedIndex = productModelRequest.ProductModelList.FindIndex(x => x.Id == Convert.ToInt32(grd_ProductModel.GetRowCellValue(rowHandle, "ProductId")));
+
+                    //drpProName.Text = grd_ProductModel.GetRowCellValue(rowHandle, "ProductId").ToString();
+                    txtModelCode.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "ProductCode");
+                    txtModelName.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "ProductModel");
+
+                    //drpProSize.SelectedIndex = productModelRequest.SizeMasterList.FindIndex(x => x.Id == Convert.ToInt32(grd_ProductModel.GetRowCellValue(rowHandle, "ProductSize")));
+
+
+                    drpProSize.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "ProductSize");
+                    txtRawStock.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "RawMaterialStock");
+                    txtRawWeight.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "ReqRawMaterial");
+                    txtWages.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "WagesforItem");
+                    //var datete = grd_ProductModel.GetRowCellValue(rowHandle, "Date").ToString();
+                    //DateTime dat = DateTime.Parse(datete);
+                    //ddDate.Text = dat.ToString();
+                    var datete = grd_ProductModel.GetRowCellValue(rowHandle, "Date").ToString();
+                    ddDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
+                }
+                btnAdd.Enabled = false;
+                btnEdit.Enabled = false;
+                btnDelete.Enabled = true;
+                btnUpdate.Enabled = true;
+                btnAdd.Enabled = true;
+
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnDot_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+
+            Form myForm = Application.OpenForms["FrmRawMaterial"];
+            if (myForm != null)
+            {
+                myForm.Close();
+                myForm = new FrmRawMaterial();
+                myForm.MdiParent = this.MdiParent;
+                myForm.Show();
+                IsOpen = true;
+            }
+            if (IsOpen == false)
+            {
+                FrmRawMaterial rawMaterial = new FrmRawMaterial();
+                rawMaterial.MdiParent = this.MdiParent;
+                rawMaterial.Show();
+            }
+        }
+
+        private void btnDot1_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+
+            Form myForm = Application.OpenForms["FrmProductMaster"];
+            if (myForm != null)
+            {
+                myForm.Close();
+                myForm = new FrmProductMaster();
+                myForm.MdiParent = this.MdiParent;
+                myForm.Show();
+                IsOpen = true;
+            }
+            if (IsOpen == false)
+            {
+                FrmProductMaster rawMaterial = new FrmProductMaster();
+                rawMaterial.MdiParent = this.MdiParent;
+                rawMaterial.Show();
+            }
+        }
+
+        private void btnDot2_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+
+            Form myForm = Application.OpenForms["FrmSizeMaster"];
+            if (myForm != null)
+            {
+                myForm.Close();
+                myForm = new FrmSizeMaster();
+                myForm.MdiParent = this.MdiParent;
+                myForm.Show();
+                IsOpen = true;
+            }
+            if (IsOpen == false)
+            {
+                FrmSizeMaster rawMaterial = new FrmSizeMaster();
+                rawMaterial.MdiParent = this.MdiParent;
+                rawMaterial.Show();
             }
         }
     }

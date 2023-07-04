@@ -17,6 +17,9 @@ namespace BusinessLayer
         public string WagesforProduct { get; set; } 
         public string ItemDate { get; set; }
 
+        public List<DropDownItemInfo> ProductModelList { get; set; }
+        public List<DropDownItemInfo> SizeMasterList { get; set; }
+
         #region Update
 
         public void Update()

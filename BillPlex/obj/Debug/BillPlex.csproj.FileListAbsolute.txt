@@ -512,7 +512,6 @@ C:\Billplex\billplex\BillPlex\bin\Debug\DevExpress.XtraCharts.v21.1.dll
 C:\Billplex\billplex\BillPlex\bin\Debug\DevExpress.Charts.v21.1.Core.dll
 C:\Billplex\billplex\BillPlex\bin\Debug\DevExpress.XtraGauges.v21.1.Core.dll
 C:\Billplex\billplex\BillPlex\bin\Debug\DevExpress.DataVisualization.v21.1.Core.dll
-C:\Billplex\billplex\BillPlex\bin\Debug\BusinessLayer.pdb
 C:\Billplex\billplex\BillPlex\bin\Debug\DevExpress.Data.v21.1.xml
 C:\Billplex\billplex\BillPlex\bin\Debug\DevExpress.DataAccess.v21.1.xml
 C:\Billplex\billplex\BillPlex\bin\Debug\DevExpress.ExpressApp.v21.1.xml
@@ -542,7 +541,6 @@ C:\Billplex\billplex\BillPlex\bin\Debug\DevExpress.XtraSpellChecker.v21.1.xml
 C:\Billplex\billplex\BillPlex\bin\Debug\DevExpress.XtraVerticalGrid.v21.1.xml
 C:\Billplex\billplex\BillPlex\bin\Debug\DevExtreme.AspNet.Data.xml
 C:\Billplex\billplex\BillPlex\bin\Debug\Newtonsoft.Json.xml
-C:\Billplex\billplex\BillPlex\bin\Debug\DataLayer.pdb
 C:\Billplex\billplex\BillPlex\bin\Debug\DevExpress.Pdf.v21.1.Core.xml
 C:\Billplex\billplex\BillPlex\bin\Debug\DevExpress.Pdf.v21.1.Drawing.xml
 C:\Billplex\billplex\BillPlex\bin\Debug\DevExpress.XtraTreeList.v21.1.xml
@@ -695,3 +693,5 @@ C:\Billplex\billplex\BillPlex\obj\Debug\BillPlex.csproj.CoreCompileInputs.cache
 C:\Billplex\billplex\BillPlex\obj\Debug\BillPlex.csproj.CopyComplete
 C:\Billplex\billplex\BillPlex\obj\Debug\BillPlex.exe
 C:\Billplex\billplex\BillPlex\obj\Debug\BillPlex.pdb
+C:\Billplex\billplex\BillPlex\bin\Debug\BusinessLayer.pdb
+C:\Billplex\billplex\BillPlex\bin\Debug\DataLayer.pdb

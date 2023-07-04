@@ -432,5 +432,27 @@ namespace BillPlex
                 subClientCompanyBankInfo.Show();
             }
         }
+
+        private void barButtonItem11_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "FrmFinishingProductModel")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                FrmFinishingProductModel finishingProductItem = new FrmFinishingProductModel();
+                finishingProductItem.MdiParent = this;
+                finishingProductItem.Show();
+            }
+            
+        }
     }
 }

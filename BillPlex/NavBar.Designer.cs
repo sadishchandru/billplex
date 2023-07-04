@@ -48,7 +48,7 @@ namespace BillPlex
             this.btn_SizeMaster = new DevExpress.XtraBars.BarButtonItem();
             this.btn_ColorMaster = new DevExpress.XtraBars.BarButtonItem();
             this.btn_ProductModel = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnFinishingProduct = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
@@ -87,7 +87,7 @@ namespace BillPlex
             this.btn_SizeMaster,
             this.btn_ColorMaster,
             this.btn_ProductModel,
-            this.barButtonItem11,
+            this.BtnFinishingProduct,
             this.barButtonItem12,
             this.barButtonItem6,
             this.barButtonItem7});
@@ -226,11 +226,12 @@ namespace BillPlex
             this.btn_ProductModel.Name = "btn_ProductModel";
             this.btn_ProductModel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ProductModel_ItemClick);
             // 
-            // barButtonItem11
+            // BtnFinishingProduct
             // 
-            this.barButtonItem11.Caption = "Finishing Product Model";
-            this.barButtonItem11.Id = 25;
-            this.barButtonItem11.Name = "barButtonItem11";
+            this.BtnFinishingProduct.Caption = "Finishing Product Model";
+            this.BtnFinishingProduct.Id = 25;
+            this.BtnFinishingProduct.Name = "BtnFinishingProduct";
+            this.BtnFinishingProduct.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem11_ItemClick);
             // 
             // barButtonItem12
             // 
@@ -276,7 +277,7 @@ namespace BillPlex
             this.ribbonPageGroup1.ItemLinks.Add(this.btn_SizeMaster, true);
             this.ribbonPageGroup1.ItemLinks.Add(this.btn_ColorMaster, true);
             this.ribbonPageGroup1.ItemLinks.Add(this.btn_ProductModel, true);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem11, true);
+            this.ribbonPageGroup1.ItemLinks.Add(this.BtnFinishingProduct, true);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem12, true);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Masters";
@@ -370,7 +371,7 @@ namespace BillPlex
         private DevExpress.XtraBars.BarButtonItem btn_SizeMaster;
         private DevExpress.XtraBars.BarButtonItem btn_ColorMaster;
         private DevExpress.XtraBars.BarButtonItem btn_ProductModel;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem11;
+        private DevExpress.XtraBars.BarButtonItem BtnFinishingProduct;
         private DevExpress.XtraBars.BarButtonItem barButtonItem12;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraBars.BarButtonItem barButtonItem7;

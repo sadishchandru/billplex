@@ -30,8 +30,8 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery4 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter4 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProductModel));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -182,18 +182,19 @@ namespace BillPlex
             this.gridControl1.TabIndex = 32;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grd_ProductModel});
+            this.gridControl1.DoubleClick += new System.EventHandler(this.gridControl1_DoubleClick);
             // 
             // sqlDataSource1
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery2.Name = "PRO_GetProductModel";
-            queryParameter2.Name = "@SearchKey";
-            queryParameter2.Type = typeof(string);
-            storedProcQuery2.Parameters.Add(queryParameter2);
-            storedProcQuery2.StoredProcName = "PRO_GetProductModel";
+            storedProcQuery4.Name = "PRO_GetProductModel";
+            queryParameter4.Name = "@SearchKey";
+            queryParameter4.Type = typeof(string);
+            storedProcQuery4.Parameters.Add(queryParameter4);
+            storedProcQuery4.StoredProcName = "PRO_GetProductModel";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery2});
+            storedProcQuery4});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // grd_ProductModel
@@ -212,6 +213,7 @@ namespace BillPlex
             this.colDate});
             this.grd_ProductModel.GridControl = this.gridControl1;
             this.grd_ProductModel.Name = "grd_ProductModel";
+            this.grd_ProductModel.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.grd_ProductModel_RowClick);
             // 
             // colId
             // 
@@ -442,6 +444,7 @@ namespace BillPlex
             this.btnDot2.Size = new System.Drawing.Size(23, 19);
             this.btnDot2.TabIndex = 21;
             this.btnDot2.Text = "...";
+            this.btnDot2.Click += new System.EventHandler(this.btnDot2_Click);
             // 
             // txtWages
             // 
@@ -528,6 +531,7 @@ namespace BillPlex
             this.btnDot1.Size = new System.Drawing.Size(23, 19);
             this.btnDot1.TabIndex = 12;
             this.btnDot1.Text = "...";
+            this.btnDot1.Click += new System.EventHandler(this.btnDot1_Click);
             // 
             // btnDot
             // 
@@ -539,6 +543,7 @@ namespace BillPlex
             this.btnDot.Size = new System.Drawing.Size(23, 19);
             this.btnDot.TabIndex = 11;
             this.btnDot.Text = "...";
+            this.btnDot.Click += new System.EventHandler(this.btnDot_Click);
             // 
             // txtModelName
             // 
