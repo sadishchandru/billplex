@@ -202,7 +202,6 @@ namespace BillPlex
                 else
                 {
                     XtraMessageBox.Show(productModelRequest.Result.Message, "please give the manditory field", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 }
 
                 if (productModelRequest.Result.Status == ResultStatus.Success)
@@ -562,29 +561,15 @@ namespace BillPlex
                 foreach (var rowHandle in selectedRows)
                 {
                     productModelRequest.Id = (Int64)grd_ProductModel.GetRowCellValue(rowHandle, "Id");
-
-
                     drpRawType.SelectedIndex = productModelRequest.RawMaterialList.FindIndex(x => x.Id == Convert.ToInt32(grd_ProductModel.GetRowCellValue(rowHandle, "RawmaterialTypeId")));
                     drpRawName.SelectedIndex = productModelRequest.RawMaterialList.FindIndex(x => x.Id == Convert.ToInt32(grd_ProductModel.GetRowCellValue(rowHandle, "RawMaterialId")));
-                    //drpRawType.Text = grd_ProductModel.GetRowCellValue(rowHandle, "RawmaterialTypeId").ToString();
-                    //drpRawName.Text = grd_ProductModel.GetRowCellValue(rowHandle, "RawMaterialId").ToString();
-
                     drpProName.SelectedIndex = productModelRequest.ProductModelList.FindIndex(x => x.Id == Convert.ToInt32(grd_ProductModel.GetRowCellValue(rowHandle, "ProductId")));
-
-                    //drpProName.Text = grd_ProductModel.GetRowCellValue(rowHandle, "ProductId").ToString();
                     txtModelCode.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "ProductCode");
                     txtModelName.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "ProductModel");
-
-                    //drpProSize.SelectedIndex = productModelRequest.SizeMasterList.FindIndex(x => x.Id == Convert.ToInt32(grd_ProductModel.GetRowCellValue(rowHandle, "ProductSize")));
-
-
                     drpProSize.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "ProductSize");
                     txtRawStock.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "RawMaterialStock");
                     txtRawWeight.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "ReqRawMaterial");
                     txtWages.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "WagesforItem");
-                    //var datete = grd_ProductModel.GetRowCellValue(rowHandle, "Date").ToString();
-                    //DateTime dat = DateTime.Parse(datete);
-                    //ddDate.Text = dat.ToString();
                     var datete = grd_ProductModel.GetRowCellValue(rowHandle, "Date").ToString();
                     ddDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
                 }

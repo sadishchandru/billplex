@@ -11,13 +11,13 @@ GO
 -- Description:	Insert & Update Company Profile Info
 -- =============================================
 CREATE OR ALTER   PROCEDURE [dbo].[PRO_UpdateFinishingProductModel]
-	@Id int = '' ,
-	@ProductNameId iNT = '',
+	@Id int = 0 ,
+	@ProductNameId iNT = 0,
 	@Productcode varchar(100) = '',
 	@Productmodel varchar(100) = '',
 	@Productsize varchar(100) = '',
 	@WagesforProduct varchar(100) = '',
-	@ItemDate date = ''
+	@ItemDate date = null
 AS
 BEGIN
 	

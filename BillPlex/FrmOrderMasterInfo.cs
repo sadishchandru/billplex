@@ -179,7 +179,7 @@ namespace BillPlex
             }
             catch (Exception ex)
             {
-
+                XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         #endregion
@@ -344,10 +344,13 @@ namespace BillPlex
         private void txtQuantity_EditValueChanged(object sender, EventArgs e)
         {
             var count = 0;
-             var a=Convert.ToInt32(txtMaterialwt.Text);
-            var b= Convert.ToInt32(txtQuantity.Text);
-            count = (a * b);
-            txtTotRawmat.Text = count.ToString();
+            if(txtMaterialwt.Text != "" && txtQuantity.Text != "")
+            {
+                var a = Convert.ToInt32(txtMaterialwt.Text);
+                var b = Convert.ToInt32(txtQuantity.Text);
+                count = (a * b);
+                txtTotRawmat.Text = count.ToString();
+            }
         }
     }
 }

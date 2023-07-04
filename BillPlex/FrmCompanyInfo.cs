@@ -164,6 +164,22 @@ namespace BillPlex
 
         public void BindData(dynamic selectedCompanyList)
         {
+            //bool IsOpen = false;
+            //Form myForm = Application.OpenForms["FrmCompanyInfo"];
+            //if (myForm != null)
+            //{
+            //    myForm.Close();
+            //    myForm = new FrmCompanyInfo();
+            //    myForm.MdiParent = this;
+            //    myForm.Show();
+            //    IsOpen = true;
+            //}
+            //if (IsOpen == false)
+            //{
+            //    FrmCompanyInfo CompanyInfo = new FrmCompanyInfo();
+            //    CompanyInfo.MdiParent = this.MdiParent;
+            //    CompanyInfo.Show();
+            //}
             var selectedRows = selectedCompanyList.GetSelectedRows();
 
             foreach (var rowHandle in selectedRows)

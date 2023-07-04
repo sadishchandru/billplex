@@ -10,7 +10,7 @@ namespace BusinessLayer
 {
     public class FinishingProductModel: Common
     {
-        public string ProductNameId { get; set; } 
+        public Int64 ProductNameId { get; set; } 
         public string Productcode { get; set; } 
         public string Productmodel { get; set; } 
         public string Productsize { get; set; } 
@@ -47,8 +47,6 @@ namespace BusinessLayer
                     Result.Message = ToString(dbReader["ResultMessage"]);
                     Result.Status = (ResultStatus)ToInteger(dbReader["ResultNo"]);
                 }
-
-
             }
             catch (Exception ex)
             {
@@ -62,5 +60,39 @@ namespace BusinessLayer
             }
         }
         #endregion
+
+        public void Delete()
+        {
+            dbReader = null;
+            Result = new ResultDetail();
+
+            try
+            {
+                InitializeDb();
+
+                List<DbParams> objLstdbParams = new List<DbParams>();
+                objLstdbParams.Add(new DbParams(DbType.String, 50, Id, "@Id", ParameterDirection.Input));
+
+                dbReader = ObjDbfactory.GetReader("PRO_DeleteFinishingProductModel", false, objLstdbParams);
+
+                //while (dbReader.Read())
+                //{
+                //    Result.Message = ToString(dbReader["ResultMessage"]);
+                //   Result.Status = (ResultStatus)ToInteger(dbReader["ResultNo"]);
+                //}
+
+                Result.Message = "Product Master Deleted Successfully";
+                Result.Status = ResultStatus.Success;
+            }
+            catch (Exception ex)
+            {
+                Result.Message = ex.Message;
+                Result.Status = ResultStatus.Success;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
     }
 }

@@ -107,6 +107,8 @@ namespace BillPlex
 
             CompanyInfoRequest = new FrmCompanyInfo();
 
+            CompanyInfoRequest.MdiParent = this.MdiParent;
+
             CompanyInfoRequest.BindData(gridView1);
 
 

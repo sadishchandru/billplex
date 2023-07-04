@@ -30,23 +30,33 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFinishingProductModel));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProductNameId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProductcode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProductmodel = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProductsize = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colWagesforProduct = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colItemDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.btRefresh = new DevExpress.XtraEditors.SimpleButton();
-            this.btDelete = new DevExpress.XtraEditors.SimpleButton();
-            this.btEdit = new DevExpress.XtraEditors.SimpleButton();
-            this.btUpdate = new DevExpress.XtraEditors.SimpleButton();
-            this.btAdd = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
+            this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
+            this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
+            this.ProSize = new DevExpress.XtraEditors.SimpleButton();
+            this.proName = new DevExpress.XtraEditors.SimpleButton();
             this.txtWages = new DevExpress.XtraEditors.TextEdit();
             this.txtModelName = new DevExpress.XtraEditors.TextEdit();
             this.txtModelCode = new DevExpress.XtraEditors.TextEdit();
-            this.drpDate = new DevExpress.XtraEditors.CheckedComboBoxEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
@@ -57,7 +67,7 @@ namespace BillPlex
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.drpProductName = new DevExpress.XtraEditors.ComboBoxEdit();
             this.drpProductSize = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
+            this.ddDate = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -69,9 +79,10 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.txtWages.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtModelName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtModelCode.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.drpDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpProductName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpProductSize.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddDate.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -99,12 +110,11 @@ namespace BillPlex
             // 
             this.panelControl2.Controls.Add(this.gridControl1);
             this.panelControl2.Controls.Add(this.panelControl3);
-            this.panelControl2.Controls.Add(this.simpleButton2);
-            this.panelControl2.Controls.Add(this.simpleButton1);
+            this.panelControl2.Controls.Add(this.ProSize);
+            this.panelControl2.Controls.Add(this.proName);
             this.panelControl2.Controls.Add(this.txtWages);
             this.panelControl2.Controls.Add(this.txtModelName);
             this.panelControl2.Controls.Add(this.txtModelCode);
-            this.panelControl2.Controls.Add(this.drpDate);
             this.panelControl2.Controls.Add(this.labelControl9);
             this.panelControl2.Controls.Add(this.labelControl8);
             this.panelControl2.Controls.Add(this.labelControl7);
@@ -115,6 +125,7 @@ namespace BillPlex
             this.panelControl2.Controls.Add(this.labelControl2);
             this.panelControl2.Controls.Add(this.drpProductName);
             this.panelControl2.Controls.Add(this.drpProductSize);
+            this.panelControl2.Controls.Add(this.ddDate);
             this.panelControl2.Location = new System.Drawing.Point(12, 119);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(1225, 515);
@@ -122,6 +133,8 @@ namespace BillPlex
             // 
             // gridControl1
             // 
+            this.gridControl1.DataMember = "PRO_GetFinishingProductModel";
+            this.gridControl1.DataSource = this.sqlDataSource1;
             this.gridControl1.Location = new System.Drawing.Point(17, 298);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
@@ -129,102 +142,183 @@ namespace BillPlex
             this.gridControl1.TabIndex = 17;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.DoubleClick += new System.EventHandler(this.gridControl1_DoubleClick);
+            // 
+            // sqlDataSource1
+            // 
+            this.sqlDataSource1.ConnectionName = "BillPlex";
+            this.sqlDataSource1.Name = "sqlDataSource1";
+            storedProcQuery1.Name = "PRO_GetFinishingProductModel";
+            queryParameter1.Name = "@SearchKey";
+            queryParameter1.Type = typeof(string);
+            storedProcQuery1.Parameters.Add(queryParameter1);
+            storedProcQuery1.StoredProcName = "PRO_GetFinishingProductModel";
+            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
+            storedProcQuery1});
+            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // gridView1
             // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colId,
+            this.colProductNameId,
+            this.colProductcode,
+            this.colProductmodel,
+            this.colProductsize,
+            this.colWagesforProduct,
+            this.colItemDate});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             // 
+            // colId
+            // 
+            this.colId.FieldName = "Id";
+            this.colId.Name = "colId";
+            this.colId.Visible = true;
+            this.colId.VisibleIndex = 0;
+            // 
+            // colProductNameId
+            // 
+            this.colProductNameId.FieldName = "ProductNameId";
+            this.colProductNameId.Name = "colProductNameId";
+            this.colProductNameId.Visible = true;
+            this.colProductNameId.VisibleIndex = 1;
+            // 
+            // colProductcode
+            // 
+            this.colProductcode.FieldName = "Productcode";
+            this.colProductcode.Name = "colProductcode";
+            this.colProductcode.Visible = true;
+            this.colProductcode.VisibleIndex = 2;
+            // 
+            // colProductmodel
+            // 
+            this.colProductmodel.FieldName = "Productmodel";
+            this.colProductmodel.Name = "colProductmodel";
+            this.colProductmodel.Visible = true;
+            this.colProductmodel.VisibleIndex = 3;
+            // 
+            // colProductsize
+            // 
+            this.colProductsize.FieldName = "Productsize";
+            this.colProductsize.Name = "colProductsize";
+            this.colProductsize.Visible = true;
+            this.colProductsize.VisibleIndex = 4;
+            // 
+            // colWagesforProduct
+            // 
+            this.colWagesforProduct.FieldName = "WagesforProduct";
+            this.colWagesforProduct.Name = "colWagesforProduct";
+            this.colWagesforProduct.Visible = true;
+            this.colWagesforProduct.VisibleIndex = 5;
+            // 
+            // colItemDate
+            // 
+            this.colItemDate.FieldName = "ItemDate";
+            this.colItemDate.Name = "colItemDate";
+            this.colItemDate.Visible = true;
+            this.colItemDate.VisibleIndex = 6;
+            // 
             // panelControl3
             // 
-            this.panelControl3.Controls.Add(this.btRefresh);
-            this.panelControl3.Controls.Add(this.btDelete);
-            this.panelControl3.Controls.Add(this.btEdit);
-            this.panelControl3.Controls.Add(this.btUpdate);
-            this.panelControl3.Controls.Add(this.btAdd);
+            this.panelControl3.Controls.Add(this.btnRefresh);
+            this.panelControl3.Controls.Add(this.btnDelete);
+            this.panelControl3.Controls.Add(this.btnEdit);
+            this.panelControl3.Controls.Add(this.btnUpdate);
+            this.panelControl3.Controls.Add(this.btnAdd);
             this.panelControl3.Location = new System.Drawing.Point(328, 210);
             this.panelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(506, 66);
             this.panelControl3.TabIndex = 16;
             // 
-            // btRefresh
+            // btnRefresh
             // 
-            this.btRefresh.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btRefresh.Appearance.Options.UseFont = true;
-            this.btRefresh.Location = new System.Drawing.Point(417, 27);
-            this.btRefresh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btRefresh.Name = "btRefresh";
-            this.btRefresh.Size = new System.Drawing.Size(81, 24);
-            this.btRefresh.TabIndex = 5;
-            this.btRefresh.Text = "Refresh";
+            this.btnRefresh.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.Appearance.Options.UseFont = true;
+            this.btnRefresh.Location = new System.Drawing.Point(417, 27);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(81, 24);
+            this.btnRefresh.TabIndex = 5;
+            this.btnRefresh.Text = "Refresh";
             // 
-            // btDelete
+            // btnDelete
             // 
-            this.btDelete.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDelete.Appearance.Options.UseFont = true;
-            this.btDelete.Location = new System.Drawing.Point(309, 27);
-            this.btDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btDelete.Name = "btDelete";
-            this.btDelete.Size = new System.Drawing.Size(81, 24);
-            this.btDelete.TabIndex = 3;
-            this.btDelete.Text = "Delete";
-            this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
+            this.btnDelete.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Appearance.Options.UseFont = true;
+            this.btnDelete.Location = new System.Drawing.Point(309, 27);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(81, 24);
+            this.btnDelete.TabIndex = 3;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.Click += new System.EventHandler(this.btDelete_Click);
             // 
-            // btEdit
+            // btnEdit
             // 
-            this.btEdit.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btEdit.Appearance.Options.UseFont = true;
-            this.btEdit.Location = new System.Drawing.Point(109, 27);
-            this.btEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btEdit.Name = "btEdit";
-            this.btEdit.Size = new System.Drawing.Size(81, 24);
-            this.btEdit.TabIndex = 2;
-            this.btEdit.Text = "Edit";
+            this.btnEdit.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Appearance.Options.UseFont = true;
+            this.btnEdit.Location = new System.Drawing.Point(109, 27);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(81, 24);
+            this.btnEdit.TabIndex = 2;
+            this.btnEdit.Text = "Edit";
             // 
-            // btUpdate
+            // btnUpdate
             // 
-            this.btUpdate.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btUpdate.Appearance.Options.UseFont = true;
-            this.btUpdate.Location = new System.Drawing.Point(208, 27);
-            this.btUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btUpdate.Name = "btUpdate";
-            this.btUpdate.Size = new System.Drawing.Size(81, 24);
-            this.btUpdate.TabIndex = 1;
-            this.btUpdate.Text = "Update";
-            this.btUpdate.Click += new System.EventHandler(this.btAdd_Click);
+            this.btnUpdate.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Appearance.Options.UseFont = true;
+            this.btnUpdate.Location = new System.Drawing.Point(208, 27);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(81, 24);
+            this.btnUpdate.TabIndex = 1;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.Click += new System.EventHandler(this.btAdd_Click);
             // 
-            // btAdd
+            // btnAdd
             // 
-            this.btAdd.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAdd.Appearance.Options.UseFont = true;
-            this.btAdd.Location = new System.Drawing.Point(9, 27);
-            this.btAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btAdd.Name = "btAdd";
-            this.btAdd.Size = new System.Drawing.Size(81, 24);
-            this.btAdd.TabIndex = 0;
-            this.btAdd.Text = "Add";
-            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
+            this.btnAdd.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Appearance.Options.UseFont = true;
+            this.btnAdd.Location = new System.Drawing.Point(9, 27);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(81, 24);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
-            // simpleButton2
+            // ProSize
             // 
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.Location = new System.Drawing.Point(1036, 70);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(42, 23);
-            this.simpleButton2.TabIndex = 15;
-            this.simpleButton2.Text = "...";
+            this.ProSize.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProSize.Appearance.Options.UseFont = true;
+            this.ProSize.Location = new System.Drawing.Point(1036, 60);
+            this.ProSize.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.ProSize.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightBlue;
+            this.ProSize.LookAndFeel.SkinName = "DevExpress Style";
+            this.ProSize.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.ProSize.Name = "ProSize";
+            this.ProSize.Size = new System.Drawing.Size(42, 23);
+            this.ProSize.TabIndex = 15;
+            this.ProSize.Text = "...";
+            this.ProSize.Click += new System.EventHandler(this.ProSize_Click);
             // 
-            // simpleButton1
+            // proName
             // 
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Location = new System.Drawing.Point(431, 66);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(42, 23);
-            this.simpleButton1.TabIndex = 14;
-            this.simpleButton1.Text = "...";
+            this.proName.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.proName.Appearance.Options.UseFont = true;
+            this.proName.Location = new System.Drawing.Point(431, 66);
+            this.proName.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.proName.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightBlue;
+            this.proName.LookAndFeel.SkinName = "DevExpress Style";
+            this.proName.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.proName.Name = "proName";
+            this.proName.Size = new System.Drawing.Size(42, 23);
+            this.proName.TabIndex = 14;
+            this.proName.Text = "...";
+            this.proName.Click += new System.EventHandler(this.proName_Click);
             // 
             // txtWages
             // 
@@ -246,15 +340,6 @@ namespace BillPlex
             this.txtModelCode.Name = "txtModelCode";
             this.txtModelCode.Size = new System.Drawing.Size(227, 20);
             this.txtModelCode.TabIndex = 11;
-            // 
-            // drpDate
-            // 
-            this.drpDate.Location = new System.Drawing.Point(969, 22);
-            this.drpDate.Name = "drpDate";
-            this.drpDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.drpDate.Size = new System.Drawing.Size(135, 20);
-            this.drpDate.TabIndex = 10;
             // 
             // labelControl9
             // 
@@ -359,9 +444,24 @@ namespace BillPlex
             this.drpProductSize.Size = new System.Drawing.Size(227, 20);
             this.drpProductSize.TabIndex = 19;
             // 
-            // sqlDataSource1
+            // ddDate
             // 
-            this.sqlDataSource1.Name = "sqlDataSource1";
+            this.ddDate.EditValue = null;
+            this.ddDate.Location = new System.Drawing.Point(969, 22);
+            this.ddDate.Name = "ddDate";
+            this.ddDate.Properties.BeepOnError = false;
+            this.ddDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ddDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ddDate.Properties.DisplayFormat.FormatString = "";
+            this.ddDate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.ddDate.Properties.EditFormat.FormatString = "";
+            this.ddDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.ddDate.Properties.MaskSettings.Set("mask", "d");
+            this.ddDate.Properties.UseMaskAsDisplayFormat = true;
+            this.ddDate.Size = new System.Drawing.Size(135, 20);
+            this.ddDate.TabIndex = 10;
             // 
             // FrmFinishingProductModel
             // 
@@ -385,9 +485,10 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.txtWages.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtModelName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtModelCode.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.drpDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpProductName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpProductSize.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddDate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddDate.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -405,22 +506,29 @@ namespace BillPlex
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton ProSize;
+        private DevExpress.XtraEditors.SimpleButton proName;
         private DevExpress.XtraEditors.TextEdit txtWages;
         private DevExpress.XtraEditors.TextEdit txtModelName;
         private DevExpress.XtraEditors.TextEdit txtModelCode;
-        private DevExpress.XtraEditors.CheckedComboBoxEdit drpDate;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.PanelControl panelControl3;
-        private DevExpress.XtraEditors.SimpleButton btRefresh;
-        private DevExpress.XtraEditors.SimpleButton btDelete;
-        private DevExpress.XtraEditors.SimpleButton btEdit;
-        private DevExpress.XtraEditors.SimpleButton btUpdate;
-        private DevExpress.XtraEditors.SimpleButton btAdd;
+        private DevExpress.XtraEditors.SimpleButton btnRefresh;
+        private DevExpress.XtraEditors.SimpleButton btnDelete;
+        private DevExpress.XtraEditors.SimpleButton btnEdit;
+        private DevExpress.XtraEditors.SimpleButton btnUpdate;
+        private DevExpress.XtraEditors.SimpleButton btnAdd;
         private DevExpress.XtraEditors.ComboBoxEdit drpProductName;
         private DevExpress.XtraEditors.ComboBoxEdit drpProductSize;
         private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
+        private DevExpress.XtraGrid.Columns.GridColumn colId;
+        private DevExpress.XtraGrid.Columns.GridColumn colProductNameId;
+        private DevExpress.XtraGrid.Columns.GridColumn colProductcode;
+        private DevExpress.XtraGrid.Columns.GridColumn colProductmodel;
+        private DevExpress.XtraGrid.Columns.GridColumn colProductsize;
+        private DevExpress.XtraGrid.Columns.GridColumn colWagesforProduct;
+        private DevExpress.XtraGrid.Columns.GridColumn colItemDate;
+        private DevExpress.XtraEditors.DateEdit ddDate;
     }
 }
