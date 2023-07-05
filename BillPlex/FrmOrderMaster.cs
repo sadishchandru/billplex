@@ -35,16 +35,16 @@ namespace BillPlex
         public void ReloadSqlDataSource()
         {
             sqlDataSource1.FillAsync();
-            gridView1.RefreshData();
+            OrderList_grid.RefreshData();
 
         }
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            var selectedRows = gridView1.GetSelectedRows();
+            var selectedRows = OrderList_grid.GetSelectedRows();
 
             foreach (var rowHandle in selectedRows)
             {
-                var Id = gridView1.GetRowCellValue(rowHandle, "Id");
+                var Id = OrderList_grid.GetRowCellValue(rowHandle, "Id");
 
                 OrderMasterRequest.Id = (int)Id;
             }
@@ -81,12 +81,16 @@ namespace BillPlex
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            var selectedRow = gridView1.GetSelectedRows();
+            var selectedRow = OrderList_grid.GetSelectedRows();
 
             OrderMasterInfoRequest = new FrmOrderMasterInfo();
 
-            OrderMasterInfoRequest.BindData(gridView1);
+            OrderMasterInfoRequest.MdiParent = this.MdiParent;
+
+            OrderMasterInfoRequest.BindData(OrderList_grid);
             OrderMasterInfoRequest.Show();
+
+            ReloadSqlDataSource();
         }
     }
 }

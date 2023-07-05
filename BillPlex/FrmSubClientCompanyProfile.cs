@@ -97,8 +97,7 @@ namespace BillPlex
             SubCompanyInfoRequest = new FrmSubClientCompanyInfo();
 
             SubCompanyInfoRequest.BindData(SubClientGrid);
-
-            //CompanyInfo.MdiParent = this;
+            SubCompanyInfoRequest.MdiParent = this.MdiParent;
             SubCompanyInfoRequest.Show();
         }
 

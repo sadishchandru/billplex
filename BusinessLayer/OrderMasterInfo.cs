@@ -13,7 +13,7 @@ namespace BusinessLayer
         public Int64 Id { get; set; }
         public string OrderNo { get; set; }
         public string OrderDate { get; set; }
-        public string CustomerCodeId { get; set; }
+        public Int64 CustomerCodeId { get; set; }
         public Int64 CustomerId { get; set; }
         public string ProductId { get; set; }
         public Int64 ProductNameId { get; set; }
@@ -21,7 +21,7 @@ namespace BusinessLayer
         public string ProductCode { get; set; }
         public string ProductSize { get; set; }
         public string Quantity { get; set; }
-        public int RawMaterialId { get; set; }
+        public string RawMaterialId { get; set; }
         public string RawType { get; set; }
         public Int64 ColorId { get; set; }
         public string RawQty { get; set; }
@@ -57,7 +57,7 @@ namespace BusinessLayer
                 objLstdbParams.Add(new DbParams(DbType.String, 50, ProductCode, "@productcode", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, ProductSize, "@productsize", ParameterDirection.Input));               
                 objLstdbParams.Add(new DbParams(DbType.String, 50, Quantity, "@Quantity", ParameterDirection.Input));
-                //objLstdbParams.Add(new DbParams(DbType.String, 50, RawMaterialId, "@RawMaterialId", ParameterDirection.Input));
+                objLstdbParams.Add(new DbParams(DbType.String, 50, RawMaterialId, "@RawMaterialId", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, RawType, "@RawType", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, ColorId, "@ColorId", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, RawQty, "@RawQty", ParameterDirection.Input));

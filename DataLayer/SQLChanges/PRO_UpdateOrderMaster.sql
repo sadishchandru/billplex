@@ -15,21 +15,20 @@ CREATE or ALTER   PROCEDURE [dbo].[PRO_UpdateOrderMaster]
 	@OrderNo  varchar(100)='',
 	@Orderdate  date = NULL, 
 	@Customcode  varchar(100)='',
-	@CustomerId  INT = '',
-	@ProductNameId  INT='',
+	@CustomerId  INT = 0,
+	@ProductNameId  INT=0,
 	@productmodel varchar(100) = '',
 	@productcode varchar(100) = '',
 	@productsize varchar(100) = '',
 	@Quantity  varchar(100)='',
 	@RawType  varchar(100)='',
-	--@RawmaterialId  INT='',	
-	@ColorId  INT='',
+	@RawmaterialId  varchar(50)='',	
+	@ColorId  INT=0,
 	@RawQty  varchar(100)='',
 	@Delivarydate  date=NULL, 
 	@Status  Varchar(50)='', 
 	@TotalRaw  varchar(100) ='',
 	@WagesforEmp  varchar(100)='',
-
 	--@totalWt varchar(100) = '',
 	--@AvlQty  varchar(250)='',
 	--@Avlweight  varchar(100) ='',
@@ -56,7 +55,7 @@ BEGIN
 			,productcode
 			,productsize
 			,Quantity
-			--,RawmaterialId
+			,RawmaterialId
 			,RawType
 			,ColorId
 			,RawQty
@@ -78,7 +77,7 @@ BEGIN
 				@productcode,
 				@productsize,
 				@Quantity,
-				--@RawmaterialId,
+				@RawmaterialId,
 				@RawType,
 				@ColorId,
 				@RawQty,
@@ -95,33 +94,33 @@ BEGIN
 		SET @ResultMessage = 'Order Master Added Successfully';
 		SET @ResultNo = 1
 	END
-	--ELSE
-	--BEGIN
-	--	UPDATE OrderMaster 
-	--	SET	
-	--	        
-				--[OrderNo]=@OrderNo,
-				--[Orderdate]=@Orderdate,
-				--[CustomcodeId]=@CustomcodeId,
-				--[CustomerId]=@CustomerId,
-				--[ProductNameId]=@ProductNameId,
-				--[Quantity]=@Quantity,
-				--[RawmaterialId]=@RawmaterialId,
-				--[RawType]=@RawType,
-				--[ColorId]=@ColorId,
-				--[RawQty]=@RawQty,
-				--[TotalRaw]=@TotalRaw,
-				--[Delivarydate]=@Delivarydate,
-				--[WagesforEmp]=@WagesforEmp,
-				--[Status]=@Status,
+	ELSE
+	BEGIN
+		UPDATE OrderMaster 
+		SET	
+		        
+				[OrderNo]=@OrderNo,
+				[Orderdate]=@Orderdate,
+				[Customcode]=@Customcode,
+				[CustomerId]=@CustomerId,
+				[ProductNameId]=@ProductNameId,
+				[Quantity]=@Quantity,
+				[RawmaterialId]=@RawmaterialId,
+				[RawType]=@RawType,
+				[ColorId]=@ColorId,
+				[RawQty]=@RawQty,
+				[TotalRaw]=@TotalRaw,
+				[Delivarydate]=@Delivarydate,
+				[WagesforEmp]=@WagesforEmp,
+				[Status]=@Status
 				--[AvlQty]=@AvlQty,
 				--[Avlweight]=@Avlweight
 
-	--	WHERE Id = @Id
+		WHERE Id = @Id
 		
 		SET @ResultMessage = 'OrderMaster Updated Successfully';
 		SET @ResultNo = 1
-	--END
+	END
 
 	SELECT  @ResultMessage AS ResultMessage,
 			@ResultNo AS ResultNo

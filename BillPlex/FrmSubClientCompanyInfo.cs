@@ -235,12 +235,7 @@ namespace BillPlex
             foreach (var rowHandle in selectedRows)
             {
                 SubClientRequest.Id = selectedCompanyList.GetRowCellValue(rowHandle, "Id");
-                //txtCompanyCode.Text = selectedCompanyList.GetRowCellValue(rowHandle, "MasterCode").toString() == DBNull.Value ? string.Empty : selectedCompanyList.GetRowCellValue(rowHandle, "MasterCode").ToString();
-
-                //drpMainCompany.SelectedIndex = Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "MasterCompanyId").ToString());
-                drpMainCompany.SelectedIndex = SubClientRequest.MasterCompanyList.FindIndex(x => x.Id == Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "MasterCompanyId").ToString()));                //drpCCompany.SelectedIndex = Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "ClientCompanyId").ToString());
-
-                drpCCompany.SelectedIndex = SubClientRequest.ClientCompanyList.FindIndex(x => x.Id == Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "ClientCompanyId").ToString()));
+                drpMainCompany.SelectedIndex = SubClientRequest.MasterCompanyList.FindIndex(x => x.Id == Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "MasterCompanyId").ToString()));                drpCCompany.SelectedIndex = SubClientRequest.ClientCompanyList.FindIndex(x => x.Id == Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "ClientCompanyId").ToString()));
                 txtCompanyCode.Text = selectedCompanyList.GetRowCellValue(rowHandle, "SubComCode");
                 txtCompanyName.Text = selectedCompanyList.GetRowCellValue(rowHandle, "SubComName");
                 txtOffAddress.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComOffAdd");

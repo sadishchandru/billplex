@@ -87,6 +87,7 @@ namespace BillPlex
 
             ClientCompanyRequest.BindData(gridView2);
 
+            ClientCompanyRequest.MdiParent = this.MdiParent;
 
             ClientCompanyRequest.Show();
            
