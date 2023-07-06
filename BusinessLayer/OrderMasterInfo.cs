@@ -34,6 +34,7 @@ namespace BusinessLayer
         public List<DropDownItemInfo> CustomerMasterList { get; set; }
         public List<DropDownItemInfo> ProductMasterList { get; set; }
         public List<DropDownItemInfo> ColourMasterList { get; set; }
+        public List<OrderMasterInfo> OrderMasterList { get; set; }
 
         #region Update
         public void Update()
@@ -55,7 +56,7 @@ namespace BusinessLayer
                 objLstdbParams.Add(new DbParams(DbType.String, 50, ProductNameId, "@ProductNameId", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, ProductModel, "@productmodel", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, ProductCode, "@productcode", ParameterDirection.Input));
-                objLstdbParams.Add(new DbParams(DbType.String, 50, ProductSize, "@productsize", ParameterDirection.Input));               
+                objLstdbParams.Add(new DbParams(DbType.String, 50, ProductSize, "@productsize", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, Quantity, "@Quantity", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, RawMaterialId, "@RawMaterialId", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, RawType, "@RawType", ParameterDirection.Input));
@@ -65,7 +66,7 @@ namespace BusinessLayer
                 objLstdbParams.Add(new DbParams(DbType.Date, 50, Deliverydate, "@Delivarydate", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, WagesforEmp, "@WagesforEmp", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, status, "@status", ParameterDirection.Input));
-           
+
                 dbReader = ObjDbfactory.GetReader("PRO_UpdateOrderMaster", false, objLstdbParams);
 
                 while (dbReader.Read())
@@ -73,6 +74,12 @@ namespace BusinessLayer
                     Result.Message = ToString(dbReader["ResultMessage"]);
                     Result.Status = (ResultStatus)ToInteger(dbReader["ResultNo"]);
                 }
+
+                if (Result.Status == ResultStatus.Success)
+                {
+                    OrderMasterList = AssignResult();
+                }
+
 
             }
             catch (Exception ex)
@@ -86,6 +93,38 @@ namespace BusinessLayer
             }
         }
 
+        public List<OrderMasterInfo> AssignResult()
+        {
+            List<OrderMasterInfo> FamilyList = new List<OrderMasterInfo>();
+            dbReader.NextResult();
+
+            while (dbReader.Read())
+            {
+                OrderMasterInfo OrderDetail = new OrderMasterInfo();
+                OrderDetail.Id = ToInteger(dbReader["Id"]);
+                OrderDetail.OrderNo = ToString(dbReader["OrderNo"]);
+                OrderDetail.OrderDate = ToDateTimeToString(dbReader["Orderdate"]);
+                OrderDetail.CustomerCodeId = ToInteger(dbReader["Customcode"]);
+                OrderDetail.CustomerId = ToInteger(dbReader["CustomerId"]);
+                OrderDetail.ProductId = ToString(dbReader["ProductNameId"]);
+                OrderDetail.ProductModel = ToString(dbReader["productmodel"]);
+                OrderDetail.ProductCode = ToString(dbReader["productcode"]);
+                OrderDetail.ProductSize = ToString(dbReader["productsize"]);
+                OrderDetail.Quantity = ToString(dbReader["Quantity"]);
+                OrderDetail.RawType = ToString(dbReader["RawmaterialId"]);
+                OrderDetail.RawMaterialId = ToString(dbReader["RawType"]);
+                OrderDetail.ColorId = ToInteger(dbReader["ColorId"]);
+                OrderDetail.RawQty = ToString(dbReader["RawQty"]);
+                OrderDetail.Deliverydate = ToDateTimeToString(dbReader["Delivarydate"]);
+                OrderDetail.status = ToString(dbReader["Status"]);
+                OrderDetail.TotalRaw = ToString(dbReader["TotalRaw"]);
+                OrderDetail.WagesforEmp = ToString(dbReader["WagesforEmp"]);
+
+                FamilyList.Add(OrderDetail);
+            }
+
+            return FamilyList;
+        }
         #endregion
 
         #region Delete
@@ -124,8 +163,8 @@ namespace BusinessLayer
             }
         }
 
-    #endregion
+        #endregion
 
 
-}
+    }
 }

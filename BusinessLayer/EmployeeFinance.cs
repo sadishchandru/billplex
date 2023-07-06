@@ -65,7 +65,8 @@ namespace BusinessLayer
                 objLstDbParams.Add(new DbParams(DbType.Date, 50, FPfJoiningDate == "" ? null : FPfJoiningDate, "@PFJoiningDate", ParameterDirection.Input));
                 //objLstDbParams.Add(new DbParams(DbType.String, 50, FPfJoiningDate, "@PFJoiningDate", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, FPfNo, "@PFNo", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.String, 50, FPfLastDate, "@PFLastDate", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.Date, 50, FPfLastDate == "" ? null : FPfLastDate, "@PFLastDate", ParameterDirection.Input));
+                //objLstDbParams.Add(new DbParams(DbType.String, 50, FPfLastDate, "@PFLastDate", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.Boolean, 2, FPensionApplication, "@PensionApplicable", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.Date, 50, FJoiningDate == "" ? null : FJoiningDate, "@PensionJoiningDate", ParameterDirection.Input));
                 //objLstDbParams.Add(new DbParams(DbType.String, 50, FJoiningDate, "@PensionJoiningDate", ParameterDirection.Input));

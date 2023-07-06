@@ -124,6 +124,11 @@ BEGIN
 
 	SELECT  @ResultMessage AS ResultMessage,
 			@ResultNo AS ResultNo
+
+	IF(@ResultNo = 1)
+	BEGIN
+		EXEC PRO_GetOrderMasterByFilter @OrderNo = @OrderNo;
+	END
 		
 
 END

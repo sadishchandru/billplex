@@ -38,7 +38,7 @@ namespace BillPlex
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
-            this.OrderList_grid = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colOrderNo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colOrderdate = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -71,7 +71,7 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OrderList_grid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,7 +81,7 @@ namespace BillPlex
             this.panelControl1.Location = new System.Drawing.Point(11, 11);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1523, 81);
+            this.panelControl1.Size = new System.Drawing.Size(1489, 81);
             this.panelControl1.TabIndex = 0;
             // 
             // labelControl1
@@ -112,29 +112,28 @@ namespace BillPlex
             this.panelControl2.Location = new System.Drawing.Point(11, 109);
             this.panelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1523, 494);
+            this.panelControl2.Size = new System.Drawing.Size(1489, 494);
             this.panelControl2.TabIndex = 1;
             // 
             // gridControl1
             // 
             this.gridControl1.DataMember = "PRO_GetOrderMaster";
             this.gridControl1.DataSource = this.sqlDataSource1;
-            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gridControl1.Location = new System.Drawing.Point(4, 82);
-            this.gridControl1.MainView = this.OrderList_grid;
-            this.gridControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gridControl1.Location = new System.Drawing.Point(5, 111);
+            this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1357, 408);
+            this.gridControl1.Size = new System.Drawing.Size(1375, 378);
             this.gridControl1.TabIndex = 59;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.OrderList_grid});
+            this.gridView1});
+            this.gridControl1.DoubleClick += new System.EventHandler(this.gridControl1_DoubleClick);
             // 
             // sqlDataSource1
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
             storedProcQuery1.Name = "PRO_GetOrderMaster";
-            queryParameter1.Name = "@SearchKey";
+            queryParameter1.Name = "@OrderNo";
             queryParameter1.Type = typeof(string);
             storedProcQuery1.Parameters.Add(queryParameter1);
             storedProcQuery1.StoredProcName = "PRO_GetOrderMaster";
@@ -142,9 +141,9 @@ namespace BillPlex
             storedProcQuery1});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
-            // OrderList_grid
+            // gridView1
             // 
-            this.OrderList_grid.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colId,
             this.colOrderNo,
             this.colOrderdate,
@@ -163,9 +162,8 @@ namespace BillPlex
             this.colDelivarydate,
             this.colWagesforEmp,
             this.colStatus});
-            this.OrderList_grid.DetailHeight = 284;
-            this.OrderList_grid.GridControl = this.gridControl1;
-            this.OrderList_grid.Name = "OrderList_grid";
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
             // 
             // colId
             // 
@@ -385,7 +383,6 @@ namespace BillPlex
             this.btnEdit.Size = new System.Drawing.Size(78, 30);
             this.btnEdit.TabIndex = 51;
             this.btnEdit.Text = "EDIT";
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // radioGroup1
             // 
@@ -426,7 +423,7 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OrderList_grid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).EndInit();
             this.ResumeLayout(false);
 
@@ -438,8 +435,6 @@ namespace BillPlex
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraEditors.RadioGroup radioGroup1;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView OrderList_grid;
         private DevExpress.XtraEditors.SimpleButton btnRefresh;
         private DevExpress.XtraEditors.SimpleButton btnNew;
         private DevExpress.XtraEditors.SimpleButton btnExit;
@@ -448,6 +443,8 @@ namespace BillPlex
         private DevExpress.XtraEditors.SimpleButton btnClear;
         private DevExpress.XtraEditors.SimpleButton btnAdd;
         private DevExpress.XtraEditors.SimpleButton btnEdit;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colOrderNo;
