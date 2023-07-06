@@ -89,7 +89,7 @@ namespace BillPlex
             if (selectedRow.Count() > 0)
             {
                 FrmEmployeeRequest = new FrmEmployeeMaster();
-
+                FrmEmployeeRequest.MdiParent = this.MdiParent;
                 FrmEmployeeRequest.BindData(EmployeeGridView);
 
                 FrmEmployeeRequest.Show();

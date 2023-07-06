@@ -11,21 +11,8 @@ GO
 -- Description:	Insert & Update Company Profile Info
 -- =============================================
 CREATE OR ALTER PROCEDURE [dbo].[PRO_UpdateFamily]
-@Id bigint=0,
-@EmpCode Bigint=0,
-@EmpId Bigint = 0,
-@SNo varchar(50)='',
-@Name varchar(250)='',
-@FAddress varchar(300)='',
-@Farea varchar(100)='',
-@Fdistrict varchar(100)='',
-@State varchar(250)='',
-@Pincode varchar(250)='',
-@EmployeeRelation varchar(100)='',
-@DoB DATE=NULL,
-@Age INT= NULL,
-@Residing varchar(100)='',
-@Remark varchar(300) =''
+@EmpId VARCHAR(20) = '' ,
+@family_items XML = NULL 
 AS
 BEGIN
 	
@@ -34,69 +21,57 @@ BEGIN
 	DECLARE @ResultNo BIT = 0
 	DECLARE @ResultMessage VARCHAR(MAX) = ''
 
-	IF(@Id = 0)
-	BEGIN
+	BEGIN TRY 
+		BEGIN TRAN
+
+		DELETE FROM Family WHERE EmpId = @EmpId
+
 		INSERT INTO Family
-		(
-			EmpCode
-			,EmpId
-			,SNo
-			,Name
-			,FAddress
-			,Farea
-			,Fdistrict
-			,State
-			,Pincode
-			,EmployeeRelation
-			,DoB
-			,Age
-			,Residing
-			,Remark
-		) VALUES
-		(
-			@EmpCode,
-			@EmpId,
-			@SNo,
-			@Name,
-			@FAddress,
-			@Farea,
-			@Fdistrict,
-			@State,
-			@Pincode,
-			@EmployeeRelation,
-			@DoB,
-			@Age,
-			@Residing,
-			@Remark
-		)
+			(
+				EmpId
+				,SNo
+				,Name
+				,FAddress
+				,Farea
+				,Fdistrict
+				,State
+				,Pincode
+				,EmployeeRelation
+				,DoB
+				,Age
+				,Residing
+				,Remark
+			)
+			SELECT @EmpId as  EmpId,
+				--xmlobj.value('EmpId[1]','BIGINT') as EmpId,
+				xmlobj.value('SNo[1]','VARCHAR(200)') as SNo,
+				xmlobj.value('Name[1]','VARCHAR(200)') as [Name],
+				xmlobj.value('FAddress[1]','VARCHAR(200)') as FAddress,
+				xmlobj.value('Farea[1]','VARCHAR(200)') as Farea,
+				xmlobj.value('Fdistrict[1]','VARCHAR(200)') as Fdistrict,
+				xmlobj.value('State[1]','VARCHAR(200)') as [State],
+				xmlobj.value('Pincode[1]','VARCHAR(200)') as Pincode,
+				xmlobj.value('EmployeeRelation[1]','VARCHAR(200)') as EmployeeRelation,
+				xmlobj.value('DoB[1]','date') as DoB,
+				xmlobj.value('Age[1]','int') as Age,
+				xmlobj.value('Residing[1]','VARCHAR(200)') as Residing,
+				xmlobj.value('Remark[1]','VARCHAR(200)') as Remark		
+			FROM @family_items.nodes('//FamilyItems') as R (xmlobj)
+				
+			SET	@ResultNo = 1
+			SET	@ResultMessage = 'Family updated successfully'
 
-		SET @ResultMessage = 'Family Added Successfully';
-		SET @ResultNo = 1
-	END
-	--ELSE
-	--BEGIN
-	--	UPDATE Family 
-	--	SET	
-	--	[EmpCode]=@EmpCode,
-	--	[EmpId]=@EmpId,
-	--	[SNo]=@SNo,
-	--	[Name]=@Name,
-	--	[FAddress]=@FAddress,
-	--	[Farea]=@Farea,
-	--	[Fdistrict]=@Fdistrict,
-	--	[State]=@State,
-	--	[Pincode]=@Pincode,
-	--	[EmployeeRelation]=@EmployeeRelation,
-	--	[DoB]=@DoB,
-	--	[Age]=@Age,
-	--	[Residing]=@Residing,
-	--	[Remark]=@Remark
-	--	WHERE Id = @Id
+		COMMIT;
+	END TRY
 
-		
-	--	SET @ResultMessage = 'Family Updated Successfully';
-	--	SET @ResultNo = 1
-	--END
+	BEGIN CATCH
+
+	ROLLBACK;
+	
+	SET	@ResultNo = 0
+	SET	@ResultMessage = ERROR_MESSAGE();
+	END CATCH
+
 
 	SELECT  @ResultMessage AS ResultMessage,
 			@ResultNo AS ResultNo

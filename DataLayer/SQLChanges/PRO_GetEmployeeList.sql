@@ -41,7 +41,7 @@ SET NOCOUNT ON;
 			,Pan
 			,PassportNo
 			,IdentityMark
-			,DoB
+			,EP.DoB
 			,Gender
 			,BloodGroup
 			,Email
@@ -87,7 +87,7 @@ SET NOCOUNT ON;
 			,EF.ESIDispensary
 			FROM EmployeePersonal EP
 			LEFT JOIN EmployeeFinance EF ON EF.EmpId = EP.Id
-				--LEFT JOIN Family ON EP.EmployeeCode = Family.EmpCode
+			--LEFT JOIN Family F ON F.EmpId = EP.Id
 				--LEFT JOIN Nominee ON Ep.EmployeeCode = Nominee.EmpCode;
 
 END

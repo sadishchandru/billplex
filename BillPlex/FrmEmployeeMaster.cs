@@ -40,12 +40,13 @@ namespace BillPlex
             InitializeComponent();
             labelAvailable.Visible = false;
             labelCodeExist.Visible = false;
-            InitializeGridControl();
+            //InitializeGridControl();
             InitializeDataSource();
 
             EmployeePersonalRequest = new EmployeePersonal();
             EmployeeFinanceRequest = new EmployeeFinance();
             EmployeeFamilyRequest = new EmployeeFamily();
+            EmployeeFamilyRequest.FamilyList = new List<EmployeeFamily>();
             EmployeeNomineeReqest = new EmployeeNominee();
 
             EmployeeFamilySource = new List<dynamic>();
@@ -138,40 +139,25 @@ namespace BillPlex
 
         private void InitializeDataSource()
         {
-            FamilyGridView.Columns.Clear();
+            //FamilyGridView.Columns.Clear();
+            DataTable dataTable = new DataTable();
 
             // Create columns and bind them to the object properties
-            FamilyGridView.Columns.AddVisible("SNo", "SNo");
-            FamilyGridView.Columns.AddVisible("Name", "Name");
-            FamilyGridView.Columns.AddVisible("Address", "Address");
-            FamilyGridView.Columns.AddVisible("Area", "Area");
-            FamilyGridView.Columns.AddVisible("District", "District");
-            FamilyGridView.Columns.AddVisible("State", "State");
-            FamilyGridView.Columns.AddVisible("Pin", "Pin");
-            FamilyGridView.Columns.AddVisible("RelationEmployee", "RelationEmployee");
-            FamilyGridView.Columns.AddVisible("DateOfBirth", "DateOfBirth");
-            FamilyGridView.Columns.AddVisible("WhetherResiding", "WhetherResiding");
-            FamilyGridView.Columns.AddVisible("Remarks", "Remarks");
-
-
-            //// Create an empty DataTable with the desired column structure
-            //dt = new DataTable();
-            //dt.Columns.Add("SNo", typeof(string));
-            //dt.Columns.Add("Name", typeof(string));
-            //dt.Columns.Add("Address", typeof(string));
-            //dt.Columns.Add("Area", typeof(string));
-            //dt.Columns.Add("District", typeof(string));
-            //dt.Columns.Add("State", typeof(string));
-            //dt.Columns.Add("Pin", typeof(string));
-            //dt.Columns.Add("RelationEmployee", typeof(string));
-            //dt.Columns.Add("DateOfBirth", typeof(string));
-            //dt.Columns.Add("WhetherResiding", typeof(string));
-            //dt.Columns.Add("Remarks", typeof(string));
-
-            // Set the empty DataTaRemarksble as the data source for the GridView
-            //FamilyGridControl.DataSource = dt;
-            //FamilyGridView.DataSource = dataTable;
-
+            dataTable.Columns.Add("SNo", typeof(string));
+            dataTable.Columns.Add("Name", typeof(string));
+            dataTable.Columns.Add("Address", typeof(string));
+            dataTable.Columns.Add("Area", typeof(string));
+            dataTable.Columns.Add("District", typeof(string));
+            dataTable.Columns.Add("State", typeof(string));
+            dataTable.Columns.Add("Pin", typeof(string));
+            dataTable.Columns.Add("Age", typeof(string));
+            dataTable.Columns.Add("RelationEmployee", typeof(string));
+            dataTable.Columns.Add("DateOfBirth", typeof(string));
+            dataTable.Columns.Add("WhetherResiding", typeof(string));
+            dataTable.Columns.Add("Remarks", typeof(string));
+            FamilyGridControl.DataSource = dataTable;
+            FamilyGridView.RefreshData();
+            FamilyGridControl.RefreshDataSource();
         }
 
 
@@ -297,13 +283,13 @@ namespace BillPlex
                     EmployeeFinanceRequest.FPolicyNo = txtPolicyNo.Text;
                     EmployeeFinanceRequest.FPolicyTerm = txtPolicyName.Text;
                     EmployeeFinanceRequest.FLicId = txtLic.Text;
-                    EmployeeFinanceRequest.FARenewableDate = ddRDate.Text;
+                    EmployeeFinanceRequest.FARenewableDate = txtRDate.Text;
                     EmployeeFinanceRequest.FPfApplication = chPF.Text == "" ? false : true;
                     EmployeeFinanceRequest.FPfJoiningDate = ddPFJDate.Text;
                     EmployeeFinanceRequest.FPfNo = txtPFNo.Text;
                     EmployeeFinanceRequest.FPfLastDate = ddPFlastDate.Text;
                     EmployeeFinanceRequest.FPensionApplication = chPension.Text == "" ? false : true;
-                    EmployeeFinanceRequest.FJoiningDate = ddJDate.Text;
+                    EmployeeFinanceRequest.FJoiningDate = ddPenDate.Text;
                     EmployeeFinanceRequest.FEsiApplication = chESI.Text == "" ? false : true;
                     EmployeeFinanceRequest.FEsiJoiningDate = ddESIDate.Text;
                     EmployeeFinanceRequest.FEsiNo = txtBIEsiNo.Text;
@@ -334,38 +320,58 @@ namespace BillPlex
                 #region Employee Family Detail Update
                 else if (tabIndex == 2)
                 {
-                    // Employee Family Detail Update
-                    //EmployeeFamilyRequest.EFEmpId = txtId.Text;
-                    //EmployeeFamilyRequest.EFEmpCode = txtemp.Text;
-                    EmployeeFamilyRequest.SNo = txtFSno.Text;
-                    EmployeeFamilyRequest.EFName = txtFName.Text;
-                    EmployeeFamilyRequest.EFAddress = txtFAddress.Text;
-                    EmployeeFamilyRequest.EFArea = txtFArea.Text;
-                    EmployeeFamilyRequest.EFDistrict = drpFDistrict.Text;
-                    EmployeeFamilyRequest.EFState = drpFState.Text;
-                    EmployeeFamilyRequest.EFPin = txtFPin.Text;
-                    EmployeeFamilyRequest.EFRelation = txtFEmp.Text;
-                    EmployeeFamilyRequest.EFDOB = ddFDOB.Text;
-                    EmployeeFamilyRequest.EFAge = txtFAge.Text;
-                    EmployeeFamilyRequest.EFResiding = drpResiding.Text;
-                    EmployeeFamilyRequest.EFRemark = txtRemarks.Text;
-                    EmployeeFamilyRequest.Update();
-
-                    if (EmployeeFamilyRequest.Result.Status == ResultStatus.Success)
+                    if (EmployeePersonalRequest.Id != 0)
                     {
-                        this.Close();
-                        XtraMessageBox.Show(EmployeeFamilyRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        FrmEmployeeMasterList form = Application.OpenForms.OfType<FrmEmployeeMasterList>().FirstOrDefault();
-                        Form myForm = Application.OpenForms["FrmEmployeeMasterList"];
-                        if (myForm != null)
+                        if (EmployeeFamilyRequest.FamilyList.Count() > 0)
                         {
-                            form.ReloadSqlDataSource();
+                            EmployeeFamilyRequest.EFEmpId = EmployeePersonalRequest.Id;
+                            EmployeeFamilyRequest.Update();
+
+                            if (EmployeeFamilyRequest.Result.Status == ResultStatus.Success)
+                            {
+                                this.Close();
+                                XtraMessageBox.Show(EmployeeFamilyRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                FrmEmployeeMasterList form = Application.OpenForms.OfType<FrmEmployeeMasterList>().FirstOrDefault();
+                                Form myForm = Application.OpenForms["FrmEmployeeMasterList"];
+                                if (myForm != null)
+                                {
+                                    form.ReloadSqlDataSource();
+                                }
+                            }
+                            else
+                            {
+                                XtraMessageBox.Show(EmployeeFamilyRequest.Result.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
+                        else
+                        {
+                            XtraMessageBox.Show("There is no family in your list, please submit your family details", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
+                        // Employee Family Detail Update
+                        //EmployeeFamilyRequest.EFEmpId = txtId.Text;
+                        //EmployeeFamilyRequest.EFEmpCode = txtemp.Text;
+                        //EmployeeFamilyRequest.EFEmpId = (int)EmployeePersonalRequest.Id;
+                        //EmployeeFamilyRequest.SNo = txtFSno.Text;
+                        //EmployeeFamilyRequest.EFName = txtFName.Text;
+                        //EmployeeFamilyRequest.EFAddress = txtFAddress.Text;
+                        //EmployeeFamilyRequest.EFArea = txtFArea.Text;
+                        //EmployeeFamilyRequest.EFDistrict = drpFDistrict.Text;
+                        //EmployeeFamilyRequest.EFState = drpFState.Text;
+                        //EmployeeFamilyRequest.EFPin = txtFPin.Text;
+                        //EmployeeFamilyRequest.EFRelation = txtFEmp.Text;
+                        //EmployeeFamilyRequest.EFDOB = ddFDOB.Text;
+                        //EmployeeFamilyRequest.EFAge = txtFAge.Text;
+                        //EmployeeFamilyRequest.EFResiding = drpResiding.Text;
+                        //EmployeeFamilyRequest.EFRemark = txtRemarks.Text;
+
+
                     }
                     else
                     {
-                        XtraMessageBox.Show(EmployeeFamilyRequest.Result.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        XtraMessageBox.Show("Please Submit Employee Personal details first", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 #endregion
@@ -586,7 +592,7 @@ namespace BillPlex
                 if (convertedValue != 0)
                 {
                     EmployeeFinanceRequest.FEmpId = convertedValue;
-                    //txtSCName.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "Id");
+                    EmployeeFinanceRequest.Id = selectedClientCompanyList.GetRowCellValue(rowHandle, "Id");
                     drpBName.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "BankName");
                     txtAddress.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "BankAddress");
                     txtSalaryAC.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "SalaryNo");
@@ -617,7 +623,10 @@ namespace BillPlex
                     ddESILastDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
                     drpLOffice.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ESIOffice");
                     drpESIDispensary.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ESIDispensary");
-                }               
+                }
+
+
+                //Family Data bindings
 
             }
 
@@ -650,63 +659,70 @@ namespace BillPlex
         private void bntAddRow_Click(object sender, EventArgs e)
         {
 
-            GridView gridView = FamilyGridView; // Replace gridView1 with the actual name of your GridView control
+            if (txtFSno.Text != "" && txtFName.Text != "")
+            {
+                DataTable dataTable = FamilyGridControl.DataSource as DataTable;
 
-            // Retrieve textbox values
-            string value1 = txtFSno.Text;
-            string value2 = txtFName.Text;
-            // Retrieve additional textbox values as needed
+                DataRow newRow = dataTable.NewRow();
+                newRow["SNo"] = txtFSno.Text;
+                newRow["Name"] = txtFName.Text;
+                newRow["Address"] = txtFAddress.Text;
+                newRow["Area"] = txtFArea.Text;
+                newRow["District"] = drpFDistrict.Text;
+                newRow["State"] = drpFState.Text;
+                newRow["Pin"] = txtFPin.Text;
+                newRow["Age"] = txtFAge.Text;
+                newRow["RelationEmployee"] = txtFEmp.Text;
+                newRow["DateOfBirth"] = ddFDOB.Text;
+                newRow["WhetherResiding"] = drpResiding.Text;
+                newRow["Remarks"] = txtRemarks.Text;
 
-            // Add a new row to the GridView
-            gridView.AddNewRow();
+                // Add the new DataRow to the DataTable
+                dataTable.Rows.Add(newRow);
 
-            // Set values for each column in the new row
-            gridView.SetRowCellValue(gridView.FocusedRowHandle, "Sno", value1);
-            gridView.SetRowCellValue(gridView.FocusedRowHandle, "FName", value2);
-            // Set values for additional columns as needed
+                // Refresh the grid to display the new row
+                FamilyGridView.RefreshData();
+                FamilyGridControl.RefreshDataSource();
 
-            // End the row editing
-            gridView.UpdateCurrentRow();
+                // Bind data to Generic List for save in DB
 
-//          -----------------------------
-            //// Retrieve textbox values
-            //string value1 = txtFSno.Text;
-            //string value2 = txtFName.Text;
-            //// Retrieve additional textbox values as needed
+                EmployeeFamily familyItem = new EmployeeFamily();
+                familyItem.SNo = txtFSno.Text;
+                familyItem.EFName = txtFName.Text;
+                familyItem.EFAddress = txtFAddress.Text;
+                familyItem.EFArea = txtFArea.Text;
+                familyItem.EFDistrict = drpFDistrict.Text;
+                familyItem.EFState = drpFState.Text;
+                familyItem.EFPin = txtFPin.Text;
+                familyItem.EFRelation = txtFEmp.Text;
+                familyItem.EFDOB = ddFDOB.Text;
+                familyItem.EFAge = txtFAge.Text;
+                familyItem.EFResiding = drpResiding.Text;
+                familyItem.EFRemark = txtRemarks.Text;
 
-            //// Create a new row object
-            //EmployeeFamily newRow = new EmployeeFamily()
-            //{
-            //    SNo = value1,
-            //    EFName = value2,
-            //    // Set additional properties as needed
-            //};
+                EmployeeFamilyRequest.FamilyList.Add(familyItem);
 
-            //// Access the GridView's data source
-            //List<EmployeeFamily> employeeFamilies = (List<EmployeeFamily>)FamilyGridControl.DataSource;
-
-            //// Check if the data source is null or not assigned
-            //if (employeeFamilies == null)
-            //{
-            //    // Create a new list and assign it as the data source
-            //    employeeFamilies = new List<EmployeeFamily>();
-            //    FamilyGridControl.DataSource = employeeFamilies;
-            //}
-
-            //// Add the new row object to the data source
-            //employeeFamilies.Add(newRow);
-
-            //// Refresh the GridView to reflect the changes
-            //FamilyGridView.RefreshData();
-
-            //// Clear the textboxes
-            //txtFSno.Text = string.Empty;
-            //txtFName.Text = string.Empty;
-            //// Clear additional textboxes as needed
-
-            //FamilyGridControl.DataSource = EmployeeFamilySource;
-            //FamilyGridView.RefreshData();
+                Reset_FamilyForm();
+            }
         }
+
+        private void Reset_FamilyForm()
+        {
+            txtFSno.ResetText();
+            txtFName.ResetText();
+            txtFAddress.ResetText();
+            txtFArea.ResetText();
+            drpFDistrict.ResetText();
+            drpFState.ResetText();
+            txtFPin.ResetText();
+            txtFEmp.ResetText();
+            txtFAge.ResetText();
+            ddFDOB.ResetText();
+            drpResiding.ResetText();
+            txtRemarks.ResetText();
+
+        }
+
 
         private void txtEmpCode_EditValueChanged(object sender, EventArgs e)
         {
@@ -740,6 +756,29 @@ namespace BillPlex
             {
                 labelAvailable.Visible = false;
                 labelCodeExist.Visible = false;
+            }
+        }
+
+        private void btn_DeleteRow_Click(object sender, EventArgs e)
+        {
+            // var selectedRowItem = FamilyGridView.GetSelectedRows();
+
+            DataTable dataTable = FamilyGridControl.DataSource as DataTable;
+
+
+            int selectedRowHandle = FamilyGridView.FocusedRowHandle;
+            DataRow selectedRow = FamilyGridView.GetDataRow(selectedRowHandle);
+
+            if (selectedRow != null)
+            {
+                // Remove the selected row from the DataTable
+                dataTable.Rows.Remove(selectedRow);
+
+                EmployeeFamilyRequest.FamilyList.RemoveAt(selectedRowHandle);
+
+                // Refresh the grid to reflect the changes
+                FamilyGridView.RefreshData();
+
             }
         }
     }

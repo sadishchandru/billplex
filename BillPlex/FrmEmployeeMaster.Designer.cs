@@ -190,6 +190,17 @@ namespace BillPlex
             this.Family = new DevExpress.XtraTab.XtraTabPage();
             this.FamilyGridControl = new DevExpress.XtraGrid.GridControl();
             this.FamilyGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.SNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.FName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Address = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Area = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.District = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.State = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Pin = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.RelationEmployee = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DateOfBirth = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.WhetherResiding = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Remarks = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btndelete = new DevExpress.XtraEditors.SimpleButton();
             this.bntAddRow = new DevExpress.XtraEditors.SimpleButton();
             this.txtRemarks = new DevExpress.XtraEditors.TextEdit();
@@ -260,13 +271,7 @@ namespace BillPlex
             this.drpNDistrict = new DevExpress.XtraEditors.ComboBoxEdit();
             this.txtNAddress = new DevExpress.XtraEditors.MemoEdit();
             this.txtGAddress = new DevExpress.XtraEditors.MemoEdit();
-            this.Sno = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Age = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -2554,15 +2559,101 @@ namespace BillPlex
             // FamilyGridView
             // 
             this.FamilyGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.Sno,
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn4,
-            this.gridColumn5,
-            this.gridColumn6,
-            this.gridColumn7});
+            this.SNo,
+            this.FName,
+            this.Address,
+            this.Area,
+            this.District,
+            this.State,
+            this.Pin,
+            this.Age,
+            this.RelationEmployee,
+            this.DateOfBirth,
+            this.WhetherResiding,
+            this.Remarks});
             this.FamilyGridView.GridControl = this.FamilyGridControl;
             this.FamilyGridView.Name = "FamilyGridView";
+            // 
+            // SNo
+            // 
+            this.SNo.FieldName = "SNo";
+            this.SNo.Name = "SNo";
+            this.SNo.Visible = true;
+            this.SNo.VisibleIndex = 0;
+            // 
+            // FName
+            // 
+            this.FName.FieldName = "Name";
+            this.FName.Name = "FName";
+            this.FName.Visible = true;
+            this.FName.VisibleIndex = 1;
+            // 
+            // Address
+            // 
+            this.Address.FieldName = "Address";
+            this.Address.Name = "Address";
+            this.Address.Visible = true;
+            this.Address.VisibleIndex = 2;
+            // 
+            // Area
+            // 
+            this.Area.FieldName = "Area";
+            this.Area.Name = "Area";
+            this.Area.Visible = true;
+            this.Area.VisibleIndex = 3;
+            // 
+            // District
+            // 
+            this.District.FieldName = "District";
+            this.District.Name = "District";
+            this.District.Visible = true;
+            this.District.VisibleIndex = 4;
+            // 
+            // State
+            // 
+            this.State.FieldName = "State";
+            this.State.Name = "State";
+            this.State.Visible = true;
+            this.State.VisibleIndex = 5;
+            // 
+            // Pin
+            // 
+            this.Pin.FieldName = "Pin";
+            this.Pin.Name = "Pin";
+            this.Pin.Visible = true;
+            this.Pin.VisibleIndex = 6;
+            // 
+            // RelationEmployee
+            // 
+            this.RelationEmployee.Caption = "RelationEmployee";
+            this.RelationEmployee.FieldName = "RelationEmployee";
+            this.RelationEmployee.Name = "RelationEmployee";
+            this.RelationEmployee.Visible = true;
+            this.RelationEmployee.VisibleIndex = 7;
+            // 
+            // DateOfBirth
+            // 
+            this.DateOfBirth.Caption = "DateOfBirth";
+            this.DateOfBirth.FieldName = "DateOfBirth";
+            this.DateOfBirth.Name = "DateOfBirth";
+            this.DateOfBirth.Visible = true;
+            this.DateOfBirth.VisibleIndex = 8;
+            // 
+            // WhetherResiding
+            // 
+            this.WhetherResiding.Caption = "WhetherResiding";
+            this.WhetherResiding.FieldName = "WhetherResiding";
+            this.WhetherResiding.Name = "WhetherResiding";
+            this.WhetherResiding.Visible = true;
+            this.WhetherResiding.VisibleIndex = 9;
+            // 
+            // Remarks
+            // 
+            this.Remarks.Caption = "Remarks";
+            this.Remarks.FieldName = "Remarks";
+            this.Remarks.Name = "Remarks";
+            this.Remarks.Visible = true;
+            this.Remarks.VisibleIndex = 10;
             // 
             // btndelete
             // 
@@ -2577,6 +2668,7 @@ namespace BillPlex
             this.btndelete.Size = new System.Drawing.Size(115, 23);
             this.btndelete.TabIndex = 88;
             this.btndelete.Text = "DELETE ROW";
+            this.btndelete.Click += new System.EventHandler(this.btn_DeleteRow_Click);
             // 
             // bntAddRow
             // 
@@ -2955,6 +3047,9 @@ namespace BillPlex
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.drpResiding.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.drpResiding.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.drpResiding.Properties.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
             this.drpResiding.Size = new System.Drawing.Size(252, 20);
             this.drpResiding.TabIndex = 84;
             // 
@@ -3485,48 +3580,13 @@ namespace BillPlex
             this.txtGAddress.Size = new System.Drawing.Size(252, 46);
             this.txtGAddress.TabIndex = 110;
             // 
-            // Sno
+            // Age
             // 
-            this.Sno.FieldName = "S.no";
-            this.Sno.Name = "Sno";
-            this.Sno.Visible = true;
-            this.Sno.VisibleIndex = 0;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 4;
-            // 
-            // gridColumn6
-            // 
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 5;
-            // 
-            // gridColumn7
-            // 
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 6;
+            this.Age.Caption = "Age";
+            this.Age.FieldName = "Age";
+            this.Age.Name = "Age";
+            this.Age.Visible = true;
+            this.Age.VisibleIndex = 11;
             // 
             // FrmEmployeeMaster
             // 
@@ -3902,12 +3962,17 @@ namespace BillPlex
         private DevExpress.XtraEditors.LabelControl labelAvailable;
         private DevExpress.XtraGrid.GridControl FamilyGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView FamilyGridView;
-        private DevExpress.XtraGrid.Columns.GridColumn Sno;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn SNo;
+        private DevExpress.XtraGrid.Columns.GridColumn FName;
+        private DevExpress.XtraGrid.Columns.GridColumn Address;
+        private DevExpress.XtraGrid.Columns.GridColumn Area;
+        private DevExpress.XtraGrid.Columns.GridColumn District;
+        private DevExpress.XtraGrid.Columns.GridColumn State;
+        private DevExpress.XtraGrid.Columns.GridColumn Pin;
+        private DevExpress.XtraGrid.Columns.GridColumn RelationEmployee;
+        private DevExpress.XtraGrid.Columns.GridColumn DateOfBirth;
+        private DevExpress.XtraGrid.Columns.GridColumn WhetherResiding;
+        private DevExpress.XtraGrid.Columns.GridColumn Remarks;
+        private DevExpress.XtraGrid.Columns.GridColumn Age;
     }
 }

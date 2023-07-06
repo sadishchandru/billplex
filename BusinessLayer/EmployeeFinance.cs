@@ -47,7 +47,7 @@ namespace BusinessLayer
 
                 // Calling the stored procedure for creating a Employee Finance
                 List<DbParams> objLstDbParams = new List<DbParams>();
-                objLstDbParams.Add(new DbParams(DbType.String, 50, FEmpId, "@Id", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.String, 50, Id, "@Id", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, FEmpId, "@EmpId", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, FBankName, "@BankName", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, FAddress, "@BankAddress", ParameterDirection.Input));
