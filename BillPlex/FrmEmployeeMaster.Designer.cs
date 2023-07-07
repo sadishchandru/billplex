@@ -197,6 +197,7 @@ namespace BillPlex
             this.District = new DevExpress.XtraGrid.Columns.GridColumn();
             this.State = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Pin = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Age = new DevExpress.XtraGrid.Columns.GridColumn();
             this.RelationEmployee = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DateOfBirth = new DevExpress.XtraGrid.Columns.GridColumn();
             this.WhetherResiding = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -231,10 +232,30 @@ namespace BillPlex
             this.ddFDOB = new DevExpress.XtraEditors.DateEdit();
             this.drpResiding = new DevExpress.XtraEditors.ComboBoxEdit();
             this.Nominee = new DevExpress.XtraTab.XtraTabPage();
+            this.NomieeGridControl = new DevExpress.XtraGrid.GridControl();
+            this.NomieeGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.NSNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NAddress = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NArea = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NDistrict = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NState = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NPin = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NAge = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NRelationEmployee = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NDateOfBirth = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NWhetherResiding = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NProportionByGratuity = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NMartialStatus = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NReligion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NFatherName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NGuardianName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NGuardianAddress = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NGuardianRelation = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnCopyFamily = new DevExpress.XtraEditors.SimpleButton();
             this.btnDeleteRow = new DevExpress.XtraEditors.SimpleButton();
             this.btnAddRow = new DevExpress.XtraEditors.SimpleButton();
-            this.txtGREmp = new DevExpress.XtraEditors.TextEdit();
+            this.txtGRelation = new DevExpress.XtraEditors.TextEdit();
             this.txtGName = new DevExpress.XtraEditors.TextEdit();
             this.txtNFathers = new DevExpress.XtraEditors.TextEdit();
             this.drpNReligion = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -254,7 +275,7 @@ namespace BillPlex
             this.ddNDOB = new DevExpress.XtraEditors.DateEdit();
             this.labelControl96 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl95 = new DevExpress.XtraEditors.LabelControl();
-            this.txtNEmp = new DevExpress.XtraEditors.TextEdit();
+            this.txtNRelation = new DevExpress.XtraEditors.TextEdit();
             this.labelControl94 = new DevExpress.XtraEditors.LabelControl();
             this.txtNPin = new DevExpress.XtraEditors.TextEdit();
             this.labelControl87 = new DevExpress.XtraEditors.LabelControl();
@@ -271,7 +292,6 @@ namespace BillPlex
             this.drpNDistrict = new DevExpress.XtraEditors.ComboBoxEdit();
             this.txtNAddress = new DevExpress.XtraEditors.MemoEdit();
             this.txtGAddress = new DevExpress.XtraEditors.MemoEdit();
-            this.Age = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -374,7 +394,9 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.ddFDOB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpResiding.Properties)).BeginInit();
             this.Nominee.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGREmp.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NomieeGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NomieeGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGRelation.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNFathers.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpNReligion.Properties)).BeginInit();
@@ -384,7 +406,7 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.txtNAge.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddNDOB.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddNDOB.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNEmp.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNRelation.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNPin.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpNState.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNArea.Properties)).BeginInit();
@@ -401,7 +423,7 @@ namespace BillPlex
             this.panelControl1.Controls.Add(this.labelControl103);
             this.panelControl1.Location = new System.Drawing.Point(12, 3);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1594, 60);
+            this.panelControl1.Size = new System.Drawing.Size(1704, 60);
             this.panelControl1.TabIndex = 0;
             // 
             // labelControl103
@@ -423,7 +445,7 @@ namespace BillPlex
             this.panelControl2.Controls.Add(this.EmployeeMasterTab);
             this.panelControl2.Location = new System.Drawing.Point(12, 69);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1594, 807);
+            this.panelControl2.Size = new System.Drawing.Size(1704, 807);
             this.panelControl2.TabIndex = 1;
             // 
             // panelControl5
@@ -435,7 +457,7 @@ namespace BillPlex
             this.panelControl5.Controls.Add(this.Editbtn);
             this.panelControl5.Controls.Add(this.Addbtn);
             this.panelControl5.Controls.Add(this.Newbtn);
-            this.panelControl5.Location = new System.Drawing.Point(1466, 209);
+            this.panelControl5.Location = new System.Drawing.Point(1548, 181);
             this.panelControl5.Name = "panelControl5";
             this.panelControl5.Size = new System.Drawing.Size(98, 281);
             this.panelControl5.TabIndex = 2;
@@ -555,13 +577,14 @@ namespace BillPlex
             this.EmployeeMasterTab.LookAndFeel.UseDefaultLookAndFeel = false;
             this.EmployeeMasterTab.Name = "EmployeeMasterTab";
             this.EmployeeMasterTab.SelectedTabPage = this.PERSONAL;
-            this.EmployeeMasterTab.Size = new System.Drawing.Size(1420, 645);
+            this.EmployeeMasterTab.Size = new System.Drawing.Size(1491, 706);
             this.EmployeeMasterTab.TabIndex = 0;
             this.EmployeeMasterTab.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.PERSONAL,
             this.FINANCE,
             this.Family,
             this.Nominee});
+            this.EmployeeMasterTab.Click += new System.EventHandler(this.EmployeeMasterTab_Click);
             // 
             // PERSONAL
             // 
@@ -662,7 +685,7 @@ namespace BillPlex
             this.PERSONAL.Controls.Add(this.txtCName);
             this.PERSONAL.Controls.Add(this.txtSCName);
             this.PERSONAL.Name = "PERSONAL";
-            this.PERSONAL.Size = new System.Drawing.Size(1414, 617);
+            this.PERSONAL.Size = new System.Drawing.Size(1485, 678);
             this.PERSONAL.Text = "PERSONAL";
             // 
             // labelCodeExist
@@ -1920,7 +1943,7 @@ namespace BillPlex
             this.FINANCE.Controls.Add(this.drpLOffice);
             this.FINANCE.Controls.Add(this.drpESIDispensary);
             this.FINANCE.Name = "FINANCE";
-            this.FINANCE.Size = new System.Drawing.Size(1414, 617);
+            this.FINANCE.Size = new System.Drawing.Size(1485, 678);
             this.FINANCE.Text = "FINANCE";
             // 
             // labelControl73
@@ -2543,7 +2566,7 @@ namespace BillPlex
             this.Family.Controls.Add(this.ddFDOB);
             this.Family.Controls.Add(this.drpResiding);
             this.Family.Name = "Family";
-            this.Family.Size = new System.Drawing.Size(1414, 617);
+            this.Family.Size = new System.Drawing.Size(1485, 678);
             this.Family.Text = "Family";
             // 
             // FamilyGridControl
@@ -2622,6 +2645,14 @@ namespace BillPlex
             this.Pin.Name = "Pin";
             this.Pin.Visible = true;
             this.Pin.VisibleIndex = 6;
+            // 
+            // Age
+            // 
+            this.Age.Caption = "Age";
+            this.Age.FieldName = "Age";
+            this.Age.Name = "Age";
+            this.Age.Visible = true;
+            this.Age.VisibleIndex = 11;
             // 
             // RelationEmployee
             // 
@@ -3055,10 +3086,11 @@ namespace BillPlex
             // 
             // Nominee
             // 
+            this.Nominee.Controls.Add(this.NomieeGridControl);
             this.Nominee.Controls.Add(this.btnCopyFamily);
             this.Nominee.Controls.Add(this.btnDeleteRow);
             this.Nominee.Controls.Add(this.btnAddRow);
-            this.Nominee.Controls.Add(this.txtGREmp);
+            this.Nominee.Controls.Add(this.txtGRelation);
             this.Nominee.Controls.Add(this.txtGName);
             this.Nominee.Controls.Add(this.txtNFathers);
             this.Nominee.Controls.Add(this.drpNReligion);
@@ -3078,7 +3110,7 @@ namespace BillPlex
             this.Nominee.Controls.Add(this.ddNDOB);
             this.Nominee.Controls.Add(this.labelControl96);
             this.Nominee.Controls.Add(this.labelControl95);
-            this.Nominee.Controls.Add(this.txtNEmp);
+            this.Nominee.Controls.Add(this.txtNRelation);
             this.Nominee.Controls.Add(this.labelControl94);
             this.Nominee.Controls.Add(this.txtNPin);
             this.Nominee.Controls.Add(this.labelControl87);
@@ -3096,8 +3128,186 @@ namespace BillPlex
             this.Nominee.Controls.Add(this.txtNAddress);
             this.Nominee.Controls.Add(this.txtGAddress);
             this.Nominee.Name = "Nominee";
-            this.Nominee.Size = new System.Drawing.Size(1414, 617);
+            this.Nominee.Size = new System.Drawing.Size(1485, 678);
             this.Nominee.Text = "Nominee";
+            // 
+            // NomieeGridControl
+            // 
+            this.NomieeGridControl.Location = new System.Drawing.Point(18, 398);
+            this.NomieeGridControl.MainView = this.NomieeGridView;
+            this.NomieeGridControl.Name = "NomieeGridControl";
+            this.NomieeGridControl.Size = new System.Drawing.Size(1448, 257);
+            this.NomieeGridControl.TabIndex = 115;
+            this.NomieeGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.NomieeGridView});
+            // 
+            // NomieeGridView
+            // 
+            this.NomieeGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.NSNo,
+            this.NName,
+            this.NAddress,
+            this.NArea,
+            this.NDistrict,
+            this.NState,
+            this.NPin,
+            this.NAge,
+            this.NRelationEmployee,
+            this.NDateOfBirth,
+            this.NWhetherResiding,
+            this.NProportionByGratuity,
+            this.NMartialStatus,
+            this.NReligion,
+            this.NFatherName,
+            this.NGuardianName,
+            this.NGuardianAddress,
+            this.NGuardianRelation});
+            this.NomieeGridView.GridControl = this.NomieeGridControl;
+            this.NomieeGridView.Name = "NomieeGridView";
+            // 
+            // NSNo
+            // 
+            this.NSNo.Caption = "SNo";
+            this.NSNo.FieldName = "SNo";
+            this.NSNo.Name = "NSNo";
+            this.NSNo.Visible = true;
+            this.NSNo.VisibleIndex = 0;
+            // 
+            // NName
+            // 
+            this.NName.Caption = "Name";
+            this.NName.FieldName = "Name";
+            this.NName.Name = "NName";
+            this.NName.Visible = true;
+            this.NName.VisibleIndex = 1;
+            // 
+            // NAddress
+            // 
+            this.NAddress.Caption = "Address";
+            this.NAddress.FieldName = "Address";
+            this.NAddress.Name = "NAddress";
+            this.NAddress.Visible = true;
+            this.NAddress.VisibleIndex = 2;
+            // 
+            // NArea
+            // 
+            this.NArea.Caption = "Area";
+            this.NArea.FieldName = "Area";
+            this.NArea.Name = "NArea";
+            this.NArea.Visible = true;
+            this.NArea.VisibleIndex = 3;
+            // 
+            // NDistrict
+            // 
+            this.NDistrict.Caption = "District";
+            this.NDistrict.FieldName = "District";
+            this.NDistrict.Name = "NDistrict";
+            this.NDistrict.Visible = true;
+            this.NDistrict.VisibleIndex = 4;
+            // 
+            // NState
+            // 
+            this.NState.Caption = "State";
+            this.NState.FieldName = "State";
+            this.NState.Name = "NState";
+            this.NState.Visible = true;
+            this.NState.VisibleIndex = 5;
+            // 
+            // NPin
+            // 
+            this.NPin.Caption = "Pin";
+            this.NPin.FieldName = "Pin";
+            this.NPin.Name = "NPin";
+            this.NPin.Visible = true;
+            this.NPin.VisibleIndex = 6;
+            // 
+            // NAge
+            // 
+            this.NAge.Caption = "Age";
+            this.NAge.FieldName = "Age";
+            this.NAge.Name = "NAge";
+            this.NAge.Visible = true;
+            this.NAge.VisibleIndex = 11;
+            // 
+            // NRelationEmployee
+            // 
+            this.NRelationEmployee.Caption = "RelationEmployee";
+            this.NRelationEmployee.FieldName = "RelationEmployee";
+            this.NRelationEmployee.Name = "NRelationEmployee";
+            this.NRelationEmployee.Visible = true;
+            this.NRelationEmployee.VisibleIndex = 7;
+            // 
+            // NDateOfBirth
+            // 
+            this.NDateOfBirth.Caption = "DateOfBirth";
+            this.NDateOfBirth.FieldName = "DateOfBirth";
+            this.NDateOfBirth.Name = "NDateOfBirth";
+            this.NDateOfBirth.Visible = true;
+            this.NDateOfBirth.VisibleIndex = 8;
+            // 
+            // NWhetherResiding
+            // 
+            this.NWhetherResiding.Caption = "WhetherResiding";
+            this.NWhetherResiding.FieldName = "WhetherResiding";
+            this.NWhetherResiding.Name = "NWhetherResiding";
+            this.NWhetherResiding.Visible = true;
+            this.NWhetherResiding.VisibleIndex = 9;
+            // 
+            // NProportionByGratuity
+            // 
+            this.NProportionByGratuity.Caption = "ProportionByGratuity";
+            this.NProportionByGratuity.FieldName = "ProportionByGratuity";
+            this.NProportionByGratuity.Name = "NProportionByGratuity";
+            this.NProportionByGratuity.Visible = true;
+            this.NProportionByGratuity.VisibleIndex = 10;
+            // 
+            // NMartialStatus
+            // 
+            this.NMartialStatus.Caption = "MartialStatus";
+            this.NMartialStatus.FieldName = "MartialStatus";
+            this.NMartialStatus.Name = "NMartialStatus";
+            this.NMartialStatus.Visible = true;
+            this.NMartialStatus.VisibleIndex = 12;
+            // 
+            // NReligion
+            // 
+            this.NReligion.Caption = "Religion";
+            this.NReligion.FieldName = "Religion";
+            this.NReligion.Name = "NReligion";
+            this.NReligion.Visible = true;
+            this.NReligion.VisibleIndex = 13;
+            // 
+            // NFatherName
+            // 
+            this.NFatherName.Caption = "FatherName";
+            this.NFatherName.FieldName = "FatherName";
+            this.NFatherName.Name = "NFatherName";
+            this.NFatherName.Visible = true;
+            this.NFatherName.VisibleIndex = 14;
+            // 
+            // NGuardianName
+            // 
+            this.NGuardianName.Caption = "GuardianName";
+            this.NGuardianName.FieldName = "GuardianName";
+            this.NGuardianName.Name = "NGuardianName";
+            this.NGuardianName.Visible = true;
+            this.NGuardianName.VisibleIndex = 15;
+            // 
+            // NGuardianAddress
+            // 
+            this.NGuardianAddress.Caption = "GuardianAddress";
+            this.NGuardianAddress.FieldName = "GuardianAddress";
+            this.NGuardianAddress.Name = "NGuardianAddress";
+            this.NGuardianAddress.Visible = true;
+            this.NGuardianAddress.VisibleIndex = 16;
+            // 
+            // NGuardianRelation
+            // 
+            this.NGuardianRelation.Caption = "GuardianRelation";
+            this.NGuardianRelation.FieldName = "GuardianRelation";
+            this.NGuardianRelation.Name = "NGuardianRelation";
+            this.NGuardianRelation.Visible = true;
+            this.NGuardianRelation.VisibleIndex = 17;
             // 
             // btnCopyFamily
             // 
@@ -3105,13 +3315,14 @@ namespace BillPlex
             this.btnCopyFamily.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCopyFamily.Appearance.Options.UseBackColor = true;
             this.btnCopyFamily.Appearance.Options.UseFont = true;
-            this.btnCopyFamily.Location = new System.Drawing.Point(918, 357);
+            this.btnCopyFamily.Location = new System.Drawing.Point(935, 357);
             this.btnCopyFamily.LookAndFeel.SkinName = "DevExpress Style";
             this.btnCopyFamily.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnCopyFamily.Name = "btnCopyFamily";
             this.btnCopyFamily.Size = new System.Drawing.Size(144, 23);
             this.btnCopyFamily.TabIndex = 114;
             this.btnCopyFamily.Text = "Copy Family Details";
+            this.btnCopyFamily.Visible = false;
             // 
             // btnDeleteRow
             // 
@@ -3119,13 +3330,14 @@ namespace BillPlex
             this.btnDeleteRow.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteRow.Appearance.Options.UseBackColor = true;
             this.btnDeleteRow.Appearance.Options.UseFont = true;
-            this.btnDeleteRow.Location = new System.Drawing.Point(814, 357);
+            this.btnDeleteRow.Location = new System.Drawing.Point(831, 357);
             this.btnDeleteRow.LookAndFeel.SkinName = "DevExpress Style";
             this.btnDeleteRow.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnDeleteRow.Name = "btnDeleteRow";
             this.btnDeleteRow.Size = new System.Drawing.Size(98, 23);
             this.btnDeleteRow.TabIndex = 113;
             this.btnDeleteRow.Text = "Delete Row";
+            this.btnDeleteRow.Click += new System.EventHandler(this.btnNomineeDeleteRow_Click);
             // 
             // btnAddRow
             // 
@@ -3133,66 +3345,83 @@ namespace BillPlex
             this.btnAddRow.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddRow.Appearance.Options.UseBackColor = true;
             this.btnAddRow.Appearance.Options.UseFont = true;
-            this.btnAddRow.Location = new System.Drawing.Point(733, 357);
+            this.btnAddRow.Location = new System.Drawing.Point(750, 357);
             this.btnAddRow.LookAndFeel.SkinName = "DevExpress Style";
             this.btnAddRow.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnAddRow.Name = "btnAddRow";
             this.btnAddRow.Size = new System.Drawing.Size(75, 23);
             this.btnAddRow.TabIndex = 112;
             this.btnAddRow.Text = "Add Row";
+            this.btnAddRow.Click += new System.EventHandler(this.btnNomineeAddRow_Click);
             // 
-            // txtGREmp
+            // txtGRelation
             // 
-            this.txtGREmp.Location = new System.Drawing.Point(775, 331);
-            this.txtGREmp.Name = "txtGREmp";
-            this.txtGREmp.Size = new System.Drawing.Size(252, 20);
-            this.txtGREmp.TabIndex = 111;
+            this.txtGRelation.Location = new System.Drawing.Point(792, 325);
+            this.txtGRelation.Name = "txtGRelation";
+            this.txtGRelation.Size = new System.Drawing.Size(252, 20);
+            this.txtGRelation.TabIndex = 111;
             // 
             // txtGName
             // 
-            this.txtGName.Location = new System.Drawing.Point(775, 246);
+            this.txtGName.Location = new System.Drawing.Point(792, 240);
             this.txtGName.Name = "txtGName";
             this.txtGName.Size = new System.Drawing.Size(252, 20);
             this.txtGName.TabIndex = 109;
             // 
             // txtNFathers
             // 
-            this.txtNFathers.Location = new System.Drawing.Point(775, 213);
+            this.txtNFathers.Location = new System.Drawing.Point(792, 207);
             this.txtNFathers.Name = "txtNFathers";
             this.txtNFathers.Size = new System.Drawing.Size(252, 20);
             this.txtNFathers.TabIndex = 108;
             // 
             // drpNReligion
             // 
-            this.drpNReligion.Location = new System.Drawing.Point(775, 176);
+            this.drpNReligion.Location = new System.Drawing.Point(792, 170);
             this.drpNReligion.Name = "drpNReligion";
             this.drpNReligion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpNReligion.Properties.Items.AddRange(new object[] {
+            "Christianity",
+            "Islam",
+            "Hinduism",
+            "Buddhism",
+            "Judaism",
+            "Sikhism",
+            "Other"});
             this.drpNReligion.Size = new System.Drawing.Size(252, 20);
             this.drpNReligion.TabIndex = 107;
             // 
             // drpNMarital
             // 
-            this.drpNMarital.Location = new System.Drawing.Point(775, 136);
+            this.drpNMarital.Location = new System.Drawing.Point(792, 130);
             this.drpNMarital.Name = "drpNMarital";
             this.drpNMarital.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpNMarital.Properties.Items.AddRange(new object[] {
+            "Single",
+            "Married",
+            "Divorced",
+            "Widowed"});
             this.drpNMarital.Size = new System.Drawing.Size(252, 20);
             this.drpNMarital.TabIndex = 106;
             // 
             // txtNGratuity
             // 
-            this.txtNGratuity.Location = new System.Drawing.Point(775, 99);
+            this.txtNGratuity.Location = new System.Drawing.Point(792, 93);
             this.txtNGratuity.Name = "txtNGratuity";
             this.txtNGratuity.Size = new System.Drawing.Size(252, 20);
             this.txtNGratuity.TabIndex = 105;
             // 
             // drpNResiding
             // 
-            this.drpNResiding.Location = new System.Drawing.Point(775, 52);
+            this.drpNResiding.Location = new System.Drawing.Point(792, 46);
             this.drpNResiding.Name = "drpNResiding";
             this.drpNResiding.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpNResiding.Properties.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
             this.drpNResiding.Size = new System.Drawing.Size(252, 20);
             this.drpNResiding.TabIndex = 104;
             // 
@@ -3200,7 +3429,7 @@ namespace BillPlex
             // 
             this.labelControl105.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl105.Appearance.Options.UseFont = true;
-            this.labelControl105.Location = new System.Drawing.Point(533, 332);
+            this.labelControl105.Location = new System.Drawing.Point(550, 326);
             this.labelControl105.Name = "labelControl105";
             this.labelControl105.Size = new System.Drawing.Size(213, 16);
             this.labelControl105.TabIndex = 103;
@@ -3210,7 +3439,7 @@ namespace BillPlex
             // 
             this.lblGAddress.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGAddress.Appearance.Options.UseFont = true;
-            this.lblGAddress.Location = new System.Drawing.Point(533, 283);
+            this.lblGAddress.Location = new System.Drawing.Point(550, 277);
             this.lblGAddress.Name = "lblGAddress";
             this.lblGAddress.Size = new System.Drawing.Size(115, 16);
             this.lblGAddress.TabIndex = 102;
@@ -3220,7 +3449,7 @@ namespace BillPlex
             // 
             this.txt.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt.Appearance.Options.UseFont = true;
-            this.txt.Location = new System.Drawing.Point(533, 247);
+            this.txt.Location = new System.Drawing.Point(550, 241);
             this.txt.Name = "txt";
             this.txt.Size = new System.Drawing.Size(96, 16);
             this.txt.TabIndex = 101;
@@ -3230,7 +3459,7 @@ namespace BillPlex
             // 
             this.labelControl102.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl102.Appearance.Options.UseFont = true;
-            this.labelControl102.Location = new System.Drawing.Point(533, 214);
+            this.labelControl102.Location = new System.Drawing.Point(550, 208);
             this.labelControl102.Name = "labelControl102";
             this.labelControl102.Size = new System.Drawing.Size(145, 16);
             this.labelControl102.TabIndex = 100;
@@ -3240,7 +3469,7 @@ namespace BillPlex
             // 
             this.labelControl101.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl101.Appearance.Options.UseFont = true;
-            this.labelControl101.Location = new System.Drawing.Point(533, 180);
+            this.labelControl101.Location = new System.Drawing.Point(550, 174);
             this.labelControl101.Name = "labelControl101";
             this.labelControl101.Size = new System.Drawing.Size(50, 16);
             this.labelControl101.TabIndex = 99;
@@ -3250,7 +3479,7 @@ namespace BillPlex
             // 
             this.labelControl100.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl100.Appearance.Options.UseFont = true;
-            this.labelControl100.Location = new System.Drawing.Point(533, 137);
+            this.labelControl100.Location = new System.Drawing.Point(550, 131);
             this.labelControl100.Name = "labelControl100";
             this.labelControl100.Size = new System.Drawing.Size(92, 16);
             this.labelControl100.TabIndex = 98;
@@ -3260,7 +3489,7 @@ namespace BillPlex
             // 
             this.labelControl99.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl99.Appearance.Options.UseFont = true;
-            this.labelControl99.Location = new System.Drawing.Point(533, 87);
+            this.labelControl99.Location = new System.Drawing.Point(550, 81);
             this.labelControl99.Name = "labelControl99";
             this.labelControl99.Size = new System.Drawing.Size(213, 32);
             this.labelControl99.TabIndex = 97;
@@ -3270,7 +3499,7 @@ namespace BillPlex
             // 
             this.labelControl98.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl98.Appearance.Options.UseFont = true;
-            this.labelControl98.Location = new System.Drawing.Point(533, 53);
+            this.labelControl98.Location = new System.Drawing.Point(550, 47);
             this.labelControl98.Name = "labelControl98";
             this.labelControl98.Size = new System.Drawing.Size(217, 16);
             this.labelControl98.TabIndex = 96;
@@ -3278,7 +3507,7 @@ namespace BillPlex
             // 
             // txtNAge
             // 
-            this.txtNAge.Location = new System.Drawing.Point(393, 311);
+            this.txtNAge.Location = new System.Drawing.Point(393, 305);
             this.txtNAge.Name = "txtNAge";
             this.txtNAge.Size = new System.Drawing.Size(54, 20);
             this.txtNAge.TabIndex = 95;
@@ -3287,7 +3516,7 @@ namespace BillPlex
             // 
             this.labelControl97.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl97.Appearance.Options.UseFont = true;
-            this.labelControl97.Location = new System.Drawing.Point(354, 313);
+            this.labelControl97.Location = new System.Drawing.Point(354, 307);
             this.labelControl97.Name = "labelControl97";
             this.labelControl97.Size = new System.Drawing.Size(26, 16);
             this.labelControl97.TabIndex = 94;
@@ -3296,7 +3525,7 @@ namespace BillPlex
             // ddNDOB
             // 
             this.ddNDOB.EditValue = null;
-            this.ddNDOB.Location = new System.Drawing.Point(195, 313);
+            this.ddNDOB.Location = new System.Drawing.Point(195, 307);
             this.ddNDOB.Name = "ddNDOB";
             this.ddNDOB.Properties.BeepOnError = false;
             this.ddNDOB.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -3316,7 +3545,7 @@ namespace BillPlex
             // 
             this.labelControl96.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl96.Appearance.Options.UseFont = true;
-            this.labelControl96.Location = new System.Drawing.Point(18, 314);
+            this.labelControl96.Location = new System.Drawing.Point(18, 308);
             this.labelControl96.Name = "labelControl96";
             this.labelControl96.Size = new System.Drawing.Size(83, 16);
             this.labelControl96.TabIndex = 92;
@@ -3326,24 +3555,24 @@ namespace BillPlex
             // 
             this.labelControl95.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl95.Appearance.Options.UseFont = true;
-            this.labelControl95.Location = new System.Drawing.Point(18, 270);
+            this.labelControl95.Location = new System.Drawing.Point(18, 264);
             this.labelControl95.Name = "labelControl95";
             this.labelControl95.Size = new System.Drawing.Size(156, 16);
             this.labelControl95.TabIndex = 90;
             this.labelControl95.Text = "Relation With Employee ";
             // 
-            // txtNEmp
+            // txtNRelation
             // 
-            this.txtNEmp.Location = new System.Drawing.Point(195, 279);
-            this.txtNEmp.Name = "txtNEmp";
-            this.txtNEmp.Size = new System.Drawing.Size(252, 20);
-            this.txtNEmp.TabIndex = 91;
+            this.txtNRelation.Location = new System.Drawing.Point(195, 273);
+            this.txtNRelation.Name = "txtNRelation";
+            this.txtNRelation.Size = new System.Drawing.Size(252, 20);
+            this.txtNRelation.TabIndex = 91;
             // 
             // labelControl94
             // 
             this.labelControl94.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl94.Appearance.Options.UseFont = true;
-            this.labelControl94.Location = new System.Drawing.Point(18, 48);
+            this.labelControl94.Location = new System.Drawing.Point(18, 42);
             this.labelControl94.Name = "labelControl94";
             this.labelControl94.Size = new System.Drawing.Size(28, 16);
             this.labelControl94.TabIndex = 89;
@@ -3351,7 +3580,7 @@ namespace BillPlex
             // 
             // txtNPin
             // 
-            this.txtNPin.Location = new System.Drawing.Point(367, 243);
+            this.txtNPin.Location = new System.Drawing.Point(367, 237);
             this.txtNPin.Name = "txtNPin";
             this.txtNPin.Size = new System.Drawing.Size(80, 20);
             this.txtNPin.TabIndex = 88;
@@ -3360,7 +3589,7 @@ namespace BillPlex
             // 
             this.labelControl87.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl87.Appearance.Options.UseFont = true;
-            this.labelControl87.Location = new System.Drawing.Point(342, 244);
+            this.labelControl87.Location = new System.Drawing.Point(342, 238);
             this.labelControl87.Name = "labelControl87";
             this.labelControl87.Size = new System.Drawing.Size(19, 16);
             this.labelControl87.TabIndex = 87;
@@ -3368,7 +3597,7 @@ namespace BillPlex
             // 
             // drpNState
             // 
-            this.drpNState.Location = new System.Drawing.Point(195, 243);
+            this.drpNState.Location = new System.Drawing.Point(195, 237);
             this.drpNState.Name = "drpNState";
             this.drpNState.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -3415,7 +3644,7 @@ namespace BillPlex
             // 
             this.labelControl88.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl88.Appearance.Options.UseFont = true;
-            this.labelControl88.Location = new System.Drawing.Point(18, 239);
+            this.labelControl88.Location = new System.Drawing.Point(18, 233);
             this.labelControl88.Name = "labelControl88";
             this.labelControl88.Size = new System.Drawing.Size(36, 16);
             this.labelControl88.TabIndex = 85;
@@ -3425,7 +3654,7 @@ namespace BillPlex
             // 
             this.labelControl89.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl89.Appearance.Options.UseFont = true;
-            this.labelControl89.Location = new System.Drawing.Point(18, 206);
+            this.labelControl89.Location = new System.Drawing.Point(18, 200);
             this.labelControl89.Name = "labelControl89";
             this.labelControl89.Size = new System.Drawing.Size(47, 16);
             this.labelControl89.TabIndex = 83;
@@ -3435,7 +3664,7 @@ namespace BillPlex
             // 
             this.labelControl90.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl90.Appearance.Options.UseFont = true;
-            this.labelControl90.Location = new System.Drawing.Point(18, 180);
+            this.labelControl90.Location = new System.Drawing.Point(18, 174);
             this.labelControl90.Name = "labelControl90";
             this.labelControl90.Size = new System.Drawing.Size(82, 16);
             this.labelControl90.TabIndex = 81;
@@ -3445,7 +3674,7 @@ namespace BillPlex
             // 
             this.labelControl91.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl91.Appearance.Options.UseFont = true;
-            this.labelControl91.Location = new System.Drawing.Point(18, 126);
+            this.labelControl91.Location = new System.Drawing.Point(18, 120);
             this.labelControl91.Name = "labelControl91";
             this.labelControl91.Size = new System.Drawing.Size(54, 16);
             this.labelControl91.TabIndex = 79;
@@ -3455,7 +3684,7 @@ namespace BillPlex
             // 
             this.labelControl92.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl92.Appearance.Options.UseFont = true;
-            this.labelControl92.Location = new System.Drawing.Point(18, 87);
+            this.labelControl92.Location = new System.Drawing.Point(18, 81);
             this.labelControl92.Name = "labelControl92";
             this.labelControl92.Size = new System.Drawing.Size(35, 16);
             this.labelControl92.TabIndex = 76;
@@ -3475,28 +3704,28 @@ namespace BillPlex
             // 
             // txtNArea
             // 
-            this.txtNArea.Location = new System.Drawing.Point(195, 184);
+            this.txtNArea.Location = new System.Drawing.Point(195, 178);
             this.txtNArea.Name = "txtNArea";
             this.txtNArea.Size = new System.Drawing.Size(252, 20);
             this.txtNArea.TabIndex = 82;
             // 
             // txtNname
             // 
-            this.txtNname.Location = new System.Drawing.Point(195, 91);
+            this.txtNname.Location = new System.Drawing.Point(195, 85);
             this.txtNname.Name = "txtNname";
             this.txtNname.Size = new System.Drawing.Size(252, 20);
             this.txtNname.TabIndex = 78;
             // 
             // txtNSno
             // 
-            this.txtNSno.Location = new System.Drawing.Point(195, 52);
+            this.txtNSno.Location = new System.Drawing.Point(195, 46);
             this.txtNSno.Name = "txtNSno";
             this.txtNSno.Size = new System.Drawing.Size(252, 20);
             this.txtNSno.TabIndex = 77;
             // 
             // drpNDistrict
             // 
-            this.drpNDistrict.Location = new System.Drawing.Point(195, 210);
+            this.drpNDistrict.Location = new System.Drawing.Point(195, 204);
             this.drpNDistrict.Name = "drpNDistrict";
             this.drpNDistrict.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -3568,31 +3797,23 @@ namespace BillPlex
             // 
             // txtNAddress
             // 
-            this.txtNAddress.Location = new System.Drawing.Point(195, 125);
+            this.txtNAddress.Location = new System.Drawing.Point(195, 119);
             this.txtNAddress.Name = "txtNAddress";
             this.txtNAddress.Size = new System.Drawing.Size(252, 53);
             this.txtNAddress.TabIndex = 80;
             // 
             // txtGAddress
             // 
-            this.txtGAddress.Location = new System.Drawing.Point(775, 279);
+            this.txtGAddress.Location = new System.Drawing.Point(792, 273);
             this.txtGAddress.Name = "txtGAddress";
             this.txtGAddress.Size = new System.Drawing.Size(252, 46);
             this.txtGAddress.TabIndex = 110;
-            // 
-            // Age
-            // 
-            this.Age.Caption = "Age";
-            this.Age.FieldName = "Age";
-            this.Age.Name = "Age";
-            this.Age.Visible = true;
-            this.Age.VisibleIndex = 11;
             // 
             // FrmEmployeeMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1631, 722);
+            this.ClientSize = new System.Drawing.Size(1777, 814);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Name = "FrmEmployeeMaster";
@@ -3706,7 +3927,9 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.drpResiding.Properties)).EndInit();
             this.Nominee.ResumeLayout(false);
             this.Nominee.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGREmp.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NomieeGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NomieeGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGRelation.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNFathers.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpNReligion.Properties)).EndInit();
@@ -3716,7 +3939,7 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.txtNAge.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddNDOB.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddNDOB.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNEmp.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNRelation.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNPin.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpNState.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNArea.Properties)).EndInit();
@@ -3913,7 +4136,7 @@ namespace BillPlex
         private DevExpress.XtraEditors.MemoEdit txtNAddress;
         private DevExpress.XtraEditors.LabelControl labelControl94;
         private DevExpress.XtraEditors.LabelControl labelControl95;
-        private DevExpress.XtraEditors.TextEdit txtNEmp;
+        private DevExpress.XtraEditors.TextEdit txtNRelation;
         private DevExpress.XtraEditors.LabelControl labelControl96;
         private DevExpress.XtraEditors.DateEdit ddNDOB;
         private DevExpress.XtraEditors.TextEdit txtNAge;
@@ -3928,7 +4151,7 @@ namespace BillPlex
         private DevExpress.XtraEditors.LabelControl labelControl100;
         private DevExpress.XtraEditors.ComboBoxEdit drpNResiding;
         private DevExpress.XtraEditors.TextEdit txtNGratuity;
-        private DevExpress.XtraEditors.TextEdit txtGREmp;
+        private DevExpress.XtraEditors.TextEdit txtGRelation;
         private DevExpress.XtraEditors.TextEdit txtGName;
         private DevExpress.XtraEditors.TextEdit txtNFathers;
         private DevExpress.XtraEditors.ComboBoxEdit drpNReligion;
@@ -3974,5 +4197,25 @@ namespace BillPlex
         private DevExpress.XtraGrid.Columns.GridColumn WhetherResiding;
         private DevExpress.XtraGrid.Columns.GridColumn Remarks;
         private DevExpress.XtraGrid.Columns.GridColumn Age;
+        private DevExpress.XtraGrid.GridControl NomieeGridControl;
+        private DevExpress.XtraGrid.Views.Grid.GridView NomieeGridView;
+        private DevExpress.XtraGrid.Columns.GridColumn NSNo;
+        private DevExpress.XtraGrid.Columns.GridColumn NName;
+        private DevExpress.XtraGrid.Columns.GridColumn NAddress;
+        private DevExpress.XtraGrid.Columns.GridColumn NArea;
+        private DevExpress.XtraGrid.Columns.GridColumn NDistrict;
+        private DevExpress.XtraGrid.Columns.GridColumn NState;
+        private DevExpress.XtraGrid.Columns.GridColumn NPin;
+        private DevExpress.XtraGrid.Columns.GridColumn NAge;
+        private DevExpress.XtraGrid.Columns.GridColumn NRelationEmployee;
+        private DevExpress.XtraGrid.Columns.GridColumn NDateOfBirth;
+        private DevExpress.XtraGrid.Columns.GridColumn NWhetherResiding;
+        private DevExpress.XtraGrid.Columns.GridColumn NProportionByGratuity;
+        private DevExpress.XtraGrid.Columns.GridColumn NMartialStatus;
+        private DevExpress.XtraGrid.Columns.GridColumn NReligion;
+        private DevExpress.XtraGrid.Columns.GridColumn NFatherName;
+        private DevExpress.XtraGrid.Columns.GridColumn NGuardianName;
+        private DevExpress.XtraGrid.Columns.GridColumn NGuardianAddress;
+        private DevExpress.XtraGrid.Columns.GridColumn NGuardianRelation;
     }
 }

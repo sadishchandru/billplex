@@ -41,13 +41,15 @@ namespace BillPlex
             labelAvailable.Visible = false;
             labelCodeExist.Visible = false;
             //InitializeGridControl();
-            InitializeDataSource();
+            //InitializeDataSource();
 
             EmployeePersonalRequest = new EmployeePersonal();
             EmployeeFinanceRequest = new EmployeeFinance();
             EmployeeFamilyRequest = new EmployeeFamily();
             EmployeeFamilyRequest.FamilyList = new List<EmployeeFamily>();
             EmployeeNomineeReqest = new EmployeeNominee();
+
+            EmployeeNomineeReqest.NomineeList = new List<EmployeeNominee>();
 
             EmployeeFamilySource = new List<dynamic>();
 
@@ -137,7 +139,7 @@ namespace BillPlex
             Controls.Add(FamilyGridControl);
         }
 
-        private void InitializeDataSource()
+        private void InitializeFamilyDataSource()
         {
             //FamilyGridView.Columns.Clear();
             DataTable dataTable = new DataTable();
@@ -158,6 +160,35 @@ namespace BillPlex
             FamilyGridControl.DataSource = dataTable;
             FamilyGridView.RefreshData();
             FamilyGridControl.RefreshDataSource();
+        }
+
+        private void InitializeNomineeDataSource()
+        {
+            //FamilyGridView.Columns.Clear();
+            DataTable dataTable = new DataTable();
+
+            // Create columns and bind them to the object properties
+            dataTable.Columns.Add("SNo", typeof(string));
+            dataTable.Columns.Add("Name", typeof(string));
+            dataTable.Columns.Add("Address", typeof(string));
+            dataTable.Columns.Add("Area", typeof(string));
+            dataTable.Columns.Add("District", typeof(string));
+            dataTable.Columns.Add("State", typeof(string));
+            dataTable.Columns.Add("Pin", typeof(string));
+            dataTable.Columns.Add("Age", typeof(string));
+            dataTable.Columns.Add("RelationEmployee", typeof(string));
+            dataTable.Columns.Add("DateOfBirth", typeof(string));
+            dataTable.Columns.Add("WhetherResiding", typeof(string));
+            dataTable.Columns.Add("ProportionByGratuity", typeof(string));
+            dataTable.Columns.Add("MartialStatus", typeof(string));
+            dataTable.Columns.Add("Religion", typeof(string));
+            dataTable.Columns.Add("FatherName", typeof(string));
+            dataTable.Columns.Add("GuardianName", typeof(string));
+            dataTable.Columns.Add("GuardianAddress", typeof(string));
+            dataTable.Columns.Add("GuardianRelation", typeof(string));
+            NomieeGridControl.DataSource = dataTable;
+            NomieeGridView.RefreshData();
+            NomieeGridControl.RefreshDataSource();
         }
 
 
@@ -379,44 +410,49 @@ namespace BillPlex
                 #region Nominee Detail Update
                 else if (tabIndex == 3)
                 {
+                    if (EmployeeNomineeReqest.NomineeList.Count > 0)
+                    {
+                        EmployeeNomineeReqest.ENEmpId = EmployeePersonalRequest.Id;
+                        EmployeeNomineeReqest.Update();
+
+                        if (EmployeeNomineeReqest.Result.Status == ResultStatus.Success)
+                        {
+                            this.Close();
+                            XtraMessageBox.Show(EmployeeNomineeReqest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            FrmEmployeeMasterList form = Application.OpenForms.OfType<FrmEmployeeMasterList>().FirstOrDefault();
+                            Form myForm = Application.OpenForms["FrmEmployeeMasterList"];
+                            if (myForm != null)
+                            {
+                                form.ReloadSqlDataSource();
+                            }
+                        }
+                        else
+                        {
+                            XtraMessageBox.Show(EmployeeNomineeReqest.Result.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
                     //Employee Nominee Detail Update
                     //EmployeeNomineeReqest.ENEmpCode = txtId.Text;
                     //EmployeeNomineeReqest.ENEmpId = txtEmpId.Text;
-                    EmployeeNomineeReqest.ENSno = txtNSno.Text;
-                    EmployeeNomineeReqest.ENName = txtNname.Text;
-                    EmployeeNomineeReqest.ENAddress = txtNAddress.Text;
-                    EmployeeNomineeReqest.ENArea = txtNArea.Text;
-                    EmployeeNomineeReqest.ENDistrict = drpNDistrict.Text;
-                    EmployeeNomineeReqest.ENState = drpNState.Text;
-                    EmployeeNomineeReqest.ENPin = txtNPin.Text;
-                    EmployeeNomineeReqest.ENRelation = txtNEmp.Text;
-                    EmployeeNomineeReqest.ENDob = ddNDOB.Text;
-                    EmployeeNomineeReqest.ENAge = txtNAge.Text;
-                    EmployeeNomineeReqest.ENResidence = drpNResiding.Text;
-                    EmployeeNomineeReqest.ENgratuity = txtNGratuity.Text;
-                    EmployeeNomineeReqest.ENMStatus = drpNMarital.Text;
-                    EmployeeNomineeReqest.ENReligion = drpNReligion.Text;
-                    EmployeeNomineeReqest.ENFName = txtNFathers.Text;
-                    EmployeeNomineeReqest.ENGAddress = txtFAddress.Text;
-                    EmployeeNomineeReqest.ENGRelation = txtGREmp.Text;
-                    EmployeeNomineeReqest.Update();
-
-                    if (EmployeeNomineeReqest.Result.Status == ResultStatus.Success)
-                    {
-                        this.Close();
-                        XtraMessageBox.Show(EmployeeNomineeReqest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        FrmEmployeeMasterList form = Application.OpenForms.OfType<FrmEmployeeMasterList>().FirstOrDefault();
-                        Form myForm = Application.OpenForms["FrmEmployeeMasterList"];
-                        if (myForm != null)
-                        {
-                            form.ReloadSqlDataSource();
-                        }
-                    }
-                    else
-                    {
-                        XtraMessageBox.Show(EmployeeNomineeReqest.Result.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    //EmployeeNomineeReqest.ENSNo = txtNSno.Text;
+                    //EmployeeNomineeReqest.ENName = txtNname.Text;
+                    //EmployeeNomineeReqest.ENAddress = txtNAddress.Text;
+                    //EmployeeNomineeReqest.ENArea = txtNArea.Text;
+                    //EmployeeNomineeReqest.ENDistrict = drpNDistrict.Text;
+                    //EmployeeNomineeReqest.ENState = drpNState.Text;
+                    //EmployeeNomineeReqest.ENPin = txtNPin.Text;
+                    //EmployeeNomineeReqest.ENRelation = txtNRelation.Text;
+                    //EmployeeNomineeReqest.ENDob = ddNDOB.Text;
+                    //EmployeeNomineeReqest.ENAge = txtNAge.Text;
+                    //EmployeeNomineeReqest.ENResidence = drpNResiding.Text;
+                    //EmployeeNomineeReqest.ENgratuity = txtNGratuity.Text;
+                    //EmployeeNomineeReqest.ENMStatus = drpNMarital.Text;
+                    //EmployeeNomineeReqest.ENReligion = drpNReligion.Text;
+                    //EmployeeNomineeReqest.ENFName = txtNFathers.Text;
+                    //EmployeeNomineeReqest.ENGAddress = txtFAddress.Text;
+                    //EmployeeNomineeReqest.ENGRelation = txtGRelation.Text;
+                  
                 }
                 #endregion
 
@@ -623,10 +659,13 @@ namespace BillPlex
                     ddESILastDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
                     drpLOffice.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ESIOffice");
                     drpESIDispensary.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ESIDispensary");
+
+
+                    //Family Data bindings
+                    EmployeeFamilyRequest.EFEmpId = convertedValue;
                 }
 
 
-                //Family Data bindings
 
             }
 
@@ -704,6 +743,10 @@ namespace BillPlex
 
                 Reset_FamilyForm();
             }
+            else
+            {
+                XtraMessageBox.Show("SNo Or Name is empty ", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void Reset_FamilyForm()
@@ -720,6 +763,28 @@ namespace BillPlex
             ddFDOB.ResetText();
             drpResiding.ResetText();
             txtRemarks.ResetText();
+        }
+        
+        private void Reset_NomineeForm()
+        {
+            txtNSno.ResetText();
+            txtNname.ResetText();
+            txtNAddress.ResetText(); ;
+            txtNArea.ResetText();
+            drpNDistrict.ResetText();
+            drpNState.ResetText();
+            txtNPin.ResetText();
+            txtNAge.ResetText();
+            txtNRelation.ResetText();
+            ddNDOB.ResetText();
+            drpNResiding.ResetText();
+            txtNGratuity.ResetText();
+            drpNMarital.ResetText();
+            drpNReligion.ResetText();
+            txtNFathers.ResetText();
+            txtGName.ResetText();
+            txtGAddress.ResetText();
+            txtGRelation.ResetText();
 
         }
 
@@ -778,6 +843,234 @@ namespace BillPlex
 
                 // Refresh the grid to reflect the changes
                 FamilyGridView.RefreshData();
+
+            }
+        }
+
+        private void EmployeeMasterTab_Click(object sender, EventArgs e)
+        {
+            var tabIndex = EmployeeMasterTab.SelectedTabPageIndex;
+
+            if (tabIndex == 2)
+            {
+                InitializeFamilyDataSource();
+
+                if (EmployeeFamilyRequest.FamilyList.Count() == 0)
+                {
+                    EmployeeFamilyRequest.EFEmpId = EmployeePersonalRequest.Id;
+                    EmployeeFamilyRequest.GetList();
+
+                    if (EmployeeFamilyRequest.FamilyDBList.Count() > 0)
+                    {
+                        DataTable dataTable = FamilyGridControl.DataSource as DataTable;
+
+                        foreach (var item in EmployeeFamilyRequest.FamilyDBList)
+                        {
+
+                            DataRow newRow = dataTable.NewRow();
+                            newRow["SNo"] = item.SNo;
+                            newRow["Name"] = item.EFName;
+                            newRow["Address"] = item.EFAddress;
+                            newRow["Area"] = item.EFArea;
+                            newRow["District"] = item.EFDistrict;
+                            newRow["State"] = item.EFState;
+                            newRow["Pin"] = item.EFState;
+                            newRow["Age"] = item.EFAge;
+                            newRow["RelationEmployee"] = item.EFRelation;
+                            newRow["DateOfBirth"] = item.EFDOB;
+                            newRow["WhetherResiding"] = item.EFResiding;
+                            newRow["Remarks"] = item.EFRemark;
+
+                            // Add the new DataRow to the DataTable
+                            dataTable.Rows.Add(newRow);
+
+                            // Refresh the grid to display the new row
+                            FamilyGridView.RefreshData();
+                            FamilyGridControl.RefreshDataSource();
+
+                            // Bind data to Generic List for save in DB
+
+                            EmployeeFamily familyItem = new EmployeeFamily();
+                            familyItem.SNo = txtFSno.Text;
+                            familyItem.EFName = txtFName.Text;
+                            familyItem.EFAddress = txtFAddress.Text;
+                            familyItem.EFArea = txtFArea.Text;
+                            familyItem.EFDistrict = drpFDistrict.Text;
+                            familyItem.EFState = drpFState.Text;
+                            familyItem.EFPin = txtFPin.Text;
+                            familyItem.EFRelation = txtFEmp.Text;
+                            familyItem.EFDOB = ddFDOB.Text;
+                            familyItem.EFAge = txtFAge.Text;
+                            familyItem.EFResiding = drpResiding.Text;
+                            familyItem.EFRemark = txtRemarks.Text;
+
+                            EmployeeFamilyRequest.FamilyList.Add(familyItem);
+
+                            Reset_FamilyForm();
+                        }
+                    }
+                }
+
+            }
+            else if (tabIndex == 3)
+            {
+
+                if (EmployeeNomineeReqest.NomineeList.Count() == 0 && EmployeePersonalRequest.Id != 0)
+                {
+                    InitializeNomineeDataSource();
+
+                    EmployeeNomineeReqest.ENEmpId = EmployeePersonalRequest.Id;
+                    EmployeeNomineeReqest.GetList();
+
+                    if (EmployeeNomineeReqest.NomineeDBList.Count() > 0)
+                    {
+                        DataTable nomineedataTable = NomieeGridControl.DataSource as DataTable;
+
+                        foreach (var item in EmployeeNomineeReqest.NomineeDBList)
+                        {
+
+                            DataRow newRow = nomineedataTable.NewRow();
+                            newRow["SNo"] = item.ENSNo;
+                            newRow["Name"] = item.ENName;
+                            newRow["Address"] = item.ENAddress;
+                            newRow["Area"] = item.ENArea;
+                            newRow["District"] = item.ENDistrict;
+                            newRow["State"] = item.ENState;
+                            newRow["Pin"] = item.ENPin;
+                            newRow["Age"] = item.ENAge;
+                            newRow["RelationEmployee"] = item.ENRelation;
+                            newRow["DateOfBirth"] = item.ENDob;
+                            newRow["WhetherResiding"] = item.ENResidence;
+                            newRow["ProportionByGratuity"] = item.ENgratuity;
+                            newRow["MartialStatus"] = item.ENMStatus;
+                            newRow["Religion"] = item.ENReligion;
+                            newRow["FatherName"] = item.ENFName;
+                            newRow["GuardianName"] = item.ENGName;
+                            newRow["GuardianAddress"] = item.ENGAddress;
+                            newRow["GuardianRelation"] = item.ENGRelation;
+
+
+                            // Add the new DataRow to the DataTable
+                            nomineedataTable.Rows.Add(newRow);
+
+                            // Refresh the grid to display the new row
+                            NomieeGridView.RefreshData();
+                            NomieeGridControl.RefreshDataSource();
+
+                            // Bind data to Generic List for save in DB
+
+                            EmployeeNominee nomineeItem = new EmployeeNominee();
+                            nomineeItem.ENSNo = item.ENSNo;
+                            nomineeItem.ENName = item.ENName;
+                            nomineeItem.ENAddress = item.ENAddress;
+                            nomineeItem.ENArea = item.ENArea;
+                            nomineeItem.ENDistrict = item.ENDistrict;
+                            nomineeItem.ENState = item.ENState;
+                            nomineeItem.ENPin = item.ENPin;
+                            nomineeItem.ENAge = item.ENAge;
+                            nomineeItem.ENRelation = item.ENRelation;
+                            nomineeItem.ENDob = item.ENDob;
+                            nomineeItem.ENResidence = item.ENResidence;
+                            nomineeItem.ENgratuity = item.ENgratuity;
+                            nomineeItem.ENMStatus = item.ENMStatus;
+                            nomineeItem.ENReligion = item.ENReligion;
+                            nomineeItem.ENFName = item.ENFName;
+                            nomineeItem.ENGName = item.ENGName;
+                            nomineeItem.ENGAddress = item.ENGAddress;
+                            nomineeItem.ENGRelation = item.ENGRelation;
+
+
+                            EmployeeNomineeReqest.NomineeList.Add(nomineeItem);
+
+                            Reset_FamilyForm();
+                        }
+                    }
+                }
+            }
+        }
+
+        private void btnNomineeAddRow_Click(object sender, EventArgs e)
+        {
+            if (txtNSno.Text != "" && txtNname.Text != "")
+            {
+                DataTable dataTable = NomieeGridControl.DataSource as DataTable;
+
+                DataRow newRow = dataTable.NewRow();
+                newRow["SNo"] = txtNSno.Text;
+                newRow["Name"] = txtNname.Text;
+                newRow["Address"] = txtNAddress.Text;
+                newRow["Area"] = txtNArea.Text;
+                newRow["District"] = drpNDistrict.Text;
+                newRow["State"] = drpNState.Text;
+                newRow["Pin"] = txtNPin.Text;
+                newRow["Age"] = txtNAge.Text;
+                newRow["RelationEmployee"] = txtNRelation.Text;
+                newRow["DateOfBirth"] = ddNDOB.Text;
+                newRow["WhetherResiding"] = drpNResiding.Text;
+                newRow["ProportionByGratuity"] = txtNGratuity.Text;
+                newRow["MartialStatus"] = drpNMarital.Text;
+                newRow["Religion"] = drpNReligion.Text;
+                newRow["FatherName"] = txtNFathers.Text;
+                newRow["GuardianName"] = txtGName.Text;
+                newRow["GuardianAddress"] = txtGAddress.Text;
+                newRow["GuardianRelation"] = txtGRelation.Text;
+
+
+                // Add the new DataRow to the DataTable
+                dataTable.Rows.Add(newRow);
+
+                // Refresh the grid to display the new row
+                NomieeGridView.RefreshData();
+                NomieeGridControl.RefreshDataSource();
+
+                // Bind data to Generic List for save in DB
+
+                EmployeeNominee nomineeItem = new EmployeeNominee();
+                nomineeItem.ENSNo = txtNSno.Text;
+                nomineeItem.ENName = txtNname.Text;
+                nomineeItem.ENAddress = txtNAddress.Text;
+                nomineeItem.ENArea = txtNArea.Text;
+                nomineeItem.ENDistrict = drpNDistrict.Text;
+                nomineeItem.ENState = drpNState.Text;
+                nomineeItem.ENPin = txtNPin.Text;
+                nomineeItem.ENAge = txtNAge.Text;
+                nomineeItem.ENRelation = txtNRelation.Text;
+                nomineeItem.ENDob = ddNDOB.Text;
+                nomineeItem.ENResidence = drpNResiding.Text;
+                nomineeItem.ENgratuity = txtNGratuity.Text;
+                nomineeItem.ENMStatus = drpNMarital.Text;
+                nomineeItem.ENReligion = drpNReligion.Text;
+                nomineeItem.ENFName = txtNFathers.Text;
+                nomineeItem.ENGName = txtGName.Text;
+                nomineeItem.ENGAddress = txtGAddress.Text;
+                nomineeItem.ENGRelation = txtGRelation.Text;
+
+
+                EmployeeNomineeReqest.NomineeList.Add(nomineeItem);
+
+                Reset_NomineeForm();
+            } else
+            {
+                XtraMessageBox.Show("SNo Or Name is empty ", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnNomineeDeleteRow_Click(object sender, EventArgs e)
+        {
+            DataTable dataTable = NomieeGridControl.DataSource as DataTable;
+
+            int selectedRowHandle = NomieeGridView.FocusedRowHandle;
+            DataRow selectedRow = NomieeGridView.GetDataRow(selectedRowHandle);
+
+            if (selectedRow != null)
+            {
+                // Remove the selected row from the DataTable
+                dataTable.Rows.Remove(selectedRow);
+
+                EmployeeNomineeReqest.NomineeList.RemoveAt(selectedRowHandle);
+
+                // Refresh the grid to reflect the changes
+                NomieeGridView.RefreshData();
 
             }
         }

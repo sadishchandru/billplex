@@ -26,6 +26,7 @@ namespace BusinessLayer
         public string EFRemark { get; set; }
         
         public List<EmployeeFamily> FamilyList { get; set; }
+        public List<EmployeeFamily> FamilyDBList { get; set; }
 
         #region List
 
@@ -44,8 +45,8 @@ namespace BusinessLayer
 
                 dbReader = ObjDbfactory.GetReader("PRO_GetEmployeeFamilyList", false, objLstDbParams);
 
-                FamilyList = AssignResult();
-               // ResultSet.Add("dairyList", FilterList(DairyList));
+                FamilyDBList = AssignResult();
+               //ResultSet.Add("dairyList", FilterList(DairyList));
 
                 Result.Status = ResultStatus.Success;
             }
@@ -88,32 +89,32 @@ namespace BusinessLayer
 
             return FamilyList;
         }
-        public object FilterList(List<EmployeeFamily> ItemsList)
-        {
-            var FilteredList = from FamilyDetail in ItemsList
-                               select new
-                               {
-                                   FamilyDetail.Id
-                                   ,FamilyDetail.EFEmpId
-                                   ,FamilyDetail.SNo
-                                   ,FamilyDetail.EFName
-                                   ,FamilyDetail.EFAddress
-                                   ,FamilyDetail.EFArea
-                                   ,FamilyDetail.EFDistrict
-                                   ,FamilyDetail.EFState
-                                   ,FamilyDetail.EFPin
-                                   ,FamilyDetail.EFRelation
-                                   ,FamilyDetail.EFDOB
-                                   ,FamilyDetail.EFAge
-                                   ,FamilyDetail.EFResiding
-                                   ,FamilyDetail.EFRemark
+        //public object FilterList(List<EmployeeFamily> ItemsList)
+        //{
+        //    var FilteredList = from FamilyDetail in ItemsList
+        //                       select new
+        //                       {
+        //                           FamilyDetail.Id
+        //                           ,FamilyDetail.EFEmpId
+        //                           ,FamilyDetail.SNo
+        //                           ,FamilyDetail.EFName
+        //                           ,FamilyDetail.EFAddress
+        //                           ,FamilyDetail.EFArea
+        //                           ,FamilyDetail.EFDistrict
+        //                           ,FamilyDetail.EFState
+        //                           ,FamilyDetail.EFPin
+        //                           ,FamilyDetail.EFRelation
+        //                           ,FamilyDetail.EFDOB
+        //                           ,FamilyDetail.EFAge
+        //                           ,FamilyDetail.EFResiding
+        //                           ,FamilyDetail.EFRemark
 
 
 
-                               };
+        //                       };
 
-            return FilteredList;
-        }
+        //    return FilteredList;
+        //}
         #endregion
 
         #region Update
@@ -175,7 +176,7 @@ namespace BusinessLayer
                     ItemData.AppendFormat("<State>{0}</State>", item.EFState);
                     ItemData.AppendFormat("<Pincode>{0}</Pincode>", item.EFPin);
                     ItemData.AppendFormat("<EmployeeRelation>{0}</EmployeeRelation>", item.EFRelation);
-                    ItemData.AppendFormat("<DoB>{0}</DoB>", item.EFDOB);
+                    ItemData.AppendFormat("<DoB>{0}</DoB>", item.EFDOB == "" ? null : item.EFDOB);
                     ItemData.AppendFormat("<Age>{0}</Age>", item.EFAge);
                     ItemData.AppendFormat("<Residing>{0}</Residing>", item.EFResiding);
                     ItemData.AppendFormat("<Remark>{0}</Remark>", item.EFRemark);
