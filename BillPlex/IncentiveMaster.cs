@@ -96,15 +96,17 @@ namespace BillPlex
                     IncentiveMasterRequest.ProductName = DrpProductName.Text;
                     IncentiveMasterRequest.ModelCode = DrpModelCode.Text;
                     IncentiveMasterRequest.ModelName = DrpModelName.Text;
-                    IncentiveMasterRequest.ModelSize = DrpModelSize.Text;
-                    IncentiveMasterRequest.DurationPeriod = DrpDurationPeriod.Text;
-                    IncentiveMasterRequest.Date = DDdate.Text;
+                    IncentiveMasterRequest.ModelSize = txtModelSize.Text;
+                    IncentiveMasterRequest.DurationPeriod = txtDurationPeriod.Text;
+                    IncentiveMasterRequest.Date = ddDate.Text;
                     IncentiveMasterRequest.Update();
 
                     if (IncentiveMasterRequest.Result.Status == ResultStatus.Success)
                     {
                         XtraMessageBox.Show(IncentiveMasterRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         btn_ClearClick();
+                        btnAdd.Enabled = true;
+                        btnUpdate.Enabled = false;
                         ReloadSqlDataSource();
                     }
                     else
@@ -123,35 +125,6 @@ namespace BillPlex
                 XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void btn_EditClick(object sender, EventArgs e)
-        {
-            try
-            {
-                var selectedRows = gridView1.GetSelectedRows();
-
-                foreach (var rowHandle in selectedRows)
-                {
-                    IncentiveMasterRequest.Id = (Int64)gridView1.GetRowCellValue(rowHandle, "Id");
-                    DrpProductName.Text = gridView1.GetRowCellValue(rowHandle, "ProductName").ToString();
-                    DrpModelCode.Text = gridView1.GetRowCellValue(rowHandle, "ModelCode").ToString();
-                    DrpModelName.Text = gridView1.GetRowCellValue(rowHandle, "ModelName").ToString();
-                    DrpModelSize.Text = gridView1.GetRowCellValue(rowHandle, "ModelSize").ToString();
-                    DrpDurationPeriod.Text = gridView1.GetRowCellValue(rowHandle, "DurationPeriod").ToString();
-                    DDdate.Text = gridView1.GetRowCellValue(rowHandle, "Date").ToString();
-                }
-                btnAdd.Enabled = true;
-                btnEdit.Enabled = false;
-                btnDelete.Enabled = false;
-                btnUpdate.Enabled = true;
-                btnClear.Enabled = true;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
         private void btn_DeleteClick(object sender, EventArgs e)
         {
             {
@@ -203,11 +176,38 @@ namespace BillPlex
             DrpProductName.ResetText();
             DrpModelCode.ResetText();
             DrpModelName.ResetText();
-            DrpModelSize.ResetText();
-            DrpDurationPeriod.ResetText();
-            DDdate.ResetText();
+            txtModelSize.ResetText();
+            txtDurationPeriod.ResetText();
+            ddDate.ResetText();
         }
 
-        
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                var selectedRows = gridView1.GetSelectedRows();
+
+                foreach (var rowHandle in selectedRows)
+                {
+                    IncentiveMasterRequest.Id = (Int64)gridView1.GetRowCellValue(rowHandle, "Id");
+                    DrpProductName.Text = gridView1.GetRowCellValue(rowHandle, "ProductName").ToString();
+                    DrpModelCode.Text = gridView1.GetRowCellValue(rowHandle, "ModelCode").ToString();
+                    DrpModelName.Text = gridView1.GetRowCellValue(rowHandle, "ModelName").ToString();
+                    txtModelSize.Text = gridView1.GetRowCellValue(rowHandle, "ModelSize").ToString();
+                    txtDurationPeriod.Text = gridView1.GetRowCellValue(rowHandle, "DurationPeriod").ToString();
+                    ddDate.Text = gridView1.GetRowCellValue(rowHandle, "Date").ToString();
+                }
+                btnAdd.Enabled = false;
+                btnEdit.Enabled = false;
+                btnDelete.Enabled = true;
+                btnUpdate.Enabled = true;
+                btnClear.Enabled = true;
+                btnAdd.Enabled = true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

@@ -118,12 +118,10 @@ namespace BillPlex
                     {
                         XtraMessageBox.Show(FinishingProductModelRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         ReloadSqlDataSource();
-                        drpProductName.ResetText();
-                        txtModelCode.ResetText();
-                        txtModelName.ResetText();
-                        txtWages.ResetText();
-                        drpProductSize.ResetText();
-                        ddDate.ResetText();
+                        btnAdd.Enabled = true;
+                        btnUpdate.Enabled = false;
+                        txtModelCode.Enabled = true;
+                        Reset_Text();
                     }
                 }
                 else
@@ -187,7 +185,7 @@ namespace BillPlex
                     var datete = gridView1.GetRowCellValue(rowHandle, "ItemDate").ToString();
                     ddDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
                 }
-                btnAdd.Enabled = true;
+                btnAdd.Enabled = false;
                 btnDelete.Enabled = true;
                 btnUpdate.Enabled = true;
                 btnAdd.Enabled = true;
@@ -197,6 +195,24 @@ namespace BillPlex
             {
                 XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            //txtModelCode.Enabled = true;
+            //btnAdd.Enabled = true;
+            //btnUpdate.Enabled = false;
+            //ReloadSqlDataSource();
+            //Reset_Text();
+        }
+        public void Reset_Text()
+        {
+            drpProductName.ResetText();
+            txtModelCode.ResetText();
+            txtModelName.ResetText();
+            txtWages.ResetText();
+            drpProductSize.ResetText();
+            ddDate.ResetText();
         }
     }
 }

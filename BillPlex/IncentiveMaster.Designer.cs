@@ -30,7 +30,7 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery4 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IncentiveMaster));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -41,8 +41,8 @@ namespace BillPlex
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.DrpModelName = new DevExpress.XtraEditors.TextEdit();
-            this.DrpDurationPeriod = new DevExpress.XtraEditors.TextEdit();
-            this.DrpModelSize = new DevExpress.XtraEditors.TextEdit();
+            this.txtDurationPeriod = new DevExpress.XtraEditors.TextEdit();
+            this.txtModelSize = new DevExpress.XtraEditors.TextEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
@@ -62,20 +62,20 @@ namespace BillPlex
             this.colModelSize = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDurationPeriod = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.DDdate = new DevExpress.XtraEditors.DateEdit();
+            this.ddDate = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DrpModelName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DrpDurationPeriod.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DrpModelSize.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDurationPeriod.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtModelSize.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DrpProductName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DrpModelCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DDdate.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DDdate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddDate.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -166,19 +166,19 @@ namespace BillPlex
             this.DrpModelName.Size = new System.Drawing.Size(214, 20);
             this.DrpModelName.TabIndex = 14;
             // 
-            // DrpDurationPeriod
+            // txtDurationPeriod
             // 
-            this.DrpDurationPeriod.Location = new System.Drawing.Point(909, 177);
-            this.DrpDurationPeriod.Name = "DrpDurationPeriod";
-            this.DrpDurationPeriod.Size = new System.Drawing.Size(281, 20);
-            this.DrpDurationPeriod.TabIndex = 16;
+            this.txtDurationPeriod.Location = new System.Drawing.Point(909, 177);
+            this.txtDurationPeriod.Name = "txtDurationPeriod";
+            this.txtDurationPeriod.Size = new System.Drawing.Size(281, 20);
+            this.txtDurationPeriod.TabIndex = 16;
             // 
-            // DrpModelSize
+            // txtModelSize
             // 
-            this.DrpModelSize.Location = new System.Drawing.Point(909, 141);
-            this.DrpModelSize.Name = "DrpModelSize";
-            this.DrpModelSize.Size = new System.Drawing.Size(281, 20);
-            this.DrpModelSize.TabIndex = 17;
+            this.txtModelSize.Location = new System.Drawing.Point(909, 141);
+            this.txtModelSize.Name = "txtModelSize";
+            this.txtModelSize.Size = new System.Drawing.Size(281, 20);
+            this.txtModelSize.TabIndex = 17;
             // 
             // panelControl2
             // 
@@ -318,7 +318,6 @@ namespace BillPlex
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 1;
             this.btnEdit.Text = "Edit";
-            this.btnEdit.Click += new System.EventHandler(this.btn_EditClick);
             // 
             // simpleButtonProductName
             // 
@@ -357,15 +356,16 @@ namespace BillPlex
             this.gridControl1.TabIndex = 28;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.DoubleClick += new System.EventHandler(this.gridControl1_DoubleClick);
             // 
             // sqlDataSource1
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery4.Name = "PRO_GetIncentiveMaster";
-            storedProcQuery4.StoredProcName = "PRO_GetIncentiveMaster";
+            storedProcQuery1.Name = "PRO_GetIncentiveMaster";
+            storedProcQuery1.StoredProcName = "PRO_GetIncentiveMaster";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery4});
+            storedProcQuery1});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // gridView1
@@ -430,25 +430,25 @@ namespace BillPlex
             this.colDate.Visible = true;
             this.colDate.VisibleIndex = 6;
             // 
-            // DDdate
+            // ddDate
             // 
-            this.DDdate.EditValue = null;
-            this.DDdate.Location = new System.Drawing.Point(1163, 96);
-            this.DDdate.Name = "DDdate";
-            this.DDdate.Properties.BeepOnError = false;
-            this.DDdate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.ddDate.EditValue = null;
+            this.ddDate.Location = new System.Drawing.Point(1163, 96);
+            this.ddDate.Name = "ddDate";
+            this.ddDate.Properties.BeepOnError = false;
+            this.ddDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.DDdate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.ddDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.DDdate.Properties.DisplayFormat.FormatString = "";
-            this.DDdate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.DDdate.Properties.EditFormat.FormatString = "";
-            this.DDdate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.DDdate.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
-            this.DDdate.Properties.MaskSettings.Set("mask", "d");
-            this.DDdate.Properties.UseMaskAsDisplayFormat = true;
-            this.DDdate.Size = new System.Drawing.Size(183, 20);
-            this.DDdate.TabIndex = 27;
+            this.ddDate.Properties.DisplayFormat.FormatString = "";
+            this.ddDate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.ddDate.Properties.EditFormat.FormatString = "";
+            this.ddDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.ddDate.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
+            this.ddDate.Properties.MaskSettings.Set("mask", "d");
+            this.ddDate.Properties.UseMaskAsDisplayFormat = true;
+            this.ddDate.Size = new System.Drawing.Size(183, 20);
+            this.ddDate.TabIndex = 27;
             // 
             // IncentiveMaster
             // 
@@ -458,8 +458,8 @@ namespace BillPlex
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.simpleButtonProductName);
             this.Controls.Add(this.panelControl2);
-            this.Controls.Add(this.DrpModelSize);
-            this.Controls.Add(this.DrpDurationPeriod);
+            this.Controls.Add(this.txtModelSize);
+            this.Controls.Add(this.txtDurationPeriod);
             this.Controls.Add(this.DrpModelName);
             this.Controls.Add(this.labelControl7);
             this.Controls.Add(this.labelControl6);
@@ -470,23 +470,23 @@ namespace BillPlex
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.DrpProductName);
             this.Controls.Add(this.DrpModelCode);
-            this.Controls.Add(this.DDdate);
+            this.Controls.Add(this.ddDate);
             this.Name = "IncentiveMaster";
             this.Text = "IncentiveMaster";
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DrpModelName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DrpDurationPeriod.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DrpModelSize.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDurationPeriod.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtModelSize.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DrpProductName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DrpModelCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DDdate.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DDdate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddDate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddDate.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -503,8 +503,8 @@ namespace BillPlex
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.TextEdit DrpModelName;
-        private DevExpress.XtraEditors.TextEdit DrpDurationPeriod;
-        private DevExpress.XtraEditors.TextEdit DrpModelSize;
+        private DevExpress.XtraEditors.TextEdit txtDurationPeriod;
+        private DevExpress.XtraEditors.TextEdit txtModelSize;
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraEditors.SimpleButton btnDelete;
         private DevExpress.XtraEditors.SimpleButton btnUpdate;
@@ -524,6 +524,6 @@ namespace BillPlex
         private DevExpress.XtraGrid.Columns.GridColumn colModelSize;
         private DevExpress.XtraGrid.Columns.GridColumn colDurationPeriod;
         private DevExpress.XtraGrid.Columns.GridColumn colDate;
-        private DevExpress.XtraEditors.DateEdit DDdate;
+        private DevExpress.XtraEditors.DateEdit ddDate;
     }
 }

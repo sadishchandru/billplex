@@ -32,9 +32,12 @@ namespace BillPlex
             this.components = new System.ComponentModel.Container();
             DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
             DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSizeMaster));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.labelAvailable = new DevExpress.XtraEditors.LabelControl();
+            this.LabelExceed = new DevExpress.XtraEditors.LabelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.SizeMasterGrid = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -53,8 +56,6 @@ namespace BillPlex
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.txtSName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.LabelExceed = new DevExpress.XtraEditors.LabelControl();
-            this.labelAvailable = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -109,6 +110,30 @@ namespace BillPlex
             this.panelControl2.Size = new System.Drawing.Size(1640, 637);
             this.panelControl2.TabIndex = 5;
             // 
+            // labelAvailable
+            // 
+            this.labelAvailable.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAvailable.Appearance.ForeColor = System.Drawing.Color.Green;
+            this.labelAvailable.Appearance.Options.UseFont = true;
+            this.labelAvailable.Appearance.Options.UseForeColor = true;
+            this.labelAvailable.Location = new System.Drawing.Point(357, 89);
+            this.labelAvailable.Name = "labelAvailable";
+            this.labelAvailable.Size = new System.Drawing.Size(56, 19);
+            this.labelAvailable.TabIndex = 35;
+            this.labelAvailable.Text = "Available";
+            // 
+            // LabelExceed
+            // 
+            this.LabelExceed.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelExceed.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.LabelExceed.Appearance.Options.UseFont = true;
+            this.LabelExceed.Appearance.Options.UseForeColor = true;
+            this.LabelExceed.Location = new System.Drawing.Point(702, 89);
+            this.LabelExceed.Name = "LabelExceed";
+            this.LabelExceed.Size = new System.Drawing.Size(87, 19);
+            this.LabelExceed.TabIndex = 34;
+            this.LabelExceed.Text = "Already Exists";
+            // 
             // gridControl1
             // 
             this.gridControl1.DataMember = "PRO_GetSizeMaster";
@@ -116,7 +141,7 @@ namespace BillPlex
             this.gridControl1.Location = new System.Drawing.Point(54, 296);
             this.gridControl1.MainView = this.SizeMasterGrid;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1279, 298);
+            this.gridControl1.Size = new System.Drawing.Size(954, 298);
             this.gridControl1.TabIndex = 15;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.SizeMasterGrid});
@@ -196,6 +221,8 @@ namespace BillPlex
             this.svgImageBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.svgImageBox1.Name = "svgImageBox1";
             this.svgImageBox1.Size = new System.Drawing.Size(710, 242);
+            this.svgImageBox1.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Zoom;
+            this.svgImageBox1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageBox1.SvgImage")));
             this.svgImageBox1.TabIndex = 10;
             this.svgImageBox1.Text = "svgImageBox1";
             // 
@@ -292,30 +319,6 @@ namespace BillPlex
             this.labelControl2.Size = new System.Drawing.Size(86, 19);
             this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "Size Name";
-            // 
-            // LabelExceed
-            // 
-            this.LabelExceed.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelExceed.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.LabelExceed.Appearance.Options.UseFont = true;
-            this.LabelExceed.Appearance.Options.UseForeColor = true;
-            this.LabelExceed.Location = new System.Drawing.Point(702, 89);
-            this.LabelExceed.Name = "LabelExceed";
-            this.LabelExceed.Size = new System.Drawing.Size(87, 19);
-            this.LabelExceed.TabIndex = 34;
-            this.LabelExceed.Text = "Already Exists";
-            // 
-            // labelAvailable
-            // 
-            this.labelAvailable.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAvailable.Appearance.ForeColor = System.Drawing.Color.Green;
-            this.labelAvailable.Appearance.Options.UseFont = true;
-            this.labelAvailable.Appearance.Options.UseForeColor = true;
-            this.labelAvailable.Location = new System.Drawing.Point(357, 89);
-            this.labelAvailable.Name = "labelAvailable";
-            this.labelAvailable.Size = new System.Drawing.Size(56, 19);
-            this.labelAvailable.TabIndex = 35;
-            this.labelAvailable.Text = "Available";
             // 
             // FrmSizeMaster
             // 
