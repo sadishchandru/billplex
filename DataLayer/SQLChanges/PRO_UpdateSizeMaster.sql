@@ -21,34 +21,37 @@ BEGIN
 
 	DECLARE @ResultNo BIT = 0
 	DECLARE @ResultMessage VARCHAR(MAX) = ''
-
-	IF(@Id = 0)
+	IF EXISTS (SELECT NULL FROM SizeMaster WHERE Sizename = @Sizename AND Id != @Id)
 	BEGIN
-		INSERT INTO[dbo].[SizeMaster]
-		(
-			Sizename
-		) VALUES
-		(
-			@Sizename
-		)
-
-		SET @ResultMessage = 'SizeMaster Added Successfully';
-		SET @ResultNo = 1
+		SET @ResultMessage = 'Size already exists';
+		SET @ResultNo = 0;
 	END
 	ELSE
 	BEGIN
-		UPDATE SizeMaster 
-		SET	
-	--[Id] = @Id,
-	[Sizename] = @Sizename
+		IF(@Id = 0)
+		BEGIN
+			INSERT INTO[dbo].[SizeMaster]
+			(
+				Sizename
+			) VALUES
+			(
+				@Sizename
+			)
 
-		WHERE Id = @Id
-		SET @ResultMessage = 'SizeMaster Updated Successfully';
-		SET @ResultNo = 1
+			SET @ResultMessage = 'SizeMaster Added Successfully';
+			SET @ResultNo = 1
+		END
+		ELSE
+		BEGIN
+			UPDATE SizeMaster 
+			SET	
+			[Sizename] = @Sizename
+			WHERE Id = @Id
+			SET @ResultMessage = 'SizeMaster Updated Successfully';
+			SET @ResultNo = 1
+		END
+
+		SELECT  @ResultMessage AS ResultMessage,
+				@ResultNo AS ResultNo
 	END
-
-	SELECT  @ResultMessage AS ResultMessage,
-			@ResultNo AS ResultNo
-		
-
 END

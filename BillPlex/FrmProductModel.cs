@@ -66,11 +66,6 @@ namespace BillPlex
                 {
                     foreach (DropDownItemInfo item in productModelRequest.RawMaterialList)
                     {
-
-                        // var foundItem = drpRawType.Properties.Items.FindItem(item => item.ToString() == item.Name.ToString());
-
-                        //ComboBoxItem foundItem = drpRawType.Properties.Items.FirstOrDefault(item => item.ToString() == searchValue);
-
                         var foundItem = "";
 
                         foreach (string items in drpRawType.Properties.Items)
@@ -176,12 +171,6 @@ namespace BillPlex
                     {
                         productModelRequest.ProductId = productModelRequest.ProductModelList.FirstOrDefault(item => item.Name == selectedProductItem.ToString())?.Id ?? -1;
                     }
-
-
-
-                    //productModelRequest.RawMaterialType = drpRawType.Text;
-                    //productModelRequest.RawMaterialName = drpRawName.Text;
-                    //productModelRequest.ProductName = drpProName.Text;
                     productModelRequest.ModelCode = txtModelCode.Text;
                     productModelRequest.ModelName = txtModelName.Text;
                     productModelRequest.ProductSize = drpProSize.Text;
@@ -257,50 +246,7 @@ namespace BillPlex
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    var selectedRows = grd_ProductModel.GetSelectedRows();
 
-            //    foreach (var rowHandle in selectedRows)
-            //    {
-            //        productModelRequest.Id = (Int64)grd_ProductModel.GetRowCellValue(rowHandle, "Id");
-
-
-            //        drpRawType.SelectedIndex = productModelRequest.RawMaterialList.FindIndex(x => x.Id == Convert.ToInt32(grd_ProductModel.GetRowCellValue(rowHandle, "RawmaterialTypeId")));
-            //        drpRawName.SelectedIndex = productModelRequest.RawMaterialList.FindIndex(x => x.Id == Convert.ToInt32(grd_ProductModel.GetRowCellValue(rowHandle, "RawMaterialId")));
-            //        //drpRawType.Text = grd_ProductModel.GetRowCellValue(rowHandle, "RawmaterialTypeId").ToString();
-            //        //drpRawName.Text = grd_ProductModel.GetRowCellValue(rowHandle, "RawMaterialId").ToString();
-
-            //        drpProName.SelectedIndex = productModelRequest.ProductModelList.FindIndex(x => x.Id == Convert.ToInt32(grd_ProductModel.GetRowCellValue(rowHandle, "ProductId")));
-
-            //        //drpProName.Text = grd_ProductModel.GetRowCellValue(rowHandle, "ProductId").ToString();
-            //        txtModelCode.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "ProductCode");
-            //        txtModelName.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "ProductModel");
-
-            //        //drpProSize.SelectedIndex = productModelRequest.SizeMasterList.FindIndex(x => x.Id == Convert.ToInt32(grd_ProductModel.GetRowCellValue(rowHandle, "ProductSize")));
-
-
-            //        drpProSize.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "ProductSize");
-            //        txtRawStock.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "RawMaterialStock");
-            //        txtRawWeight.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "ReqRawMaterial");
-            //        txtWages.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "WagesforItem");
-            //        //var datete = grd_ProductModel.GetRowCellValue(rowHandle, "Date").ToString();
-            //        //DateTime dat = DateTime.Parse(datete);
-            //        //ddDate.Text = dat.ToString();
-            //        var datete = grd_ProductModel.GetRowCellValue(rowHandle, "Date").ToString();
-            //        ddDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
-            //    }
-            //    btnAdd.Enabled = false;
-            //    btnEdit.Enabled = false;
-            //    btnDelete.Enabled = true;
-            //    btnUpdate.Enabled = true;
-            //    btnAdd.Enabled = true;
-
-            //}
-            //catch (Exception ex)
-            //{
-
-            //}
         }
 
         private void drpRawType_SelectedIndexChanged(object sender, EventArgs e)
@@ -334,169 +280,12 @@ namespace BillPlex
                 // Iterate over each row in the grid
                 for (int i = 0; i < gridView.RowCount; i++)
                 {
-
-                    //var RawMaterialType = grd_ProductModel.GetRowCellValue(i, "RawMaterialType").ToString();
-                    //var RawMaterial = grd_ProductModel.GetRowCellValue(i, "RawMaterials").ToString();
-
                     if (selectedRawTypeItem == grd_ProductModel.GetRowCellValue(i, "RawMaterialType").ToString() && selectedRawItem == grd_ProductModel.GetRowCellValue(i, "RawMaterials").ToString())
                     {
                         int reqMateialcount = int.Parse(grd_ProductModel.GetRowCellValue(i, "ReqRawMaterial").ToString());
                         actualCount = actualCount + reqMateialcount;
                     }
-                    //productModelRequest.Id = (Int64)grd_ProductModel.GetRowCellValue(i, "Id");
-
-                    // Dictionary<string, object> rowData = new Dictionary<string, object>();
-
-                    // Iterate over each column in the row
-                    //foreach (var rowHandle in selectedRows)
-                    //{ 
-
-                    //}
-                    //for (int j = 0; j < gridView.Columns.Count; j++)
-                    //{
-                    //    GridColumn column = gridView.Columns[j];
-
-                    //    if (column.FieldName == "ReqRawMaterial" && (column.FieldName == "RawMaterialType" && column.FieldName == "RawMaterials"))
-                    //    {
-
-                    //        string columnName = column.FieldName;
-                    //        //object cellValue = gridView.GetRowCellValue(i, column);
-                    //        object cellValue = grd_ProductModel.GetRowCellValue(0, "Id");
-                    //        rowData.Add(columnName, cellValue);
-
-                    //    }
-                    //}
-
-                    // allData.Add(rowData);
                 }
-
-
-                //object dataSource = gridControl1.DataSource;
-
-                //// Check if the DataSource is a DataTable
-                //if (dataSource is DataTable dataTable)
-                //{
-                //    // Get all the values from the DataTable
-                //    List<List<object>> allValues = dataTable.AsEnumerable()
-                //        .Select(row => row.ItemArray.ToList())
-                //        .ToList();
-
-                //    // Use the resulting list of values as needed
-                //    // ...
-                //}
-                //else if (dataSource is IEnumerable enumerable)
-                //{
-                //    // Get all the values from the IEnumerable
-                //    List<List<object>> allValues = enumerable.Cast<object>()
-                //        .Select(item => item.GetType().GetProperties().Select(prop => prop.GetValue(item)).ToList())
-                //        .ToList();
-
-                //    // Use the resulting list of values as needed
-                //    // ...
-                //}
-                //else
-                //{
-                //    // Handle other data source types accordingly
-                //}
-                //DataTable dataTable = ((DataTable)gridControl1.DataSource);
-
-                //// Get all the values from the DataTable
-                //List<List<object>> allValues = dataTable.AsEnumerable()
-                //    .Select(row => row.ItemArray.ToList())
-                //    .ToList();
-
-
-                //List<object[]> allValues = new List<object[]>();
-
-                //// Iterate through the rows of the GridView
-                //for (int rowHandle = 0; rowHandle < grd_ProductModel.DataRowCount; rowHandle++)
-                //{
-                //    List<object> rowValues = new List<object>();
-
-                //    // Iterate through the columns of the current row
-                //    for (int colIndex = 0; colIndex < grd_ProductModel.Columns.Count; colIndex++)
-                //    {
-                //        object cellValue = grd_ProductModel.GetRowCellValue(rowHandle, grd_ProductModel.Columns[colIndex]);
-                //        rowValues.Add(cellValue);
-                //    }
-
-                //    allValues.Add(rowValues.ToArray());
-                //}
-                //var dataView = sqlDataSource1.data;
-                //var dataTable = sqlDataSource1.ToTable();
-
-                // Assuming you have a GridControl named "gridControl1" bound to a data source
-
-                // Get the data source from the GridControl
-                //var dataSource = (DataView)gridControl1.DataSource;
-
-                // Check if the data source is a DataTable
-                //if (dataSource is DataView dataView)
-                //{
-                //  var val = dataSource.ToTable();
-                //}
-
-                //if (dataSource is DataTable dataTable)
-                //{
-                //    // Iterate through the rows of the DataTable
-                //    foreach (DataRow row in dataTable.Rows)
-                //    {
-                //        // Access the values of each column in the row
-                //        var column1Value = row["Column1"].ToString();
-                //        var column2Value = row["Column2"].ToString();
-
-                //        // Do something with the values
-                //        Console.WriteLine($"Column 1: {column1Value}, Column 2: {column2Value}");
-                //    }
-                //}
-
-
-                // Assuming you have an ASPxGridView control named "gridView1" and a SqlDataSource control named "sqlDataSource1"
-
-                // Get the data source from the SqlDataSource control
-                // var dataSource = (SqlDataSource)sqlDataSource1;
-
-                // Retrieve the data from the data source
-                //  var dataView = (DataView)dataSource.Select(DataSourceSelectArguments.Empty);
-                // var dataTable = dataView.ToTable();
-
-                //var dataViewGrid = gridControl1.DefaultView;
-
-                //foreach (DataRowView rowView in gridControl1.DefaultView)
-                //{
-                //    // Access the values of each column in the row
-                //    var column1Value = rowView["Column1"].ToString();
-                //    var column2Value = rowView["Column2"].ToString();
-
-                //    // Do something with the values
-                //    Console.WriteLine($"Column 1: {column1Value}, Column 2: {column2Value}");
-                //}
-
-
-                // Iterate through the rows of the data table
-                //foreach (DataRow row in dataTable.Rows)
-                //{
-                //    // Access the values of each column in the row
-                //    var column1Value = row["Column1"].ToString();
-                //    var column2Value = row["Column2"].ToString();
-
-                //    // Do something with the values
-                //    Console.WriteLine($"Column 1: {column1Value}, Column 2: {column2Value}");
-                //}
-
-                //foreach (var row in sqlDataSource1.Result[0]. )
-                //{
-                //var model = new YourModel
-                //{
-                //    // Map the columns from the data source to properties in your model
-                //    Property1 = Convert.ToString(row["ColumnName1"]),
-                //    Property2 = Convert.ToString(row["ColumnName2"]),
-                //    // Add more properties as needed
-                //};
-
-                //dataList.Add(model);
-                //}
-
                 int count = 0;
 
                 foreach (var item in productModelRequest.RawMaterialList)
@@ -509,22 +298,6 @@ namespace BillPlex
 
                 txtRawStock.Text = Math.Abs(count - actualCount).ToString();
             }
-
-
-            //if ((selectedRawItem != null && selectedRawItem != "") && (selectedRawTypeItem != null && selectedRawTypeItem != ""))
-            //{
-            //    int count = 0;
-
-            //    foreach (var item in productModelRequest.RawMaterialList)
-            //    {
-            //        if (item.Code == selectedRawTypeItem.ToString() && item.Name == selectedRawItem.ToString())
-            //        {
-            //            count = int.Parse(item.AuthorName) - count;
-            //        }
-            //    }
-
-            //    txtRawStock.Text = count.ToString();
-            //}
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)

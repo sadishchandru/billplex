@@ -20,29 +20,35 @@ BEGIN
 
 	DECLARE @ResultNo BIT = 0
 	DECLARE @ResultMessage VARCHAR(MAX) = ''
-
-	IF(@Id = 0)
+	IF EXISTS (SELECT NULL FROM Productmodeltemp WHERE Productmodel = @Productmodel AND Id != @Id)
 	BEGIN
-		INSERT INTO Productmodeltemp
-		(
-			Productmodel
-		) VALUES
-		(
-			@Productmodel
-		)
-
-		SET @ResultMessage = 'Productmodeltemp Added Successfully';
-		SET @ResultNo = 1
+		SET @ResultMessage = 'Size already exists';
+		SET @ResultNo = 0;
 	END
 	ELSE
 	BEGIN
-		UPDATE Productmodeltemp 
-		SET	
-		--[Id] = @Id,
-		[Productmodel] = @Productmodel
-		WHERE Id = @Id
-		SET @ResultMessage = 'Productmodeltemp Updated Successfully';
-		SET @ResultNo = 1
+		IF(@Id = 0)
+		BEGIN
+			INSERT INTO Productmodeltemp
+			(
+				Productmodel
+			) VALUES
+			(
+				@Productmodel
+			)
+
+			SET @ResultMessage = 'Productmodeltemp Added Successfully';
+			SET @ResultNo = 1
+		END
+		ELSE
+		BEGIN
+			UPDATE Productmodeltemp 
+			SET	
+			[Productmodel] = @Productmodel
+			WHERE Id = @Id
+			SET @ResultMessage = 'Productmodeltemp Updated Successfully';
+			SET @ResultNo = 1
+		END
 	END
 
 	SELECT  @ResultMessage AS ResultMessage,

@@ -12,6 +12,8 @@ namespace BusinessLayer
     {
         public string SizeName { get; set; }
 
+        public List<DropDownItemInfo> SizeList { get; set; }
+
         public void Update()
         {
             dbReader = null;

@@ -12,6 +12,8 @@ namespace BusinessLayer
     {
         public string ColorName { get; set; }
 
+        public List<DropDownItemInfo> ColorList { get; set; }
+
         public void Update()
         {
             dbReader = null;
