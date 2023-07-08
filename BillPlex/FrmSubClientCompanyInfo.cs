@@ -108,8 +108,8 @@ namespace BillPlex
             try
             {
 
-                if (drpMainCompany.Text != string.Empty && drpCCompany.Text != string.Empty && txtCompanyCode.Text != "" && txtCompanyName.Text != "" &&
-                    (drpMainCompany.Text != string.Empty && drpMainCompany.Text != "Select") && (drpCCompany.Text != string.Empty && drpCCompany.Text != "Select"))
+                if (drpMainCompany.Text != string.Empty && drpCCompany.Text != string.Empty && txtCompanyCode.Text != "" && txtCompanyName.Text != "" && 
+                    (drpMainCompany.Text != string.Empty && drpMainCompany.Text != "Select") && (drpCCompany.Text != string.Empty && drpCCompany.Text != "Select")&& txtName.Text != "")
                 {
                     if ((SubClientRequest.Id != 0 || labelAvailable.Visible == true) && labelCodeExist.Visible == false)
                     {
@@ -361,6 +361,7 @@ namespace BillPlex
             txtAuthPanNo.ResetText();
             txtAuthPercent.ResetText();
             radActiveStatus.ResetText();
+            txtBankDetails.ResetText();
         }
 
         private void btnExit_Click_1(object sender, EventArgs e)

@@ -84,7 +84,7 @@ namespace BillPlex
                 }
                 else
                 {
-                    XtraMessageBox.Show(ColorMasterRequest.Result.Message, "please give the manditory field", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    XtraMessageBox.Show("please give the mandatory field", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
             }

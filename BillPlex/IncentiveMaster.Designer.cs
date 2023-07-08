@@ -63,6 +63,8 @@ namespace BillPlex
             this.colDurationPeriod = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ddDate = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DrpModelName.Properties)).BeginInit();
@@ -450,11 +452,39 @@ namespace BillPlex
             this.ddDate.Size = new System.Drawing.Size(183, 20);
             this.ddDate.TabIndex = 27;
             // 
+            // labelControl8
+            // 
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl8.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl8.Appearance.Options.UseFont = true;
+            this.labelControl8.Appearance.Options.UseForeColor = true;
+            this.labelControl8.Location = new System.Drawing.Point(385, 133);
+            this.labelControl8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(14, 27);
+            this.labelControl8.TabIndex = 29;
+            this.labelControl8.Text = "*";
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl9.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl9.Appearance.Options.UseFont = true;
+            this.labelControl9.Appearance.Options.UseForeColor = true;
+            this.labelControl9.Location = new System.Drawing.Point(365, 175);
+            this.labelControl9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(14, 27);
+            this.labelControl9.TabIndex = 30;
+            this.labelControl9.Text = "*";
+            // 
             // IncentiveMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1540, 760);
+            this.Controls.Add(this.labelControl9);
+            this.Controls.Add(this.labelControl8);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.simpleButtonProductName);
             this.Controls.Add(this.panelControl2);
@@ -525,5 +555,7 @@ namespace BillPlex
         private DevExpress.XtraGrid.Columns.GridColumn colDurationPeriod;
         private DevExpress.XtraGrid.Columns.GridColumn colDate;
         private DevExpress.XtraEditors.DateEdit ddDate;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
+        private DevExpress.XtraEditors.LabelControl labelControl9;
     }
 }

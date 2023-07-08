@@ -421,7 +421,7 @@ namespace BillPlex
                             this.Close();
                             EmployeeNomineeReqest.NomineeList = new List<EmployeeNominee>();
                             XtraMessageBox.Show(EmployeeNomineeReqest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                      
+
                             FrmEmployeeMasterList form = Application.OpenForms.OfType<FrmEmployeeMasterList>().FirstOrDefault();
                             Form myForm = Application.OpenForms["FrmEmployeeMasterList"];
                             if (myForm != null)
@@ -856,59 +856,64 @@ namespace BillPlex
             if (tabIndex == 2)
             {
 
-                if (EmployeeFamilyRequest.FamilyList.Count() == 0 && EmployeePersonalRequest.Id != 0 )
+                if (EmployeeFamilyRequest.FamilyList.Count() == 0 && EmployeePersonalRequest.Id != 0)
                 {
                     InitializeFamilyDataSource();
                     EmployeeFamilyRequest.EFEmpId = EmployeePersonalRequest.Id;
                     EmployeeFamilyRequest.GetList();
 
-                    if (EmployeeFamilyRequest.FamilyDBList.Count() > 0)
+                    if (EmployeeFamilyRequest.FamilyDBList != null)
                     {
-                        DataTable dataTable = FamilyGridControl.DataSource as DataTable;
 
-                        foreach (var item in EmployeeFamilyRequest.FamilyDBList)
+
+                        if (EmployeeFamilyRequest.FamilyDBList.Count() > 0)
                         {
+                            DataTable dataTable = FamilyGridControl.DataSource as DataTable;
 
-                            DataRow newRow = dataTable.NewRow();
-                            newRow["SNo"] = item.SNo;
-                            newRow["Name"] = item.EFName;
-                            newRow["Address"] = item.EFAddress;
-                            newRow["Area"] = item.EFArea;
-                            newRow["District"] = item.EFDistrict;
-                            newRow["State"] = item.EFState;
-                            newRow["Pin"] = item.EFState;
-                            newRow["Age"] = item.EFAge;
-                            newRow["RelationEmployee"] = item.EFRelation;
-                            newRow["DateOfBirth"] = item.EFDOB;
-                            newRow["WhetherResiding"] = item.EFResiding;
-                            newRow["Remarks"] = item.EFRemark;
+                            foreach (var item in EmployeeFamilyRequest.FamilyDBList)
+                            {
 
-                            // Add the new DataRow to the DataTable
-                            dataTable.Rows.Add(newRow);
+                                DataRow newRow = dataTable.NewRow();
+                                newRow["SNo"] = item.SNo;
+                                newRow["Name"] = item.EFName;
+                                newRow["Address"] = item.EFAddress;
+                                newRow["Area"] = item.EFArea;
+                                newRow["District"] = item.EFDistrict;
+                                newRow["State"] = item.EFState;
+                                newRow["Pin"] = item.EFState;
+                                newRow["Age"] = item.EFAge;
+                                newRow["RelationEmployee"] = item.EFRelation;
+                                newRow["DateOfBirth"] = item.EFDOB;
+                                newRow["WhetherResiding"] = item.EFResiding;
+                                newRow["Remarks"] = item.EFRemark;
 
-                            // Refresh the grid to display the new row
-                            FamilyGridView.RefreshData();
-                            FamilyGridControl.RefreshDataSource();
+                                // Add the new DataRow to the DataTable
+                                dataTable.Rows.Add(newRow);
 
-                            // Bind data to Generic List for save in DB
+                                // Refresh the grid to display the new row
+                                FamilyGridView.RefreshData();
+                                FamilyGridControl.RefreshDataSource();
 
-                            EmployeeFamily familyItem = new EmployeeFamily();
-                            familyItem.SNo = txtFSno.Text;
-                            familyItem.EFName = txtFName.Text;
-                            familyItem.EFAddress = txtFAddress.Text;
-                            familyItem.EFArea = txtFArea.Text;
-                            familyItem.EFDistrict = drpFDistrict.Text;
-                            familyItem.EFState = drpFState.Text;
-                            familyItem.EFPin = txtFPin.Text;
-                            familyItem.EFRelation = txtFEmp.Text;
-                            familyItem.EFDOB = ddFDOB.Text;
-                            familyItem.EFAge = txtFAge.Text;
-                            familyItem.EFResiding = drpResiding.Text;
-                            familyItem.EFRemark = txtRemarks.Text;
+                                // Bind data to Generic List for save in DB
 
-                            EmployeeFamilyRequest.FamilyList.Add(familyItem);
+                                EmployeeFamily familyItem = new EmployeeFamily();
+                                familyItem.SNo = txtFSno.Text;
+                                familyItem.EFName = txtFName.Text;
+                                familyItem.EFAddress = txtFAddress.Text;
+                                familyItem.EFArea = txtFArea.Text;
+                                familyItem.EFDistrict = drpFDistrict.Text;
+                                familyItem.EFState = drpFState.Text;
+                                familyItem.EFPin = txtFPin.Text;
+                                familyItem.EFRelation = txtFEmp.Text;
+                                familyItem.EFDOB = ddFDOB.Text;
+                                familyItem.EFAge = txtFAge.Text;
+                                familyItem.EFResiding = drpResiding.Text;
+                                familyItem.EFRemark = txtRemarks.Text;
 
-                            Reset_FamilyForm();
+                                EmployeeFamilyRequest.FamilyList.Add(familyItem);
+
+                                Reset_FamilyForm();
+                            }
                         }
                     }
                 }

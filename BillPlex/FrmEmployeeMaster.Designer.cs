@@ -806,6 +806,8 @@ namespace BillPlex
             this.svgPhoto.LookAndFeel.UseDefaultLookAndFeel = false;
             this.svgPhoto.Name = "svgPhoto";
             this.svgPhoto.Size = new System.Drawing.Size(92, 107);
+            this.svgPhoto.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Squeeze;
+            this.svgPhoto.SvgImage = global::BillPlex.Properties.Resources._21ifM_1M5sL__BO1_204_203_200_1;
             this.svgPhoto.TabIndex = 120;
             this.svgPhoto.Text = "svgImageBox1";
             // 

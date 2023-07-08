@@ -59,5 +59,85 @@ namespace BillPlex.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
+        /// </summary>
+        internal static DevExpress.Utils.Svg.SvgImage _12778679_476770615841075_1402789057832684795_o {
+            get {
+                object obj = ResourceManager.GetObject("12778679_476770615841075_1402789057832684795_o", resourceCulture);
+                return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
+        /// </summary>
+        internal static DevExpress.Utils.Svg.SvgImage _21ifM_1M5sL__BO1_204_203_200_ {
+            get {
+                object obj = ResourceManager.GetObject("21ifM+1M5sL._BO1,204,203,200_", resourceCulture);
+                return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
+        /// </summary>
+        internal static DevExpress.Utils.Svg.SvgImage _21ifM_1M5sL__BO1_204_203_200_1 {
+            get {
+                object obj = ResourceManager.GetObject("21ifM+1M5sL._BO1,204,203,200_1", resourceCulture);
+                return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
+        /// </summary>
+        internal static DevExpress.Utils.Svg.SvgImage _21ifM_1M5sL__BO1_204_203_200_2 {
+            get {
+                object obj = ResourceManager.GetObject("21ifM+1M5sL._BO1,204,203,200_2", resourceCulture);
+                return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
+        /// </summary>
+        internal static DevExpress.Utils.Svg.SvgImage Hamlet {
+            get {
+                object obj = ResourceManager.GetObject("Hamlet", resourceCulture);
+                return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
+        /// </summary>
+        internal static DevExpress.Utils.Svg.SvgImage image_2023_07_07T09_49_27_492Z__1_ {
+            get {
+                object obj = ResourceManager.GetObject("image_2023_07_07T09_49_27_492Z (1)", resourceCulture);
+                return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
+        /// </summary>
+        internal static DevExpress.Utils.Svg.SvgImage Product_Master {
+            get {
+                object obj = ResourceManager.GetObject("Product Master", resourceCulture);
+                return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
+        /// </summary>
+        internal static DevExpress.Utils.Svg.SvgImage sizeMaster__1_ {
+            get {
+                object obj = ResourceManager.GetObject("sizeMaster (1)", resourceCulture);
+                return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
     }
 }

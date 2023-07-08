@@ -213,6 +213,7 @@ namespace BillPlex
             this.svgImageBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.svgImageBox1.Name = "svgImageBox1";
             this.svgImageBox1.Size = new System.Drawing.Size(610, 318);
+            this.svgImageBox1.SvgImage = global::BillPlex.Properties.Resources._12778679_476770615841075_1402789057832684795_o;
             this.svgImageBox1.TabIndex = 10;
             this.svgImageBox1.Text = "svgImageBox1";
             // 

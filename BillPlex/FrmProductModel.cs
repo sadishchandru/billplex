@@ -190,7 +190,7 @@ namespace BillPlex
                 }
                 else
                 {
-                    XtraMessageBox.Show(productModelRequest.Result.Message, "please give the manditory field", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    XtraMessageBox.Show("please give the manditory field", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 if (productModelRequest.Result.Status == ResultStatus.Success)
