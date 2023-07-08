@@ -54,10 +54,10 @@ namespace BillPlex
                         XtraMessageBox.Show(RawMaterialRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         btnClear_Click();
                         ReloadSqlDataSource();
-
-                        btnAdd.Enabled = true;
                         btEdit.Enabled = false;
                         btUpdate.Enabled = false;
+                        btnAdd.Enabled = true;
+
                     }
                     else
                     {
@@ -85,30 +85,6 @@ namespace BillPlex
             txtStock.ResetText();
             txtSearch.ResetText();
             svgImageBox1.ResetText();
-        }
-
-        private void btEdit_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                var selectedRows = gridView1.GetSelectedRows();
-
-                foreach (var rowHandle in selectedRows)
-                {
-                    RawMaterialRequest.Id = (Int32)gridView1.GetRowCellValue(rowHandle, "Id");
-                    txtType.Text = gridView1.GetRowCellValue(rowHandle, "RawMaterials").ToString();
-                    txtRawMaterial.Text = gridView1.GetRowCellValue(rowHandle, "RawMaterialType").ToString();
-                    txtStock.Text = gridView1.GetRowCellValue(rowHandle, "RawMaterialStock").ToString();
-                }
-                btnAdd.Enabled = false;
-                btEdit.Enabled = false;
-                btDelete.Enabled = true;
-                btUpdate.Enabled = true;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
         }
 
         private void btDelete_Click(object sender, EventArgs e)
@@ -141,6 +117,30 @@ namespace BillPlex
         private void btExit_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                var selectedRows = gridView1.GetSelectedRows();
+
+                foreach (var rowHandle in selectedRows)
+                {
+                    RawMaterialRequest.Id = (Int32)gridView1.GetRowCellValue(rowHandle, "Id");
+                    txtType.Text = gridView1.GetRowCellValue(rowHandle, "RawMaterials").ToString();
+                    txtRawMaterial.Text = gridView1.GetRowCellValue(rowHandle, "RawMaterialType").ToString();
+                    txtStock.Text = gridView1.GetRowCellValue(rowHandle, "RawMaterialStock").ToString();
+                }
+                btnAdd.Enabled = false;
+                btEdit.Enabled = false;
+                btDelete.Enabled = true;
+                btUpdate.Enabled = true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

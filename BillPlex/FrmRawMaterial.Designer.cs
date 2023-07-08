@@ -119,7 +119,6 @@ namespace BillPlex
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(1515, 734);
             this.panelControl2.TabIndex = 1;
-            this.panelControl2.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // gridControl1
             // 
@@ -134,6 +133,7 @@ namespace BillPlex
             this.gridControl1.TabIndex = 13;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.DoubleClick += new System.EventHandler(this.gridControl1_DoubleClick);
             // 
             // sqlDataSource1
             // 
@@ -158,7 +158,6 @@ namespace BillPlex
             this.gridView1.DetailHeight = 284;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
-            this.gridView1.DoubleClick += new System.EventHandler(this.btEdit_Click);
             // 
             // colId
             // 
@@ -209,11 +208,12 @@ namespace BillPlex
             // 
             // svgImageBox1
             // 
-            this.svgImageBox1.Location = new System.Drawing.Point(879, 40);
+            this.svgImageBox1.Location = new System.Drawing.Point(781, 55);
             this.svgImageBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.svgImageBox1.Name = "svgImageBox1";
             this.svgImageBox1.Size = new System.Drawing.Size(610, 318);
-            this.svgImageBox1.SvgImage = global::BillPlex.Properties.Resources._12778679_476770615841075_1402789057832684795_o;
+            this.svgImageBox1.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Stretch;
+            this.svgImageBox1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageBox1.SvgImage")));
             this.svgImageBox1.TabIndex = 10;
             this.svgImageBox1.Text = "svgImageBox1";
             // 
@@ -234,6 +234,9 @@ namespace BillPlex
             // btClear
             // 
             this.btClear.Location = new System.Drawing.Point(417, 27);
+            this.btClear.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btClear.LookAndFeel.SkinName = "DevExpress Style";
+            this.btClear.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btClear.Name = "btClear";
             this.btClear.Size = new System.Drawing.Size(81, 24);
@@ -244,6 +247,9 @@ namespace BillPlex
             // btExit
             // 
             this.btExit.Location = new System.Drawing.Point(516, 27);
+            this.btExit.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btExit.LookAndFeel.SkinName = "DevExpress Style";
+            this.btExit.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btExit.Name = "btExit";
             this.btExit.Size = new System.Drawing.Size(81, 24);
@@ -254,6 +260,9 @@ namespace BillPlex
             // btDelete
             // 
             this.btDelete.Location = new System.Drawing.Point(309, 27);
+            this.btDelete.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btDelete.LookAndFeel.SkinName = "DevExpress Style";
+            this.btDelete.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btDelete.Name = "btDelete";
             this.btDelete.Size = new System.Drawing.Size(81, 24);
@@ -264,16 +273,21 @@ namespace BillPlex
             // btEdit
             // 
             this.btEdit.Location = new System.Drawing.Point(109, 27);
+            this.btEdit.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btEdit.LookAndFeel.SkinName = "DevExpress Style";
+            this.btEdit.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btEdit.Name = "btEdit";
             this.btEdit.Size = new System.Drawing.Size(81, 24);
             this.btEdit.TabIndex = 2;
             this.btEdit.Text = "EDIT";
-            this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
             // 
             // btUpdate
             // 
             this.btUpdate.Location = new System.Drawing.Point(208, 27);
+            this.btUpdate.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btUpdate.LookAndFeel.SkinName = "DevExpress Style";
+            this.btUpdate.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btUpdate.Name = "btUpdate";
             this.btUpdate.Size = new System.Drawing.Size(81, 24);
@@ -284,6 +298,9 @@ namespace BillPlex
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(9, 27);
+            this.btnAdd.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btnAdd.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnAdd.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(81, 24);

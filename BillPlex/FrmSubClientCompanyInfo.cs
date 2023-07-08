@@ -125,9 +125,7 @@ namespace BillPlex
                         {
                             SubClientRequest.ClientCompany = SubClientRequest.ClientCompanyList.FirstOrDefault(item => item.Name == selectedClientItem.ToString())?.Id ?? -1;
                         }
-                        //SubClientRequest.MainCompany = drpMainCompany.Text;
                         SubClientRequest.Director = txtDirector.Text;
-                        //SubClientRequest.ClientCompany = drpCCompany.Text;
                         SubClientRequest.ContractorName = txtContName.Text;
                         SubClientRequest.SubCompanyCode = txtCompanyCode.Text;
                         SubClientRequest.SubCompanyName = txtCompanyName.Text;
@@ -166,7 +164,6 @@ namespace BillPlex
                         SubClientRequest.AuthPercent = txtAuthPercent.Text;
                         SubClientRequest.ActiveStatus = radActiveStatus.Text;
                         SubClientRequest.Update();
-                        //this.Close();
 
                         if (SubClientRequest.Result.Status == ResultStatus.Success)
                         {

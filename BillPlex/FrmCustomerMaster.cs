@@ -90,6 +90,11 @@ namespace BillPlex
                         {
                             XtraMessageBox.Show(CustomerRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             ReloadSqlDataSource();
+                            btnAdd.Enabled = true;
+                            btnEdit.Enabled = false;
+                            btnDelete.Enabled = true;
+                            btnUpdate.Enabled = false;
+                            btnClear_Click();
                         }
                         else
                         {
@@ -109,7 +114,7 @@ namespace BillPlex
             }
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
+        private void btnClear_Click(object sender = null, EventArgs e=null)
         {
             // Clear the values in textboxes
             CustomerRequest.Id = 0;
@@ -133,6 +138,9 @@ namespace BillPlex
             ddCSTDate.ResetText();
             txtLicenseNo.ResetText();
             txtWebsite.ResetText();
+            txtCustomerCode.Enabled = true;
+            btnAdd.Enabled = true;
+            btnUpdate.Enabled = false;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -150,6 +158,7 @@ namespace BillPlex
             if (CustomerRequest.Result.Status == ResultStatus.Success)
             {
                 XtraMessageBox.Show(CustomerRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ReloadSqlDataSource();
             }
 
             //// Get the selected rows from the GridView control
@@ -198,21 +207,23 @@ namespace BillPlex
                     drpCDCountry.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "ResCountry");
                     txtMobileNo.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "Mobile");
                     txtTINno.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "TinNo");
-                    var datete = CustomerMaster_GridView.GetRowCellValue(rowHandle, "CstDate").ToString();
-                    DateTime dat = DateTime.Parse(datete);
-                    ddTINDate.Text = dat.ToString();
+                    var datete = CustomerMaster_GridView.GetRowCellValue(rowHandle, "TinDate").ToString();
+                    ddTINDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
+                    //var datete = CustomerMaster_GridView.GetRowCellValue(rowHandle, "CstDate").ToString();
+                    //DateTime dat = DateTime.Parse(datete);
+                    //ddTINDate.Text = dat.ToString();
                     txtCSTno.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "CstNo");
-                    var datet = CustomerMaster_GridView.GetRowCellValue(rowHandle, "CstDate").ToString();
-                    DateTime date = DateTime.Parse(datet);
-                    ddCSTDate.Text = date.ToString();
+                    datete = CustomerMaster_GridView.GetRowCellValue(rowHandle, "CstDate").ToString();
+                    ddCSTDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
                     txtLicenseNo.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "licenseNo");
                     txtWebsite.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "Website");
                 }
                 txtCustomerCode.Enabled = false;
                 btnAdd.Enabled = false;
                 btnEdit.Enabled = false;
-                btnDelete.Enabled = false;
+                btnDelete.Enabled = true;
                 btnUpdate.Enabled = true;
+                
 
                 labelAvailable.Visible = false;
                 labelCodeExist.Visible = false;
@@ -257,6 +268,28 @@ namespace BillPlex
                 labelAvailable.Visible = false;
                 labelCodeExist.Visible = false;
             }
+        }
+
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
+            string textToCopy = txtEmailID.Text;
+
+            if (!string.IsNullOrEmpty(textToCopy))
+            {
+                Clipboard.SetText(textToCopy);
+                XtraMessageBox.Show("Text copied to clipboard!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show("Text copied to clipboard!");
+            }
+            else
+            {
+                XtraMessageBox.Show("No text to copy!", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //MessageBox.Show("No text to copy!");
+            }
+        }
+
+        private void btnEmailClear_Click(object sender, EventArgs e)
+        {
+            txtEmailID.ResetText();
         }
     }
 }
