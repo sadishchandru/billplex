@@ -362,6 +362,7 @@ namespace BillPlex
                             if (EmployeeFamilyRequest.Result.Status == ResultStatus.Success)
                             {
                                 this.Close();
+                                EmployeeFamilyRequest.FamilyList = new List<EmployeeFamily>();
                                 XtraMessageBox.Show(EmployeeFamilyRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                                 FrmEmployeeMasterList form = Application.OpenForms.OfType<FrmEmployeeMasterList>().FirstOrDefault();
@@ -418,8 +419,9 @@ namespace BillPlex
                         if (EmployeeNomineeReqest.Result.Status == ResultStatus.Success)
                         {
                             this.Close();
+                            EmployeeNomineeReqest.NomineeList = new List<EmployeeNominee>();
                             XtraMessageBox.Show(EmployeeNomineeReqest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                      
                             FrmEmployeeMasterList form = Application.OpenForms.OfType<FrmEmployeeMasterList>().FirstOrDefault();
                             Form myForm = Application.OpenForms["FrmEmployeeMasterList"];
                             if (myForm != null)
@@ -452,7 +454,7 @@ namespace BillPlex
                     //EmployeeNomineeReqest.ENFName = txtNFathers.Text;
                     //EmployeeNomineeReqest.ENGAddress = txtFAddress.Text;
                     //EmployeeNomineeReqest.ENGRelation = txtGRelation.Text;
-                  
+
                 }
                 #endregion
 
@@ -764,7 +766,7 @@ namespace BillPlex
             drpResiding.ResetText();
             txtRemarks.ResetText();
         }
-        
+
         private void Reset_NomineeForm()
         {
             txtNSno.ResetText();
@@ -853,10 +855,10 @@ namespace BillPlex
 
             if (tabIndex == 2)
             {
-                InitializeFamilyDataSource();
 
-                if (EmployeeFamilyRequest.FamilyList.Count() == 0)
+                if (EmployeeFamilyRequest.FamilyList.Count() == 0 && EmployeePersonalRequest.Id != 0 )
                 {
+                    InitializeFamilyDataSource();
                     EmployeeFamilyRequest.EFEmpId = EmployeePersonalRequest.Id;
                     EmployeeFamilyRequest.GetList();
 
@@ -1049,7 +1051,8 @@ namespace BillPlex
                 EmployeeNomineeReqest.NomineeList.Add(nomineeItem);
 
                 Reset_NomineeForm();
-            } else
+            }
+            else
             {
                 XtraMessageBox.Show("SNo Or Name is empty ", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
