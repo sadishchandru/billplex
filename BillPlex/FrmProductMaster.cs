@@ -74,25 +74,7 @@ namespace BillPlex
 
         private void btEdit_Click(object sender, EventArgs e)
         {
-            try
-            {
-                var selectedRows = grd_productmaster.GetSelectedRows();
-
-                foreach (var rowHandle in selectedRows)
-                {
-                    productMasterRequest.Id = (Int32)grd_productmaster.GetRowCellValue(rowHandle, "Id");
-                    txtPName.Text = grd_productmaster.GetRowCellValue(rowHandle, "Productmodel").ToString();
-                }
-                btnAdd.Enabled = false;
-                btEdit.Enabled = false;
-                btDelete.Enabled = true;
-                btUpdate.Enabled = true;
-
-            }
-            catch (Exception ex)
-            {
-                XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
 
         private void btDelete_Click(object sender, EventArgs e)
@@ -119,17 +101,35 @@ namespace BillPlex
         {
             productMasterRequest.Id = 0;
             txtPName.ResetText();
-        }
-
-        private void btExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-
+            btnAdd.Enabled = false;
         }
 
         private void txtSearch_EditValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                var selectedRows = grd_productmaster.GetSelectedRows();
+
+                foreach (var rowHandle in selectedRows)
+                {
+                    productMasterRequest.Id = (Int32)grd_productmaster.GetRowCellValue(rowHandle, "Id");
+                    txtPName.Text = grd_productmaster.GetRowCellValue(rowHandle, "Productmodel").ToString();
+                }
+                btnAdd.Enabled = false;
+                btEdit.Enabled = false;
+                btDelete.Enabled = true;
+                btUpdate.Enabled = true;
+
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

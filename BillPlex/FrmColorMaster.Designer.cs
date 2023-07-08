@@ -30,8 +30,8 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery4 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter4 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmColorMaster));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -165,13 +165,13 @@ namespace BillPlex
             // 
             this.sqlDataSource2.ConnectionName = "BillPlex";
             this.sqlDataSource2.Name = "sqlDataSource2";
-            storedProcQuery1.Name = "PRO_GetColourMaster";
-            queryParameter1.Name = "@SearchKey";
-            queryParameter1.Type = typeof(string);
-            storedProcQuery1.Parameters.Add(queryParameter1);
-            storedProcQuery1.StoredProcName = "PRO_GetColourMaster";
+            storedProcQuery4.Name = "PRO_GetColourMaster";
+            queryParameter4.Name = "@SearchKey";
+            queryParameter4.Type = typeof(string);
+            storedProcQuery4.Parameters.Add(queryParameter4);
+            storedProcQuery4.StoredProcName = "PRO_GetColourMaster";
             this.sqlDataSource2.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery1});
+            storedProcQuery4});
             this.sqlDataSource2.ResultSchemaSerializable = resources.GetString("sqlDataSource2.ResultSchemaSerializable");
             // 
             // ColormasterGrid
@@ -223,11 +223,12 @@ namespace BillPlex
             // 
             // svgImageBox1
             // 
-            this.svgImageBox1.Location = new System.Drawing.Point(885, 17);
+            this.svgImageBox1.Location = new System.Drawing.Point(964, 20);
             this.svgImageBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.svgImageBox1.Name = "svgImageBox1";
-            this.svgImageBox1.Size = new System.Drawing.Size(710, 242);
-            this.svgImageBox1.SvgImage = global::BillPlex.Properties.Resources.Hamlet;
+            this.svgImageBox1.Size = new System.Drawing.Size(554, 309);
+            this.svgImageBox1.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Stretch;
+            this.svgImageBox1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageBox1.SvgImage")));
             this.svgImageBox1.TabIndex = 10;
             // 
             // panelControl3
@@ -247,6 +248,9 @@ namespace BillPlex
             // btClear
             // 
             this.btClear.Location = new System.Drawing.Point(417, 27);
+            this.btClear.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btClear.LookAndFeel.SkinName = "DevExpress Style";
+            this.btClear.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btClear.Name = "btClear";
             this.btClear.Size = new System.Drawing.Size(81, 24);
@@ -257,6 +261,9 @@ namespace BillPlex
             // btExit
             // 
             this.btExit.Location = new System.Drawing.Point(514, 27);
+            this.btExit.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btExit.LookAndFeel.SkinName = "DevExpress Style";
+            this.btExit.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btExit.Name = "btExit";
             this.btExit.Size = new System.Drawing.Size(81, 24);
@@ -267,6 +274,9 @@ namespace BillPlex
             // btDelete
             // 
             this.btDelete.Location = new System.Drawing.Point(309, 27);
+            this.btDelete.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btDelete.LookAndFeel.SkinName = "DevExpress Style";
+            this.btDelete.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btDelete.Name = "btDelete";
             this.btDelete.Size = new System.Drawing.Size(81, 24);
@@ -277,6 +287,9 @@ namespace BillPlex
             // btEdit
             // 
             this.btEdit.Location = new System.Drawing.Point(109, 27);
+            this.btEdit.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btEdit.LookAndFeel.SkinName = "DevExpress Style";
+            this.btEdit.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btEdit.Name = "btEdit";
             this.btEdit.Size = new System.Drawing.Size(81, 24);
@@ -287,6 +300,9 @@ namespace BillPlex
             // btUpdate
             // 
             this.btUpdate.Location = new System.Drawing.Point(208, 27);
+            this.btUpdate.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btUpdate.LookAndFeel.SkinName = "DevExpress Style";
+            this.btUpdate.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btUpdate.Name = "btUpdate";
             this.btUpdate.Size = new System.Drawing.Size(81, 24);
@@ -297,6 +313,9 @@ namespace BillPlex
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(9, 27);
+            this.btnAdd.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btnAdd.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnAdd.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(81, 24);

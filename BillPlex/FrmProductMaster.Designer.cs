@@ -110,6 +110,7 @@ namespace BillPlex
             this.gridControl1.TabIndex = 13;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grd_productmaster});
+            this.gridControl1.DoubleClick += new System.EventHandler(this.gridControl1_DoubleClick);
             // 
             // sqlDataSource1
             // 
@@ -214,7 +215,6 @@ namespace BillPlex
             this.btExit.Size = new System.Drawing.Size(81, 24);
             this.btExit.TabIndex = 4;
             this.btExit.Text = "EXIT";
-            this.btExit.Click += new System.EventHandler(this.btExit_Click);
             // 
             // btDelete
             // 
@@ -234,7 +234,6 @@ namespace BillPlex
             this.btEdit.Size = new System.Drawing.Size(81, 24);
             this.btEdit.TabIndex = 2;
             this.btEdit.Text = "EDIT";
-            this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
             // 
             // btUpdate
             // 

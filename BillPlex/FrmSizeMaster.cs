@@ -131,27 +131,10 @@ namespace BillPlex
 
         private void btEdit_Click(object sender, EventArgs e)
         {
-            try
-            {
-                var selectedRows = SizeMasterGrid.GetSelectedRows();
-
-                foreach (var rowHandle in selectedRows)
-                {
-                    sizeMasterRequest.Id = (Int32)SizeMasterGrid.GetRowCellValue(rowHandle, "Id");
-                    txtSName.Text = SizeMasterGrid.GetRowCellValue(rowHandle, "Sizename").ToString();
-
-                }
-                btnAdd.Enabled = true;
-                btEdit.Enabled = false;
-                btDelete.Enabled = true;
-                btUpdate.Enabled = true;
-                labelAvailable.Visible = false;
-                LabelExceed.Visible = false;
-            }
-            catch (Exception ex)
-            {
-                XtraMessageBox.Show(ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            btExit.Enabled = false;
+            txtSName.Enabled = true;
+            btUpdate.Enabled = true;
+            btnAdd.Enabled = false;
         }
 
         private void btExit_Click(object sender, EventArgs e)
@@ -190,6 +173,32 @@ namespace BillPlex
             {
                 labelAvailable.Visible = false;
                 LabelExceed.Visible = false;
+            }
+        }
+
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                var selectedRows = SizeMasterGrid.GetSelectedRows();
+
+                foreach (var rowHandle in selectedRows)
+                {
+                    sizeMasterRequest.Id = (Int32)SizeMasterGrid.GetRowCellValue(rowHandle, "Id");
+                    txtSName.Text = SizeMasterGrid.GetRowCellValue(rowHandle, "Sizename").ToString();
+
+                }
+                btnAdd.Enabled = true;
+                btEdit.Enabled = true;
+                btDelete.Enabled = true;
+                btUpdate.Enabled = false;
+                labelAvailable.Visible = false;
+                LabelExceed.Visible = false;
+                txtSName.Enabled = false;
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

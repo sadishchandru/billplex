@@ -43,8 +43,8 @@ namespace BillPlex
             {
                 if (txtRawMaterial.Text != string.Empty && txtStock.Text != string.Empty)
                 {
-                    RawMaterialRequest.RawMaterials = txtType.Text;
-                    RawMaterialRequest.RawMaterialType = txtRawMaterial.Text;
+                    RawMaterialRequest.RawMaterials = txtRawMaterial.Text;
+                    RawMaterialRequest.RawMaterialType = txtType.Text;
                     RawMaterialRequest.RawMaterialStock = txtStock.Text;
                     RawMaterialRequest.Update();
 
@@ -128,8 +128,8 @@ namespace BillPlex
                 foreach (var rowHandle in selectedRows)
                 {
                     RawMaterialRequest.Id = (Int32)gridView1.GetRowCellValue(rowHandle, "Id");
-                    txtType.Text = gridView1.GetRowCellValue(rowHandle, "RawMaterials").ToString();
-                    txtRawMaterial.Text = gridView1.GetRowCellValue(rowHandle, "RawMaterialType").ToString();
+                    txtType.Text = gridView1.GetRowCellValue(rowHandle, "RawMaterialType").ToString();
+                    txtRawMaterial.Text = gridView1.GetRowCellValue(rowHandle, "RawMaterials").ToString();
                     txtStock.Text = gridView1.GetRowCellValue(rowHandle, "RawMaterialStock").ToString();
                 }
                 btnAdd.Enabled = false;
