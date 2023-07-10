@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace BillPlex
 {
-    public partial class FrmJobReceivedProfile : DevExpress.XtraEditors.XtraUserControl
+    public partial class FrmJobReceivedProfile : DevExpress.XtraEditors.XtraForm
     {
         public FrmJobReceivedProfile()
         {
