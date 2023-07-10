@@ -348,6 +348,18 @@
       <DependentUpon>FrmDeliveryChallanProfile.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmDirectJobGivingInfo.resx">
+      <DependentUpon>FrmDirectJobGivingInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDirectJobGivingProfile.resx">
+      <DependentUpon>FrmDirectJobGivingProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDirectJobReceivedWithoutGivingInfo.resx">
+      <DependentUpon>FrmDirectJobReceivedWithoutGivingInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDirectJobReceivedWithoutGivingProfile.resx">
+      <DependentUpon>FrmDirectJobReceivedWithoutGivingProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmEmployeeMaster.resx">
       <DependentUpon>FrmEmployeeMaster.cs</DependentUpon>
     </EmbeddedResource>
@@ -356,6 +368,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmFinishingProductModel.resx">
       <DependentUpon>FrmFinishingProductModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmJobReallocation.resx">
+      <DependentUpon>FrmJobReallocation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmOrderMaster.resx">
       <DependentUpon>FrmOrderMaster.cs</DependentUpon>

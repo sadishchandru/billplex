@@ -56,11 +56,18 @@ namespace BillPlex
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.JobAllocation = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Master_Group_btn_Click = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,9 +97,16 @@ namespace BillPlex
             this.BtnFinishingProduct,
             this.barButtonItem12,
             this.barButtonItem6,
-            this.barButtonItem7});
+            this.barButtonItem7,
+            this.barButtonItem2,
+            this.barButtonItem3,
+            this.barButtonItem4,
+            this.barButtonItem8,
+            this.barButtonItem9,
+            this.barButtonItem10,
+            this.barButtonItem11});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 30;
+            this.ribbon.MaxItemId = 37;
             this.ribbon.Name = "ribbon";
             this.ribbon.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.ribbonPageCategory1});
@@ -285,15 +299,21 @@ namespace BillPlex
             // ribbonPage3
             // 
             this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup3});
+            this.JobAllocation});
             this.ribbonPage3.Name = "ribbonPage3";
             this.ribbonPage3.Text = "Job Allocation";
             // 
-            // ribbonPageGroup3
+            // JobAllocation
             // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem6);
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem7);
-            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            this.JobAllocation.ItemLinks.Add(this.barButtonItem7);
+            this.JobAllocation.ItemLinks.Add(this.barButtonItem2, true);
+            this.JobAllocation.ItemLinks.Add(this.barButtonItem3, true);
+            this.JobAllocation.ItemLinks.Add(this.barButtonItem4, true);
+            this.JobAllocation.ItemLinks.Add(this.barButtonItem8, true);
+            this.JobAllocation.ItemLinks.Add(this.barButtonItem9, true);
+            this.JobAllocation.ItemLinks.Add(this.barButtonItem10, true);
+            this.JobAllocation.ItemLinks.Add(this.barButtonItem11, true);
+            this.JobAllocation.Name = "JobAllocation";
             // 
             // ribbonPage1
             // 
@@ -323,6 +343,48 @@ namespace BillPlex
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
             this.ribbonStatusBar.Size = new System.Drawing.Size(1618, 24);
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Job Giving";
+            this.barButtonItem2.Id = 30;
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "Job Giving Without DC";
+            this.barButtonItem3.Id = 31;
+            this.barButtonItem3.Name = "barButtonItem3";
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "Job Received";
+            this.barButtonItem4.Id = 32;
+            this.barButtonItem4.Name = "barButtonItem4";
+            // 
+            // barButtonItem8
+            // 
+            this.barButtonItem8.Caption = "Job Reallocation";
+            this.barButtonItem8.Id = 33;
+            this.barButtonItem8.Name = "barButtonItem8";
+            // 
+            // barButtonItem9
+            // 
+            this.barButtonItem9.Caption = "Direct Job Giving";
+            this.barButtonItem9.Id = 34;
+            this.barButtonItem9.Name = "barButtonItem9";
+            // 
+            // barButtonItem10
+            // 
+            this.barButtonItem10.Caption = "Direct Job Received";
+            this.barButtonItem10.Id = 35;
+            this.barButtonItem10.Name = "barButtonItem10";
+            // 
+            // barButtonItem11
+            // 
+            this.barButtonItem11.Caption = "Direct Job Received (Without Giving)";
+            this.barButtonItem11.Id = 36;
+            this.barButtonItem11.Name = "barButtonItem11";
             // 
             // NavBar
             // 
@@ -376,6 +438,13 @@ namespace BillPlex
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraBars.BarButtonItem barButtonItem7;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup JobAllocation;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem8;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem9;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem10;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem11;
     }
 }
