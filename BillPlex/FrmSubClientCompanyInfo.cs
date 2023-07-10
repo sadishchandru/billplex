@@ -360,7 +360,7 @@ namespace BillPlex
             radActiveStatus.ResetText();
             txtBankDetails.ResetText();
         }
-
+     
         private void btnExit_Click_1(object sender, EventArgs e)
         {
             this.Close();
@@ -398,6 +398,70 @@ namespace BillPlex
             {
                 labelAvailable.Visible = false;
                 labelCodeExist.Visible = false;
+            }
+        }
+
+        private void btnAddclear_click(object sender, EventArgs e)
+        {
+            {
+               
+                txtAuthAddress.ResetText();
+             
+            }
+        }
+
+        private void btnAddCopy_click(object sender, EventArgs e)
+        {
+            if (txtAuthAddress.Text != "")
+            {
+                // Get the text from the text box
+                string text = txtAuthAddress.Text;
+
+                // Copy the text to the clipboard
+                Clipboard.SetText(text);
+
+                XtraMessageBox.Show("Text copied to clipboard!", "Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else {
+                XtraMessageBox.Show("No text to copy!", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+           
+        }
+
+        private void btnPANnoCopy_click(object sender, EventArgs e)
+        {
+            if (txtAuthPanNo.Text != "")
+            {
+                // Get the text from the text box
+                string text = txtAuthPanNo.Text;
+
+                // Copy the text to the clipboard
+                Clipboard.SetText(text);
+
+                XtraMessageBox.Show("Text copied to clipboard!", "Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                XtraMessageBox.Show("No text to copy!", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+        }
+
+        private void btnEmailCpy_click(object sender, EventArgs e)
+        {
+            if (txtAuthEmailId.Text != "")
+            {
+                // Get the text from the text box
+                string text = txtAuthEmailId.Text;
+
+                // Copy the text to the clipboard
+                Clipboard.SetText(text);
+
+                XtraMessageBox.Show("Text copied to clipboard!", "Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                XtraMessageBox.Show("No text to copy!", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

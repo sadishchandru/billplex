@@ -66,7 +66,7 @@ namespace BillPlex
                 SubClientRequest.Id = (Int64)SubClientGrid.GetRowCellValue(rowHandle, "Id");
                 //SubClientRequest.Id = (int)Id;
 
-            }
+            }                                                                                 
 
            // SubClientRequest.Id = Id;
             SubClientRequest.Delete();
