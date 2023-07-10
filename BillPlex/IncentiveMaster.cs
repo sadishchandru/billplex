@@ -209,5 +209,25 @@ namespace BillPlex
                 throw ex;
             }
         }
+
+        private void BtnPNameTab_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "FrmProductMaster")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                FrmProductMaster productMaster = new FrmProductMaster();
+                productMaster.MdiParent = this.MdiParent;
+                productMaster.Show();
+            }
+        }
     }
 }

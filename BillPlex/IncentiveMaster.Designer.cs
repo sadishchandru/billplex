@@ -49,7 +49,7 @@ namespace BillPlex
             this.btnClear = new DevExpress.XtraEditors.SimpleButton();
             this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
             this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButtonProductName = new DevExpress.XtraEditors.SimpleButton();
+            this.BtnPNameTab = new DevExpress.XtraEditors.SimpleButton();
             this.DrpProductName = new DevExpress.XtraEditors.ComboBoxEdit();
             this.DrpModelCode = new DevExpress.XtraEditors.ComboBoxEdit();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -321,13 +321,17 @@ namespace BillPlex
             this.btnEdit.TabIndex = 1;
             this.btnEdit.Text = "Edit";
             // 
-            // simpleButtonProductName
+            // BtnPNameTab
             // 
-            this.simpleButtonProductName.Location = new System.Drawing.Point(629, 140);
-            this.simpleButtonProductName.Name = "simpleButtonProductName";
-            this.simpleButtonProductName.Size = new System.Drawing.Size(31, 19);
-            this.simpleButtonProductName.TabIndex = 23;
-            this.simpleButtonProductName.Text = "...";
+            this.BtnPNameTab.Location = new System.Drawing.Point(629, 140);
+            this.BtnPNameTab.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.BtnPNameTab.LookAndFeel.SkinName = "DevExpress Style";
+            this.BtnPNameTab.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.BtnPNameTab.Name = "BtnPNameTab";
+            this.BtnPNameTab.Size = new System.Drawing.Size(31, 19);
+            this.BtnPNameTab.TabIndex = 23;
+            this.BtnPNameTab.Text = "...";
+            this.BtnPNameTab.Click += new System.EventHandler(this.BtnPNameTab_Click);
             // 
             // DrpProductName
             // 
@@ -486,7 +490,7 @@ namespace BillPlex
             this.Controls.Add(this.labelControl9);
             this.Controls.Add(this.labelControl8);
             this.Controls.Add(this.gridControl1);
-            this.Controls.Add(this.simpleButtonProductName);
+            this.Controls.Add(this.BtnPNameTab);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.txtModelSize);
             this.Controls.Add(this.txtDurationPeriod);
@@ -539,7 +543,7 @@ namespace BillPlex
         private DevExpress.XtraEditors.SimpleButton btnDelete;
         private DevExpress.XtraEditors.SimpleButton btnUpdate;
         private DevExpress.XtraEditors.SimpleButton btnEdit;
-        private DevExpress.XtraEditors.SimpleButton simpleButtonProductName;
+        private DevExpress.XtraEditors.SimpleButton BtnPNameTab;
         private DevExpress.XtraEditors.SimpleButton btnAdd;
         private DevExpress.XtraEditors.SimpleButton btnClear;
         private DevExpress.XtraEditors.ComboBoxEdit DrpProductName;
