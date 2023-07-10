@@ -163,6 +163,30 @@
     <Compile Include="FrmDeliveryChallanProfile.Designer.cs">
       <DependentUpon>FrmDeliveryChallanProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmDirectJobGivingInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDirectJobGivingInfo.Designer.cs">
+      <DependentUpon>FrmDirectJobGivingInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDirectJobGivingProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDirectJobGivingProfile.Designer.cs">
+      <DependentUpon>FrmDirectJobGivingProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDirectJobReceivedWithoutGivingInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDirectJobReceivedWithoutGivingInfo.Designer.cs">
+      <DependentUpon>FrmDirectJobReceivedWithoutGivingInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDirectJobReceivedWithoutGivingProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDirectJobReceivedWithoutGivingProfile.Designer.cs">
+      <DependentUpon>FrmDirectJobReceivedWithoutGivingProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmEmployeeMaster.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +204,48 @@
     </Compile>
     <Compile Include="FrmFinishingProductModel.Designer.cs">
       <DependentUpon>FrmFinishingProductModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmJobGivingInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmJobGivingInfo.Designer.cs">
+      <DependentUpon>FrmJobGivingInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmJobGivingProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmJobGivingProfile.Designer.cs">
+      <DependentUpon>FrmJobGivingProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmJobGivingWithoutDcInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmJobGivingWithoutDcInfo.Designer.cs">
+      <DependentUpon>FrmJobGivingWithoutDcInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmJobGivingWithoutDcProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmJobGivingWithoutDcProfile.Designer.cs">
+      <DependentUpon>FrmJobGivingWithoutDcProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmJobReallocation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmJobReallocation.Designer.cs">
+      <DependentUpon>FrmJobReallocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmJobReceivedInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmJobReceivedInfo.Designer.cs">
+      <DependentUpon>FrmJobReceivedInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmJobReceivedProfile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FrmJobReceivedProfile.Designer.cs">
+      <DependentUpon>FrmJobReceivedProfile.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmOrderMaster.cs">
       <SubType>Form</SubType>
