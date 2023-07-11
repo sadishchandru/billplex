@@ -40,8 +40,8 @@ namespace BillPlex
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
+            this.ddODate = new DevExpress.XtraEditors.DateEdit();
             this.drpColor = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.drpPSize = new DevExpress.XtraEditors.ComboBoxEdit();
             this.drpMCode = new DevExpress.XtraEditors.ComboBoxEdit();
             this.drpMName = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl27 = new DevExpress.XtraEditors.LabelControl();
@@ -71,8 +71,10 @@ namespace BillPlex
             this.labelControl39 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl40 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl14 = new DevExpress.XtraEditors.PanelControl();
+            this.txtPSize = new DevExpress.XtraEditors.TextEdit();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.txtDeadDays = new DevExpress.XtraEditors.TextEdit();
             this.panelControl7 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.panelOWeight = new DevExpress.XtraEditors.PanelControl();
@@ -110,8 +112,6 @@ namespace BillPlex
             this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
             this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
             this.btnNew = new DevExpress.XtraEditors.SimpleButton();
-            this.ddODate = new DevExpress.XtraEditors.DateEdit();
-            this.txtDeadDays = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl11)).BeginInit();
@@ -122,8 +122,9 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.txtCCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTotalWT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTQty.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddODate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddODate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpColor.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.drpPSize.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpMCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpMName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpOrderNo.Properties)).BeginInit();
@@ -136,8 +137,10 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.txtWeight.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPSize.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDeadDays.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).BeginInit();
             this.panelControl7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelOWeight)).BeginInit();
@@ -166,9 +169,6 @@ namespace BillPlex
             this.panelControl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl8)).BeginInit();
             this.panelControl8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ddODate.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddODate.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDeadDays.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -219,7 +219,6 @@ namespace BillPlex
             this.cmbCompanyName.Controls.Add(this.labelControl21);
             this.cmbCompanyName.Controls.Add(this.ddODate);
             this.cmbCompanyName.Controls.Add(this.drpColor);
-            this.cmbCompanyName.Controls.Add(this.drpPSize);
             this.cmbCompanyName.Controls.Add(this.drpMCode);
             this.cmbCompanyName.Controls.Add(this.drpMName);
             this.cmbCompanyName.Controls.Add(this.labelControl27);
@@ -249,6 +248,7 @@ namespace BillPlex
             this.cmbCompanyName.Controls.Add(this.labelControl39);
             this.cmbCompanyName.Controls.Add(this.labelControl40);
             this.cmbCompanyName.Controls.Add(this.panelControl14);
+            this.cmbCompanyName.Controls.Add(this.txtPSize);
             this.cmbCompanyName.Location = new System.Drawing.Point(11, 203);
             this.cmbCompanyName.Name = "cmbCompanyName";
             this.cmbCompanyName.Size = new System.Drawing.Size(1172, 239);
@@ -312,6 +312,25 @@ namespace BillPlex
             this.labelControl21.TabIndex = 90;
             this.labelControl21.Text = "Date";
             // 
+            // ddODate
+            // 
+            this.ddODate.EditValue = null;
+            this.ddODate.Location = new System.Drawing.Point(322, 34);
+            this.ddODate.Name = "ddODate";
+            this.ddODate.Properties.BeepOnError = false;
+            this.ddODate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ddODate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ddODate.Properties.DisplayFormat.FormatString = "";
+            this.ddODate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.ddODate.Properties.EditFormat.FormatString = "";
+            this.ddODate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.ddODate.Properties.MaskSettings.Set("mask", "d");
+            this.ddODate.Properties.UseMaskAsDisplayFormat = true;
+            this.ddODate.Size = new System.Drawing.Size(101, 20);
+            this.ddODate.TabIndex = 91;
+            // 
             // drpColor
             // 
             this.drpColor.Location = new System.Drawing.Point(803, 32);
@@ -320,15 +339,7 @@ namespace BillPlex
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.drpColor.Size = new System.Drawing.Size(291, 20);
             this.drpColor.TabIndex = 52;
-            // 
-            // drpPSize
-            // 
-            this.drpPSize.Location = new System.Drawing.Point(594, 34);
-            this.drpPSize.Name = "drpPSize";
-            this.drpPSize.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.drpPSize.Size = new System.Drawing.Size(100, 20);
-            this.drpPSize.TabIndex = 51;
+            this.drpColor.SelectedIndexChanged += new System.EventHandler(this.drpColor_SelectedIndexChanged);
             // 
             // drpMCode
             // 
@@ -338,6 +349,7 @@ namespace BillPlex
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.drpMCode.Size = new System.Drawing.Size(270, 20);
             this.drpMCode.TabIndex = 50;
+            this.drpMCode.SelectedIndexChanged += new System.EventHandler(this.drpMCode_SelectedIndexChanged);
             // 
             // drpMName
             // 
@@ -347,6 +359,7 @@ namespace BillPlex
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.drpMName.Size = new System.Drawing.Size(270, 20);
             this.drpMName.TabIndex = 49;
+            this.drpMName.SelectedIndexChanged += new System.EventHandler(this.drpMName_SelectedIndexChanged);
             // 
             // labelControl27
             // 
@@ -377,6 +390,7 @@ namespace BillPlex
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.drpOrderNo.Size = new System.Drawing.Size(109, 20);
             this.drpOrderNo.TabIndex = 81;
+            this.drpOrderNo.SelectedIndexChanged += new System.EventHandler(this.drpOrderNo_SelectedIndexChanged);
             // 
             // labelControl28
             // 
@@ -591,6 +605,13 @@ namespace BillPlex
             this.panelControl14.Size = new System.Drawing.Size(184, 101);
             this.panelControl14.TabIndex = 4;
             // 
+            // txtPSize
+            // 
+            this.txtPSize.Location = new System.Drawing.Point(594, 34);
+            this.txtPSize.Name = "txtPSize";
+            this.txtPSize.Size = new System.Drawing.Size(100, 20);
+            this.txtPSize.TabIndex = 51;
+            // 
             // panelControl4
             // 
             this.panelControl4.Appearance.BackColor = System.Drawing.Color.Black;
@@ -613,6 +634,13 @@ namespace BillPlex
             this.labelControl9.Size = new System.Drawing.Size(39, 19);
             this.labelControl9.TabIndex = 93;
             this.labelControl9.Text = "Days";
+            // 
+            // txtDeadDays
+            // 
+            this.txtDeadDays.Location = new System.Drawing.Point(12, 33);
+            this.txtDeadDays.Name = "txtDeadDays";
+            this.txtDeadDays.Size = new System.Drawing.Size(111, 20);
+            this.txtDeadDays.TabIndex = 89;
             // 
             // panelControl7
             // 
@@ -794,9 +822,9 @@ namespace BillPlex
             this.labelControl4.Appearance.Options.UseFont = true;
             this.labelControl4.Location = new System.Drawing.Point(499, 43);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(126, 19);
+            this.labelControl4.Size = new System.Drawing.Size(131, 19);
             this.labelControl4.TabIndex = 85;
-            this.labelControl4.Text = "EmployeeName";
+            this.labelControl4.Text = "Employee Name";
             // 
             // txtCCom
             // 
@@ -831,6 +859,7 @@ namespace BillPlex
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.drpEmpCode.Size = new System.Drawing.Size(194, 20);
             this.drpEmpCode.TabIndex = 81;
+            this.drpEmpCode.SelectedIndexChanged += new System.EventHandler(this.drpEmpCode_SelectedIndexChanged);
             // 
             // labelControl32
             // 
@@ -1000,6 +1029,7 @@ namespace BillPlex
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 29;
             this.btnAdd.Text = "ADD";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnClear
             // 
@@ -1080,32 +1110,6 @@ namespace BillPlex
             this.btnNew.TabIndex = 4;
             this.btnNew.Text = "NEW";
             // 
-            // ddODate
-            // 
-            this.ddODate.EditValue = null;
-            this.ddODate.Location = new System.Drawing.Point(322, 34);
-            this.ddODate.Name = "ddODate";
-            this.ddODate.Properties.BeepOnError = false;
-            this.ddODate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ddODate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ddODate.Properties.DisplayFormat.FormatString = "";
-            this.ddODate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.ddODate.Properties.EditFormat.FormatString = "";
-            this.ddODate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.ddODate.Properties.MaskSettings.Set("mask", "d");
-            this.ddODate.Properties.UseMaskAsDisplayFormat = true;
-            this.ddODate.Size = new System.Drawing.Size(101, 20);
-            this.ddODate.TabIndex = 91;
-            // 
-            // txtDeadDays
-            // 
-            this.txtDeadDays.Location = new System.Drawing.Point(12, 33);
-            this.txtDeadDays.Name = "txtDeadDays";
-            this.txtDeadDays.Size = new System.Drawing.Size(111, 20);
-            this.txtDeadDays.TabIndex = 89;
-            // 
             // FrmJobGivingWithoutDcInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1129,8 +1133,9 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.txtCCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTotalWT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTQty.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddODate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddODate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpColor.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.drpPSize.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpMCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpMName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpOrderNo.Properties)).EndInit();
@@ -1143,9 +1148,11 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.txtWeight.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPSize.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
             this.panelControl4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDeadDays.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).EndInit();
             this.panelControl7.ResumeLayout(false);
             this.panelControl7.PerformLayout();
@@ -1180,9 +1187,6 @@ namespace BillPlex
             this.panelControl5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl8)).EndInit();
             this.panelControl8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ddODate.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddODate.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDeadDays.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1199,7 +1203,6 @@ namespace BillPlex
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.LabelControl labelControl21;
         private DevExpress.XtraEditors.ComboBoxEdit drpColor;
-        private DevExpress.XtraEditors.ComboBoxEdit drpPSize;
         private DevExpress.XtraEditors.ComboBoxEdit drpMCode;
         private DevExpress.XtraEditors.ComboBoxEdit drpMName;
         private DevExpress.XtraEditors.LabelControl labelControl27;
@@ -1272,5 +1275,6 @@ namespace BillPlex
         private DevExpress.XtraEditors.TextEdit txtCCode;
         private DevExpress.XtraEditors.DateEdit ddODate;
         private DevExpress.XtraEditors.TextEdit txtDeadDays;
+        private DevExpress.XtraEditors.TextEdit txtPSize;
     }
 }

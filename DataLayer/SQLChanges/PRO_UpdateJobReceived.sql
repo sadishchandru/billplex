@@ -13,7 +13,7 @@ GO
 -- =============================================
 CREATE OR ALTER PROCEDURE [dbo].[PRO_UpdateJobReceived]
     @Id BIGINT = 0,
-    @EmployeeCode VARCHAR(100) = '',
+    @EmployeeCode BIGINT = 0,
     @EmployeeName VARCHAR(100) = '',
     @CustomerName VARCHAR(100) = '',
     @RawMaterialName VARCHAR(100) = '',

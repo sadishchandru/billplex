@@ -17,6 +17,7 @@ CREATE OR ALTER PROCEDURE [dbo].[PRO_UpdateJobGivingWithoutDC]
 @EmployeeName VARCHAR(100) ='',
 @CompanyName VARCHAR(100) ='',
 @ClientCompany VARCHAR(100) ='',
+@ClientName VARCHAR(100) ='',
 @SubClientCompany VARCHAR(100) ='',
 @OrderNo BIGINT = 0,
 @Date Date ='',
@@ -52,6 +53,7 @@ BEGIN
 				,EmployeeName
 				,CompanyName
 				,ClientCompany
+				,ClientName
 				,SubClientCompany
 				,OrderNo
 				,Date
@@ -80,6 +82,7 @@ BEGIN
                 @EmployeeName,
                 @CompanyName,
                 @ClientCompany,
+				@ClientName,
                 @SubClientCompany,
                 @OrderNo,
                 @Date,

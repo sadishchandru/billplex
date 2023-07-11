@@ -17,6 +17,9 @@ namespace BusinessLayer
         public string proModel { get; set; }
         public string productId { get; set; }
         public string RawMaterial { get; set; }
+        public string SubCom { get; set; }
+        public string SubComName { get; set; }
+        public string color { get; set; }
         public static List<DropDownItemInfo> PreparedItemList(ref DbDataReader dbReader)
         {
             List<DropDownItemInfo> itemList = new List<DropDownItemInfo>();
@@ -73,6 +76,9 @@ namespace BusinessLayer
                 itemInfo.proModel = Conversion.ToString(dbReader["proModel"]);
                 itemInfo.productId = Conversion.ToString(dbReader["productId"]);
                 itemInfo.RawMaterial = Conversion.ToString(dbReader["RawMaterial"]);
+                itemInfo.SubCom = Conversion.ToString(dbReader["SubCom"]);
+                itemInfo.SubComName = Conversion.ToString(dbReader["SubComName"]);
+                itemInfo.color = Conversion.ToString(dbReader["color"]);
                 itemList.Add(itemInfo);
             }
 
