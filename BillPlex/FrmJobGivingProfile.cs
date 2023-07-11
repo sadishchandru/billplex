@@ -17,5 +17,10 @@ namespace BillPlex
         {
             InitializeComponent();
         }
+
+        private void drpMainCompany_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

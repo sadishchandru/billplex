@@ -454,5 +454,148 @@ namespace BillPlex
             }
             
         }
+
+        private void btn_JobGiving_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+            //bool IsOpen = false;
+            //foreach (Form f in Application.OpenForms)
+            //{
+            //    if (f.Text == "FrmJobGiving")
+            //    {
+            //        IsOpen = true;
+            //        f.Focus();
+            //        break;
+            //    }
+            //}
+            //if (IsOpen == false)
+            //{
+            //    FrmJobGivingInfo JobGivingItem = new FrmJobGivingInfo();
+            //    JobGivingItem.MdiParent = this;
+            //    JobGivingItem.Show();
+            //}
+
+        }
+
+        private void btn_JobGivingWithoutDC_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "FrmJobGivingWithoutDcInfo")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                FrmJobGivingWithoutDcInfo JobGivingWithoutDcItem = new FrmJobGivingWithoutDcInfo();
+                JobGivingWithoutDcItem.MdiParent = this;
+                JobGivingWithoutDcItem.Show();
+            }
+
+        }
+
+        private void btnJobGivingInfo_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            //bool IsOpen = false;
+            //foreach (Form f in Application.OpenForms)
+            //{
+            //    if (f.Text == "FrmJobGivingInfo")
+            //    {
+            //        IsOpen = true;
+            //        f.Focus();
+            //        break;
+            //    }
+            //}
+            //if (IsOpen == false)
+            //{
+            //    FrmJobGivingInfo JobGivingItem = new FrmJobGivingInfo();
+            //    JobGivingItem.MdiParent = this;
+            //    JobGivingItem.Show();
+            //}
+        }
+
+        private void btn_JobReallocation_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            //bool IsOpen = false;
+            //foreach (Form f in Application.OpenForms)
+            //{
+            //    if (f.Text == "FrmJobReallocation")
+            //    {
+            //        IsOpen = true;
+            //        f.Focus();
+            //        break;
+            //    }
+            //}
+            //if (IsOpen == false)
+            //{
+            //    FrmJobReallocation JobReallocation = new FrmJobReallocation();
+            //    JobReallocation.MdiParent = this;
+            //    JobReallocation.Show();
+            //}
+        }
+
+        private void btn_DirectJobGiving_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            //bool IsOpen = false;
+            //foreach (Form f in Application.OpenForms)
+            //{
+            //    if (f.Text == "FrmDirectJobGivingInfo")
+            //    {
+            //        IsOpen = true;
+            //        f.Focus();
+            //        break;
+            //    }
+            //}
+            //if (IsOpen == false)
+            //{
+            //    FrmDirectJobGivingInfo DirectJobGiving = new FrmDirectJobGivingInfo();
+            //    DirectJobGiving.MdiParent = this;
+            //    DirectJobGiving.Show();
+            //}
+        }
+
+        private void btn_DirectJobReceived_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "FrmDirectJobReceivedWithoutGivingInfo")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                FrmDirectJobReceivedWithoutGivingInfo DirectJobReceivedWithoutGiving = new FrmDirectJobReceivedWithoutGivingInfo();
+                DirectJobReceivedWithoutGiving.MdiParent = this;
+                DirectJobReceivedWithoutGiving.Show();
+            }
+        }
+
+        private void btn_DirectJobReceivedWithoutGiving_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            //bool IsOpen = false;
+            //foreach (Form f in Application.OpenForms)
+            //{
+            //    if (f.Text == "FrmDirectJobReceivedWithoutGivingInfo")
+            //    {
+            //        IsOpen = true;
+            //        f.Focus();
+            //        break;
+            //    }
+            //}
+            //if (IsOpen == false)
+            //{
+            //    FrmDirectJobReceivedWithoutGivingInfo DirectJobReceivedWithoutGiving = new FrmDirectJobReceivedWithoutGivingInfo();
+            //    DirectJobReceivedWithoutGiving.MdiParent = this;
+            //    DirectJobReceivedWithoutGiving.Show();
+            //}
+        }
     }
 }
