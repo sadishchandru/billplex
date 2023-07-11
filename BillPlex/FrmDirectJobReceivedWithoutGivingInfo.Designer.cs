@@ -41,6 +41,14 @@ namespace BillPlex
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.btnNew = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.txtNetAmt = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
+            this.txtIncentive = new DevExpress.XtraEditors.TextEdit();
+            this.txtConveyance = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.txtAfterDays = new DevExpress.XtraEditors.TextEdit();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.txtBeforeDays = new DevExpress.XtraEditors.TextEdit();
@@ -76,7 +84,7 @@ namespace BillPlex
             this.labelControl28 = new DevExpress.XtraEditors.LabelControl();
             this.txtDirector = new DevExpress.XtraEditors.TextEdit();
             this.labelControl29 = new DevExpress.XtraEditors.LabelControl();
-            this.txtJEmpName = new DevExpress.XtraEditors.TextEdit();
+            this.txtEmpName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
@@ -85,14 +93,6 @@ namespace BillPlex
             this.txtClientCompany = new DevExpress.XtraEditors.TextEdit();
             this.txtSubClient = new DevExpress.XtraEditors.TextEdit();
             this.drpEmpCode = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
-            this.txtConveyance = new DevExpress.XtraEditors.TextEdit();
-            this.txtIncentive = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
-            this.txtNetAmt = new DevExpress.XtraEditors.TextEdit();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -101,6 +101,11 @@ namespace BillPlex
             this.panelControl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNetAmt.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIncentive.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtConveyance.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAfterDays.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBeforeDays.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTotal.Properties)).BeginInit();
@@ -119,16 +124,11 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.txtSubContractor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtClientName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDirector.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtJEmpName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmpName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtComName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtClientCompany.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSubClient.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpEmpCode.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtConveyance.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtIncentive.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNetAmt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -321,7 +321,7 @@ namespace BillPlex
             this.panelControl3.Controls.Add(this.labelControl28);
             this.panelControl3.Controls.Add(this.txtDirector);
             this.panelControl3.Controls.Add(this.labelControl29);
-            this.panelControl3.Controls.Add(this.txtJEmpName);
+            this.panelControl3.Controls.Add(this.txtEmpName);
             this.panelControl3.Controls.Add(this.labelControl19);
             this.panelControl3.Controls.Add(this.labelControl20);
             this.panelControl3.Controls.Add(this.labelControl21);
@@ -334,6 +334,78 @@ namespace BillPlex
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(1319, 716);
             this.panelControl3.TabIndex = 0;
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.Location = new System.Drawing.Point(16, 356);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(1288, 355);
+            this.gridControl1.TabIndex = 63;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            // 
+            // txtNetAmt
+            // 
+            this.txtNetAmt.Location = new System.Drawing.Point(1082, 316);
+            this.txtNetAmt.Name = "txtNetAmt";
+            this.txtNetAmt.Size = new System.Drawing.Size(140, 20);
+            this.txtNetAmt.TabIndex = 62;
+            // 
+            // labelControl18
+            // 
+            this.labelControl18.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl18.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.labelControl18.Appearance.Options.UseFont = true;
+            this.labelControl18.Appearance.Options.UseForeColor = true;
+            this.labelControl18.Location = new System.Drawing.Point(962, 318);
+            this.labelControl18.Name = "labelControl18";
+            this.labelControl18.Size = new System.Drawing.Size(60, 18);
+            this.labelControl18.TabIndex = 61;
+            this.labelControl18.Text = "Net Amt";
+            // 
+            // txtIncentive
+            // 
+            this.txtIncentive.Location = new System.Drawing.Point(1082, 290);
+            this.txtIncentive.Name = "txtIncentive";
+            this.txtIncentive.Size = new System.Drawing.Size(140, 20);
+            this.txtIncentive.TabIndex = 60;
+            // 
+            // txtConveyance
+            // 
+            this.txtConveyance.Location = new System.Drawing.Point(1082, 254);
+            this.txtConveyance.Name = "txtConveyance";
+            this.txtConveyance.Size = new System.Drawing.Size(140, 20);
+            this.txtConveyance.TabIndex = 59;
+            // 
+            // labelControl17
+            // 
+            this.labelControl17.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl17.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.labelControl17.Appearance.Options.UseFont = true;
+            this.labelControl17.Appearance.Options.UseForeColor = true;
+            this.labelControl17.Location = new System.Drawing.Point(962, 294);
+            this.labelControl17.Name = "labelControl17";
+            this.labelControl17.Size = new System.Drawing.Size(71, 18);
+            this.labelControl17.TabIndex = 58;
+            this.labelControl17.Text = "Incentive";
+            // 
+            // labelControl16
+            // 
+            this.labelControl16.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl16.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.labelControl16.Appearance.Options.UseFont = true;
+            this.labelControl16.Appearance.Options.UseForeColor = true;
+            this.labelControl16.Location = new System.Drawing.Point(962, 253);
+            this.labelControl16.Name = "labelControl16";
+            this.labelControl16.Size = new System.Drawing.Size(90, 18);
+            this.labelControl16.TabIndex = 57;
+            this.labelControl16.Text = "Conveyance";
             // 
             // txtAfterDays
             // 
@@ -687,12 +759,12 @@ namespace BillPlex
             this.labelControl29.TabIndex = 21;
             this.labelControl29.Text = "Sub Client Name";
             // 
-            // txtJEmpName
+            // txtEmpName
             // 
-            this.txtJEmpName.Location = new System.Drawing.Point(719, 37);
-            this.txtJEmpName.Name = "txtJEmpName";
-            this.txtJEmpName.Size = new System.Drawing.Size(255, 20);
-            this.txtJEmpName.TabIndex = 22;
+            this.txtEmpName.Location = new System.Drawing.Point(719, 37);
+            this.txtEmpName.Name = "txtEmpName";
+            this.txtEmpName.Size = new System.Drawing.Size(255, 20);
+            this.txtEmpName.TabIndex = 22;
             // 
             // labelControl19
             // 
@@ -772,78 +844,6 @@ namespace BillPlex
             this.drpEmpCode.Size = new System.Drawing.Size(274, 20);
             this.drpEmpCode.TabIndex = 14;
             // 
-            // labelControl16
-            // 
-            this.labelControl16.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl16.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.labelControl16.Appearance.Options.UseFont = true;
-            this.labelControl16.Appearance.Options.UseForeColor = true;
-            this.labelControl16.Location = new System.Drawing.Point(962, 253);
-            this.labelControl16.Name = "labelControl16";
-            this.labelControl16.Size = new System.Drawing.Size(90, 18);
-            this.labelControl16.TabIndex = 57;
-            this.labelControl16.Text = "Conveyance";
-            // 
-            // labelControl17
-            // 
-            this.labelControl17.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl17.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.labelControl17.Appearance.Options.UseFont = true;
-            this.labelControl17.Appearance.Options.UseForeColor = true;
-            this.labelControl17.Location = new System.Drawing.Point(962, 294);
-            this.labelControl17.Name = "labelControl17";
-            this.labelControl17.Size = new System.Drawing.Size(71, 18);
-            this.labelControl17.TabIndex = 58;
-            this.labelControl17.Text = "Incentive";
-            // 
-            // txtConveyance
-            // 
-            this.txtConveyance.Location = new System.Drawing.Point(1082, 254);
-            this.txtConveyance.Name = "txtConveyance";
-            this.txtConveyance.Size = new System.Drawing.Size(140, 20);
-            this.txtConveyance.TabIndex = 59;
-            // 
-            // txtIncentive
-            // 
-            this.txtIncentive.Location = new System.Drawing.Point(1082, 290);
-            this.txtIncentive.Name = "txtIncentive";
-            this.txtIncentive.Size = new System.Drawing.Size(140, 20);
-            this.txtIncentive.TabIndex = 60;
-            // 
-            // labelControl18
-            // 
-            this.labelControl18.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl18.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.labelControl18.Appearance.Options.UseFont = true;
-            this.labelControl18.Appearance.Options.UseForeColor = true;
-            this.labelControl18.Location = new System.Drawing.Point(962, 318);
-            this.labelControl18.Name = "labelControl18";
-            this.labelControl18.Size = new System.Drawing.Size(60, 18);
-            this.labelControl18.TabIndex = 61;
-            this.labelControl18.Text = "Net Amt";
-            // 
-            // txtNetAmt
-            // 
-            this.txtNetAmt.Location = new System.Drawing.Point(1082, 316);
-            this.txtNetAmt.Name = "txtNetAmt";
-            this.txtNetAmt.Size = new System.Drawing.Size(140, 20);
-            this.txtNetAmt.TabIndex = 62;
-            // 
-            // gridControl1
-            // 
-            this.gridControl1.Location = new System.Drawing.Point(16, 356);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1288, 355);
-            this.gridControl1.TabIndex = 63;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            // 
             // FrmDirectJobReceivedWithoutGivingInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -863,6 +863,11 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.panelControl3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNetAmt.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIncentive.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtConveyance.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAfterDays.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBeforeDays.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTotal.Properties)).EndInit();
@@ -881,16 +886,11 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.txtSubContractor.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtClientName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDirector.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtJEmpName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmpName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtComName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtClientCompany.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSubClient.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpEmpCode.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtConveyance.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtIncentive.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNetAmt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -924,7 +924,7 @@ namespace BillPlex
         private DevExpress.XtraEditors.LabelControl labelControl28;
         private DevExpress.XtraEditors.TextEdit txtDirector;
         private DevExpress.XtraEditors.LabelControl labelControl29;
-        private DevExpress.XtraEditors.TextEdit txtJEmpName;
+        private DevExpress.XtraEditors.TextEdit txtEmpName;
         private DevExpress.XtraEditors.DateEdit ddReceivingDate;
         private DevExpress.XtraEditors.LabelControl labelControl15;
         private DevExpress.XtraEditors.LabelControl labelControl4;

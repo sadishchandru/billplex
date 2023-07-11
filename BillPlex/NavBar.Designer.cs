@@ -54,7 +54,7 @@ namespace BillPlex
             this.btn_DeliveryChallan = new DevExpress.XtraBars.BarButtonItem();
             this.btn_JobGiving = new DevExpress.XtraBars.BarButtonItem();
             this.btn_JobGivingWithoutDC = new DevExpress.XtraBars.BarButtonItem();
-            this.btnJobGivingInfo = new DevExpress.XtraBars.BarButtonItem();
+            this.btnJobReceived = new DevExpress.XtraBars.BarButtonItem();
             this.btn_JobReallocation = new DevExpress.XtraBars.BarButtonItem();
             this.btn_DirectJobGiving = new DevExpress.XtraBars.BarButtonItem();
             this.btn_DirectJobReceived = new DevExpress.XtraBars.BarButtonItem();
@@ -100,7 +100,7 @@ namespace BillPlex
             this.btn_DeliveryChallan,
             this.btn_JobGiving,
             this.btn_JobGivingWithoutDC,
-            this.btnJobGivingInfo,
+            this.btnJobReceived,
             this.btn_JobReallocation,
             this.btn_DirectJobGiving,
             this.btn_DirectJobReceived,
@@ -280,12 +280,12 @@ namespace BillPlex
             this.btn_JobGivingWithoutDC.Name = "btn_JobGivingWithoutDC";
             this.btn_JobGivingWithoutDC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_JobGivingWithoutDC_ItemClick);
             // 
-            // btnJobGivingInfo
+            // btnJobReceived
             // 
-            this.btnJobGivingInfo.Caption = "Job Received";
-            this.btnJobGivingInfo.Id = 32;
-            this.btnJobGivingInfo.Name = "btnJobGivingInfo";
-            this.btnJobGivingInfo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnJobGivingInfo_ItemClick);
+            this.btnJobReceived.Caption = "Job Received";
+            this.btnJobReceived.Id = 32;
+            this.btnJobReceived.Name = "btnJobReceived";
+            this.btnJobReceived.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnJobReceived_ItemClick);
             // 
             // btn_JobReallocation
             // 
@@ -357,7 +357,7 @@ namespace BillPlex
             this.JobAllocation.ItemLinks.Add(this.btn_DeliveryChallan);
             this.JobAllocation.ItemLinks.Add(this.btn_JobGiving, true);
             this.JobAllocation.ItemLinks.Add(this.btn_JobGivingWithoutDC, true);
-            this.JobAllocation.ItemLinks.Add(this.btnJobGivingInfo, true);
+            this.JobAllocation.ItemLinks.Add(this.btnJobReceived, true);
             this.JobAllocation.ItemLinks.Add(this.btn_JobReallocation, true);
             this.JobAllocation.ItemLinks.Add(this.btn_DirectJobGiving, true);
             this.JobAllocation.ItemLinks.Add(this.btn_DirectJobReceived, true);
@@ -448,7 +448,7 @@ namespace BillPlex
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup JobAllocation;
         private DevExpress.XtraBars.BarButtonItem btn_JobGiving;
         private DevExpress.XtraBars.BarButtonItem btn_JobGivingWithoutDC;
-        private DevExpress.XtraBars.BarButtonItem btnJobGivingInfo;
+        private DevExpress.XtraBars.BarButtonItem btnJobReceived;
         private DevExpress.XtraBars.BarButtonItem btn_JobReallocation;
         private DevExpress.XtraBars.BarButtonItem btn_DirectJobGiving;
         private DevExpress.XtraBars.BarButtonItem btn_DirectJobReceived;
