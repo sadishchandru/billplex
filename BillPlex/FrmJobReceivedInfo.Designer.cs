@@ -29,7 +29,45 @@ namespace BillPlex
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter28 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter29 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter30 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter31 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter32 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter33 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter34 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter35 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter36 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter37 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter38 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter39 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter40 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter41 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter42 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter43 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter44 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter45 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter46 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter47 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter48 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter49 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter50 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter51 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter52 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter53 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter54 = new DevExpress.DataAccess.Sql.QueryParameter();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmJobReceivedInfo));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.panelControl7 = new DevExpress.XtraEditors.PanelControl();
+            this.btnClear = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
+            this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
+            this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
+            this.btnExit = new DevExpress.XtraEditors.SimpleButton();
+            this.btnNew = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
@@ -76,7 +114,7 @@ namespace BillPlex
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.txtPSize = new DevExpress.XtraEditors.TextEdit();
             this.txtColor = new DevExpress.XtraEditors.TextEdit();
-            this.txtCode = new DevExpress.XtraEditors.TextEdit();
+            this.txtPCode = new DevExpress.XtraEditors.TextEdit();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.ddReceDate = new DevExpress.XtraEditors.DateEdit();
             this.txtEmpName = new DevExpress.XtraEditors.TextEdit();
@@ -98,8 +136,11 @@ namespace BillPlex
             this.labelControl33 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
+            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).BeginInit();
+            this.panelControl7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
             this.panelControl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
@@ -130,7 +171,7 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.txtBeforeDys.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPSize.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtColor.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddReceDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddReceDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmpName.Properties)).BeginInit();
@@ -145,6 +186,7 @@ namespace BillPlex
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.panelControl7);
             this.panelControl1.Controls.Add(this.panelControl5);
             this.panelControl1.Controls.Add(this.panelControl2);
             this.panelControl1.Controls.Add(this.panelControl3);
@@ -152,6 +194,123 @@ namespace BillPlex
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1355, 759);
             this.panelControl1.TabIndex = 5;
+            // 
+            // panelControl7
+            // 
+            this.panelControl7.Controls.Add(this.btnClear);
+            this.panelControl7.Controls.Add(this.btnDelete);
+            this.panelControl7.Controls.Add(this.btnUpdate);
+            this.panelControl7.Controls.Add(this.btnEdit);
+            this.panelControl7.Controls.Add(this.btnAdd);
+            this.panelControl7.Controls.Add(this.btnExit);
+            this.panelControl7.Controls.Add(this.btnNew);
+            this.panelControl7.Location = new System.Drawing.Point(1224, 247);
+            this.panelControl7.Name = "panelControl7";
+            this.panelControl7.Size = new System.Drawing.Size(113, 307);
+            this.panelControl7.TabIndex = 136;
+            // 
+            // btnClear
+            // 
+            this.btnClear.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Appearance.Options.UseFont = true;
+            this.btnClear.Location = new System.Drawing.Point(18, 220);
+            this.btnClear.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btnClear.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.White;
+            this.btnClear.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnClear.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(81, 23);
+            this.btnClear.TabIndex = 64;
+            this.btnClear.Text = "CLEAR";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Appearance.Options.UseFont = true;
+            this.btnDelete.Enabled = false;
+            this.btnDelete.Location = new System.Drawing.Point(18, 173);
+            this.btnDelete.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btnDelete.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.White;
+            this.btnDelete.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnDelete.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(81, 23);
+            this.btnDelete.TabIndex = 63;
+            this.btnDelete.Text = "DELETE";
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Appearance.Options.UseFont = true;
+            this.btnUpdate.Enabled = false;
+            this.btnUpdate.Location = new System.Drawing.Point(18, 128);
+            this.btnUpdate.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btnUpdate.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.White;
+            this.btnUpdate.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnUpdate.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(81, 23);
+            this.btnUpdate.TabIndex = 62;
+            this.btnUpdate.Text = "UPDATE";
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Appearance.Options.UseFont = true;
+            this.btnEdit.Enabled = false;
+            this.btnEdit.Location = new System.Drawing.Point(18, 87);
+            this.btnEdit.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btnEdit.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.White;
+            this.btnEdit.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnEdit.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(81, 23);
+            this.btnEdit.TabIndex = 61;
+            this.btnEdit.Text = "EDIT";
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Appearance.Options.UseFont = true;
+            this.btnAdd.Location = new System.Drawing.Point(18, 48);
+            this.btnAdd.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btnAdd.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.White;
+            this.btnAdd.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnAdd.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(81, 23);
+            this.btnAdd.TabIndex = 60;
+            this.btnAdd.Text = "ADD";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Appearance.Options.UseFont = true;
+            this.btnExit.Location = new System.Drawing.Point(18, 265);
+            this.btnExit.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btnExit.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.White;
+            this.btnExit.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnExit.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(81, 23);
+            this.btnExit.TabIndex = 59;
+            this.btnExit.Text = "EXIT";
+            // 
+            // btnNew
+            // 
+            this.btnNew.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNew.Appearance.Options.UseFont = true;
+            this.btnNew.Enabled = false;
+            this.btnNew.Location = new System.Drawing.Point(18, 5);
+            this.btnNew.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btnNew.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.White;
+            this.btnNew.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnNew.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(81, 23);
+            this.btnNew.TabIndex = 53;
+            this.btnNew.Text = "NEW";
             // 
             // panelControl5
             // 
@@ -282,7 +441,7 @@ namespace BillPlex
             this.panelControl3.Controls.Add(this.labelControl16);
             this.panelControl3.Controls.Add(this.txtPSize);
             this.panelControl3.Controls.Add(this.txtColor);
-            this.panelControl3.Controls.Add(this.txtCode);
+            this.panelControl3.Controls.Add(this.txtPCode);
             this.panelControl3.Controls.Add(this.labelControl10);
             this.panelControl3.Controls.Add(this.ddReceDate);
             this.panelControl3.Controls.Add(this.txtEmpName);
@@ -605,12 +764,12 @@ namespace BillPlex
             this.txtColor.Size = new System.Drawing.Size(152, 20);
             this.txtColor.TabIndex = 103;
             // 
-            // txtCode
+            // txtPCode
             // 
-            this.txtCode.Location = new System.Drawing.Point(961, 79);
-            this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(152, 20);
-            this.txtCode.TabIndex = 102;
+            this.txtPCode.Location = new System.Drawing.Point(961, 79);
+            this.txtPCode.Name = "txtPCode";
+            this.txtPCode.Size = new System.Drawing.Size(152, 20);
+            this.txtPCode.TabIndex = 102;
             // 
             // labelControl10
             // 
@@ -650,6 +809,7 @@ namespace BillPlex
             // 
             // txtEmpCode
             // 
+            this.txtEmpCode.EditValue = "";
             this.txtEmpCode.Location = new System.Drawing.Point(186, 51);
             this.txtEmpCode.Name = "txtEmpCode";
             this.txtEmpCode.Size = new System.Drawing.Size(117, 20);
@@ -818,6 +978,99 @@ namespace BillPlex
             this.panelControl6.Size = new System.Drawing.Size(1423, 41);
             this.panelControl6.TabIndex = 7;
             // 
+            // sqlDataSource1
+            // 
+            this.sqlDataSource1.ConnectionName = "BillPlex";
+            this.sqlDataSource1.Name = "sqlDataSource1";
+            storedProcQuery2.Name = "PRO_UpdateJobReceived";
+            queryParameter28.Name = "@Id";
+            queryParameter28.Type = typeof(long);
+            queryParameter28.ValueInfo = "0";
+            queryParameter29.Name = "@EmployeeCode";
+            queryParameter29.Type = typeof(string);
+            queryParameter30.Name = "@EmployeeName";
+            queryParameter30.Type = typeof(string);
+            queryParameter31.Name = "@CustomerName";
+            queryParameter31.Type = typeof(string);
+            queryParameter32.Name = "@RawMaterialName";
+            queryParameter32.Type = typeof(string);
+            queryParameter33.Name = "@Quantity";
+            queryParameter33.Type = typeof(string);
+            queryParameter34.Name = "@Wages";
+            queryParameter34.Type = typeof(string);
+            queryParameter35.Name = "@PendingQty";
+            queryParameter35.Type = typeof(string);
+            queryParameter36.Name = "@ModelName";
+            queryParameter36.Type = typeof(string);
+            queryParameter37.Name = "@Type";
+            queryParameter37.Type = typeof(string);
+            queryParameter38.Name = "@Weight";
+            queryParameter38.Type = typeof(string);
+            queryParameter39.Name = "@CurrentWt";
+            queryParameter39.Type = typeof(string);
+            queryParameter40.Name = "@RcvdQty";
+            queryParameter40.Type = typeof(string);
+            queryParameter41.Name = "@ReceivingDate";
+            queryParameter41.Type = typeof(System.DateTime);
+            queryParameter41.ValueInfo = "1753-01-01";
+            queryParameter42.Name = "@ProductModel";
+            queryParameter42.Type = typeof(string);
+            queryParameter43.Name = "@ProductCode";
+            queryParameter43.Type = typeof(string);
+            queryParameter44.Name = "@ProductSize";
+            queryParameter44.Type = typeof(string);
+            queryParameter45.Name = "@ProductColor";
+            queryParameter45.Type = typeof(string);
+            queryParameter46.Name = "@IncentiveApplicable";
+            queryParameter46.Type = typeof(string);
+            queryParameter47.Name = "@BeforeDays";
+            queryParameter47.Type = typeof(string);
+            queryParameter48.Name = "@AfterDays";
+            queryParameter48.Type = typeof(string);
+            queryParameter49.Name = "@BalanceWeight";
+            queryParameter49.Type = typeof(string);
+            queryParameter50.Name = "@Conveyance";
+            queryParameter50.Type = typeof(string);
+            queryParameter51.Name = "@Deduction";
+            queryParameter51.Type = typeof(string);
+            queryParameter52.Name = "@Incentive";
+            queryParameter52.Type = typeof(string);
+            queryParameter53.Name = "@Total";
+            queryParameter53.Type = typeof(string);
+            queryParameter54.Name = "@NetAmt";
+            queryParameter54.Type = typeof(string);
+            storedProcQuery2.Parameters.Add(queryParameter28);
+            storedProcQuery2.Parameters.Add(queryParameter29);
+            storedProcQuery2.Parameters.Add(queryParameter30);
+            storedProcQuery2.Parameters.Add(queryParameter31);
+            storedProcQuery2.Parameters.Add(queryParameter32);
+            storedProcQuery2.Parameters.Add(queryParameter33);
+            storedProcQuery2.Parameters.Add(queryParameter34);
+            storedProcQuery2.Parameters.Add(queryParameter35);
+            storedProcQuery2.Parameters.Add(queryParameter36);
+            storedProcQuery2.Parameters.Add(queryParameter37);
+            storedProcQuery2.Parameters.Add(queryParameter38);
+            storedProcQuery2.Parameters.Add(queryParameter39);
+            storedProcQuery2.Parameters.Add(queryParameter40);
+            storedProcQuery2.Parameters.Add(queryParameter41);
+            storedProcQuery2.Parameters.Add(queryParameter42);
+            storedProcQuery2.Parameters.Add(queryParameter43);
+            storedProcQuery2.Parameters.Add(queryParameter44);
+            storedProcQuery2.Parameters.Add(queryParameter45);
+            storedProcQuery2.Parameters.Add(queryParameter46);
+            storedProcQuery2.Parameters.Add(queryParameter47);
+            storedProcQuery2.Parameters.Add(queryParameter48);
+            storedProcQuery2.Parameters.Add(queryParameter49);
+            storedProcQuery2.Parameters.Add(queryParameter50);
+            storedProcQuery2.Parameters.Add(queryParameter51);
+            storedProcQuery2.Parameters.Add(queryParameter52);
+            storedProcQuery2.Parameters.Add(queryParameter53);
+            storedProcQuery2.Parameters.Add(queryParameter54);
+            storedProcQuery2.StoredProcName = "PRO_UpdateJobReceived";
+            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
+            storedProcQuery2});
+            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
+            // 
             // FrmJobReceivedInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -829,6 +1082,8 @@ namespace BillPlex
             this.Text = "FrmJobReceivedInfo";
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).EndInit();
+            this.panelControl7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
             this.panelControl5.ResumeLayout(false);
             this.panelControl5.PerformLayout();
@@ -863,7 +1118,7 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.txtBeforeDys.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPSize.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtColor.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddReceDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddReceDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmpName.Properties)).EndInit();
@@ -910,7 +1165,7 @@ namespace BillPlex
         private DevExpress.XtraEditors.LabelControl labelControl16;
         private DevExpress.XtraEditors.TextEdit txtPSize;
         private DevExpress.XtraEditors.TextEdit txtColor;
-        private DevExpress.XtraEditors.TextEdit txtCode;
+        private DevExpress.XtraEditors.TextEdit txtPCode;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.DateEdit ddReceDate;
         private DevExpress.XtraEditors.TextEdit txtEmpName;
@@ -950,5 +1205,14 @@ namespace BillPlex
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.PanelControl panelControl6;
         private DevExpress.XtraEditors.ComboBoxEdit drpIncentiveApp;
+        private DevExpress.XtraEditors.PanelControl panelControl7;
+        private DevExpress.XtraEditors.SimpleButton btnClear;
+        private DevExpress.XtraEditors.SimpleButton btnDelete;
+        private DevExpress.XtraEditors.SimpleButton btnUpdate;
+        private DevExpress.XtraEditors.SimpleButton btnEdit;
+        private DevExpress.XtraEditors.SimpleButton btnAdd;
+        private DevExpress.XtraEditors.SimpleButton btnExit;
+        private DevExpress.XtraEditors.SimpleButton btnNew;
+        private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
     }
 }

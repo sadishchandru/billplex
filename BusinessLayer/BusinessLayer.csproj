@@ -65,6 +65,7 @@
     <Compile Include="FinishingProductModel.cs" />
     <Compile Include="IncentiveMasters.cs" />
     <Compile Include="JobGivingWithoutDc.cs" />
+    <Compile Include="JobReceived.cs" />
     <Compile Include="OrderMasterInfo.cs" />
     <Compile Include="ProductMaster.cs" />
     <Compile Include="ProductModel.cs" />
