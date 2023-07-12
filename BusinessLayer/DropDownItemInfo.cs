@@ -20,6 +20,8 @@ namespace BusinessLayer
         public string SubCom { get; set; }
         public string SubComName { get; set; }
         public string color { get; set; }
+        public string RawName { get; set; }
+        public string RawType { get; set; }
         public static List<DropDownItemInfo> PreparedItemList(ref DbDataReader dbReader)
         {
             List<DropDownItemInfo> itemList = new List<DropDownItemInfo>();
@@ -79,6 +81,8 @@ namespace BusinessLayer
                 itemInfo.SubCom = Conversion.ToString(dbReader["SubCom"]);
                 itemInfo.SubComName = Conversion.ToString(dbReader["SubComName"]);
                 itemInfo.color = Conversion.ToString(dbReader["color"]);
+                itemInfo.RawName = Conversion.ToString(dbReader["RawName"]);
+                itemInfo.RawType = Conversion.ToString(dbReader["RawType"]);
                 itemList.Add(itemInfo);
             }
 

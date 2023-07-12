@@ -41,6 +41,8 @@ SET NOCOUNT ON;
 					,Color
 					,Type
 					,AvlQty
+					,TotalQty
+					,TotalWt
 					,Shortage
 					,orderQty
 					,orderWt

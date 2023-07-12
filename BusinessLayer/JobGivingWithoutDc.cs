@@ -17,7 +17,7 @@ namespace BusinessLayer
         public string ClientName { get; set; }
         public string SubClientCompany { get; set; }
         public string Date { get; set; }
-        public string OrderNo { get; set; }
+        public Int64 OrderNo { get; set; }
         public string OrderDate { get; set; }
         public string CustomerCode { get; set; }
         public string CustomerName { get; set; }
@@ -70,8 +70,8 @@ namespace BusinessLayer
                 objLstDbParams.Add(new DbParams(DbType.String, 50, QuantityPiece, "@QuantityPiece", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, WeightKg, "@WeightKg", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, AvlQty, "@AvlQty", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.String, 50, TotalQty, "@orderQty", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.String, 50, TotalWt, "@orderWt", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.String, 50, TotalQty, "@TotalQty", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.String, 50, TotalWt, "@TotalWt", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, Shortage, "@Shortage", ParameterDirection.Input));
 
 

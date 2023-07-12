@@ -34,10 +34,10 @@ CREATE OR ALTER PROCEDURE [dbo].[PRO_UpdateJobGivingWithoutDC]
 @Excess VARCHAR(100) ='',
 @Color VARCHAR(100) ='',
 @Type VARCHAR(100) ='',
-@AvlQty INT ='',
-@Shortage VARCHAR(100),
-@orderQty VARCHAR(100),
-@orderWt VARCHAR(100)
+@AvlQty INT =0,
+@TotalQty varchar(50)='',
+@TotalWt varchar(100)= '',
+@Shortage VARCHAR(100)
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -72,8 +72,8 @@ BEGIN
 				,Type
 				,AvlQty
 				,Shortage
-				,orderQty
-				,orderWt
+				,TotalQty
+				,TotalWt
 
             )
         VALUES
@@ -101,8 +101,8 @@ BEGIN
                 @Type,
                 @AvlQty,
                 @Shortage,
-                @orderQty,
-                @orderWt
+				@TotalQty,
+				@TotalWt
             )
 
         SET @ResultMessage = 'JobGivingWithoutDC Added Successfully';
@@ -134,8 +134,8 @@ BEGIN
             [Type] = @Type,
             [AvlQty] = @AvlQty,
             [Shortage] = @Shortage,
-            [orderQty] = @orderQty,
-            [orderWt] = @orderWt
+			[TotalQty]=@TotalQty,
+			[TotalWt]=@TotalWt
         WHERE Id = @Id
 
         SET @ResultMessage = 'JobGivingWithoutDC Updated Successfully';

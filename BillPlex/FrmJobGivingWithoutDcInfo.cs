@@ -94,13 +94,23 @@ namespace BillPlex
         {
             try
             {
+                string selectedItem = (string)drpEmpCode.SelectedItem;
+
+                if (selectedItem != null)
+                {
+                    JobGivingWithoutDcRequest.EmployeeCode = JobGivingWithoutDcRequest.EmployeePersonalList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.Id ?? -1;
+                }
                 JobGivingWithoutDcRequest.EmployeeName = txtEmpName.Text;
                 JobGivingWithoutDcRequest.CompanyName = txtComName.Text;
                 JobGivingWithoutDcRequest.ClientCompany = txtCCom.Text;
                 JobGivingWithoutDcRequest.ClientName = txtClientName.Text;
                 JobGivingWithoutDcRequest.SubClientCompany = txtSCCom.Text;
                 JobGivingWithoutDcRequest.Date = ddDate.Text;
-                JobGivingWithoutDcRequest.OrderNo = drpOrderNo.Text;
+                string selectedItems = (string)drpOrderNo.SelectedItem;
+                if (selectedItems != null)
+                {
+                    JobGivingWithoutDcRequest.OrderNo = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.Name == selectedItems.ToString())?.Id ?? -1;
+                }
                 JobGivingWithoutDcRequest.OrderDate = ddODate.Text;
                 JobGivingWithoutDcRequest.CustomerCode = txtCCode.Text;
                 JobGivingWithoutDcRequest.CustomerName = txtCCName.Text;
@@ -113,7 +123,7 @@ namespace BillPlex
                 JobGivingWithoutDcRequest.RawType = txtType.Text;
                 JobGivingWithoutDcRequest.QuantityPiece = txtQuantity.Text;
                 JobGivingWithoutDcRequest.WeightKg = txtWeight.Text;
-                JobGivingWithoutDcRequest.AvlQty = txtAvlQty.Text;
+                JobGivingWithoutDcRequest.AvlQty =txtAvlQty.Text;
                 JobGivingWithoutDcRequest.TotalQty = txtTQty.Text;
                 JobGivingWithoutDcRequest.TotalWt = txtTotalWT.Text;
                 JobGivingWithoutDcRequest.Shortage = txtShortage.Text;
@@ -227,11 +237,47 @@ namespace BillPlex
 
         private void drpColor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedItem = (string)drpMCode.SelectedItem;
+            string selectedItem = (string)drpColor.SelectedItem;
             if (selectedItem != null)
             {
-                txtRawMaterial.Text = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.color == selectedItem.ToString())?.SubCom ?? "";
-                txtType.Text = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.color == selectedItem.ToString())?.SubComName ?? "";
+                txtRawMaterial.Text = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.color == selectedItem.ToString())?.RawName ?? "";
+                txtType.Text = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.color == selectedItem.ToString())?.RawType ?? "";
+            }
+        }
+
+        public void BindData(dynamic selectedCompanyList)
+        {
+            var selectedRows = selectedCompanyList.GetSelectedRows();
+
+            foreach (var rowHandle in selectedRows)
+            {
+                JobGivingWithoutDcRequest.Id = selectedCompanyList.GetRowCellValue(rowHandle, "Id");
+                drpEmpCode.SelectedIndex = JobGivingWithoutDcRequest.EmployeePersonalList.FindIndex(x => x.Id == Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "EmployeeCode").ToString()));
+                txtEmpName.Text = selectedCompanyList.GetRowCellValue(rowHandle, "EmployeeName");
+                txtComName.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CompanyName");
+                txtCCom.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ClientCompany");
+                txtClientName.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ClientName");
+                txtSCCom.Text = selectedCompanyList.GetRowCellValue(rowHandle, "SubClientCompany");
+                var datete = selectedCompanyList.GetRowCellValue(rowHandle, "Date").ToString();
+                ddDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
+                drpOrderNo.SelectedIndex = JobGivingWithoutDcRequest.OrderMasterList.FindIndex(x => x.Id == Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "OrderNo").ToString()));
+                datete = selectedCompanyList.GetRowCellValue(rowHandle, "OrderDate").ToString();
+                ddODate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
+                txtCCode.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CustomerCode");
+                txtCCName.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CustomerName");
+                drpMName.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ModelName");
+                drpMCode.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ModelCode");
+                txtPName.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ProductName");
+                txtPSize.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ProductSize");
+                drpColor.Text = selectedCompanyList.GetRowCellValue(rowHandle, "Color");
+                txtRawMaterial.Text = selectedCompanyList.GetRowCellValue(rowHandle, "RawMaterial");
+                txtType.Text = selectedCompanyList.GetRowCellValue(rowHandle, "Type");
+                txtQuantity.Text = selectedCompanyList.GetRowCellValue(rowHandle, "QuantityPiece");
+                txtWeight.Text = selectedCompanyList.GetRowCellValue(rowHandle, "WeightKg");
+                txtAvlQty.Text =selectedCompanyList.GetRowCellValue(rowHandle, "AvlQty");
+                txtTQty.Text = selectedCompanyList.GetRowCellValue(rowHandle, "TotalQty");
+                txtTotalWT.Text = selectedCompanyList.GetRowCellValue(rowHandle, "TotalWt");
+                txtShortage.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorFathername");
             }
         }
     }

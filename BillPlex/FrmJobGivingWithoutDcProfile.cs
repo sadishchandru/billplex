@@ -1,10 +1,14 @@
 ﻿using BusinessLayer;
 using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Controls;
+using DevExpress.XtraGrid.Views.Grid;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,6 +20,9 @@ namespace BillPlex
     public partial class FrmJobGivingWithoutDcProfile : DevExpress.XtraEditors.XtraForm
     {
         private JobGivingWithoutDc JobGivingWithoutDcRequest;
+
+        private FrmJobGivingWithoutDcInfo JobGivingWithoutDcInfoRequest;
+        private GridView gridView;
         public FrmJobGivingWithoutDcProfile()
         {
             InitializeComponent();
@@ -71,6 +78,17 @@ namespace BillPlex
             FrmJobGivingWithoutDcInfo CP = new FrmJobGivingWithoutDcInfo();
             CP.MdiParent = this.MdiParent;
             CP.Show();
+        }
+
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            var selectedRow = gridView1.GetSelectedRows();
+
+            JobGivingWithoutDcInfoRequest = new FrmJobGivingWithoutDcInfo();
+
+            JobGivingWithoutDcInfoRequest.BindData(gridView1);
+            JobGivingWithoutDcInfoRequest.MdiParent = this.MdiParent;
+            JobGivingWithoutDcInfoRequest.Show();
         }
     }
 }
