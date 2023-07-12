@@ -30,12 +30,15 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery6 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter6 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProductModel));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.LabelExceed = new DevExpress.XtraEditors.LabelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
@@ -83,9 +86,8 @@ namespace BillPlex
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
+            this.labelAvailable = new DevExpress.XtraEditors.LabelControl();
+            this.labelCodeExist = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -131,6 +133,8 @@ namespace BillPlex
             // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(this.labelCodeExist);
+            this.panelControl2.Controls.Add(this.labelAvailable);
             this.panelControl2.Controls.Add(this.labelControl15);
             this.panelControl2.Controls.Add(this.labelControl14);
             this.panelControl2.Controls.Add(this.labelControl13);
@@ -167,6 +171,42 @@ namespace BillPlex
             this.panelControl2.Size = new System.Drawing.Size(1594, 780);
             this.panelControl2.TabIndex = 1;
             // 
+            // labelControl15
+            // 
+            this.labelControl15.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl15.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl15.Appearance.Options.UseFont = true;
+            this.labelControl15.Appearance.Options.UseForeColor = true;
+            this.labelControl15.Location = new System.Drawing.Point(140, 112);
+            this.labelControl15.Name = "labelControl15";
+            this.labelControl15.Size = new System.Drawing.Size(10, 19);
+            this.labelControl15.TabIndex = 36;
+            this.labelControl15.Text = "*";
+            // 
+            // labelControl14
+            // 
+            this.labelControl14.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl14.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl14.Appearance.Options.UseFont = true;
+            this.labelControl14.Appearance.Options.UseForeColor = true;
+            this.labelControl14.Location = new System.Drawing.Point(121, 152);
+            this.labelControl14.Name = "labelControl14";
+            this.labelControl14.Size = new System.Drawing.Size(10, 19);
+            this.labelControl14.TabIndex = 35;
+            this.labelControl14.Text = "*";
+            // 
+            // labelControl13
+            // 
+            this.labelControl13.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl13.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl13.Appearance.Options.UseFont = true;
+            this.labelControl13.Appearance.Options.UseForeColor = true;
+            this.labelControl13.Location = new System.Drawing.Point(124, 199);
+            this.labelControl13.Name = "labelControl13";
+            this.labelControl13.Size = new System.Drawing.Size(10, 19);
+            this.labelControl13.TabIndex = 34;
+            this.labelControl13.Text = "*";
+            // 
             // LabelExceed
             // 
             this.LabelExceed.Appearance.ForeColor = System.Drawing.Color.Red;
@@ -194,13 +234,13 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery1.Name = "PRO_GetProductModel";
-            queryParameter1.Name = "@SearchKey";
-            queryParameter1.Type = typeof(string);
-            storedProcQuery1.Parameters.Add(queryParameter1);
-            storedProcQuery1.StoredProcName = "PRO_GetProductModel";
+            storedProcQuery6.Name = "PRO_GetProductModel";
+            queryParameter6.Name = "@SearchKey";
+            queryParameter6.Type = typeof(string);
+            storedProcQuery6.Parameters.Add(queryParameter6);
+            storedProcQuery6.StoredProcName = "PRO_GetProductModel";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery1});
+            storedProcQuery6});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // grd_ProductModel
@@ -553,7 +593,7 @@ namespace BillPlex
             // 
             // txtModelName
             // 
-            this.txtModelName.Location = new System.Drawing.Point(196, 188);
+            this.txtModelName.Location = new System.Drawing.Point(196, 201);
             this.txtModelName.Name = "txtModelName";
             this.txtModelName.Size = new System.Drawing.Size(224, 20);
             this.txtModelName.TabIndex = 10;
@@ -564,6 +604,7 @@ namespace BillPlex
             this.txtModelCode.Name = "txtModelCode";
             this.txtModelCode.Size = new System.Drawing.Size(224, 20);
             this.txtModelCode.TabIndex = 9;
+            this.txtModelCode.EditValueChanged += new System.EventHandler(this.txtCode_EditValueChanged);
             // 
             // drpProName
             // 
@@ -597,7 +638,7 @@ namespace BillPlex
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(29, 187);
+            this.labelControl6.Location = new System.Drawing.Point(29, 200);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(92, 18);
             this.labelControl6.TabIndex = 5;
@@ -643,41 +684,26 @@ namespace BillPlex
             this.labelControl2.TabIndex = 1;
             this.labelControl2.Text = "Raw Material Type";
             // 
-            // labelControl13
+            // labelAvailable
             // 
-            this.labelControl13.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl13.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl13.Appearance.Options.UseFont = true;
-            this.labelControl13.Appearance.Options.UseForeColor = true;
-            this.labelControl13.Location = new System.Drawing.Point(124, 186);
-            this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Size = new System.Drawing.Size(10, 19);
-            this.labelControl13.TabIndex = 34;
-            this.labelControl13.Text = "*";
+            this.labelAvailable.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.labelAvailable.Appearance.Options.UseForeColor = true;
+            this.labelAvailable.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.labelAvailable.Location = new System.Drawing.Point(196, 180);
+            this.labelAvailable.Name = "labelAvailable";
+            this.labelAvailable.Size = new System.Drawing.Size(50, 13);
+            this.labelAvailable.TabIndex = 53;
+            this.labelAvailable.Text = "Available";
             // 
-            // labelControl14
+            // labelCodeExist
             // 
-            this.labelControl14.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl14.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl14.Appearance.Options.UseFont = true;
-            this.labelControl14.Appearance.Options.UseForeColor = true;
-            this.labelControl14.Location = new System.Drawing.Point(121, 152);
-            this.labelControl14.Name = "labelControl14";
-            this.labelControl14.Size = new System.Drawing.Size(10, 19);
-            this.labelControl14.TabIndex = 35;
-            this.labelControl14.Text = "*";
-            // 
-            // labelControl15
-            // 
-            this.labelControl15.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl15.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl15.Appearance.Options.UseFont = true;
-            this.labelControl15.Appearance.Options.UseForeColor = true;
-            this.labelControl15.Location = new System.Drawing.Point(140, 112);
-            this.labelControl15.Name = "labelControl15";
-            this.labelControl15.Size = new System.Drawing.Size(10, 19);
-            this.labelControl15.TabIndex = 36;
-            this.labelControl15.Text = "*";
+            this.labelCodeExist.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelCodeExist.Appearance.Options.UseForeColor = true;
+            this.labelCodeExist.Location = new System.Drawing.Point(357, 180);
+            this.labelCodeExist.Name = "labelCodeExist";
+            this.labelCodeExist.Size = new System.Drawing.Size(63, 13);
+            this.labelCodeExist.TabIndex = 54;
+            this.labelCodeExist.Text = "Already Exist";
             // 
             // FrmProductModel
             // 
@@ -769,5 +795,7 @@ namespace BillPlex
         private DevExpress.XtraEditors.LabelControl labelControl15;
         private DevExpress.XtraEditors.LabelControl labelControl14;
         private DevExpress.XtraEditors.LabelControl labelControl13;
+        private DevExpress.XtraEditors.LabelControl labelAvailable;
+        private DevExpress.XtraEditors.LabelControl labelCodeExist;
     }
 }

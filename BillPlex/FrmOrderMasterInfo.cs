@@ -119,7 +119,17 @@ namespace BillPlex
         }
         private void comboBoxEdit10_SelectedIndexChanged(object sender, EventArgs e)
         {
+            string selectedCode = (string)drpCustCode.SelectedItem;
+            
+            string selectedName = (string)drpCustName.SelectedItem;
 
+            if (selectedCode != null)
+            {
+                drpCustName.Text = OrderMasterRequest.CustomerMasterList.FirstOrDefault(item => item.Code == selectedCode.ToString())?.Name ?? "";
+            } else if(selectedName != null)
+            {
+                drpCustCode.Text = OrderMasterRequest.CustomerMasterList.FirstOrDefault(item => item.Name == selectedName.ToString())?.Code ?? "";
+            }
         }
 
         #region Delete      
@@ -399,6 +409,8 @@ namespace BillPlex
                 {
                     foreach (DropDownItemInfo item in OrderMasterRequest.ProductMasterList)
                     {
+                        drpModelName.Properties.Items.Clear();
+
                         if (item.productId == selectItem)
                         {
                             drpModelName.Properties.Items.Add(new ImageComboBoxItem(item.proModel));
@@ -415,6 +427,8 @@ namespace BillPlex
             {
                 if (OrderMasterRequest.ProductMasterList.Count() > 0)
                 {
+                    drpModelCode.Properties.Items.Clear();
+
                     foreach (DropDownItemInfo item in OrderMasterRequest.ProductMasterList)
                     {
                         if (item.proModel == selectItem)

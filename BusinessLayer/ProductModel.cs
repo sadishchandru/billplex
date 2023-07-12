@@ -24,7 +24,7 @@ namespace BusinessLayer
         public List<DropDownItemInfo> RawMaterialList { get; set; }
         public List<DropDownItemInfo> ProductModelList { get; set; }
         public List<DropDownItemInfo> SizeMasterList { get; set; }
-        public List<DropDownItemInfo> productMasterList { get; set; }
+        public List<DropDownItemInfo> ProductMasterList { get; set; }
 
         public void Update()
         {
@@ -84,12 +84,6 @@ namespace BusinessLayer
                 objLstdbParams.Add(new DbParams(DbType.String, 50, Id, "@Id", ParameterDirection.Input));
 
                 dbReader = ObjDbfactory.GetReader("PRO_DeleteProductModel", false, objLstdbParams);
-
-                //while (dbReader.Read())
-                //{
-                //    Result.Message = ToString(dbReader["ResultMessage"]);
-                //   Result.Status = (ResultStatus)ToInteger(dbReader["ResultNo"]);
-                //}
 
                 Result.Message = "Product Master Deleted Successfully";
                 Result.Status = ResultStatus.Success;
