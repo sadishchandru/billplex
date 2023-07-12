@@ -120,13 +120,14 @@ namespace BillPlex
         private void comboBoxEdit10_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedCode = (string)drpCustCode.SelectedItem;
-            
+
             string selectedName = (string)drpCustName.SelectedItem;
 
             if (selectedCode != null)
             {
                 drpCustName.Text = OrderMasterRequest.CustomerMasterList.FirstOrDefault(item => item.Code == selectedCode.ToString())?.Name ?? "";
-            } else if(selectedName != null)
+            }
+            else if (selectedName != null)
             {
                 drpCustCode.Text = OrderMasterRequest.CustomerMasterList.FirstOrDefault(item => item.Name == selectedName.ToString())?.Code ?? "";
             }
@@ -282,7 +283,7 @@ namespace BillPlex
                                 // Add the new DataRow to the DataTable
                                 dataTable.Rows.Add(newRow);
                             }
-                            
+
 
                             // Refresh the grid to display the new row
                             gridView1.RefreshData();
@@ -446,6 +447,8 @@ namespace BillPlex
 
             if (OrderMasterRequest.ProductMasterList != null && selectItem != "")
             {
+                drpProductSize.Properties.Items.Clear();
+
                 if (OrderMasterRequest.ProductMasterList.Count() > 0)
                 {
                     foreach (DropDownItemInfo item in OrderMasterRequest.ProductMasterList)

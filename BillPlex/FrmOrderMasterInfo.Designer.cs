@@ -214,7 +214,7 @@ namespace BillPlex
             this.panelControl2.Location = new System.Drawing.Point(11, 106);
             this.panelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1551, 707);
+            this.panelControl2.Size = new System.Drawing.Size(1551, 668);
             this.panelControl2.TabIndex = 1;
             // 
             // gridControl1
