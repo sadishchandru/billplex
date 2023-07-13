@@ -140,7 +140,6 @@ namespace BillPlex
             // 
             this.btnDelete.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Appearance.Options.UseFont = true;
-            this.btnDelete.Enabled = false;
             this.btnDelete.Location = new System.Drawing.Point(5, 172);
             this.btnDelete.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.btnDelete.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.White;

@@ -132,7 +132,7 @@ namespace BillPlex
                 if (JobGivingWithoutDcRequest.Result.Status == ResultStatus.Success)
                 {
                     XtraMessageBox.Show(JobGivingWithoutDcRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    btnClear_Click();
                     this.Close();
 
                     FrmJobGivingWithoutDcProfile form = Application.OpenForms.OfType<FrmJobGivingWithoutDcProfile>().FirstOrDefault();
@@ -278,7 +278,45 @@ namespace BillPlex
                 txtTQty.Text = selectedCompanyList.GetRowCellValue(rowHandle, "TotalQty");
                 txtTotalWT.Text = selectedCompanyList.GetRowCellValue(rowHandle, "TotalWt");
                 txtShortage.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorFathername");
+
+                btnAdd.Enabled = false;
+                btnNew.Enabled = false;
+                btnUpdate.Enabled = true;
+                btnEdit.Enabled = true;
             }
+        }
+
+        private void btnClear_Click(object sender = null, EventArgs e = null)
+        {
+            drpEmpCode.ResetText();
+            txtEmpName.ResetText();
+            txtComName.ResetText();
+            txtCCom.ResetText();
+            txtClientName.ResetText();
+            txtSCCom.ResetText();
+            ddDate.ResetText();
+            drpOrderNo.ResetText();
+            ddODate.ResetText();
+            txtCCode.ResetText();
+            txtCCName.ResetText();
+            drpMName.ResetText();
+            drpMCode.ResetText();
+            txtPName.ResetText();
+            txtPSize.ResetText();
+            drpColor.ResetText();
+            txtRawMaterial.ResetText();
+            txtType.ResetText();
+            txtQuantity.ResetText();
+            txtWeight.ResetText();
+            txtAvlQty.ResetText();
+            txtTQty.ResetText();
+            txtTotalWT.ResetText();
+            txtShortage.ResetText();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
