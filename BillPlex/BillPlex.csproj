@@ -399,6 +399,9 @@
     <EmbeddedResource Include="FrmJobReceivedInfo.resx">
       <DependentUpon>FrmJobReceivedInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmJobReceivedProfile.resx">
+      <DependentUpon>FrmJobReceivedProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmOrderMaster.resx">
       <DependentUpon>FrmOrderMaster.cs</DependentUpon>
     </EmbeddedResource>

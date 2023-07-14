@@ -5,10 +5,11 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BusinessLayer
 {
-    public class JobReceivedInfo : Common
+    public class JobReceived : Common
     {
         public Int64 EmployeeCode { get; set; }
         public string EmployeeName { get; set; }
@@ -36,6 +37,7 @@ namespace BusinessLayer
         public string Incentive { get; set; }
         public string Total { get; set; }
         public string NetAmt { get; set; }
+        public static Form MdiParent { get; set; }
 
         public void Update()
         {
@@ -102,6 +104,12 @@ namespace BusinessLayer
                 CloseConnection();
             }
         }
+
+        public static void Show()
+        {
+            throw new NotImplementedException();
+        }
+
         public void Delete()
         {
             dbReader = null;
