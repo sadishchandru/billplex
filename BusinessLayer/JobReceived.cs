@@ -81,7 +81,7 @@ namespace BusinessLayer
                 objLstDbParams.Add(new DbParams(DbType.String, 50, NetAmt, "@NetAmt", ParameterDirection.Input));
 
 
-                dbReader = ObjDbfactory.GetReader("PRO_UpdateJobReceived", false, objLstDbParams);
+                dbReader = ObjDbfactory.GetReader("PRO_UpdateJobGivingWithoutDC", false, objLstDbParams);
 
                 Result.Message = "Job Received Updated Successfully";
                 Result.Status = ResultStatus.Success;
@@ -122,7 +122,7 @@ namespace BusinessLayer
                 // Calling the stored procedure for creating a new Company Profile
                 List<DbParams> objLstDbParams = new List<DbParams>();
                 objLstDbParams.Add(new DbParams(DbType.String, 50, Id, "@Id", ParameterDirection.Input));
-                dbReader = ObjDbfactory.GetReader("PRO_DeleteJobReceived", false, objLstDbParams);
+                dbReader = ObjDbfactory.GetReader("PRO_DeleteJobGivingWithoutDC", false, objLstDbParams);
 
                 Result.Message = "Job Received Deleted Successfully";
                 Result.Status = ResultStatus.Success;

@@ -46,13 +46,40 @@ namespace BillPlex
             this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
             this.panelDeliveryChallan = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colEmployeeCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colEmployeeName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCompanyName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colClientCompany = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSubClientCompany = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOrderNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOrderDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCustomerCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCustomerName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colModelName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colModelCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProductName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProductSize = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRawMaterial = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colQuantityPiece = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colWeightKg = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colExcess = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colColor = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAvlQty = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTotalQty = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTotalWt = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colShortage = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colorderQty = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colorderWt = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmbFind = new DevExpress.XtraEditors.CheckedComboBoxEdit();
             this.btnclr = new DevExpress.XtraEditors.SimpleButton();
             this.btnFind = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -97,7 +124,12 @@ namespace BillPlex
             // 
             this.btnEdit.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.Appearance.Options.UseFont = true;
+            this.btnEdit.Enabled = false;
             this.btnEdit.Location = new System.Drawing.Point(25, 75);
+            this.btnEdit.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btnEdit.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightBlue;
+            this.btnEdit.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnEdit.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 31;
@@ -141,6 +173,7 @@ namespace BillPlex
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 30;
             this.btnExit.Text = "EXIT";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnAdd
             // 
@@ -173,6 +206,7 @@ namespace BillPlex
             this.btnAdd.AppearancePressed.Options.UseBorderColor = true;
             this.btnAdd.AppearancePressed.Options.UseForeColor = true;
             this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAdd.Enabled = false;
             this.btnAdd.Location = new System.Drawing.Point(25, 46);
             this.btnAdd.LookAndFeel.SkinName = "DevExpress Style";
             this.btnAdd.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -212,6 +246,7 @@ namespace BillPlex
             this.btnClear.AppearancePressed.Options.UseBorderColor = true;
             this.btnClear.AppearancePressed.Options.UseForeColor = true;
             this.btnClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnClear.Enabled = false;
             this.btnClear.Location = new System.Drawing.Point(25, 161);
             this.btnClear.LookAndFeel.SkinName = "DevExpress Style";
             this.btnClear.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -225,6 +260,9 @@ namespace BillPlex
             this.btnDelete.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Appearance.Options.UseFont = true;
             this.btnDelete.Location = new System.Drawing.Point(25, 132);
+            this.btnDelete.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btnDelete.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnDelete.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 8;
@@ -235,7 +273,11 @@ namespace BillPlex
             // 
             this.btnUpdate.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Appearance.Options.UseFont = true;
+            this.btnUpdate.Enabled = false;
             this.btnUpdate.Location = new System.Drawing.Point(25, 103);
+            this.btnUpdate.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btnUpdate.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnUpdate.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 7;
@@ -246,8 +288,9 @@ namespace BillPlex
             this.btnNew.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNew.Appearance.Options.UseFont = true;
             this.btnNew.Location = new System.Drawing.Point(25, 16);
-            this.btnNew.LookAndFeel.SkinName = "DevExpress Dark Style";
-            this.btnNew.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Style3D;
+            this.btnNew.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btnNew.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnNew.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(75, 23);
             this.btnNew.TabIndex = 4;
@@ -270,6 +313,9 @@ namespace BillPlex
             this.checkEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkEdit1.Properties.Appearance.Options.UseFont = true;
             this.checkEdit1.Properties.Caption = "View DailyReceived";
+            this.checkEdit1.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.checkEdit1.Properties.LookAndFeel.SkinName = "DevExpress Style";
+            this.checkEdit1.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.checkEdit1.Size = new System.Drawing.Size(217, 23);
             this.checkEdit1.TabIndex = 87;
             // 
@@ -286,18 +332,251 @@ namespace BillPlex
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(10, 54);
+            this.gridControl1.DataMember = "PRO_GetJobGivingWithoutDC";
+            this.gridControl1.DataSource = this.sqlDataSource1;
+            this.gridControl1.Location = new System.Drawing.Point(5, 74);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1303, 540);
+            this.gridControl1.Size = new System.Drawing.Size(1314, 531);
             this.gridControl1.TabIndex = 3;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.DoubleClick += new System.EventHandler(this.gridControl1_DoubleClick_1);
+            // 
+            // sqlDataSource1
+            // 
+            this.sqlDataSource1.ConnectionName = "BillPlex";
+            this.sqlDataSource1.Name = "sqlDataSource1";
+            storedProcQuery1.Name = "PRO_GetJobGivingWithoutDC";
+            queryParameter1.Name = "@SearchKey";
+            queryParameter1.Type = typeof(string);
+            storedProcQuery1.Parameters.Add(queryParameter1);
+            storedProcQuery1.StoredProcName = "PRO_GetJobGivingWithoutDC";
+            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
+            storedProcQuery1});
+            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // gridView1
             // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colId,
+            this.colEmployeeCode,
+            this.colEmployeeName,
+            this.colCompanyName,
+            this.colClientCompany,
+            this.colSubClientCompany,
+            this.colOrderNo,
+            this.colDate,
+            this.colOrderDate,
+            this.colCustomerCode,
+            this.colCustomerName,
+            this.colModelName,
+            this.colModelCode,
+            this.colProductName,
+            this.colProductSize,
+            this.colRawMaterial,
+            this.colQuantityPiece,
+            this.colWeightKg,
+            this.colExcess,
+            this.colColor,
+            this.colType,
+            this.colAvlQty,
+            this.colTotalQty,
+            this.colTotalWt,
+            this.colShortage,
+            this.colorderQty,
+            this.colorderWt});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            // 
+            // colId
+            // 
+            this.colId.FieldName = "Id";
+            this.colId.Name = "colId";
+            this.colId.Visible = true;
+            this.colId.VisibleIndex = 0;
+            // 
+            // colEmployeeCode
+            // 
+            this.colEmployeeCode.FieldName = "EmployeeCode";
+            this.colEmployeeCode.Name = "colEmployeeCode";
+            this.colEmployeeCode.Visible = true;
+            this.colEmployeeCode.VisibleIndex = 1;
+            // 
+            // colEmployeeName
+            // 
+            this.colEmployeeName.FieldName = "EmployeeName";
+            this.colEmployeeName.Name = "colEmployeeName";
+            this.colEmployeeName.Visible = true;
+            this.colEmployeeName.VisibleIndex = 2;
+            // 
+            // colCompanyName
+            // 
+            this.colCompanyName.FieldName = "CompanyName";
+            this.colCompanyName.Name = "colCompanyName";
+            this.colCompanyName.Visible = true;
+            this.colCompanyName.VisibleIndex = 3;
+            // 
+            // colClientCompany
+            // 
+            this.colClientCompany.FieldName = "ClientCompany";
+            this.colClientCompany.Name = "colClientCompany";
+            this.colClientCompany.Visible = true;
+            this.colClientCompany.VisibleIndex = 4;
+            // 
+            // colSubClientCompany
+            // 
+            this.colSubClientCompany.FieldName = "SubClientCompany";
+            this.colSubClientCompany.Name = "colSubClientCompany";
+            this.colSubClientCompany.Visible = true;
+            this.colSubClientCompany.VisibleIndex = 5;
+            // 
+            // colOrderNo
+            // 
+            this.colOrderNo.FieldName = "OrderNo";
+            this.colOrderNo.Name = "colOrderNo";
+            this.colOrderNo.Visible = true;
+            this.colOrderNo.VisibleIndex = 6;
+            // 
+            // colDate
+            // 
+            this.colDate.FieldName = "Date";
+            this.colDate.Name = "colDate";
+            this.colDate.Visible = true;
+            this.colDate.VisibleIndex = 7;
+            // 
+            // colOrderDate
+            // 
+            this.colOrderDate.FieldName = "OrderDate";
+            this.colOrderDate.Name = "colOrderDate";
+            this.colOrderDate.Visible = true;
+            this.colOrderDate.VisibleIndex = 8;
+            // 
+            // colCustomerCode
+            // 
+            this.colCustomerCode.FieldName = "CustomerCode";
+            this.colCustomerCode.Name = "colCustomerCode";
+            this.colCustomerCode.Visible = true;
+            this.colCustomerCode.VisibleIndex = 9;
+            // 
+            // colCustomerName
+            // 
+            this.colCustomerName.FieldName = "CustomerName";
+            this.colCustomerName.Name = "colCustomerName";
+            this.colCustomerName.Visible = true;
+            this.colCustomerName.VisibleIndex = 10;
+            // 
+            // colModelName
+            // 
+            this.colModelName.FieldName = "ModelName";
+            this.colModelName.Name = "colModelName";
+            this.colModelName.Visible = true;
+            this.colModelName.VisibleIndex = 11;
+            // 
+            // colModelCode
+            // 
+            this.colModelCode.FieldName = "ModelCode";
+            this.colModelCode.Name = "colModelCode";
+            this.colModelCode.Visible = true;
+            this.colModelCode.VisibleIndex = 12;
+            // 
+            // colProductName
+            // 
+            this.colProductName.FieldName = "ProductName";
+            this.colProductName.Name = "colProductName";
+            this.colProductName.Visible = true;
+            this.colProductName.VisibleIndex = 13;
+            // 
+            // colProductSize
+            // 
+            this.colProductSize.FieldName = "ProductSize";
+            this.colProductSize.Name = "colProductSize";
+            this.colProductSize.Visible = true;
+            this.colProductSize.VisibleIndex = 14;
+            // 
+            // colRawMaterial
+            // 
+            this.colRawMaterial.FieldName = "RawMaterial";
+            this.colRawMaterial.Name = "colRawMaterial";
+            this.colRawMaterial.Visible = true;
+            this.colRawMaterial.VisibleIndex = 15;
+            // 
+            // colQuantityPiece
+            // 
+            this.colQuantityPiece.FieldName = "QuantityPiece";
+            this.colQuantityPiece.Name = "colQuantityPiece";
+            this.colQuantityPiece.Visible = true;
+            this.colQuantityPiece.VisibleIndex = 16;
+            // 
+            // colWeightKg
+            // 
+            this.colWeightKg.FieldName = "WeightKg";
+            this.colWeightKg.Name = "colWeightKg";
+            this.colWeightKg.Visible = true;
+            this.colWeightKg.VisibleIndex = 17;
+            // 
+            // colExcess
+            // 
+            this.colExcess.FieldName = "Excess";
+            this.colExcess.Name = "colExcess";
+            this.colExcess.Visible = true;
+            this.colExcess.VisibleIndex = 18;
+            // 
+            // colColor
+            // 
+            this.colColor.FieldName = "Color";
+            this.colColor.Name = "colColor";
+            this.colColor.Visible = true;
+            this.colColor.VisibleIndex = 19;
+            // 
+            // colType
+            // 
+            this.colType.FieldName = "Type";
+            this.colType.Name = "colType";
+            this.colType.Visible = true;
+            this.colType.VisibleIndex = 20;
+            // 
+            // colAvlQty
+            // 
+            this.colAvlQty.FieldName = "AvlQty";
+            this.colAvlQty.Name = "colAvlQty";
+            this.colAvlQty.Visible = true;
+            this.colAvlQty.VisibleIndex = 21;
+            // 
+            // colTotalQty
+            // 
+            this.colTotalQty.FieldName = "TotalQty";
+            this.colTotalQty.Name = "colTotalQty";
+            this.colTotalQty.Visible = true;
+            this.colTotalQty.VisibleIndex = 22;
+            // 
+            // colTotalWt
+            // 
+            this.colTotalWt.FieldName = "TotalWt";
+            this.colTotalWt.Name = "colTotalWt";
+            this.colTotalWt.Visible = true;
+            this.colTotalWt.VisibleIndex = 23;
+            // 
+            // colShortage
+            // 
+            this.colShortage.FieldName = "Shortage";
+            this.colShortage.Name = "colShortage";
+            this.colShortage.Visible = true;
+            this.colShortage.VisibleIndex = 24;
+            // 
+            // colorderQty
+            // 
+            this.colorderQty.FieldName = "orderQty";
+            this.colorderQty.Name = "colorderQty";
+            this.colorderQty.Visible = true;
+            this.colorderQty.VisibleIndex = 25;
+            // 
+            // colorderWt
+            // 
+            this.colorderWt.FieldName = "orderWt";
+            this.colorderWt.Name = "colorderWt";
+            this.colorderWt.Visible = true;
+            this.colorderWt.VisibleIndex = 26;
             // 
             // cmbFind
             // 
@@ -329,7 +608,7 @@ namespace BillPlex
             this.panelControl1.Controls.Add(this.labelControl1);
             this.panelControl1.Location = new System.Drawing.Point(42, 14);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1244, 50);
+            this.panelControl1.Size = new System.Drawing.Size(1345, 50);
             this.panelControl1.TabIndex = 0;
             // 
             // labelControl1
@@ -344,24 +623,11 @@ namespace BillPlex
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Job Received ";
             // 
-            // sqlDataSource1
-            // 
-            this.sqlDataSource1.ConnectionName = "BillPlex";
-            this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery1.Name = "PRO_GetJobReceived";
-            queryParameter1.Name = "@SearchKey";
-            queryParameter1.Type = typeof(string);
-            storedProcQuery1.Parameters.Add(queryParameter1);
-            storedProcQuery1.StoredProcName = "PRO_GetJobReceived";
-            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery1});
-            //this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
-            // 
             // FrmJobReceivedProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1687, 866);
+            this.ClientSize = new System.Drawing.Size(1603, 866);
             this.Controls.Add(this.panelControl3);
             this.Name = "FrmJobReceivedProfile";
             this.Text = "FrmJobReceivedProfile";
@@ -398,13 +664,40 @@ namespace BillPlex
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraEditors.CheckEdit checkEdit1;
         private DevExpress.XtraEditors.PanelControl panelDeliveryChallan;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.CheckedComboBoxEdit cmbFind;
         private DevExpress.XtraEditors.SimpleButton btnclr;
         private DevExpress.XtraEditors.SimpleButton btnFind;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
+        private DevExpress.XtraGrid.Columns.GridColumn colId;
+        private DevExpress.XtraGrid.Columns.GridColumn colEmployeeCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colEmployeeName;
+        private DevExpress.XtraGrid.Columns.GridColumn colCompanyName;
+        private DevExpress.XtraGrid.Columns.GridColumn colClientCompany;
+        private DevExpress.XtraGrid.Columns.GridColumn colSubClientCompany;
+        private DevExpress.XtraGrid.Columns.GridColumn colOrderNo;
+        private DevExpress.XtraGrid.Columns.GridColumn colDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colOrderDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colCustomerCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colCustomerName;
+        private DevExpress.XtraGrid.Columns.GridColumn colModelName;
+        private DevExpress.XtraGrid.Columns.GridColumn colModelCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colProductName;
+        private DevExpress.XtraGrid.Columns.GridColumn colProductSize;
+        private DevExpress.XtraGrid.Columns.GridColumn colRawMaterial;
+        private DevExpress.XtraGrid.Columns.GridColumn colQuantityPiece;
+        private DevExpress.XtraGrid.Columns.GridColumn colWeightKg;
+        private DevExpress.XtraGrid.Columns.GridColumn colExcess;
+        private DevExpress.XtraGrid.Columns.GridColumn colColor;
+        private DevExpress.XtraGrid.Columns.GridColumn colType;
+        private DevExpress.XtraGrid.Columns.GridColumn colAvlQty;
+        private DevExpress.XtraGrid.Columns.GridColumn colTotalQty;
+        private DevExpress.XtraGrid.Columns.GridColumn colTotalWt;
+        private DevExpress.XtraGrid.Columns.GridColumn colShortage;
+        private DevExpress.XtraGrid.Columns.GridColumn colorderQty;
+        private DevExpress.XtraGrid.Columns.GridColumn colorderWt;
     }
 }

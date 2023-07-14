@@ -138,7 +138,7 @@ namespace BillPlex
 
                 if (JobGivingWithoutDcRequest.Result.Status == ResultStatus.Success)
                 {
-                    XtraMessageBox.Show("", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    XtraMessageBox.Show("Giving is Transfer to the another Employee", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
                 else
