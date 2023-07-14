@@ -1093,6 +1093,7 @@ namespace BillPlex
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 7;
             this.btnUpdate.Text = "Update";
+            this.btnUpdate.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnEdit
             // 

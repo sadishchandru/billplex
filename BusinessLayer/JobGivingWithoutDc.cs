@@ -33,7 +33,12 @@ namespace BusinessLayer
         public string AvlQty { get; set; }
         public string TotalQty { get; set; }
         public string TotalWt { get; set; }
+        #region JobReallocation
         public string Shortage { get; set; }
+        public string Excess { get; set; }
+        public string subContractor { get; set; }
+        public string Director { get; set; }
+        #endregion
         public List<DropDownItemInfo> EmployeePersonalList { get; set; }
         public List<DropDownItemInfo> OrderMasterList { get; set; }
 
@@ -73,6 +78,8 @@ namespace BusinessLayer
                 objLstDbParams.Add(new DbParams(DbType.String, 50, TotalQty, "@TotalQty", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, TotalWt, "@TotalWt", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, Shortage, "@Shortage", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.String, 50, subContractor, "@subContractor", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.String, 50, Director, "@Director", ParameterDirection.Input));
 
 
                 dbReader = ObjDbfactory.GetReader("PRO_UpdateJobGivingWithoutDC", false, objLstDbParams);

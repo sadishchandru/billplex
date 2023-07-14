@@ -109,7 +109,7 @@ namespace BillPlex
                 string selectedItems = (string)drpOrderNo.SelectedItem;
                 if (selectedItems != null)
                 {
-                    JobGivingWithoutDcRequest.OrderNo = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.Name == selectedItems.ToString())?.Id ?? -1;
+                    JobGivingWithoutDcRequest.OrderNo = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.Code == selectedItems.ToString())?.Id ?? -1;
                 }
                 JobGivingWithoutDcRequest.OrderDate = ddODate.Text;
                 JobGivingWithoutDcRequest.CustomerCode = txtCCode.Text;

@@ -486,22 +486,22 @@ namespace BillPlex
 
         private void btn_JobReallocation_ItemClick(object sender, ItemClickEventArgs e)
         {
-            //bool IsOpen = false;
-            //foreach (Form f in Application.OpenForms)
-            //{
-            //    if (f.Text == "FrmJobReallocation")
-            //    {
-            //        IsOpen = true;
-            //        f.Focus();
-            //        break;
-            //    }
-            //}
-            //if (IsOpen == false)
-            //{
-            //    FrmJobReallocation JobReallocation = new FrmJobReallocation();
-            //    JobReallocation.MdiParent = this;
-            //    JobReallocation.Show();
-            //}
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "FrmJobReallocation")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                FrmJobReallocation JobReallocation = new FrmJobReallocation();
+                JobReallocation.MdiParent = this;
+                JobReallocation.Show();
+            }
         }
 
         private void btn_DirectJobGiving_ItemClick(object sender, ItemClickEventArgs e)
