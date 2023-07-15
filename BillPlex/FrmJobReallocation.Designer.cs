@@ -30,8 +30,8 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery6 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter6 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery3 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter3 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmJobReallocation));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
@@ -268,13 +268,13 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery6.Name = "PRO_GetJobGivingWithoutDC";
-            queryParameter6.Name = "@SearchKey";
-            queryParameter6.Type = typeof(string);
-            storedProcQuery6.Parameters.Add(queryParameter6);
-            storedProcQuery6.StoredProcName = "PRO_GetJobGivingWithoutDC";
+            storedProcQuery3.Name = "PRO_GetJobGivingWithoutDC";
+            queryParameter3.Name = "@SearchKey";
+            queryParameter3.Type = typeof(string);
+            storedProcQuery3.Parameters.Add(queryParameter3);
+            storedProcQuery3.StoredProcName = "PRO_GetJobGivingWithoutDC";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery6});
+            storedProcQuery3});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // gridView1
@@ -636,7 +636,11 @@ namespace BillPlex
             // 
             this.txtShortage.Location = new System.Drawing.Point(1043, 107);
             this.txtShortage.Name = "txtShortage";
-            this.txtShortage.Size = new System.Drawing.Size(187, 20);
+            this.txtShortage.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtShortage.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.txtShortage.Properties.Appearance.Options.UseFont = true;
+            this.txtShortage.Properties.Appearance.Options.UseForeColor = true;
+            this.txtShortage.Size = new System.Drawing.Size(187, 22);
             this.txtShortage.TabIndex = 25;
             // 
             // labelControl20
@@ -655,7 +659,11 @@ namespace BillPlex
             // 
             this.txtExcess.Location = new System.Drawing.Point(1043, 81);
             this.txtExcess.Name = "txtExcess";
-            this.txtExcess.Size = new System.Drawing.Size(187, 20);
+            this.txtExcess.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtExcess.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.txtExcess.Properties.Appearance.Options.UseFont = true;
+            this.txtExcess.Properties.Appearance.Options.UseForeColor = true;
+            this.txtExcess.Size = new System.Drawing.Size(187, 22);
             this.txtExcess.TabIndex = 24;
             // 
             // labelControl21

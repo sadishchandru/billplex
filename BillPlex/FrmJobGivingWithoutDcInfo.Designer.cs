@@ -1078,6 +1078,9 @@ namespace BillPlex
             this.btnDelete.Appearance.Options.UseFont = true;
             this.btnDelete.Enabled = false;
             this.btnDelete.Location = new System.Drawing.Point(25, 132);
+            this.btnDelete.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btnDelete.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnDelete.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 8;
@@ -1089,6 +1092,9 @@ namespace BillPlex
             this.btnUpdate.Appearance.Options.UseFont = true;
             this.btnUpdate.Enabled = false;
             this.btnUpdate.Location = new System.Drawing.Point(25, 103);
+            this.btnUpdate.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btnUpdate.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnUpdate.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 7;
@@ -1101,6 +1107,9 @@ namespace BillPlex
             this.btnEdit.Appearance.Options.UseFont = true;
             this.btnEdit.Enabled = false;
             this.btnEdit.Location = new System.Drawing.Point(25, 74);
+            this.btnEdit.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btnEdit.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnEdit.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 6;
@@ -1112,6 +1121,9 @@ namespace BillPlex
             this.btnNew.Appearance.Options.UseFont = true;
             this.btnNew.Enabled = false;
             this.btnNew.Location = new System.Drawing.Point(25, 16);
+            this.btnNew.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btnNew.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnNew.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(75, 23);
             this.btnNew.TabIndex = 4;

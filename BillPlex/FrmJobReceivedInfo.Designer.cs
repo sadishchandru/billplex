@@ -223,6 +223,7 @@ namespace BillPlex
             this.btnClear.Size = new System.Drawing.Size(81, 23);
             this.btnClear.TabIndex = 64;
             this.btnClear.Text = "CLEAR";
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnDelete
             // 

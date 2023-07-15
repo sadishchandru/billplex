@@ -132,13 +132,41 @@ namespace BillPlex
                 btnEdit.Enabled = true;
 
             }
-
-
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtEmpCode.ResetText();
+            txtEmpCode.ResetText();
+            txtEmpName.ResetText();
+            txtCName.ResetText();
+            txtRawMaterial.ResetText();
+            txtQuantity.ResetText();
+            txtWages.ResetText();
+            txtPQty.ResetText();
+            txtMName.ResetText();
+            txtType.ResetText();
+            txtWeight.ResetText();
+            txtCrntWt.ResetText();
+            txtRcvdQty.ResetText();
+            ddReceDate.ResetText();
+            txtPModel.ResetText();
+            txtPCode.ResetText();
+            txtPSize.ResetText();
+            txtColor.ResetText();
+            drpIncentiveApp.ResetText();
+            txtBeforeDys.ResetText();
+            txtAfterdys.ResetText();
+            txtConveyance.ResetText();
+            txtDeduction.ResetText();
+            txtIncentive.ResetText();
+            txtTotal.ResetText();
+            txtNetAmt.ResetText();
         }
     }
 }

@@ -154,14 +154,22 @@ namespace BillPlex
 
         private void txtWeight_EditValueChanged(object sender, EventArgs e)
         {
-            var count = 0;
-            if (txtWeight.Text != "" && lblWeight.Text != "")
+            int txtWeightValue;
+            int lblWeightValue;
+
+            if (int.TryParse(txtWeight.Text, out txtWeightValue) && int.TryParse(lblWeight.Text, out lblWeightValue))
             {
-                var a = Convert.ToInt32(txtWeight.Text);
-                var b = Convert.ToInt32(lblWeight.Text);
-                count = (a - b)
-                    ;
-                txtShortage.Text = count.ToString();
+                int countDifferent = txtWeightValue - lblWeightValue;
+                if (countDifferent >= 0)
+                {
+                    txtExcess.Text = countDifferent.ToString();
+                    txtShortage.Text = string.Empty;
+                }
+                else
+                {
+                    txtExcess.Text = string.Empty;
+                    txtShortage.Text = (countDifferent).ToString();
+                }
             }
         }
 

@@ -19,7 +19,7 @@ namespace BillPlex
 {
     public partial class FrmJobReceivedProfile : DevExpress.XtraEditors.XtraForm
     {
-       
+
         private JobReceived JobReceivedInfoRequest;
         private FrmJobReceivedInfo JobReceivedRequest;
         private GridView gridView;
@@ -32,6 +32,12 @@ namespace BillPlex
             // Fill the SqlDataSource asynchronously
             sqlDataSource1.FillAsync();
         }
+        public void ReloadSqlDataSource()
+        {
+            sqlDataSource1.FillAsync();
+            gridView1.RefreshData();
+
+        }
 
         private void btnNew_Click(object sender, EventArgs e)
         {
@@ -40,23 +46,24 @@ namespace BillPlex
             CP.Show();
         }
 
-            
+
 
         private void btnDelete_Click(object sender, EventArgs e)
-        {       
-                var selectedRows = gridView1.GetSelectedRows();
+        {
+            var selectedRows = gridView1.GetSelectedRows();
 
-                foreach (var rowHandle in selectedRows)
-                {
-                    JobReceivedInfoRequest.Id = (Int64)gridView1.GetRowCellValue(rowHandle, "Id");
-                }
-                JobReceivedInfoRequest.Delete();
+            foreach (var rowHandle in selectedRows)
+            {
+                JobReceivedInfoRequest.Id = (Int64)gridView1.GetRowCellValue(rowHandle, "Id");
+            }
+            JobReceivedInfoRequest.Delete();
 
-                if (JobReceivedInfoRequest.Result.Status == ResultStatus.Success)
-                {
-                    XtraMessageBox.Show(JobReceivedInfoRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            
+            if (JobReceivedInfoRequest.Result.Status == ResultStatus.Success)
+            {
+                XtraMessageBox.Show(JobReceivedInfoRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ReloadSqlDataSource();
+            }
+
         }
 
         private void gridControl1_DoubleClick_1(object sender, EventArgs e)
