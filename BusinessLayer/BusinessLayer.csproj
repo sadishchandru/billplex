@@ -57,6 +57,7 @@
     <Compile Include="CompanyMasterInfo.cs" />
     <Compile Include="CustomerMasterInfo.cs" />
     <Compile Include="DeliveryChallanInfro.cs" />
+    <Compile Include="DirectJobReceivedWithoutGiving.cs" />
     <Compile Include="DropDownItemInfo.cs" />
     <Compile Include="EmployeeFamily.cs" />
     <Compile Include="EmployeeFinance.cs" />

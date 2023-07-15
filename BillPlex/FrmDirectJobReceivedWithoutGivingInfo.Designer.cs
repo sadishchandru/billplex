@@ -180,7 +180,6 @@ namespace BillPlex
             this.btnExit.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.Appearance.Options.UseBackColor = true;
             this.btnExit.Appearance.Options.UseFont = true;
-            this.btnExit.Enabled = false;
             this.btnExit.Location = new System.Drawing.Point(12, 246);
             this.btnExit.LookAndFeel.SkinName = "DevExpress Style";
             this.btnExit.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -188,6 +187,7 @@ namespace BillPlex
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 11;
             this.btnExit.Text = "EXIT";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnClear
             // 
@@ -195,7 +195,6 @@ namespace BillPlex
             this.btnClear.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.Appearance.Options.UseBackColor = true;
             this.btnClear.Appearance.Options.UseFont = true;
-            this.btnClear.Enabled = false;
             this.btnClear.Location = new System.Drawing.Point(12, 207);
             this.btnClear.LookAndFeel.SkinName = "DevExpress Style";
             this.btnClear.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -203,6 +202,7 @@ namespace BillPlex
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 10;
             this.btnClear.Text = "CLEAR";
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnDelete
             // 
@@ -210,6 +210,7 @@ namespace BillPlex
             this.btnDelete.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Appearance.Options.UseBackColor = true;
             this.btnDelete.Appearance.Options.UseFont = true;
+            this.btnDelete.Enabled = false;
             this.btnDelete.Location = new System.Drawing.Point(12, 168);
             this.btnDelete.LookAndFeel.SkinName = "DevExpress Style";
             this.btnDelete.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -232,6 +233,7 @@ namespace BillPlex
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 8;
             this.btnUpdate.Text = "UPDATE";
+            this.btnUpdate.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnEdit
             // 
@@ -254,7 +256,6 @@ namespace BillPlex
             this.btnAdd.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Appearance.Options.UseBackColor = true;
             this.btnAdd.Appearance.Options.UseFont = true;
-            this.btnAdd.Enabled = false;
             this.btnAdd.Location = new System.Drawing.Point(12, 43);
             this.btnAdd.LookAndFeel.SkinName = "DevExpress Style";
             this.btnAdd.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -262,6 +263,7 @@ namespace BillPlex
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 6;
             this.btnAdd.Text = "ADD";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnNew
             // 
@@ -269,6 +271,7 @@ namespace BillPlex
             this.btnNew.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNew.Appearance.Options.UseBackColor = true;
             this.btnNew.Appearance.Options.UseFont = true;
+            this.btnNew.Enabled = false;
             this.btnNew.Location = new System.Drawing.Point(12, 5);
             this.btnNew.LookAndFeel.SkinName = "DevExpress Style";
             this.btnNew.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -352,6 +355,7 @@ namespace BillPlex
             // 
             // txtNetAmt
             // 
+            this.txtNetAmt.Enabled = false;
             this.txtNetAmt.Location = new System.Drawing.Point(1082, 316);
             this.txtNetAmt.Name = "txtNetAmt";
             this.txtNetAmt.Size = new System.Drawing.Size(140, 20);
@@ -409,6 +413,7 @@ namespace BillPlex
             // 
             // txtAfterDays
             // 
+            this.txtAfterDays.Enabled = false;
             this.txtAfterDays.Location = new System.Drawing.Point(1144, 195);
             this.txtAfterDays.Name = "txtAfterDays";
             this.txtAfterDays.Size = new System.Drawing.Size(78, 20);
@@ -428,6 +433,7 @@ namespace BillPlex
             // 
             // txtBeforeDays
             // 
+            this.txtBeforeDays.Enabled = false;
             this.txtBeforeDays.Location = new System.Drawing.Point(962, 193);
             this.txtBeforeDays.Name = "txtBeforeDays";
             this.txtBeforeDays.Size = new System.Drawing.Size(78, 20);
@@ -447,6 +453,7 @@ namespace BillPlex
             // 
             // txtTotal
             // 
+            this.txtTotal.Enabled = false;
             this.txtTotal.Location = new System.Drawing.Point(807, 295);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(140, 20);
@@ -465,6 +472,9 @@ namespace BillPlex
             this.drpIncentiveApp.Name = "drpIncentiveApp";
             this.drpIncentiveApp.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpIncentiveApp.Properties.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
             this.drpIncentiveApp.Size = new System.Drawing.Size(53, 20);
             this.drpIncentiveApp.TabIndex = 50;
             // 
@@ -529,6 +539,7 @@ namespace BillPlex
             // 
             // txtSize
             // 
+            this.txtSize.Enabled = false;
             this.txtSize.Location = new System.Drawing.Point(508, 190);
             this.txtSize.Name = "txtSize";
             this.txtSize.Size = new System.Drawing.Size(170, 20);
@@ -584,6 +595,7 @@ namespace BillPlex
             // 
             // txtWages
             // 
+            this.txtWages.Enabled = false;
             this.txtWages.Location = new System.Drawing.Point(180, 290);
             this.txtWages.Name = "txtWages";
             this.txtWages.Size = new System.Drawing.Size(206, 20);
@@ -591,6 +603,7 @@ namespace BillPlex
             // 
             // txtProductName
             // 
+            this.txtProductName.Enabled = false;
             this.txtProductName.Location = new System.Drawing.Point(180, 256);
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(206, 20);
@@ -604,6 +617,7 @@ namespace BillPlex
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.drpProductCode.Size = new System.Drawing.Size(206, 20);
             this.drpProductCode.TabIndex = 35;
+            this.drpProductCode.SelectedIndexChanged += new System.EventHandler(this.drpProductCode_SelectedIndexChanged);
             // 
             // drpProductModel
             // 
@@ -613,6 +627,7 @@ namespace BillPlex
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.drpProductModel.Size = new System.Drawing.Size(206, 20);
             this.drpProductModel.TabIndex = 34;
+            this.drpProductModel.SelectedIndexChanged += new System.EventHandler(this.drpProductModel_SelectedIndexChanged);
             // 
             // labelControl5
             // 
@@ -704,6 +719,7 @@ namespace BillPlex
             // 
             // txtSubContractor
             // 
+            this.txtSubContractor.Enabled = false;
             this.txtSubContractor.Location = new System.Drawing.Point(719, 118);
             this.txtSubContractor.Name = "txtSubContractor";
             this.txtSubContractor.Size = new System.Drawing.Size(255, 20);
@@ -723,6 +739,7 @@ namespace BillPlex
             // 
             // txtClientName
             // 
+            this.txtClientName.Enabled = false;
             this.txtClientName.Location = new System.Drawing.Point(719, 92);
             this.txtClientName.Name = "txtClientName";
             this.txtClientName.Size = new System.Drawing.Size(255, 20);
@@ -742,6 +759,7 @@ namespace BillPlex
             // 
             // txtDirector
             // 
+            this.txtDirector.Enabled = false;
             this.txtDirector.Location = new System.Drawing.Point(719, 66);
             this.txtDirector.Name = "txtDirector";
             this.txtDirector.Size = new System.Drawing.Size(255, 20);
@@ -761,6 +779,7 @@ namespace BillPlex
             // 
             // txtEmpName
             // 
+            this.txtEmpName.Enabled = false;
             this.txtEmpName.Location = new System.Drawing.Point(719, 37);
             this.txtEmpName.Name = "txtEmpName";
             this.txtEmpName.Size = new System.Drawing.Size(255, 20);
@@ -816,6 +835,7 @@ namespace BillPlex
             // 
             // txtComName
             // 
+            this.txtComName.Enabled = false;
             this.txtComName.Location = new System.Drawing.Point(180, 66);
             this.txtComName.Name = "txtComName";
             this.txtComName.Size = new System.Drawing.Size(274, 20);
@@ -823,6 +843,7 @@ namespace BillPlex
             // 
             // txtClientCompany
             // 
+            this.txtClientCompany.Enabled = false;
             this.txtClientCompany.Location = new System.Drawing.Point(180, 92);
             this.txtClientCompany.Name = "txtClientCompany";
             this.txtClientCompany.Size = new System.Drawing.Size(274, 20);
@@ -830,6 +851,7 @@ namespace BillPlex
             // 
             // txtSubClient
             // 
+            this.txtSubClient.Enabled = false;
             this.txtSubClient.Location = new System.Drawing.Point(180, 118);
             this.txtSubClient.Name = "txtSubClient";
             this.txtSubClient.Size = new System.Drawing.Size(274, 20);
@@ -843,6 +865,7 @@ namespace BillPlex
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.drpEmpCode.Size = new System.Drawing.Size(274, 20);
             this.drpEmpCode.TabIndex = 14;
+            this.drpEmpCode.SelectedIndexChanged += new System.EventHandler(this.drpEmpCode_SelectedIndexChanged);
             // 
             // FrmDirectJobReceivedWithoutGivingInfo
             // 

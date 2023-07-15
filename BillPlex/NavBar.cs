@@ -546,22 +546,22 @@ namespace BillPlex
 
         private void btn_DirectJobReceivedWithoutGiving_ItemClick(object sender, ItemClickEventArgs e)
         {
-            //bool IsOpen = false;
-            //foreach (Form f in Application.OpenForms)
-            //{
-            //    if (f.Text == "FrmDirectJobReceivedWithoutGivingProfile")
-            //    {
-            //        IsOpen = true;
-            //        f.Focus();
-            //        break;
-            //    }
-            //}
-            //if (IsOpen == false)
-            //{
-            //    FrmDirectJobReceivedWithoutGivingProfile DirectJobReceivedWithoutGiving = new FrmDirectJobReceivedWithoutGivingProfile();
-            //    DirectJobReceivedWithoutGiving.MdiParent = this;
-            //    DirectJobReceivedWithoutGiving.Show();
-            //}
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "FrmDirectJobReceivedWithoutGivingProfile")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                FrmDirectJobReceivedWithoutGivingProfile DirectJobReceivedWithoutGiving = new FrmDirectJobReceivedWithoutGivingProfile();
+                DirectJobReceivedWithoutGiving.MdiParent = this;
+                DirectJobReceivedWithoutGiving.Show();
+            }
         }
 
         private void btnJobReceived_ItemClick(object sender, ItemClickEventArgs e)
