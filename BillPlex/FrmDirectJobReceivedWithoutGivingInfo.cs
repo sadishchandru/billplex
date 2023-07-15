@@ -259,5 +259,76 @@ namespace BillPlex
         {
             this.Close();
         }
+
+        private void txtDeducation_EditValueChanged(object sender, EventArgs e)
+        {
+            int a;
+            int b;
+            if(txtTotal.Text !="" && txtDeducation.Text != "")
+            {
+                if (int.TryParse(txtTotal.Text, out a) && int.TryParse(txtDeducation.Text, out b))
+                {
+                    int result = a - b;
+                    txtTotal.Text = result.ToString();
+                }
+            }
+            else if (string.IsNullOrEmpty(txtDeducation.Text))
+            {
+                txtTotal.Text = string.Empty; 
+            }
+        }
+
+        private void txtConveyance_EditValueChanged(object sender, EventArgs e)
+       {
+            int a;
+            int b;
+            if (txtNetAmt.Text!="" && txtConveyance.Text != "")
+            {
+                if (int.TryParse(txtNetAmt.Text, out a))
+                {
+                    if (int.TryParse(txtConveyance.Text, out b))
+                    {
+                        txtNetAmt.Text = (a + b).ToString();
+                    }
+                    else
+                    {
+                        txtNetAmt.Text = a.ToString();
+                    }
+                }
+                else if (string.IsNullOrEmpty(txtConveyance.Text))
+                {
+                    txtNetAmt.Text = string.Empty; // or "0" if you want to show zero
+                }
+
+            }
+        }
+
+        private void txtIncentive_EditValueChanged(object sender, EventArgs e)
+        {
+            int a;
+            int b;
+            if (txtNetAmt.Text != "" && txtIncentive.Text != "")
+            {
+                if (int.TryParse(txtNetAmt.Text, out a) && int.TryParse(txtIncentive.Text, out b))
+                {
+                    txtNetAmt.Text = (a + b).ToString();
+                }
+            }
+        }
+
+        private void txtQuantity_EditValueChanged(object sender, EventArgs e)
+        {
+            int a;
+            int b;
+            if (txtWages.Text != "" && txtQuantity.Text != "")
+            {
+                if (int.TryParse(txtWages.Text, out a) && int.TryParse(txtQuantity.Text, out b))
+                {
+                    int total = a * b;
+                    txtTotal.Text = total.ToString();
+                    txtNetAmt.Text = total.ToString();
+                }
+            }
+        }
     }
 }

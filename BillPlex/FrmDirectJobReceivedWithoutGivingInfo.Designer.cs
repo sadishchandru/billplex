@@ -377,15 +377,27 @@ namespace BillPlex
             // 
             this.txtIncentive.Location = new System.Drawing.Point(1082, 290);
             this.txtIncentive.Name = "txtIncentive";
+            this.txtIncentive.Properties.BeepOnError = false;
+            this.txtIncentive.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtIncentive.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txtIncentive.Properties.MaskSettings.Set("mask", "d");
+            this.txtIncentive.Properties.UseMaskAsDisplayFormat = true;
             this.txtIncentive.Size = new System.Drawing.Size(140, 20);
             this.txtIncentive.TabIndex = 60;
+            this.txtIncentive.EditValueChanged += new System.EventHandler(this.txtIncentive_EditValueChanged);
             // 
             // txtConveyance
             // 
             this.txtConveyance.Location = new System.Drawing.Point(1082, 254);
             this.txtConveyance.Name = "txtConveyance";
+            this.txtConveyance.Properties.BeepOnError = false;
+            this.txtConveyance.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtConveyance.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txtConveyance.Properties.MaskSettings.Set("mask", "d");
+            this.txtConveyance.Properties.UseMaskAsDisplayFormat = true;
             this.txtConveyance.Size = new System.Drawing.Size(140, 20);
             this.txtConveyance.TabIndex = 59;
+            this.txtConveyance.EditValueChanged += new System.EventHandler(this.txtConveyance_EditValueChanged);
             // 
             // labelControl17
             // 
@@ -463,8 +475,14 @@ namespace BillPlex
             // 
             this.txtDeducation.Location = new System.Drawing.Point(807, 253);
             this.txtDeducation.Name = "txtDeducation";
+            this.txtDeducation.Properties.BeepOnError = false;
+            this.txtDeducation.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtDeducation.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txtDeducation.Properties.MaskSettings.Set("mask", "d");
+            this.txtDeducation.Properties.UseMaskAsDisplayFormat = true;
             this.txtDeducation.Size = new System.Drawing.Size(140, 20);
             this.txtDeducation.TabIndex = 51;
+            this.txtDeducation.EditValueChanged += new System.EventHandler(this.txtDeducation_EditValueChanged);
             // 
             // drpIncentiveApp
             // 
@@ -527,6 +545,11 @@ namespace BillPlex
             // 
             this.txtWeight.Location = new System.Drawing.Point(508, 290);
             this.txtWeight.Name = "txtWeight";
+            this.txtWeight.Properties.BeepOnError = false;
+            this.txtWeight.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtWeight.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txtWeight.Properties.MaskSettings.Set("mask", "d");
+            this.txtWeight.Properties.UseMaskAsDisplayFormat = true;
             this.txtWeight.Size = new System.Drawing.Size(170, 20);
             this.txtWeight.TabIndex = 45;
             // 
@@ -534,8 +557,14 @@ namespace BillPlex
             // 
             this.txtQuantity.Location = new System.Drawing.Point(508, 259);
             this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Properties.BeepOnError = false;
+            this.txtQuantity.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtQuantity.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txtQuantity.Properties.MaskSettings.Set("mask", "d");
+            this.txtQuantity.Properties.UseMaskAsDisplayFormat = true;
             this.txtQuantity.Size = new System.Drawing.Size(170, 20);
             this.txtQuantity.TabIndex = 44;
+            this.txtQuantity.EditValueChanged += new System.EventHandler(this.txtQuantity_EditValueChanged);
             // 
             // txtSize
             // 
