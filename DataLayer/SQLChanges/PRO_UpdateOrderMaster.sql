@@ -29,7 +29,7 @@ CREATE or ALTER   PROCEDURE [dbo].[PRO_UpdateOrderMaster]
 	@Status  Varchar(50)='', 
 	@TotalRaw  varchar(100) ='',
 	@WagesforEmp  varchar(100)='',
-	--@totalWt varchar(100) = '',
+	@totalWt varchar(100) = '',
 	--@AvlQty  varchar(250)='',
 	--@Avlweight  varchar(100) ='',
 	@updateOn datetime = null
@@ -60,7 +60,7 @@ BEGIN
 			,ColorId
 			,RawQty
 			,TotalRaw
-			--,totalWt
+			,totalWt
 			,Delivarydate
 			,WagesforEmp
 			,Status
@@ -82,7 +82,7 @@ BEGIN
 				@ColorId,
 				@RawQty,
 				@TotalRaw,
-				--@totalWt,
+				@totalWt,
 				@Delivarydate,
 				@WagesforEmp,
 				@Status
@@ -112,6 +112,7 @@ BEGIN
 				[TotalRaw]=@TotalRaw,
 				[Delivarydate]=@Delivarydate,
 				[WagesforEmp]=@WagesforEmp,
+				[TotalWt]=@totalWt,
 				[Status]=@Status
 				--[AvlQty]=@AvlQty,
 				--[Avlweight]=@Avlweight

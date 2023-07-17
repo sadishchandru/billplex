@@ -26,6 +26,7 @@ namespace BusinessLayer
         public Int64 ColorId { get; set; }
         public string RawQty { get; set; }
         public string TotalRaw { get; set; }
+        public string MaterialWghtNo { get; set; }
         public string Deliverydate { get; set; }
         public string WagesforEmp { get; set; }
         public string status { get; set; }
@@ -66,6 +67,7 @@ namespace BusinessLayer
                 objLstdbParams.Add(new DbParams(DbType.Date, 50, Deliverydate, "@Delivarydate", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, WagesforEmp, "@WagesforEmp", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, status, "@status", ParameterDirection.Input));
+                objLstdbParams.Add(new DbParams(DbType.String, 50, MaterialWghtNo, "@TotalRaw", ParameterDirection.Input));
 
                 dbReader = ObjDbfactory.GetReader("PRO_UpdateOrderMaster", false, objLstdbParams);
 
@@ -119,6 +121,7 @@ namespace BusinessLayer
                 OrderDetail.status = ToString(dbReader["Status"]);
                 OrderDetail.TotalRaw = ToString(dbReader["TotalRaw"]);
                 OrderDetail.WagesforEmp = ToString(dbReader["WagesforEmp"]);
+                OrderDetail.MaterialWghtNo = ToString(dbReader["totalWt"]);
 
                 FamilyList.Add(OrderDetail);
             }

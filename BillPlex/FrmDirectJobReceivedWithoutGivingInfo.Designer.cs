@@ -157,7 +157,7 @@ namespace BillPlex
             this.panelControl2.Controls.Add(this.panelControl3);
             this.panelControl2.Location = new System.Drawing.Point(13, 75);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1518, 741);
+            this.panelControl2.Size = new System.Drawing.Size(1527, 758);
             this.panelControl2.TabIndex = 1;
             // 
             // panelControl5
@@ -335,12 +335,12 @@ namespace BillPlex
             this.panelControl3.Controls.Add(this.drpEmpCode);
             this.panelControl3.Location = new System.Drawing.Point(6, 20);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(1319, 716);
+            this.panelControl3.Size = new System.Drawing.Size(1330, 733);
             this.panelControl3.TabIndex = 0;
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(16, 356);
+            this.gridControl1.Location = new System.Drawing.Point(16, 363);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.Size = new System.Drawing.Size(1288, 355);
@@ -356,7 +356,7 @@ namespace BillPlex
             // txtNetAmt
             // 
             this.txtNetAmt.Enabled = false;
-            this.txtNetAmt.Location = new System.Drawing.Point(1082, 316);
+            this.txtNetAmt.Location = new System.Drawing.Point(1082, 330);
             this.txtNetAmt.Name = "txtNetAmt";
             this.txtNetAmt.Size = new System.Drawing.Size(140, 20);
             this.txtNetAmt.TabIndex = 62;
@@ -367,7 +367,7 @@ namespace BillPlex
             this.labelControl18.Appearance.ForeColor = System.Drawing.Color.Black;
             this.labelControl18.Appearance.Options.UseFont = true;
             this.labelControl18.Appearance.Options.UseForeColor = true;
-            this.labelControl18.Location = new System.Drawing.Point(962, 318);
+            this.labelControl18.Location = new System.Drawing.Point(966, 330);
             this.labelControl18.Name = "labelControl18";
             this.labelControl18.Size = new System.Drawing.Size(60, 18);
             this.labelControl18.TabIndex = 61;
@@ -384,7 +384,7 @@ namespace BillPlex
             this.txtIncentive.Properties.UseMaskAsDisplayFormat = true;
             this.txtIncentive.Size = new System.Drawing.Size(140, 20);
             this.txtIncentive.TabIndex = 60;
-            this.txtIncentive.EditValueChanged += new System.EventHandler(this.txtIncentive_EditValueChanged);
+            this.txtIncentive.EditValueChanged += new System.EventHandler(this.txtQuantity_EditValueChanged);
             // 
             // txtConveyance
             // 
@@ -397,7 +397,7 @@ namespace BillPlex
             this.txtConveyance.Properties.UseMaskAsDisplayFormat = true;
             this.txtConveyance.Size = new System.Drawing.Size(140, 20);
             this.txtConveyance.TabIndex = 59;
-            this.txtConveyance.EditValueChanged += new System.EventHandler(this.txtConveyance_EditValueChanged);
+            this.txtConveyance.EditValueChanged += new System.EventHandler(this.txtQuantity_EditValueChanged);
             // 
             // labelControl17
             // 
@@ -482,7 +482,7 @@ namespace BillPlex
             this.txtDeducation.Properties.UseMaskAsDisplayFormat = true;
             this.txtDeducation.Size = new System.Drawing.Size(140, 20);
             this.txtDeducation.TabIndex = 51;
-            this.txtDeducation.EditValueChanged += new System.EventHandler(this.txtDeducation_EditValueChanged);
+            this.txtDeducation.EditValueChanged += new System.EventHandler(this.txtQuantity_EditValueChanged);
             // 
             // drpIncentiveApp
             // 
@@ -900,7 +900,7 @@ namespace BillPlex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1543, 828);
+            this.ClientSize = new System.Drawing.Size(1562, 845);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Name = "FrmDirectJobReceivedWithoutGivingInfo";

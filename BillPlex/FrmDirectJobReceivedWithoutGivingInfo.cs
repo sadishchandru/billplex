@@ -264,7 +264,7 @@ namespace BillPlex
         {
             int a;
             int b;
-            if(txtTotal.Text !="" && txtDeducation.Text != "")
+            if (txtTotal.Text != "" && txtDeducation.Text != "")
             {
                 if (int.TryParse(txtTotal.Text, out a) && int.TryParse(txtDeducation.Text, out b))
                 {
@@ -274,96 +274,37 @@ namespace BillPlex
             }
             else if (string.IsNullOrEmpty(txtDeducation.Text))
             {
-                txtTotal.Text = string.Empty; 
-            }
-        }
-
-        private void txtConveyance_EditValueChanged(object sender, EventArgs e)
-       {
-            int a;
-            int b;
-            if (txtNetAmt.Text!="" && txtConveyance.Text != "")
-            {
-                if (int.TryParse(txtNetAmt.Text, out a))
-                {
-                    if (int.TryParse(txtConveyance.Text, out b))
-                    {
-                        txtNetAmt.Text = (a + b).ToString();
-                    }
-                    else
-                    {
-                        txtNetAmt.Text = a.ToString();
-                    }
-                }
-                else if (string.IsNullOrEmpty(txtConveyance.Text))
-                {
-                    txtNetAmt.Text = string.Empty; // or "0" if you want to show zero
-                }
-
-            }
-        }
-        private void txtIncentive_EditValueChanged(object sender=null, EventArgs e=null)
-        {
-            int a;
-            int b;
-            if (txtIncentive.Text != "" || txtNetAmt.Text != "")
-            {
-                if (int.TryParse(txtIncentive.Text, out a) && int.TryParse(txtNetAmt.Text, out b))
-                {
-                    int total = a + b;
-                    txtIncentive.Text = total.ToString();
-                    txtNetAmt.Text = total.ToString();
-                }
-                else
-                {
-                    txtIncentive_EditValueChanged();
-                }
-            }
-
-            int value1;
-            int value2;
-
-            if (int.TryParse(txtWages.Text, out value1) && int.TryParse(txtQuantity.Text, out value2))
-            {
-                int sum = value1 + value2;
-                txtTotal.Text = sum.ToString();
-                txtNetAmt.Text = sum.ToString();
-            }
-            else
-            {
                 txtTotal.Text = string.Empty;
-                txtNetAmt.Text = string.Empty;
             }
         }
 
-        private void txtQuantity_EditValueChanged(object sender=null, EventArgs e=null)
+        private void txtQuantity_EditValueChanged(object sender = null, EventArgs e = null)
         {
-            //int a;
-            //int b;
-            //if (txtWages.Text != "" && txtQuantity.Text != "")
-            //{
-            //    if (int.TryParse(txtWages.Text, out a) && int.TryParse(txtQuantity.Text, out b))
-            //    {
-            //        int total = a * b;
-            //        txtTotal.Text = total.ToString();
-            //        txtNetAmt.Text = total.ToString();
-            //    }
-            //}
 
-            int value1;
-            int value2;
+            int total = 0;
 
-            if (int.TryParse(txtWages.Text, out value1) && int.TryParse(txtQuantity.Text, out value2))
+            if (txtWages.Text != "" && (txtQuantity.Text != "" && txtQuantity.Text != "0"))
             {
-                int sum = value1 * value2;
-                txtTotal.Text = sum.ToString();
-                txtNetAmt.Text = sum.ToString();
+                total = (Convert.ToInt32(txtWages.Text) * Convert.ToInt32(txtQuantity.Text));
             }
-            else
+
+            if (txtDeducation.Text != "" && txtDeducation.Text != "0")
             {
-                txtTotal.Text = string.Empty;
-                txtNetAmt.Text = string.Empty;
+                total = total - Convert.ToInt32(txtDeducation.Text);
             }
+            
+            if (txtConveyance.Text != "" && txtConveyance.Text != "0")
+            {
+                total = total + Convert.ToInt32(txtConveyance.Text);
+            }
+            
+            if (txtIncentive.Text != "" && txtIncentive.Text != "0")
+            {
+                total = total + Convert.ToInt32(txtIncentive.Text);
+            }
+
+            txtTotal.Text = total.ToString();
+            txtNetAmt.Text = total.ToString();
         }
     }
 }

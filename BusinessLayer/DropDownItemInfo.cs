@@ -22,6 +22,8 @@ namespace BusinessLayer
         public string color { get; set; }
         public string RawName { get; set; }
         public string RawType { get; set; }
+        public int OrderQty { get; set; }
+        public int OrderWghtNo { get; set; }
         public static List<DropDownItemInfo> PreparedItemList(ref DbDataReader dbReader)
         {
             List<DropDownItemInfo> itemList = new List<DropDownItemInfo>();
@@ -83,6 +85,8 @@ namespace BusinessLayer
                 itemInfo.color = Conversion.ToString(dbReader["color"]);
                 itemInfo.RawName = Conversion.ToString(dbReader["RawName"]);
                 itemInfo.RawType = Conversion.ToString(dbReader["RawType"]);
+                itemInfo.OrderQty = Conversion.ToInteger(dbReader["Qty"]);
+                itemInfo.OrderWghtNo = Conversion.ToInteger(dbReader["TotalQty"]);
                 itemList.Add(itemInfo);
             }
 

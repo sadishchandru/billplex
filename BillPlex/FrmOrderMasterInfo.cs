@@ -176,7 +176,7 @@ namespace BillPlex
                     drpModelName.Text = (string)gridView1.GetRowCellValue(rowHandle, "productcode");
                     drpModelCode.Text = (string)gridView1.GetRowCellValue(rowHandle, "productmodel");
                     drpProductSize.Text = (string)gridView1.GetRowCellValue(rowHandle, "productsize");
-                    txtMaterialwt.Text = (string)gridView1.GetRowCellValue(rowHandle, "Quantity");
+                    txtMaterialwt.Text = (string)gridView1.GetRowCellValue(rowHandle, "totalWt");
                     txtType.Text = (string)gridView1.GetRowCellValue(rowHandle, "RawType");
                     txtRawmatName.Text = (string)gridView1.GetRowCellValue(rowHandle, "RawmaterialId");
                     drpProColor.SelectedIndex = OrderMasterRequest.ColourMasterList.FindIndex(x => x.Id == Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "ColorId").ToString()));
@@ -241,10 +241,10 @@ namespace BillPlex
                     OrderMasterRequest.ProductCode = drpModelCode.Text;
                     OrderMasterRequest.ProductSize = drpProductSize.Text;
                     OrderMasterRequest.RawMaterialId = txtRawmatName.Text;
-                    OrderMasterRequest.Quantity = txtMaterialwt.Text;
+                    OrderMasterRequest.Quantity = txtQuantity.Text; 
                     OrderMasterRequest.RawType = txtType.Text;
                     OrderMasterRequest.RawQty = txtRawmatName.Text;
-                    OrderMasterRequest.TotalRaw = txtQuantity.Text;
+                    OrderMasterRequest.MaterialWghtNo = txtMaterialwt.Text;
                     OrderMasterRequest.Deliverydate = ddProDate.Text;
                     OrderMasterRequest.status = drpStatus.Text;
                     OrderMasterRequest.TotalRaw = txtTotRawmat.Text;
@@ -341,7 +341,7 @@ namespace BillPlex
                 drpModelName.Text = (string)SelectedOrderList.GetRowCellValue(rowHandle, "productcode");
                 drpModelCode.Text = (string)SelectedOrderList.GetRowCellValue(rowHandle, "productmodel");
                 drpProductSize.Text = (string)SelectedOrderList.GetRowCellValue(rowHandle, "productsize");
-                txtMaterialwt.Text = (string)SelectedOrderList.GetRowCellValue(rowHandle, "Quantity");
+                txtMaterialwt.Text = (string)SelectedOrderList.GetRowCellValue(rowHandle, "totalWt");
                 txtType.Text = (string)SelectedOrderList.GetRowCellValue(rowHandle, "RawType");
                 txtRawmatName.Text = (string)SelectedOrderList.GetRowCellValue(rowHandle, "RawmaterialId");
                 drpProColor.SelectedIndex = OrderMasterRequest.ColourMasterList.FindIndex(x => x.Id == Convert.ToInt32(SelectedOrderList.GetRowCellValue(rowHandle, "ColorId").ToString()));

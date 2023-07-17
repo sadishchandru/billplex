@@ -123,9 +123,9 @@ namespace BillPlex
                 JobGivingWithoutDcRequest.RawType = txtType.Text;
                 JobGivingWithoutDcRequest.QuantityPiece = txtQuantity.Text;
                 JobGivingWithoutDcRequest.WeightKg = txtWeight.Text;
-                JobGivingWithoutDcRequest.AvlQty =txtAvlQty.Text;
-                JobGivingWithoutDcRequest.TotalQty = txtTQty.Text;
-                JobGivingWithoutDcRequest.TotalWt = txtTotalWT.Text;
+                JobGivingWithoutDcRequest.AvlQty = txtAvlQty.Text;
+                //JobGivingWithoutDcRequest.TotalQty = txtTQty.Text;
+                //JobGivingWithoutDcRequest.TotalWt = txtTotalWT.Text;
                 JobGivingWithoutDcRequest.Shortage = txtShortage.Text;
                 JobGivingWithoutDcRequest.Update();
 
@@ -159,11 +159,11 @@ namespace BillPlex
             string selectedItem = (string)drpEmpCode.SelectedItem;
             if (selectedItem != null)
             {
-                txtComName.Text = JobGivingWithoutDcRequest.EmployeePersonalList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.proModel ?? "";
-                txtCCom.Text = JobGivingWithoutDcRequest.EmployeePersonalList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.productId ?? "";
-                txtSCCom.Text = JobGivingWithoutDcRequest.EmployeePersonalList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.SubCom ?? "";
-                txtClientName.Text = JobGivingWithoutDcRequest.EmployeePersonalList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.RawMaterial ?? "";
-                txtEmpName.Text = JobGivingWithoutDcRequest.EmployeePersonalList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.Name ?? "";
+                txtComName.Text = JobGivingWithoutDcRequest.EmployeePersonalList.FirstOrDefault(item => item.Code == selectedItem.ToString())?.proModel ?? "";
+                txtCCom.Text = JobGivingWithoutDcRequest.EmployeePersonalList.FirstOrDefault(item => item.Code == selectedItem.ToString())?.productId ?? "";
+                txtSCCom.Text = JobGivingWithoutDcRequest.EmployeePersonalList.FirstOrDefault(item => item.Code == selectedItem.ToString())?.SubCom ?? "";
+                txtClientName.Text = JobGivingWithoutDcRequest.EmployeePersonalList.FirstOrDefault(item => item.Code == selectedItem.ToString())?.RawMaterial ?? "";
+                txtEmpName.Text = JobGivingWithoutDcRequest.EmployeePersonalList.FirstOrDefault(item => item.Code == selectedItem.ToString())?.Name ?? "";
             }
         }
 
@@ -242,6 +242,17 @@ namespace BillPlex
             {
                 txtRawMaterial.Text = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.color == selectedItem.ToString())?.RawName ?? "";
                 txtType.Text = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.color == selectedItem.ToString())?.RawType ?? "";
+
+                //getQuantity
+
+                var totalQty = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.RawName == txtRawMaterial.Text && item.RawType == txtType.Text && item.Code == drpOrderNo.Text && item.color == drpColor.Text && item.SubCom == txtPName.Text && item.SubComName == txtPSize.Text)?.OrderQty.ToString() ?? "";
+                
+                lblOrderQtyNo.Text = 0 + "/" + totalQty;
+
+                lblOrderWghtNo.Text = 0 + "/" + JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.RawName == txtRawMaterial.Text && item.RawType == txtType.Text && item.Code == drpOrderNo.Text && item.color == drpColor.Text && item.SubCom == txtPName.Text && item.SubComName == txtPSize.Text)?.OrderWghtNo.ToString() ?? "";
+
+
+                txtAvlQty.Text = totalQty;
             }
         }
 
@@ -274,9 +285,9 @@ namespace BillPlex
                 txtType.Text = selectedCompanyList.GetRowCellValue(rowHandle, "Type");
                 txtQuantity.Text = selectedCompanyList.GetRowCellValue(rowHandle, "QuantityPiece");
                 txtWeight.Text = selectedCompanyList.GetRowCellValue(rowHandle, "WeightKg");
-                txtAvlQty.Text =selectedCompanyList.GetRowCellValue(rowHandle, "AvlQty");
-                txtTQty.Text = selectedCompanyList.GetRowCellValue(rowHandle, "TotalQty");
-                txtTotalWT.Text = selectedCompanyList.GetRowCellValue(rowHandle, "TotalWt");
+                txtAvlQty.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AvlQty");
+                //txtTQty.Text = selectedCompanyList.GetRowCellValue(rowHandle, "TotalQty");
+                //txtTotalWT.Text = selectedCompanyList.GetRowCellValue(rowHandle, "TotalWt");
                 txtShortage.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorFathername");
 
                 btnAdd.Enabled = false;
@@ -309,8 +320,6 @@ namespace BillPlex
             txtQuantity.ResetText();
             txtWeight.ResetText();
             txtAvlQty.ResetText();
-            txtTQty.ResetText();
-            txtTotalWT.ResetText();
             txtShortage.ResetText();
         }
 
