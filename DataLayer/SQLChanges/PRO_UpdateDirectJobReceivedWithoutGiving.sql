@@ -35,7 +35,8 @@ CREATE OR ALTER PROCEDURE [dbo].[PRO_UpdateDirectJobReceivedWithoutGiving]
 @Total varchar(10)='',
 @Conveyance varchar(10)='',
 @Incentive varchar(10)='',
-@NetAmt varchar(10)=''
+@NetAmt varchar(10)='',
+@ReceivingDate Date = null
 AS
 BEGIN
 	
@@ -71,6 +72,7 @@ IF (@Id = 0)
 				,Conveyance
 				,Incentive
 				,NetAmt
+				,ReceivingDate
             )
         VALUES
             (
@@ -98,6 +100,7 @@ IF (@Id = 0)
 				,@Conveyance
 				,@Incentive
 				,@NetAmt
+				,@ReceivingDate
             )
 
         SET @ResultMessage = ' Direct Job Received Without Giving Added Successfully';
@@ -130,11 +133,19 @@ IF (@Id = 0)
 			Total=@Total,
 			Conveyance=@Conveyance,
 			Incentive=@Incentive,
-			NetAmt=@NetAmt
+			NetAmt=@NetAmt,
+			ReceivingDate = @ReceivingDate
         WHERE Id = @Id
 
         SET @ResultMessage = 'Direct Job Received Without Giving Updated Successfully';
         SET @ResultNo = 1
     END
 	SELECT @ResultMessage AS ResultMessage, @ResultNo AS ResultNo
+
+	SET @Id = @@IDENTITY
+
+	IF(@ResultNo = 1)
+	BEGIN
+		EXEC PRO_GetDirectJobReceivedWithoutGivingByFilter @Id = @Id;
+	END
 END

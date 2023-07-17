@@ -29,6 +29,10 @@ namespace BillPlex
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDirectJobReceivedWithoutGivingInfo));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
@@ -42,7 +46,33 @@ namespace BillPlex
             this.btnNew = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.EmployeeCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colEmployeeName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCompanyName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDirectorName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colClientCompany = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colClientName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSubClientCompany = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSubClientName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProductModel = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProductCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProductName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProsize = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colWages = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcolor = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colWeight = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIncentiveApplicable = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBDays = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colADays = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDeduction = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTotal = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colConveyance = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIncentive = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNetAmt = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtNetAmt = new DevExpress.XtraEditors.TextEdit();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.txtIncentive = new DevExpress.XtraEditors.TextEdit();
@@ -340,6 +370,8 @@ namespace BillPlex
             // 
             // gridControl1
             // 
+            this.gridControl1.DataMember = "PRO_GetDirectJobReceivedWithoutGivingByFilter";
+            this.gridControl1.DataSource = this.sqlDataSource1;
             this.gridControl1.Location = new System.Drawing.Point(16, 363);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
@@ -348,10 +380,224 @@ namespace BillPlex
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
+            // sqlDataSource1
+            // 
+            this.sqlDataSource1.ConnectionName = "BillPlex";
+            this.sqlDataSource1.Name = "sqlDataSource1";
+            storedProcQuery1.Name = "PRO_GetDirectJobReceivedWithoutGivingByFilter";
+            queryParameter1.Name = "@Id";
+            queryParameter1.Type = typeof(string);
+            storedProcQuery1.Parameters.Add(queryParameter1);
+            storedProcQuery1.StoredProcName = "PRO_GetDirectJobReceivedWithoutGivingByFilter";
+            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
+            storedProcQuery1});
+            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
+            // 
             // gridView1
             // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colId,
+            this.EmployeeCode,
+            this.colEmployeeName,
+            this.colCompanyName,
+            this.colDirectorName,
+            this.colClientCompany,
+            this.colClientName,
+            this.colSubClientCompany,
+            this.colSubClientName,
+            this.colProductModel,
+            this.colProductCode,
+            this.colProductName,
+            this.colProsize,
+            this.colWages,
+            this.colcolor,
+            this.colQuantity,
+            this.colWeight,
+            this.colIncentiveApplicable,
+            this.colBDays,
+            this.colADays,
+            this.colDeduction,
+            this.colTotal,
+            this.colConveyance,
+            this.colIncentive,
+            this.colNetAmt});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            // 
+            // colId
+            // 
+            this.colId.FieldName = "Id";
+            this.colId.Name = "colId";
+            this.colId.Visible = true;
+            this.colId.VisibleIndex = 0;
+            // 
+            // EmployeeCode
+            // 
+            this.EmployeeCode.FieldName = "EmpId";
+            this.EmployeeCode.Name = "EmployeeCode";
+            this.EmployeeCode.Visible = true;
+            this.EmployeeCode.VisibleIndex = 1;
+            // 
+            // colEmployeeName
+            // 
+            this.colEmployeeName.FieldName = "EmployeeName";
+            this.colEmployeeName.Name = "colEmployeeName";
+            this.colEmployeeName.Visible = true;
+            this.colEmployeeName.VisibleIndex = 2;
+            // 
+            // colCompanyName
+            // 
+            this.colCompanyName.FieldName = "CompanyName";
+            this.colCompanyName.Name = "colCompanyName";
+            this.colCompanyName.Visible = true;
+            this.colCompanyName.VisibleIndex = 3;
+            // 
+            // colDirectorName
+            // 
+            this.colDirectorName.FieldName = "DirectorName";
+            this.colDirectorName.Name = "colDirectorName";
+            this.colDirectorName.Visible = true;
+            this.colDirectorName.VisibleIndex = 4;
+            // 
+            // colClientCompany
+            // 
+            this.colClientCompany.FieldName = "ClientCompany";
+            this.colClientCompany.Name = "colClientCompany";
+            this.colClientCompany.Visible = true;
+            this.colClientCompany.VisibleIndex = 5;
+            // 
+            // colClientName
+            // 
+            this.colClientName.FieldName = "ClientName";
+            this.colClientName.Name = "colClientName";
+            this.colClientName.Visible = true;
+            this.colClientName.VisibleIndex = 6;
+            // 
+            // colSubClientCompany
+            // 
+            this.colSubClientCompany.FieldName = "SubClientCompany";
+            this.colSubClientCompany.Name = "colSubClientCompany";
+            this.colSubClientCompany.Visible = true;
+            this.colSubClientCompany.VisibleIndex = 7;
+            // 
+            // colSubClientName
+            // 
+            this.colSubClientName.FieldName = "SubClientName";
+            this.colSubClientName.Name = "colSubClientName";
+            this.colSubClientName.Visible = true;
+            this.colSubClientName.VisibleIndex = 8;
+            // 
+            // colProductModel
+            // 
+            this.colProductModel.FieldName = "ProductModel";
+            this.colProductModel.Name = "colProductModel";
+            this.colProductModel.Visible = true;
+            this.colProductModel.VisibleIndex = 9;
+            // 
+            // colProductCode
+            // 
+            this.colProductCode.FieldName = "ProductCode";
+            this.colProductCode.Name = "colProductCode";
+            this.colProductCode.Visible = true;
+            this.colProductCode.VisibleIndex = 10;
+            // 
+            // colProductName
+            // 
+            this.colProductName.FieldName = "ProductName";
+            this.colProductName.Name = "colProductName";
+            this.colProductName.Visible = true;
+            this.colProductName.VisibleIndex = 11;
+            // 
+            // colProsize
+            // 
+            this.colProsize.FieldName = "Prosize";
+            this.colProsize.Name = "colProsize";
+            this.colProsize.Visible = true;
+            this.colProsize.VisibleIndex = 12;
+            // 
+            // colWages
+            // 
+            this.colWages.FieldName = "Wages";
+            this.colWages.Name = "colWages";
+            this.colWages.Visible = true;
+            this.colWages.VisibleIndex = 13;
+            // 
+            // colcolor
+            // 
+            this.colcolor.FieldName = "color";
+            this.colcolor.Name = "colcolor";
+            this.colcolor.Visible = true;
+            this.colcolor.VisibleIndex = 14;
+            // 
+            // colQuantity
+            // 
+            this.colQuantity.FieldName = "Quantity";
+            this.colQuantity.Name = "colQuantity";
+            this.colQuantity.Visible = true;
+            this.colQuantity.VisibleIndex = 15;
+            // 
+            // colWeight
+            // 
+            this.colWeight.FieldName = "Weight";
+            this.colWeight.Name = "colWeight";
+            this.colWeight.Visible = true;
+            this.colWeight.VisibleIndex = 16;
+            // 
+            // colIncentiveApplicable
+            // 
+            this.colIncentiveApplicable.FieldName = "IncentiveApplicable";
+            this.colIncentiveApplicable.Name = "colIncentiveApplicable";
+            this.colIncentiveApplicable.Visible = true;
+            this.colIncentiveApplicable.VisibleIndex = 17;
+            // 
+            // colBDays
+            // 
+            this.colBDays.FieldName = "BDays";
+            this.colBDays.Name = "colBDays";
+            this.colBDays.Visible = true;
+            this.colBDays.VisibleIndex = 18;
+            // 
+            // colADays
+            // 
+            this.colADays.FieldName = "ADays";
+            this.colADays.Name = "colADays";
+            this.colADays.Visible = true;
+            this.colADays.VisibleIndex = 19;
+            // 
+            // colDeduction
+            // 
+            this.colDeduction.FieldName = "Deduction";
+            this.colDeduction.Name = "colDeduction";
+            this.colDeduction.Visible = true;
+            this.colDeduction.VisibleIndex = 20;
+            // 
+            // colTotal
+            // 
+            this.colTotal.FieldName = "Total";
+            this.colTotal.Name = "colTotal";
+            this.colTotal.Visible = true;
+            this.colTotal.VisibleIndex = 21;
+            // 
+            // colConveyance
+            // 
+            this.colConveyance.FieldName = "Conveyance";
+            this.colConveyance.Name = "colConveyance";
+            this.colConveyance.Visible = true;
+            this.colConveyance.VisibleIndex = 22;
+            // 
+            // colIncentive
+            // 
+            this.colIncentive.FieldName = "Incentive";
+            this.colIncentive.Name = "colIncentive";
+            this.colIncentive.Visible = true;
+            this.colIncentive.VisibleIndex = 23;
+            // 
+            // colNetAmt
+            // 
+            this.colNetAmt.FieldName = "NetAmt";
+            this.colNetAmt.Name = "colNetAmt";
+            this.colNetAmt.Visible = true;
+            this.colNetAmt.VisibleIndex = 24;
             // 
             // txtNetAmt
             // 
@@ -1013,5 +1259,31 @@ namespace BillPlex
         private DevExpress.XtraEditors.TextEdit txtNetAmt;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
+        private DevExpress.XtraGrid.Columns.GridColumn colId;
+        private DevExpress.XtraGrid.Columns.GridColumn EmployeeCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colEmployeeName;
+        private DevExpress.XtraGrid.Columns.GridColumn colCompanyName;
+        private DevExpress.XtraGrid.Columns.GridColumn colDirectorName;
+        private DevExpress.XtraGrid.Columns.GridColumn colClientCompany;
+        private DevExpress.XtraGrid.Columns.GridColumn colClientName;
+        private DevExpress.XtraGrid.Columns.GridColumn colSubClientCompany;
+        private DevExpress.XtraGrid.Columns.GridColumn colSubClientName;
+        private DevExpress.XtraGrid.Columns.GridColumn colProductModel;
+        private DevExpress.XtraGrid.Columns.GridColumn colProductCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colProductName;
+        private DevExpress.XtraGrid.Columns.GridColumn colProsize;
+        private DevExpress.XtraGrid.Columns.GridColumn colWages;
+        private DevExpress.XtraGrid.Columns.GridColumn colcolor;
+        private DevExpress.XtraGrid.Columns.GridColumn colQuantity;
+        private DevExpress.XtraGrid.Columns.GridColumn colWeight;
+        private DevExpress.XtraGrid.Columns.GridColumn colIncentiveApplicable;
+        private DevExpress.XtraGrid.Columns.GridColumn colBDays;
+        private DevExpress.XtraGrid.Columns.GridColumn colADays;
+        private DevExpress.XtraGrid.Columns.GridColumn colDeduction;
+        private DevExpress.XtraGrid.Columns.GridColumn colTotal;
+        private DevExpress.XtraGrid.Columns.GridColumn colConveyance;
+        private DevExpress.XtraGrid.Columns.GridColumn colIncentive;
+        private DevExpress.XtraGrid.Columns.GridColumn colNetAmt;
     }
 }

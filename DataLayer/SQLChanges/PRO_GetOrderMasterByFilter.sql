@@ -39,7 +39,8 @@ SET NOCOUNT ON;
             TotalRaw,
             Delivarydate,
             WagesforEmp,
-            Status
+            Status,
+			totalWt
         FROM OrderMaster
         WHERE OrderNo = @OrderNo;
  
