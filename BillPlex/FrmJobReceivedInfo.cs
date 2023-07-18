@@ -38,7 +38,7 @@ namespace BillPlex
                 {
                     JobReceivedRequest.EmployeeName = txtEmpName.Text;
                 }
-                
+
                 JobReceivedRequest.CustomerName = txtCName.Text;
                 JobReceivedRequest.RawMaterialName = txtRawMaterial.Text;
                 JobReceivedRequest.Quantity = txtQuantity.Text;
@@ -92,9 +92,9 @@ namespace BillPlex
 
             }
         }
-         public void BindData(dynamic selectedCompanyList)
-         {
-             var selectedRows = selectedCompanyList.GetSelectedRows();
+        public void BindData(dynamic selectedCompanyList)
+        {
+            var selectedRows = selectedCompanyList.GetSelectedRows();
 
             foreach (var rowHandle in selectedRows)
             {
@@ -167,6 +167,64 @@ namespace BillPlex
             txtIncentive.ResetText();
             txtTotal.ResetText();
             txtNetAmt.ResetText();
+        }
+
+        private void txtCrntWt_EditValueChanged(object sender, EventArgs e)
+        {
+            int txtWeightValue;
+            int lblWeightValue;
+
+            if (int.TryParse(txtWeight.Text, out txtWeightValue) && int.TryParse(txtCrntWt.Text, out lblWeightValue))
+            {
+                int countDifferent = txtWeightValue - lblWeightValue;
+                if (countDifferent >= 0)
+                {
+                    txtBalanceWeight.Text = countDifferent.ToString();
+                }
+                else
+                {
+                    txtBalanceWeight.Text = string.Empty;
+                }
+            }
+        }
+
+        private void txtDeduction_EditValueChanged(object sender, EventArgs e)
+        {
+            int a = 0;
+            int b;
+            if (txtDeduction.Text != "")
+            {
+                if (int.TryParse(txtDeduction.Text, out b))
+                {
+                    int result = a - b;
+                    txtTotal.Text = result.ToString();
+                    txtNetAmt.Text = result.ToString();
+                }
+            }
+        }
+
+        private void txtIncentive_EditValueChanged(object sender, EventArgs e)
+        {
+            int a;
+            int b;
+
+            if (int.TryParse(txtNetAmt.Text, out a) && int.TryParse(txtIncentive.Text, out b))
+            {
+                int countDifferent = a + b;
+                txtNetAmt.Text = countDifferent.ToString();
+            }
+        }
+
+        private void txtConveyance_EditValueChanged(object sender, EventArgs e)
+        {
+            int a;
+            int b;
+
+            if (int.TryParse(txtConveyance.Text, out a) && int.TryParse(txtNetAmt.Text, out b))
+            {
+                int countDifferent = a + b;
+                txtNetAmt.Text = countDifferent.ToString();
+            }
         }
     }
 }

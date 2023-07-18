@@ -30,8 +30,8 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmJobReceivedInfo));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl7 = new DevExpress.XtraEditors.PanelControl();
@@ -361,13 +361,13 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery1.Name = "PRO_GetJobGivingWithoutDC";
-            queryParameter1.Name = "@SearchKey";
-            queryParameter1.Type = typeof(string);
-            storedProcQuery1.Parameters.Add(queryParameter1);
-            storedProcQuery1.StoredProcName = "PRO_GetJobGivingWithoutDC";
+            storedProcQuery2.Name = "PRO_GetJobGivingWithoutDC";
+            queryParameter2.Name = "@SearchKey";
+            queryParameter2.Type = typeof(string);
+            storedProcQuery2.Parameters.Add(queryParameter2);
+            storedProcQuery2.StoredProcName = "PRO_GetJobGivingWithoutDC";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery1});
+            storedProcQuery2});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // gridView1
@@ -771,14 +771,23 @@ namespace BillPlex
             // 
             this.txtConveyance.Location = new System.Drawing.Point(998, 198);
             this.txtConveyance.Name = "txtConveyance";
+            this.txtConveyance.Properties.BeepOnError = false;
+            this.txtConveyance.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtConveyance.Properties.MaskSettings.Set("mask", "d");
+            this.txtConveyance.Properties.UseMaskAsDisplayFormat = true;
             this.txtConveyance.Size = new System.Drawing.Size(115, 20);
             this.txtConveyance.TabIndex = 134;
+            this.txtConveyance.EditValueChanged += new System.EventHandler(this.txtConveyance_EditValueChanged);
             // 
             // txtNetAmt
             // 
             this.txtNetAmt.Enabled = false;
             this.txtNetAmt.Location = new System.Drawing.Point(998, 253);
             this.txtNetAmt.Name = "txtNetAmt";
+            this.txtNetAmt.Properties.BeepOnError = false;
+            this.txtNetAmt.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtNetAmt.Properties.MaskSettings.Set("mask", "d");
+            this.txtNetAmt.Properties.UseMaskAsDisplayFormat = true;
             this.txtNetAmt.Size = new System.Drawing.Size(115, 20);
             this.txtNetAmt.TabIndex = 133;
             // 
@@ -786,8 +795,13 @@ namespace BillPlex
             // 
             this.txtIncentive.Location = new System.Drawing.Point(998, 227);
             this.txtIncentive.Name = "txtIncentive";
+            this.txtIncentive.Properties.BeepOnError = false;
+            this.txtIncentive.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtIncentive.Properties.MaskSettings.Set("mask", "d");
+            this.txtIncentive.Properties.UseMaskAsDisplayFormat = true;
             this.txtIncentive.Size = new System.Drawing.Size(115, 20);
             this.txtIncentive.TabIndex = 132;
+            this.txtIncentive.EditValueChanged += new System.EventHandler(this.txtIncentive_EditValueChanged);
             // 
             // labelControl23
             // 
@@ -844,6 +858,10 @@ namespace BillPlex
             this.txtTotal.Enabled = false;
             this.txtTotal.Location = new System.Drawing.Point(747, 252);
             this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Properties.BeepOnError = false;
+            this.txtTotal.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtTotal.Properties.MaskSettings.Set("mask", "d");
+            this.txtTotal.Properties.UseMaskAsDisplayFormat = true;
             this.txtTotal.Size = new System.Drawing.Size(113, 20);
             this.txtTotal.TabIndex = 126;
             // 
@@ -851,8 +869,13 @@ namespace BillPlex
             // 
             this.txtDeduction.Location = new System.Drawing.Point(747, 222);
             this.txtDeduction.Name = "txtDeduction";
+            this.txtDeduction.Properties.BeepOnError = false;
+            this.txtDeduction.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtDeduction.Properties.MaskSettings.Set("mask", "d");
+            this.txtDeduction.Properties.UseMaskAsDisplayFormat = true;
             this.txtDeduction.Size = new System.Drawing.Size(113, 20);
             this.txtDeduction.TabIndex = 125;
+            this.txtDeduction.EditValueChanged += new System.EventHandler(this.txtDeduction_EditValueChanged);
             // 
             // txtBalanceWeight
             // 
@@ -994,6 +1017,7 @@ namespace BillPlex
             this.txtCrntWt.Name = "txtCrntWt";
             this.txtCrntWt.Size = new System.Drawing.Size(107, 20);
             this.txtCrntWt.TabIndex = 111;
+            this.txtCrntWt.EditValueChanged += new System.EventHandler(this.txtCrntWt_EditValueChanged);
             // 
             // labelControl19
             // 
