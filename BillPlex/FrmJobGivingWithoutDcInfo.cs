@@ -238,10 +238,11 @@ namespace BillPlex
         private void drpColor_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedItem = (string)drpColor.SelectedItem;
+            var selectModelItem = drpMCode.Text;
             if (selectedItem != null)
             {
-                txtRawMaterial.Text = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.color == selectedItem.ToString())?.RawName ?? "";
-                txtType.Text = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.color == selectedItem.ToString())?.RawType ?? "";
+                txtRawMaterial.Text = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.color == selectedItem.ToString() && item.RawMaterial == selectModelItem.ToString())?.RawName ?? "";
+                txtType.Text = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.color == selectedItem.ToString() && item.RawMaterial == selectModelItem.ToString())?.RawType ?? "";
 
                 //getQuantity
 
@@ -255,7 +256,7 @@ namespace BillPlex
                 txtAvlQty.Text = totalQty;
             }
         }
-
+            
         public void BindData(dynamic selectedCompanyList)
         {
             var selectedRows = selectedCompanyList.GetSelectedRows();
