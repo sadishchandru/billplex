@@ -33,6 +33,7 @@ namespace BillPlex
             this.panelControl11 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.cmbCompanyName = new DevExpress.XtraEditors.PanelControl();
+            this.lblWeight = new DevExpress.XtraEditors.LabelControl();
             this.txtCCName = new DevExpress.XtraEditors.TextEdit();
             this.txtCCode = new DevExpress.XtraEditors.TextEdit();
             this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
@@ -110,6 +111,7 @@ namespace BillPlex
             this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
             this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
             this.btnNew = new DevExpress.XtraEditors.SimpleButton();
+            this.lblAvlQty = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl11)).BeginInit();
@@ -206,6 +208,8 @@ namespace BillPlex
             // 
             // cmbCompanyName
             // 
+            this.cmbCompanyName.Controls.Add(this.lblAvlQty);
+            this.cmbCompanyName.Controls.Add(this.lblWeight);
             this.cmbCompanyName.Controls.Add(this.txtCCName);
             this.cmbCompanyName.Controls.Add(this.txtCCode);
             this.cmbCompanyName.Controls.Add(this.labelControl21);
@@ -245,6 +249,13 @@ namespace BillPlex
             this.cmbCompanyName.Name = "cmbCompanyName";
             this.cmbCompanyName.Size = new System.Drawing.Size(1172, 239);
             this.cmbCompanyName.TabIndex = 92;
+            // 
+            // lblWeight
+            // 
+            this.lblWeight.Location = new System.Drawing.Point(717, 167);
+            this.lblWeight.Name = "lblWeight";
+            this.lblWeight.Size = new System.Drawing.Size(0, 13);
+            this.lblWeight.TabIndex = 92;
             // 
             // txtCCName
             // 
@@ -406,9 +417,13 @@ namespace BillPlex
             // txtShortage
             // 
             this.txtShortage.Enabled = false;
-            this.txtShortage.Location = new System.Drawing.Point(889, 206);
+            this.txtShortage.Location = new System.Drawing.Point(888, 201);
             this.txtShortage.Name = "txtShortage";
-            this.txtShortage.Size = new System.Drawing.Size(100, 20);
+            this.txtShortage.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtShortage.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.txtShortage.Properties.Appearance.Options.UseFont = true;
+            this.txtShortage.Properties.Appearance.Options.UseForeColor = true;
+            this.txtShortage.Size = new System.Drawing.Size(100, 26);
             this.txtShortage.TabIndex = 38;
             // 
             // labelControl23
@@ -444,7 +459,11 @@ namespace BillPlex
             this.txtExcess.Enabled = false;
             this.txtExcess.Location = new System.Drawing.Point(594, 201);
             this.txtExcess.Name = "txtExcess";
-            this.txtExcess.Size = new System.Drawing.Size(166, 20);
+            this.txtExcess.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtExcess.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.txtExcess.Properties.Appearance.Options.UseFont = true;
+            this.txtExcess.Properties.Appearance.Options.UseForeColor = true;
+            this.txtExcess.Size = new System.Drawing.Size(166, 26);
             this.txtExcess.TabIndex = 33;
             // 
             // txtAvlQty
@@ -458,8 +477,13 @@ namespace BillPlex
             // 
             this.txtQuantity.Location = new System.Drawing.Point(601, 128);
             this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Properties.BeepOnError = false;
+            this.txtQuantity.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtQuantity.Properties.MaskSettings.Set("mask", "d");
+            this.txtQuantity.Properties.UseMaskAsDisplayFormat = true;
             this.txtQuantity.Size = new System.Drawing.Size(100, 20);
             this.txtQuantity.TabIndex = 31;
+            this.txtQuantity.EditValueChanged += new System.EventHandler(this.txtQuantity_EditValueChanged);
             // 
             // txtType
             // 
@@ -473,8 +497,13 @@ namespace BillPlex
             // 
             this.txtWeight.Location = new System.Drawing.Point(595, 164);
             this.txtWeight.Name = "txtWeight";
+            this.txtWeight.Properties.BeepOnError = false;
+            this.txtWeight.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtWeight.Properties.MaskSettings.Set("mask", "d");
+            this.txtWeight.Properties.UseMaskAsDisplayFormat = true;
             this.txtWeight.Size = new System.Drawing.Size(100, 20);
             this.txtWeight.TabIndex = 20;
+            this.txtWeight.EditValueChanged += new System.EventHandler(this.txtWeight_EditValueChanged);
             // 
             // txtPName
             // 
@@ -1125,6 +1154,15 @@ namespace BillPlex
             this.btnNew.TabIndex = 4;
             this.btnNew.Text = "NEW";
             // 
+            // lblAvlQty
+            // 
+            this.lblAvlQty.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAvlQty.Appearance.Options.UseFont = true;
+            this.lblAvlQty.Location = new System.Drawing.Point(927, 136);
+            this.lblAvlQty.Name = "lblAvlQty";
+            this.lblAvlQty.Size = new System.Drawing.Size(0, 16);
+            this.lblAvlQty.TabIndex = 93;
+            // 
             // FrmJobGivingWithoutDcInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1289,5 +1327,7 @@ namespace BillPlex
         private DevExpress.XtraEditors.TextEdit txtPSize;
         private DevExpress.XtraEditors.LabelControl lblOrderQtyNo;
         private DevExpress.XtraEditors.LabelControl lblOrderWghtNo;
+        private DevExpress.XtraEditors.LabelControl lblWeight;
+        private DevExpress.XtraEditors.LabelControl lblAvlQty;
     }
 }

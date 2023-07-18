@@ -776,6 +776,7 @@ namespace BillPlex
             // 
             // txtNetAmt
             // 
+            this.txtNetAmt.Enabled = false;
             this.txtNetAmt.Location = new System.Drawing.Point(998, 253);
             this.txtNetAmt.Name = "txtNetAmt";
             this.txtNetAmt.Size = new System.Drawing.Size(115, 20);
@@ -840,6 +841,7 @@ namespace BillPlex
             // 
             // txtTotal
             // 
+            this.txtTotal.Enabled = false;
             this.txtTotal.Location = new System.Drawing.Point(747, 252);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(113, 20);
@@ -854,6 +856,7 @@ namespace BillPlex
             // 
             // txtBalanceWeight
             // 
+            this.txtBalanceWeight.Enabled = false;
             this.txtBalanceWeight.Location = new System.Drawing.Point(747, 188);
             this.txtBalanceWeight.Name = "txtBalanceWeight";
             this.txtBalanceWeight.Size = new System.Drawing.Size(113, 20);
@@ -871,6 +874,7 @@ namespace BillPlex
             // 
             // txtCName
             // 
+            this.txtCName.Enabled = false;
             this.txtCName.Location = new System.Drawing.Point(186, 90);
             this.txtCName.Name = "txtCName";
             this.txtCName.Size = new System.Drawing.Size(403, 20);
@@ -952,6 +956,7 @@ namespace BillPlex
             // 
             // txtMName
             // 
+            this.txtMName.Enabled = false;
             this.txtMName.Location = new System.Drawing.Point(186, 249);
             this.txtMName.Name = "txtMName";
             this.txtMName.Size = new System.Drawing.Size(403, 20);
@@ -969,6 +974,7 @@ namespace BillPlex
             // 
             // txtPQty
             // 
+            this.txtPQty.Enabled = false;
             this.txtPQty.Location = new System.Drawing.Point(186, 217);
             this.txtPQty.Name = "txtPQty";
             this.txtPQty.Size = new System.Drawing.Size(158, 20);
@@ -976,6 +982,7 @@ namespace BillPlex
             // 
             // txtWeight
             // 
+            this.txtWeight.Enabled = false;
             this.txtWeight.Location = new System.Drawing.Point(482, 160);
             this.txtWeight.Name = "txtWeight";
             this.txtWeight.Size = new System.Drawing.Size(107, 20);
@@ -1000,6 +1007,7 @@ namespace BillPlex
             // 
             // txtType
             // 
+            this.txtType.Enabled = false;
             this.txtType.Location = new System.Drawing.Point(482, 132);
             this.txtType.Name = "txtType";
             this.txtType.Size = new System.Drawing.Size(107, 20);
@@ -1044,6 +1052,7 @@ namespace BillPlex
             // 
             // txtPSize
             // 
+            this.txtPSize.Enabled = false;
             this.txtPSize.Location = new System.Drawing.Point(747, 113);
             this.txtPSize.Name = "txtPSize";
             this.txtPSize.Size = new System.Drawing.Size(113, 20);
@@ -1051,6 +1060,7 @@ namespace BillPlex
             // 
             // txtColor
             // 
+            this.txtColor.Enabled = false;
             this.txtColor.Location = new System.Drawing.Point(961, 113);
             this.txtColor.Name = "txtColor";
             this.txtColor.Size = new System.Drawing.Size(152, 20);
@@ -1058,6 +1068,7 @@ namespace BillPlex
             // 
             // txtPCode
             // 
+            this.txtPCode.Enabled = false;
             this.txtPCode.Location = new System.Drawing.Point(961, 79);
             this.txtPCode.Name = "txtPCode";
             this.txtPCode.Size = new System.Drawing.Size(152, 20);
@@ -1094,6 +1105,7 @@ namespace BillPlex
             // 
             // txtEmpName
             // 
+            this.txtEmpName.Enabled = false;
             this.txtEmpName.Location = new System.Drawing.Point(309, 51);
             this.txtEmpName.Name = "txtEmpName";
             this.txtEmpName.Size = new System.Drawing.Size(280, 20);
@@ -1102,6 +1114,7 @@ namespace BillPlex
             // txtEmpCode
             // 
             this.txtEmpCode.EditValue = "";
+            this.txtEmpCode.Enabled = false;
             this.txtEmpCode.Location = new System.Drawing.Point(186, 51);
             this.txtEmpCode.Name = "txtEmpCode";
             this.txtEmpCode.Size = new System.Drawing.Size(117, 20);
@@ -1119,6 +1132,7 @@ namespace BillPlex
             // 
             // txtPModel
             // 
+            this.txtPModel.Enabled = false;
             this.txtPModel.Location = new System.Drawing.Point(747, 82);
             this.txtPModel.Name = "txtPModel";
             this.txtPModel.Size = new System.Drawing.Size(128, 20);
@@ -1146,6 +1160,7 @@ namespace BillPlex
             // 
             // txtQuantity
             // 
+            this.txtQuantity.Enabled = false;
             this.txtQuantity.Location = new System.Drawing.Point(186, 162);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(158, 20);
@@ -1163,6 +1178,7 @@ namespace BillPlex
             // 
             // txtWages
             // 
+            this.txtWages.Enabled = false;
             this.txtWages.Location = new System.Drawing.Point(186, 191);
             this.txtWages.Name = "txtWages";
             this.txtWages.Size = new System.Drawing.Size(158, 20);
@@ -1180,6 +1196,7 @@ namespace BillPlex
             // 
             // txtRawMaterial
             // 
+            this.txtRawMaterial.Enabled = false;
             this.txtRawMaterial.Location = new System.Drawing.Point(186, 132);
             this.txtRawMaterial.Name = "txtRawMaterial";
             this.txtRawMaterial.Size = new System.Drawing.Size(158, 20);

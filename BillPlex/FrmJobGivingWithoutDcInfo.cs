@@ -98,7 +98,7 @@ namespace BillPlex
 
                 if (selectedItem != null)
                 {
-                    JobGivingWithoutDcRequest.EmployeeCode = JobGivingWithoutDcRequest.EmployeePersonalList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.Id ?? -1;
+                    JobGivingWithoutDcRequest.EmployeeCode = JobGivingWithoutDcRequest.EmployeePersonalList.FirstOrDefault(item => item.Code == selectedItem.ToString())?.Id ?? -1;
                 }
                 JobGivingWithoutDcRequest.EmployeeName = txtEmpName.Text;
                 JobGivingWithoutDcRequest.CompanyName = txtComName.Text;
@@ -241,13 +241,13 @@ namespace BillPlex
             var selectModelItem = drpMCode.Text;
             if (selectedItem != null)
             {
-                txtRawMaterial.Text = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.color == selectedItem.ToString() && item.RawMaterial == selectModelItem.ToString())?.RawName ?? "";
-                txtType.Text = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.color == selectedItem.ToString() && item.RawMaterial == selectModelItem.ToString())?.RawType ?? "";
+                txtRawMaterial.Text = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.Code == drpOrderNo.Text && item.color == drpColor.Text && item.SubCom == txtPName.Text && item.SubComName == txtPSize.Text)?.RawName ?? "";
+                txtType.Text = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.Code == drpOrderNo.Text && item.color == drpColor.Text && item.SubCom == txtPName.Text && item.SubComName == txtPSize.Text)?.RawType ?? "";
 
                 //getQuantity
 
                 var totalQty = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.RawName == txtRawMaterial.Text && item.RawType == txtType.Text && item.Code == drpOrderNo.Text && item.color == drpColor.Text && item.SubCom == txtPName.Text && item.SubComName == txtPSize.Text)?.OrderQty.ToString() ?? "";
-                
+
                 lblOrderQtyNo.Text = 0 + "/" + totalQty;
 
                 lblOrderWghtNo.Text = 0 + "/" + JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.RawName == txtRawMaterial.Text && item.RawType == txtType.Text && item.Code == drpOrderNo.Text && item.color == drpColor.Text && item.SubCom == txtPName.Text && item.SubComName == txtPSize.Text)?.OrderWghtNo.ToString() ?? "";
@@ -256,7 +256,7 @@ namespace BillPlex
                 txtAvlQty.Text = totalQty;
             }
         }
-            
+
         public void BindData(dynamic selectedCompanyList)
         {
             var selectedRows = selectedCompanyList.GetSelectedRows();
@@ -327,6 +327,50 @@ namespace BillPlex
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtQuantity_EditValueChanged(object sender, EventArgs e)
+        {
+            var selectedItem = txtQuantity.Text;
+            if (selectedItem != null && selectedItem != "")
+            {
+                var enteredQty = Convert.ToInt32(txtQuantity.Text);
+                var totalWt = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.RawName == txtRawMaterial.Text && item.RawType == txtType.Text && item.Code == drpOrderNo.Text && item.color == drpColor.Text && item.SubCom == txtPName.Text && item.SubComName == txtPSize.Text)?.TotalWt;
+                var total = enteredQty * totalWt;
+                lblWeight.Text = total.ToString();
+            }
+
+            int a;
+            int b;
+            if (txtQuantity.Text != "" && txtAvlQty.Text != "")
+            {
+                if (int.TryParse(txtAvlQty.Text, out a) && int.TryParse(txtQuantity.Text, out b))
+                {
+                    int result = a - b;
+                    lblAvlQty.Text = result.ToString();
+                }
+            }
+        }
+
+        private void txtWeight_EditValueChanged(object sender, EventArgs e)
+        {
+            int txtWeightValue;
+            int lblWeightValue;
+
+            if (int.TryParse(txtWeight.Text, out txtWeightValue) && int.TryParse(lblWeight.Text, out lblWeightValue))
+            {
+                int countDifferent = txtWeightValue - lblWeightValue;
+                if (countDifferent >= 0)
+                {
+                    txtExcess.Text = countDifferent.ToString();
+                    txtShortage.Text = string.Empty;
+                }
+                else
+                {
+                    txtExcess.Text = string.Empty;
+                    txtShortage.Text = (countDifferent).ToString();
+                }
+            }
         }
     }
 }
