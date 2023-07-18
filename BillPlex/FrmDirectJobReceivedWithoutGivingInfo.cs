@@ -283,6 +283,7 @@ namespace BillPlex
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            drpEmpCode.ResetText();
             txtEmpName.ResetText();
             txtComName.ResetText();
             txtDirector.ResetText();
