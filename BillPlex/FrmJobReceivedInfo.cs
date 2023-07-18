@@ -226,5 +226,32 @@ namespace BillPlex
                 txtNetAmt.Text = countDifferent.ToString();
             }
         }
+
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                var selectedRows = gridView1.GetSelectedRows();
+
+                foreach (var rowHandle in selectedRows)
+                {
+                    txtEmpCode.Text = (string)gridView1.GetRowCellValue(rowHandle, "EmployeeName");
+                    txtEmpName.Text = (string)gridView1.GetRowCellValue(rowHandle, "EmployeeName");
+                    txtCName.Text = (string)gridView1.GetRowCellValue(rowHandle, "CompanyName");
+                    txtRawMaterial.Text = (string)gridView1.GetRowCellValue(rowHandle, "RawMaterial");
+                    txtQuantity.Text = (string)gridView1.GetRowCellValue(rowHandle, "QuantityPiece");
+                    txtType.Text = (string)gridView1.GetRowCellValue(rowHandle, "Type");
+                    txtWeight.Text = (string)gridView1.GetRowCellValue(rowHandle, "WeightKg");
+                    txtPModel.Text = (string)gridView1.GetRowCellValue(rowHandle, "ModelName");
+                    txtPCode.Text = (string)gridView1.GetRowCellValue(rowHandle, "ModelCode");
+                    txtPSize.Text = (string)gridView1.GetRowCellValue(rowHandle, "ProductSize");
+                    txtColor.Text = (string)gridView1.GetRowCellValue(rowHandle, "Color");
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
     }
 }

@@ -197,6 +197,7 @@ namespace BillPlex
             lblWeight.ResetText();
             txtReceivedQty.ResetText();
             txtPendingQty.ResetText();
+            txtShortage.ResetText();
         }
     }
 }
