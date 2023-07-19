@@ -151,4 +151,8 @@ BEGIN
     END
 
     SELECT @ResultMessage AS ResultMessage, @ResultNo AS ResultNo
+	IF(@ResultNo = 1)
+	BEGIN
+		EXEC PRO_GetJobGivingWithoutDCFilter @Id = @Id;
+	END
 END
