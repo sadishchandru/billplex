@@ -290,8 +290,6 @@ namespace BillPlex
                 //txtTQty.Text = selectedCompanyList.GetRowCellValue(rowHandle, "TotalQty");
                 //txtTotalWT.Text = selectedCompanyList.GetRowCellValue(rowHandle, "TotalWt");
                 txtShortage.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorFathername");
-
-                btnAdd.Enabled = false;
                 btnNew.Enabled = false;
                 btnUpdate.Enabled = true;
                 btnEdit.Enabled = true;
