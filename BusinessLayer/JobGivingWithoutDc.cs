@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BusinessLayer
 {
@@ -41,6 +42,7 @@ namespace BusinessLayer
         #endregion
         public List<DropDownItemInfo> EmployeePersonalList { get; set; }
         public List<DropDownItemInfo> OrderMasterList { get; set; }
+        public List<JobGivingWithoutDc> JobGivingWithoutDcList { get; set; }
 
         public void Update()
         {
@@ -96,6 +98,10 @@ namespace BusinessLayer
                     Result.Message = ToString(dbReader["ResultMessage"]);
                     Result.Status = (ResultStatus)ToInteger(dbReader["ResultNo"]);
                 }
+                if (Result.Status == ResultStatus.Success)
+                {
+                    JobGivingWithoutDcList = AssignResult();
+                }
             }
             catch (Exception ex)
             {
@@ -106,6 +112,48 @@ namespace BusinessLayer
             {
                 CloseConnection();
             }
+        }
+        public List<JobGivingWithoutDc> AssignResult()
+        {
+            List<JobGivingWithoutDc> JobGivingWithoutList = new List<JobGivingWithoutDc>();
+            dbReader.NextResult();
+
+            while (dbReader.Read())
+            {
+                JobGivingWithoutDc JobDetail = new JobGivingWithoutDc();
+                JobDetail.Id = ToInteger(dbReader["Id"]);
+                JobDetail.EmployeeCode = ToInteger(dbReader["EmployeeCode"]);
+                JobDetail.EmployeeName = ToString(dbReader["EmployeeName"]);
+                JobDetail.CompanyName = ToString(dbReader["CompanyName"]);
+                JobDetail.Director = ToString(dbReader["DirectorName"]);
+                JobDetail.ClientCompany = ToString(dbReader["ClientCompany"]);
+                JobDetail.ClientName = ToString(dbReader["ClientName"]);
+                JobDetail.SubClientCompany = ToString(dbReader["SubClientCompany"]);
+                JobDetail.subContractor = ToString(dbReader["SubClientName"]);
+                JobDetail.Date = ToString(dbReader["ProductModel"]);
+                JobDetail.OrderNo = ToInteger(dbReader["ProductCode"]);
+                JobDetail.OrderDate = ToString(dbReader["ProductName"]);
+                JobDetail.CustomerCode = ToString(dbReader["Wages"]);
+                JobDetail.CustomerName = ToString(dbReader["Prosize"]);
+                JobDetail.ModelName = ToString(dbReader["color"]);
+                JobDetail.ModelCode = ToString(dbReader["Quantity"]);
+                JobDetail.ProductName = ToString(dbReader["Weight"]);
+                JobDetail.ProductSize = ToString(dbReader["IncentiveApplicable"]);
+                JobDetail.Color = ToString(dbReader["BDays"]);
+                JobDetail.RawMaterial = ToString(dbReader["ADays"]);
+                JobDetail.RawType = ToString(dbReader["Deduction"]);
+                JobDetail.QuantityPiece = ToString(dbReader["Total"]);
+                JobDetail.WeightKg = ToString(dbReader["Conveyance"]);
+                JobDetail.AvlQty = ToString(dbReader["Incentive"]);
+                JobDetail.TotalQty = ToString(dbReader["NetAmt"]);
+                JobDetail.TotalWt = ToDateTimeToString(dbReader["ReceivingDate"]);
+                JobDetail.Excess = ToDateTimeToString(dbReader["ReceivingDate"]);
+                JobDetail.Shortage = ToDateTimeToString(dbReader["ReceivingDate"]);
+
+                JobGivingWithoutList.Add(JobDetail);
+            }
+
+            return JobGivingWithoutList;
         }
         public void Delete()
         {

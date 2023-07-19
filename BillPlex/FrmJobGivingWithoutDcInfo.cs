@@ -1,6 +1,7 @@
 ﻿using BusinessLayer;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
+using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections;
@@ -20,9 +21,17 @@ namespace BillPlex
     public partial class FrmJobGivingWithoutDcInfo : DevExpress.XtraEditors.XtraForm
     {
         private JobGivingWithoutDc JobGivingWithoutDcRequest;
+
+        private List<dynamic> JobGivingWithoutDcSource;
+
+        private GridControl gridControl;
+
+        private DataTable dt;
+
         public FrmJobGivingWithoutDcInfo()
         {
             InitializeComponent();
+            InitializeDataSource();
 
             JobGivingWithoutDcRequest = new JobGivingWithoutDc();
 
@@ -133,19 +142,60 @@ namespace BillPlex
                 {
                     XtraMessageBox.Show(JobGivingWithoutDcRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btnClear_Click();
-                    this.Close();
-
-                    FrmJobGivingWithoutDcProfile form = Application.OpenForms.OfType<FrmJobGivingWithoutDcProfile>().FirstOrDefault();
-
-                    Form myForm = Application.OpenForms["FrmJobGivingWithoutDcProfile"];
-                    if (myForm != null)
+                    if (JobGivingWithoutDcRequest.JobGivingWithoutDcList.Count() > 0)
                     {
-                        form.ReloadSqlDataSource();
+                        foreach (var item in JobGivingWithoutDcRequest.JobGivingWithoutDcList)
+                        {
+                            DataTable dataTable = gridControl1.DataSource as DataTable;
+
+                            DataRow newRow = dataTable.NewRow();
+                            newRow["EmployeeCode"] = item.EmployeeCode;
+                            newRow["EmployeeName"] = item.EmployeeName;
+                            newRow["CompanyName"] = item.CompanyName;
+                            newRow["Director"] = item.Director;
+                            newRow["ClientCompany"] = item.ClientCompany;
+                            newRow["ClientName"] = item.ClientName;
+                            newRow["SubClientCompany"] = item.SubClientCompany;
+                            newRow["subContractor"] = item.subContractor;
+                            newRow["Date"] = item.Date;
+                            newRow["OrderNo"] = item.OrderNo;
+                            newRow["OrderDate"] = item.OrderDate;
+                            newRow["CustomerCode"] = item.CustomerCode;
+                            newRow["CustomerName"] = item.CustomerName;
+                            newRow["ModelName"] = item.ModelCode;
+                            newRow["ModelCode"] = item.ModelName;
+                            newRow["ProductName"] = item.ProductName;
+                            newRow["ProductSize"] = item.ProductSize;
+                            newRow["Color"] = item.Color;
+                            newRow["RawMaterial"] = item.RawMaterial;
+                            newRow["Type"] = item.RawType;
+                            newRow["QuantityPiece"] = item.QuantityPiece;
+                            newRow["WeightKg"] = item.WeightKg;
+                            newRow["AvlQty"] = item.AvlQty;
+                            newRow["TotalQty"] = item.TotalQty;
+                            newRow["TotalWt"] = item.TotalWt;
+                            newRow["Excess"] = item.Excess;
+                            newRow["Shortage"] = item.Shortage;
+
+                            // Add the new DataRow to the DataTable
+                            dataTable.Rows.Add(newRow);
+                        }
+                        //this.Close();
+
+                        //FrmDirectJobReceivedWithoutGivingProfile form = Application.OpenForms.OfType<FrmDirectJobReceivedWithoutGivingProfile>().FirstOrDefault();
+
+                        //Form myForm = Application.OpenForms["FrmDirectJobReceivedWithoutGivingProfile"];
+                        //if (myForm != null)
+                        //{
+                        //    form.ReloadSqlDataSource();
+                        //}
+                        gridView1.RefreshData();
+                        gridControl1.RefreshDataSource();
                     }
-                }
-                else
-                {
-                    XtraMessageBox.Show(JobGivingWithoutDcRequest.Result.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    else
+                    {
+                        XtraMessageBox.Show(JobGivingWithoutDcRequest.Result.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
             }
             catch (Exception ex)
@@ -369,6 +419,43 @@ namespace BillPlex
                     txtShortage.Text = (countDifferent).ToString();
                 }
             }
+        }
+        private void InitializeDataSource()
+        {
+            //FamilyGridView.Columns.Clear();
+            DataTable dataTable = new DataTable();
+
+            // Create columns and bind them to the object properties
+            dataTable.Columns.Add("EmployeeCode", typeof(string));
+            dataTable.Columns.Add("EmployeeName", typeof(string));
+            dataTable.Columns.Add("CompanyName", typeof(string));
+            dataTable.Columns.Add("Director", typeof(string));
+            dataTable.Columns.Add("ClientCompany", typeof(string));
+            dataTable.Columns.Add("ClientName", typeof(string));
+            dataTable.Columns.Add("SubClientCompany", typeof(string));
+            dataTable.Columns.Add("subContractor", typeof(string));
+            dataTable.Columns.Add("OrderNo", typeof(string));
+            dataTable.Columns.Add("Date", typeof(string));
+            dataTable.Columns.Add("OrderDate", typeof(string));
+            dataTable.Columns.Add("CustomerCode", typeof(string));
+            dataTable.Columns.Add("CustomerName", typeof(string));
+            dataTable.Columns.Add("ModelName", typeof(string));
+            dataTable.Columns.Add("ModelCode", typeof(string));
+            dataTable.Columns.Add("ProductName", typeof(string));
+            dataTable.Columns.Add("ProductSize", typeof(string));
+            dataTable.Columns.Add("RawMaterial", typeof(string));
+            dataTable.Columns.Add("QuantityPiece", typeof(string));
+            dataTable.Columns.Add("WeightKg", typeof(string));
+            dataTable.Columns.Add("Excess", typeof(string));
+            dataTable.Columns.Add("Color", typeof(string));
+            dataTable.Columns.Add("Type", typeof(string));
+            dataTable.Columns.Add("AvlQty", typeof(string));
+            dataTable.Columns.Add("TotalQty", typeof(string));
+            dataTable.Columns.Add("TotalWt", typeof(string));
+            dataTable.Columns.Add("Shortage", typeof(string));
+            gridControl1.DataSource = dataTable;
+            gridView1.RefreshData();
+            gridControl1.RefreshDataSource();
         }
     }
 }
