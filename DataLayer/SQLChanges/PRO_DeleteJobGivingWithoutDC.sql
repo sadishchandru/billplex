@@ -12,14 +12,18 @@ GO
 -- =============================================
 CREATE OR ALTER PROCEDURE [dbo].[PRO_DeleteJobGivingWithoutDC]
 (
-    @Id bigint
+    @Id bigint = 0
 )
 AS
 BEGIN
     SET NOCOUNT ON;
 
+	-- SoftDelete The canceled job
+	UPDATE JobGivingWithoutDC
+	set isDelete = 1
+	where Id = @Id
     -- Delete the record based on the @Id parameter
-    DELETE FROM [dbo].[JobGivingWithoutDC]
-    WHERE [Id] = @Id;
+    --DELETE FROM [dbo].[JobGivingWithoutDC]
+    --WHERE [Id] = @Id;
 END
 

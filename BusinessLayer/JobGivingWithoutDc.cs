@@ -18,7 +18,7 @@ namespace BusinessLayer
         public string ClientName { get; set; }
         public string SubClientCompany { get; set; }
         public string Date { get; set; }
-        public Int64 OrderNo { get; set; }
+        public string OrderNo { get; set; }
         public string OrderDate { get; set; }
         public string CustomerCode { get; set; }
         public string CustomerName { get; set; }
@@ -43,6 +43,7 @@ namespace BusinessLayer
         public List<DropDownItemInfo> EmployeePersonalList { get; set; }
         public List<DropDownItemInfo> OrderMasterList { get; set; }
         public List<JobGivingWithoutDc> JobGivingWithoutDcList { get; set; }
+        public List<JobGivingWithoutDc> JobGivingWithoutDcListByOrder { get; set; }
 
         public void Update()
         {
@@ -100,7 +101,8 @@ namespace BusinessLayer
                 }
                 if (Result.Status == ResultStatus.Success)
                 {
-                    JobGivingWithoutDcList = AssignResult();
+                    dbReader.NextResult();
+                    JobGivingWithoutDcListByOrder = AssignResult();
                 }
             }
             catch (Exception ex)
@@ -113,15 +115,43 @@ namespace BusinessLayer
                 CloseConnection();
             }
         }
+
+        public void List()
+        {
+            dbReader = null;
+            Result = new ResultDetail();
+
+            try
+            {
+                InitializeDb();
+
+                // Calling the stored procedure for creating a new Company Profile
+                List<DbParams> objLstDbParams = new List<DbParams>();
+                objLstDbParams.Add(new DbParams(DbType.String, 50, "", "@Id", ParameterDirection.Input));
+                dbReader = ObjDbfactory.GetReader("PRO_GetJobGivingWithoutDCFilter", false, objLstDbParams);
+
+                JobGivingWithoutDcList = AssignResult();
+
+
+            }
+            catch (Exception ex)
+            {
+                Result.Message = ex.Message;
+                Result.Status = ResultStatus.Error;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
         public List<JobGivingWithoutDc> AssignResult()
         {
             List<JobGivingWithoutDc> JobGivingWithoutList = new List<JobGivingWithoutDc>();
-            dbReader.NextResult();
-
+           
             while (dbReader.Read())
             {
                 JobGivingWithoutDc JobDetail = new JobGivingWithoutDc();
-                JobDetail.Id = ToInteger(dbReader["Id"]);
+                JobDetail.Id = ToInteger(dbReader["Id"]);                                                       
                 JobDetail.EmployeeCode = ToInteger(dbReader["EmployeeCode"]);
                 JobDetail.EmployeeName = ToString(dbReader["EmployeeName"]);
                 JobDetail.CompanyName = ToString(dbReader["CompanyName"]);
@@ -131,7 +161,7 @@ namespace BusinessLayer
                 JobDetail.SubClientCompany = ToString(dbReader["SubClientCompany"]);
                 JobDetail.subContractor = ToString(dbReader["subContractor"]);
                 JobDetail.Date = ToString(dbReader["Date"]);
-                JobDetail.OrderNo = ToInteger(dbReader["OrderNo"]);
+                JobDetail.OrderNo = ToString(dbReader["OrderNo"]);
                 JobDetail.OrderDate = ToString(dbReader["OrderDate"]);
                 JobDetail.CustomerCode = ToString(dbReader["CustomerCode"]);
                 JobDetail.CustomerName = ToString(dbReader["CustomerName"]);
@@ -171,13 +201,6 @@ namespace BusinessLayer
 
                 Result.Message = "Job Giving Without DC Deleted Successfully";
                 Result.Status = ResultStatus.Success;
-
-                while (dbReader.Read())
-                {
-                    Result.Message = ToString(dbReader["ResultMessage"]);
-                    Result.Status = (ResultStatus)ToInteger(dbReader["ResultNo"]);
-                }
-
 
             }
             catch (Exception ex)

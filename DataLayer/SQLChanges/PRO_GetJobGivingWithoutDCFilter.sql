@@ -10,8 +10,8 @@ GO
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
+-- exec PRO_GetJobGivingWithoutDCFilter  @Id = '2019'
 CREATE OR ALTER PROCEDURE [dbo].[PRO_GetJobGivingWithoutDCFilter]
-@SearchKey VARCHAR(200) = '',
 @Id varchar(50) = ''
 AS
 BEGIN
@@ -19,14 +19,20 @@ BEGIN
 SET NOCOUNT ON;
 	DECLARE @Query NVARCHAR(MAX) ='';
 
-			SELECT  Id
+		IF(@Id = '')
+			BEGIN 
+				
+				SELECT  Id
 					,EmployeeCode
 					,EmployeeName
 					,CompanyName
+					,Director
 					,ClientCompany
+					,ClientName
 					,SubClientCompany
-					,OrderNo
+					,subContractor
 					,Date
+					,OrderNo
 					,OrderDate
 					,CustomerCode
 					,CustomerName
@@ -34,18 +40,56 @@ SET NOCOUNT ON;
 					,ModelCode
 					,ProductName
 					,ProductSize
-					,RawMaterial
-					,QuantityPiece
-					,WeightKg
-					,Excess
 					,Color
+					,RawMaterial
 					,Type
+					,CAST(QuantityPiece AS INT) as QuantityPiece
+					,WeightKg
 					,AvlQty
-					--,TotalQty
-					--,TotalWt
+					,Excess
+					,TotalQty
+					,TotalWt
 					,Shortage
 					,orderQty
 					,orderWt
 					FROM JobGivingWithoutDC
-					where @Id = @Id
+					Where ISNULL(isDelete, 0) = 0
+			END
+		ELSE
+			BEGIN 
+				SELECT  Id
+					,EmployeeCode
+					,EmployeeName
+					,CompanyName
+					,Director
+					,ClientCompany
+					,ClientName
+					,SubClientCompany
+					,subContractor
+					,Date
+					,OrderNo
+					,OrderDate
+					,CustomerCode
+					,CustomerName
+					,ModelName
+					,ModelCode
+					,ProductName
+					,ProductSize
+					,Color
+					,RawMaterial
+					,Type
+					,CAST(QuantityPiece AS INT) as QuantityPiece
+					,WeightKg
+					,AvlQty
+					,Excess
+					,TotalQty
+					,TotalWt
+					,Shortage
+					,orderQty
+					,orderWt
+					FROM JobGivingWithoutDC
+					where OrderNo = @Id
+					AND ISNULL(isDelete, 0) = 0
+			END
+			
 END

@@ -387,6 +387,9 @@
     <EmbeddedResource Include="FrmFinishingProductModel.resx">
       <DependentUpon>FrmFinishingProductModel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmJobGivingProfile.resx">
+      <DependentUpon>FrmJobGivingProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmJobGivingWithoutDcInfo.resx">
       <DependentUpon>FrmJobGivingWithoutDcInfo.cs</DependentUpon>
     </EmbeddedResource>

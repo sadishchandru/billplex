@@ -30,14 +30,14 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmJobReallocation));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
             this.btnClear = new DevExpress.XtraEditors.SimpleButton();
             this.btnTransfer = new DevExpress.XtraEditors.SimpleButton();
-            this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_JobCancel = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
@@ -195,7 +195,7 @@ namespace BillPlex
             // 
             this.panelControl6.Controls.Add(this.btnClear);
             this.panelControl6.Controls.Add(this.btnTransfer);
-            this.panelControl6.Controls.Add(this.btnCancel);
+            this.panelControl6.Controls.Add(this.btn_JobCancel);
             this.panelControl6.Location = new System.Drawing.Point(1523, 57);
             this.panelControl6.Name = "panelControl6";
             this.panelControl6.Size = new System.Drawing.Size(269, 347);
@@ -229,18 +229,19 @@ namespace BillPlex
             this.btnTransfer.Text = "Transfer\r\n   To\r\n   This\r\nEmployee";
             this.btnTransfer.Click += new System.EventHandler(this.btnTransfer_Click);
             // 
-            // btnCancel
+            // btn_JobCancel
             // 
-            this.btnCancel.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Appearance.Options.UseFont = true;
-            this.btnCancel.Location = new System.Drawing.Point(90, 38);
-            this.btnCancel.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
-            this.btnCancel.LookAndFeel.SkinName = "DevExpress Style";
-            this.btnCancel.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(121, 75);
-            this.btnCancel.TabIndex = 0;
-            this.btnCancel.Text = " Cancel \r\n  This \r\n Giving";
+            this.btn_JobCancel.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_JobCancel.Appearance.Options.UseFont = true;
+            this.btn_JobCancel.Location = new System.Drawing.Point(90, 38);
+            this.btn_JobCancel.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btn_JobCancel.LookAndFeel.SkinName = "DevExpress Style";
+            this.btn_JobCancel.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btn_JobCancel.Name = "btn_JobCancel";
+            this.btn_JobCancel.Size = new System.Drawing.Size(121, 75);
+            this.btn_JobCancel.TabIndex = 0;
+            this.btn_JobCancel.Text = " Cancel \r\n  This \r\n Giving";
+            this.btn_JobCancel.Click += new System.EventHandler(this.btnJobCancel_Click);
             // 
             // panelControl5
             // 
@@ -268,13 +269,13 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery1.Name = "PRO_GetJobGivingWithoutDC";
-            queryParameter1.Name = "@SearchKey";
-            queryParameter1.Type = typeof(string);
-            storedProcQuery1.Parameters.Add(queryParameter1);
-            storedProcQuery1.StoredProcName = "PRO_GetJobGivingWithoutDC";
+            storedProcQuery2.Name = "PRO_GetJobGivingWithoutDC";
+            queryParameter2.Name = "@SearchKey";
+            queryParameter2.Type = typeof(string);
+            storedProcQuery2.Parameters.Add(queryParameter2);
+            storedProcQuery2.StoredProcName = "PRO_GetJobGivingWithoutDC";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery1});
+            storedProcQuery2});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // gridView1
@@ -1301,7 +1302,7 @@ namespace BillPlex
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.PanelControl panelControl6;
         private DevExpress.XtraEditors.ComboBoxEdit drpEmpCode;
-        private DevExpress.XtraEditors.SimpleButton btnCancel;
+        private DevExpress.XtraEditors.SimpleButton btn_JobCancel;
         private DevExpress.XtraEditors.SimpleButton btnTransfer;
         private DevExpress.XtraEditors.SimpleButton btnClear;
         private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;

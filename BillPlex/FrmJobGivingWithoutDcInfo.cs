@@ -37,10 +37,13 @@ namespace BillPlex
 
             JobGivingWithoutDcRequest.ConnectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
 
+            JobGivingWithoutDcRequest.List();
+            JobGivingWithoutDcRequest.JobGivingWithoutDcListByOrder = new List<JobGivingWithoutDc>();
+
             Dictionary<string, bool> dropDownList = new Dictionary<string, bool>
             {
                     { "EmployeePersonalRequired", true },
-                    { "OrderMasterRequired", true }
+                    { "OrderMasterRequired", true },
             };
 
             var dropdwonList = JobGivingWithoutDcRequest.GetDropdownCollections(dropDownList);
@@ -60,6 +63,7 @@ namespace BillPlex
             {
                 if (JobGivingWithoutDcRequest.EmployeePersonalList.Count() > 0)
                 {
+                    drpEmpCode.Properties.Items.Clear();
                     foreach (DropDownItemInfo item in JobGivingWithoutDcRequest.EmployeePersonalList)
                     {
                         drpEmpCode.Properties.Items.Add(new ImageComboBoxItem(item.Code));
@@ -121,7 +125,7 @@ namespace BillPlex
                 string selectedItems = (string)drpOrderNo.SelectedItem;
                 if (selectedItems != null)
                 {
-                    JobGivingWithoutDcRequest.OrderNo = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.Code == selectedItems.ToString())?.Id ?? -1;
+                    JobGivingWithoutDcRequest.OrderNo = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.Code == selectedItems.ToString())?.Id.ToString() ?? "";
                 }
                 JobGivingWithoutDcRequest.OrderDate = ddODate.Text;
                 JobGivingWithoutDcRequest.CustomerCode = txtCCode.Text;
@@ -144,10 +148,9 @@ namespace BillPlex
                 if (JobGivingWithoutDcRequest.Result.Status == ResultStatus.Success)
                 {
                     XtraMessageBox.Show(JobGivingWithoutDcRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    btnClear_Click();
-                    if (JobGivingWithoutDcRequest.JobGivingWithoutDcList.Count() > 0)
+                    if (JobGivingWithoutDcRequest.JobGivingWithoutDcListByOrder.Count() > 0)
                     {
-                        foreach (var item in JobGivingWithoutDcRequest.JobGivingWithoutDcList)
+                        foreach (var item in JobGivingWithoutDcRequest.JobGivingWithoutDcListByOrder)
                         {
                             DataTable dataTable = gridControl1.DataSource as DataTable;
 
@@ -192,12 +195,9 @@ namespace BillPlex
                         //{
                         //    form.ReloadSqlDataSource();
                         //}
+                        btnClear_Click();
                         gridView1.RefreshData();
                         gridControl1.RefreshDataSource();
-                    }
-                    else
-                    {
-                        XtraMessageBox.Show(JobGivingWithoutDcRequest.Result.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
             }
@@ -228,6 +228,7 @@ namespace BillPlex
                 txtCCode.Text = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.Code == selectedItem.ToString())?.AuthorName ?? "";
                 txtCCName.Text = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.Code == selectedItem.ToString())?.proModel ?? "";
                 ddDate.Text = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.Code == selectedItem.ToString())?.Name ?? "";
+                JobGivingWithoutDcRequest.OrderNo = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.Code == selectedItem.ToString())?.Id.ToString() ?? "";
             }
             var selectItem = drpOrderNo.Text;
 
@@ -235,6 +236,7 @@ namespace BillPlex
             {
                 if (JobGivingWithoutDcRequest.OrderMasterList.Count() > 0)
                 {
+                    drpMName.Properties.Items.Clear();
                     foreach (DropDownItemInfo item in JobGivingWithoutDcRequest.OrderMasterList)
                     {
                         if (item.Code == selectItem)
@@ -242,6 +244,20 @@ namespace BillPlex
                             drpMName.Properties.Items.Add(new ImageComboBoxItem(item.productId));
                         }
                     }
+
+                    drpMName.ResetText();
+                    drpMCode.ResetText();
+                    txtPName.ResetText();
+                    txtPSize.ResetText();
+                    drpColor.ResetText();
+                    txtRawMaterial.ResetText();
+                    txtType.ResetText();
+                    txtQuantity.ResetText();
+                    txtWeight.ResetText();
+                    txtAvlQty.ResetText();
+                    txtShortage.ResetText();
+                    lblOrderQtyNo.ResetText();
+                    lblAvlQty.ResetText();
                 }
             }
         }
@@ -253,6 +269,7 @@ namespace BillPlex
             {
                 if (JobGivingWithoutDcRequest.OrderMasterList.Count() > 0)
                 {
+                    drpMCode.Properties.Items.Clear();
                     foreach (DropDownItemInfo item in JobGivingWithoutDcRequest.OrderMasterList)
                     {
                         if (item.productId == selectItem)
@@ -277,6 +294,7 @@ namespace BillPlex
             {
                 if (JobGivingWithoutDcRequest.OrderMasterList.Count() > 0)
                 {
+                    drpColor.Properties.Items.Clear();
                     foreach (DropDownItemInfo item in JobGivingWithoutDcRequest.OrderMasterList)
                     {
                         if (item.RawMaterial == selectItem)
@@ -292,8 +310,22 @@ namespace BillPlex
         {
             string selectedItem = (string)drpColor.SelectedItem;
             var selectModelItem = drpMCode.Text;
+            int totalQuantity = 0;
             if (selectedItem != null)
             {
+
+                if (JobGivingWithoutDcRequest.JobGivingWithoutDcList.Count() > 0 && JobGivingWithoutDcRequest.OrderNo != "")
+                {
+                    if (JobGivingWithoutDcRequest.JobGivingWithoutDcListByOrder.Count() > 0)
+                    {
+                    totalQuantity = JobGivingWithoutDcRequest.JobGivingWithoutDcListByOrder.Where(o => o.OrderNo == JobGivingWithoutDcRequest.OrderNo && o.ModelName == drpMName.Text && o.ModelCode == drpMCode.Text && o.Color == drpColor.Text).Sum(o => int.Parse(o.QuantityPiece));
+                    }else
+                    {
+                    totalQuantity = JobGivingWithoutDcRequest.JobGivingWithoutDcList.Where(o => o.OrderNo == JobGivingWithoutDcRequest.OrderNo && o.ModelName == drpMName.Text && o.ModelCode == drpMCode.Text && o.Color == drpColor.Text).Sum(o => int.Parse(o.QuantityPiece));
+                    }
+                }
+
+
                 txtRawMaterial.Text = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.Code == drpOrderNo.Text && item.color == drpColor.Text && item.SubCom == txtPName.Text && item.SubComName == txtPSize.Text)?.RawName ?? "";
                 txtType.Text = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.Code == drpOrderNo.Text && item.color == drpColor.Text && item.SubCom == txtPName.Text && item.SubComName == txtPSize.Text)?.RawType ?? "";
 
@@ -301,12 +333,14 @@ namespace BillPlex
 
                 var totalQty = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.RawName == txtRawMaterial.Text && item.RawType == txtType.Text && item.Code == drpOrderNo.Text && item.color == drpColor.Text && item.SubCom == txtPName.Text && item.SubComName == txtPSize.Text)?.OrderQty.ToString() ?? "";
 
-                lblOrderQtyNo.Text = 0 + "/" + totalQty;
+                lblOrderQtyNo.Text = totalQuantity + "/" + totalQty;
 
-                lblOrderWghtNo.Text = 0 + "/" + JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.RawName == txtRawMaterial.Text && item.RawType == txtType.Text && item.Code == drpOrderNo.Text && item.color == drpColor.Text && item.SubCom == txtPName.Text && item.SubComName == txtPSize.Text)?.OrderWghtNo.ToString() ?? "";
+                lblOrderWghtNo.Text = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.RawName == txtRawMaterial.Text && item.RawType == txtType.Text && item.Code == drpOrderNo.Text && item.color == drpColor.Text && item.SubCom == txtPName.Text && item.SubComName == txtPSize.Text)?.OrderWghtNo.ToString() ?? "";
 
-
-                txtAvlQty.Text = totalQty;
+                if (totalQty != "")
+                {
+                    txtAvlQty.Text = (int.Parse(totalQty) - totalQuantity).ToString();
+                }
             }
         }
 
@@ -325,7 +359,9 @@ namespace BillPlex
                 txtSCCom.Text = selectedCompanyList.GetRowCellValue(rowHandle, "SubClientCompany");
                 var datete = selectedCompanyList.GetRowCellValue(rowHandle, "Date").ToString();
                 ddDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
-                drpOrderNo.SelectedIndex = JobGivingWithoutDcRequest.OrderMasterList.FindIndex(x => x.Id == Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "OrderNo").ToString()));
+                //drpOrderNo.Text = selectedCompanyList.GetRowCellValue(rowHandle, "OrderNo").ToString();
+                drpOrderNo.Text = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.Id == Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "OrderNo").ToString()))?.Code.ToString() ?? "";
+                //drpOrderNo.SelectedIndex = JobGivingWithoutDcRequest.OrderMasterList.FindIndex(x => x.Id == Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "OrderNo").ToString()));
                 datete = selectedCompanyList.GetRowCellValue(rowHandle, "OrderDate").ToString();
                 ddODate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
                 txtCCode.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CustomerCode");
@@ -337,7 +373,7 @@ namespace BillPlex
                 drpColor.Text = selectedCompanyList.GetRowCellValue(rowHandle, "Color");
                 txtRawMaterial.Text = selectedCompanyList.GetRowCellValue(rowHandle, "RawMaterial");
                 txtType.Text = selectedCompanyList.GetRowCellValue(rowHandle, "Type");
-                txtQuantity.Text = selectedCompanyList.GetRowCellValue(rowHandle, "QuantityPiece");
+                txtQuantity.Text = selectedCompanyList.GetRowCellValue(rowHandle, "QuantityPiece").ToString();
                 txtWeight.Text = selectedCompanyList.GetRowCellValue(rowHandle, "WeightKg");
                 txtAvlQty.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AvlQty");
                 //txtTQty.Text = selectedCompanyList.GetRowCellValue(rowHandle, "TotalQty");
@@ -373,6 +409,7 @@ namespace BillPlex
             txtWeight.ResetText();
             txtAvlQty.ResetText();
             txtShortage.ResetText();
+            lblOrderQtyNo.ResetText();
         }
 
         private void btnExit_Click(object sender, EventArgs e)

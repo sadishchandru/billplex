@@ -87,7 +87,7 @@ namespace BillPlex
                     //txtReceivedQty.Text = (string)gridView1.GetRowCellValue(rowHandle, "Id");
                     //txtPendingQty.Text = (string)gridView1.GetRowCellValue(rowHandle, "Id");
                     //txtOrder.Text = gridView1.GetRowCellValue(rowHandle, "OrderNo").ToString();
-                    JobGivingWithoutDcRequest.OrderNo = (Int32)gridView1.GetRowCellValue(rowHandle, "OrderNo");
+                    JobGivingWithoutDcRequest.OrderNo = gridView1.GetRowCellValue(rowHandle, "OrderNo").ToString();
                 }
             }
             catch (Exception ex)
@@ -198,6 +198,25 @@ namespace BillPlex
             txtReceivedQty.ResetText();
             txtPendingQty.ResetText();
             txtShortage.ResetText();
+        }
+
+        private void btnJobCancel_Click(object sender, EventArgs e)
+        {
+            if (JobGivingWithoutDcRequest.Id != 0)
+            {
+                JobGivingWithoutDcRequest.Delete();
+
+                if (JobGivingWithoutDcRequest.Result.Status == ResultStatus.Success)
+                {
+                    XtraMessageBox.Show("Job is cannceled", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    sqlDataSource1.FillAsync();
+                    gridView1.RefreshData();
+                }
+                else
+                {
+                    XtraMessageBox.Show(JobGivingWithoutDcRequest.Result.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
         }
     }
 }

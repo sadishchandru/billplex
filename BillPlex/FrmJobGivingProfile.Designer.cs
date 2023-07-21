@@ -29,6 +29,9 @@ namespace BillPlex
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmJobGivingProfile));
             this.gridSplitContainer1Grid = new DevExpress.XtraGrid.GridControl();
             this.gridSplitContainer1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panelControl13 = new DevExpress.XtraEditors.PanelControl();
@@ -43,7 +46,38 @@ namespace BillPlex
             this.btnNew = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl16 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
+            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colOrderNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colEmployeeCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colEmployeeName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCompanyName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDirector = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colClientCompany = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colClientName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSubClientCompany = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colsubContractor = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOrderDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCustomerCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCustomerName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colModelName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colModelCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProductName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProductSize = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colColor = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRawMaterial = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colQuantityPiece = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colWeightKg = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAvlQty = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colExcess = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTotalQty = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTotalWt = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colShortage = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colorderQty = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colorderWt = new DevExpress.XtraGrid.Columns.GridColumn();
             this.radioGroup2 = new DevExpress.XtraEditors.RadioGroup();
             ((System.ComponentModel.ISupportInitialize)(this.gridSplitContainer1Grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridSplitContainer1View)).BeginInit();
@@ -224,6 +258,8 @@ namespace BillPlex
             // 
             // gridControl2
             // 
+            this.gridControl2.DataMember = "PRO_GetJobGivingWithoutDCList";
+            this.gridControl2.DataSource = this.sqlDataSource1;
             this.gridControl2.Location = new System.Drawing.Point(14, 40);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
@@ -232,10 +268,261 @@ namespace BillPlex
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
             // 
+            // sqlDataSource1
+            // 
+            this.sqlDataSource1.ConnectionName = "BillPlex";
+            this.sqlDataSource1.Name = "sqlDataSource1";
+            storedProcQuery1.Name = "PRO_GetJobGivingWithoutDCList";
+            storedProcQuery1.StoredProcName = "PRO_GetJobGivingWithoutDCList";
+            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
+            storedProcQuery1});
+            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
+            // 
             // gridView2
             // 
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colOrderNo,
+            this.colId,
+            this.colEmployeeCode,
+            this.colEmployeeName,
+            this.colCompanyName,
+            this.colDirector,
+            this.colClientCompany,
+            this.colClientName,
+            this.colSubClientCompany,
+            this.colsubContractor,
+            this.colDate,
+            this.colOrderDate,
+            this.colCustomerCode,
+            this.colCustomerName,
+            this.colModelName,
+            this.colModelCode,
+            this.colProductName,
+            this.colProductSize,
+            this.colColor,
+            this.colRawMaterial,
+            this.colType,
+            this.colQuantityPiece,
+            this.colWeightKg,
+            this.colAvlQty,
+            this.colExcess,
+            this.colTotalQty,
+            this.colTotalWt,
+            this.colShortage,
+            this.colorderQty,
+            this.colorderWt});
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.Name = "gridView2";
+            // 
+            // colOrderNo
+            // 
+            this.colOrderNo.FieldName = "OrderNo";
+            this.colOrderNo.Name = "colOrderNo";
+            this.colOrderNo.Visible = true;
+            this.colOrderNo.VisibleIndex = 0;
+            // 
+            // colId
+            // 
+            this.colId.FieldName = "Id";
+            this.colId.Name = "colId";
+            this.colId.Visible = true;
+            this.colId.VisibleIndex = 1;
+            // 
+            // colEmployeeCode
+            // 
+            this.colEmployeeCode.FieldName = "EmployeeCode";
+            this.colEmployeeCode.Name = "colEmployeeCode";
+            this.colEmployeeCode.Visible = true;
+            this.colEmployeeCode.VisibleIndex = 2;
+            // 
+            // colEmployeeName
+            // 
+            this.colEmployeeName.FieldName = "EmployeeName";
+            this.colEmployeeName.Name = "colEmployeeName";
+            this.colEmployeeName.Visible = true;
+            this.colEmployeeName.VisibleIndex = 3;
+            // 
+            // colCompanyName
+            // 
+            this.colCompanyName.FieldName = "CompanyName";
+            this.colCompanyName.Name = "colCompanyName";
+            this.colCompanyName.Visible = true;
+            this.colCompanyName.VisibleIndex = 4;
+            // 
+            // colDirector
+            // 
+            this.colDirector.FieldName = "Director";
+            this.colDirector.Name = "colDirector";
+            this.colDirector.Visible = true;
+            this.colDirector.VisibleIndex = 5;
+            // 
+            // colClientCompany
+            // 
+            this.colClientCompany.FieldName = "ClientCompany";
+            this.colClientCompany.Name = "colClientCompany";
+            this.colClientCompany.Visible = true;
+            this.colClientCompany.VisibleIndex = 6;
+            // 
+            // colClientName
+            // 
+            this.colClientName.FieldName = "ClientName";
+            this.colClientName.Name = "colClientName";
+            this.colClientName.Visible = true;
+            this.colClientName.VisibleIndex = 7;
+            // 
+            // colSubClientCompany
+            // 
+            this.colSubClientCompany.FieldName = "SubClientCompany";
+            this.colSubClientCompany.Name = "colSubClientCompany";
+            this.colSubClientCompany.Visible = true;
+            this.colSubClientCompany.VisibleIndex = 8;
+            // 
+            // colsubContractor
+            // 
+            this.colsubContractor.FieldName = "subContractor";
+            this.colsubContractor.Name = "colsubContractor";
+            this.colsubContractor.Visible = true;
+            this.colsubContractor.VisibleIndex = 9;
+            // 
+            // colDate
+            // 
+            this.colDate.FieldName = "Date";
+            this.colDate.Name = "colDate";
+            this.colDate.Visible = true;
+            this.colDate.VisibleIndex = 10;
+            // 
+            // colOrderDate
+            // 
+            this.colOrderDate.FieldName = "OrderDate";
+            this.colOrderDate.Name = "colOrderDate";
+            this.colOrderDate.Visible = true;
+            this.colOrderDate.VisibleIndex = 11;
+            // 
+            // colCustomerCode
+            // 
+            this.colCustomerCode.FieldName = "CustomerCode";
+            this.colCustomerCode.Name = "colCustomerCode";
+            this.colCustomerCode.Visible = true;
+            this.colCustomerCode.VisibleIndex = 12;
+            // 
+            // colCustomerName
+            // 
+            this.colCustomerName.FieldName = "CustomerName";
+            this.colCustomerName.Name = "colCustomerName";
+            this.colCustomerName.Visible = true;
+            this.colCustomerName.VisibleIndex = 13;
+            // 
+            // colModelName
+            // 
+            this.colModelName.FieldName = "ModelName";
+            this.colModelName.Name = "colModelName";
+            this.colModelName.Visible = true;
+            this.colModelName.VisibleIndex = 14;
+            // 
+            // colModelCode
+            // 
+            this.colModelCode.FieldName = "ModelCode";
+            this.colModelCode.Name = "colModelCode";
+            this.colModelCode.Visible = true;
+            this.colModelCode.VisibleIndex = 15;
+            // 
+            // colProductName
+            // 
+            this.colProductName.FieldName = "ProductName";
+            this.colProductName.Name = "colProductName";
+            this.colProductName.Visible = true;
+            this.colProductName.VisibleIndex = 16;
+            // 
+            // colProductSize
+            // 
+            this.colProductSize.FieldName = "ProductSize";
+            this.colProductSize.Name = "colProductSize";
+            this.colProductSize.Visible = true;
+            this.colProductSize.VisibleIndex = 17;
+            // 
+            // colColor
+            // 
+            this.colColor.FieldName = "Color";
+            this.colColor.Name = "colColor";
+            this.colColor.Visible = true;
+            this.colColor.VisibleIndex = 18;
+            // 
+            // colRawMaterial
+            // 
+            this.colRawMaterial.FieldName = "RawMaterial";
+            this.colRawMaterial.Name = "colRawMaterial";
+            this.colRawMaterial.Visible = true;
+            this.colRawMaterial.VisibleIndex = 19;
+            // 
+            // colType
+            // 
+            this.colType.FieldName = "Type";
+            this.colType.Name = "colType";
+            this.colType.Visible = true;
+            this.colType.VisibleIndex = 20;
+            // 
+            // colQuantityPiece
+            // 
+            this.colQuantityPiece.FieldName = "QuantityPiece";
+            this.colQuantityPiece.Name = "colQuantityPiece";
+            this.colQuantityPiece.Visible = true;
+            this.colQuantityPiece.VisibleIndex = 21;
+            // 
+            // colWeightKg
+            // 
+            this.colWeightKg.FieldName = "WeightKg";
+            this.colWeightKg.Name = "colWeightKg";
+            this.colWeightKg.Visible = true;
+            this.colWeightKg.VisibleIndex = 22;
+            // 
+            // colAvlQty
+            // 
+            this.colAvlQty.FieldName = "AvlQty";
+            this.colAvlQty.Name = "colAvlQty";
+            this.colAvlQty.Visible = true;
+            this.colAvlQty.VisibleIndex = 23;
+            // 
+            // colExcess
+            // 
+            this.colExcess.FieldName = "Excess";
+            this.colExcess.Name = "colExcess";
+            this.colExcess.Visible = true;
+            this.colExcess.VisibleIndex = 24;
+            // 
+            // colTotalQty
+            // 
+            this.colTotalQty.FieldName = "TotalQty";
+            this.colTotalQty.Name = "colTotalQty";
+            this.colTotalQty.Visible = true;
+            this.colTotalQty.VisibleIndex = 25;
+            // 
+            // colTotalWt
+            // 
+            this.colTotalWt.FieldName = "TotalWt";
+            this.colTotalWt.Name = "colTotalWt";
+            this.colTotalWt.Visible = true;
+            this.colTotalWt.VisibleIndex = 26;
+            // 
+            // colShortage
+            // 
+            this.colShortage.FieldName = "Shortage";
+            this.colShortage.Name = "colShortage";
+            this.colShortage.Visible = true;
+            this.colShortage.VisibleIndex = 27;
+            // 
+            // colorderQty
+            // 
+            this.colorderQty.FieldName = "orderQty";
+            this.colorderQty.Name = "colorderQty";
+            this.colorderQty.Visible = true;
+            this.colorderQty.VisibleIndex = 28;
+            // 
+            // colorderWt
+            // 
+            this.colorderWt.FieldName = "orderWt";
+            this.colorderWt.Name = "colorderWt";
+            this.colorderWt.Visible = true;
+            this.colorderWt.VisibleIndex = 29;
             // 
             // radioGroup2
             // 
@@ -302,5 +589,36 @@ namespace BillPlex
         private DevExpress.XtraGrid.GridControl gridControl2;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraEditors.RadioGroup radioGroup2;
+        private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
+        private DevExpress.XtraGrid.Columns.GridColumn colOrderNo;
+        private DevExpress.XtraGrid.Columns.GridColumn colId;
+        private DevExpress.XtraGrid.Columns.GridColumn colEmployeeCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colEmployeeName;
+        private DevExpress.XtraGrid.Columns.GridColumn colCompanyName;
+        private DevExpress.XtraGrid.Columns.GridColumn colDirector;
+        private DevExpress.XtraGrid.Columns.GridColumn colClientCompany;
+        private DevExpress.XtraGrid.Columns.GridColumn colClientName;
+        private DevExpress.XtraGrid.Columns.GridColumn colSubClientCompany;
+        private DevExpress.XtraGrid.Columns.GridColumn colsubContractor;
+        private DevExpress.XtraGrid.Columns.GridColumn colDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colOrderDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colCustomerCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colCustomerName;
+        private DevExpress.XtraGrid.Columns.GridColumn colModelName;
+        private DevExpress.XtraGrid.Columns.GridColumn colModelCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colProductName;
+        private DevExpress.XtraGrid.Columns.GridColumn colProductSize;
+        private DevExpress.XtraGrid.Columns.GridColumn colColor;
+        private DevExpress.XtraGrid.Columns.GridColumn colRawMaterial;
+        private DevExpress.XtraGrid.Columns.GridColumn colType;
+        private DevExpress.XtraGrid.Columns.GridColumn colQuantityPiece;
+        private DevExpress.XtraGrid.Columns.GridColumn colWeightKg;
+        private DevExpress.XtraGrid.Columns.GridColumn colAvlQty;
+        private DevExpress.XtraGrid.Columns.GridColumn colExcess;
+        private DevExpress.XtraGrid.Columns.GridColumn colTotalQty;
+        private DevExpress.XtraGrid.Columns.GridColumn colTotalWt;
+        private DevExpress.XtraGrid.Columns.GridColumn colShortage;
+        private DevExpress.XtraGrid.Columns.GridColumn colorderQty;
+        private DevExpress.XtraGrid.Columns.GridColumn colorderWt;
     }
 }

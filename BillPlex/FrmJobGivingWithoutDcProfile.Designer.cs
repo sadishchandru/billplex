@@ -31,7 +31,6 @@ namespace BillPlex
         {
             this.components = new System.ComponentModel.Container();
             DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmJobGivingWithoutDcProfile));
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -237,7 +236,7 @@ namespace BillPlex
             // 
             // gridControl1
             // 
-            this.gridControl1.DataMember = "PRO_GetJobGivingWithoutDC";
+            this.gridControl1.DataMember = "PRO_GetJobGivingWithoutDCList";
             this.gridControl1.DataSource = this.sqlDataSource1;
             this.gridControl1.Location = new System.Drawing.Point(18, 86);
             this.gridControl1.MainView = this.gridView1;
@@ -252,11 +251,8 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery1.Name = "PRO_GetJobGivingWithoutDC";
-            queryParameter1.Name = "@SearchKey";
-            queryParameter1.Type = typeof(string);
-            storedProcQuery1.Parameters.Add(queryParameter1);
-            storedProcQuery1.StoredProcName = "PRO_GetJobGivingWithoutDC";
+            storedProcQuery1.Name = "PRO_GetJobGivingWithoutDCList";
+            storedProcQuery1.StoredProcName = "PRO_GetJobGivingWithoutDCList";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
             storedProcQuery1});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");

@@ -113,6 +113,7 @@ BEGIN
 
         SET @ResultMessage = 'JobGivingWithoutDC Added Successfully';
         SET @ResultNo = 1
+
     END
     ELSE
     BEGIN
@@ -153,6 +154,6 @@ BEGIN
     SELECT @ResultMessage AS ResultMessage, @ResultNo AS ResultNo
 	IF(@ResultNo = 1)
 	BEGIN
-		EXEC PRO_GetJobGivingWithoutDCFilter @Id = @Id;
+		EXEC PRO_GetJobGivingWithoutDCFilter @Id = @OrderNo;
 	END
 END

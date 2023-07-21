@@ -47,4 +47,5 @@ SET NOCOUNT ON;
 					,orderQty
 					,orderWt
 					FROM JobGivingWithoutDC
+					WHERE ISNULL(isDelete, 0) = 0;
 END
