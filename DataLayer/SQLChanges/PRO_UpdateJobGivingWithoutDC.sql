@@ -20,8 +20,8 @@ CREATE OR ALTER PROCEDURE [dbo].[PRO_UpdateJobGivingWithoutDC]
 @ClientName VARCHAR(100) ='',
 @SubClientCompany VARCHAR(100) ='',
 @OrderNo BIGINT = 0,
-@Date Date ='',
-@OrderDate DATE ='',
+@Date Date = Null,
+@OrderDate DATE =Null,
 @CustomerCode VARCHAR(100) ='',
 @CustomerName VARCHAR(100) ='',
 @ModelName VARCHAR(100) ='',
@@ -41,7 +41,18 @@ CREATE OR ALTER PROCEDURE [dbo].[PRO_UpdateJobGivingWithoutDC]
 @Director varchar(100) = '',
 @subContractor varchar(100)='',
 @PendingQty varchar(100)='',
-@receivedQty varchar(100)=''
+@receivedQty varchar(100)='',
+@Wages varchar(20)='',
+@CurrentWt varchar(20)='',
+@ReceivingDate Date = Null,
+@BDays varchar(50)='',
+@ADays varchar(50)='',
+@BalanceWt varchar(50)='',
+@Deduction varchar(50)='',
+@conveyance varchar(50)='',
+@incentive varchar(50)='',
+@NetAmt varchar(50)='',
+@TotalAmt varchar(50)=''
 
 AS
 BEGIN
@@ -83,6 +94,17 @@ BEGIN
 				,subContractor
 				,PendingQty
 				,received
+				,Wages
+				,CurrentWt
+				,ReceivingDate
+				,BDays
+				,ADays
+				,BalanceWt
+				,Deduction
+				,conveyance
+				,incentive
+				,NetAmt
+				,TotalAmt
 
             )
         VALUES
@@ -115,7 +137,18 @@ BEGIN
 				@Director,
 				@subContractor,
 				@PendingQty,
-				@receivedQty
+				@receivedQty,
+				@Wages,
+				@CurrentWt,
+				@ReceivingDate,
+				@BDays,
+				@ADays,
+				@BalanceWt,
+				@Deduction,
+				@conveyance,
+				@incentive,
+				@NetAmt,
+				@TotalAmt
             )
 
         SET @ResultMessage = 'JobGivingWithoutDC Added Successfully';
@@ -153,7 +186,18 @@ BEGIN
 			[Director]=@Director,
 			[subContractor]=@subContractor,
 			[PendingQty] = @PendingQty,
-			[received] = @receivedQty
+			[received] = @receivedQty,
+			[Wages] = @Wages,
+			[CurrentWt]=@CurrentWt,
+			[ReceivingDate]= @ReceivingDate,
+			[BDays]= @BDays,
+			[ADays] = @ADays,
+			[BalanceWt] = @BalanceWt,
+			[Deduction] = @Deduction,
+			[conveyance] = @conveyance,
+			[incentive] = @incentive,
+			[NetAmt] = @NetAmt,
+			[TotalAmt] = @TotalAmt
         WHERE Id = @Id
 
         SET @ResultMessage = 'JobGivingWithoutDC Updated Successfully';
