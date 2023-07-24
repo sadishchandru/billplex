@@ -39,7 +39,10 @@ CREATE OR ALTER PROCEDURE [dbo].[PRO_UpdateJobGivingWithoutDC]
 @TotalWt varchar(100)= '',
 @Shortage VARCHAR(100) = '',
 @Director varchar(100) = '',
-@subContractor varchar(100)=''
+@subContractor varchar(100)='',
+@PendingQty varchar(100)='',
+@receivedQty varchar(100)=''
+
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -78,6 +81,8 @@ BEGIN
 				,TotalWt
 				,Director
 				,subContractor
+				,PendingQty
+				,received
 
             )
         VALUES
@@ -108,7 +113,9 @@ BEGIN
 				@TotalQty,
 				@TotalWt,
 				@Director,
-				@subContractor
+				@subContractor,
+				@PendingQty,
+				@receivedQty
             )
 
         SET @ResultMessage = 'JobGivingWithoutDC Added Successfully';
@@ -144,7 +151,9 @@ BEGIN
 			[TotalQty]=@TotalQty,
 			[TotalWt]=@TotalWt,
 			[Director]=@Director,
-			[subContractor]=@subContractor
+			[subContractor]=@subContractor,
+			[PendingQty] = @PendingQty,
+			[received] = @receivedQty
         WHERE Id = @Id
 
         SET @ResultMessage = 'JobGivingWithoutDC Updated Successfully';

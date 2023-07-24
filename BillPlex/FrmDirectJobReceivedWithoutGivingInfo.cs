@@ -146,13 +146,13 @@ namespace BillPlex
                             DataTable dataTable = gridControl1.DataSource as DataTable;
 
                             DataRow newRow = dataTable.NewRow();
-                            newRow["EmployeeCode"] = item.EmployeeCodes;
+                            newRow["EmployeeCode"] = item.EmployeeCode;
                             newRow["EmployeeName"] = item.EmployeeName;
                             newRow["CompanyName"] = item.CompanyName;
-                            newRow["Director"] = item.Director;
-                            newRow["ClientComapny"] = item.ClientComapny;
+                            newRow["DirectorName"] = item.Director;
+                            newRow["ClientCompany"] = item.ClientComapny;
                             newRow["ClientName"] = item.ClientName;
-                            newRow["SubClientComapny"] = item.SubClientComapny;
+                            newRow["SubClientCompany"] = item.SubClientComapny;
                             newRow["SubClientName"] = item.SubClientName;
                             newRow["ProductModel"] = item.ProductModel;
                             newRow["ProductCode"] = item.ProductCode;
@@ -367,20 +367,20 @@ namespace BillPlex
             DataTable dataTable = new DataTable();
 
             // Create columns and bind them to the object properties
-            dataTable.Columns.Add("EmployeeCodes", typeof(string));
+            dataTable.Columns.Add("EmployeeCode", typeof(string));
             dataTable.Columns.Add("EmployeeName", typeof(string));
             dataTable.Columns.Add("CompanyName", typeof(string));
-            dataTable.Columns.Add("Director", typeof(string));
-            dataTable.Columns.Add("ClientComapny", typeof(string));
+            dataTable.Columns.Add("DirectorName", typeof(string));
+            dataTable.Columns.Add("ClientCompany", typeof(string));
             dataTable.Columns.Add("ClientName", typeof(string));
-            dataTable.Columns.Add("SubClientComapny", typeof(string));
+            dataTable.Columns.Add("SubClientCompany", typeof(string));
             dataTable.Columns.Add("SubClientName", typeof(string));
             dataTable.Columns.Add("ProductModel", typeof(string));
             dataTable.Columns.Add("ProductCode", typeof(string));
             dataTable.Columns.Add("ProductName", typeof(string));
             dataTable.Columns.Add("Wages", typeof(string));
-            dataTable.Columns.Add("ProSize", typeof(string));
-            dataTable.Columns.Add("Color", typeof(string));
+            dataTable.Columns.Add("Prosize", typeof(string));
+            dataTable.Columns.Add("color", typeof(string));
             dataTable.Columns.Add("Quantity", typeof(string));
             dataTable.Columns.Add("Weight", typeof(string));
             dataTable.Columns.Add("BDays", typeof(string));

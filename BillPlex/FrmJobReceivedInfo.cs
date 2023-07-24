@@ -32,7 +32,7 @@ namespace BillPlex
         {
             try
             {
-                string EmployeeCode = (string)txtEmpCode.Text;
+                string EmployeeCode = txtEmpCode.Text;
                 //JobReceivedRequest.EmployeeCode = txtEmpCode.Text;
                 if (JobReceivedRequest != null)
                 {
@@ -190,41 +190,25 @@ namespace BillPlex
 
         private void txtDeduction_EditValueChanged(object sender, EventArgs e)
         {
-            int a = 0;
-            int b;
-            if (txtDeduction.Text != "")
+            int total = 0;
+
+            if (txtDeduction.Text != "" && txtDeduction.Text != "0")
             {
-                if (int.TryParse(txtDeduction.Text, out b))
-                {
-                    int result = a - b;
-                    txtTotal.Text = result.ToString();
-                    txtNetAmt.Text = result.ToString();
-                }
+                total = total - Convert.ToInt32(txtDeduction.Text);
             }
-        }
 
-        private void txtIncentive_EditValueChanged(object sender, EventArgs e)
-        {
-            int a;
-            int b;
-
-            if (int.TryParse(txtNetAmt.Text, out a) && int.TryParse(txtIncentive.Text, out b))
+            if (txtConveyance.Text != "" && txtConveyance.Text != "0")
             {
-                int countDifferent = a + b;
-                txtNetAmt.Text = countDifferent.ToString();
+                total = total + Convert.ToInt32(txtConveyance.Text);
             }
-        }
 
-        private void txtConveyance_EditValueChanged(object sender, EventArgs e)
-        {
-            int a;
-            int b;
-
-            if (int.TryParse(txtConveyance.Text, out a) && int.TryParse(txtNetAmt.Text, out b))
+            if (txtIncentive.Text != "" && txtIncentive.Text != "0")
             {
-                int countDifferent = a + b;
-                txtNetAmt.Text = countDifferent.ToString();
+                total = total + Convert.ToInt32(txtIncentive.Text);
             }
+
+            txtTotal.Text = total.ToString();
+            txtNetAmt.Text = total.ToString();
         }
 
         private void gridControl1_DoubleClick(object sender, EventArgs e)
@@ -247,6 +231,9 @@ namespace BillPlex
                     txtPSize.Text = (string)gridView1.GetRowCellValue(rowHandle, "ProductSize");
                     txtColor.Text = (string)gridView1.GetRowCellValue(rowHandle, "Color");
                 }
+                btnAdd.Enabled = false;
+                btnNew.Enabled = false;
+                btnUpdate.Enabled = true;
             }
             catch (Exception ex)
             {

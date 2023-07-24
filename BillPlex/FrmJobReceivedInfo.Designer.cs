@@ -254,6 +254,7 @@ namespace BillPlex
             this.btnUpdate.Size = new System.Drawing.Size(81, 23);
             this.btnUpdate.TabIndex = 62;
             this.btnUpdate.Text = "UPDATE";
+            this.btnUpdate.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnEdit
             // 
@@ -778,7 +779,7 @@ namespace BillPlex
             this.txtConveyance.Properties.UseMaskAsDisplayFormat = true;
             this.txtConveyance.Size = new System.Drawing.Size(115, 20);
             this.txtConveyance.TabIndex = 134;
-            this.txtConveyance.EditValueChanged += new System.EventHandler(this.txtConveyance_EditValueChanged);
+            this.txtConveyance.EditValueChanged += new System.EventHandler(this.txtDeduction_EditValueChanged);
             // 
             // txtNetAmt
             // 
@@ -802,7 +803,7 @@ namespace BillPlex
             this.txtIncentive.Properties.UseMaskAsDisplayFormat = true;
             this.txtIncentive.Size = new System.Drawing.Size(115, 20);
             this.txtIncentive.TabIndex = 132;
-            this.txtIncentive.EditValueChanged += new System.EventHandler(this.txtIncentive_EditValueChanged);
+            this.txtIncentive.EditValueChanged += new System.EventHandler(this.txtDeduction_EditValueChanged);
             // 
             // labelControl23
             // 

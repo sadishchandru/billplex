@@ -79,7 +79,6 @@ namespace BusinessLayer
                 objLstDbParams.Add(new DbParams(DbType.String, 50, Conveyance, "Conveyance", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, Incentive, "Incentive", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, NetAmt, "NetAmt", ParameterDirection.Input));
-                //objLstDbParams.Add(new DbParams(DbType.Date, 50, ReceivingDate, "ReceivingDate", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.Date, 50, ReceivingDate == "" ? null : ReceivingDate, "ReceivingDate", ParameterDirection.Input));
 
 
