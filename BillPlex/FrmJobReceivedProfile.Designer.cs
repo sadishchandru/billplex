@@ -392,191 +392,245 @@ namespace BillPlex
             // colId
             // 
             this.colId.FieldName = "Id";
+            this.colId.MinWidth = 80;
             this.colId.Name = "colId";
             this.colId.Visible = true;
             this.colId.VisibleIndex = 0;
+            this.colId.Width = 80;
             // 
             // colEmployeeCode
             // 
             this.colEmployeeCode.FieldName = "EmployeeCode";
+            this.colEmployeeCode.MinWidth = 80;
             this.colEmployeeCode.Name = "colEmployeeCode";
             this.colEmployeeCode.Visible = true;
             this.colEmployeeCode.VisibleIndex = 1;
+            this.colEmployeeCode.Width = 80;
             // 
             // colEmployeeName
             // 
             this.colEmployeeName.FieldName = "EmployeeName";
+            this.colEmployeeName.MinWidth = 80;
             this.colEmployeeName.Name = "colEmployeeName";
             this.colEmployeeName.Visible = true;
             this.colEmployeeName.VisibleIndex = 2;
+            this.colEmployeeName.Width = 80;
             // 
             // colCompanyName
             // 
             this.colCompanyName.FieldName = "CompanyName";
+            this.colCompanyName.MinWidth = 80;
             this.colCompanyName.Name = "colCompanyName";
             this.colCompanyName.Visible = true;
             this.colCompanyName.VisibleIndex = 3;
+            this.colCompanyName.Width = 80;
             // 
             // colClientCompany
             // 
             this.colClientCompany.FieldName = "ClientCompany";
+            this.colClientCompany.MinWidth = 80;
             this.colClientCompany.Name = "colClientCompany";
             this.colClientCompany.Visible = true;
             this.colClientCompany.VisibleIndex = 4;
+            this.colClientCompany.Width = 80;
             // 
             // colSubClientCompany
             // 
             this.colSubClientCompany.FieldName = "SubClientCompany";
+            this.colSubClientCompany.MinWidth = 80;
             this.colSubClientCompany.Name = "colSubClientCompany";
             this.colSubClientCompany.Visible = true;
             this.colSubClientCompany.VisibleIndex = 5;
+            this.colSubClientCompany.Width = 80;
             // 
             // colOrderNo
             // 
             this.colOrderNo.FieldName = "OrderNo";
+            this.colOrderNo.MinWidth = 80;
             this.colOrderNo.Name = "colOrderNo";
             this.colOrderNo.Visible = true;
             this.colOrderNo.VisibleIndex = 6;
+            this.colOrderNo.Width = 80;
             // 
             // colDate
             // 
             this.colDate.FieldName = "Date";
+            this.colDate.MinWidth = 80;
             this.colDate.Name = "colDate";
             this.colDate.Visible = true;
             this.colDate.VisibleIndex = 7;
+            this.colDate.Width = 80;
             // 
             // colOrderDate
             // 
             this.colOrderDate.FieldName = "OrderDate";
+            this.colOrderDate.MinWidth = 80;
             this.colOrderDate.Name = "colOrderDate";
             this.colOrderDate.Visible = true;
             this.colOrderDate.VisibleIndex = 8;
+            this.colOrderDate.Width = 80;
             // 
             // colCustomerCode
             // 
             this.colCustomerCode.FieldName = "CustomerCode";
+            this.colCustomerCode.MinWidth = 80;
             this.colCustomerCode.Name = "colCustomerCode";
             this.colCustomerCode.Visible = true;
             this.colCustomerCode.VisibleIndex = 9;
+            this.colCustomerCode.Width = 80;
             // 
             // colCustomerName
             // 
             this.colCustomerName.FieldName = "CustomerName";
+            this.colCustomerName.MinWidth = 80;
             this.colCustomerName.Name = "colCustomerName";
             this.colCustomerName.Visible = true;
             this.colCustomerName.VisibleIndex = 10;
+            this.colCustomerName.Width = 80;
             // 
             // colModelName
             // 
             this.colModelName.FieldName = "ModelName";
+            this.colModelName.MinWidth = 80;
             this.colModelName.Name = "colModelName";
             this.colModelName.Visible = true;
             this.colModelName.VisibleIndex = 11;
+            this.colModelName.Width = 80;
             // 
             // colModelCode
             // 
             this.colModelCode.FieldName = "ModelCode";
+            this.colModelCode.MinWidth = 80;
             this.colModelCode.Name = "colModelCode";
             this.colModelCode.Visible = true;
             this.colModelCode.VisibleIndex = 12;
+            this.colModelCode.Width = 80;
             // 
             // colProductName
             // 
             this.colProductName.FieldName = "ProductName";
+            this.colProductName.MinWidth = 80;
             this.colProductName.Name = "colProductName";
             this.colProductName.Visible = true;
             this.colProductName.VisibleIndex = 13;
+            this.colProductName.Width = 80;
             // 
             // colProductSize
             // 
             this.colProductSize.FieldName = "ProductSize";
+            this.colProductSize.MinWidth = 80;
             this.colProductSize.Name = "colProductSize";
             this.colProductSize.Visible = true;
             this.colProductSize.VisibleIndex = 14;
+            this.colProductSize.Width = 80;
             // 
             // colRawMaterial
             // 
             this.colRawMaterial.FieldName = "RawMaterial";
+            this.colRawMaterial.MinWidth = 80;
             this.colRawMaterial.Name = "colRawMaterial";
             this.colRawMaterial.Visible = true;
             this.colRawMaterial.VisibleIndex = 15;
+            this.colRawMaterial.Width = 80;
             // 
             // colQuantityPiece
             // 
             this.colQuantityPiece.FieldName = "QuantityPiece";
+            this.colQuantityPiece.MinWidth = 80;
             this.colQuantityPiece.Name = "colQuantityPiece";
             this.colQuantityPiece.Visible = true;
             this.colQuantityPiece.VisibleIndex = 16;
+            this.colQuantityPiece.Width = 80;
             // 
             // colWeightKg
             // 
             this.colWeightKg.FieldName = "WeightKg";
+            this.colWeightKg.MinWidth = 80;
             this.colWeightKg.Name = "colWeightKg";
             this.colWeightKg.Visible = true;
             this.colWeightKg.VisibleIndex = 17;
+            this.colWeightKg.Width = 80;
             // 
             // colExcess
             // 
             this.colExcess.FieldName = "Excess";
+            this.colExcess.MinWidth = 80;
             this.colExcess.Name = "colExcess";
             this.colExcess.Visible = true;
             this.colExcess.VisibleIndex = 18;
+            this.colExcess.Width = 80;
             // 
             // colColor
             // 
             this.colColor.FieldName = "Color";
+            this.colColor.MinWidth = 80;
             this.colColor.Name = "colColor";
             this.colColor.Visible = true;
             this.colColor.VisibleIndex = 19;
+            this.colColor.Width = 208;
             // 
             // colType
             // 
             this.colType.FieldName = "Type";
+            this.colType.MinWidth = 80;
             this.colType.Name = "colType";
             this.colType.Visible = true;
             this.colType.VisibleIndex = 20;
+            this.colType.Width = 80;
             // 
             // colAvlQty
             // 
             this.colAvlQty.FieldName = "AvlQty";
+            this.colAvlQty.MinWidth = 80;
             this.colAvlQty.Name = "colAvlQty";
             this.colAvlQty.Visible = true;
             this.colAvlQty.VisibleIndex = 21;
+            this.colAvlQty.Width = 80;
             // 
             // colTotalQty
             // 
             this.colTotalQty.FieldName = "TotalQty";
+            this.colTotalQty.MinWidth = 80;
             this.colTotalQty.Name = "colTotalQty";
             this.colTotalQty.Visible = true;
             this.colTotalQty.VisibleIndex = 22;
+            this.colTotalQty.Width = 80;
             // 
             // colTotalWt
             // 
             this.colTotalWt.FieldName = "TotalWt";
+            this.colTotalWt.MinWidth = 80;
             this.colTotalWt.Name = "colTotalWt";
             this.colTotalWt.Visible = true;
             this.colTotalWt.VisibleIndex = 23;
+            this.colTotalWt.Width = 80;
             // 
             // colShortage
             // 
             this.colShortage.FieldName = "Shortage";
+            this.colShortage.MinWidth = 80;
             this.colShortage.Name = "colShortage";
             this.colShortage.Visible = true;
             this.colShortage.VisibleIndex = 24;
+            this.colShortage.Width = 80;
             // 
             // colorderQty
             // 
             this.colorderQty.FieldName = "orderQty";
+            this.colorderQty.MinWidth = 80;
             this.colorderQty.Name = "colorderQty";
             this.colorderQty.Visible = true;
             this.colorderQty.VisibleIndex = 25;
+            this.colorderQty.Width = 80;
             // 
             // colorderWt
             // 
             this.colorderWt.FieldName = "orderWt";
+            this.colorderWt.MinWidth = 80;
             this.colorderWt.Name = "colorderWt";
             this.colorderWt.Visible = true;
             this.colorderWt.VisibleIndex = 26;
+            this.colorderWt.Width = 80;
             // 
             // cmbFind
             // 

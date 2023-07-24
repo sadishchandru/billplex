@@ -39,8 +39,9 @@ namespace BusinessLayer
                 objLstDbParams.Add(new DbParams(DbType.String, 200, Productmodel, "@Productmodel", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, Productsize, "@Productsize", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, WagesforProduct, "@WagesforProduct", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.String, 50, ItemDate, "@ItemDate", ParameterDirection.Input));
-               
+                //objLstDbParams.Add(new DbParams(DbType.String, 50, ItemDate, "@ItemDate", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.Date, 50, ItemDate == "" ? null : ItemDate, "ItemDate", ParameterDirection.Input));
+
                 dbReader = ObjDbfactory.GetReader("PRO_UpdateFinishingProductModel", false, objLstDbParams);
 
                 while (dbReader.Read())

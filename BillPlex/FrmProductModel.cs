@@ -293,23 +293,23 @@ namespace BillPlex
                 GridView gridView = grd_ProductModel;
 
                 List<Dictionary<string, object>> allData = new List<Dictionary<string, object>>();
-                int actualCount = 0;
+                decimal actualCount = 0;
                 // Iterate over each row in the grid
                 for (int i = 0; i < gridView.RowCount; i++)
                 {
                     if (selectedRawTypeItem == grd_ProductModel.GetRowCellValue(i, "RawMaterialType").ToString() && selectedRawItem == grd_ProductModel.GetRowCellValue(i, "RawMaterials").ToString())
                     {
-                        int reqMateialcount = int.Parse(grd_ProductModel.GetRowCellValue(i, "ReqRawMaterial").ToString());
+                        decimal reqMateialcount = decimal.Parse(grd_ProductModel.GetRowCellValue(i, "ReqRawMaterial").ToString());
                         actualCount = actualCount + reqMateialcount;
                     }
                 }
-                int count = 0;
+                decimal count = 0;
 
                 foreach (var item in productModelRequest.RawMaterialList)
                 {
                     if (item.Code == selectedRawTypeItem.ToString() && item.Name == selectedRawItem.ToString())
                     {
-                        count = int.Parse(item.AuthorName) + count;
+                        count = decimal.Parse(item.AuthorName) + count;
                     }
                 }
 
