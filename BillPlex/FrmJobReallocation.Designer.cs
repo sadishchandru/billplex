@@ -48,7 +48,7 @@ namespace BillPlex
             this.colCompanyName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colClientCompany = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSubClientCompany = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colOrderNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Orderno = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colOrderDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCustomerCode = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -298,7 +298,7 @@ namespace BillPlex
             this.colCompanyName,
             this.colClientCompany,
             this.colSubClientCompany,
-            this.colOrderNo,
+            this.Orderno,
             this.colDate,
             this.colOrderDate,
             this.colCustomerCode,
@@ -386,14 +386,15 @@ namespace BillPlex
             this.colSubClientCompany.VisibleIndex = 5;
             this.colSubClientCompany.Width = 80;
             // 
-            // colOrderNo
+            // Orderno
             // 
-            this.colOrderNo.FieldName = "OrderNo";
-            this.colOrderNo.MinWidth = 80;
-            this.colOrderNo.Name = "colOrderNo";
-            this.colOrderNo.Visible = true;
-            this.colOrderNo.VisibleIndex = 6;
-            this.colOrderNo.Width = 80;
+            this.Orderno.Caption = "Orderno";
+            this.Orderno.FieldName = "Orderno";
+            this.Orderno.MinWidth = 80;
+            this.Orderno.Name = "Orderno";
+            this.Orderno.Visible = true;
+            this.Orderno.VisibleIndex = 6;
+            this.Orderno.Width = 80;
             // 
             // colDate
             // 
@@ -809,6 +810,7 @@ namespace BillPlex
             // 
             // txtShortage
             // 
+            this.txtShortage.Enabled = false;
             this.txtShortage.Location = new System.Drawing.Point(1043, 107);
             this.txtShortage.Name = "txtShortage";
             this.txtShortage.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -832,6 +834,7 @@ namespace BillPlex
             // 
             // txtExcess
             // 
+            this.txtExcess.Enabled = false;
             this.txtExcess.Location = new System.Drawing.Point(1043, 81);
             this.txtExcess.Name = "txtExcess";
             this.txtExcess.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -883,6 +886,7 @@ namespace BillPlex
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(187, 20);
             this.txtQuantity.TabIndex = 22;
+            this.txtQuantity.EditValueChanged += new System.EventHandler(this.txtQuantity_EditValueChanged);
             // 
             // labelControl23
             // 
@@ -898,6 +902,7 @@ namespace BillPlex
             // 
             // txtComName
             // 
+            this.txtComName.Enabled = false;
             this.txtComName.Location = new System.Drawing.Point(176, 56);
             this.txtComName.Name = "txtComName";
             this.txtComName.Size = new System.Drawing.Size(187, 20);
@@ -917,6 +922,7 @@ namespace BillPlex
             // 
             // txtClientCompany
             // 
+            this.txtClientCompany.Enabled = false;
             this.txtClientCompany.Location = new System.Drawing.Point(176, 82);
             this.txtClientCompany.Name = "txtClientCompany";
             this.txtClientCompany.Size = new System.Drawing.Size(187, 20);
@@ -924,6 +930,7 @@ namespace BillPlex
             // 
             // txtSubClient
             // 
+            this.txtSubClient.Enabled = false;
             this.txtSubClient.Location = new System.Drawing.Point(176, 108);
             this.txtSubClient.Name = "txtSubClient";
             this.txtSubClient.Size = new System.Drawing.Size(187, 20);
@@ -955,6 +962,7 @@ namespace BillPlex
             // 
             // txtSubContractor
             // 
+            this.txtSubContractor.Enabled = false;
             this.txtSubContractor.Location = new System.Drawing.Point(615, 107);
             this.txtSubContractor.Name = "txtSubContractor";
             this.txtSubContractor.Size = new System.Drawing.Size(187, 20);
@@ -974,6 +982,7 @@ namespace BillPlex
             // 
             // txtClientName
             // 
+            this.txtClientName.Enabled = false;
             this.txtClientName.Location = new System.Drawing.Point(615, 81);
             this.txtClientName.Name = "txtClientName";
             this.txtClientName.Size = new System.Drawing.Size(187, 20);
@@ -993,6 +1002,7 @@ namespace BillPlex
             // 
             // txtDirector
             // 
+            this.txtDirector.Enabled = false;
             this.txtDirector.Location = new System.Drawing.Point(615, 55);
             this.txtDirector.Name = "txtDirector";
             this.txtDirector.Size = new System.Drawing.Size(187, 20);
@@ -1012,6 +1022,7 @@ namespace BillPlex
             // 
             // txtJEmpName
             // 
+            this.txtJEmpName.Enabled = false;
             this.txtJEmpName.Location = new System.Drawing.Point(615, 26);
             this.txtJEmpName.Name = "txtJEmpName";
             this.txtJEmpName.Size = new System.Drawing.Size(187, 20);
@@ -1147,6 +1158,7 @@ namespace BillPlex
             // 
             // txtPendingQty
             // 
+            this.txtPendingQty.Enabled = false;
             this.txtPendingQty.Location = new System.Drawing.Point(1043, 107);
             this.txtPendingQty.Name = "txtPendingQty";
             this.txtPendingQty.Size = new System.Drawing.Size(187, 20);
@@ -1166,6 +1178,7 @@ namespace BillPlex
             // 
             // txtReceivedQty
             // 
+            this.txtReceivedQty.Enabled = false;
             this.txtReceivedQty.Location = new System.Drawing.Point(1043, 81);
             this.txtReceivedQty.Name = "txtReceivedQty";
             this.txtReceivedQty.Size = new System.Drawing.Size(187, 20);
@@ -1186,6 +1199,7 @@ namespace BillPlex
             // 
             // txtProColor
             // 
+            this.txtProColor.Enabled = false;
             this.txtProColor.Location = new System.Drawing.Point(1043, 55);
             this.txtProColor.Name = "txtProColor";
             this.txtProColor.Size = new System.Drawing.Size(187, 20);
@@ -1205,6 +1219,7 @@ namespace BillPlex
             // 
             // txtProSize
             // 
+            this.txtProSize.Enabled = false;
             this.txtProSize.Location = new System.Drawing.Point(1043, 26);
             this.txtProSize.Name = "txtProSize";
             this.txtProSize.Size = new System.Drawing.Size(187, 20);
@@ -1212,6 +1227,7 @@ namespace BillPlex
             // 
             // txtEmpCode
             // 
+            this.txtEmpCode.Enabled = false;
             this.txtEmpCode.Location = new System.Drawing.Point(176, 26);
             this.txtEmpCode.Name = "txtEmpCode";
             this.txtEmpCode.Size = new System.Drawing.Size(187, 20);
@@ -1231,6 +1247,7 @@ namespace BillPlex
             // 
             // txtCustName
             // 
+            this.txtCustName.Enabled = false;
             this.txtCustName.Location = new System.Drawing.Point(176, 56);
             this.txtCustName.Name = "txtCustName";
             this.txtCustName.Size = new System.Drawing.Size(187, 20);
@@ -1250,6 +1267,7 @@ namespace BillPlex
             // 
             // txtRawMaterial
             // 
+            this.txtRawMaterial.Enabled = false;
             this.txtRawMaterial.Location = new System.Drawing.Point(176, 82);
             this.txtRawMaterial.Name = "txtRawMaterial";
             this.txtRawMaterial.Size = new System.Drawing.Size(187, 20);
@@ -1257,6 +1275,7 @@ namespace BillPlex
             // 
             // txtRawType
             // 
+            this.txtRawType.Enabled = false;
             this.txtRawType.Location = new System.Drawing.Point(176, 108);
             this.txtRawType.Name = "txtRawType";
             this.txtRawType.Size = new System.Drawing.Size(187, 20);
@@ -1288,6 +1307,7 @@ namespace BillPlex
             // 
             // txtQuanity
             // 
+            this.txtQuanity.Enabled = false;
             this.txtQuanity.Location = new System.Drawing.Point(615, 107);
             this.txtQuanity.Name = "txtQuanity";
             this.txtQuanity.Size = new System.Drawing.Size(187, 20);
@@ -1307,6 +1327,7 @@ namespace BillPlex
             // 
             // txtProModel
             // 
+            this.txtProModel.Enabled = false;
             this.txtProModel.Location = new System.Drawing.Point(615, 81);
             this.txtProModel.Name = "txtProModel";
             this.txtProModel.Size = new System.Drawing.Size(187, 20);
@@ -1326,6 +1347,7 @@ namespace BillPlex
             // 
             // txtProductCode
             // 
+            this.txtProductCode.Enabled = false;
             this.txtProductCode.Location = new System.Drawing.Point(615, 55);
             this.txtProductCode.Name = "txtProductCode";
             this.txtProductCode.Size = new System.Drawing.Size(187, 20);
@@ -1345,6 +1367,7 @@ namespace BillPlex
             // 
             // txtEmpName
             // 
+            this.txtEmpName.Enabled = false;
             this.txtEmpName.Location = new System.Drawing.Point(615, 26);
             this.txtEmpName.Name = "txtEmpName";
             this.txtEmpName.Size = new System.Drawing.Size(187, 20);
@@ -1488,7 +1511,7 @@ namespace BillPlex
         private DevExpress.XtraGrid.Columns.GridColumn colCompanyName;
         private DevExpress.XtraGrid.Columns.GridColumn colClientCompany;
         private DevExpress.XtraGrid.Columns.GridColumn colSubClientCompany;
-        private DevExpress.XtraGrid.Columns.GridColumn colOrderNo;
+        private DevExpress.XtraGrid.Columns.GridColumn Orderno;
         private DevExpress.XtraGrid.Columns.GridColumn colDate;
         private DevExpress.XtraGrid.Columns.GridColumn colOrderDate;
         private DevExpress.XtraGrid.Columns.GridColumn colCustomerCode;

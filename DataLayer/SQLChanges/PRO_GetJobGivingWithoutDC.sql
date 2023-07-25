@@ -19,36 +19,36 @@ BEGIN
 SET NOCOUNT ON;
 	DECLARE @Query NVARCHAR(MAX) ='';
 
-			SELECT  Id
-					,EmployeeCode
-					,EmployeeName
+			SELECT  JGDC.Id
+					,EP.EmployeeCode
+					,JGDC.EmployeeName
 					,CompanyName
 					,ClientCompany
 					,SubClientCompany
-					,OrderNo
+					,Om.Orderno
 					,Date
-					,OrderDate
+					,JGDC.Orderdate
 					,CustomerCode
 					,CustomerName
 					,ModelName
 					,ModelCode
 					,ProductName
-					,ProductSize
+					,JGDC.ProductSize
 					,RawMaterial
 					,QuantityPiece
 					,WeightKg
 					,Excess
 					,Color
 					,Type
-					,AvlQty
+					,JGDC.AvlQty
 					--,TotalQty
 					--,TotalWt
 					,Shortage
 					,orderQty
 					,orderWt
-					,[ClientName]
+					,JGDC.[ClientName]
 					,[TotalQty]
-					,[TotalWt]
+					,JGDC.[TotalWt]
 					,[subContractor]
 					,[Director]
 					,[PendingQty]
@@ -59,6 +59,8 @@ SET NOCOUNT ON;
 					,[BDays]
 					,[ADays]
 					,[BalanceWt]
-					FROM JobGivingWithoutDC
+					FROM JobGivingWithoutDC JGDC
+					left join EmployeePersonal EP on EP.Id = JGDC.EmployeeCode
+					left join OrderMaster OM on OM.Id = JGDC.OrderNo
 					WHERE ISNULL(isDelete, 0) = 0;
 END

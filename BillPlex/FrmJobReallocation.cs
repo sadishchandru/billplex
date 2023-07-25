@@ -85,7 +85,7 @@ namespace BillPlex
                     //txtWeight.Text = (string)gridView1.GetRowCellValue(rowHandle, "WeightKg");
                     lblWeight.Text = (string)gridView1.GetRowCellValue(rowHandle, "WeightKg");
                     txtReceivedQty.Text = (string)gridView1.GetRowCellValue(rowHandle, "received");
-                    JobGivingWithoutDcRequest.OrderNo = gridView1.GetRowCellValue(rowHandle, "OrderNo").ToString();
+                    JobGivingWithoutDcRequest.OrderNo = (string)gridView1.GetRowCellValue(rowHandle, "OrderNo");
                 }
             }
             catch (Exception ex)
@@ -224,6 +224,19 @@ namespace BillPlex
             {
                 int countDifferent = txtWeightValue - lblWeightValue;
                 txtPendingQty.Text = countDifferent.ToString();
+                txtQuantity.Text = countDifferent.ToString();
+            }
+        }
+
+        private void txtQuantity_EditValueChanged(object sender, EventArgs e)
+        {
+            var selectedItem = txtQuantity.Text;
+            if (selectedItem != null && selectedItem != "")
+            {
+                var enteredQty = Convert.ToInt32(txtQuantity.Text);
+                var totalWt = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.RawName == txtRawMaterial.Text && item.RawType == txtRawType.Text && item.color == txtProColor.Text && item.SubComName == txtProSize.Text)?.TotalWt;
+                var total = enteredQty * totalWt;
+                lblWeight.Text = total.ToString();
             }
         }
     }
