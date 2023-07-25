@@ -30,8 +30,8 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmJobReallocation));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
@@ -280,13 +280,13 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery1.Name = "PRO_GetJobGivingWithoutDC";
-            queryParameter1.Name = "@SearchKey";
-            queryParameter1.Type = typeof(string);
-            storedProcQuery1.Parameters.Add(queryParameter1);
-            storedProcQuery1.StoredProcName = "PRO_GetJobGivingWithoutDC";
+            storedProcQuery2.Name = "PRO_GetJobGivingWithoutDC";
+            queryParameter2.Name = "@SearchKey";
+            queryParameter2.Type = typeof(string);
+            storedProcQuery2.Parameters.Add(queryParameter2);
+            storedProcQuery2.StoredProcName = "PRO_GetJobGivingWithoutDC";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery1});
+            storedProcQuery2});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // gridView1
@@ -693,6 +693,7 @@ namespace BillPlex
             this.txtEmployeeCode.Name = "txtEmployeeCode";
             this.txtEmployeeCode.Size = new System.Drawing.Size(128, 20);
             this.txtEmployeeCode.TabIndex = 27;
+            this.txtEmployeeCode.EditValueChanged += new System.EventHandler(this.txtEmployeeCode_EditValueChanged);
             // 
             // labelControl30
             // 
@@ -817,6 +818,11 @@ namespace BillPlex
             this.txtShortage.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
             this.txtShortage.Properties.Appearance.Options.UseFont = true;
             this.txtShortage.Properties.Appearance.Options.UseForeColor = true;
+            this.txtShortage.Properties.BeepOnError = false;
+            this.txtShortage.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtShortage.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txtShortage.Properties.MaskSettings.Set("mask", "d");
+            this.txtShortage.Properties.UseMaskAsDisplayFormat = true;
             this.txtShortage.Size = new System.Drawing.Size(187, 22);
             this.txtShortage.TabIndex = 25;
             // 
@@ -841,6 +847,11 @@ namespace BillPlex
             this.txtExcess.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.txtExcess.Properties.Appearance.Options.UseFont = true;
             this.txtExcess.Properties.Appearance.Options.UseForeColor = true;
+            this.txtExcess.Properties.BeepOnError = false;
+            this.txtExcess.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtExcess.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txtExcess.Properties.MaskSettings.Set("mask", "d");
+            this.txtExcess.Properties.UseMaskAsDisplayFormat = true;
             this.txtExcess.Size = new System.Drawing.Size(187, 22);
             this.txtExcess.TabIndex = 24;
             // 
@@ -860,6 +871,8 @@ namespace BillPlex
             // 
             this.txtWeight.Location = new System.Drawing.Point(1043, 55);
             this.txtWeight.Name = "txtWeight";
+            this.txtWeight.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtWeight.Properties.Appearance.Options.UseFont = true;
             this.txtWeight.Properties.BeepOnError = false;
             this.txtWeight.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.txtWeight.Properties.MaskSettings.Set("mask", "d");
@@ -884,6 +897,13 @@ namespace BillPlex
             // 
             this.txtQuantity.Location = new System.Drawing.Point(1043, 26);
             this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuantity.Properties.Appearance.Options.UseFont = true;
+            this.txtQuantity.Properties.BeepOnError = false;
+            this.txtQuantity.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtQuantity.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txtQuantity.Properties.MaskSettings.Set("mask", "d");
+            this.txtQuantity.Properties.UseMaskAsDisplayFormat = true;
             this.txtQuantity.Size = new System.Drawing.Size(187, 20);
             this.txtQuantity.TabIndex = 22;
             this.txtQuantity.EditValueChanged += new System.EventHandler(this.txtQuantity_EditValueChanged);
@@ -905,6 +925,8 @@ namespace BillPlex
             this.txtComName.Enabled = false;
             this.txtComName.Location = new System.Drawing.Point(176, 56);
             this.txtComName.Name = "txtComName";
+            this.txtComName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtComName.Properties.Appearance.Options.UseFont = true;
             this.txtComName.Size = new System.Drawing.Size(187, 20);
             this.txtComName.TabIndex = 7;
             // 
@@ -925,6 +947,8 @@ namespace BillPlex
             this.txtClientCompany.Enabled = false;
             this.txtClientCompany.Location = new System.Drawing.Point(176, 82);
             this.txtClientCompany.Name = "txtClientCompany";
+            this.txtClientCompany.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtClientCompany.Properties.Appearance.Options.UseFont = true;
             this.txtClientCompany.Size = new System.Drawing.Size(187, 20);
             this.txtClientCompany.TabIndex = 8;
             // 
@@ -933,6 +957,8 @@ namespace BillPlex
             this.txtSubClient.Enabled = false;
             this.txtSubClient.Location = new System.Drawing.Point(176, 108);
             this.txtSubClient.Name = "txtSubClient";
+            this.txtSubClient.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSubClient.Properties.Appearance.Options.UseFont = true;
             this.txtSubClient.Size = new System.Drawing.Size(187, 20);
             this.txtSubClient.TabIndex = 9;
             // 
@@ -965,6 +991,8 @@ namespace BillPlex
             this.txtSubContractor.Enabled = false;
             this.txtSubContractor.Location = new System.Drawing.Point(615, 107);
             this.txtSubContractor.Name = "txtSubContractor";
+            this.txtSubContractor.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSubContractor.Properties.Appearance.Options.UseFont = true;
             this.txtSubContractor.Size = new System.Drawing.Size(187, 20);
             this.txtSubContractor.TabIndex = 17;
             // 
@@ -985,6 +1013,8 @@ namespace BillPlex
             this.txtClientName.Enabled = false;
             this.txtClientName.Location = new System.Drawing.Point(615, 81);
             this.txtClientName.Name = "txtClientName";
+            this.txtClientName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtClientName.Properties.Appearance.Options.UseFont = true;
             this.txtClientName.Size = new System.Drawing.Size(187, 20);
             this.txtClientName.TabIndex = 16;
             // 
@@ -1005,6 +1035,8 @@ namespace BillPlex
             this.txtDirector.Enabled = false;
             this.txtDirector.Location = new System.Drawing.Point(615, 55);
             this.txtDirector.Name = "txtDirector";
+            this.txtDirector.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDirector.Properties.Appearance.Options.UseFont = true;
             this.txtDirector.Size = new System.Drawing.Size(187, 20);
             this.txtDirector.TabIndex = 15;
             // 
@@ -1025,6 +1057,8 @@ namespace BillPlex
             this.txtJEmpName.Enabled = false;
             this.txtJEmpName.Location = new System.Drawing.Point(615, 26);
             this.txtJEmpName.Name = "txtJEmpName";
+            this.txtJEmpName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtJEmpName.Properties.Appearance.Options.UseFont = true;
             this.txtJEmpName.Size = new System.Drawing.Size(187, 20);
             this.txtJEmpName.TabIndex = 14;
             // 
@@ -1032,6 +1066,8 @@ namespace BillPlex
             // 
             this.drpEmpCode.Location = new System.Drawing.Point(176, 26);
             this.drpEmpCode.Name = "drpEmpCode";
+            this.drpEmpCode.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.drpEmpCode.Properties.Appearance.Options.UseFont = true;
             this.drpEmpCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.drpEmpCode.Size = new System.Drawing.Size(187, 20);
@@ -1161,6 +1197,8 @@ namespace BillPlex
             this.txtPendingQty.Enabled = false;
             this.txtPendingQty.Location = new System.Drawing.Point(1043, 107);
             this.txtPendingQty.Name = "txtPendingQty";
+            this.txtPendingQty.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPendingQty.Properties.Appearance.Options.UseFont = true;
             this.txtPendingQty.Size = new System.Drawing.Size(187, 20);
             this.txtPendingQty.TabIndex = 25;
             // 
@@ -1181,6 +1219,8 @@ namespace BillPlex
             this.txtReceivedQty.Enabled = false;
             this.txtReceivedQty.Location = new System.Drawing.Point(1043, 81);
             this.txtReceivedQty.Name = "txtReceivedQty";
+            this.txtReceivedQty.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReceivedQty.Properties.Appearance.Options.UseFont = true;
             this.txtReceivedQty.Size = new System.Drawing.Size(187, 20);
             this.txtReceivedQty.TabIndex = 24;
             this.txtReceivedQty.EditValueChanged += new System.EventHandler(this.txtReceivedQty_EditValueChanged);
@@ -1202,6 +1242,8 @@ namespace BillPlex
             this.txtProColor.Enabled = false;
             this.txtProColor.Location = new System.Drawing.Point(1043, 55);
             this.txtProColor.Name = "txtProColor";
+            this.txtProColor.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProColor.Properties.Appearance.Options.UseFont = true;
             this.txtProColor.Size = new System.Drawing.Size(187, 20);
             this.txtProColor.TabIndex = 23;
             // 
@@ -1222,6 +1264,8 @@ namespace BillPlex
             this.txtProSize.Enabled = false;
             this.txtProSize.Location = new System.Drawing.Point(1043, 26);
             this.txtProSize.Name = "txtProSize";
+            this.txtProSize.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProSize.Properties.Appearance.Options.UseFont = true;
             this.txtProSize.Size = new System.Drawing.Size(187, 20);
             this.txtProSize.TabIndex = 22;
             // 
@@ -1230,6 +1274,8 @@ namespace BillPlex
             this.txtEmpCode.Enabled = false;
             this.txtEmpCode.Location = new System.Drawing.Point(176, 26);
             this.txtEmpCode.Name = "txtEmpCode";
+            this.txtEmpCode.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmpCode.Properties.Appearance.Options.UseFont = true;
             this.txtEmpCode.Size = new System.Drawing.Size(187, 20);
             this.txtEmpCode.TabIndex = 6;
             // 
@@ -1250,6 +1296,8 @@ namespace BillPlex
             this.txtCustName.Enabled = false;
             this.txtCustName.Location = new System.Drawing.Point(176, 56);
             this.txtCustName.Name = "txtCustName";
+            this.txtCustName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCustName.Properties.Appearance.Options.UseFont = true;
             this.txtCustName.Size = new System.Drawing.Size(187, 20);
             this.txtCustName.TabIndex = 7;
             // 
@@ -1270,6 +1318,8 @@ namespace BillPlex
             this.txtRawMaterial.Enabled = false;
             this.txtRawMaterial.Location = new System.Drawing.Point(176, 82);
             this.txtRawMaterial.Name = "txtRawMaterial";
+            this.txtRawMaterial.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRawMaterial.Properties.Appearance.Options.UseFont = true;
             this.txtRawMaterial.Size = new System.Drawing.Size(187, 20);
             this.txtRawMaterial.TabIndex = 8;
             // 
@@ -1278,6 +1328,8 @@ namespace BillPlex
             this.txtRawType.Enabled = false;
             this.txtRawType.Location = new System.Drawing.Point(176, 108);
             this.txtRawType.Name = "txtRawType";
+            this.txtRawType.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRawType.Properties.Appearance.Options.UseFont = true;
             this.txtRawType.Size = new System.Drawing.Size(187, 20);
             this.txtRawType.TabIndex = 9;
             // 
@@ -1310,6 +1362,8 @@ namespace BillPlex
             this.txtQuanity.Enabled = false;
             this.txtQuanity.Location = new System.Drawing.Point(615, 107);
             this.txtQuanity.Name = "txtQuanity";
+            this.txtQuanity.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuanity.Properties.Appearance.Options.UseFont = true;
             this.txtQuanity.Size = new System.Drawing.Size(187, 20);
             this.txtQuanity.TabIndex = 17;
             // 
@@ -1330,6 +1384,8 @@ namespace BillPlex
             this.txtProModel.Enabled = false;
             this.txtProModel.Location = new System.Drawing.Point(615, 81);
             this.txtProModel.Name = "txtProModel";
+            this.txtProModel.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProModel.Properties.Appearance.Options.UseFont = true;
             this.txtProModel.Size = new System.Drawing.Size(187, 20);
             this.txtProModel.TabIndex = 16;
             // 
@@ -1350,6 +1406,8 @@ namespace BillPlex
             this.txtProductCode.Enabled = false;
             this.txtProductCode.Location = new System.Drawing.Point(615, 55);
             this.txtProductCode.Name = "txtProductCode";
+            this.txtProductCode.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProductCode.Properties.Appearance.Options.UseFont = true;
             this.txtProductCode.Size = new System.Drawing.Size(187, 20);
             this.txtProductCode.TabIndex = 15;
             // 
@@ -1370,6 +1428,8 @@ namespace BillPlex
             this.txtEmpName.Enabled = false;
             this.txtEmpName.Location = new System.Drawing.Point(615, 26);
             this.txtEmpName.Name = "txtEmpName";
+            this.txtEmpName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmpName.Properties.Appearance.Options.UseFont = true;
             this.txtEmpName.Size = new System.Drawing.Size(187, 20);
             this.txtEmpName.TabIndex = 14;
             // 

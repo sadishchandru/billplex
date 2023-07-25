@@ -239,5 +239,10 @@ namespace BillPlex
                 lblWeight.Text = total.ToString();
             }
         }
+
+        private void txtEmployeeCode_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
