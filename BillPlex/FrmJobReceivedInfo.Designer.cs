@@ -30,8 +30,8 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery3 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter3 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmJobReceivedInfo));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl7 = new DevExpress.XtraEditors.PanelControl();
@@ -54,7 +54,7 @@ namespace BillPlex
             this.colCompanyName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colClientCompany = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSubClientCompany = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colOrderNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Orderno = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colOrderDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCustomerCode = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -90,6 +90,7 @@ namespace BillPlex
             this.chckViewDailyRecievPending = new DevExpress.XtraEditors.CheckEdit();
             this.labelControl25 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.drpIncentiveApp = new DevExpress.XtraEditors.ComboBoxEdit();
             this.txtConveyance = new DevExpress.XtraEditors.TextEdit();
@@ -148,7 +149,6 @@ namespace BillPlex
             this.labelControl33 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).BeginInit();
@@ -374,13 +374,13 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery3.Name = "PRO_GetJobGivingWithoutDC";
-            queryParameter3.Name = "@SearchKey";
-            queryParameter3.Type = typeof(string);
-            storedProcQuery3.Parameters.Add(queryParameter3);
-            storedProcQuery3.StoredProcName = "PRO_GetJobGivingWithoutDC";
+            storedProcQuery1.Name = "PRO_GetJobGivingWithoutDC";
+            queryParameter1.Name = "@SearchKey";
+            queryParameter1.Type = typeof(string);
+            storedProcQuery1.Parameters.Add(queryParameter1);
+            storedProcQuery1.StoredProcName = "PRO_GetJobGivingWithoutDC";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery3});
+            storedProcQuery1});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // gridView1
@@ -392,7 +392,7 @@ namespace BillPlex
             this.colCompanyName,
             this.colClientCompany,
             this.colSubClientCompany,
-            this.colOrderNo,
+            this.Orderno,
             this.colDate,
             this.colOrderDate,
             this.colCustomerCode,
@@ -481,14 +481,15 @@ namespace BillPlex
             this.colSubClientCompany.VisibleIndex = 5;
             this.colSubClientCompany.Width = 80;
             // 
-            // colOrderNo
+            // Orderno
             // 
-            this.colOrderNo.FieldName = "OrderNo";
-            this.colOrderNo.MinWidth = 80;
-            this.colOrderNo.Name = "colOrderNo";
-            this.colOrderNo.Visible = true;
-            this.colOrderNo.VisibleIndex = 6;
-            this.colOrderNo.Width = 80;
+            this.Orderno.Caption = "Orderno";
+            this.Orderno.FieldName = "Orderno";
+            this.Orderno.MinWidth = 80;
+            this.Orderno.Name = "Orderno";
+            this.Orderno.Visible = true;
+            this.Orderno.VisibleIndex = 6;
+            this.Orderno.Width = 80;
             // 
             // colDate
             // 
@@ -807,6 +808,18 @@ namespace BillPlex
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(222, 32);
             this.panelControl2.TabIndex = 4;
+            // 
+            // labelControl20
+            // 
+            this.labelControl20.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl20.Appearance.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.labelControl20.Appearance.Options.UseFont = true;
+            this.labelControl20.Appearance.Options.UseForeColor = true;
+            this.labelControl20.Location = new System.Drawing.Point(6, 4);
+            this.labelControl20.Name = "labelControl20";
+            this.labelControl20.Size = new System.Drawing.Size(211, 19);
+            this.labelControl20.TabIndex = 92;
+            this.labelControl20.Text = "Assign a Job To Employee";
             // 
             // panelControl3
             // 
@@ -1433,18 +1446,6 @@ namespace BillPlex
             this.panelControl6.Size = new System.Drawing.Size(1355, 41);
             this.panelControl6.TabIndex = 7;
             // 
-            // labelControl20
-            // 
-            this.labelControl20.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl20.Appearance.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.labelControl20.Appearance.Options.UseFont = true;
-            this.labelControl20.Appearance.Options.UseForeColor = true;
-            this.labelControl20.Location = new System.Drawing.Point(6, 4);
-            this.labelControl20.Name = "labelControl20";
-            this.labelControl20.Size = new System.Drawing.Size(211, 19);
-            this.labelControl20.TabIndex = 92;
-            this.labelControl20.Text = "Assign a Job To Employee";
-            // 
             // FrmJobReceivedInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1593,7 +1594,7 @@ namespace BillPlex
         private DevExpress.XtraGrid.Columns.GridColumn colCompanyName;
         private DevExpress.XtraGrid.Columns.GridColumn colClientCompany;
         private DevExpress.XtraGrid.Columns.GridColumn colSubClientCompany;
-        private DevExpress.XtraGrid.Columns.GridColumn colOrderNo;
+        private DevExpress.XtraGrid.Columns.GridColumn Orderno;
         private DevExpress.XtraGrid.Columns.GridColumn colDate;
         private DevExpress.XtraGrid.Columns.GridColumn colOrderDate;
         private DevExpress.XtraGrid.Columns.GridColumn colCustomerCode;

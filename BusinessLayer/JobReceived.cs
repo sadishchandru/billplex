@@ -12,7 +12,7 @@ namespace BusinessLayer
     public class JobReceived : Common
     {
         public Int64 Id { get; set; }
-        public string EmployeeCode { get; set; }
+        public Int64 EmployeeCode { get; set; }
         public string EmployeeName { get; set; }
         public string CustomerName { get; set; }
         public string RawMaterialName { get; set; }
@@ -40,6 +40,8 @@ namespace BusinessLayer
         public string NetAmt { get; set; }
         public string OrderNo { get; set; }
         public static Form MdiParent { get; set; }
+
+        public List<DropDownItemInfo> EmployeePersonalList { get; set; }
 
         public void Update()
         {
