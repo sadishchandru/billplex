@@ -12,7 +12,7 @@ namespace BusinessLayer
     public class JobReceived : Common
     {
         public Int64 Id { get; set; }
-        public Int64 EmployeeCode { get; set; }
+        public string EmployeeCode { get; set; }
         public string EmployeeName { get; set; }
         public string CustomerName { get; set; }
         public string RawMaterialName { get; set; }
@@ -38,6 +38,7 @@ namespace BusinessLayer
         public string Incentive { get; set; }
         public string Total { get; set; }
         public string NetAmt { get; set; }
+        public string OrderNo { get; set; }
         public static Form MdiParent { get; set; }
 
         public void Update()
@@ -59,24 +60,24 @@ namespace BusinessLayer
                 objLstDbParams.Add(new DbParams(DbType.String, 50, Quantity, "TotalQty", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, Wages, "Wages", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, PendingQty, "PendingQty", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.String, 50, ModelName, "ModelName", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.String, 50, OrderNo, "OrderNo", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, Type, "Type", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.String, 50, Weight, "Weight", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.String, 50, Weight, "WeightKg", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, CurrentWt, "CurrentWt", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, RcvdQty, "receivedQty", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.String, 50, ReceivingDate, "ReceivingDate", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.String, 50, ProductModel, "ProductModel", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.String, 50, ProductCode, "ProductCode", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.Date, 50, ReceivingDate == "" ? null : ReceivingDate, "ReceivingDate", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.String, 50, ProductModel, "ModelName", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.String, 50, ProductCode, "ModelCode", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, ProductSize, "ProductSize", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, ProductColor, "Color", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.String, 50, IncentiveApplicable, "IncentiveApplicable", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.String, 50, BeforeDays, "BeforeDays", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.String, 50, AfterDays, "AfterDays", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.String, 50, BalanceWeight, "BalanceWeight", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.String, 50, Conveyance, "Conveyance", ParameterDirection.Input));
+                //objLstDbParams.Add(new DbParams(DbType.String, 50, IncentiveApplicable, "IncentiveApplicable", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.String, 50, BeforeDays, "BDays", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.String, 50, AfterDays, "ADays", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.String, 50, BalanceWeight, "BalanceWt", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.String, 50, Conveyance, "conveyance", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, Deduction, "Deduction", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.String, 50, Incentive, "Incentive", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.String, 50, Total, "Total", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.String, 50, Incentive, "incentive", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.String, 50, Total, "TotalAmt", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, NetAmt, "NetAmt", ParameterDirection.Input));
 
 
@@ -96,7 +97,7 @@ namespace BusinessLayer
             catch (Exception ex)
             {
                 Result.Message = ex.Message;
-                Result.Status = ResultStatus.Success;
+                Result.Status = ResultStatus.Error;
             }
             finally
             {

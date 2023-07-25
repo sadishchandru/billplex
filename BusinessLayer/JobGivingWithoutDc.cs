@@ -63,11 +63,9 @@ namespace BusinessLayer
                 objLstDbParams.Add(new DbParams(DbType.String, 50, ClientCompany, "ClientCompany", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, ClientName, "ClientName", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, SubClientCompany, "SubClientCompany", ParameterDirection.Input));
-                //objLstDbParams.Add(new DbParams(DbType.String, 50, Date, "Date", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.Date, 50, Date == "" ? null : Date, "Date", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, OrderNo, "OrderNo", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.Date, 50, OrderDate == "" ? null : OrderDate, "OrderDate", ParameterDirection.Input));
-                //objLstDbParams.Add(new DbParams(DbType.String, 50, OrderDate, "OrderDate", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, CustomerCode, "CustomerCode", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, CustomerName, "CustomerName", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, ModelName, "ModelName", ParameterDirection.Input));

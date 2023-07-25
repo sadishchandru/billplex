@@ -46,6 +46,19 @@ SET NOCOUNT ON;
 					,Shortage
 					,orderQty
 					,orderWt
+					,[ClientName]
+					,[TotalQty]
+					,[TotalWt]
+					,[subContractor]
+					,[Director]
+					,[PendingQty]
+					,[received]
+					,[Wages]
+					,[CurrentWt]
+					,[ReceivingDate]
+					,[BDays]
+					,[ADays]
+					,[BalanceWt]
 					FROM JobGivingWithoutDC
 					WHERE ISNULL(isDelete, 0) = 0;
 END

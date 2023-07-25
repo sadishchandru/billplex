@@ -78,15 +78,13 @@ namespace BillPlex
                     txtRawType.Text = (string)gridView1.GetRowCellValue(rowHandle, "Type");
                     txtProductCode.Text = (string)gridView1.GetRowCellValue(rowHandle, "ModelCode");
                     txtProModel.Text = (string)gridView1.GetRowCellValue(rowHandle, "ModelName");
-                    txtQuanity.Text = (string)gridView1.GetRowCellValue(rowHandle, "QuantityPiece");
+                    txtQuanity.Text = (string)gridView1.GetRowCellValue(rowHandle, "TotalQty");
                     txtQuantity.Text = (string)gridView1.GetRowCellValue(rowHandle, "QuantityPiece");
                     txtProSize.Text = (string)gridView1.GetRowCellValue(rowHandle, "ProductSize");
                     txtProColor.Text = (string)gridView1.GetRowCellValue(rowHandle, "Color");
                     //txtWeight.Text = (string)gridView1.GetRowCellValue(rowHandle, "WeightKg");
                     lblWeight.Text = (string)gridView1.GetRowCellValue(rowHandle, "WeightKg");
-                    //txtReceivedQty.Text = (string)gridView1.GetRowCellValue(rowHandle, "Id");
-                    //txtPendingQty.Text = (string)gridView1.GetRowCellValue(rowHandle, "Id");
-                    //txtOrder.Text = gridView1.GetRowCellValue(rowHandle, "OrderNo").ToString();
+                    txtReceivedQty.Text = (string)gridView1.GetRowCellValue(rowHandle, "received");
                     JobGivingWithoutDcRequest.OrderNo = gridView1.GetRowCellValue(rowHandle, "OrderNo").ToString();
                 }
             }
@@ -108,7 +106,6 @@ namespace BillPlex
                 txtDirector.Text = JobGivingWithoutDcRequest.EmployeePersonalList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.AuthorName ?? "";
                 txtClientName.Text = JobGivingWithoutDcRequest.EmployeePersonalList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.RawMaterial ?? "";
                 txtSubContractor.Text = JobGivingWithoutDcRequest.EmployeePersonalList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.SubComName ?? "";
-                //txtOrder.Text = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.Code == selectedItem.ToString())?.Code ?? "";
             }
         }
 
@@ -133,7 +130,6 @@ namespace BillPlex
                 JobGivingWithoutDcRequest.WeightKg = txtWeight.Text;
                 JobGivingWithoutDcRequest.Excess = txtExcess.Text;
                 JobGivingWithoutDcRequest.Shortage = txtShortage.Text;
-                //JobGivingWithoutDcRequest.OrderNo = Text;
                 JobGivingWithoutDcRequest.Update();
 
                 if (JobGivingWithoutDcRequest.Result.Status == ResultStatus.Success)
@@ -216,6 +212,18 @@ namespace BillPlex
                 {
                     XtraMessageBox.Show(JobGivingWithoutDcRequest.Result.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+            }
+        }
+
+        private void txtReceivedQty_EditValueChanged(object sender, EventArgs e)
+        {
+            int txtWeightValue;
+            int lblWeightValue;
+
+            if (int.TryParse(txtQuanity.Text, out txtWeightValue) && int.TryParse(txtReceivedQty.Text, out lblWeightValue))
+            {
+                int countDifferent = txtWeightValue - lblWeightValue;
+                txtPendingQty.Text = countDifferent.ToString();
             }
         }
     }

@@ -37,13 +37,8 @@ namespace BillPlex
         {
             try
             {
-                string EmployeeCode = txtEmpCode.Text;
-                //JobReceivedRequest.EmployeeCode = txtEmpCode.Text;
-                if (JobReceivedRequest != null)
-                {
-                    JobReceivedRequest.EmployeeName = txtEmpName.Text;
-                }
-
+                JobReceivedRequest.EmployeeCode = txtEmpCode.Text;
+                JobReceivedRequest.EmployeeName = txtEmpName.Text;
                 JobReceivedRequest.CustomerName = txtCName.Text;
                 JobReceivedRequest.RawMaterialName = txtRawMaterial.Text;
                 JobReceivedRequest.Quantity = txtQuantity.Text;
@@ -103,33 +98,17 @@ namespace BillPlex
 
             foreach (var rowHandle in selectedRows)
             {
-                txtEmpCode.Text = (string)selectedCompanyList.GetRowCellValue(rowHandle, "EmployeeName");
-                //txtEmpCode.Text = selectedCompanyList.GetRowCellValue(rowHandle, "EmployeeCode").ToString();
+                txtEmpCode.Text = (string)selectedCompanyList.GetRowCellValue(rowHandle, "EmployeeCode");
                 txtEmpName.Text = selectedCompanyList.GetRowCellValue(rowHandle, "EmployeeName");
                 txtCName.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CompanyName");
                 txtRawMaterial.Text = selectedCompanyList.GetRowCellValue(rowHandle, "RawMaterial");
                 txtQuantity.Text = selectedCompanyList.GetRowCellValue(rowHandle, "QuantityPiece");
-                //txtWages.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComLicenseno");
-                //txtPQty.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComPanNo");
-                //txtMName.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ModelName");
                 txtType.Text = selectedCompanyList.GetRowCellValue(rowHandle, "Type");
                 txtWeight.Text = selectedCompanyList.GetRowCellValue(rowHandle, "WeightKg");
-                //txtCrntWt.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorFathername");
-                //txtRcvdQty.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorFathername");
-                //ddReceDate.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorFathername");
                 txtPModel.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ModelName");
                 txtPCode.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ModelCode");
                 txtPSize.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ProductSize");
                 txtColor.Text = selectedCompanyList.GetRowCellValue(rowHandle, "Color");
-                //drpIncentiveApp.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorFathername");
-                //txtBeforeDys.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorFathername");
-                //txtAfterdys.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorFathername");
-                //txtBalanceWeight.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorFathername");
-                //txtConveyance.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorFathername");
-                //txtDeduction.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorFathername");
-                //txtIncentive.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorFathername");
-                //txtTotal.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorFathername");
-                //txtNetAmt.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorFathername");
 
                 btnAdd.Enabled = false;
                 btnNew.Enabled = false;
@@ -224,7 +203,8 @@ namespace BillPlex
 
                 foreach (var rowHandle in selectedRows)
                 {
-                    txtEmpCode.Text = (string)gridView1.GetRowCellValue(rowHandle, "EmployeeName");
+                    txtEmpCode.Text = gridView1.GetRowCellValue(rowHandle, "EmployeeCode").ToString();
+                    //txtEmpCode.Text = (string)gridView1.GetRowCellValue(rowHandle, "EmployeeCode");
                     txtEmpName.Text = (string)gridView1.GetRowCellValue(rowHandle, "EmployeeName");
                     txtCName.Text = (string)gridView1.GetRowCellValue(rowHandle, "CompanyName");
                     txtRawMaterial.Text = (string)gridView1.GetRowCellValue(rowHandle, "RawMaterial");
@@ -235,6 +215,8 @@ namespace BillPlex
                     txtPCode.Text = (string)gridView1.GetRowCellValue(rowHandle, "ModelCode");
                     txtPSize.Text = (string)gridView1.GetRowCellValue(rowHandle, "ProductSize");
                     txtColor.Text = (string)gridView1.GetRowCellValue(rowHandle, "Color");
+                    JobReceivedRequest.OrderNo = gridView1.GetRowCellValue(rowHandle, "OrderNo").ToString();
+                    JobReceivedRequest.Id = (Int64)gridView1.GetRowCellValue(rowHandle, "Id");
                 }
                 btnAdd.Enabled = false;
                 btnNew.Enabled = false;
@@ -242,7 +224,7 @@ namespace BillPlex
             }
             catch (Exception ex)
             {
-
+               
             }
         }
     }

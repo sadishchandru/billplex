@@ -49,6 +49,19 @@ SET NOCOUNT ON;
 						,orderQty
 						,orderWt
 						,ROW_NUMBER() OVER (PARTITION BY OrderNo ORDER BY OrderNo ASC) AS RowNum
+						,PendingQty
+						,received
+						,Wages
+						,CurrentWt
+						,ReceivingDate
+						,BDays
+						,ADays
+						,BalanceWt
+						,Deduction
+						,conveyance
+						,incentive
+						,NetAmt
+						,TotalAmt
 						,isDelete
 					FROM JobGivingWithoutDC	
 
@@ -84,6 +97,19 @@ SET NOCOUNT ON;
 						,Shortage
 						,orderQty
 						,orderWt
+						,PendingQty
+						,received
+						,Wages
+						,CurrentWt
+						,ReceivingDate
+						,BDays
+						,ADays
+						,BalanceWt
+						,Deduction
+						,conveyance
+						,incentive
+						,NetAmt
+						,TotalAmt
 			FROM JobGiving
 			WHERE RowNum = 1
 			AND ISNULL(isDelete, 0) = 0;
