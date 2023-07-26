@@ -326,7 +326,7 @@ namespace BillPlex
         {
             if (txtRawWeight.Text != "" && txtRawStock.Text != "")
             {
-                if (int.Parse(txtRawStock.Text) < int.Parse(txtRawWeight.Text))
+                if (decimal.Parse(txtRawStock.Text) < decimal.Parse(txtRawWeight.Text))
                 {
                     LabelExceed.Visible = true;
                 }
@@ -474,6 +474,28 @@ namespace BillPlex
             {
                 labelAvailable.Visible = false;
                 labelCodeExist.Visible = false;
+            }
+        }
+
+        private void drpRawType_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            var selectItem = drpRawType.Text;
+
+            if (productModelRequest.ProductMasterList != null && selectItem != "")
+            {
+                if (productModelRequest.ProductMasterList.Count() > 0)
+                {
+                    foreach (DropDownItemInfo item in productModelRequest.RawMaterialList)
+                    {
+                        drpRawName.Properties.Items.Clear();
+
+                        if (item.Code == selectItem)
+                        {
+                            drpRawName.Properties.Items.Add(new ImageComboBoxItem(item.Name));
+                            break;
+                        }
+                    }
+                }
             }
         }
     }

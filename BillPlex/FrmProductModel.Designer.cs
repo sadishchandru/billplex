@@ -30,12 +30,14 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery6 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter6 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProductModel));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.labelCodeExist = new DevExpress.XtraEditors.LabelControl();
+            this.labelAvailable = new DevExpress.XtraEditors.LabelControl();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
@@ -86,8 +88,6 @@ namespace BillPlex
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelAvailable = new DevExpress.XtraEditors.LabelControl();
-            this.labelCodeExist = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -171,6 +171,27 @@ namespace BillPlex
             this.panelControl2.Size = new System.Drawing.Size(1594, 780);
             this.panelControl2.TabIndex = 1;
             // 
+            // labelCodeExist
+            // 
+            this.labelCodeExist.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelCodeExist.Appearance.Options.UseForeColor = true;
+            this.labelCodeExist.Location = new System.Drawing.Point(357, 180);
+            this.labelCodeExist.Name = "labelCodeExist";
+            this.labelCodeExist.Size = new System.Drawing.Size(63, 13);
+            this.labelCodeExist.TabIndex = 54;
+            this.labelCodeExist.Text = "Already Exist";
+            // 
+            // labelAvailable
+            // 
+            this.labelAvailable.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.labelAvailable.Appearance.Options.UseForeColor = true;
+            this.labelAvailable.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.labelAvailable.Location = new System.Drawing.Point(196, 180);
+            this.labelAvailable.Name = "labelAvailable";
+            this.labelAvailable.Size = new System.Drawing.Size(50, 13);
+            this.labelAvailable.TabIndex = 53;
+            this.labelAvailable.Text = "Available";
+            // 
             // labelControl15
             // 
             this.labelControl15.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -234,13 +255,13 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery6.Name = "PRO_GetProductModel";
-            queryParameter6.Name = "@SearchKey";
-            queryParameter6.Type = typeof(string);
-            storedProcQuery6.Parameters.Add(queryParameter6);
-            storedProcQuery6.StoredProcName = "PRO_GetProductModel";
+            storedProcQuery1.Name = "PRO_GetProductModel";
+            queryParameter1.Name = "@SearchKey";
+            queryParameter1.Type = typeof(string);
+            storedProcQuery1.Parameters.Add(queryParameter1);
+            storedProcQuery1.StoredProcName = "PRO_GetProductModel";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery6});
+            storedProcQuery1});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // grd_ProductModel
@@ -633,6 +654,7 @@ namespace BillPlex
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.drpRawType.Size = new System.Drawing.Size(224, 20);
             this.drpRawType.TabIndex = 6;
+            this.drpRawType.SelectedIndexChanged += new System.EventHandler(this.drpRawType_SelectedIndexChanged_1);
             // 
             // labelControl6
             // 
@@ -683,27 +705,6 @@ namespace BillPlex
             this.labelControl2.Size = new System.Drawing.Size(140, 18);
             this.labelControl2.TabIndex = 1;
             this.labelControl2.Text = "Raw Material Type";
-            // 
-            // labelAvailable
-            // 
-            this.labelAvailable.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.labelAvailable.Appearance.Options.UseForeColor = true;
-            this.labelAvailable.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.labelAvailable.Location = new System.Drawing.Point(196, 180);
-            this.labelAvailable.Name = "labelAvailable";
-            this.labelAvailable.Size = new System.Drawing.Size(50, 13);
-            this.labelAvailable.TabIndex = 53;
-            this.labelAvailable.Text = "Available";
-            // 
-            // labelCodeExist
-            // 
-            this.labelCodeExist.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelCodeExist.Appearance.Options.UseForeColor = true;
-            this.labelCodeExist.Location = new System.Drawing.Point(357, 180);
-            this.labelCodeExist.Name = "labelCodeExist";
-            this.labelCodeExist.Size = new System.Drawing.Size(63, 13);
-            this.labelCodeExist.TabIndex = 54;
-            this.labelCodeExist.Text = "Already Exist";
             // 
             // FrmProductModel
             // 

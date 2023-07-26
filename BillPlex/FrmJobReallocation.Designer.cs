@@ -30,15 +30,22 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery3 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter3 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmJobReallocation));
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery4 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter4 = new DevExpress.DataAccess.Sql.QueryParameter();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
             this.btnClear = new DevExpress.XtraEditors.SimpleButton();
             this.btnTransfer = new DevExpress.XtraEditors.SimpleButton();
             this.btn_JobCancel = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
+            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
+            this.sqlDataSource2 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colId1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colColournname = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -83,7 +90,7 @@ namespace BillPlex
             this.labelControl31 = new DevExpress.XtraEditors.LabelControl();
             this.txtEmployeeCode = new DevExpress.XtraEditors.TextEdit();
             this.labelControl30 = new DevExpress.XtraEditors.LabelControl();
-            this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
+            this.chkViewReceivedPending = new DevExpress.XtraEditors.CheckEdit();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.lblWeight = new DevExpress.XtraEditors.LabelControl();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
@@ -148,10 +155,12 @@ namespace BillPlex
             this.panelControl6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
             this.panelControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmployeeCode.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkViewReceivedPending.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtShortage.Properties)).BeginInit();
@@ -193,7 +202,7 @@ namespace BillPlex
             this.panelControl1.Controls.Add(this.panelControl5);
             this.panelControl1.Controls.Add(this.txtEmployeeCode);
             this.panelControl1.Controls.Add(this.labelControl30);
-            this.panelControl1.Controls.Add(this.checkEdit1);
+            this.panelControl1.Controls.Add(this.chkViewReceivedPending);
             this.panelControl1.Controls.Add(this.panelControl4);
             this.panelControl1.Controls.Add(this.panelControl3);
             this.panelControl1.Controls.Add(this.panelControl2);
@@ -256,12 +265,60 @@ namespace BillPlex
             // 
             // panelControl5
             // 
+            this.panelControl5.Controls.Add(this.gridControl2);
             this.panelControl5.Controls.Add(this.gridControl1);
             this.panelControl5.Controls.Add(this.labelControl31);
             this.panelControl5.Location = new System.Drawing.Point(5, 422);
             this.panelControl5.Name = "panelControl5";
             this.panelControl5.Size = new System.Drawing.Size(1787, 375);
             this.panelControl5.TabIndex = 31;
+            // 
+            // gridControl2
+            // 
+            this.gridControl2.DataMember = "PRO_GetColourMaster";
+            this.gridControl2.DataSource = this.sqlDataSource2;
+            this.gridControl2.Location = new System.Drawing.Point(5, 28);
+            this.gridControl2.MainView = this.gridView2;
+            this.gridControl2.Name = "gridControl2";
+            this.gridControl2.Size = new System.Drawing.Size(1712, 342);
+            this.gridControl2.TabIndex = 30;
+            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
+            // 
+            // sqlDataSource2
+            // 
+            this.sqlDataSource2.ConnectionName = "BillPlex";
+            this.sqlDataSource2.Name = "sqlDataSource2";
+            storedProcQuery3.Name = "PRO_GetColourMaster";
+            queryParameter3.Name = "@SearchKey";
+            queryParameter3.Type = typeof(string);
+            storedProcQuery3.Parameters.Add(queryParameter3);
+            storedProcQuery3.StoredProcName = "PRO_GetColourMaster";
+            this.sqlDataSource2.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
+            storedProcQuery3});
+            this.sqlDataSource2.ResultSchemaSerializable = resources.GetString("sqlDataSource2.ResultSchemaSerializable");
+            // 
+            // gridView2
+            // 
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colId1,
+            this.colColournname});
+            this.gridView2.GridControl = this.gridControl2;
+            this.gridView2.Name = "gridView2";
+            // 
+            // colId1
+            // 
+            this.colId1.FieldName = "Id";
+            this.colId1.Name = "colId1";
+            this.colId1.Visible = true;
+            this.colId1.VisibleIndex = 0;
+            // 
+            // colColournname
+            // 
+            this.colColournname.FieldName = "Colournname";
+            this.colColournname.Name = "colColournname";
+            this.colColournname.Visible = true;
+            this.colColournname.VisibleIndex = 1;
             // 
             // gridControl1
             // 
@@ -280,13 +337,13 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery2.Name = "PRO_GetJobGivingWithoutDC";
-            queryParameter2.Name = "@SearchKey";
-            queryParameter2.Type = typeof(string);
-            storedProcQuery2.Parameters.Add(queryParameter2);
-            storedProcQuery2.StoredProcName = "PRO_GetJobGivingWithoutDC";
+            storedProcQuery4.Name = "PRO_GetJobGivingWithoutDC";
+            queryParameter4.Name = "@SearchKey";
+            queryParameter4.Type = typeof(string);
+            storedProcQuery4.Parameters.Add(queryParameter4);
+            storedProcQuery4.StoredProcName = "PRO_GetJobGivingWithoutDC";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery2});
+            storedProcQuery4});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // gridView1
@@ -707,18 +764,19 @@ namespace BillPlex
             this.labelControl30.TabIndex = 27;
             this.labelControl30.Text = "Employee Code";
             // 
-            // checkEdit1
+            // chkViewReceivedPending
             // 
-            this.checkEdit1.Location = new System.Drawing.Point(17, 386);
-            this.checkEdit1.Name = "checkEdit1";
-            this.checkEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkEdit1.Properties.Appearance.Options.UseFont = true;
-            this.checkEdit1.Properties.Caption = "View Received Pending";
-            this.checkEdit1.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
-            this.checkEdit1.Properties.LookAndFeel.SkinName = "DevExpress Style";
-            this.checkEdit1.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.checkEdit1.Size = new System.Drawing.Size(173, 20);
-            this.checkEdit1.TabIndex = 30;
+            this.chkViewReceivedPending.Location = new System.Drawing.Point(17, 386);
+            this.chkViewReceivedPending.Name = "chkViewReceivedPending";
+            this.chkViewReceivedPending.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkViewReceivedPending.Properties.Appearance.Options.UseFont = true;
+            this.chkViewReceivedPending.Properties.Caption = "View Received Pending";
+            this.chkViewReceivedPending.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.chkViewReceivedPending.Properties.LookAndFeel.SkinName = "DevExpress Style";
+            this.chkViewReceivedPending.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.chkViewReceivedPending.Size = new System.Drawing.Size(173, 20);
+            this.chkViewReceivedPending.TabIndex = 30;
+            this.chkViewReceivedPending.CheckedChanged += new System.EventHandler(this.chkViewReceivedPending_CheckedChanged);
             // 
             // panelControl4
             // 
@@ -1449,10 +1507,12 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
             this.panelControl5.ResumeLayout(false);
             this.panelControl5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmployeeCode.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkViewReceivedPending.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
             this.panelControl4.PerformLayout();
@@ -1551,7 +1611,7 @@ namespace BillPlex
         private DevExpress.XtraEditors.LabelControl labelControl29;
         private DevExpress.XtraEditors.TextEdit txtJEmpName;
         private DevExpress.XtraEditors.LabelControl labelControl18;
-        private DevExpress.XtraEditors.CheckEdit checkEdit1;
+        private DevExpress.XtraEditors.CheckEdit chkViewReceivedPending;
         private DevExpress.XtraEditors.LabelControl labelControl30;
         private DevExpress.XtraEditors.TextEdit txtEmployeeCode;
         private DevExpress.XtraEditors.PanelControl panelControl5;
@@ -1603,5 +1663,10 @@ namespace BillPlex
         private DevExpress.XtraGrid.Columns.GridColumn colBDays;
         private DevExpress.XtraGrid.Columns.GridColumn colADays;
         private DevExpress.XtraGrid.Columns.GridColumn colBalanceWt;
+        private DevExpress.XtraGrid.GridControl gridControl2;
+        private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource2;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Columns.GridColumn colId1;
+        private DevExpress.XtraGrid.Columns.GridColumn colColournname;
     }
 }
