@@ -69,13 +69,6 @@ namespace BillPlex
                         drpEmpCode.Properties.Items.Add(new ImageComboBoxItem(item.Code));
                     }
                 }
-                //if (JobGivingWithoutDcRequest.OrderMasterList.Count() > 0)
-                //{
-                //    foreach (DropDownItemInfo item in JobGivingWithoutDcRequest.OrderMasterList)
-                //    {
-                //        drpOrderNo.Properties.Items.Add(new ImageComboBoxItem(item.Code));
-                //    }
-                //}
             }
             if (JobGivingWithoutDcRequest.OrderMasterList != null)
             {
@@ -186,15 +179,6 @@ namespace BillPlex
                             // Add the new DataRow to the DataTable
                             dataTable.Rows.Add(newRow);
                         }
-                        //this.Close();
-
-                        //FrmDirectJobReceivedWithoutGivingProfile form = Application.OpenForms.OfType<FrmDirectJobReceivedWithoutGivingProfile>().FirstOrDefault();
-
-                        //Form myForm = Application.OpenForms["FrmDirectJobReceivedWithoutGivingProfile"];
-                        //if (myForm != null)
-                        //{
-                        //    form.ReloadSqlDataSource();
-                        //}
                         btnClear_Click();
                         gridView1.RefreshData();
                         gridControl1.RefreshDataSource();

@@ -10,7 +10,7 @@ GO
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE OR ALTER PROCEDURE [dbo].[PRO_GetJobGivingWithoutDC]
+CREATE OR ALTER PROCEDURE [dbo].[PRO_GetJobGivingWithoutDCAllList]
 @SearchKey VARCHAR(200) = ''
 
 AS
@@ -63,5 +63,4 @@ SET NOCOUNT ON;
 					FROM JobGivingWithoutDC JGDC
 					left join EmployeePersonal EP on EP.Id = JGDC.EmployeeCode
 					left join OrderMaster OM on OM.Id = JGDC.OrderNo
-					WHERE ISNULL(isDelete, 0) = 0 AND ISNULL(QuantityPiece, 0) <> 0;
 END
