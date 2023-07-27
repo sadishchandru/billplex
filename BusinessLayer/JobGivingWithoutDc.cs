@@ -34,6 +34,7 @@ namespace BusinessLayer
         public string AvlQty { get; set; }
         public string TotalQty { get; set; }
         public string TotalWt { get; set; }
+        public string WagesEmp { get; set; }
         #region JobReallocation
         public string Shortage { get; set; }
         public string Excess { get; set; }
@@ -83,6 +84,7 @@ namespace BusinessLayer
                 objLstDbParams.Add(new DbParams(DbType.String, 50, Shortage, "Shortage", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, subContractor, "subContractor", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, Director, "Director", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.String, 50, WagesEmp, "WagesEmp", ParameterDirection.Input));
 
 
                 dbReader = ObjDbfactory.GetReader("PRO_UpdateJobGivingWithoutDC", false, objLstDbParams);

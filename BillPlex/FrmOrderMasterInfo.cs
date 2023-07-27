@@ -175,7 +175,7 @@ namespace BillPlex
                     ddOrderDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
                     drpCustCode.Text = (string)gridView1.GetRowCellValue(rowHandle, "Customcode");
                     drpCustName.Text = gridView1.GetRowCellValue(rowHandle, "CustomerId").ToString();
-                    drpProductName.Text = (string)gridView1.GetRowCellValue(rowHandle, "ProductNameId").ToString();
+                    drpProductName.Text = gridView1.GetRowCellValue(rowHandle, "ProductNameId").ToString();
                     drpModelName.Text = (string)gridView1.GetRowCellValue(rowHandle, "productcode");
                     drpModelCode.Text = (string)gridView1.GetRowCellValue(rowHandle, "productmodel");
                     drpProductSize.Text = (string)gridView1.GetRowCellValue(rowHandle, "productsize");
@@ -319,13 +319,16 @@ namespace BillPlex
         private void drpProductSize_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedItem = (string)drpProductSize.SelectedItem;
+            string ProductName = (string)drpProductName.SelectedItem;
+            string ModelName = (string)drpModelName.SelectedItem;
+            string ModelCode = (string)drpModelCode.SelectedItem;
 
             if (selectedItem != null)
             {
-                txtMaterialwt.Text = OrderMasterRequest.ProductMasterList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.AuthorName ?? "";
-                txtType.Text = OrderMasterRequest.ProductMasterList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.Code ?? "";
-                txtRawmatName.Text = OrderMasterRequest.ProductMasterList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.RawMaterial ?? "";
-                txtWages.Text = OrderMasterRequest.ProductMasterList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.AuthorName ?? "";
+                txtMaterialwt.Text = OrderMasterRequest.ProductMasterList.FirstOrDefault(item => item.productId == ProductName.ToString() && item.proModel == ModelName.ToString() && item.Code == ModelCode.ToString() && item.Name == selectedItem.ToString())?.AuthorName ?? "";
+                txtType.Text = OrderMasterRequest.ProductMasterList.FirstOrDefault(item => item.productId == ProductName.ToString() && item.proModel == ModelName.ToString() && item.Code == ModelCode.ToString() && item.Name == selectedItem.ToString())?.Code ?? "";
+                txtRawmatName.Text = OrderMasterRequest.ProductMasterList.FirstOrDefault(item => item.productId == ProductName.ToString() && item.proModel == ModelName.ToString() && item.Code == ModelCode.ToString() && item.Name == selectedItem.ToString())?.RawMaterial ?? "";
+                txtWages.Text = OrderMasterRequest.ProductMasterList.FirstOrDefault(item => item.productId == ProductName.ToString() && item.proModel == ModelName.ToString() && item.Code == ModelCode.ToString() && item.Name == selectedItem.ToString())?.AuthorName ?? "";
             }
         }
         public void BindData(dynamic SelectedOrderList)
@@ -393,12 +396,21 @@ namespace BillPlex
 
         private void txtQuantity_EditValueChanged(object sender, EventArgs e)
         {
+            //var count = 0;
+            //if (txtMaterialwt.Text != "" && txtQuantity.Text != "")
+            //{
+            //    var a = Convert.ToDecimal(txtMaterialwt.Text);
+            //    var b = Convert.ToDecimal(txtQuantity.Text);
+            //    count = (a * b);
+            //    txtTotRawmat.Text = count.ToString();
+            //}
+
             var count = 0;
             if (txtMaterialwt.Text != "" && txtQuantity.Text != "")
             {
-                var a = Convert.ToInt32(txtMaterialwt.Text);
-                var b = Convert.ToInt32(txtQuantity.Text);
-                count = (a * b);
+                decimal a = Convert.ToDecimal(txtMaterialwt.Text);
+                decimal b = Convert.ToDecimal(txtQuantity.Text);
+                count = (int)(a * b);
                 txtTotRawmat.Text = count.ToString();
             }
         }

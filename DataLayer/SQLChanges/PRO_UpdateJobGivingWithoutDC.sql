@@ -52,7 +52,8 @@ CREATE OR ALTER PROCEDURE [dbo].[PRO_UpdateJobGivingWithoutDC]
 @conveyance varchar(50)='',
 @incentive varchar(50)='',
 @NetAmt varchar(50)='',
-@TotalAmt varchar(50)=''
+@TotalAmt varchar(50)='',
+@WagesEmp varchar(50)=''
 
 AS
 BEGIN
@@ -105,6 +106,7 @@ BEGIN
 				,incentive
 				,NetAmt
 				,TotalAmt
+				,WagesEmp
 
             )
         VALUES
@@ -148,7 +150,8 @@ BEGIN
 				@conveyance,
 				@incentive,
 				@NetAmt,
-				@TotalAmt
+				@TotalAmt,
+				@WagesEmp
             )
 
         SET @ResultMessage = 'JobGivingWithoutDC Added Successfully';
@@ -197,7 +200,8 @@ BEGIN
 			[conveyance] = @conveyance,
 			[incentive] = @incentive,
 			[NetAmt] = @NetAmt,
-			[TotalAmt] = @TotalAmt
+			[TotalAmt] = @TotalAmt,
+			[WagesEmp] = @WagesEmp
         WHERE Id = @Id
 
         SET @ResultMessage = 'JobGivingWithoutDC Updated Successfully';

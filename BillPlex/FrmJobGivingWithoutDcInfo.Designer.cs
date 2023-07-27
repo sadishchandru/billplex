@@ -538,7 +538,7 @@ namespace BillPlex
             this.txtWeight.Name = "txtWeight";
             this.txtWeight.Properties.BeepOnError = false;
             this.txtWeight.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.txtWeight.Properties.MaskSettings.Set("mask", "d");
+            this.txtWeight.Properties.MaskSettings.Set("mask", "n3");
             this.txtWeight.Properties.UseMaskAsDisplayFormat = true;
             this.txtWeight.Size = new System.Drawing.Size(100, 20);
             this.txtWeight.TabIndex = 20;

@@ -60,6 +60,7 @@ SET NOCOUNT ON;
 					,[BDays]
 					,[ADays]
 					,[BalanceWt]
+					,[WagesEmp]
 					FROM JobGivingWithoutDC JGDC
 					left join EmployeePersonal EP on EP.Id = JGDC.EmployeeCode
 					left join OrderMaster OM on OM.Id = JGDC.OrderNo
