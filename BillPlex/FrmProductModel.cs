@@ -343,7 +343,7 @@ namespace BillPlex
         }
 
         private void gridControl1_DoubleClick(object sender, EventArgs e)
-            {
+        {
             try
             {
                 var selectedRows = grd_ProductModel.GetSelectedRows();
@@ -481,9 +481,9 @@ namespace BillPlex
         {
             var selectItem = drpRawType.Text;
 
-            if (productModelRequest.ProductMasterList != null && selectItem != "")
+            if (productModelRequest.RawMaterialList != null && selectItem != "")
             {
-                if (productModelRequest.ProductMasterList.Count() > 0)
+                if (productModelRequest.RawMaterialList.Count() > 0)
                 {
                     foreach (DropDownItemInfo item in productModelRequest.RawMaterialList)
                     {

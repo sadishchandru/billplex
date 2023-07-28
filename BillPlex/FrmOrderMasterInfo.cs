@@ -73,13 +73,13 @@ namespace BillPlex
                 }
             }
 
-            if (OrderMasterRequest.ProductModelList != null)
+            if (OrderMasterRequest.ProductMasterList != null)
             {
-                if (OrderMasterRequest.ProductModelList.Count() > 0)
+                if (OrderMasterRequest.ProductMasterList.Count() > 0)
                 {
-                    foreach (DropDownItemInfo item in OrderMasterRequest.ProductModelList)
+                    foreach (DropDownItemInfo item in OrderMasterRequest.ProductMasterList)
                     {
-                        drpProductName.Properties.Items.Add(new ImageComboBoxItem(item.Name));
+                        drpProductName.Properties.Items.Add(new ImageComboBoxItem(item.productId));
                     }
                 }
             }
@@ -214,7 +214,7 @@ namespace BillPlex
                         if (selectedMasterItem != null)
                         {
                             OrderMasterRequest.CustomerId = OrderMasterRequest.CustomerMasterList.FirstOrDefault(item => item.Name == selectedMasterItem.ToString())?.Id ?? -1;
-                            OrderMasterRequest.CustomerCodeId = OrderMasterRequest.CustomerMasterList.FirstOrDefault(item => item.Name == selectedMasterItem.ToString())?.Id ?? -1;
+                            OrderMasterRequest.CustomerCode = OrderMasterRequest.CustomerMasterList.FirstOrDefault(item => item.Name == selectedMasterItem.ToString())?.Id ?? -1;
                         }
                         var selectedPNameItems = drpProductName.Text;
                         string selectedPNameItem = (string)drpProductName.SelectedItem;
@@ -255,20 +255,20 @@ namespace BillPlex
                                     DataTable dataTable = gridControl1.DataSource as DataTable;
                                     DataRow newRow = dataTable.NewRow();
                                     newRow["OrderNo"] = item.OrderNo;
-                                    newRow["OrderDate"] = item.OrderDate;
-                                    newRow["CustomerCodeId"] = item.CustomerCodeId;
+                                    newRow["Orderdate"] = item.OrderDate;
+                                    newRow["Customcode"] = item.CustomerCode;
                                     newRow["CustomerId"] = item.CustomerId;
-                                    newRow["ProductId"] = item.ProductId;
-                                    newRow["ProductModel"] = item.ProductModel;
-                                    newRow["ProductCode"] = item.ProductCode;
-                                    newRow["ProductSize"] = item.ProductSize;
+                                    newRow["ProductNameId"] = item.ProductNameId;
+                                    newRow["productmodel"] = item.ProductModel;
+                                    newRow["productcode"] = item.ProductCode;
+                                    newRow["productsize"] = item.ProductSize;
                                     newRow["Quantity"] = item.Quantity;
                                     newRow["RawType"] = item.RawType;
-                                    newRow["RawMaterialId"] = item.RawMaterialId;
+                                    newRow["RawmaterialId"] = item.RawMaterialId;
                                     newRow["ColorId"] = item.ColorId;
                                     newRow["RawQty"] = item.RawQty;
-                                    newRow["Deliverydate"] = item.Deliverydate;
-                                    newRow["status"] = item.status;
+                                    newRow["Delivarydate"] = item.Deliverydate;
+                                    newRow["Status"] = item.status;
                                     newRow["TotalRaw"] = item.TotalRaw;
                                     newRow["WagesforEmp"] = item.WagesforEmp;
                                     newRow["totalWt"] = item.MaterialWghtNo;
@@ -501,20 +501,20 @@ namespace BillPlex
             DataTable dataTable = new DataTable();
             // Create columns and bind them to the object properties
             dataTable.Columns.Add("OrderNo", typeof(string));
-            dataTable.Columns.Add("OrderDate", typeof(string));
-            dataTable.Columns.Add("CustomerCodeId", typeof(string));
+            dataTable.Columns.Add("Orderdate", typeof(string));
+            dataTable.Columns.Add("Customcode", typeof(string));
             dataTable.Columns.Add("CustomerId", typeof(string));
-            dataTable.Columns.Add("ProductId", typeof(string));
-            dataTable.Columns.Add("ProductModel", typeof(string));
-            dataTable.Columns.Add("ProductCode", typeof(string));
-            dataTable.Columns.Add("ProductSize", typeof(string));
+            dataTable.Columns.Add("ProductNameId", typeof(string));
+            dataTable.Columns.Add("productmodel", typeof(string));
+            dataTable.Columns.Add("productcode", typeof(string));
+            dataTable.Columns.Add("productsize", typeof(string));
             dataTable.Columns.Add("Quantity", typeof(string));
             dataTable.Columns.Add("RawType", typeof(string));
-            dataTable.Columns.Add("RawMaterialId", typeof(string));
+            dataTable.Columns.Add("RawmaterialId", typeof(string));
             dataTable.Columns.Add("ColorId", typeof(string));
             dataTable.Columns.Add("RawQty", typeof(string));
-            dataTable.Columns.Add("Deliverydate", typeof(string));
-            dataTable.Columns.Add("status", typeof(string));
+            dataTable.Columns.Add("Delivarydate", typeof(string));
+            dataTable.Columns.Add("Status", typeof(string));
             dataTable.Columns.Add("TotalRaw", typeof(string));
             dataTable.Columns.Add("WagesforEmp", typeof(string));
             dataTable.Columns.Add("totalWt", typeof(string));

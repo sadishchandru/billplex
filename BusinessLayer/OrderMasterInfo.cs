@@ -13,7 +13,7 @@ namespace BusinessLayer
         public Int64 Id { get; set; }
         public string OrderNo { get; set; }
         public string OrderDate { get; set; }
-        public Int64 CustomerCodeId { get; set; }
+        public Int64 CustomerCode { get; set; }
         public Int64 CustomerId { get; set; }
         public string ProductId { get; set; }
         public Int64 ProductNameId { get; set; }
@@ -54,7 +54,7 @@ namespace BusinessLayer
                 objLstdbParams.Add(new DbParams(DbType.Int64, 50, Id, "Id", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, OrderNo, "OrderNo", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.Date, 50, OrderDate, "OrderDate", ParameterDirection.Input));
-                objLstdbParams.Add(new DbParams(DbType.String, 50, CustomerCodeId, "Customcode", ParameterDirection.Input));
+                objLstdbParams.Add(new DbParams(DbType.String, 50, CustomerCode, "Customcode", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, CustomerId, "CustomerId", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, ProductNameId, "ProductNameId", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, ProductModel, "productmodel", ParameterDirection.Input));
@@ -107,7 +107,7 @@ namespace BusinessLayer
                 OrderDetail.Id = ToInteger(dbReader["Id"]);
                 OrderDetail.OrderNo = ToString(dbReader["OrderNo"]);
                 OrderDetail.OrderDate = ToDateTimeToString(dbReader["Orderdate"]);
-                OrderDetail.CustomerCodeId = ToInteger(dbReader["Customcode"]);
+                OrderDetail.CustomerCode = ToInteger(dbReader["Customcode"]);
                 OrderDetail.CustomerId = ToInteger(dbReader["CustomerId"]);
                 OrderDetail.ProductId = ToString(dbReader["ProductNameId"]);
                 OrderDetail.ProductModel = ToString(dbReader["productmodel"]);
