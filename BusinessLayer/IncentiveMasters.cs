@@ -30,13 +30,13 @@ namespace BusinessLayer
                 InitializeDb();
 
                 List<DbParams> objLstdbParams = new List<DbParams>();
-                objLstdbParams.Add(new DbParams(DbType.String, 50, Id, "@Id", ParameterDirection.Input));
-                objLstdbParams.Add(new DbParams(DbType.String, 50, ProductName, "@ProductName", ParameterDirection.Input));
-                objLstdbParams.Add(new DbParams(DbType.String, 50, ModelCode, "@ModelCode", ParameterDirection.Input));
-                objLstdbParams.Add(new DbParams(DbType.String, 50, ModelName, "@ModelName", ParameterDirection.Input));
-                objLstdbParams.Add(new DbParams(DbType.String, 50, ModelSize, "@ModelSize", ParameterDirection.Input));
-                objLstdbParams.Add(new DbParams(DbType.String, 50, DurationPeriod, "@DurationPeriod", ParameterDirection.Input));
-                objLstdbParams.Add(new DbParams(DbType.String, 50, Date, "@Date", ParameterDirection.Input));
+                objLstdbParams.Add(new DbParams(DbType.String, 50, Id, "Id", ParameterDirection.Input));
+                objLstdbParams.Add(new DbParams(DbType.String, 50, ProductName, "ProductName", ParameterDirection.Input));
+                objLstdbParams.Add(new DbParams(DbType.String, 50, ModelCode, "ModelCode", ParameterDirection.Input));
+                objLstdbParams.Add(new DbParams(DbType.String, 50, ModelName, "ModelName", ParameterDirection.Input));
+                objLstdbParams.Add(new DbParams(DbType.String, 50, ModelSize, "ModelSize", ParameterDirection.Input));
+                objLstdbParams.Add(new DbParams(DbType.String, 50, DurationPeriod, "DurationPeriod", ParameterDirection.Input));
+                objLstdbParams.Add(new DbParams(DbType.Date, 50, Date == "" ? null : Date, "Date", ParameterDirection.Input));
                 dbReader = ObjDbfactory.GetReader("PRO_UpdateIncentiveMaster", false, objLstdbParams);
 
                 while (dbReader.Read())

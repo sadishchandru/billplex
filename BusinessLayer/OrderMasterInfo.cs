@@ -30,12 +30,14 @@ namespace BusinessLayer
         public string Deliverydate { get; set; }
         public string WagesforEmp { get; set; }
         public string status { get; set; }
+        public string AdditionalReason { get; set; }
 
         public List<DropDownItemInfo> RawMaterialList { get; set; }
         public List<DropDownItemInfo> ProductModelList { get; set; }
         public List<DropDownItemInfo> CustomerMasterList { get; set; }
         public List<DropDownItemInfo> ProductMasterList { get; set; }
         public List<DropDownItemInfo> ColourMasterList { get; set; }
+        public List<DropDownItemInfo> OrderList { get; set; }
         public List<OrderMasterInfo> OrderMasterList { get; set; }
 
         #region Update
@@ -54,7 +56,6 @@ namespace BusinessLayer
                 objLstdbParams.Add(new DbParams(DbType.Date, 50, OrderDate, "OrderDate", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, CustomerCodeId, "Customcode", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, CustomerId, "CustomerId", ParameterDirection.Input));
-                //objLstdbParams.Add(new DbParams(DbType.String, 50, ProductId, "@ProductId", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, ProductNameId, "ProductNameId", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, ProductModel, "productmodel", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, ProductCode, "productcode", ParameterDirection.Input));
@@ -69,6 +70,7 @@ namespace BusinessLayer
                 objLstdbParams.Add(new DbParams(DbType.String, 50, WagesforEmp, "WagesforEmp", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, status, "status", ParameterDirection.Input));
                 objLstdbParams.Add(new DbParams(DbType.String, 50, MaterialWghtNo, "totalWt", ParameterDirection.Input));
+                objLstdbParams.Add(new DbParams(DbType.String, 50, AdditionalReason, "AdditionalReason", ParameterDirection.Input));
 
                 dbReader = ObjDbfactory.GetReader("PRO_UpdateOrderMaster", false, objLstdbParams);
 
@@ -82,8 +84,6 @@ namespace BusinessLayer
                 {
                     OrderMasterList = AssignResult();
                 }
-
-
             }
             catch (Exception ex)
             {
@@ -123,6 +123,7 @@ namespace BusinessLayer
                 OrderDetail.TotalRaw = ToString(dbReader["TotalRaw"]);
                 OrderDetail.WagesforEmp = ToString(dbReader["WagesforEmp"]);
                 OrderDetail.MaterialWghtNo = ToString(dbReader["totalWt"]);
+                OrderDetail.AdditionalReason = ToString(dbReader["AdditionalReason"]);
 
                 FamilyList.Add(OrderDetail);
             }

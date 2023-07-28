@@ -70,6 +70,7 @@ SET NOCOUNT ON;
 				TotalRaw,
 				Delivarydate,
 				WagesforEmp,
-				Status
+				Status,
+				AdditionalReason
 			FROM OrderMaster
 END

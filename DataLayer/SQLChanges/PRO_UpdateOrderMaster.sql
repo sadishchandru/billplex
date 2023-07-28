@@ -32,6 +32,7 @@ CREATE or ALTER   PROCEDURE [dbo].[PRO_UpdateOrderMaster]
 	@totalWt varchar(100) = '',
 	--@AvlQty  varchar(250)='',
 	--@Avlweight  varchar(100) ='',
+	@AdditionalReason varchar(250) = '',
 	@updateOn datetime = null
 AS
 BEGIN
@@ -64,6 +65,7 @@ BEGIN
 			,Delivarydate
 			,WagesforEmp
 			,Status
+			,AdditionalReason
 			--,AvlQty
 			--,Avlweight
 		) VALUES
@@ -85,7 +87,8 @@ BEGIN
 				@totalWt,
 				@Delivarydate,
 				@WagesforEmp,
-				@Status
+				@Status,
+				@AdditionalReason
 				--@AvlQty,
 				--@Avlweight
 				
@@ -113,10 +116,10 @@ BEGIN
 				[Delivarydate]=@Delivarydate,
 				[WagesforEmp]=@WagesforEmp,
 				[TotalWt]=@totalWt,
-				[Status]=@Status
+				[Status]=@Status,
+				[AdditionalReason] = @AdditionalReason
 				--[AvlQty]=@AvlQty,
 				--[Avlweight]=@Avlweight
-
 		WHERE Id = @Id
 		
 		SET @ResultMessage = 'OrderMaster Updated Successfully';

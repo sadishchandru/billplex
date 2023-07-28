@@ -1224,13 +1224,14 @@ namespace BillPlex
             // 
             // FrmDeliveryChallanInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1618, 822);
             this.Controls.Add(this.panelControl11);
             this.Controls.Add(this.panelControl1);
             this.Name = "FrmDeliveryChallanInfo";
             this.Text = "FrmDeliveryChallanInfo";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();

@@ -211,23 +211,25 @@ namespace BillPlex
         private void txtDeduction_EditValueChanged(object sender, EventArgs e)
         {
             int total = 0;
+            int deductionTotal = 0;
 
             if (txtDeduction.Text != "" && txtDeduction.Text != "0")
             {
+                deductionTotal = Convert.ToInt32(txtTotal.Text) - Convert.ToInt32(txtDeduction.Text);
                 total = Convert.ToInt32(txtTotal.Text) - Convert.ToInt32(txtDeduction.Text);
             }
 
-            if (txtConveyance.Text != "" && txtConveyance.Text != "0")
-            {
-                total = Convert.ToInt32(txtNetAmt.Text) + Convert.ToInt32(txtConveyance.Text);
-            }
+            //if (txtConveyance.Text != "" && txtConveyance.Text != "0")
+            //{
+            //    total = Convert.ToInt32(txtNetAmt.Text) + Convert.ToInt32(txtConveyance.Text);
+            //}
 
-            if (txtIncentive.Text != "" && txtIncentive.Text != "0")
-            {
-                total = Convert.ToInt32(txtNetAmt.Text) + Convert.ToInt32(txtIncentive.Text);
-            }
+            //if (txtIncentive.Text != "" && txtIncentive.Text != "0")
+            //{
+            //    total = Convert.ToInt32(txtNetAmt.Text) + Convert.ToInt32(txtIncentive.Text);
+            //}
 
-            txtTotal.Text = total.ToString();
+            txtTotal.Text = deductionTotal.ToString();
             txtNetAmt.Text = total.ToString();
         }
 
@@ -303,12 +305,31 @@ namespace BillPlex
         private void txtRcvdQty_EditValueChanged(object sender, EventArgs e)
         {
             decimal total = 0;
+            decimal deductionTotal = 0;
 
             if (txtWages.Text != "" && txtWages.Text != "0")
             {
                 total = Convert.ToDecimal(txtWages.Text) * Convert.ToDecimal(txtRcvdQty.Text);
+                deductionTotal = Convert.ToDecimal(txtWages.Text) * Convert.ToDecimal(txtRcvdQty.Text);
             }
-            txtTotal.Text = total.ToString();
+
+            if (txtDeduction.Text != "" && txtDeduction.Text != "0")
+            {
+                deductionTotal = deductionTotal - Convert.ToInt32(txtDeduction.Text);
+                total = total - Convert.ToInt32(txtDeduction.Text);
+            }
+
+            if (txtConveyance.Text != "" && txtConveyance.Text != "0")
+            {
+                total = total + Convert.ToInt32(txtConveyance.Text);
+            }
+
+            if (txtIncentive.Text != "" && txtIncentive.Text != "0")
+            {
+                total = total + Convert.ToInt32(txtIncentive.Text);
+            }
+
+            txtTotal.Text = deductionTotal.ToString();
             txtNetAmt.Text = total.ToString();
         }
 

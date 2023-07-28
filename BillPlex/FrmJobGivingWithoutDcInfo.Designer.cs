@@ -1411,14 +1411,15 @@ namespace BillPlex
             // 
             // FrmJobGivingWithoutDcInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1673, 815);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(1690, 832);
             this.Controls.Add(this.panelControl8);
             this.Controls.Add(this.panelControl5);
             this.Controls.Add(this.panelControl1);
             this.Name = "FrmJobGivingWithoutDcInfo";
             this.Text = "FrmJobGivingWithoutDcInfo";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();

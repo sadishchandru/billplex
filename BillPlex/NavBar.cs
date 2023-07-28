@@ -18,17 +18,18 @@ namespace BillPlex
         public NavBar()
         {
             InitializeComponent();
-
+            btn_JobGiving.Visibility = BarItemVisibility.Never;
+            btn_DirectJobGiving.Visibility = BarItemVisibility.Never;
+            btn_DirectJobReceived.Visibility = BarItemVisibility.Never;
+            btn_DeliveryChallan.Visibility = BarItemVisibility.Never;
             MasterCompanyInfo = new FrmCompanyProfile();
         }
 
         private void Master_Company_Click(object sender, ItemClickEventArgs e)
         {
-            /*CompanyProfile CP = new CompanyProfile();
-            CP.ShowDialog();*/
             MessageBox.Show("Master_Company button clicked!");
         }
-
+        #region profile
         private void ClientCompany_ItemClick(object sender, ItemClickEventArgs e)
         {
             bool IsOpen = false;
@@ -42,24 +43,12 @@ namespace BillPlex
                 myForm.Show();
                 IsOpen = true;
             }
-            //foreach (Form f in Application.OpenForms)
-            //{
-            //    if (f.Text == "FrmClientCompanyProfile")
-            //    {
-            //        IsOpen = true;
-            //        f.Focus();
-            //        break;
-            //    }
-            //}
             if (IsOpen == false)
             {
                 FrmClientCompanyProfile ClientCompanyInfo = new FrmClientCompanyProfile();
                 ClientCompanyInfo.MdiParent = this;
                 ClientCompanyInfo.Show();
             }
-            //FrmClientCompanyProfile ClientCompanyInfo = new FrmClientCompanyProfile();
-            //ClientCompanyInfo.MdiParent = this;
-            //ClientCompanyInfo.Show();
         }
 
         private void MasterCompany_ItemClick(object sender, ItemClickEventArgs e)
@@ -74,33 +63,12 @@ namespace BillPlex
                 myForm.Show();
                 IsOpen = true;
             }
-            
-            //foreach(Form f in Application.OpenForms)
-            //{
-            //    Form myForm = Application.OpenForms["FrmCompanyProfile"];
-            //    myForm.Close();
-            //    myForm = new FrmCompanyProfile();
-            //    myForm.MdiParent = this;
-            //    myForm.Show();
-
-            //    //if (f.Text == "FrmCompanyProfile")
-            //    //{
-            //    //    IsOpen = true;
-            //    //    f.Focus();
-            //    //    break;
-            //    //}
-            //}
             if (IsOpen == false)
             {
                  MasterCompanyInfo = new FrmCompanyProfile();
                 MasterCompanyInfo.MdiParent = this;
                 MasterCompanyInfo.Show();
             }
-            
-            //MasterCompanyInfo.MdiParent = this;
-            //FrmCompanyProfile MasterCompanyInfo = new FrmCompanyProfile();
-            //MasterCompanyInfo.MdiParent = this;
-            //MasterCompanyInfo.Show();
         }
 
         private void SubClient_ItemClick(object sender, ItemClickEventArgs e)
@@ -123,7 +91,9 @@ namespace BillPlex
                 SubClientCompanyInfo.Show();
             }
         }
+        #endregion
 
+        #region Master
         private void CustomerMaster_ItemClick(object sender, ItemClickEventArgs e)
         {
             bool IsOpen = false;
@@ -142,9 +112,6 @@ namespace BillPlex
                 CustomerMasterInfo.MdiParent = this;
                 CustomerMasterInfo.Show();
             }
-            //FrmCustomerMaster CustomerMasterInfo = new FrmCustomerMaster();
-            //CustomerMasterInfo.MdiParent = this;
-            //CustomerMasterInfo.Show();
         }
 
         private void btn_Employee_Master(object sender, ItemClickEventArgs e)
@@ -165,16 +132,7 @@ namespace BillPlex
                 employeeMaster.MdiParent = this;
                 employeeMaster.Show();
             }
-            //FrmEmployeeMasterList employeeMaster = new FrmEmployeeMasterList();
-            //employeeMaster.MdiParent = this;
-            //employeeMaster.Show();
         }
-
-        private void barButtonItem4_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            
-        }
-
         private void barButtonItem5_ItemClick(object sender, ItemClickEventArgs e)
         {
             bool IsOpen = false;
@@ -193,9 +151,6 @@ namespace BillPlex
                 masterbanking.MdiParent = this;
                 masterbanking.Show();
             }
-            //FrmOrderMaster masterbanking = new FrmOrderMaster();
-            //masterbanking.MdiParent = this;
-            //masterbanking.Show();
         }
 
         private void btn_RawMaterial_ItemClick(object sender, ItemClickEventArgs e)
@@ -216,9 +171,6 @@ namespace BillPlex
                 pc.MdiParent = this;
                 pc.Show();
             }
-            //FrmRawMaterial pc = new FrmRawMaterial();
-            //pc.MdiParent = this;
-            //pc.Show();
         }
 
         private void btn_ProductMaster_ItemClick(object sender, ItemClickEventArgs e)
@@ -239,9 +191,6 @@ namespace BillPlex
                 pc.MdiParent = this;
                 pc.Show();
             }
-            //FrmProductMaster pc = new FrmProductMaster();
-            //pc.MdiParent = this;
-            //pc.Show();
         }
 
         private void btn_SizeMaster_ItemClick(object sender, ItemClickEventArgs e)
@@ -262,9 +211,6 @@ namespace BillPlex
                 pc.MdiParent = this;
                 pc.Show();
             }
-            //FrmSizeMaster pc = new FrmSizeMaster();
-            //pc.MdiParent = this;
-            //pc.Show();
         }
 
         private void btn_ColorMaster_ItemClick(object sender, ItemClickEventArgs e)
@@ -285,9 +231,6 @@ namespace BillPlex
                 pc.MdiParent = this;
                 pc.Show();
             }
-            //FrmColorMaster pc = new FrmColorMaster();
-            //pc.MdiParent = this;
-            //pc.Show();
         }
 
         private void btn_ProductModel_ItemClick(object sender, ItemClickEventArgs e)
@@ -308,9 +251,6 @@ namespace BillPlex
                 pc.MdiParent = this;
                 pc.Show();
             }
-            //FrmProductModel pc = new FrmProductModel();
-            //pc.MdiParent = this;
-            //pc.Show();
         }
 
         private void barButtonItem12_ItemClick(object sender, ItemClickEventArgs e)
@@ -332,7 +272,6 @@ namespace BillPlex
                 pc.Show();
             }
         }
-
         private void barButtonItem7_ItemClick(object sender, ItemClickEventArgs e)
         {
             bool IsOpen = false;
@@ -352,12 +291,7 @@ namespace BillPlex
                 cp.Show();
             }
         }
-
-        private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
-        {
-
-        }
-
+        #region Bank Info
         private void btn_MasterBankInfo(object sender, ItemClickEventArgs e)
         {
             bool IsOpen = false;
@@ -417,7 +351,7 @@ namespace BillPlex
                 subClientCompanyBankInfo.Show();
             }
         }
-
+        #endregion
         private void barButtonItem11_ItemClick(object sender, ItemClickEventArgs e)
         {
 
@@ -439,7 +373,9 @@ namespace BillPlex
             }
             
         }
+        #endregion
 
+        #region Job allocation
         private void btn_JobGiving_ItemClick(object sender, ItemClickEventArgs e)
         {
 
@@ -583,5 +519,6 @@ namespace BillPlex
                 JobReceived.Show();
             }
         }
+        #endregion
     }
 }

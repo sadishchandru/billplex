@@ -489,12 +489,13 @@ namespace BillPlex
             // 
             // FrmJobGivingWithoutDcProfile
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1629, 846);
             this.Controls.Add(this.panelControl2);
             this.Name = "FrmJobGivingWithoutDcProfile";
             this.Text = "FrmJobGivingWithoutDcProfile";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();

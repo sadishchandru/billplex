@@ -30,8 +30,8 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmJobReceivedProfile));
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
@@ -45,14 +45,9 @@ namespace BillPlex
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
             this.panelDeliveryChallan = new DevExpress.XtraEditors.PanelControl();
-            this.cmbFind = new DevExpress.XtraEditors.CheckedComboBoxEdit();
-            this.btnclr = new DevExpress.XtraEditors.SimpleButton();
-            this.btnFind = new DevExpress.XtraEditors.SimpleButton();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEmployeeCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEmployeeName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -92,6 +87,11 @@ namespace BillPlex
             this.colBDays = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colADays = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBalanceWt = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmbFind = new DevExpress.XtraEditors.CheckedComboBoxEdit();
+            this.btnclr = new DevExpress.XtraEditors.SimpleButton();
+            this.btnFind = new DevExpress.XtraEditors.SimpleButton();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -101,11 +101,11 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelDeliveryChallan)).BeginInit();
             this.panelDeliveryChallan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbFind.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl3
@@ -342,51 +342,6 @@ namespace BillPlex
             this.panelDeliveryChallan.Size = new System.Drawing.Size(1324, 610);
             this.panelDeliveryChallan.TabIndex = 1;
             // 
-            // cmbFind
-            // 
-            this.cmbFind.Location = new System.Drawing.Point(21, 22);
-            this.cmbFind.Name = "cmbFind";
-            this.cmbFind.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbFind.Size = new System.Drawing.Size(433, 20);
-            this.cmbFind.TabIndex = 2;
-            // 
-            // btnclr
-            // 
-            this.btnclr.Location = new System.Drawing.Point(562, 25);
-            this.btnclr.Name = "btnclr";
-            this.btnclr.Size = new System.Drawing.Size(75, 23);
-            this.btnclr.TabIndex = 2;
-            this.btnclr.Text = "Clear";
-            // 
-            // btnFind
-            // 
-            this.btnFind.Location = new System.Drawing.Point(481, 25);
-            this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(75, 23);
-            this.btnFind.TabIndex = 1;
-            this.btnFind.Text = "Find";
-            // 
-            // panelControl1
-            // 
-            this.panelControl1.Controls.Add(this.labelControl1);
-            this.panelControl1.Location = new System.Drawing.Point(42, 14);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1345, 50);
-            this.panelControl1.TabIndex = 0;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(486, 6);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(220, 39);
-            this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Job Received ";
-            // 
             // gridControl1
             // 
             this.gridControl1.DataMember = "PRO_GetJobGivingWithoutDCAllList";
@@ -398,6 +353,19 @@ namespace BillPlex
             this.gridControl1.TabIndex = 3;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            // 
+            // sqlDataSource1
+            // 
+            this.sqlDataSource1.ConnectionName = "BillPlex";
+            this.sqlDataSource1.Name = "sqlDataSource1";
+            storedProcQuery1.Name = "PRO_GetJobGivingWithoutDCAllList";
+            queryParameter1.Name = "@SearchKey";
+            queryParameter1.Type = typeof(string);
+            storedProcQuery1.Parameters.Add(queryParameter1);
+            storedProcQuery1.StoredProcName = "PRO_GetJobGivingWithoutDCAllList";
+            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
+            storedProcQuery1});
+            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // gridView1
             // 
@@ -443,19 +411,6 @@ namespace BillPlex
             this.colBalanceWt});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
-            // 
-            // sqlDataSource1
-            // 
-            this.sqlDataSource1.ConnectionName = "BillPlex";
-            this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery2.Name = "PRO_GetJobGivingWithoutDCAllList";
-            queryParameter2.Name = "@SearchKey";
-            queryParameter2.Type = typeof(string);
-            storedProcQuery2.Parameters.Add(queryParameter2);
-            storedProcQuery2.StoredProcName = "PRO_GetJobGivingWithoutDCAllList";
-            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery2});
-            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // colId
             // 
@@ -770,14 +725,60 @@ namespace BillPlex
             this.colBalanceWt.Visible = true;
             this.colBalanceWt.VisibleIndex = 38;
             // 
+            // cmbFind
+            // 
+            this.cmbFind.Location = new System.Drawing.Point(21, 22);
+            this.cmbFind.Name = "cmbFind";
+            this.cmbFind.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbFind.Size = new System.Drawing.Size(433, 20);
+            this.cmbFind.TabIndex = 2;
+            // 
+            // btnclr
+            // 
+            this.btnclr.Location = new System.Drawing.Point(562, 25);
+            this.btnclr.Name = "btnclr";
+            this.btnclr.Size = new System.Drawing.Size(75, 23);
+            this.btnclr.TabIndex = 2;
+            this.btnclr.Text = "Clear";
+            // 
+            // btnFind
+            // 
+            this.btnFind.Location = new System.Drawing.Point(481, 25);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(75, 23);
+            this.btnFind.TabIndex = 1;
+            this.btnFind.Text = "Find";
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Controls.Add(this.labelControl1);
+            this.panelControl1.Location = new System.Drawing.Point(42, 14);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(1345, 50);
+            this.panelControl1.TabIndex = 0;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Appearance.Options.UseForeColor = true;
+            this.labelControl1.Location = new System.Drawing.Point(486, 6);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(220, 39);
+            this.labelControl1.TabIndex = 0;
+            this.labelControl1.Text = "Job Received ";
+            // 
             // FrmJobReceivedProfile
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1603, 866);
             this.Controls.Add(this.panelControl3);
             this.Name = "FrmJobReceivedProfile";
             this.Text = "FrmJobReceivedProfile";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
@@ -787,12 +788,12 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelDeliveryChallan)).EndInit();
             this.panelDeliveryChallan.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbFind.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

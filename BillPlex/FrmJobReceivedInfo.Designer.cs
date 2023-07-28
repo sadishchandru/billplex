@@ -30,11 +30,11 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery5 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter5 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery3 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter3 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmJobReceivedInfo));
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery6 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter6 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery4 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter4 = new DevExpress.DataAccess.Sql.QueryParameter();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl7 = new DevExpress.XtraEditors.PanelControl();
             this.btnClear = new DevExpress.XtraEditors.SimpleButton();
@@ -143,6 +143,7 @@ namespace BillPlex
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.drpIncentiveApp = new DevExpress.XtraEditors.ComboBoxEdit();
             this.txtConveyance = new DevExpress.XtraEditors.TextEdit();
             this.txtNetAmt = new DevExpress.XtraEditors.TextEdit();
@@ -200,7 +201,6 @@ namespace BillPlex
             this.labelControl33 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).BeginInit();
@@ -419,13 +419,13 @@ namespace BillPlex
             // 
             this.sqlDataSource2.ConnectionName = "BillPlex";
             this.sqlDataSource2.Name = "sqlDataSource2";
-            storedProcQuery5.Name = "PRO_GetJobGivingWithoutDCReceivedFilter";
-            queryParameter5.Name = "@SearchKey";
-            queryParameter5.Type = typeof(string);
-            storedProcQuery5.Parameters.Add(queryParameter5);
-            storedProcQuery5.StoredProcName = "PRO_GetJobGivingWithoutDCReceivedFilter";
+            storedProcQuery3.Name = "PRO_GetJobGivingWithoutDCReceivedFilter";
+            queryParameter3.Name = "@SearchKey";
+            queryParameter3.Type = typeof(string);
+            storedProcQuery3.Parameters.Add(queryParameter3);
+            storedProcQuery3.StoredProcName = "PRO_GetJobGivingWithoutDCReceivedFilter";
             this.sqlDataSource2.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery5});
+            storedProcQuery3});
             this.sqlDataSource2.ResultSchemaSerializable = resources.GetString("sqlDataSource2.ResultSchemaSerializable");
             // 
             // gridView2
@@ -904,13 +904,13 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery6.Name = "PRO_GetJobGivingWithoutDC";
-            queryParameter6.Name = "@SearchKey";
-            queryParameter6.Type = typeof(string);
-            storedProcQuery6.Parameters.Add(queryParameter6);
-            storedProcQuery6.StoredProcName = "PRO_GetJobGivingWithoutDC";
+            storedProcQuery4.Name = "PRO_GetJobGivingWithoutDC";
+            queryParameter4.Name = "@SearchKey";
+            queryParameter4.Type = typeof(string);
+            storedProcQuery4.Parameters.Add(queryParameter4);
+            storedProcQuery4.StoredProcName = "PRO_GetJobGivingWithoutDC";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery6});
+            storedProcQuery4});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // gridView1
@@ -1435,6 +1435,18 @@ namespace BillPlex
             this.panelControl3.Size = new System.Drawing.Size(1203, 301);
             this.panelControl3.TabIndex = 1;
             // 
+            // labelControl9
+            // 
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl9.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl9.Appearance.Options.UseFont = true;
+            this.labelControl9.Appearance.Options.UseForeColor = true;
+            this.labelControl9.Location = new System.Drawing.Point(738, 46);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(10, 18);
+            this.labelControl9.TabIndex = 138;
+            this.labelControl9.Text = "*";
+            // 
             // drpIncentiveApp
             // 
             this.drpIncentiveApp.Location = new System.Drawing.Point(764, 160);
@@ -1454,7 +1466,7 @@ namespace BillPlex
             this.txtConveyance.Properties.UseMaskAsDisplayFormat = true;
             this.txtConveyance.Size = new System.Drawing.Size(115, 20);
             this.txtConveyance.TabIndex = 134;
-            this.txtConveyance.EditValueChanged += new System.EventHandler(this.txtDeduction_EditValueChanged);
+            this.txtConveyance.EditValueChanged += new System.EventHandler(this.txtRcvdQty_EditValueChanged);
             // 
             // txtNetAmt
             // 
@@ -1478,7 +1490,7 @@ namespace BillPlex
             this.txtIncentive.Properties.UseMaskAsDisplayFormat = true;
             this.txtIncentive.Size = new System.Drawing.Size(115, 20);
             this.txtIncentive.TabIndex = 132;
-            this.txtIncentive.EditValueChanged += new System.EventHandler(this.txtDeduction_EditValueChanged);
+            this.txtIncentive.EditValueChanged += new System.EventHandler(this.txtRcvdQty_EditValueChanged);
             // 
             // labelControl23
             // 
@@ -1552,7 +1564,7 @@ namespace BillPlex
             this.txtDeduction.Properties.UseMaskAsDisplayFormat = true;
             this.txtDeduction.Size = new System.Drawing.Size(113, 20);
             this.txtDeduction.TabIndex = 125;
-            this.txtDeduction.EditValueChanged += new System.EventHandler(this.txtDeduction_EditValueChanged);
+            this.txtDeduction.EditValueChanged += new System.EventHandler(this.txtRcvdQty_EditValueChanged);
             // 
             // txtBalanceWeight
             // 
@@ -1999,18 +2011,6 @@ namespace BillPlex
             this.panelControl6.Size = new System.Drawing.Size(1355, 41);
             this.panelControl6.TabIndex = 7;
             // 
-            // labelControl9
-            // 
-            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl9.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Appearance.Options.UseForeColor = true;
-            this.labelControl9.Location = new System.Drawing.Point(738, 46);
-            this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(10, 18);
-            this.labelControl9.TabIndex = 138;
-            this.labelControl9.Text = "*";
-            // 
             // FrmJobReceivedInfo
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -2020,6 +2020,7 @@ namespace BillPlex
             this.Controls.Add(this.panelControl1);
             this.Name = "FrmJobReceivedInfo";
             this.Text = "FrmJobReceivedInfo";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).EndInit();

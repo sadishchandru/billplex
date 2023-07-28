@@ -40,7 +40,8 @@ SET NOCOUNT ON;
             Delivarydate,
             WagesforEmp,
             Status,
-			totalWt
+			totalWt,
+			AdditionalReason
         FROM OrderMaster
         WHERE OrderNo = @OrderNo;
  

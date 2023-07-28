@@ -111,12 +111,12 @@ namespace BillPlex
                     }
                     else
                     {
-                        XtraMessageBox.Show(IncentiveMasterRequest.Result.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        XtraMessageBox.Show(IncentiveMasterRequest.Result.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
                 {
-                    XtraMessageBox.Show("please give the manditory field", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    XtraMessageBox.Show("please give the manditory field", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 

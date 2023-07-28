@@ -48,11 +48,6 @@ namespace BillPlex
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.colNetAmt = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colIncentive = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colConveyance = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEmpId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEmployeeName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -78,6 +73,11 @@ namespace BillPlex
             this.colConveyance1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIncentive1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNetAmt1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.colNetAmt = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIncentive = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colConveyance = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
@@ -324,42 +324,6 @@ namespace BillPlex
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             // 
-            // panelControl1
-            // 
-            this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.panelControl1.Controls.Add(this.labelControl1);
-            this.panelControl1.Location = new System.Drawing.Point(12, 13);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1791, 55);
-            this.panelControl1.TabIndex = 2;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(685, 15);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(421, 25);
-            this.labelControl1.TabIndex = 2;
-            this.labelControl1.Text = "DIRECT JOB RECEIVED Without GIVING";
-            // 
-            // colNetAmt
-            // 
-            this.colNetAmt.FieldName = "NetAmt";
-            this.colNetAmt.Name = "colNetAmt";
-            // 
-            // colIncentive
-            // 
-            this.colIncentive.FieldName = "Incentive";
-            this.colIncentive.Name = "colIncentive";
-            // 
-            // colConveyance
-            // 
-            this.colConveyance.FieldName = "Conveyance";
-            this.colConveyance.Name = "colConveyance";
-            // 
             // colId
             // 
             this.colId.FieldName = "Id";
@@ -535,15 +499,52 @@ namespace BillPlex
             this.colNetAmt1.Visible = true;
             this.colNetAmt1.VisibleIndex = 24;
             // 
+            // panelControl1
+            // 
+            this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.panelControl1.Controls.Add(this.labelControl1);
+            this.panelControl1.Location = new System.Drawing.Point(12, 13);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(1791, 55);
+            this.panelControl1.TabIndex = 2;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Appearance.Options.UseForeColor = true;
+            this.labelControl1.Location = new System.Drawing.Point(685, 15);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(421, 25);
+            this.labelControl1.TabIndex = 2;
+            this.labelControl1.Text = "DIRECT JOB RECEIVED Without GIVING";
+            // 
+            // colNetAmt
+            // 
+            this.colNetAmt.FieldName = "NetAmt";
+            this.colNetAmt.Name = "colNetAmt";
+            // 
+            // colIncentive
+            // 
+            this.colIncentive.FieldName = "Incentive";
+            this.colIncentive.Name = "colIncentive";
+            // 
+            // colConveyance
+            // 
+            this.colConveyance.FieldName = "Conveyance";
+            this.colConveyance.Name = "colConveyance";
+            // 
             // FrmDirectJobReceivedWithoutGivingProfile
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1661, 828);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(1678, 845);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Name = "FrmDirectJobReceivedWithoutGivingProfile";
             this.Text = "FrmDirectJobReceivedWithoutGivingProfile";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();

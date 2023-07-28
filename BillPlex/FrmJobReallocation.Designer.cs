@@ -164,6 +164,7 @@ namespace BillPlex
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl32 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.ddReceivingDate = new DevExpress.XtraEditors.DateEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -191,7 +192,6 @@ namespace BillPlex
             this.txtProductCode = new DevExpress.XtraEditors.TextEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.txtEmpName = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl32 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
@@ -1613,7 +1613,7 @@ namespace BillPlex
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.labelControl1.Appearance.ForeColor = System.Drawing.SystemColors.Highlight;
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Appearance.Options.UseForeColor = true;
             this.labelControl1.Location = new System.Drawing.Point(800, 9);
@@ -1656,6 +1656,18 @@ namespace BillPlex
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(1511, 154);
             this.panelControl2.TabIndex = 28;
+            // 
+            // labelControl32
+            // 
+            this.labelControl32.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl32.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl32.Appearance.Options.UseFont = true;
+            this.labelControl32.Appearance.Options.UseForeColor = true;
+            this.labelControl32.Location = new System.Drawing.Point(1373, 14);
+            this.labelControl32.Name = "labelControl32";
+            this.labelControl32.Size = new System.Drawing.Size(10, 18);
+            this.labelControl32.TabIndex = 28;
+            this.labelControl32.Text = "*";
             // 
             // labelControl13
             // 
@@ -1962,26 +1974,15 @@ namespace BillPlex
             this.txtEmpName.Size = new System.Drawing.Size(187, 20);
             this.txtEmpName.TabIndex = 14;
             // 
-            // labelControl32
-            // 
-            this.labelControl32.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl32.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl32.Appearance.Options.UseFont = true;
-            this.labelControl32.Appearance.Options.UseForeColor = true;
-            this.labelControl32.Location = new System.Drawing.Point(1373, 14);
-            this.labelControl32.Name = "labelControl32";
-            this.labelControl32.Size = new System.Drawing.Size(10, 18);
-            this.labelControl32.TabIndex = 28;
-            this.labelControl32.Text = "*";
-            // 
             // FrmJobReallocation
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1821, 826);
             this.Controls.Add(this.panelControl1);
             this.Name = "FrmJobReallocation";
             this.Text = "FrmJobReallocation";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
