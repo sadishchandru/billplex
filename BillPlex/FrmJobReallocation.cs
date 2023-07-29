@@ -98,7 +98,6 @@ namespace BillPlex
                     lblWeight.Text = (string)gridView1.GetRowCellValue(rowHandle, "WeightKg");
                     txtReceivedQty.Text = (string)gridView1.GetRowCellValue(rowHandle, "received");
                     JobGivingWithoutDcRequest.OrderNo = gridView1.GetRowCellValue(rowHandle, "OrderNo").ToString();
-
                 }
             }
             catch (Exception ex)
@@ -315,11 +314,11 @@ namespace BillPlex
                     txtProSize.Text = (string)gridView2.GetRowCellValue(rowHandle, "ProductSize");
                     txtProColor.Text = (string)gridView2.GetRowCellValue(rowHandle, "Color");
                     txtPendingQty.Text = (string)gridView2.GetRowCellValue(rowHandle, "PendingQty");
-                    lblWeight.Text = (string)gridView2.GetRowCellValue(rowHandle, "WeightKg");
+                    lblWeight.Text = (string)gridView2.GetRowCellValue(rowHandle, "BalanceWt");
                     txtReceivedQty.Text = (string)gridView2.GetRowCellValue(rowHandle, "received");
                     JobGivingWithoutDcRequest.OrderNo = gridView2.GetRowCellValue(rowHandle, "OrderNo").ToString();
                     JobGivingWithoutDcRequest.RawMaterial = gridView2.GetRowCellValue(rowHandle, "RawMaterial").ToString();
-                    JobGivingWithoutDcRequest.WeightKg = gridView2.GetRowCellValue(rowHandle, "WeightKg").ToString();
+                    //JobGivingWithoutDcRequest.WeightKg = gridView2.GetRowCellValue(rowHandle, "WeightKg").ToString();
                 }
             }
             catch (Exception ex)
