@@ -531,12 +531,13 @@ namespace BillPlex
             // 
             // FrmClientCompanyBankInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1613, 830);
             this.Controls.Add(this.panelControl1);
             this.Name = "FrmClientCompanyBankInfo";
             this.Text = "ClientCompanyBankInfo";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();

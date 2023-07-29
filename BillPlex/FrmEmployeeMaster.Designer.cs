@@ -3813,9 +3813,9 @@ namespace BillPlex
             // 
             // FrmEmployeeMaster
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1777, 814);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(1794, 814);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Name = "FrmEmployeeMaster";
