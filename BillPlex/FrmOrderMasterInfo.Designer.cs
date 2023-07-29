@@ -226,7 +226,7 @@ namespace BillPlex
             // 
             // txtReasonbox
             // 
-            this.txtReasonbox.Location = new System.Drawing.Point(866, 362);
+            this.txtReasonbox.Location = new System.Drawing.Point(927, 363);
             this.txtReasonbox.Name = "txtReasonbox";
             this.txtReasonbox.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtReasonbox.Size = new System.Drawing.Size(285, 46);
@@ -615,7 +615,7 @@ namespace BillPlex
             this.labelControl21.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl21.Appearance.Options.UseFont = true;
             this.labelControl21.Appearance.Options.UseForeColor = true;
-            this.labelControl21.Location = new System.Drawing.Point(231, 142);
+            this.labelControl21.Location = new System.Drawing.Point(244, 137);
             this.labelControl21.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl21.Name = "labelControl21";
             this.labelControl21.Size = new System.Drawing.Size(11, 21);
@@ -624,7 +624,7 @@ namespace BillPlex
             // 
             // drpCustCode
             // 
-            this.drpCustCode.Location = new System.Drawing.Point(261, 145);
+            this.drpCustCode.Location = new System.Drawing.Point(261, 143);
             this.drpCustCode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.drpCustCode.Name = "drpCustCode";
             this.drpCustCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -649,7 +649,7 @@ namespace BillPlex
             // 
             this.btnCustCode.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustCode.Appearance.Options.UseFont = true;
-            this.btnCustCode.Location = new System.Drawing.Point(551, 142);
+            this.btnCustCode.Location = new System.Drawing.Point(551, 140);
             this.btnCustCode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCustCode.Name = "btnCustCode";
             this.btnCustCode.Size = new System.Drawing.Size(50, 24);
@@ -728,7 +728,7 @@ namespace BillPlex
             // 
             // drpCustName
             // 
-            this.drpCustName.Location = new System.Drawing.Point(407, 145);
+            this.drpCustName.Location = new System.Drawing.Point(407, 143);
             this.drpCustName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.drpCustName.Name = "drpCustName";
             this.drpCustName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -1078,6 +1078,7 @@ namespace BillPlex
             this.Name = "FrmOrderMasterInfo";
             this.Text = "FrmOrderMasterInfo";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmOrderMasterInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
