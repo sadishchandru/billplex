@@ -594,6 +594,7 @@ namespace BillPlex
             // FrmDeliveryChallanProfile
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1451, 814);
             this.Controls.Add(this.panelControl3);
             this.Name = "FrmDeliveryChallanProfile";

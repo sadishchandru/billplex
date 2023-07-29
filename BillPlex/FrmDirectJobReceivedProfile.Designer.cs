@@ -313,14 +313,15 @@ namespace BillPlex
             // 
             // FrmDirectJobReceivedProfile
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1508, 857);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.panelControl4);
             this.Name = "FrmDirectJobReceivedProfile";
             this.Text = "FrmDirectJobReceivedProfile";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelDeliveryChallan)).EndInit();

@@ -40,6 +40,7 @@ namespace BillPlex
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.AuthClearImageBtn = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl26 = new DevExpress.XtraEditors.LabelControl();
+            this.AuthImg = new DevExpress.XtraEditors.SvgImageBox();
             this.txtBankDetails = new DevExpress.XtraEditors.MemoEdit();
             this.labelControl25 = new DevExpress.XtraEditors.LabelControl();
             this.InsertBankInfoBtn = new DevExpress.XtraEditors.SimpleButton();
@@ -138,7 +139,6 @@ namespace BillPlex
             this.ddStartingDate = new DevExpress.XtraEditors.DateEdit();
             this.txtDirector = new DevExpress.XtraEditors.TextEdit();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
-            this.AuthImg = new DevExpress.XtraEditors.SvgImageBox();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -149,6 +149,7 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.drpAuthBloodGroup.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddDOB.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddDOB.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AuthImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBankDetails.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPercent.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAuthPanNo.Properties)).BeginInit();
@@ -197,7 +198,6 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.ddStartingDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDirector.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AuthImg)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -400,6 +400,18 @@ namespace BillPlex
             this.labelControl26.Size = new System.Drawing.Size(88, 16);
             this.labelControl26.TabIndex = 71;
             this.labelControl26.Text = "Passport Size";
+            // 
+            // AuthImg
+            // 
+            this.AuthImg.Location = new System.Drawing.Point(1066, 47);
+            this.AuthImg.LookAndFeel.SkinName = "DevExpress Style";
+            this.AuthImg.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.AuthImg.Name = "AuthImg";
+            this.AuthImg.Size = new System.Drawing.Size(119, 120);
+            this.AuthImg.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Squeeze;
+            this.AuthImg.SvgImage = global::BillPlex.Properties.Resources._21ifM_1M5sL__BO1_204_203_200_;
+            this.AuthImg.TabIndex = 70;
+            this.AuthImg.Text = "svgImageBox1";
             // 
             // txtBankDetails
             // 
@@ -1581,24 +1593,12 @@ namespace BillPlex
             this.txtDirector.Size = new System.Drawing.Size(224, 20);
             this.txtDirector.TabIndex = 65;
             // 
-            // AuthImg
-            // 
-            this.AuthImg.Location = new System.Drawing.Point(1066, 47);
-            this.AuthImg.LookAndFeel.SkinName = "DevExpress Style";
-            this.AuthImg.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.AuthImg.Name = "AuthImg";
-            this.AuthImg.Size = new System.Drawing.Size(119, 120);
-            this.AuthImg.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Squeeze;
-            this.AuthImg.SvgImage = global::BillPlex.Properties.Resources._21ifM_1M5sL__BO1_204_203_200_;
-            this.AuthImg.TabIndex = 70;
-            this.AuthImg.Text = "svgImageBox1";
-            // 
             // FrmClientCompanyInfo
             // 
             this.Appearance.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.Appearance.Options.UseForeColor = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1552, 745);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
@@ -1617,6 +1617,7 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.drpAuthBloodGroup.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddDOB.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddDOB.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AuthImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBankDetails.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPercent.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAuthPanNo.Properties)).EndInit();
@@ -1668,7 +1669,6 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.ddStartingDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDirector.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AuthImg)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -840,8 +840,8 @@ namespace BillPlex
             // 
             // FrmCompanyProfile
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1584, 742);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
