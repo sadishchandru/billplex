@@ -30,6 +30,7 @@ namespace BillPlex
         {
             InitializeComponent();
             InitializeDataSource();
+            ddOrderDate.DateTime = DateTime.Now;
             lblReason.Visible = false;
             txtReasonbox.Visible = false;
             OrderMasterRequest = new OrderMasterInfo();
@@ -568,8 +569,8 @@ namespace BillPlex
             // This adjusts between the screen resolution of the design computer and the workstation.
             int ourScreenWidth = Screen.FromControl(this).WorkingArea.Width;
             int ourScreenHeight = Screen.FromControl(this).WorkingArea.Height;
-            float scaleFactorWidth = (float)ourScreenWidth / 1600f;
-            float scaleFactorHeigth = (float)ourScreenHeight / 900f;
+            float scaleFactorWidth = ourScreenWidth / 1600f;
+            float scaleFactorHeigth = ourScreenHeight / 900f;
             SizeF scaleFactor = new SizeF(scaleFactorWidth, scaleFactorHeigth);
             Scale(scaleFactor);
 

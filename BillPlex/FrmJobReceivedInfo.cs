@@ -207,32 +207,6 @@ namespace BillPlex
                 }
             }
         }
-
-        private void txtDeduction_EditValueChanged(object sender, EventArgs e)
-        {
-            int total = 0;
-            int deductionTotal = 0;
-
-            if (txtDeduction.Text != "" && txtDeduction.Text != "0")
-            {
-                deductionTotal = Convert.ToInt32(txtTotal.Text) - Convert.ToInt32(txtDeduction.Text);
-                total = Convert.ToInt32(txtTotal.Text) - Convert.ToInt32(txtDeduction.Text);
-            }
-
-            //if (txtConveyance.Text != "" && txtConveyance.Text != "0")
-            //{
-            //    total = Convert.ToInt32(txtNetAmt.Text) + Convert.ToInt32(txtConveyance.Text);
-            //}
-
-            //if (txtIncentive.Text != "" && txtIncentive.Text != "0")
-            //{
-            //    total = Convert.ToInt32(txtNetAmt.Text) + Convert.ToInt32(txtIncentive.Text);
-            //}
-
-            txtTotal.Text = deductionTotal.ToString();
-            txtNetAmt.Text = total.ToString();
-        }
-
         private void gridControl1_DoubleClick(object sender, EventArgs e)
         {
             try
@@ -255,7 +229,6 @@ namespace BillPlex
                     txtColor.Text = (string)gridView1.GetRowCellValue(rowHandle, "Color");
                     txtWages.Text = (string)gridView1.GetRowCellValue(rowHandle, "WagesEmp");
                     JobReceivedRequest.OrderNo = gridView1.GetRowCellValue(rowHandle, "OrderNo").ToString();
-                    //JobReceivedRequest.OrderNo = (string)gridView1.GetRowCellValue(rowHandle, "OrderNo");
                     JobReceivedRequest.Id = (Int64)gridView1.GetRowCellValue(rowHandle, "Id");
                 }
                 btnAdd.Enabled = false;
@@ -306,6 +279,7 @@ namespace BillPlex
         {
             decimal total = 0;
             decimal deductionTotal = 0;
+            decimal txtPQt = 0;
 
             if (txtWages.Text != "" && txtWages.Text != "0")
             {
@@ -331,6 +305,8 @@ namespace BillPlex
 
             txtTotal.Text = deductionTotal.ToString();
             txtNetAmt.Text = total.ToString();
+            
+            
         }
 
         private void gridControl2_DoubleClick(object sender, EventArgs e)
@@ -345,16 +321,24 @@ namespace BillPlex
                     txtEmpName.Text = (string)gridView2.GetRowCellValue(rowHandle, "EmployeeName");
                     txtCName.Text = (string)gridView2.GetRowCellValue(rowHandle, "CompanyName");
                     txtRawMaterial.Text = (string)gridView2.GetRowCellValue(rowHandle, "RawMaterial");
-                    txtQuantity.Text = (string)gridView2.GetRowCellValue(rowHandle, "QuantityPiece");
+                    txtQuantity.Text = (string)gridView2.GetRowCellValue(rowHandle, "TotalQty");
                     txtType.Text = (string)gridView2.GetRowCellValue(rowHandle, "Type");
-                    txtWeight.Text = (string)gridView2.GetRowCellValue(rowHandle, "WeightKg");
+                    txtWeight.Text = (string)gridView2.GetRowCellValue(rowHandle, "BalanceWt");
                     txtPModel.Text = (string)gridView2.GetRowCellValue(rowHandle, "ModelName");
                     txtPCode.Text = (string)gridView2.GetRowCellValue(rowHandle, "ModelCode");
                     txtPSize.Text = (string)gridView2.GetRowCellValue(rowHandle, "ProductSize");
                     txtColor.Text = (string)gridView2.GetRowCellValue(rowHandle, "Color");
-                    txtWages.Text = (string)gridView2.GetRowCellValue(rowHandle, "WagesEmp");
+                    txtWages.Text = (string)gridView2.GetRowCellValue(rowHandle, "Wages");
+                    var recicivedQty = (string)gridView2.GetRowCellValue(rowHandle, "received");
                     JobReceivedRequest.OrderNo = gridView2.GetRowCellValue(rowHandle, "OrderNo").ToString();
                     JobReceivedRequest.Id = (Int64)gridView2.GetRowCellValue(rowHandle, "Id");
+                    //var recicivedQty = JobReceivedRequest.RcvdQty = gridView1.GetRowCellValue(rowHandle, "received").ToString();
+
+                    if (recicivedQty != "" && recicivedQty != "0")
+                    {
+
+                        txtPQty.Text = (Convert.ToDecimal(txtQuantity.Text) - Convert.ToDecimal(recicivedQty)).ToString();
+                    }
                 }
                 btnAdd.Enabled = false;
                 btnNew.Enabled = false;
@@ -372,8 +356,8 @@ namespace BillPlex
             // This adjusts between the screen resolution of the design computer and the workstation.
             int ourScreenWidth = Screen.FromControl(this).WorkingArea.Width;
             int ourScreenHeight = Screen.FromControl(this).WorkingArea.Height;
-            float scaleFactorWidth = (float)ourScreenWidth / 1600f;
-            float scaleFactorHeigth = (float)ourScreenHeight / 900f;
+            float scaleFactorWidth = ourScreenWidth / 1600f;
+            float scaleFactorHeigth = ourScreenHeight / 900f;
             SizeF scaleFactor = new SizeF(scaleFactorWidth, scaleFactorHeigth);
             Scale(scaleFactor);
 

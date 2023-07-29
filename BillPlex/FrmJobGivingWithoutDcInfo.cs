@@ -106,90 +106,93 @@ namespace BillPlex
         {
             try
             {
-                string selectedItem = (string)drpEmpCode.SelectedItem;
+                if (ddDate.Text != null)
+                {
+                    string selectedItem = (string)drpEmpCode.SelectedItem;
 
-                if (selectedItem != null)
-                {
-                    JobGivingWithoutDcRequest.EmployeeCode = JobGivingWithoutDcRequest.EmployeePersonalList.FirstOrDefault(item => item.Code == selectedItem.ToString())?.Id ?? -1;
-                }
-                JobGivingWithoutDcRequest.EmployeeName = txtEmpName.Text;
-                JobGivingWithoutDcRequest.CompanyName = txtComName.Text;
-                JobGivingWithoutDcRequest.ClientCompany = txtCCom.Text;
-                JobGivingWithoutDcRequest.ClientName = txtClientName.Text;
-                JobGivingWithoutDcRequest.SubClientCompany = txtSCCom.Text;
-                JobGivingWithoutDcRequest.Date = ddDate.Text;
-                string selectedItems = (string)drpOrderNo.SelectedItem;
-                if (selectedItems != null)
-                {
-                    JobGivingWithoutDcRequest.OrderNo = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.Code == selectedItems.ToString())?.Id.ToString() ?? "";
-                }
-                JobGivingWithoutDcRequest.OrderDate = ddODate.Text;
-                JobGivingWithoutDcRequest.CustomerCode = txtCCode.Text;
-                JobGivingWithoutDcRequest.CustomerName = txtCCName.Text;
-                JobGivingWithoutDcRequest.ModelName = drpMName.Text;
-                JobGivingWithoutDcRequest.ModelCode = drpMCode.Text;
-                JobGivingWithoutDcRequest.ProductName = txtPName.Text;
-                JobGivingWithoutDcRequest.ProductSize = txtPSize.Text;
-                JobGivingWithoutDcRequest.Color = drpColor.Text;
-                JobGivingWithoutDcRequest.RawMaterial = txtRawMaterial.Text;
-                JobGivingWithoutDcRequest.RawType = txtType.Text;
-                JobGivingWithoutDcRequest.QuantityPiece = txtQuantity.Text;
-                JobGivingWithoutDcRequest.WeightKg = txtWeight.Text;
-                JobGivingWithoutDcRequest.AvlQty = txtAvlQty.Text;
-                //JobGivingWithoutDcRequest.TotalQty = txtTQty.Text;
-                //JobGivingWithoutDcRequest.TotalWt = txtTotalWT.Text;
-                JobGivingWithoutDcRequest.Shortage = txtShortage.Text;
-                string OrderNo = (string)drpOrderNo.SelectedItem;
-                if (OrderNo != null)
-                {
-                    JobGivingWithoutDcRequest.WagesEmp = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.Code == OrderNo.ToString())?.WagesEmp ?? "";
-                }
-                JobGivingWithoutDcRequest.Update();
-
-                if (JobGivingWithoutDcRequest.Result.Status == ResultStatus.Success)
-                {
-                    XtraMessageBox.Show(JobGivingWithoutDcRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    if (JobGivingWithoutDcRequest.JobGivingWithoutDcListByOrder.Count() > 0)
+                    if (selectedItem != null)
                     {
-                        foreach (var item in JobGivingWithoutDcRequest.JobGivingWithoutDcListByOrder)
+                        JobGivingWithoutDcRequest.EmployeeCode = JobGivingWithoutDcRequest.EmployeePersonalList.FirstOrDefault(item => item.Code == selectedItem.ToString())?.Id ?? -1;
+                    }
+                    JobGivingWithoutDcRequest.EmployeeName = txtEmpName.Text;
+                    JobGivingWithoutDcRequest.CompanyName = txtComName.Text;
+                    JobGivingWithoutDcRequest.ClientCompany = txtCCom.Text;
+                    JobGivingWithoutDcRequest.ClientName = txtClientName.Text;
+                    JobGivingWithoutDcRequest.SubClientCompany = txtSCCom.Text;
+                    JobGivingWithoutDcRequest.Date = ddDate.Text;
+                    string selectedItems = (string)drpOrderNo.SelectedItem;
+                    if (selectedItems != null)
+                    {
+                        JobGivingWithoutDcRequest.OrderNo = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.Code == selectedItems.ToString())?.Id.ToString() ?? "";
+                    }
+                    JobGivingWithoutDcRequest.OrderDate = ddODate.Text;
+                    JobGivingWithoutDcRequest.CustomerCode = txtCCode.Text;
+                    JobGivingWithoutDcRequest.CustomerName = txtCCName.Text;
+                    JobGivingWithoutDcRequest.ModelName = drpMName.Text;
+                    JobGivingWithoutDcRequest.ModelCode = drpMCode.Text;
+                    JobGivingWithoutDcRequest.ProductName = txtPName.Text;
+                    JobGivingWithoutDcRequest.ProductSize = txtPSize.Text;
+                    JobGivingWithoutDcRequest.Color = drpColor.Text;
+                    JobGivingWithoutDcRequest.RawMaterial = txtRawMaterial.Text;
+                    JobGivingWithoutDcRequest.RawType = txtType.Text;
+                    JobGivingWithoutDcRequest.QuantityPiece = txtQuantity.Text;
+                    JobGivingWithoutDcRequest.WeightKg = txtWeight.Text;
+                    JobGivingWithoutDcRequest.AvlQty = txtAvlQty.Text;
+                    //JobGivingWithoutDcRequest.TotalQty = txtTQty.Text;
+                    //JobGivingWithoutDcRequest.TotalWt = txtTotalWT.Text;
+                    JobGivingWithoutDcRequest.Shortage = txtShortage.Text;
+                    string OrderNo = (string)drpOrderNo.SelectedItem;
+                    if (OrderNo != null)
+                    {
+                        JobGivingWithoutDcRequest.WagesEmp = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.Code == OrderNo.ToString())?.WagesEmp ?? "";
+                    }
+                    JobGivingWithoutDcRequest.Update();
+
+                    if (JobGivingWithoutDcRequest.Result.Status == ResultStatus.Success)
+                    {
+                        XtraMessageBox.Show(JobGivingWithoutDcRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (JobGivingWithoutDcRequest.JobGivingWithoutDcListByOrder.Count() > 0)
                         {
-                            DataTable dataTable = gridControl1.DataSource as DataTable;
+                            foreach (var item in JobGivingWithoutDcRequest.JobGivingWithoutDcListByOrder)
+                            {
+                                DataTable dataTable = gridControl1.DataSource as DataTable;
 
-                            DataRow newRow = dataTable.NewRow();
-                            newRow["EmployeeCode"] = item.EmployeeCode;
-                            newRow["EmployeeName"] = item.EmployeeName;
-                            newRow["CompanyName"] = item.CompanyName;
-                            newRow["Director"] = item.Director;
-                            newRow["ClientCompany"] = item.ClientCompany;
-                            newRow["ClientName"] = item.ClientName;
-                            newRow["SubClientCompany"] = item.SubClientCompany;
-                            newRow["subContractor"] = item.subContractor;
-                            newRow["Date"] = item.Date;
-                            newRow["OrderNo"] = item.OrderNo;
-                            newRow["OrderDate"] = item.OrderDate;
-                            newRow["CustomerCode"] = item.CustomerCode;
-                            newRow["CustomerName"] = item.CustomerName;
-                            newRow["ModelName"] = item.ModelCode;
-                            newRow["ModelCode"] = item.ModelName;
-                            newRow["ProductName"] = item.ProductName;
-                            newRow["ProductSize"] = item.ProductSize;
-                            newRow["Color"] = item.Color;
-                            newRow["RawMaterial"] = item.RawMaterial;
-                            newRow["Type"] = item.RawType;
-                            newRow["QuantityPiece"] = item.QuantityPiece;
-                            newRow["WeightKg"] = item.WeightKg;
-                            newRow["AvlQty"] = item.AvlQty;
-                            newRow["TotalQty"] = item.TotalQty;
-                            newRow["TotalWt"] = item.TotalWt;
-                            newRow["Excess"] = item.Excess;
-                            newRow["Shortage"] = item.Shortage;
+                                DataRow newRow = dataTable.NewRow();
+                                newRow["EmployeeCode"] = item.EmployeeCode;
+                                newRow["EmployeeName"] = item.EmployeeName;
+                                newRow["CompanyName"] = item.CompanyName;
+                                newRow["Director"] = item.Director;
+                                newRow["ClientCompany"] = item.ClientCompany;
+                                newRow["ClientName"] = item.ClientName;
+                                newRow["SubClientCompany"] = item.SubClientCompany;
+                                newRow["subContractor"] = item.subContractor;
+                                newRow["Date"] = item.Date;
+                                newRow["OrderNo"] = item.OrderNo;
+                                newRow["OrderDate"] = item.OrderDate;
+                                newRow["CustomerCode"] = item.CustomerCode;
+                                newRow["CustomerName"] = item.CustomerName;
+                                newRow["ModelName"] = item.ModelCode;
+                                newRow["ModelCode"] = item.ModelName;
+                                newRow["ProductName"] = item.ProductName;
+                                newRow["ProductSize"] = item.ProductSize;
+                                newRow["Color"] = item.Color;
+                                newRow["RawMaterial"] = item.RawMaterial;
+                                newRow["Type"] = item.RawType;
+                                newRow["QuantityPiece"] = item.QuantityPiece;
+                                newRow["WeightKg"] = item.WeightKg;
+                                newRow["AvlQty"] = item.AvlQty;
+                                newRow["TotalQty"] = item.TotalQty;
+                                newRow["TotalWt"] = item.TotalWt;
+                                newRow["Excess"] = item.Excess;
+                                newRow["Shortage"] = item.Shortage;
 
-                            // Add the new DataRow to the DataTable
-                            dataTable.Rows.Add(newRow);
+                                // Add the new DataRow to the DataTable
+                                dataTable.Rows.Add(newRow);
+                            }
+                            btnClear_Click();
+                            gridView1.RefreshData();
+                            gridControl1.RefreshDataSource();
                         }
-                        btnClear_Click();
-                        gridView1.RefreshData();
-                        gridControl1.RefreshDataSource();
                     }
                 }
             }
@@ -285,6 +288,7 @@ namespace BillPlex
             var selectItem = drpMCode.Text;
             var MName = drpMName.Text;
             var ccode = txtCCode.Text;
+            var psize = txtPSize.Text;
             if (JobGivingWithoutDcRequest.OrderMasterList != null && selectItem != "")
             {
                 if (JobGivingWithoutDcRequest.OrderMasterList.Count() > 0)
@@ -292,7 +296,7 @@ namespace BillPlex
                     drpColor.Properties.Items.Clear();
                     foreach (DropDownItemInfo item in JobGivingWithoutDcRequest.OrderMasterList)
                     {
-                        if (item.RawMaterial == selectItem && item.productId == MName && item.AuthorName == ccode)
+                        if (item.RawMaterial == selectItem && item.productId == MName && item.AuthorName == ccode && item.SubComName == psize)
                         {
                             drpColor.Properties.Items.Add(new ImageComboBoxItem(item.color));
                         }
@@ -500,8 +504,8 @@ namespace BillPlex
             // This adjusts between the screen resolution of the design computer and the workstation.
             int ourScreenWidth = Screen.FromControl(this).WorkingArea.Width;
             int ourScreenHeight = Screen.FromControl(this).WorkingArea.Height;
-            float scaleFactorWidth = (float)ourScreenWidth / 1600f;
-            float scaleFactorHeigth = (float)ourScreenHeight / 900f;
+            float scaleFactorWidth = ourScreenWidth / 1600f;
+            float scaleFactorHeigth = ourScreenHeight / 900f;
             SizeF scaleFactor = new SizeF(scaleFactorWidth, scaleFactorHeigth);
             Scale(scaleFactor);
 

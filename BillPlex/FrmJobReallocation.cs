@@ -93,13 +93,12 @@ namespace BillPlex
                     txtProductCode.Text = (string)gridView1.GetRowCellValue(rowHandle, "ModelCode");
                     txtProModel.Text = (string)gridView1.GetRowCellValue(rowHandle, "ModelName");
                     txtQuanity.Text = (string)gridView1.GetRowCellValue(rowHandle, "QuantityPiece");
-                    //txtQuantity.Text = (string)gridView1.GetRowCellValue(rowHandle, "PendingQty");
                     txtProSize.Text = (string)gridView1.GetRowCellValue(rowHandle, "ProductSize");
                     txtProColor.Text = (string)gridView1.GetRowCellValue(rowHandle, "Color");
-                    //txtPendingQty.Text = (string)gridView1.GetRowCellValue(rowHandle, "PendingQty");
                     lblWeight.Text = (string)gridView1.GetRowCellValue(rowHandle, "WeightKg");
                     txtReceivedQty.Text = (string)gridView1.GetRowCellValue(rowHandle, "received");
                     JobGivingWithoutDcRequest.OrderNo = gridView1.GetRowCellValue(rowHandle, "OrderNo").ToString();
+
                 }
             }
             catch (Exception ex)
@@ -110,16 +109,16 @@ namespace BillPlex
 
         private void drpEmpCode_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedItem = (string)drpEmpCode.SelectedItem;
-            if (selectedItem != null)
+            string selected = (string)drpEmpCode.SelectedItem;
+            if (selected != null)
             {
-                txtComName.Text = JobGivingWithoutDcRequest.EmployeePersonalList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.proModel ?? "";
-                txtClientCompany.Text = JobGivingWithoutDcRequest.EmployeePersonalList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.productId ?? "";
-                txtSubClient.Text = JobGivingWithoutDcRequest.EmployeePersonalList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.SubCom ?? "";
-                txtJEmpName.Text = JobGivingWithoutDcRequest.EmployeePersonalList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.Name ?? "";
-                txtDirector.Text = JobGivingWithoutDcRequest.EmployeePersonalList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.AuthorName ?? "";
-                txtClientName.Text = JobGivingWithoutDcRequest.EmployeePersonalList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.RawMaterial ?? "";
-                txtSubContractor.Text = JobGivingWithoutDcRequest.EmployeePersonalList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.SubComName ?? "";
+                txtComName.Text = JobGivingWithoutDcRequest.EmployeePersonalList.FirstOrDefault(item => item.Code == selected.ToString())?.proModel ?? "";
+                txtClientCompany.Text = JobGivingWithoutDcRequest.EmployeePersonalList.FirstOrDefault(item => item.Code == selected.ToString())?.productId ?? "";
+                txtSubClient.Text = JobGivingWithoutDcRequest.EmployeePersonalList.FirstOrDefault(item => item.Code == selected.ToString())?.SubCom ?? "";
+                txtJEmpName.Text = JobGivingWithoutDcRequest.EmployeePersonalList.FirstOrDefault(item => item.Code == selected.ToString())?.Name ?? "";
+                txtDirector.Text = JobGivingWithoutDcRequest.EmployeePersonalList.FirstOrDefault(item => item.Code == selected.ToString())?.AuthorName ?? "";
+                txtClientName.Text = JobGivingWithoutDcRequest.EmployeePersonalList.FirstOrDefault(item => item.Code == selected.ToString())?.RawMaterial ?? "";
+                txtSubContractor.Text = JobGivingWithoutDcRequest.EmployeePersonalList.FirstOrDefault(item => item.Code == selected.ToString())?.SubComName ?? "";
             }
         }
 
@@ -131,7 +130,7 @@ namespace BillPlex
 
                 if (selectedItem != null)
                 {
-                    JobGivingWithoutDcRequest.EmployeeCode = JobGivingWithoutDcRequest.EmployeePersonalList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.Id ?? -1;
+                    JobGivingWithoutDcRequest.EmployeeCode = JobGivingWithoutDcRequest.EmployeePersonalList.FirstOrDefault(item => item.Code == selectedItem.ToString())?.Id ?? -1;
                 }
                 JobGivingWithoutDcRequest.CompanyName = txtComName.Text;
                 JobGivingWithoutDcRequest.ClientCompany = txtClientCompany.Text;
@@ -313,13 +312,14 @@ namespace BillPlex
                     txtProductCode.Text = (string)gridView2.GetRowCellValue(rowHandle, "ModelCode");
                     txtProModel.Text = (string)gridView2.GetRowCellValue(rowHandle, "ModelName");
                     txtQuanity.Text = (string)gridView2.GetRowCellValue(rowHandle, "TotalQty");
-                    //txtQuantity.Text = (string)gridView1.GetRowCellValue(rowHandle, "PendingQty");
                     txtProSize.Text = (string)gridView2.GetRowCellValue(rowHandle, "ProductSize");
                     txtProColor.Text = (string)gridView2.GetRowCellValue(rowHandle, "Color");
                     txtPendingQty.Text = (string)gridView2.GetRowCellValue(rowHandle, "PendingQty");
                     lblWeight.Text = (string)gridView2.GetRowCellValue(rowHandle, "WeightKg");
                     txtReceivedQty.Text = (string)gridView2.GetRowCellValue(rowHandle, "received");
                     JobGivingWithoutDcRequest.OrderNo = gridView2.GetRowCellValue(rowHandle, "OrderNo").ToString();
+                    JobGivingWithoutDcRequest.RawMaterial = gridView2.GetRowCellValue(rowHandle, "RawMaterial").ToString();
+                    JobGivingWithoutDcRequest.WeightKg = gridView2.GetRowCellValue(rowHandle, "WeightKg").ToString();
                 }
             }
             catch (Exception ex)
@@ -334,8 +334,8 @@ namespace BillPlex
             // This adjusts between the screen resolution of the design computer and the workstation.
             int ourScreenWidth = Screen.FromControl(this).WorkingArea.Width;
             int ourScreenHeight = Screen.FromControl(this).WorkingArea.Height;
-            float scaleFactorWidth = (float)ourScreenWidth / 1600f;
-            float scaleFactorHeigth = (float)ourScreenHeight / 900f;
+            float scaleFactorWidth = ourScreenWidth / 1600f;
+            float scaleFactorHeigth = ourScreenHeight / 900f;
             SizeF scaleFactor = new SizeF(scaleFactorWidth, scaleFactorHeigth);
             Scale(scaleFactor);
 
