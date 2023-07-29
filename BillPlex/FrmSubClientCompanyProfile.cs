@@ -101,14 +101,19 @@ namespace BillPlex
             SubCompanyInfoRequest.Show();
         }
 
-        //private void Clearbtn_Click(object sender, EventArgs e)
-        //{
+        private void FrmSubClientCompanyProfile_Load(object sender, EventArgs e)
+        {
+            // Scale our form to look like it did when we designed it.
+            // This adjusts between the screen resolution of the design computer and the workstation.
+            int ourScreenWidth = Screen.FromControl(this).WorkingArea.Width;
+            int ourScreenHeight = Screen.FromControl(this).WorkingArea.Height;
+            float scaleFactorWidth = (float)ourScreenWidth / 1600f;
+            float scaleFactorHeigth = (float)ourScreenHeight / 900f;
+            SizeF scaleFactor = new SizeF(scaleFactorWidth, scaleFactorHeigth);
+            Scale(scaleFactor);
 
-        //}
-
-        //private void Exitbtn_Click(object sender, EventArgs e)
-        //{
-
-        //}
+            // If you want to center the resized screen.
+            CenterToScreen();
+        }
     }
 }

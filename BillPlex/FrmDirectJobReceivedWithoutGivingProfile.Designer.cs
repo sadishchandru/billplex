@@ -267,7 +267,7 @@ namespace BillPlex
             this.comboBoxEdit1.Name = "comboBoxEdit1";
             this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(618, 20);
+            this.comboBoxEdit1.Size = new System.Drawing.Size(618, 22);
             this.comboBoxEdit1.TabIndex = 1;
             // 
             // gridControl1
@@ -516,7 +516,7 @@ namespace BillPlex
             this.labelControl1.Appearance.Options.UseForeColor = true;
             this.labelControl1.Location = new System.Drawing.Point(685, 15);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(421, 25);
+            this.labelControl1.Size = new System.Drawing.Size(528, 31);
             this.labelControl1.TabIndex = 2;
             this.labelControl1.Text = "DIRECT JOB RECEIVED Without GIVING";
             // 
@@ -539,12 +539,13 @@ namespace BillPlex
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1678, 845);
+            this.ClientSize = new System.Drawing.Size(1678, 887);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Name = "FrmDirectJobReceivedWithoutGivingProfile";
             this.Text = "FrmDirectJobReceivedWithoutGivingProfile";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmDirectJobReceivedWithoutGivingProfile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();

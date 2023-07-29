@@ -102,7 +102,7 @@ namespace BillPlex
             this.labelControl3.Location = new System.Drawing.Point(665, 4);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(293, 29);
+            this.labelControl3.Size = new System.Drawing.Size(367, 36);
             this.labelControl3.TabIndex = 66;
             this.labelControl3.Text = "JOB GIVING Without DC";
             // 
@@ -496,6 +496,7 @@ namespace BillPlex
             this.Name = "FrmJobGivingWithoutDcProfile";
             this.Text = "FrmJobGivingWithoutDcProfile";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmJobGivingWithoutDcProfile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();

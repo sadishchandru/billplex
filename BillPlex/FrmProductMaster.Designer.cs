@@ -93,7 +93,7 @@ namespace BillPlex
             this.labelControl1.Location = new System.Drawing.Point(249, 61);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(11, 22);
+            this.labelControl1.Size = new System.Drawing.Size(15, 28);
             this.labelControl1.TabIndex = 14;
             this.labelControl1.Text = "*";
             // 
@@ -158,7 +158,7 @@ namespace BillPlex
             this.txtSearch.Location = new System.Drawing.Point(290, 243);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(432, 20);
+            this.txtSearch.Size = new System.Drawing.Size(432, 22);
             this.txtSearch.TabIndex = 12;
             this.txtSearch.EditValueChanged += new System.EventHandler(this.txtSearch_EditValueChanged);
             // 
@@ -169,7 +169,7 @@ namespace BillPlex
             this.labelControl6.Location = new System.Drawing.Point(54, 240);
             this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(169, 19);
+            this.labelControl6.Size = new System.Drawing.Size(210, 24);
             this.labelControl6.TabIndex = 11;
             this.labelControl6.Text = "Search Raw Material";
             // 
@@ -260,7 +260,7 @@ namespace BillPlex
             this.txtPName.Location = new System.Drawing.Point(357, 64);
             this.txtPName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPName.Name = "txtPName";
-            this.txtPName.Size = new System.Drawing.Size(432, 20);
+            this.txtPName.Size = new System.Drawing.Size(432, 22);
             this.txtPName.TabIndex = 6;
             // 
             // labelControl2
@@ -270,7 +270,7 @@ namespace BillPlex
             this.labelControl2.Location = new System.Drawing.Point(121, 61);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(115, 19);
+            this.labelControl2.Size = new System.Drawing.Size(143, 24);
             this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "Product Name";
             // 
@@ -292,7 +292,7 @@ namespace BillPlex
             this.labelControl3.Location = new System.Drawing.Point(759, 31);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(182, 29);
+            this.labelControl3.Size = new System.Drawing.Size(230, 36);
             this.labelControl3.TabIndex = 1;
             this.labelControl3.Text = "Product Master";
             // 
@@ -307,6 +307,7 @@ namespace BillPlex
             this.Name = "FrmProductMaster";
             this.Text = "FrmProductMaster";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmProductMaster_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();

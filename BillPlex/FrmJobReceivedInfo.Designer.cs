@@ -30,11 +30,11 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery3 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter3 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmJobReceivedInfo));
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery4 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter4 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl7 = new DevExpress.XtraEditors.PanelControl();
             this.btnClear = new DevExpress.XtraEditors.SimpleButton();
@@ -419,13 +419,13 @@ namespace BillPlex
             // 
             this.sqlDataSource2.ConnectionName = "BillPlex";
             this.sqlDataSource2.Name = "sqlDataSource2";
-            storedProcQuery3.Name = "PRO_GetJobGivingWithoutDCReceivedFilter";
-            queryParameter3.Name = "@SearchKey";
-            queryParameter3.Type = typeof(string);
-            storedProcQuery3.Parameters.Add(queryParameter3);
-            storedProcQuery3.StoredProcName = "PRO_GetJobGivingWithoutDCReceivedFilter";
+            storedProcQuery1.Name = "PRO_GetJobGivingWithoutDCReceivedFilter";
+            queryParameter1.Name = "@SearchKey";
+            queryParameter1.Type = typeof(string);
+            storedProcQuery1.Parameters.Add(queryParameter1);
+            storedProcQuery1.StoredProcName = "PRO_GetJobGivingWithoutDCReceivedFilter";
             this.sqlDataSource2.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery3});
+            storedProcQuery1});
             this.sqlDataSource2.ResultSchemaSerializable = resources.GetString("sqlDataSource2.ResultSchemaSerializable");
             // 
             // gridView2
@@ -883,7 +883,7 @@ namespace BillPlex
             this.labelControl7.Appearance.Options.UseFont = true;
             this.labelControl7.Location = new System.Drawing.Point(5, 15);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(122, 19);
+            this.labelControl7.Size = new System.Drawing.Size(155, 24);
             this.labelControl7.TabIndex = 136;
             this.labelControl7.Text = "Job Giving Info";
             // 
@@ -904,13 +904,13 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery4.Name = "PRO_GetJobGivingWithoutDC";
-            queryParameter4.Name = "@SearchKey";
-            queryParameter4.Type = typeof(string);
-            storedProcQuery4.Parameters.Add(queryParameter4);
-            storedProcQuery4.StoredProcName = "PRO_GetJobGivingWithoutDC";
+            storedProcQuery2.Name = "PRO_GetJobGivingWithoutDC";
+            queryParameter2.Name = "@SearchKey";
+            queryParameter2.Type = typeof(string);
+            storedProcQuery2.Parameters.Add(queryParameter2);
+            storedProcQuery2.StoredProcName = "PRO_GetJobGivingWithoutDC";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery4});
+            storedProcQuery2});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // gridView1
@@ -1323,7 +1323,7 @@ namespace BillPlex
             // 
             this.txtEmpCode2.Location = new System.Drawing.Point(435, 9);
             this.txtEmpCode2.Name = "txtEmpCode2";
-            this.txtEmpCode2.Size = new System.Drawing.Size(113, 20);
+            this.txtEmpCode2.Size = new System.Drawing.Size(113, 22);
             this.txtEmpCode2.TabIndex = 135;
             this.txtEmpCode2.EditValueChanged += new System.EventHandler(this.txtEmpCode2_EditValueChanged);
             // 
@@ -1337,7 +1337,7 @@ namespace BillPlex
             this.chckViewDailyRecievPending.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.chckViewDailyRecievPending.Properties.LookAndFeel.SkinName = "DevExpress Style";
             this.chckViewDailyRecievPending.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.chckViewDailyRecievPending.Size = new System.Drawing.Size(265, 23);
+            this.chckViewDailyRecievPending.Size = new System.Drawing.Size(265, 28);
             this.chckViewDailyRecievPending.TabIndex = 93;
             this.chckViewDailyRecievPending.CheckedChanged += new System.EventHandler(this.chckViewDailyRecievPending_CheckedChanged);
             // 
@@ -1347,7 +1347,7 @@ namespace BillPlex
             this.labelControl25.Appearance.Options.UseFont = true;
             this.labelControl25.Location = new System.Drawing.Point(294, 9);
             this.labelControl25.Name = "labelControl25";
-            this.labelControl25.Size = new System.Drawing.Size(125, 19);
+            this.labelControl25.Size = new System.Drawing.Size(154, 24);
             this.labelControl25.TabIndex = 135;
             this.labelControl25.Text = "Employee Code";
             // 
@@ -1368,7 +1368,7 @@ namespace BillPlex
             this.labelControl20.Appearance.Options.UseForeColor = true;
             this.labelControl20.Location = new System.Drawing.Point(6, 4);
             this.labelControl20.Name = "labelControl20";
-            this.labelControl20.Size = new System.Drawing.Size(211, 19);
+            this.labelControl20.Size = new System.Drawing.Size(259, 24);
             this.labelControl20.TabIndex = 92;
             this.labelControl20.Text = "Assign a Job To Employee";
             // 
@@ -1443,7 +1443,7 @@ namespace BillPlex
             this.labelControl9.Appearance.Options.UseForeColor = true;
             this.labelControl9.Location = new System.Drawing.Point(738, 46);
             this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(10, 18);
+            this.labelControl9.Size = new System.Drawing.Size(12, 23);
             this.labelControl9.TabIndex = 138;
             this.labelControl9.Text = "*";
             // 
@@ -1453,7 +1453,7 @@ namespace BillPlex
             this.drpIncentiveApp.Name = "drpIncentiveApp";
             this.drpIncentiveApp.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.drpIncentiveApp.Size = new System.Drawing.Size(100, 20);
+            this.drpIncentiveApp.Size = new System.Drawing.Size(100, 22);
             this.drpIncentiveApp.TabIndex = 135;
             // 
             // txtConveyance
@@ -1464,7 +1464,7 @@ namespace BillPlex
             this.txtConveyance.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.txtConveyance.Properties.MaskSettings.Set("mask", "d");
             this.txtConveyance.Properties.UseMaskAsDisplayFormat = true;
-            this.txtConveyance.Size = new System.Drawing.Size(115, 20);
+            this.txtConveyance.Size = new System.Drawing.Size(115, 22);
             this.txtConveyance.TabIndex = 134;
             this.txtConveyance.EditValueChanged += new System.EventHandler(this.txtRcvdQty_EditValueChanged);
             // 
@@ -1477,7 +1477,7 @@ namespace BillPlex
             this.txtNetAmt.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.txtNetAmt.Properties.MaskSettings.Set("mask", "d");
             this.txtNetAmt.Properties.UseMaskAsDisplayFormat = true;
-            this.txtNetAmt.Size = new System.Drawing.Size(115, 20);
+            this.txtNetAmt.Size = new System.Drawing.Size(115, 22);
             this.txtNetAmt.TabIndex = 133;
             // 
             // txtIncentive
@@ -1488,7 +1488,7 @@ namespace BillPlex
             this.txtIncentive.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.txtIncentive.Properties.MaskSettings.Set("mask", "d");
             this.txtIncentive.Properties.UseMaskAsDisplayFormat = true;
-            this.txtIncentive.Size = new System.Drawing.Size(115, 20);
+            this.txtIncentive.Size = new System.Drawing.Size(115, 22);
             this.txtIncentive.TabIndex = 132;
             this.txtIncentive.EditValueChanged += new System.EventHandler(this.txtRcvdQty_EditValueChanged);
             // 
@@ -1498,7 +1498,7 @@ namespace BillPlex
             this.labelControl23.Appearance.Options.UseFont = true;
             this.labelControl23.Location = new System.Drawing.Point(924, 253);
             this.labelControl23.Name = "labelControl23";
-            this.labelControl23.Size = new System.Drawing.Size(68, 19);
+            this.labelControl23.Size = new System.Drawing.Size(82, 24);
             this.labelControl23.TabIndex = 131;
             this.labelControl23.Text = "Net Amt";
             // 
@@ -1508,7 +1508,7 @@ namespace BillPlex
             this.labelControl22.Appearance.Options.UseFont = true;
             this.labelControl22.Location = new System.Drawing.Point(895, 196);
             this.labelControl22.Name = "labelControl22";
-            this.labelControl22.Size = new System.Drawing.Size(97, 19);
+            this.labelControl22.Size = new System.Drawing.Size(122, 24);
             this.labelControl22.TabIndex = 130;
             this.labelControl22.Text = "Conveyance";
             // 
@@ -1518,7 +1518,7 @@ namespace BillPlex
             this.labelControl21.Appearance.Options.UseFont = true;
             this.labelControl21.Location = new System.Drawing.Point(916, 225);
             this.labelControl21.Name = "labelControl21";
-            this.labelControl21.Size = new System.Drawing.Size(76, 19);
+            this.labelControl21.Size = new System.Drawing.Size(97, 24);
             this.labelControl21.TabIndex = 129;
             this.labelControl21.Text = "Incentive";
             // 
@@ -1528,7 +1528,7 @@ namespace BillPlex
             this.labelControl18.Appearance.Options.UseFont = true;
             this.labelControl18.Location = new System.Drawing.Point(614, 250);
             this.labelControl18.Name = "labelControl18";
-            this.labelControl18.Size = new System.Drawing.Size(43, 19);
+            this.labelControl18.Size = new System.Drawing.Size(50, 24);
             this.labelControl18.TabIndex = 128;
             this.labelControl18.Text = "Total";
             // 
@@ -1538,7 +1538,7 @@ namespace BillPlex
             this.labelControl17.Appearance.Options.UseFont = true;
             this.labelControl17.Location = new System.Drawing.Point(614, 225);
             this.labelControl17.Name = "labelControl17";
-            this.labelControl17.Size = new System.Drawing.Size(82, 19);
+            this.labelControl17.Size = new System.Drawing.Size(103, 24);
             this.labelControl17.TabIndex = 127;
             this.labelControl17.Text = "Deduction";
             // 
@@ -1551,7 +1551,7 @@ namespace BillPlex
             this.txtTotal.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.txtTotal.Properties.MaskSettings.Set("mask", "d");
             this.txtTotal.Properties.UseMaskAsDisplayFormat = true;
-            this.txtTotal.Size = new System.Drawing.Size(113, 20);
+            this.txtTotal.Size = new System.Drawing.Size(113, 22);
             this.txtTotal.TabIndex = 126;
             // 
             // txtDeduction
@@ -1562,7 +1562,7 @@ namespace BillPlex
             this.txtDeduction.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.txtDeduction.Properties.MaskSettings.Set("mask", "d");
             this.txtDeduction.Properties.UseMaskAsDisplayFormat = true;
-            this.txtDeduction.Size = new System.Drawing.Size(113, 20);
+            this.txtDeduction.Size = new System.Drawing.Size(113, 22);
             this.txtDeduction.TabIndex = 125;
             this.txtDeduction.EditValueChanged += new System.EventHandler(this.txtRcvdQty_EditValueChanged);
             // 
@@ -1571,7 +1571,7 @@ namespace BillPlex
             this.txtBalanceWeight.Enabled = false;
             this.txtBalanceWeight.Location = new System.Drawing.Point(764, 188);
             this.txtBalanceWeight.Name = "txtBalanceWeight";
-            this.txtBalanceWeight.Size = new System.Drawing.Size(113, 20);
+            this.txtBalanceWeight.Size = new System.Drawing.Size(113, 22);
             this.txtBalanceWeight.TabIndex = 124;
             // 
             // labelControl14
@@ -1580,7 +1580,7 @@ namespace BillPlex
             this.labelControl14.Appearance.Options.UseFont = true;
             this.labelControl14.Location = new System.Drawing.Point(614, 189);
             this.labelControl14.Name = "labelControl14";
-            this.labelControl14.Size = new System.Drawing.Size(127, 19);
+            this.labelControl14.Size = new System.Drawing.Size(159, 24);
             this.labelControl14.TabIndex = 123;
             this.labelControl14.Text = "Balance Weight";
             // 
@@ -1589,7 +1589,7 @@ namespace BillPlex
             this.txtCName.Enabled = false;
             this.txtCName.Location = new System.Drawing.Point(186, 90);
             this.txtCName.Name = "txtCName";
-            this.txtCName.Size = new System.Drawing.Size(403, 20);
+            this.txtCName.Size = new System.Drawing.Size(403, 22);
             this.txtCName.TabIndex = 122;
             // 
             // labelControl11
@@ -1598,7 +1598,7 @@ namespace BillPlex
             this.labelControl11.Appearance.Options.UseFont = true;
             this.labelControl11.Location = new System.Drawing.Point(10, 88);
             this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(130, 19);
+            this.labelControl11.Size = new System.Drawing.Size(160, 24);
             this.labelControl11.TabIndex = 121;
             this.labelControl11.Text = "Customer Name";
             // 
@@ -1608,7 +1608,7 @@ namespace BillPlex
             this.labelControl44.Appearance.Options.UseFont = true;
             this.labelControl44.Location = new System.Drawing.Point(1003, 165);
             this.labelControl44.Name = "labelControl44";
-            this.labelControl44.Size = new System.Drawing.Size(53, 19);
+            this.labelControl44.Size = new System.Drawing.Size(67, 24);
             this.labelControl44.TabIndex = 120;
             this.labelControl44.Text = "(Days)";
             // 
@@ -1618,7 +1618,7 @@ namespace BillPlex
             this.labelControl43.Appearance.Options.UseFont = true;
             this.labelControl43.Location = new System.Drawing.Point(869, 165);
             this.labelControl43.Name = "labelControl43";
-            this.labelControl43.Size = new System.Drawing.Size(53, 19);
+            this.labelControl43.Size = new System.Drawing.Size(67, 24);
             this.labelControl43.TabIndex = 94;
             this.labelControl43.Text = "(Days)";
             // 
@@ -1626,7 +1626,7 @@ namespace BillPlex
             // 
             this.txtAfterdys.Location = new System.Drawing.Point(1062, 162);
             this.txtAfterdys.Name = "txtAfterdys";
-            this.txtAfterdys.Size = new System.Drawing.Size(68, 20);
+            this.txtAfterdys.Size = new System.Drawing.Size(68, 22);
             this.txtAfterdys.TabIndex = 119;
             // 
             // labelControl42
@@ -1635,7 +1635,7 @@ namespace BillPlex
             this.labelControl42.Appearance.Options.UseFont = true;
             this.labelControl42.Location = new System.Drawing.Point(1007, 146);
             this.labelControl42.Name = "labelControl42";
-            this.labelControl42.Size = new System.Drawing.Size(42, 19);
+            this.labelControl42.Size = new System.Drawing.Size(51, 24);
             this.labelControl42.TabIndex = 118;
             this.labelControl42.Text = "After";
             // 
@@ -1645,7 +1645,7 @@ namespace BillPlex
             this.labelControl41.Appearance.Options.UseFont = true;
             this.labelControl41.Location = new System.Drawing.Point(868, 146);
             this.labelControl41.Name = "labelControl41";
-            this.labelControl41.Size = new System.Drawing.Size(54, 19);
+            this.labelControl41.Size = new System.Drawing.Size(67, 24);
             this.labelControl41.TabIndex = 117;
             this.labelControl41.Text = "Before";
             // 
@@ -1658,7 +1658,7 @@ namespace BillPlex
             this.txtRcvdQty.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
             this.txtRcvdQty.Properties.MaskSettings.Set("mask", "d");
             this.txtRcvdQty.Properties.UseMaskAsDisplayFormat = true;
-            this.txtRcvdQty.Size = new System.Drawing.Size(107, 20);
+            this.txtRcvdQty.Size = new System.Drawing.Size(107, 22);
             this.txtRcvdQty.TabIndex = 116;
             this.txtRcvdQty.EditValueChanged += new System.EventHandler(this.txtRcvdQty_EditValueChanged);
             // 
@@ -1668,7 +1668,7 @@ namespace BillPlex
             this.labelControl31.Appearance.Options.UseFont = true;
             this.labelControl31.Location = new System.Drawing.Point(368, 218);
             this.labelControl31.Name = "labelControl31";
-            this.labelControl31.Size = new System.Drawing.Size(72, 19);
+            this.labelControl31.Size = new System.Drawing.Size(92, 24);
             this.labelControl31.TabIndex = 115;
             this.labelControl31.Text = "Rcvd Qty";
             // 
@@ -1677,7 +1677,7 @@ namespace BillPlex
             this.txtMName.Enabled = false;
             this.txtMName.Location = new System.Drawing.Point(186, 249);
             this.txtMName.Name = "txtMName";
-            this.txtMName.Size = new System.Drawing.Size(403, 20);
+            this.txtMName.Size = new System.Drawing.Size(403, 22);
             this.txtMName.TabIndex = 114;
             // 
             // labelControl30
@@ -1686,7 +1686,7 @@ namespace BillPlex
             this.labelControl30.Appearance.Options.UseFont = true;
             this.labelControl30.Location = new System.Drawing.Point(11, 250);
             this.labelControl30.Name = "labelControl30";
-            this.labelControl30.Size = new System.Drawing.Size(101, 19);
+            this.labelControl30.Size = new System.Drawing.Size(125, 24);
             this.labelControl30.TabIndex = 98;
             this.labelControl30.Text = "Model Name";
             // 
@@ -1695,7 +1695,7 @@ namespace BillPlex
             this.txtPQty.Enabled = false;
             this.txtPQty.Location = new System.Drawing.Point(186, 217);
             this.txtPQty.Name = "txtPQty";
-            this.txtPQty.Size = new System.Drawing.Size(158, 20);
+            this.txtPQty.Size = new System.Drawing.Size(158, 22);
             this.txtPQty.TabIndex = 113;
             // 
             // txtWeight
@@ -1703,7 +1703,7 @@ namespace BillPlex
             this.txtWeight.Enabled = false;
             this.txtWeight.Location = new System.Drawing.Point(482, 160);
             this.txtWeight.Name = "txtWeight";
-            this.txtWeight.Size = new System.Drawing.Size(107, 20);
+            this.txtWeight.Size = new System.Drawing.Size(107, 22);
             this.txtWeight.TabIndex = 112;
             // 
             // txtCrntWt
@@ -1715,7 +1715,7 @@ namespace BillPlex
             this.txtCrntWt.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
             this.txtCrntWt.Properties.MaskSettings.Set("mask", "n3");
             this.txtCrntWt.Properties.UseMaskAsDisplayFormat = true;
-            this.txtCrntWt.Size = new System.Drawing.Size(107, 20);
+            this.txtCrntWt.Size = new System.Drawing.Size(107, 22);
             this.txtCrntWt.TabIndex = 111;
             this.txtCrntWt.EditValueChanged += new System.EventHandler(this.txtCrntWt_EditValueChanged);
             // 
@@ -1725,7 +1725,7 @@ namespace BillPlex
             this.labelControl19.Appearance.Options.UseFont = true;
             this.labelControl19.Location = new System.Drawing.Point(368, 189);
             this.labelControl19.Name = "labelControl19";
-            this.labelControl19.Size = new System.Drawing.Size(90, 19);
+            this.labelControl19.Size = new System.Drawing.Size(112, 24);
             this.labelControl19.TabIndex = 110;
             this.labelControl19.Text = "Current Wt";
             // 
@@ -1734,7 +1734,7 @@ namespace BillPlex
             this.txtType.Enabled = false;
             this.txtType.Location = new System.Drawing.Point(482, 132);
             this.txtType.Name = "txtType";
-            this.txtType.Size = new System.Drawing.Size(107, 20);
+            this.txtType.Size = new System.Drawing.Size(107, 22);
             this.txtType.TabIndex = 109;
             // 
             // labelControl6
@@ -1743,7 +1743,7 @@ namespace BillPlex
             this.labelControl6.Appearance.Options.UseFont = true;
             this.labelControl6.Location = new System.Drawing.Point(368, 130);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(40, 19);
+            this.labelControl6.Size = new System.Drawing.Size(49, 24);
             this.labelControl6.TabIndex = 108;
             this.labelControl6.Text = "Type";
             // 
@@ -1751,7 +1751,7 @@ namespace BillPlex
             // 
             this.txtBeforeDys.Location = new System.Drawing.Point(934, 162);
             this.txtBeforeDys.Name = "txtBeforeDys";
-            this.txtBeforeDys.Size = new System.Drawing.Size(58, 20);
+            this.txtBeforeDys.Size = new System.Drawing.Size(58, 22);
             this.txtBeforeDys.TabIndex = 107;
             // 
             // labelControl15
@@ -1760,7 +1760,7 @@ namespace BillPlex
             this.labelControl15.Appearance.Options.UseFont = true;
             this.labelControl15.Location = new System.Drawing.Point(614, 146);
             this.labelControl15.Name = "labelControl15";
-            this.labelControl15.Size = new System.Drawing.Size(76, 19);
+            this.labelControl15.Size = new System.Drawing.Size(97, 24);
             this.labelControl15.TabIndex = 105;
             this.labelControl15.Text = "Incentive";
             // 
@@ -1770,7 +1770,7 @@ namespace BillPlex
             this.labelControl16.Appearance.Options.UseFont = true;
             this.labelControl16.Location = new System.Drawing.Point(614, 164);
             this.labelControl16.Name = "labelControl16";
-            this.labelControl16.Size = new System.Drawing.Size(85, 19);
+            this.labelControl16.Size = new System.Drawing.Size(106, 24);
             this.labelControl16.TabIndex = 106;
             this.labelControl16.Text = "Applicable";
             // 
@@ -1779,7 +1779,7 @@ namespace BillPlex
             this.txtPSize.Enabled = false;
             this.txtPSize.Location = new System.Drawing.Point(764, 113);
             this.txtPSize.Name = "txtPSize";
-            this.txtPSize.Size = new System.Drawing.Size(113, 20);
+            this.txtPSize.Size = new System.Drawing.Size(113, 22);
             this.txtPSize.TabIndex = 104;
             // 
             // txtColor
@@ -1787,7 +1787,7 @@ namespace BillPlex
             this.txtColor.Enabled = false;
             this.txtColor.Location = new System.Drawing.Point(978, 113);
             this.txtColor.Name = "txtColor";
-            this.txtColor.Size = new System.Drawing.Size(152, 20);
+            this.txtColor.Size = new System.Drawing.Size(152, 22);
             this.txtColor.TabIndex = 103;
             // 
             // txtPCode
@@ -1795,7 +1795,7 @@ namespace BillPlex
             this.txtPCode.Enabled = false;
             this.txtPCode.Location = new System.Drawing.Point(978, 76);
             this.txtPCode.Name = "txtPCode";
-            this.txtPCode.Size = new System.Drawing.Size(152, 20);
+            this.txtPCode.Size = new System.Drawing.Size(152, 22);
             this.txtPCode.TabIndex = 102;
             // 
             // labelControl10
@@ -1804,7 +1804,7 @@ namespace BillPlex
             this.labelControl10.Appearance.Options.UseFont = true;
             this.labelControl10.Location = new System.Drawing.Point(924, 77);
             this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(41, 19);
+            this.labelControl10.Size = new System.Drawing.Size(50, 24);
             this.labelControl10.TabIndex = 101;
             this.labelControl10.Text = "Code";
             // 
@@ -1824,7 +1824,7 @@ namespace BillPlex
             this.ddReceDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.ddReceDate.Properties.MaskSettings.Set("mask", "d");
             this.ddReceDate.Properties.UseMaskAsDisplayFormat = true;
-            this.ddReceDate.Size = new System.Drawing.Size(366, 20);
+            this.ddReceDate.Size = new System.Drawing.Size(366, 22);
             this.ddReceDate.TabIndex = 98;
             // 
             // txtEmpName
@@ -1832,7 +1832,7 @@ namespace BillPlex
             this.txtEmpName.Enabled = false;
             this.txtEmpName.Location = new System.Drawing.Point(309, 51);
             this.txtEmpName.Name = "txtEmpName";
-            this.txtEmpName.Size = new System.Drawing.Size(280, 20);
+            this.txtEmpName.Size = new System.Drawing.Size(280, 22);
             this.txtEmpName.TabIndex = 100;
             // 
             // txtEmpCode
@@ -1841,7 +1841,7 @@ namespace BillPlex
             this.txtEmpCode.Enabled = false;
             this.txtEmpCode.Location = new System.Drawing.Point(186, 51);
             this.txtEmpCode.Name = "txtEmpCode";
-            this.txtEmpCode.Size = new System.Drawing.Size(117, 20);
+            this.txtEmpCode.Size = new System.Drawing.Size(117, 22);
             this.txtEmpCode.TabIndex = 99;
             // 
             // labelControl1
@@ -1850,7 +1850,7 @@ namespace BillPlex
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Location = new System.Drawing.Point(83, 63);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(61, 19);
+            this.labelControl1.Size = new System.Drawing.Size(76, 24);
             this.labelControl1.TabIndex = 98;
             this.labelControl1.Text = "/ Name";
             // 
@@ -1859,7 +1859,7 @@ namespace BillPlex
             this.txtPModel.Enabled = false;
             this.txtPModel.Location = new System.Drawing.Point(764, 79);
             this.txtPModel.Name = "txtPModel";
-            this.txtPModel.Size = new System.Drawing.Size(128, 20);
+            this.txtPModel.Size = new System.Drawing.Size(128, 22);
             this.txtPModel.TabIndex = 87;
             // 
             // labelControl5
@@ -1868,7 +1868,7 @@ namespace BillPlex
             this.labelControl5.Appearance.Options.UseFont = true;
             this.labelControl5.Location = new System.Drawing.Point(614, 74);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(117, 19);
+            this.labelControl5.Size = new System.Drawing.Size(146, 24);
             this.labelControl5.TabIndex = 86;
             this.labelControl5.Text = "Product Model";
             // 
@@ -1878,7 +1878,7 @@ namespace BillPlex
             this.labelControl4.Appearance.Options.UseFont = true;
             this.labelControl4.Location = new System.Drawing.Point(614, 44);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(123, 19);
+            this.labelControl4.Size = new System.Drawing.Size(153, 24);
             this.labelControl4.TabIndex = 85;
             this.labelControl4.Text = "Receiving Date";
             // 
@@ -1887,7 +1887,7 @@ namespace BillPlex
             this.txtQuantity.Enabled = false;
             this.txtQuantity.Location = new System.Drawing.Point(186, 162);
             this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(158, 20);
+            this.txtQuantity.Size = new System.Drawing.Size(158, 22);
             this.txtQuantity.TabIndex = 84;
             // 
             // labelControl3
@@ -1896,7 +1896,7 @@ namespace BillPlex
             this.labelControl3.Appearance.Options.UseFont = true;
             this.labelControl3.Location = new System.Drawing.Point(10, 165);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(70, 19);
+            this.labelControl3.Size = new System.Drawing.Size(87, 24);
             this.labelControl3.TabIndex = 83;
             this.labelControl3.Text = "Quantity";
             // 
@@ -1905,7 +1905,7 @@ namespace BillPlex
             this.txtWages.Enabled = false;
             this.txtWages.Location = new System.Drawing.Point(186, 191);
             this.txtWages.Name = "txtWages";
-            this.txtWages.Size = new System.Drawing.Size(158, 20);
+            this.txtWages.Size = new System.Drawing.Size(158, 22);
             this.txtWages.TabIndex = 82;
             // 
             // labelControl32
@@ -1914,7 +1914,7 @@ namespace BillPlex
             this.labelControl32.Appearance.Options.UseFont = true;
             this.labelControl32.Location = new System.Drawing.Point(11, 195);
             this.labelControl32.Name = "labelControl32";
-            this.labelControl32.Size = new System.Drawing.Size(54, 19);
+            this.labelControl32.Size = new System.Drawing.Size(68, 24);
             this.labelControl32.TabIndex = 62;
             this.labelControl32.Text = "Wages";
             // 
@@ -1923,7 +1923,7 @@ namespace BillPlex
             this.txtRawMaterial.Enabled = false;
             this.txtRawMaterial.Location = new System.Drawing.Point(186, 132);
             this.txtRawMaterial.Name = "txtRawMaterial";
-            this.txtRawMaterial.Size = new System.Drawing.Size(158, 20);
+            this.txtRawMaterial.Size = new System.Drawing.Size(158, 22);
             this.txtRawMaterial.TabIndex = 13;
             // 
             // labelControl2
@@ -1932,7 +1932,7 @@ namespace BillPlex
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Location = new System.Drawing.Point(11, 38);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(125, 19);
+            this.labelControl2.Size = new System.Drawing.Size(154, 24);
             this.labelControl2.TabIndex = 3;
             this.labelControl2.Text = "Employee Code";
             // 
@@ -1942,7 +1942,7 @@ namespace BillPlex
             this.labelControl24.Appearance.Options.UseFont = true;
             this.labelControl24.Location = new System.Drawing.Point(924, 116);
             this.labelControl24.Name = "labelControl24";
-            this.labelControl24.Size = new System.Drawing.Size(43, 19);
+            this.labelControl24.Size = new System.Drawing.Size(52, 24);
             this.labelControl24.TabIndex = 39;
             this.labelControl24.Text = "Color";
             // 
@@ -1952,7 +1952,7 @@ namespace BillPlex
             this.labelControl38.Appearance.Options.UseFont = true;
             this.labelControl38.Location = new System.Drawing.Point(614, 111);
             this.labelControl38.Name = "labelControl38";
-            this.labelControl38.Size = new System.Drawing.Size(102, 19);
+            this.labelControl38.Size = new System.Drawing.Size(127, 24);
             this.labelControl38.TabIndex = 6;
             this.labelControl38.Text = "Product Size";
             // 
@@ -1962,7 +1962,7 @@ namespace BillPlex
             this.labelControl39.Appearance.Options.UseFont = true;
             this.labelControl39.Location = new System.Drawing.Point(10, 220);
             this.labelControl39.Name = "labelControl39";
-            this.labelControl39.Size = new System.Drawing.Size(99, 19);
+            this.labelControl39.Size = new System.Drawing.Size(124, 24);
             this.labelControl39.TabIndex = 9;
             this.labelControl39.Text = "Pending Qty";
             // 
@@ -1972,7 +1972,7 @@ namespace BillPlex
             this.labelControl35.Appearance.Options.UseFont = true;
             this.labelControl35.Location = new System.Drawing.Point(11, 135);
             this.labelControl35.Name = "labelControl35";
-            this.labelControl35.Size = new System.Drawing.Size(161, 19);
+            this.labelControl35.Size = new System.Drawing.Size(198, 24);
             this.labelControl35.TabIndex = 10;
             this.labelControl35.Text = "Raw Material Name";
             // 
@@ -1982,7 +1982,7 @@ namespace BillPlex
             this.labelControl33.Appearance.Options.UseFont = true;
             this.labelControl33.Location = new System.Drawing.Point(368, 163);
             this.labelControl33.Name = "labelControl33";
-            this.labelControl33.Size = new System.Drawing.Size(58, 19);
+            this.labelControl33.Size = new System.Drawing.Size(73, 24);
             this.labelControl33.TabIndex = 12;
             this.labelControl33.Text = "Weight";
             // 
@@ -1994,7 +1994,7 @@ namespace BillPlex
             this.labelControl8.Appearance.Options.UseForeColor = true;
             this.labelControl8.Location = new System.Drawing.Point(559, 5);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(187, 33);
+            this.labelControl8.Size = new System.Drawing.Size(233, 41);
             this.labelControl8.TabIndex = 6;
             this.labelControl8.Text = "Job Received ";
             // 
@@ -2021,6 +2021,7 @@ namespace BillPlex
             this.Name = "FrmJobReceivedInfo";
             this.Text = "FrmJobReceivedInfo";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmJobReceivedInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).EndInit();

@@ -328,7 +328,7 @@ namespace BillPlex
             this.checkEdit1.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.checkEdit1.Properties.LookAndFeel.SkinName = "DevExpress Style";
             this.checkEdit1.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.checkEdit1.Size = new System.Drawing.Size(217, 23);
+            this.checkEdit1.Size = new System.Drawing.Size(217, 28);
             this.checkEdit1.TabIndex = 87;
             // 
             // panelDeliveryChallan
@@ -731,7 +731,7 @@ namespace BillPlex
             this.cmbFind.Name = "cmbFind";
             this.cmbFind.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbFind.Size = new System.Drawing.Size(433, 20);
+            this.cmbFind.Size = new System.Drawing.Size(433, 22);
             this.cmbFind.TabIndex = 2;
             // 
             // btnclr
@@ -766,7 +766,7 @@ namespace BillPlex
             this.labelControl1.Appearance.Options.UseForeColor = true;
             this.labelControl1.Location = new System.Drawing.Point(486, 6);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(220, 39);
+            this.labelControl1.Size = new System.Drawing.Size(276, 48);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Job Received ";
             // 
@@ -779,6 +779,7 @@ namespace BillPlex
             this.Name = "FrmJobReceivedProfile";
             this.Text = "FrmJobReceivedProfile";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmJobReceivedProfile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
