@@ -486,6 +486,7 @@ namespace BillPlex
             this.Controls.Add(this.panelControl1);
             this.Name = "FrmCompanyProfileBankInfo";
             this.Text = "FrmCompanyProfileBankInfo";
+            this.Load += new System.EventHandler(this.FrmCompanyProfileBankInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();

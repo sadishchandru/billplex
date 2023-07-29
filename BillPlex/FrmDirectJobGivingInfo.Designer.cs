@@ -664,6 +664,7 @@ namespace BillPlex
             this.Name = "FrmDirectJobGivingInfo";
             this.Text = "FrmDirectJobGivingInfo";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmDirectJobGivingInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();

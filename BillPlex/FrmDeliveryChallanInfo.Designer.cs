@@ -1232,6 +1232,7 @@ namespace BillPlex
             this.Name = "FrmDeliveryChallanInfo";
             this.Text = "FrmDeliveryChallanInfo";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmDeliveryChallanInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();

@@ -538,6 +538,7 @@ namespace BillPlex
             this.Name = "FrmClientCompanyBankInfo";
             this.Text = "ClientCompanyBankInfo";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmClientCompanyBankInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();

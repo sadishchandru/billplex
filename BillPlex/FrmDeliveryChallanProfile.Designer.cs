@@ -99,7 +99,7 @@ namespace BillPlex
             this.panelControl1.Controls.Add(this.labelControl1);
             this.panelControl1.Location = new System.Drawing.Point(42, 14);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1244, 50);
+            this.panelControl1.Size = new System.Drawing.Size(1153, 50);
             this.panelControl1.TabIndex = 0;
             // 
             // labelControl1
@@ -438,7 +438,6 @@ namespace BillPlex
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 31;
             this.btnEdit.Text = "EDIT";
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnExit
             // 
@@ -600,6 +599,7 @@ namespace BillPlex
             this.Name = "FrmDeliveryChallanProfile";
             this.Text = "FrmDeliveryChallanProfile";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmDeliveryChallanProfile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
