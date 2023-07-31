@@ -10,6 +10,7 @@ GO
 -- Create date: <07/26/2023>
 -- Description:	<Description,,>
 -- =============================================
+-- EXEC [dbo].PRO_GetJobGivingWithoutDCReceivedFilter
 CREATE OR ALTER PROCEDURE [dbo].PRO_GetJobGivingWithoutDCReceivedFilter
 @SearchKey VARCHAR(200) = ''
 
@@ -33,7 +34,6 @@ SET NOCOUNT ON;
 			,CustomerName
 			,ModelName
 			,ModelCode
-			,ProductName
 			,JGDC.ProductSize
 			,RawMaterial
 			,QuantityPiece
@@ -48,8 +48,8 @@ SET NOCOUNT ON;
 			,JGDC.ClientName
 			,TotalQty
 			,JGDC.TotalWt
-			,subContractor
-			,Director
+			,JGDC.subContractor
+			,JGDC.Director
 			,PendingQty
 			,received
 			,Wages

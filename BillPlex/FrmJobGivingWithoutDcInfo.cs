@@ -146,6 +146,16 @@ namespace BillPlex
                     {
                         JobGivingWithoutDcRequest.WagesEmp = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.Code == OrderNo.ToString())?.WagesEmp ?? "";
                     }
+                    string Director = (string)drpEmpCode.SelectedItem;
+                    if (Director != null)
+                    {
+                        JobGivingWithoutDcRequest.Director = JobGivingWithoutDcRequest.EmployeePersonalList.FirstOrDefault(item => item.Code == Director.ToString())?.AuthorName ?? "";
+                    }
+                    string subclient = (string)drpEmpCode.SelectedItem;
+                    if (Director != null)
+                    {
+                        JobGivingWithoutDcRequest.Director = JobGivingWithoutDcRequest.EmployeePersonalList.FirstOrDefault(item => item.Code == subclient.ToString())?.SubComName ?? "";
+                    }
                     JobGivingWithoutDcRequest.Update();
 
                     if (JobGivingWithoutDcRequest.Result.Status == ResultStatus.Success)
@@ -224,7 +234,6 @@ namespace BillPlex
                 txtCCName.Text = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.Code == selectedItem.ToString())?.proModel ?? "";
                 var datete = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.Code == selectedItem.ToString())?.Name ?? "";
                 ddODate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
-
                 JobGivingWithoutDcRequest.OrderNo = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.Code == selectedItem.ToString())?.Id.ToString() ?? "";
             }
             var selectItem = drpOrderNo.Text;

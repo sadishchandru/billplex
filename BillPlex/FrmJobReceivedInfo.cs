@@ -67,58 +67,60 @@ namespace BillPlex
         {
             try
             {
-                string selectedMasterItem = txtEmpCode.Text;
-
-                if (selectedMasterItem != null)
+                if (ddReceDate.Text != string.Empty && ddReceDate.Text != "")
                 {
-                    JobReceivedRequest.EmployeeCode = JobReceivedRequest.EmployeePersonalList.FirstOrDefault(item => item.Code == selectedMasterItem.ToString())?.Id ?? -1;
-                }
-                //JobReceivedRequest.EmployeeCode = txtEmpCode.Text;
-                JobReceivedRequest.EmployeeName = txtEmpName.Text;
-                JobReceivedRequest.CustomerName = txtCName.Text;
-                JobReceivedRequest.RawMaterialName = txtRawMaterial.Text;
-                JobReceivedRequest.Quantity = txtQuantity.Text;
-                JobReceivedRequest.Wages = txtWages.Text;
-                JobReceivedRequest.PendingQty = txtPQty.Text;
-                JobReceivedRequest.ModelName = txtMName.Text;
-                JobReceivedRequest.Type = txtType.Text;
-                JobReceivedRequest.Weight = txtWeight.Text;
-                JobReceivedRequest.CurrentWt = txtCrntWt.Text;
-                JobReceivedRequest.RcvdQty = txtRcvdQty.Text;
-                JobReceivedRequest.ReceivingDate = ddReceDate.Text;
-                JobReceivedRequest.ProductModel = txtPModel.Text;
-                JobReceivedRequest.ProductCode = txtPCode.Text;
-                JobReceivedRequest.ProductSize = txtPSize.Text;
-                JobReceivedRequest.ProductColor = txtColor.Text;
-                JobReceivedRequest.IncentiveApplicable = drpIncentiveApp.Text;
-                JobReceivedRequest.BeforeDays = txtBeforeDys.Text;
-                JobReceivedRequest.AfterDays = txtAfterdys.Text;
-                JobReceivedRequest.BalanceWeight = txtBalanceWeight.Text;
-                JobReceivedRequest.Conveyance = txtConveyance.Text;
-                JobReceivedRequest.Deduction = txtDeduction.Text;
-                JobReceivedRequest.Incentive = txtIncentive.Text;
-                JobReceivedRequest.Total = txtTotal.Text;
-                JobReceivedRequest.NetAmt = txtNetAmt.Text;
-                JobReceivedRequest.Update();
 
-                if (JobReceivedRequest.Result.Status == ResultStatus.Success)
-                {
-                    XtraMessageBox.Show(JobReceivedRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    string selectedMasterItem = txtEmpCode.Text;
 
-                    this.Close();
-
-                    FrmSubClientCompanyProfile form = Application.OpenForms.OfType<FrmSubClientCompanyProfile>().FirstOrDefault();
-
-                    Form myForm = Application.OpenForms["FrmJobReceivedRequestProfile"];
-                    if (myForm != null)
+                    if (selectedMasterItem != null)
                     {
-                        form.ReloadSqlDataSource();
+                        JobReceivedRequest.EmployeeCode = JobReceivedRequest.EmployeePersonalList.FirstOrDefault(item => item.Code == selectedMasterItem.ToString())?.Id ?? -1;
+                    }
+                    JobReceivedRequest.EmployeeName = txtEmpName.Text;
+                    JobReceivedRequest.CustomerName = txtCName.Text;
+                    JobReceivedRequest.RawMaterialName = txtRawMaterial.Text;
+                    JobReceivedRequest.Quantity = txtQuantity.Text;
+                    JobReceivedRequest.Wages = txtWages.Text;
+                    JobReceivedRequest.PendingQty = txtPQty.Text;
+                    JobReceivedRequest.ModelName = txtMName.Text;
+                    JobReceivedRequest.Type = txtType.Text;
+                    JobReceivedRequest.Weight = txtWeight.Text;
+                    JobReceivedRequest.CurrentWt = txtCrntWt.Text;
+                    JobReceivedRequest.RcvdQty = txtRcvdQty.Text;
+                    JobReceivedRequest.ReceivingDate = ddReceDate.Text;
+                    JobReceivedRequest.ProductModel = txtPModel.Text;
+                    JobReceivedRequest.ProductCode = txtPCode.Text;
+                    JobReceivedRequest.ProductSize = txtPSize.Text;
+                    JobReceivedRequest.ProductColor = txtColor.Text;
+                    JobReceivedRequest.IncentiveApplicable = drpIncentiveApp.Text;
+                    JobReceivedRequest.BeforeDays = txtBeforeDys.Text;
+                    JobReceivedRequest.AfterDays = txtAfterdys.Text;
+                    JobReceivedRequest.BalanceWeight = txtBalanceWeight.Text;
+                    JobReceivedRequest.Conveyance = txtConveyance.Text;
+                    JobReceivedRequest.Deduction = txtDeduction.Text;
+                    JobReceivedRequest.Incentive = txtIncentive.Text;
+                    JobReceivedRequest.Total = txtTotal.Text;
+                    JobReceivedRequest.NetAmt = txtNetAmt.Text;
+                    JobReceivedRequest.Update();
+
+                    if (JobReceivedRequest.Result.Status == ResultStatus.Success)
+                    {
+                        XtraMessageBox.Show(JobReceivedRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        this.Close();
+
+                        FrmSubClientCompanyProfile form = Application.OpenForms.OfType<FrmSubClientCompanyProfile>().FirstOrDefault();
+
+                        Form myForm = Application.OpenForms["FrmJobReceivedRequestProfile"];
+                        if (myForm != null)
+                        {
+                            form.ReloadSqlDataSource();
+                        }
                     }
                 }
                 else
                 {
                     XtraMessageBox.Show(JobReceivedRequest.Result.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
                 }
             }
             catch (Exception ex)
@@ -215,7 +217,6 @@ namespace BillPlex
 
                 foreach (var rowHandle in selectedRows)
                 {
-                    //txtEmpCode.Text = gridView1.(x => x.Id == Convert.ToInt64(selectedCompanyList.GetRowCellValue(rowHandle, "EmpId").ToString()));
                     txtEmpCode.Text = gridView1.GetRowCellValue(rowHandle, "EmployeeCode").ToString();
                     txtEmpName.Text = (string)gridView1.GetRowCellValue(rowHandle, "EmployeeName");
                     txtCName.Text = (string)gridView1.GetRowCellValue(rowHandle, "CompanyName");
@@ -229,6 +230,14 @@ namespace BillPlex
                     txtColor.Text = (string)gridView1.GetRowCellValue(rowHandle, "Color");
                     txtWages.Text = (string)gridView1.GetRowCellValue(rowHandle, "WagesEmp");
                     JobReceivedRequest.OrderNo = gridView1.GetRowCellValue(rowHandle, "OrderNo").ToString();
+                    JobReceivedRequest.OrderDate = (string)gridView1.GetRowCellValue(rowHandle, "OrderDate");
+                    JobReceivedRequest.CompanyName = (string)gridView1.GetRowCellValue(rowHandle, "CompanyName");
+                    JobReceivedRequest.CompanyCName = (string)gridView1.GetRowCellValue(rowHandle, "Director");
+                    JobReceivedRequest.ClientCompany = (string)gridView1.GetRowCellValue(rowHandle, "ClientCompany");
+                    JobReceivedRequest.ClientCompanyName = (string)gridView1.GetRowCellValue(rowHandle, "ClientName");
+                    JobReceivedRequest.SubClientCompany = (string)gridView1.GetRowCellValue(rowHandle, "SubClientCompany");
+                    JobReceivedRequest.SubClientCompanyName = (string)gridView1.GetRowCellValue(rowHandle, "subContractor");
+                    JobReceivedRequest.CustomerCode = (string)gridView1.GetRowCellValue(rowHandle, "CustomerCode");
                     JobReceivedRequest.Id = (Int64)gridView1.GetRowCellValue(rowHandle, "Id");
                 }
                 btnAdd.Enabled = false;
@@ -334,8 +343,14 @@ namespace BillPlex
                         txtWages.Text = (string)gridView2.GetRowCellValue(rowHandle, "Wages");
                         var recicivedQty = (string)gridView2.GetRowCellValue(rowHandle, "received");
                         JobReceivedRequest.OrderNo = gridView2.GetRowCellValue(rowHandle, "OrderNo").ToString();
+                        JobReceivedRequest.OrderDate = (string)gridView1.GetRowCellValue(rowHandle, "OrderDate");
+                        JobReceivedRequest.CompanyName = (string)gridView1.GetRowCellValue(rowHandle, "CompanyName");
+                        JobReceivedRequest.CompanyName = (string)gridView1.GetRowCellValue(rowHandle, "CompanyName");
+                        JobReceivedRequest.ClientCompany = (string)gridView1.GetRowCellValue(rowHandle, "ClientCompany");
+                        JobReceivedRequest.ClientCompany = (string)gridView1.GetRowCellValue(rowHandle, "ClientCompany");
+                        JobReceivedRequest.SubClientCompany = (string)gridView1.GetRowCellValue(rowHandle, "SubClientCompany");
+                        JobReceivedRequest.SubClientCompany = (string)gridView1.GetRowCellValue(rowHandle, "SubClientCompany");
                         JobReceivedRequest.Id = (Int64)gridView2.GetRowCellValue(rowHandle, "Id");
-                        //var recicivedQty = JobReceivedRequest.RcvdQty = gridView1.GetRowCellValue(rowHandle, "received").ToString();
 
                         if (recicivedQty != "" && recicivedQty != "0")
                         {

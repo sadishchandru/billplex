@@ -10,6 +10,7 @@ GO
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
+-- EXEC [dbo].PRO_GetJobGivingWithoutDC
 CREATE OR ALTER PROCEDURE [dbo].[PRO_GetJobGivingWithoutDC]
 @SearchKey VARCHAR(200) = ''
 
@@ -50,8 +51,8 @@ SET NOCOUNT ON;
 					,JGDC.[ClientName]
 					,[TotalQty]
 					,JGDC.[TotalWt]
-					,[subContractor]
-					,[Director]
+					,JGDC.[subContractor]
+					,[JGDC].Director
 					,[PendingQty]
 					,[received]
 					,[Wages]

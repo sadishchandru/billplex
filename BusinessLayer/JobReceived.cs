@@ -39,6 +39,14 @@ namespace BusinessLayer
         public string Total { get; set; }
         public string NetAmt { get; set; }
         public string OrderNo { get; set; }
+        public string OrderDate { get; set; }
+        public string CompanyName { get; set; }
+        public string CompanyCName { get; set; }
+        public string ClientCompany { get; set; }
+        public string ClientCompanyName { get; set; }
+        public string SubClientCompany { get; set; }
+        public string SubClientCompanyName { get; set; }
+        public string CustomerCode { get; set; }
         public static Form MdiParent { get; set; }
 
         public List<DropDownItemInfo> EmployeePersonalList { get; set; }
@@ -55,8 +63,15 @@ namespace BusinessLayer
                 // Calling the stored procedure for creating a new Company Profile
                 List<DbParams> objLstDbParams = new List<DbParams>();
                 objLstDbParams.Add(new DbParams(DbType.Int64, 50, Id, "Id", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.Int64, 50, EmployeeCode, "EmployeeCode", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.String, 50, CompanyName, "CompanyName", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.String, 50, CompanyCName, "Director", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.String, 50, ClientCompany, "ClientCompany", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.String, 50, ClientCompanyName, "ClientName", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.String, 50, SubClientCompany, "SubClientCompany", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.String, 50, SubClientCompanyName, "subContractor", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.String, 50, EmployeeCode, "EmployeeCode", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, EmployeeName, "EmployeeName", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.String, 50, CustomerCode, "CustomerCode", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, CustomerName, "CustomerName", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, RawMaterialName, "RawMaterial", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, Quantity, "TotalQty", ParameterDirection.Input));
@@ -68,11 +83,11 @@ namespace BusinessLayer
                 objLstDbParams.Add(new DbParams(DbType.String, 50, CurrentWt, "CurrentWt", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, RcvdQty, "receivedQty", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.Date, 50, ReceivingDate == "" ? null : ReceivingDate, "ReceivingDate", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.Date, 50, OrderDate == "" ? null : ReceivingDate, "OrderDate", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, ProductModel, "ModelName", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, ProductCode, "ModelCode", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, ProductSize, "ProductSize", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, ProductColor, "Color", ParameterDirection.Input));
-                //objLstDbParams.Add(new DbParams(DbType.String, 50, IncentiveApplicable, "IncentiveApplicable", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, BeforeDays, "BDays", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, AfterDays, "ADays", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 50, BalanceWeight, "BalanceWt", ParameterDirection.Input));
