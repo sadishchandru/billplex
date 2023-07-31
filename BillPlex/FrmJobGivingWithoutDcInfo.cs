@@ -359,9 +359,7 @@ namespace BillPlex
                 txtSCCom.Text = selectedCompanyList.GetRowCellValue(rowHandle, "SubClientCompany");
                 var datete = selectedCompanyList.GetRowCellValue(rowHandle, "Date").ToString();
                 ddDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
-                //drpOrderNo.Text = selectedCompanyList.GetRowCellValue(rowHandle, "OrderNo").ToString();
                 drpOrderNo.Text = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.Id == Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "OrderNo").ToString()))?.Code.ToString() ?? "";
-                //drpOrderNo.SelectedIndex = JobGivingWithoutDcRequest.OrderMasterList.FindIndex(x => x.Id == Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "OrderNo").ToString()));
                 datete = selectedCompanyList.GetRowCellValue(rowHandle, "OrderDate").ToString();
                 ddODate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
                 txtCCode.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CustomerCode");
@@ -376,8 +374,6 @@ namespace BillPlex
                 txtQuantity.Text = selectedCompanyList.GetRowCellValue(rowHandle, "QuantityPiece").ToString();
                 txtWeight.Text = selectedCompanyList.GetRowCellValue(rowHandle, "WeightKg");
                 txtAvlQty.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AvlQty");
-                //txtTQty.Text = selectedCompanyList.GetRowCellValue(rowHandle, "TotalQty");
-                //txtTotalWT.Text = selectedCompanyList.GetRowCellValue(rowHandle, "TotalWt");
                 txtShortage.Text = selectedCompanyList.GetRowCellValue(rowHandle, "AuthorFathername");
                 btnNew.Enabled = false;
                 btnUpdate.Enabled = true;

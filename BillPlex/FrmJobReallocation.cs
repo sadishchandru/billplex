@@ -142,6 +142,14 @@ namespace BillPlex
                 JobGivingWithoutDcRequest.WeightKg = txtWeight.Text;
                 JobGivingWithoutDcRequest.Excess = txtExcess.Text;
                 JobGivingWithoutDcRequest.Shortage = txtShortage.Text;
+                JobGivingWithoutDcRequest.RawMaterial = txtRawMaterial.Text;
+                JobGivingWithoutDcRequest.RawType = txtRawType.Text;
+                JobGivingWithoutDcRequest.ModelName = txtProModel.Text;
+                JobGivingWithoutDcRequest.ProductSize = txtProSize.Text;
+                JobGivingWithoutDcRequest.ModelCode = txtProductCode.Text;
+                JobGivingWithoutDcRequest.Color = txtProColor.Text;
+                //JobGivingWithoutDcRequest.Color = txtProColor.Text;
+                //JobGivingWithoutDcRequest.Color = txtProColor.Text;
                 JobGivingWithoutDcRequest.Update();
 
                 if (JobGivingWithoutDcRequest.Result.Status == ResultStatus.Success)
@@ -303,10 +311,7 @@ namespace BillPlex
                     txtEmpCode.Text = gridView2.GetRowCellValue(rowHandle, "EmployeeCode").ToString();
                     txtEmpName.Text = (string)gridView2.GetRowCellValue(rowHandle, "EmployeeName");
                     txtCustName.Text = (string)gridView2.GetRowCellValue(rowHandle, "CustomerName");
-                    if(txtRawMaterial.Text != "" && txtRawMaterial.Text != string.Empty)
-                    {
-                        txtRawMaterial.Text = (string)gridView2.GetRowCellValue(rowHandle, "RawMaterial");
-                    }
+                    txtRawMaterial.Text = (string)gridView2.GetRowCellValue(rowHandle, "RawMaterial");
                     txtRawType.Text = (string)gridView2.GetRowCellValue(rowHandle, "Type");
                     txtProductCode.Text = (string)gridView2.GetRowCellValue(rowHandle, "ModelCode");
                     txtProModel.Text = (string)gridView2.GetRowCellValue(rowHandle, "ModelName");
@@ -317,8 +322,8 @@ namespace BillPlex
                     lblWeight.Text = (string)gridView2.GetRowCellValue(rowHandle, "BalanceWt");
                     txtReceivedQty.Text = (string)gridView2.GetRowCellValue(rowHandle, "received");
                     JobGivingWithoutDcRequest.OrderNo = gridView2.GetRowCellValue(rowHandle, "OrderNo").ToString();
-                    JobGivingWithoutDcRequest.RawMaterial = gridView2.GetRowCellValue(rowHandle, "RawMaterial").ToString();
-                    //JobGivingWithoutDcRequest.WeightKg = gridView2.GetRowCellValue(rowHandle, "WeightKg").ToString();
+                    //JobGivingWithoutDcRequest.RawMaterial = gridView2.GetRowCellValue(rowHandle, "RawMaterial").ToString();
+                    JobGivingWithoutDcRequest.WagesEmp = gridView2.GetRowCellValue(rowHandle, "Wages").ToString();
                 }
             }
             catch (Exception ex)
