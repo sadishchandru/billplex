@@ -305,44 +305,48 @@ namespace BillPlex
 
             txtTotal.Text = deductionTotal.ToString();
             txtNetAmt.Text = total.ToString();
-            
-            
+
+
         }
 
         private void gridControl2_DoubleClick(object sender, EventArgs e)
         {
             try
             {
-                var selectedRows = gridView2.GetSelectedRows();
-
-                foreach (var rowHandle in selectedRows)
+                if (ddReceDate.Text != null)
                 {
-                    txtEmpCode.Text = gridView2.GetRowCellValue(rowHandle, "EmployeeCode").ToString();
-                    txtEmpName.Text = (string)gridView2.GetRowCellValue(rowHandle, "EmployeeName");
-                    txtCName.Text = (string)gridView2.GetRowCellValue(rowHandle, "CompanyName");
-                    txtRawMaterial.Text = (string)gridView2.GetRowCellValue(rowHandle, "RawMaterial");
-                    txtQuantity.Text = (string)gridView2.GetRowCellValue(rowHandle, "TotalQty");
-                    txtType.Text = (string)gridView2.GetRowCellValue(rowHandle, "Type");
-                    txtWeight.Text = (string)gridView2.GetRowCellValue(rowHandle, "BalanceWt");
-                    txtPModel.Text = (string)gridView2.GetRowCellValue(rowHandle, "ModelName");
-                    txtPCode.Text = (string)gridView2.GetRowCellValue(rowHandle, "ModelCode");
-                    txtPSize.Text = (string)gridView2.GetRowCellValue(rowHandle, "ProductSize");
-                    txtColor.Text = (string)gridView2.GetRowCellValue(rowHandle, "Color");
-                    txtWages.Text = (string)gridView2.GetRowCellValue(rowHandle, "Wages");
-                    var recicivedQty = (string)gridView2.GetRowCellValue(rowHandle, "received");
-                    JobReceivedRequest.OrderNo = gridView2.GetRowCellValue(rowHandle, "OrderNo").ToString();
-                    JobReceivedRequest.Id = (Int64)gridView2.GetRowCellValue(rowHandle, "Id");
-                    //var recicivedQty = JobReceivedRequest.RcvdQty = gridView1.GetRowCellValue(rowHandle, "received").ToString();
 
-                    if (recicivedQty != "" && recicivedQty != "0")
+                    var selectedRows = gridView2.GetSelectedRows();
+
+                    foreach (var rowHandle in selectedRows)
                     {
+                        txtEmpCode.Text = gridView2.GetRowCellValue(rowHandle, "EmployeeCode").ToString();
+                        txtEmpName.Text = (string)gridView2.GetRowCellValue(rowHandle, "EmployeeName");
+                        txtCName.Text = (string)gridView2.GetRowCellValue(rowHandle, "CompanyName");
+                        txtRawMaterial.Text = (string)gridView2.GetRowCellValue(rowHandle, "RawMaterial");
+                        txtQuantity.Text = (string)gridView2.GetRowCellValue(rowHandle, "TotalQty");
+                        txtType.Text = (string)gridView2.GetRowCellValue(rowHandle, "Type");
+                        txtWeight.Text = (string)gridView2.GetRowCellValue(rowHandle, "BalanceWt");
+                        txtPModel.Text = (string)gridView2.GetRowCellValue(rowHandle, "ModelName");
+                        txtPCode.Text = (string)gridView2.GetRowCellValue(rowHandle, "ModelCode");
+                        txtPSize.Text = (string)gridView2.GetRowCellValue(rowHandle, "ProductSize");
+                        txtColor.Text = (string)gridView2.GetRowCellValue(rowHandle, "Color");
+                        txtWages.Text = (string)gridView2.GetRowCellValue(rowHandle, "Wages");
+                        var recicivedQty = (string)gridView2.GetRowCellValue(rowHandle, "received");
+                        JobReceivedRequest.OrderNo = gridView2.GetRowCellValue(rowHandle, "OrderNo").ToString();
+                        JobReceivedRequest.Id = (Int64)gridView2.GetRowCellValue(rowHandle, "Id");
+                        //var recicivedQty = JobReceivedRequest.RcvdQty = gridView1.GetRowCellValue(rowHandle, "received").ToString();
 
-                        txtPQty.Text = (Convert.ToDecimal(txtQuantity.Text) - Convert.ToDecimal(recicivedQty)).ToString();
+                        if (recicivedQty != "" && recicivedQty != "0")
+                        {
+
+                            txtPQty.Text = (Convert.ToDecimal(txtQuantity.Text) - Convert.ToDecimal(recicivedQty)).ToString();
+                        }
                     }
+                    btnAdd.Enabled = false;
+                    btnNew.Enabled = false;
+                    btnUpdate.Enabled = true;
                 }
-                btnAdd.Enabled = false;
-                btnNew.Enabled = false;
-                btnUpdate.Enabled = true;
             }
             catch (Exception ex)
             {

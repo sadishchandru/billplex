@@ -125,41 +125,45 @@ namespace BillPlex
         {
             try
             {
-                string selectedItem = (string)drpEmpCode.SelectedItem;
+                if (ddReceivingDate.Text != null)
+                {
 
-                if (selectedItem != null)
-                {
-                    JobGivingWithoutDcRequest.EmployeeCode = JobGivingWithoutDcRequest.EmployeePersonalList.FirstOrDefault(item => item.Code == selectedItem.ToString())?.Id ?? -1;
-                }
-                JobGivingWithoutDcRequest.CompanyName = txtComName.Text;
-                JobGivingWithoutDcRequest.ClientCompany = txtClientCompany.Text;
-                JobGivingWithoutDcRequest.SubClientCompany = txtSubClient.Text;
-                JobGivingWithoutDcRequest.EmployeeName = txtJEmpName.Text;
-                JobGivingWithoutDcRequest.Director = txtDirector.Text;
-                JobGivingWithoutDcRequest.ClientName = txtClientName.Text;
-                JobGivingWithoutDcRequest.subContractor = txtSubContractor.Text;
-                JobGivingWithoutDcRequest.QuantityPiece = txtQuantity.Text;
-                JobGivingWithoutDcRequest.WeightKg = txtWeight.Text;
-                JobGivingWithoutDcRequest.Excess = txtExcess.Text;
-                JobGivingWithoutDcRequest.Shortage = txtShortage.Text;
-                JobGivingWithoutDcRequest.RawMaterial = txtRawMaterial.Text;
-                JobGivingWithoutDcRequest.RawType = txtRawType.Text;
-                JobGivingWithoutDcRequest.ModelName = txtProModel.Text;
-                JobGivingWithoutDcRequest.ProductSize = txtProSize.Text;
-                JobGivingWithoutDcRequest.ModelCode = txtProductCode.Text;
-                JobGivingWithoutDcRequest.Color = txtProColor.Text;
-                //JobGivingWithoutDcRequest.Color = txtProColor.Text;
-                //JobGivingWithoutDcRequest.Color = txtProColor.Text;
-                JobGivingWithoutDcRequest.Update();
+                    string selectedItem = (string)drpEmpCode.SelectedItem;
 
-                if (JobGivingWithoutDcRequest.Result.Status == ResultStatus.Success)
-                {
-                    XtraMessageBox.Show("Giving is Transfer to the another Employee", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
-                }
-                else
-                {
-                    XtraMessageBox.Show(JobGivingWithoutDcRequest.Result.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    if (selectedItem != null)
+                    {
+                        JobGivingWithoutDcRequest.EmployeeCode = JobGivingWithoutDcRequest.EmployeePersonalList.FirstOrDefault(item => item.Code == selectedItem.ToString())?.Id ?? -1;
+                    }
+                    JobGivingWithoutDcRequest.CompanyName = txtComName.Text;
+                    JobGivingWithoutDcRequest.ClientCompany = txtClientCompany.Text;
+                    JobGivingWithoutDcRequest.SubClientCompany = txtSubClient.Text;
+                    JobGivingWithoutDcRequest.EmployeeName = txtJEmpName.Text;
+                    JobGivingWithoutDcRequest.Director = txtDirector.Text;
+                    JobGivingWithoutDcRequest.ClientName = txtClientName.Text;
+                    JobGivingWithoutDcRequest.subContractor = txtSubContractor.Text;
+                    JobGivingWithoutDcRequest.QuantityPiece = txtQuantity.Text;
+                    JobGivingWithoutDcRequest.WeightKg = txtWeight.Text;
+                    JobGivingWithoutDcRequest.Excess = txtExcess.Text;
+                    JobGivingWithoutDcRequest.Shortage = txtShortage.Text;
+                    JobGivingWithoutDcRequest.RawMaterial = txtRawMaterial.Text;
+                    JobGivingWithoutDcRequest.RawType = txtRawType.Text;
+                    JobGivingWithoutDcRequest.ModelName = txtProModel.Text;
+                    JobGivingWithoutDcRequest.ProductSize = txtProSize.Text;
+                    JobGivingWithoutDcRequest.ModelCode = txtProductCode.Text;
+                    JobGivingWithoutDcRequest.Color = txtProColor.Text;
+                    //JobGivingWithoutDcRequest.Color = txtProColor.Text;
+                    //JobGivingWithoutDcRequest.Color = txtProColor.Text;
+                    JobGivingWithoutDcRequest.Update();
+
+                    if (JobGivingWithoutDcRequest.Result.Status == ResultStatus.Success)
+                    {
+                        XtraMessageBox.Show("Giving is Transfer to the another Employee", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show(JobGivingWithoutDcRequest.Result.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
             }
             catch (Exception ex)

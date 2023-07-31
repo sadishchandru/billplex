@@ -120,7 +120,6 @@ namespace BillPlex
             this.barButtonItem1.Caption = "barButtonItem1";
             this.barButtonItem1.Id = 4;
             this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Master_Company_Click);
             // 
             // barSubItem1
             // 

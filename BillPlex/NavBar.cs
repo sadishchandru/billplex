@@ -24,11 +24,6 @@ namespace BillPlex
             btn_DeliveryChallan.Visibility = BarItemVisibility.Never;
             MasterCompanyInfo = new FrmCompanyProfile();
         }
-
-        private void Master_Company_Click(object sender, ItemClickEventArgs e)
-        {
-            MessageBox.Show("Master_Company button clicked!");
-        }
         #region profile
         private void ClientCompany_ItemClick(object sender, ItemClickEventArgs e)
         {

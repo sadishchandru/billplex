@@ -66,5 +66,6 @@ SET NOCOUNT ON;
 			FROM JobGivingWithoutDC JGDC
 			left join EmployeePersonal EP on EP.Id = JGDC.EmployeeCode
 			left join OrderMaster OM on OM.Id = JGDC.OrderNo
-			where ISNULL(TotalQty, 0) > 0 ;
+			--where ISNULL(received, 0) <= TotalQty AND ISNULL(received, 0) != 0;
+			where ISNULL(received, 0) != ISNULL(TotalQty, 0) AND ISNULL(received, 0) != 0;
 END
