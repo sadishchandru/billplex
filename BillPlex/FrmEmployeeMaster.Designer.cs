@@ -423,7 +423,7 @@ namespace BillPlex
             this.panelControl1.Controls.Add(this.labelControl103);
             this.panelControl1.Location = new System.Drawing.Point(12, 3);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1704, 60);
+            this.panelControl1.Size = new System.Drawing.Size(1564, 60);
             this.panelControl1.TabIndex = 0;
             // 
             // labelControl103
@@ -432,10 +432,10 @@ namespace BillPlex
             this.labelControl103.Appearance.ForeColor = System.Drawing.SystemColors.Highlight;
             this.labelControl103.Appearance.Options.UseFont = true;
             this.labelControl103.Appearance.Options.UseForeColor = true;
-            this.labelControl103.Location = new System.Drawing.Point(632, 9);
+            this.labelControl103.Location = new System.Drawing.Point(730, 16);
             this.labelControl103.Name = "labelControl103";
             this.labelControl103.Size = new System.Drawing.Size(205, 29);
-            this.labelControl103.TabIndex = 120;
+            this.labelControl103.TabIndex = 121;
             this.labelControl103.Text = "Employee Master";
             // 
             // panelControl2
@@ -445,7 +445,7 @@ namespace BillPlex
             this.panelControl2.Controls.Add(this.EmployeeMasterTab);
             this.panelControl2.Location = new System.Drawing.Point(12, 69);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1704, 807);
+            this.panelControl2.Size = new System.Drawing.Size(1564, 711);
             this.panelControl2.TabIndex = 1;
             // 
             // panelControl5
@@ -457,7 +457,7 @@ namespace BillPlex
             this.panelControl5.Controls.Add(this.Editbtn);
             this.panelControl5.Controls.Add(this.Addbtn);
             this.panelControl5.Controls.Add(this.Newbtn);
-            this.panelControl5.Location = new System.Drawing.Point(1548, 181);
+            this.panelControl5.Location = new System.Drawing.Point(1456, 185);
             this.panelControl5.Name = "panelControl5";
             this.panelControl5.Size = new System.Drawing.Size(98, 281);
             this.panelControl5.TabIndex = 2;
@@ -577,7 +577,7 @@ namespace BillPlex
             this.EmployeeMasterTab.LookAndFeel.UseDefaultLookAndFeel = false;
             this.EmployeeMasterTab.Name = "EmployeeMasterTab";
             this.EmployeeMasterTab.SelectedTabPage = this.PERSONAL;
-            this.EmployeeMasterTab.Size = new System.Drawing.Size(1491, 706);
+            this.EmployeeMasterTab.Size = new System.Drawing.Size(1420, 706);
             this.EmployeeMasterTab.TabIndex = 0;
             this.EmployeeMasterTab.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.PERSONAL,
@@ -685,7 +685,7 @@ namespace BillPlex
             this.PERSONAL.Controls.Add(this.txtCName);
             this.PERSONAL.Controls.Add(this.txtSCName);
             this.PERSONAL.Name = "PERSONAL";
-            this.PERSONAL.Size = new System.Drawing.Size(1485, 678);
+            this.PERSONAL.Size = new System.Drawing.Size(1414, 678);
             this.PERSONAL.Text = "PERSONAL";
             // 
             // labelCodeExist
@@ -1945,7 +1945,7 @@ namespace BillPlex
             this.FINANCE.Controls.Add(this.drpLOffice);
             this.FINANCE.Controls.Add(this.drpESIDispensary);
             this.FINANCE.Name = "FINANCE";
-            this.FINANCE.Size = new System.Drawing.Size(1485, 678);
+            this.FINANCE.Size = new System.Drawing.Size(1414, 678);
             this.FINANCE.Text = "FINANCE";
             // 
             // labelControl73
@@ -2568,7 +2568,7 @@ namespace BillPlex
             this.Family.Controls.Add(this.ddFDOB);
             this.Family.Controls.Add(this.drpResiding);
             this.Family.Name = "Family";
-            this.Family.Size = new System.Drawing.Size(1485, 678);
+            this.Family.Size = new System.Drawing.Size(1414, 678);
             this.Family.Text = "Family";
             // 
             // FamilyGridControl
@@ -3130,7 +3130,7 @@ namespace BillPlex
             this.Nominee.Controls.Add(this.txtNAddress);
             this.Nominee.Controls.Add(this.txtGAddress);
             this.Nominee.Name = "Nominee";
-            this.Nominee.Size = new System.Drawing.Size(1485, 678);
+            this.Nominee.Size = new System.Drawing.Size(1414, 678);
             this.Nominee.Text = "Nominee";
             // 
             // NomieeGridControl
@@ -3138,7 +3138,7 @@ namespace BillPlex
             this.NomieeGridControl.Location = new System.Drawing.Point(18, 398);
             this.NomieeGridControl.MainView = this.NomieeGridView;
             this.NomieeGridControl.Name = "NomieeGridControl";
-            this.NomieeGridControl.Size = new System.Drawing.Size(1448, 257);
+            this.NomieeGridControl.Size = new System.Drawing.Size(1298, 277);
             this.NomieeGridControl.TabIndex = 115;
             this.NomieeGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.NomieeGridView});
@@ -3815,7 +3815,7 @@ namespace BillPlex
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1828, 814);
+            this.ClientSize = new System.Drawing.Size(1583, 784);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Name = "FrmEmployeeMaster";
@@ -4164,7 +4164,6 @@ namespace BillPlex
         private DevExpress.XtraEditors.SimpleButton btnDeleteRow;
         private DevExpress.XtraEditors.SimpleButton btnAddRow;
         private DevExpress.XtraEditors.ComboBoxEdit drpResiding;
-        private DevExpress.XtraEditors.LabelControl labelControl103;
         private DevExpress.XtraEditors.SvgImageBox svgPhoto;
         private DevExpress.XtraEditors.SimpleButton btnCopy;
         private DevExpress.XtraEditors.SimpleButton btnCImage;
@@ -4220,5 +4219,6 @@ namespace BillPlex
         private DevExpress.XtraGrid.Columns.GridColumn NGuardianName;
         private DevExpress.XtraGrid.Columns.GridColumn NGuardianAddress;
         private DevExpress.XtraGrid.Columns.GridColumn NGuardianRelation;
+        private DevExpress.XtraEditors.LabelControl labelControl103;
     }
 }

@@ -94,7 +94,7 @@ namespace BillPlex
             this.labelControl1.Location = new System.Drawing.Point(697, 25);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(218, 40);
+            this.labelControl1.Size = new System.Drawing.Size(170, 31);
             this.labelControl1.TabIndex = 1;
             this.labelControl1.Text = "Order Master";
             // 
@@ -455,6 +455,7 @@ namespace BillPlex
             this.Controls.Add(this.panelControl1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmOrderMaster";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmOrderMaster";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmOrderMaster_Load);

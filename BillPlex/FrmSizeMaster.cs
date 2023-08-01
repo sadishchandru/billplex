@@ -204,17 +204,20 @@ namespace BillPlex
 
         private void FrmSizeMaster_Load(object sender, EventArgs e)
         {
-            // Scale our form to look like it did when we designed it.
-            // This adjusts between the screen resolution of the design computer and the workstation.
-            int ourScreenWidth = Screen.FromControl(this).WorkingArea.Width;
-            int ourScreenHeight = Screen.FromControl(this).WorkingArea.Height;
-            float scaleFactorWidth = ourScreenWidth / 1600f;
-            float scaleFactorHeigth = ourScreenHeight / 900f;
-            SizeF scaleFactor = new SizeF(scaleFactorWidth, scaleFactorHeigth);
-            Scale(scaleFactor);
 
-            // If you want to center the resized screen.
             CenterToScreen();
+
+            // Set the form size to occupy the entire screen with equal margins on all four sides
+            int margin = 50; // Adjust this value to control the size of the margins
+            Rectangle screenBounds = Screen.FromControl(this).Bounds;
+            int formWidth = screenBounds.Width - 5 * margin;
+            int formHeight = screenBounds.Height - 5 * margin;
+            this.Size = new Size(formWidth, formHeight);
+
+            // Set the form position to the center
+            int formX = (screenBounds.Width - formWidth) / 5;
+            int formY = (screenBounds.Height - formHeight) / 5;
+            this.Location = new Point(formX, formY);
         }
     }
 }

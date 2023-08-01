@@ -94,7 +94,7 @@ namespace BillPlex
             this.labelControl1.Location = new System.Drawing.Point(658, 46);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(267, 48);
+            this.labelControl1.Size = new System.Drawing.Size(212, 39);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Raw Material";
             // 
@@ -192,7 +192,7 @@ namespace BillPlex
             this.txtSearch.Location = new System.Drawing.Point(289, 358);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(432, 22);
+            this.txtSearch.Size = new System.Drawing.Size(432, 20);
             this.txtSearch.TabIndex = 12;
             // 
             // labelControl6
@@ -202,7 +202,7 @@ namespace BillPlex
             this.labelControl6.Location = new System.Drawing.Point(53, 354);
             this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(210, 24);
+            this.labelControl6.Size = new System.Drawing.Size(169, 19);
             this.labelControl6.TabIndex = 11;
             this.labelControl6.Text = "Search Raw Material";
             // 
@@ -313,7 +313,7 @@ namespace BillPlex
             this.txtRawMaterial.Location = new System.Drawing.Point(284, 102);
             this.txtRawMaterial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtRawMaterial.Name = "txtRawMaterial";
-            this.txtRawMaterial.Size = new System.Drawing.Size(432, 22);
+            this.txtRawMaterial.Size = new System.Drawing.Size(432, 20);
             this.txtRawMaterial.TabIndex = 8;
             // 
             // txtStock
@@ -321,7 +321,7 @@ namespace BillPlex
             this.txtStock.Location = new System.Drawing.Point(284, 174);
             this.txtStock.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtStock.Name = "txtStock";
-            this.txtStock.Size = new System.Drawing.Size(432, 22);
+            this.txtStock.Size = new System.Drawing.Size(432, 20);
             this.txtStock.TabIndex = 7;
             // 
             // txtType
@@ -329,7 +329,7 @@ namespace BillPlex
             this.txtType.Location = new System.Drawing.Point(284, 43);
             this.txtType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtType.Name = "txtType";
-            this.txtType.Size = new System.Drawing.Size(432, 22);
+            this.txtType.Size = new System.Drawing.Size(432, 20);
             this.txtType.TabIndex = 6;
             // 
             // labelControl7
@@ -341,7 +341,7 @@ namespace BillPlex
             this.labelControl7.Location = new System.Drawing.Point(232, 165);
             this.labelControl7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(17, 33);
+            this.labelControl7.Size = new System.Drawing.Size(14, 27);
             this.labelControl7.TabIndex = 5;
             this.labelControl7.Text = "*";
             // 
@@ -354,7 +354,7 @@ namespace BillPlex
             this.labelControl5.Location = new System.Drawing.Point(219, 96);
             this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(17, 33);
+            this.labelControl5.Size = new System.Drawing.Size(14, 27);
             this.labelControl5.TabIndex = 3;
             this.labelControl5.Text = "*";
             // 
@@ -365,7 +365,7 @@ namespace BillPlex
             this.labelControl4.Location = new System.Drawing.Point(48, 100);
             this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(194, 24);
+            this.labelControl4.Size = new System.Drawing.Size(158, 19);
             this.labelControl4.TabIndex = 2;
             this.labelControl4.Text = "Enter Raw Material";
             // 
@@ -376,7 +376,7 @@ namespace BillPlex
             this.labelControl3.Location = new System.Drawing.Point(48, 167);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(208, 24);
+            this.labelControl3.Size = new System.Drawing.Size(167, 19);
             this.labelControl3.TabIndex = 1;
             this.labelControl3.Text = "Enter Stock Qty (Kg)";
             // 
@@ -387,7 +387,7 @@ namespace BillPlex
             this.labelControl2.Location = new System.Drawing.Point(48, 40);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(152, 24);
+            this.labelControl2.Size = new System.Drawing.Size(125, 19);
             this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "Enter The Type";
             // 
@@ -400,6 +400,7 @@ namespace BillPlex
             this.Controls.Add(this.panelControl1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmRawMaterial";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmRawMaterial";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmRawMaterial_Load);

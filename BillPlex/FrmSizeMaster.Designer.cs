@@ -87,7 +87,7 @@ namespace BillPlex
             this.labelControl3.Location = new System.Drawing.Point(759, 31);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(174, 36);
+            this.labelControl3.Size = new System.Drawing.Size(137, 29);
             this.labelControl3.TabIndex = 1;
             this.labelControl3.Text = "Size Master";
             // 
@@ -118,7 +118,7 @@ namespace BillPlex
             this.labelAvailable.Appearance.Options.UseForeColor = true;
             this.labelAvailable.Location = new System.Drawing.Point(357, 89);
             this.labelAvailable.Name = "labelAvailable";
-            this.labelAvailable.Size = new System.Drawing.Size(79, 22);
+            this.labelAvailable.Size = new System.Drawing.Size(56, 19);
             this.labelAvailable.TabIndex = 35;
             this.labelAvailable.Text = "Available";
             // 
@@ -130,7 +130,7 @@ namespace BillPlex
             this.LabelExceed.Appearance.Options.UseForeColor = true;
             this.LabelExceed.Location = new System.Drawing.Point(702, 89);
             this.LabelExceed.Name = "LabelExceed";
-            this.LabelExceed.Size = new System.Drawing.Size(117, 22);
+            this.LabelExceed.Size = new System.Drawing.Size(87, 19);
             this.LabelExceed.TabIndex = 34;
             this.LabelExceed.Text = "Already Exists";
             // 
@@ -193,7 +193,7 @@ namespace BillPlex
             this.labelControl1.Location = new System.Drawing.Point(217, 61);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(15, 28);
+            this.labelControl1.Size = new System.Drawing.Size(11, 22);
             this.labelControl1.TabIndex = 14;
             this.labelControl1.Text = "*";
             // 
@@ -202,7 +202,7 @@ namespace BillPlex
             this.txtSearch.Location = new System.Drawing.Point(290, 243);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(432, 22);
+            this.txtSearch.Size = new System.Drawing.Size(432, 20);
             this.txtSearch.TabIndex = 12;
             // 
             // labelControl6
@@ -212,7 +212,7 @@ namespace BillPlex
             this.labelControl6.Location = new System.Drawing.Point(54, 240);
             this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(182, 24);
+            this.labelControl6.Size = new System.Drawing.Size(146, 19);
             this.labelControl6.TabIndex = 11;
             this.labelControl6.Text = "Search Size Name";
             // 
@@ -306,7 +306,7 @@ namespace BillPlex
             this.txtSName.Location = new System.Drawing.Point(357, 64);
             this.txtSName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSName.Name = "txtSName";
-            this.txtSName.Size = new System.Drawing.Size(432, 22);
+            this.txtSName.Size = new System.Drawing.Size(432, 20);
             this.txtSName.TabIndex = 6;
             this.txtSName.EditValueChanged += new System.EventHandler(this.txtSName_EditValueChanged);
             // 
@@ -317,7 +317,7 @@ namespace BillPlex
             this.labelControl2.Location = new System.Drawing.Point(121, 61);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(106, 24);
+            this.labelControl2.Size = new System.Drawing.Size(86, 19);
             this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "Size Name";
             // 
@@ -330,6 +330,7 @@ namespace BillPlex
             this.Controls.Add(this.panelControl1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmSizeMaster";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmSizeMaster";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmSizeMaster_Load);
