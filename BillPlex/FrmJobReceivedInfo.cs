@@ -67,7 +67,7 @@ namespace BillPlex
         {
             try
             {
-                if (ddReceDate.Text != string.Empty && ddReceDate.Text != "")
+                if (ddReceDate.Text != null && ddReceDate.Text != null && ddReceDate.Text != string.Empty)
                 {
 
                     string selectedMasterItem = txtEmpCode.Text;

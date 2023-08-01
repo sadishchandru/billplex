@@ -103,94 +103,101 @@ namespace BillPlex
         {
             try
             {
-                string selectedMasterItem = drpEmpCode.Text;
-
-                if (selectedMasterItem != null)
+                if (ddReceivingDate.Text != null && ddReceivingDate.Text != null && ddReceivingDate.Text != string.Empty)
                 {
-                    DirectJobReceivedWithoutGivingRequest.EmployeeCode = DirectJobReceivedWithoutGivingRequest.EmployeePersonalList.FirstOrDefault(item => item.Code == selectedMasterItem.ToString())?.Id ?? -1;
-                }
-                DirectJobReceivedWithoutGivingRequest.EmployeeName = txtEmpName.Text;
-                DirectJobReceivedWithoutGivingRequest.CompanyName = txtComName.Text;
-                DirectJobReceivedWithoutGivingRequest.Director = txtDirector.Text;
-                DirectJobReceivedWithoutGivingRequest.ClientComapny = txtClientCompany.Text;
-                DirectJobReceivedWithoutGivingRequest.ClientName = txtClientName.Text;
-                DirectJobReceivedWithoutGivingRequest.SubClientComapny = txtSubClient.Text;
-                DirectJobReceivedWithoutGivingRequest.SubClientName = txtSubContractor.Text;
-                DirectJobReceivedWithoutGivingRequest.ProductModel = drpProductModel.Text;
-                DirectJobReceivedWithoutGivingRequest.ProductCode = drpProductCode.Text;
-                DirectJobReceivedWithoutGivingRequest.ProductName = txtProductName.Text;
-                DirectJobReceivedWithoutGivingRequest.Wages = txtWages.Text;
-                DirectJobReceivedWithoutGivingRequest.ProSize = txtSize.Text;
-                DirectJobReceivedWithoutGivingRequest.Color = drpColor.Text;
-                DirectJobReceivedWithoutGivingRequest.Quantity = txtQuantity.Text;
-                DirectJobReceivedWithoutGivingRequest.Weight = txtWeight.Text;
-                DirectJobReceivedWithoutGivingRequest.IncentiveApplicable = drpIncentiveApp.Text;
-                DirectJobReceivedWithoutGivingRequest.BDays = txtBeforeDays.Text;
-                DirectJobReceivedWithoutGivingRequest.ADays = txtAfterDays.Text;
-                DirectJobReceivedWithoutGivingRequest.Deduction = txtDeducation.Text;
-                DirectJobReceivedWithoutGivingRequest.Total = txtTotal.Text;
-                DirectJobReceivedWithoutGivingRequest.Conveyance = txtConveyance.Text;
-                DirectJobReceivedWithoutGivingRequest.Incentive = txtIncentive.Text;
-                DirectJobReceivedWithoutGivingRequest.NetAmt = txtNetAmt.Text;
-                DirectJobReceivedWithoutGivingRequest.ReceivingDate = ddReceivingDate.Text;
-                DirectJobReceivedWithoutGivingRequest.Update();
+                    string selectedMasterItem = drpEmpCode.Text;
 
-                if (DirectJobReceivedWithoutGivingRequest.Result.Status == ResultStatus.Success)
-                {
-                    XtraMessageBox.Show(DirectJobReceivedWithoutGivingRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    if (DirectJobReceivedWithoutGivingRequest.DirectJobReceivedWithoutGivingList.Count() > 0)
+                    if (selectedMasterItem != null)
                     {
-                        foreach (var item in DirectJobReceivedWithoutGivingRequest.DirectJobReceivedWithoutGivingList)
+                        DirectJobReceivedWithoutGivingRequest.EmployeeCode = DirectJobReceivedWithoutGivingRequest.EmployeePersonalList.FirstOrDefault(item => item.Code == selectedMasterItem.ToString())?.Id ?? -1;
+                    }
+                    DirectJobReceivedWithoutGivingRequest.EmployeeName = txtEmpName.Text;
+                    DirectJobReceivedWithoutGivingRequest.CompanyName = txtComName.Text;
+                    DirectJobReceivedWithoutGivingRequest.Director = txtDirector.Text;
+                    DirectJobReceivedWithoutGivingRequest.ClientComapny = txtClientCompany.Text;
+                    DirectJobReceivedWithoutGivingRequest.ClientName = txtClientName.Text;
+                    DirectJobReceivedWithoutGivingRequest.SubClientComapny = txtSubClient.Text;
+                    DirectJobReceivedWithoutGivingRequest.SubClientName = txtSubContractor.Text;
+                    DirectJobReceivedWithoutGivingRequest.ProductModel = drpProductModel.Text;
+                    DirectJobReceivedWithoutGivingRequest.ProductCode = drpProductCode.Text;
+                    DirectJobReceivedWithoutGivingRequest.ProductName = txtProductName.Text;
+                    DirectJobReceivedWithoutGivingRequest.Wages = txtWages.Text;
+                    DirectJobReceivedWithoutGivingRequest.ProSize = txtSize.Text;
+                    DirectJobReceivedWithoutGivingRequest.Color = drpColor.Text;
+                    DirectJobReceivedWithoutGivingRequest.Quantity = txtQuantity.Text;
+                    DirectJobReceivedWithoutGivingRequest.Weight = txtWeight.Text;
+                    DirectJobReceivedWithoutGivingRequest.IncentiveApplicable = drpIncentiveApp.Text;
+                    DirectJobReceivedWithoutGivingRequest.BDays = txtBeforeDays.Text;
+                    DirectJobReceivedWithoutGivingRequest.ADays = txtAfterDays.Text;
+                    DirectJobReceivedWithoutGivingRequest.Deduction = txtDeducation.Text;
+                    DirectJobReceivedWithoutGivingRequest.Total = txtTotal.Text;
+                    DirectJobReceivedWithoutGivingRequest.Conveyance = txtConveyance.Text;
+                    DirectJobReceivedWithoutGivingRequest.Incentive = txtIncentive.Text;
+                    DirectJobReceivedWithoutGivingRequest.NetAmt = txtNetAmt.Text;
+                    DirectJobReceivedWithoutGivingRequest.ReceivingDate = ddReceivingDate.Text;
+                    DirectJobReceivedWithoutGivingRequest.Update();
+
+                    if (DirectJobReceivedWithoutGivingRequest.Result.Status == ResultStatus.Success)
+                    {
+                        XtraMessageBox.Show(DirectJobReceivedWithoutGivingRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        if (DirectJobReceivedWithoutGivingRequest.DirectJobReceivedWithoutGivingList.Count() > 0)
                         {
-                            DataTable dataTable = gridControl1.DataSource as DataTable;
+                            foreach (var item in DirectJobReceivedWithoutGivingRequest.DirectJobReceivedWithoutGivingList)
+                            {
+                                DataTable dataTable = gridControl1.DataSource as DataTable;
 
-                            DataRow newRow = dataTable.NewRow();
-                            newRow["EmployeeCode"] = item.EmployeeCode;
-                            newRow["EmployeeName"] = item.EmployeeName;
-                            newRow["CompanyName"] = item.CompanyName;
-                            newRow["DirectorName"] = item.Director;
-                            newRow["ClientCompany"] = item.ClientComapny;
-                            newRow["ClientName"] = item.ClientName;
-                            newRow["SubClientCompany"] = item.SubClientComapny;
-                            newRow["SubClientName"] = item.SubClientName;
-                            newRow["ProductModel"] = item.ProductModel;
-                            newRow["ProductCode"] = item.ProductCode;
-                            newRow["ProductName"] = item.ProductName;
-                            newRow["Wages"] = item.Wages;
-                            newRow["Prosize"] = item.ProSize;
-                            newRow["color"] = item.Color;
-                            newRow["Quantity"] = item.Quantity;
-                            newRow["Weight"] = item.Weight;
-                            newRow["BDays"] = item.BDays;
-                            newRow["ADays"] = item.ADays;
-                            newRow["Deduction"] = item.Deduction;
-                            newRow["Total"] = item.Total;
-                            newRow["Conveyance"] = item.Conveyance;
-                            newRow["Incentive"] = item.Incentive;
-                            newRow["NetAmt"] = item.NetAmt;
-                            newRow["ReceivingDate"] = item.ReceivingDate;
+                                DataRow newRow = dataTable.NewRow();
+                                newRow["EmployeeCode"] = item.EmployeeCode;
+                                newRow["EmployeeName"] = item.EmployeeName;
+                                newRow["CompanyName"] = item.CompanyName;
+                                newRow["DirectorName"] = item.Director;
+                                newRow["ClientCompany"] = item.ClientComapny;
+                                newRow["ClientName"] = item.ClientName;
+                                newRow["SubClientCompany"] = item.SubClientComapny;
+                                newRow["SubClientName"] = item.SubClientName;
+                                newRow["ProductModel"] = item.ProductModel;
+                                newRow["ProductCode"] = item.ProductCode;
+                                newRow["ProductName"] = item.ProductName;
+                                newRow["Wages"] = item.Wages;
+                                newRow["Prosize"] = item.ProSize;
+                                newRow["color"] = item.Color;
+                                newRow["Quantity"] = item.Quantity;
+                                newRow["Weight"] = item.Weight;
+                                newRow["BDays"] = item.BDays;
+                                newRow["ADays"] = item.ADays;
+                                newRow["Deduction"] = item.Deduction;
+                                newRow["Total"] = item.Total;
+                                newRow["Conveyance"] = item.Conveyance;
+                                newRow["Incentive"] = item.Incentive;
+                                newRow["NetAmt"] = item.NetAmt;
+                                newRow["ReceivingDate"] = item.ReceivingDate;
 
-                            // Add the new DataRow to the DataTable
-                            dataTable.Rows.Add(newRow);
+                                // Add the new DataRow to the DataTable
+                                dataTable.Rows.Add(newRow);
+                            }
+                            //this.Close();
+
+                            //FrmDirectJobReceivedWithoutGivingProfile form = Application.OpenForms.OfType<FrmDirectJobReceivedWithoutGivingProfile>().FirstOrDefault();
+
+                            //Form myForm = Application.OpenForms["FrmDirectJobReceivedWithoutGivingProfile"];
+                            //if (myForm != null)
+                            //{
+                            //    form.ReloadSqlDataSource();
+                            //}
+                            gridView1.RefreshData();
+                            gridControl1.RefreshDataSource();
                         }
-                        //this.Close();
+                        else
+                        {
+                            XtraMessageBox.Show(DirectJobReceivedWithoutGivingRequest.Result.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-                        //FrmDirectJobReceivedWithoutGivingProfile form = Application.OpenForms.OfType<FrmDirectJobReceivedWithoutGivingProfile>().FirstOrDefault();
-
-                        //Form myForm = Application.OpenForms["FrmDirectJobReceivedWithoutGivingProfile"];
-                        //if (myForm != null)
-                        //{
-                        //    form.ReloadSqlDataSource();
-                        //}
-                        gridView1.RefreshData();
-                        gridControl1.RefreshDataSource();
+                        }
                     }
-                    else
-                    {
-                        XtraMessageBox.Show(DirectJobReceivedWithoutGivingRequest.Result.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                    }
+                }
+                else
+                {
+                    XtraMessageBox.Show(DirectJobReceivedWithoutGivingRequest.Result.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)
@@ -335,29 +342,57 @@ namespace BillPlex
         private void txtQuantity_EditValueChanged(object sender = null, EventArgs e = null)
         {
 
-            int total = 0;
+            //int total = 0;
 
-            if (txtWages.Text != "" && (txtQuantity.Text != "" && txtQuantity.Text != "0"))
+            //if (txtWages.Text != "" && (txtQuantity.Text != "" && txtQuantity.Text != "0"))
+            //{
+            //    total = (Convert.ToInt32(txtWages.Text) * Convert.ToInt32(txtQuantity.Text));
+            //}
+
+            //if (txtDeducation.Text != "" && txtDeducation.Text != "0")
+            //{
+            //    total = total - Convert.ToInt32(txtDeducation.Text);
+            //}
+
+            //if (txtConveyance.Text != "" && txtConveyance.Text != "0")
+            //{
+            //    total = total + Convert.ToInt32(txtConveyance.Text);
+            //}
+
+            //if (txtIncentive.Text != "" && txtIncentive.Text != "0")
+            //{
+            //    total = total + Convert.ToInt32(txtIncentive.Text);
+            //}
+
+            //txtTotal.Text = total.ToString();
+            //txtNetAmt.Text = total.ToString();
+
+            decimal total = 0;
+            decimal deductionTotal = 0;
+
+            if (txtWages.Text != "" && txtWages.Text != "0")
             {
-                total = (Convert.ToInt32(txtWages.Text) * Convert.ToInt32(txtQuantity.Text));
+                total = Convert.ToDecimal(txtWages.Text) * Convert.ToDecimal(txtQuantity.Text);
+                deductionTotal = Convert.ToDecimal(txtWages.Text) * Convert.ToDecimal(txtQuantity.Text);
             }
 
             if (txtDeducation.Text != "" && txtDeducation.Text != "0")
             {
+                deductionTotal = deductionTotal - Convert.ToInt32(txtDeducation.Text);
                 total = total - Convert.ToInt32(txtDeducation.Text);
             }
-            
+
             if (txtConveyance.Text != "" && txtConveyance.Text != "0")
             {
                 total = total + Convert.ToInt32(txtConveyance.Text);
             }
-            
+
             if (txtIncentive.Text != "" && txtIncentive.Text != "0")
             {
                 total = total + Convert.ToInt32(txtIncentive.Text);
             }
 
-            txtTotal.Text = total.ToString();
+            txtTotal.Text = deductionTotal.ToString();
             txtNetAmt.Text = total.ToString();
         }
 

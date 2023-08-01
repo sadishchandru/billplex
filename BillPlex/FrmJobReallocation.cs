@@ -132,7 +132,7 @@ namespace BillPlex
         {
             try
             {
-                if (ddReceivingDate.Text != null)
+                if (ddReceivingDate.Text != null && ddReceivingDate.Text != null && ddReceivingDate.Text != string.Empty)
                 {
 
                     string selectedItem = (string)drpEmpCode.SelectedItem;

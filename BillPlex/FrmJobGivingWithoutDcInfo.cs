@@ -106,7 +106,7 @@ namespace BillPlex
         {
             try
             {
-                if (ddDate.Text != null)
+                if (ddDate.Text != null && ddDate.Text != null && ddDate.Text != string.Empty)
                 {
                     string selectedItem = (string)drpEmpCode.SelectedItem;
 
