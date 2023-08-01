@@ -97,13 +97,14 @@ namespace BillPlex
                     txtProColor.Text = (string)gridView1.GetRowCellValue(rowHandle, "Color");
                     lblWeight.Text = (string)gridView1.GetRowCellValue(rowHandle, "WeightKg");
                     txtReceivedQty.Text = (string)gridView1.GetRowCellValue(rowHandle, "received");
-                    JobGivingWithoutDcRequest.OrderNo = gridView1.GetRowCellValue(rowHandle, "Director").ToString();
+                    JobGivingWithoutDcRequest.OrderNo = gridView1.GetRowCellValue(rowHandle, "OrderNo").ToString();
                     JobGivingWithoutDcRequest.CompanyName = gridView1.GetRowCellValue(rowHandle, "CompanyName").ToString();
-                    JobGivingWithoutDcRequest.Director = gridView1.GetRowCellValue(rowHandle, "OrderNo").ToString();
+                    JobGivingWithoutDcRequest.Director = gridView1.GetRowCellValue(rowHandle, "Director").ToString();
                     JobGivingWithoutDcRequest.CustomerCode = gridView1.GetRowCellValue(rowHandle, "CustomerCode").ToString();
                     JobGivingWithoutDcRequest.CustomerName = gridView1.GetRowCellValue(rowHandle, "CustomerName").ToString();
                     JobGivingWithoutDcRequest.ProductName = gridView1.GetRowCellValue(rowHandle, "ModelName").ToString();
                     JobGivingWithoutDcRequest.Color = gridView1.GetRowCellValue(rowHandle, "Color").ToString();
+                    JobGivingWithoutDcRequest.WagesEmp = gridView1.GetRowCellValue(rowHandle, "WagesEmp").ToString();
                 }
             }
             catch (Exception ex)
