@@ -14,9 +14,12 @@ namespace BusinessLayer
         public string OrderNo { get; set; }
         public string OrderDate { get; set; }
         public Int64 CustomerCode { get; set; }
+        public string Code { get; set; }
         public Int64 CustomerId { get; set; }
+        public string CustomerName { get; set; }
         public string ProductId { get; set; }
         public Int64 ProductNameId { get; set; }
+        public string Productmodel { get; set; }
         public string ProductModel { get; set; }
         public string ProductCode { get; set; }
         public string ProductSize { get; set; }
@@ -108,8 +111,11 @@ namespace BusinessLayer
                 OrderDetail.OrderNo = ToString(dbReader["OrderNo"]);
                 OrderDetail.OrderDate = ToDateTimeToString(dbReader["Orderdate"]);
                 OrderDetail.CustomerCode = ToInteger(dbReader["Customcode"]);
+                OrderDetail.Code = ToString(dbReader["Code"]);
                 OrderDetail.CustomerId = ToInteger(dbReader["CustomerId"]);
+                OrderDetail.CustomerName = ToString(dbReader["Name"]);
                 OrderDetail.ProductId = ToString(dbReader["ProductNameId"]);
+                OrderDetail.Productmodel = ToString(dbReader["Productmodel"]);
                 OrderDetail.ProductModel = ToString(dbReader["productmodel"]);
                 OrderDetail.ProductCode = ToString(dbReader["productcode"]);
                 OrderDetail.ProductSize = ToString(dbReader["productsize"]);

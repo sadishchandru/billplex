@@ -50,27 +50,31 @@ SET NOCOUNT ON;
 
 	--PRINT (@Query)
 	--EXEC(@Query)
-
-
 			SELECT 
-				Id,
-				OrderNo,
+				OM.Id,
+				OM.OrderNo,
 				Orderdate,
-				Customcode,
-				CustomerId,
+				OM.Customcode,
+				CM.Code,
+				OM.CustomerId,
+				CM.Name,
 				ProductNameId,
-				productmodel,
-				productcode,
-				productsize,
+				Pm.Productmodel,
+				OM.productmodel,
+				OM.productcode,
+				OM.productsize,
 				Quantity,
-				RawmaterialId,
+				OM.RawmaterialId,
 				RawType,
 				ColorId,
 				RawQty,
 				TotalRaw,
+				TotalWt,
 				Delivarydate,
 				WagesforEmp,
 				Status,
 				AdditionalReason
-			FROM OrderMaster
+			FROM OrderMaster OM
+			left join CustomerMaster CM on CM.Id = OM.CustomerId
+			left join Productmodeltemp PM on PM.Id = OM.ProductNameId
 END

@@ -19,30 +19,33 @@ BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
 SET NOCOUNT ON;
 	
-
-
-        SELECT 
-            Id,
-            OrderNo,
-            Orderdate,
-            Customcode,
-            CustomerId,
-            ProductNameId,
-            productmodel,
-            productcode,
-            productsize,
-            Quantity,
-            RawmaterialId,
-            RawType,
-            ColorId,
-            RawQty,
-            TotalRaw,
-            Delivarydate,
-            WagesforEmp,
-            Status,
-			totalWt,
-			AdditionalReason
-        FROM OrderMaster
+			SELECT 
+				OM.Id,
+				OM.OrderNo,
+				Orderdate,
+				OM.Customcode,
+				CM.Code,
+				OM.CustomerId,
+				CM.Name,
+				ProductNameId,
+				Pm.Productmodel,
+				OM.productmodel,
+				OM.productcode,
+				OM.productsize,
+				Quantity,
+				OM.RawmaterialId,
+				RawType,
+				ColorId,
+				RawQty,
+				TotalRaw,
+				TotalWt,
+				Delivarydate,
+				WagesforEmp,
+				Status,
+				AdditionalReason
+			FROM OrderMaster OM
+			left join CustomerMaster CM on CM.Id = OM.CustomerId
+			left join Productmodeltemp PM on PM.Id = OM.ProductNameId
         WHERE OrderNo = @OrderNo;
  
 END

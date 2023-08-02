@@ -258,8 +258,11 @@ namespace BillPlex
                                     newRow["OrderNo"] = item.OrderNo;
                                     newRow["Orderdate"] = item.OrderDate;
                                     newRow["Customcode"] = item.CustomerCode;
+                                    newRow["Code"] = item.Code;
                                     newRow["CustomerId"] = item.CustomerId;
+                                    newRow["Name"] = item.CustomerName;
                                     newRow["ProductNameId"] = item.ProductNameId;
+                                    newRow["Productmodel"] = item.Productmodel;
                                     newRow["productmodel"] = item.ProductModel;
                                     newRow["productcode"] = item.ProductCode;
                                     newRow["productsize"] = item.ProductSize;
@@ -504,8 +507,11 @@ namespace BillPlex
             dataTable.Columns.Add("OrderNo", typeof(string));
             dataTable.Columns.Add("Orderdate", typeof(string));
             dataTable.Columns.Add("Customcode", typeof(string));
+            dataTable.Columns.Add("Code", typeof(string));
             dataTable.Columns.Add("CustomerId", typeof(string));
+            dataTable.Columns.Add("Name", typeof(string));
             dataTable.Columns.Add("ProductNameId", typeof(string));
+            dataTable.Columns.Add("Productmodel", typeof(string));
             dataTable.Columns.Add("productmodel", typeof(string));
             dataTable.Columns.Add("productcode", typeof(string));
             dataTable.Columns.Add("productsize", typeof(string));

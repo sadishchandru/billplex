@@ -19,11 +19,14 @@ SET NOCOUNT ON;
 	
 	SELECT	 EP.Id
 			,EmployeeCode
-			,MasterCompanyId
-			,ContractorName
-			,ClientCompanyId
+			,EP.MasterCompanyId
+			,CMI.ComName As CompanyName
+			,EP.ContractorName
+			,EP.ClientCompanyId
+			,CM.ComCname As ClientCompany
 			,ClientName
 			,SubCompanyId
+			,SCM.SubComName As SubCompany
 			,SubCompanyName
 			,EmployeeName
 			,PAddress
@@ -87,6 +90,8 @@ SET NOCOUNT ON;
 			,EF.ESIDispensary
 			FROM EmployeePersonal EP
 			LEFT JOIN EmployeeFinance EF ON EF.EmpId = EP.Id
+			left join CompanyMasterInfo CMI on CMI.Id = EP.MasterCompanyId			left join ClientMaster CM on CM.Id = EP.ClientCompanyId
+			left join SubClientMaster SCM on SCM.Id = EP.SubCompanyId
 			--LEFT JOIN Family F ON F.EmpId = EP.Id
 				--LEFT JOIN Nominee ON Ep.EmployeeCode = Nominee.EmpCode;
 
