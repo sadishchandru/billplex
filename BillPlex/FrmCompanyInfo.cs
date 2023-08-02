@@ -55,20 +55,6 @@ namespace BillPlex
                     CompanyRequest.MasterBankList = (List<DropDownItemInfo>)item.Value;
                 }
             }
-
-            //if (CompanyRequest.MasterCodeList != null)
-            //{
-
-            //    if (CompanyRequest.MasterCodeList.Count() > 0)
-            //    {
-            //        foreach (DropDownItemInfo item in CompanyRequest.MasterCodeList)
-            //        {
-            //            drpMainCompany.Properties.Items.Add(new ImageComboBoxItem(item.Name));
-            //        }
-            //    }
-            //}
-
-            //CompanyRequest.MasterBankList = CompanyRequest.GetDropdownValues(dropDownList);
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -135,6 +121,7 @@ namespace BillPlex
                             {
                                 form.ReloadSqlDataSource();
                             }
+                            ExitBtn_Click();
                         }
                         else
                         {
@@ -146,8 +133,6 @@ namespace BillPlex
                     {
                         XtraMessageBox.Show("Please check Code", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
-
-                    //  this.Close();
                 }
                 else
                 {
@@ -164,22 +149,6 @@ namespace BillPlex
 
         public void BindData(dynamic selectedCompanyList)
         {
-            //bool IsOpen = false;
-            //Form myForm = Application.OpenForms["FrmCompanyInfo"];
-            //if (myForm != null)
-            //{
-            //    myForm.Close();
-            //    myForm = new FrmCompanyInfo();
-            //    myForm.MdiParent = this;
-            //    myForm.Show();
-            //    IsOpen = true;
-            //}
-            //if (IsOpen == false)
-            //{
-            //    FrmCompanyInfo CompanyInfo = new FrmCompanyInfo();
-            //    CompanyInfo.MdiParent = this.MdiParent;
-            //    CompanyInfo.Show();
-            //}
             var selectedRows = selectedCompanyList.GetSelectedRows();
 
             foreach (var rowHandle in selectedRows)
@@ -266,7 +235,6 @@ namespace BillPlex
 
         private void ClearBtn_Click(object sender, EventArgs e)
         {
-            //CompanyRequest.Id = 0;
             txtCode.ResetText();
             txtCompanyName.ResetText();
             txtOfficeAddress.ResetText();
@@ -305,9 +273,28 @@ namespace BillPlex
 
         }
 
-        private void ExitBtn_Click(object sender, EventArgs e)
+        private void ExitBtn_Click(object sender = null, EventArgs e = null)
         {
             this.Close();
+
+            bool IsOpen = false;
+
+            Form myForm = Application.OpenForms["FrmCompanyProfile"];
+            if (myForm != null)
+            {
+                myForm.Close();
+                myForm = new FrmCompanyProfile();
+                myForm.MdiParent = this.MdiParent;
+                myForm.Show();
+                IsOpen = true;
+            }
+
+            if (IsOpen == false)
+            {
+                FrmCompanyProfile CompanyInfo = new FrmCompanyProfile();
+                CompanyInfo.MdiParent = this.MdiParent;
+                CompanyInfo.Show();
+            }
         }
 
         private void AddClearBtn_Click(object sender, EventArgs e)
@@ -335,8 +322,6 @@ namespace BillPlex
             {
                 if (CompanyRequest.MasterCodeList != null)
                 {
-
-                    //var IsCode = CompanyRequest.MasterCodeList.FirstOrDefault(item => item.Code == txtCode.Text.ToString())?.Id ?? 0;
                     var IsCode = CompanyRequest.MasterCodeList.FirstOrDefault(obj => obj.Code == txtCode.Text.ToString() && obj.Id != CompanyRequest.Id);
 
                     if (IsCode != null)
@@ -367,6 +352,16 @@ namespace BillPlex
         private void btnEdit_Click(object sender, EventArgs e)
         {
             txtCode.Enabled = true;
+        }
+
+        private void FrmCompanyInfo_Load(object sender, EventArgs e)
+        {
+            // Calculate the center position of the form
+            int centerX = (this.Width - panelControl1.Width) / 2;
+            int centerY = (this.Height - panelControl1.Height) / 2;
+
+            // Set the controls' positions to the calculated center position
+            panelControl1.Location = new Point(centerX, centerY);
         }
     }
 }

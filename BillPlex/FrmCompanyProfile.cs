@@ -57,9 +57,7 @@ namespace BillPlex
                 CompanyInfo.MdiParent = this.MdiParent;
                 CompanyInfo.Show();
             }
-            //FrmCompanyInfo CompanyInfo = new FrmCompanyInfo();
-            //CompanyInfo.MdiParent = this.MdiParent;
-            //CompanyInfo.Show();
+            this.Close();
         }
 
         private void Deletebtn_Click(object sender, EventArgs e)

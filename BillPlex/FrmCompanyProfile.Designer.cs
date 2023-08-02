@@ -144,6 +144,7 @@ namespace BillPlex
             // 
             // panelControl1
             // 
+            this.panelControl1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelControl1.Controls.Add(this.panelControl3);
             this.panelControl1.Controls.Add(this.panelControl2);
             this.panelControl1.Location = new System.Drawing.Point(8, 2);
@@ -191,6 +192,7 @@ namespace BillPlex
             this.Exitbtn.Size = new System.Drawing.Size(75, 23);
             this.Exitbtn.TabIndex = 11;
             this.Exitbtn.Text = "EXIT";
+            this.Exitbtn.Click += new System.EventHandler(this.Editbtn_Click);
             // 
             // Clearbtn
             // 
@@ -860,6 +862,7 @@ namespace BillPlex
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1572, 736);
             this.Controls.Add(this.panelControl1);
+            this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

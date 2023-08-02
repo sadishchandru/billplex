@@ -189,7 +189,6 @@ namespace BillPlex
                     {
                         XtraMessageBox.Show("Please check Code", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
-
                 }
                 else
                 {
