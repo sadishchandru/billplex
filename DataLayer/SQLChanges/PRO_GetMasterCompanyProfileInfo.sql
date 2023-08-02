@@ -25,7 +25,6 @@ SET NOCOUNT ON;
 			SELECT	Id
 					,ComCcode
 					,ComName
-					--,ComType
 					,ComOffAdd
 					,Comstate
 					,ComPin
@@ -65,7 +64,5 @@ SET NOCOUNT ON;
 					,CreatedDate
 					,CAStartDate
 			FROM	CompanyMasterInfo CMI
-			
-
 END
 GO

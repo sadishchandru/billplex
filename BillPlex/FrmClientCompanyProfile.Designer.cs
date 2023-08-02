@@ -50,8 +50,8 @@ namespace BillPlex
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colMasterCode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMasterCompanyId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MasterCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ComName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colComCcode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colComCname = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colComCoffAddress = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -331,8 +331,8 @@ namespace BillPlex
             this.gridView2.Appearance.GroupPanel.BackColor2 = System.Drawing.Color.LightGray;
             this.gridView2.Appearance.GroupPanel.Options.UseBackColor = true;
             this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colMasterCode,
-            this.colMasterCompanyId,
+            this.MasterCode,
+            this.ComName,
             this.colComCcode,
             this.colComCname,
             this.colComCoffAddress,
@@ -383,23 +383,25 @@ namespace BillPlex
             this.gridView2.PaintStyleName = "Flat";
             this.gridView2.DoubleClick += new System.EventHandler(this.Editbtn_Click);
             // 
-            // colMasterCode
+            // MasterCode
             // 
-            this.colMasterCode.FieldName = "MasterCode";
-            this.colMasterCode.MinWidth = 80;
-            this.colMasterCode.Name = "colMasterCode";
-            this.colMasterCode.Visible = true;
-            this.colMasterCode.VisibleIndex = 0;
-            this.colMasterCode.Width = 80;
+            this.MasterCode.Caption = "MasterCode";
+            this.MasterCode.FieldName = "MasterCode";
+            this.MasterCode.MinWidth = 80;
+            this.MasterCode.Name = "MasterCode";
+            this.MasterCode.Visible = true;
+            this.MasterCode.VisibleIndex = 0;
+            this.MasterCode.Width = 80;
             // 
-            // colMasterCompanyId
+            // ComName
             // 
-            this.colMasterCompanyId.FieldName = "MasterCompanyId";
-            this.colMasterCompanyId.MinWidth = 80;
-            this.colMasterCompanyId.Name = "colMasterCompanyId";
-            this.colMasterCompanyId.Visible = true;
-            this.colMasterCompanyId.VisibleIndex = 1;
-            this.colMasterCompanyId.Width = 80;
+            this.ComName.Caption = "ComName";
+            this.ComName.FieldName = "ComName";
+            this.ComName.MinWidth = 80;
+            this.ComName.Name = "ComName";
+            this.ComName.Visible = true;
+            this.ComName.VisibleIndex = 1;
+            this.ComName.Width = 80;
             // 
             // colComCcode
             // 
@@ -843,8 +845,8 @@ namespace BillPlex
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
-        private DevExpress.XtraGrid.Columns.GridColumn colMasterCode;
-        private DevExpress.XtraGrid.Columns.GridColumn colMasterCompanyId;
+        private DevExpress.XtraGrid.Columns.GridColumn MasterCode;
+        private DevExpress.XtraGrid.Columns.GridColumn ComName;
         private DevExpress.XtraGrid.Columns.GridColumn colComCcode;
         private DevExpress.XtraGrid.Columns.GridColumn colComCname;
         private DevExpress.XtraGrid.Columns.GridColumn colComCoffAddress;

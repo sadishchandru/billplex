@@ -49,8 +49,8 @@ namespace BillPlex
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.SubClientGrid = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMasterCompanyId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colClientCompanyId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MasterCompany = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ClientCompany = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSubComCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSubComName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colComOffAdd = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -304,8 +304,8 @@ namespace BillPlex
             // 
             this.SubClientGrid.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colId,
-            this.colMasterCompanyId,
-            this.colClientCompanyId,
+            this.MasterCompany,
+            this.ClientCompany,
             this.colSubComCode,
             this.colSubComName,
             this.colComOffAdd,
@@ -355,23 +355,23 @@ namespace BillPlex
             this.colId.VisibleIndex = 0;
             this.colId.Width = 80;
             // 
-            // colMasterCompanyId
+            // MasterCompany
             // 
-            this.colMasterCompanyId.FieldName = "MasterCompanyId";
-            this.colMasterCompanyId.MinWidth = 80;
-            this.colMasterCompanyId.Name = "colMasterCompanyId";
-            this.colMasterCompanyId.Visible = true;
-            this.colMasterCompanyId.VisibleIndex = 1;
-            this.colMasterCompanyId.Width = 80;
+            this.MasterCompany.FieldName = "MasterCompany";
+            this.MasterCompany.MinWidth = 80;
+            this.MasterCompany.Name = "MasterCompany";
+            this.MasterCompany.Visible = true;
+            this.MasterCompany.VisibleIndex = 1;
+            this.MasterCompany.Width = 80;
             // 
-            // colClientCompanyId
+            // ClientCompany
             // 
-            this.colClientCompanyId.FieldName = "ClientCompanyId";
-            this.colClientCompanyId.MinWidth = 80;
-            this.colClientCompanyId.Name = "colClientCompanyId";
-            this.colClientCompanyId.Visible = true;
-            this.colClientCompanyId.VisibleIndex = 2;
-            this.colClientCompanyId.Width = 80;
+            this.ClientCompany.FieldName = "ClientCompany";
+            this.ClientCompany.MinWidth = 80;
+            this.ClientCompany.Name = "ClientCompany";
+            this.ClientCompany.Visible = true;
+            this.ClientCompany.VisibleIndex = 2;
+            this.ClientCompany.Width = 80;
             // 
             // colSubComCode
             // 
@@ -793,8 +793,8 @@ namespace BillPlex
         private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
         private DevExpress.XtraGrid.Views.Grid.GridView SubClientGrid;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
-        private DevExpress.XtraGrid.Columns.GridColumn colMasterCompanyId;
-        private DevExpress.XtraGrid.Columns.GridColumn colClientCompanyId;
+        private DevExpress.XtraGrid.Columns.GridColumn MasterCompany;
+        private DevExpress.XtraGrid.Columns.GridColumn ClientCompany;
         private DevExpress.XtraGrid.Columns.GridColumn colSubComCode;
         private DevExpress.XtraGrid.Columns.GridColumn colSubComName;
         private DevExpress.XtraGrid.Columns.GridColumn colComOffAdd;
