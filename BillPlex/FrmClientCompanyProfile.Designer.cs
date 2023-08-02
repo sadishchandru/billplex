@@ -52,6 +52,7 @@ namespace BillPlex
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMasterCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MasterCompanyId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colComName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colComCcode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colComCname = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -96,7 +97,6 @@ namespace BillPlex
             this.colCBankAddress = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Claerbtn = new DevExpress.XtraEditors.SimpleButton();
             this.Findbtn = new DevExpress.XtraEditors.SimpleButton();
-            this.MasterCompanyId = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -405,13 +405,21 @@ namespace BillPlex
             this.colMasterCode.VisibleIndex = 1;
             this.colMasterCode.Width = 80;
             // 
+            // MasterCompanyId
+            // 
+            this.MasterCompanyId.Caption = "MasterCompanyId";
+            this.MasterCompanyId.FieldName = "MasterCompanyId";
+            this.MasterCompanyId.MinWidth = 80;
+            this.MasterCompanyId.Name = "MasterCompanyId";
+            this.MasterCompanyId.Width = 80;
+            // 
             // colComName
             // 
             this.colComName.FieldName = "ComName";
             this.colComName.MinWidth = 80;
             this.colComName.Name = "colComName";
             this.colComName.Visible = true;
-            this.colComName.VisibleIndex = 3;
+            this.colComName.VisibleIndex = 2;
             this.colComName.Width = 80;
             // 
             // colComCcode
@@ -420,7 +428,7 @@ namespace BillPlex
             this.colComCcode.MinWidth = 80;
             this.colComCcode.Name = "colComCcode";
             this.colComCcode.Visible = true;
-            this.colComCcode.VisibleIndex = 4;
+            this.colComCcode.VisibleIndex = 3;
             this.colComCcode.Width = 80;
             // 
             // colComCname
@@ -429,7 +437,7 @@ namespace BillPlex
             this.colComCname.MinWidth = 80;
             this.colComCname.Name = "colComCname";
             this.colComCname.Visible = true;
-            this.colComCname.VisibleIndex = 5;
+            this.colComCname.VisibleIndex = 4;
             this.colComCname.Width = 80;
             // 
             // colComCoffAddress
@@ -438,7 +446,7 @@ namespace BillPlex
             this.colComCoffAddress.MinWidth = 80;
             this.colComCoffAddress.Name = "colComCoffAddress";
             this.colComCoffAddress.Visible = true;
-            this.colComCoffAddress.VisibleIndex = 6;
+            this.colComCoffAddress.VisibleIndex = 5;
             this.colComCoffAddress.Width = 80;
             // 
             // colComCstate
@@ -447,7 +455,7 @@ namespace BillPlex
             this.colComCstate.MinWidth = 80;
             this.colComCstate.Name = "colComCstate";
             this.colComCstate.Visible = true;
-            this.colComCstate.VisibleIndex = 7;
+            this.colComCstate.VisibleIndex = 6;
             this.colComCstate.Width = 80;
             // 
             // colComCPin
@@ -456,7 +464,7 @@ namespace BillPlex
             this.colComCPin.MinWidth = 80;
             this.colComCPin.Name = "colComCPin";
             this.colComCPin.Visible = true;
-            this.colComCPin.VisibleIndex = 8;
+            this.colComCPin.VisibleIndex = 7;
             this.colComCPin.Width = 80;
             // 
             // colComCNature
@@ -465,7 +473,7 @@ namespace BillPlex
             this.colComCNature.MinWidth = 80;
             this.colComCNature.Name = "colComCNature";
             this.colComCNature.Visible = true;
-            this.colComCNature.VisibleIndex = 9;
+            this.colComCNature.VisibleIndex = 8;
             this.colComCNature.Width = 80;
             // 
             // colComType
@@ -474,7 +482,7 @@ namespace BillPlex
             this.colComType.MinWidth = 80;
             this.colComType.Name = "colComType";
             this.colComType.Visible = true;
-            this.colComType.VisibleIndex = 10;
+            this.colComType.VisibleIndex = 9;
             this.colComType.Width = 80;
             // 
             // colComCDatestart
@@ -483,7 +491,7 @@ namespace BillPlex
             this.colComCDatestart.MinWidth = 80;
             this.colComCDatestart.Name = "colComCDatestart";
             this.colComCDatestart.Visible = true;
-            this.colComCDatestart.VisibleIndex = 11;
+            this.colComCDatestart.VisibleIndex = 10;
             this.colComCDatestart.Width = 80;
             // 
             // colComStdCode
@@ -492,7 +500,7 @@ namespace BillPlex
             this.colComStdCode.MinWidth = 80;
             this.colComStdCode.Name = "colComStdCode";
             this.colComStdCode.Visible = true;
-            this.colComStdCode.VisibleIndex = 12;
+            this.colComStdCode.VisibleIndex = 11;
             this.colComStdCode.Width = 80;
             // 
             // colComCPhone
@@ -501,7 +509,7 @@ namespace BillPlex
             this.colComCPhone.MinWidth = 80;
             this.colComCPhone.Name = "colComCPhone";
             this.colComCPhone.Visible = true;
-            this.colComCPhone.VisibleIndex = 13;
+            this.colComCPhone.VisibleIndex = 12;
             this.colComCPhone.Width = 80;
             // 
             // colComCEmail
@@ -510,7 +518,7 @@ namespace BillPlex
             this.colComCEmail.MinWidth = 80;
             this.colComCEmail.Name = "colComCEmail";
             this.colComCEmail.Visible = true;
-            this.colComCEmail.VisibleIndex = 14;
+            this.colComCEmail.VisibleIndex = 13;
             this.colComCEmail.Width = 80;
             // 
             // colComCWebsite
@@ -519,7 +527,7 @@ namespace BillPlex
             this.colComCWebsite.MinWidth = 80;
             this.colComCWebsite.Name = "colComCWebsite";
             this.colComCWebsite.Visible = true;
-            this.colComCWebsite.VisibleIndex = 15;
+            this.colComCWebsite.VisibleIndex = 14;
             this.colComCWebsite.Width = 80;
             // 
             // colPfType
@@ -528,7 +536,7 @@ namespace BillPlex
             this.colPfType.MinWidth = 80;
             this.colPfType.Name = "colPfType";
             this.colPfType.Visible = true;
-            this.colPfType.VisibleIndex = 16;
+            this.colPfType.VisibleIndex = 15;
             this.colPfType.Width = 80;
             // 
             // colComCPFno
@@ -537,7 +545,7 @@ namespace BillPlex
             this.colComCPFno.MinWidth = 80;
             this.colComCPFno.Name = "colComCPFno";
             this.colComCPFno.Visible = true;
-            this.colComCPFno.VisibleIndex = 17;
+            this.colComCPFno.VisibleIndex = 16;
             this.colComCPFno.Width = 80;
             // 
             // colComCPFdate
@@ -546,7 +554,7 @@ namespace BillPlex
             this.colComCPFdate.MinWidth = 80;
             this.colComCPFdate.Name = "colComCPFdate";
             this.colComCPFdate.Visible = true;
-            this.colComCPFdate.VisibleIndex = 18;
+            this.colComCPFdate.VisibleIndex = 17;
             this.colComCPFdate.Width = 80;
             // 
             // colComCESIno
@@ -555,7 +563,7 @@ namespace BillPlex
             this.colComCESIno.MinWidth = 80;
             this.colComCESIno.Name = "colComCESIno";
             this.colComCESIno.Visible = true;
-            this.colComCESIno.VisibleIndex = 19;
+            this.colComCESIno.VisibleIndex = 18;
             this.colComCESIno.Width = 80;
             // 
             // colComCESIdate
@@ -564,7 +572,7 @@ namespace BillPlex
             this.colComCESIdate.MinWidth = 80;
             this.colComCESIdate.Name = "colComCESIdate";
             this.colComCESIdate.Visible = true;
-            this.colComCESIdate.VisibleIndex = 20;
+            this.colComCESIdate.VisibleIndex = 19;
             this.colComCESIdate.Width = 80;
             // 
             // colComCFactoryNo
@@ -573,7 +581,7 @@ namespace BillPlex
             this.colComCFactoryNo.MinWidth = 80;
             this.colComCFactoryNo.Name = "colComCFactoryNo";
             this.colComCFactoryNo.Visible = true;
-            this.colComCFactoryNo.VisibleIndex = 21;
+            this.colComCFactoryNo.VisibleIndex = 20;
             this.colComCFactoryNo.Width = 80;
             // 
             // colComCCSTno
@@ -582,7 +590,7 @@ namespace BillPlex
             this.colComCCSTno.MinWidth = 80;
             this.colComCCSTno.Name = "colComCCSTno";
             this.colComCCSTno.Visible = true;
-            this.colComCCSTno.VisibleIndex = 22;
+            this.colComCCSTno.VisibleIndex = 21;
             this.colComCCSTno.Width = 80;
             // 
             // colComCSSLno
@@ -591,7 +599,7 @@ namespace BillPlex
             this.colComCSSLno.MinWidth = 80;
             this.colComCSSLno.Name = "colComCSSLno";
             this.colComCSSLno.Visible = true;
-            this.colComCSSLno.VisibleIndex = 23;
+            this.colComCSSLno.VisibleIndex = 22;
             this.colComCSSLno.Width = 80;
             // 
             // colComCTINno
@@ -600,7 +608,7 @@ namespace BillPlex
             this.colComCTINno.MinWidth = 80;
             this.colComCTINno.Name = "colComCTINno";
             this.colComCTINno.Visible = true;
-            this.colComCTINno.VisibleIndex = 24;
+            this.colComCTINno.VisibleIndex = 23;
             this.colComCTINno.Width = 80;
             // 
             // colComCLicenseno
@@ -609,7 +617,7 @@ namespace BillPlex
             this.colComCLicenseno.MinWidth = 80;
             this.colComCLicenseno.Name = "colComCLicenseno";
             this.colComCLicenseno.Visible = true;
-            this.colComCLicenseno.VisibleIndex = 25;
+            this.colComCLicenseno.VisibleIndex = 24;
             this.colComCLicenseno.Width = 80;
             // 
             // colComCPanno
@@ -618,7 +626,7 @@ namespace BillPlex
             this.colComCPanno.MinWidth = 80;
             this.colComCPanno.Name = "colComCPanno";
             this.colComCPanno.Visible = true;
-            this.colComCPanno.VisibleIndex = 26;
+            this.colComCPanno.VisibleIndex = 25;
             this.colComCPanno.Width = 80;
             // 
             // colComCTanno
@@ -627,7 +635,7 @@ namespace BillPlex
             this.colComCTanno.MinWidth = 80;
             this.colComCTanno.Name = "colComCTanno";
             this.colComCTanno.Visible = true;
-            this.colComCTanno.VisibleIndex = 27;
+            this.colComCTanno.VisibleIndex = 26;
             this.colComCTanno.Width = 80;
             // 
             // colComCPname
@@ -636,7 +644,7 @@ namespace BillPlex
             this.colComCPname.MinWidth = 80;
             this.colComCPname.Name = "colComCPname";
             this.colComCPname.Visible = true;
-            this.colComCPname.VisibleIndex = 28;
+            this.colComCPname.VisibleIndex = 27;
             this.colComCPname.Width = 80;
             // 
             // colCCPFathername
@@ -645,7 +653,7 @@ namespace BillPlex
             this.colCCPFathername.MinWidth = 80;
             this.colCCPFathername.Name = "colCCPFathername";
             this.colCCPFathername.Visible = true;
-            this.colCCPFathername.VisibleIndex = 29;
+            this.colCCPFathername.VisibleIndex = 28;
             this.colCCPFathername.Width = 80;
             // 
             // colCCPGender
@@ -654,7 +662,7 @@ namespace BillPlex
             this.colCCPGender.MinWidth = 80;
             this.colCCPGender.Name = "colCCPGender";
             this.colCCPGender.Visible = true;
-            this.colCCPGender.VisibleIndex = 30;
+            this.colCCPGender.VisibleIndex = 29;
             this.colCCPGender.Width = 80;
             // 
             // colCCPblood
@@ -663,7 +671,7 @@ namespace BillPlex
             this.colCCPblood.MinWidth = 80;
             this.colCCPblood.Name = "colCCPblood";
             this.colCCPblood.Visible = true;
-            this.colCCPblood.VisibleIndex = 31;
+            this.colCCPblood.VisibleIndex = 30;
             this.colCCPblood.Width = 80;
             // 
             // colCCPDOB
@@ -672,7 +680,7 @@ namespace BillPlex
             this.colCCPDOB.MinWidth = 80;
             this.colCCPDOB.Name = "colCCPDOB";
             this.colCCPDOB.Visible = true;
-            this.colCCPDOB.VisibleIndex = 32;
+            this.colCCPDOB.VisibleIndex = 31;
             this.colCCPDOB.Width = 80;
             // 
             // colCCPEmail
@@ -681,7 +689,7 @@ namespace BillPlex
             this.colCCPEmail.MinWidth = 80;
             this.colCCPEmail.Name = "colCCPEmail";
             this.colCCPEmail.Visible = true;
-            this.colCCPEmail.VisibleIndex = 33;
+            this.colCCPEmail.VisibleIndex = 32;
             this.colCCPEmail.Width = 80;
             // 
             // colCCPAddress
@@ -690,7 +698,7 @@ namespace BillPlex
             this.colCCPAddress.MinWidth = 80;
             this.colCCPAddress.Name = "colCCPAddress";
             this.colCCPAddress.Visible = true;
-            this.colCCPAddress.VisibleIndex = 34;
+            this.colCCPAddress.VisibleIndex = 33;
             this.colCCPAddress.Width = 80;
             // 
             // colCCPstate
@@ -699,7 +707,7 @@ namespace BillPlex
             this.colCCPstate.MinWidth = 80;
             this.colCCPstate.Name = "colCCPstate";
             this.colCCPstate.Visible = true;
-            this.colCCPstate.VisibleIndex = 35;
+            this.colCCPstate.VisibleIndex = 34;
             this.colCCPstate.Width = 80;
             // 
             // colCCPpin
@@ -708,7 +716,7 @@ namespace BillPlex
             this.colCCPpin.MinWidth = 80;
             this.colCCPpin.Name = "colCCPpin";
             this.colCCPpin.Visible = true;
-            this.colCCPpin.VisibleIndex = 36;
+            this.colCCPpin.VisibleIndex = 35;
             this.colCCPpin.Width = 80;
             // 
             // colCCPMobile
@@ -717,7 +725,7 @@ namespace BillPlex
             this.colCCPMobile.MinWidth = 80;
             this.colCCPMobile.Name = "colCCPMobile";
             this.colCCPMobile.Visible = true;
-            this.colCCPMobile.VisibleIndex = 37;
+            this.colCCPMobile.VisibleIndex = 36;
             this.colCCPMobile.Width = 80;
             // 
             // colCCPPan
@@ -726,7 +734,7 @@ namespace BillPlex
             this.colCCPPan.MinWidth = 80;
             this.colCCPPan.Name = "colCCPPan";
             this.colCCPPan.Visible = true;
-            this.colCCPPan.VisibleIndex = 38;
+            this.colCCPPan.VisibleIndex = 37;
             this.colCCPPan.Width = 80;
             // 
             // colCCPpercent
@@ -735,7 +743,7 @@ namespace BillPlex
             this.colCCPpercent.MinWidth = 80;
             this.colCCPpercent.Name = "colCCPpercent";
             this.colCCPpercent.Visible = true;
-            this.colCCPpercent.VisibleIndex = 39;
+            this.colCCPpercent.VisibleIndex = 38;
             this.colCCPpercent.Width = 80;
             // 
             // colCCPactive
@@ -744,7 +752,7 @@ namespace BillPlex
             this.colCCPactive.MinWidth = 80;
             this.colCCPactive.Name = "colCCPactive";
             this.colCCPactive.Visible = true;
-            this.colCCPactive.VisibleIndex = 40;
+            this.colCCPactive.VisibleIndex = 39;
             this.colCCPactive.Width = 80;
             // 
             // colCCPImage
@@ -753,7 +761,7 @@ namespace BillPlex
             this.colCCPImage.MinWidth = 80;
             this.colCCPImage.Name = "colCCPImage";
             this.colCCPImage.Visible = true;
-            this.colCCPImage.VisibleIndex = 41;
+            this.colCCPImage.VisibleIndex = 40;
             this.colCCPImage.Width = 80;
             // 
             // colCBankname
@@ -762,7 +770,7 @@ namespace BillPlex
             this.colCBankname.MinWidth = 80;
             this.colCBankname.Name = "colCBankname";
             this.colCBankname.Visible = true;
-            this.colCBankname.VisibleIndex = 42;
+            this.colCBankname.VisibleIndex = 41;
             this.colCBankname.Width = 80;
             // 
             // colCBankACNo
@@ -771,7 +779,7 @@ namespace BillPlex
             this.colCBankACNo.MinWidth = 80;
             this.colCBankACNo.Name = "colCBankACNo";
             this.colCBankACNo.Visible = true;
-            this.colCBankACNo.VisibleIndex = 43;
+            this.colCBankACNo.VisibleIndex = 42;
             this.colCBankACNo.Width = 80;
             // 
             // colCBankAddress
@@ -780,7 +788,7 @@ namespace BillPlex
             this.colCBankAddress.MinWidth = 80;
             this.colCBankAddress.Name = "colCBankAddress";
             this.colCBankAddress.Visible = true;
-            this.colCBankAddress.VisibleIndex = 44;
+            this.colCBankAddress.VisibleIndex = 43;
             this.colCBankAddress.Width = 80;
             // 
             // Claerbtn
@@ -810,16 +818,6 @@ namespace BillPlex
             this.Findbtn.Size = new System.Drawing.Size(75, 23);
             this.Findbtn.TabIndex = 3;
             this.Findbtn.Text = "Find";
-            // 
-            // MasterCompanyId
-            // 
-            this.MasterCompanyId.Caption = "MasterCompanyId";
-            this.MasterCompanyId.FieldName = "MasterCompanyId";
-            this.MasterCompanyId.MinWidth = 80;
-            this.MasterCompanyId.Name = "MasterCompanyId";
-            this.MasterCompanyId.Visible = true;
-            this.MasterCompanyId.VisibleIndex = 2;
-            this.MasterCompanyId.Width = 80;
             // 
             // FrmClientCompanyProfile
             // 

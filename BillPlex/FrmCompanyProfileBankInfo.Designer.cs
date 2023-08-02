@@ -183,50 +183,48 @@ namespace BillPlex
             // 
             this.colMainCompanyId.FieldName = "MainCompanyId";
             this.colMainCompanyId.Name = "colMainCompanyId";
-            this.colMainCompanyId.Visible = true;
-            this.colMainCompanyId.VisibleIndex = 2;
             // 
             // colBankName
             // 
             this.colBankName.FieldName = "BankName";
             this.colBankName.Name = "colBankName";
             this.colBankName.Visible = true;
-            this.colBankName.VisibleIndex = 3;
+            this.colBankName.VisibleIndex = 2;
             // 
             // colBankAcNo
             // 
             this.colBankAcNo.FieldName = "BankAcNo";
             this.colBankAcNo.Name = "colBankAcNo";
             this.colBankAcNo.Visible = true;
-            this.colBankAcNo.VisibleIndex = 4;
+            this.colBankAcNo.VisibleIndex = 3;
             // 
             // colBranchCode
             // 
             this.colBranchCode.FieldName = "BranchCode";
             this.colBranchCode.Name = "colBranchCode";
             this.colBranchCode.Visible = true;
-            this.colBranchCode.VisibleIndex = 5;
+            this.colBranchCode.VisibleIndex = 4;
             // 
             // colBranchName
             // 
             this.colBranchName.FieldName = "BranchName";
             this.colBranchName.Name = "colBranchName";
             this.colBranchName.Visible = true;
-            this.colBranchName.VisibleIndex = 6;
+            this.colBranchName.VisibleIndex = 5;
             // 
             // colIFSCode
             // 
             this.colIFSCode.FieldName = "IFSCode";
             this.colIFSCode.Name = "colIFSCode";
             this.colIFSCode.Visible = true;
-            this.colIFSCode.VisibleIndex = 7;
+            this.colIFSCode.VisibleIndex = 6;
             // 
             // colAddress
             // 
             this.colAddress.FieldName = "Address";
             this.colAddress.Name = "colAddress";
             this.colAddress.Visible = true;
-            this.colAddress.VisibleIndex = 8;
+            this.colAddress.VisibleIndex = 7;
             // 
             // drpBankName
             // 
