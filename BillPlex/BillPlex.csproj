@@ -313,12 +313,6 @@
     <Compile Include="FrmSubClientCompanyProfile.Designer.cs">
       <DependentUpon>FrmSubClientCompanyProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmTestform.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmTestform.Designer.cs">
-      <DependentUpon>FrmTestform.cs</DependentUpon>
-    </Compile>
     <Compile Include="IncentiveMaster.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -437,9 +431,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSubClientCompanyProfile.resx">
       <DependentUpon>FrmSubClientCompanyProfile.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmTestform.resx">
-      <DependentUpon>FrmTestform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IncentiveMaster.resx">
       <DependentUpon>IncentiveMaster.cs</DependentUpon>
