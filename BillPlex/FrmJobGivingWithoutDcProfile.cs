@@ -93,17 +93,11 @@ namespace BillPlex
 
         private void FrmJobGivingWithoutDcProfile_Load(object sender, EventArgs e)
         {
-            // Scale our form to look like it did when we designed it.
-            // This adjusts between the screen resolution of the design computer and the workstation.
-            int ourScreenWidth = Screen.FromControl(this).WorkingArea.Width;
-            int ourScreenHeight = Screen.FromControl(this).WorkingArea.Height;
-            float scaleFactorWidth = ourScreenWidth / 1600f;
-            float scaleFactorHeigth = ourScreenHeight / 900f;
-            SizeF scaleFactor = new SizeF(scaleFactorWidth, scaleFactorHeigth);
-            Scale(scaleFactor);
+            int centerX = (this.Width - panelControl2.Width) / 2;
+            int centerY = (this.Height - panelControl2.Height) / 2;
 
-            // If you want to center the resized screen.
-            CenterToScreen();
+            // Set the controls' positions to the calculated center position
+            panelControl2.Location = new Point(centerX, centerY);
         }
     }
 }

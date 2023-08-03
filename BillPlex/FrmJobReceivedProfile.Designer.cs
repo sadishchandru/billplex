@@ -44,7 +44,6 @@ namespace BillPlex
             this.btnNew = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
-            this.panelDeliveryChallan = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -87,9 +86,6 @@ namespace BillPlex
             this.colBDays = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colADays = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBalanceWt = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cmbFind = new DevExpress.XtraEditors.CheckedComboBoxEdit();
-            this.btnclr = new DevExpress.XtraEditors.SimpleButton();
-            this.btnFind = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
@@ -99,23 +95,20 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelDeliveryChallan)).BeginInit();
-            this.panelDeliveryChallan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbFind.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelControl3
             // 
-            this.panelControl3.Controls.Add(this.panelControl2);
+            this.panelControl3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelControl3.Controls.Add(this.panelControl4);
             this.panelControl3.Controls.Add(this.panelControl1);
-            this.panelControl3.Location = new System.Drawing.Point(12, 3);
+            this.panelControl3.Location = new System.Drawing.Point(12, 20);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(1574, 825);
+            this.panelControl3.Size = new System.Drawing.Size(1498, 752);
             this.panelControl3.TabIndex = 3;
             // 
             // panelControl2
@@ -127,17 +120,17 @@ namespace BillPlex
             this.panelControl2.Controls.Add(this.btnDelete);
             this.panelControl2.Controls.Add(this.btnUpdate);
             this.panelControl2.Controls.Add(this.btnNew);
-            this.panelControl2.Location = new System.Drawing.Point(1393, 309);
+            this.panelControl2.Location = new System.Drawing.Point(1348, 210);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(117, 240);
+            this.panelControl2.Size = new System.Drawing.Size(110, 240);
             this.panelControl2.TabIndex = 32;
             // 
             // btnEdit
             // 
-            this.btnEdit.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.Appearance.Options.UseFont = true;
             this.btnEdit.Enabled = false;
-            this.btnEdit.Location = new System.Drawing.Point(25, 75);
+            this.btnEdit.Location = new System.Drawing.Point(15, 75);
             this.btnEdit.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.btnEdit.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightBlue;
             this.btnEdit.LookAndFeel.SkinName = "DevExpress Style";
@@ -152,7 +145,7 @@ namespace BillPlex
             this.btnExit.Appearance.BackColor = System.Drawing.Color.LightBlue;
             this.btnExit.Appearance.BackColor2 = System.Drawing.SystemColors.Highlight;
             this.btnExit.Appearance.BorderColor = System.Drawing.Color.White;
-            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btnExit.Appearance.Options.UseBackColor = true;
             this.btnExit.Appearance.Options.UseBorderColor = true;
@@ -178,7 +171,7 @@ namespace BillPlex
             this.btnExit.AppearancePressed.Options.UseBorderColor = true;
             this.btnExit.AppearancePressed.Options.UseForeColor = true;
             this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnExit.Location = new System.Drawing.Point(25, 192);
+            this.btnExit.Location = new System.Drawing.Point(15, 192);
             this.btnExit.LookAndFeel.SkinName = "DevExpress Style";
             this.btnExit.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnExit.Name = "btnExit";
@@ -192,7 +185,7 @@ namespace BillPlex
             this.btnAdd.Appearance.BackColor = System.Drawing.Color.LightBlue;
             this.btnAdd.Appearance.BackColor2 = System.Drawing.SystemColors.Highlight;
             this.btnAdd.Appearance.BorderColor = System.Drawing.Color.White;
-            this.btnAdd.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btnAdd.Appearance.Options.UseBackColor = true;
             this.btnAdd.Appearance.Options.UseBorderColor = true;
@@ -219,7 +212,7 @@ namespace BillPlex
             this.btnAdd.AppearancePressed.Options.UseForeColor = true;
             this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnAdd.Enabled = false;
-            this.btnAdd.Location = new System.Drawing.Point(25, 46);
+            this.btnAdd.Location = new System.Drawing.Point(15, 46);
             this.btnAdd.LookAndFeel.SkinName = "DevExpress Style";
             this.btnAdd.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnAdd.Name = "btnAdd";
@@ -232,7 +225,7 @@ namespace BillPlex
             this.btnClear.Appearance.BackColor = System.Drawing.Color.LightBlue;
             this.btnClear.Appearance.BackColor2 = System.Drawing.SystemColors.Highlight;
             this.btnClear.Appearance.BorderColor = System.Drawing.Color.White;
-            this.btnClear.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btnClear.Appearance.Options.UseBackColor = true;
             this.btnClear.Appearance.Options.UseBorderColor = true;
@@ -259,7 +252,7 @@ namespace BillPlex
             this.btnClear.AppearancePressed.Options.UseForeColor = true;
             this.btnClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnClear.Enabled = false;
-            this.btnClear.Location = new System.Drawing.Point(25, 161);
+            this.btnClear.Location = new System.Drawing.Point(15, 161);
             this.btnClear.LookAndFeel.SkinName = "DevExpress Style";
             this.btnClear.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnClear.Name = "btnClear";
@@ -269,9 +262,9 @@ namespace BillPlex
             // 
             // btnDelete
             // 
-            this.btnDelete.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Appearance.Options.UseFont = true;
-            this.btnDelete.Location = new System.Drawing.Point(25, 132);
+            this.btnDelete.Location = new System.Drawing.Point(15, 132);
             this.btnDelete.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.btnDelete.LookAndFeel.SkinName = "DevExpress Style";
             this.btnDelete.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -283,23 +276,23 @@ namespace BillPlex
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Appearance.Options.UseFont = true;
             this.btnUpdate.Enabled = false;
-            this.btnUpdate.Location = new System.Drawing.Point(25, 103);
+            this.btnUpdate.Location = new System.Drawing.Point(15, 103);
             this.btnUpdate.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.btnUpdate.LookAndFeel.SkinName = "DevExpress Style";
             this.btnUpdate.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 7;
-            this.btnUpdate.Text = "Update";
+            this.btnUpdate.Text = "UPDATE";
             // 
             // btnNew
             // 
-            this.btnNew.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNew.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNew.Appearance.Options.UseFont = true;
-            this.btnNew.Location = new System.Drawing.Point(25, 16);
+            this.btnNew.Location = new System.Drawing.Point(15, 16);
             this.btnNew.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.btnNew.LookAndFeel.SkinName = "DevExpress Style";
             this.btnNew.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -311,45 +304,35 @@ namespace BillPlex
             // 
             // panelControl4
             // 
+            this.panelControl4.Controls.Add(this.panelControl2);
+            this.panelControl4.Controls.Add(this.gridControl1);
             this.panelControl4.Controls.Add(this.checkEdit1);
-            this.panelControl4.Controls.Add(this.panelDeliveryChallan);
-            this.panelControl4.Location = new System.Drawing.Point(42, 70);
+            this.panelControl4.Location = new System.Drawing.Point(5, 61);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(1345, 722);
+            this.panelControl4.Size = new System.Drawing.Size(1488, 683);
             this.panelControl4.TabIndex = 6;
             // 
             // checkEdit1
             // 
             this.checkEdit1.Location = new System.Drawing.Point(1053, 33);
             this.checkEdit1.Name = "checkEdit1";
-            this.checkEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkEdit1.Properties.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkEdit1.Properties.Appearance.Options.UseFont = true;
             this.checkEdit1.Properties.Caption = "View DailyReceived";
             this.checkEdit1.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.checkEdit1.Properties.LookAndFeel.SkinName = "DevExpress Style";
             this.checkEdit1.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.checkEdit1.Size = new System.Drawing.Size(217, 23);
+            this.checkEdit1.Size = new System.Drawing.Size(217, 22);
             this.checkEdit1.TabIndex = 87;
-            // 
-            // panelDeliveryChallan
-            // 
-            this.panelDeliveryChallan.Controls.Add(this.gridControl1);
-            this.panelDeliveryChallan.Controls.Add(this.cmbFind);
-            this.panelDeliveryChallan.Controls.Add(this.btnclr);
-            this.panelDeliveryChallan.Controls.Add(this.btnFind);
-            this.panelDeliveryChallan.Location = new System.Drawing.Point(16, 79);
-            this.panelDeliveryChallan.Name = "panelDeliveryChallan";
-            this.panelDeliveryChallan.Size = new System.Drawing.Size(1324, 610);
-            this.panelDeliveryChallan.TabIndex = 1;
             // 
             // gridControl1
             // 
             this.gridControl1.DataMember = "PRO_GetJobGivingWithoutDCAllList";
             this.gridControl1.DataSource = this.sqlDataSource1;
-            this.gridControl1.Location = new System.Drawing.Point(5, 60);
+            this.gridControl1.Location = new System.Drawing.Point(5, 71);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1314, 545);
+            this.gridControl1.Size = new System.Drawing.Size(1318, 607);
             this.gridControl1.TabIndex = 3;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -725,57 +708,34 @@ namespace BillPlex
             this.colBalanceWt.Visible = true;
             this.colBalanceWt.VisibleIndex = 38;
             // 
-            // cmbFind
-            // 
-            this.cmbFind.Location = new System.Drawing.Point(21, 22);
-            this.cmbFind.Name = "cmbFind";
-            this.cmbFind.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbFind.Size = new System.Drawing.Size(433, 20);
-            this.cmbFind.TabIndex = 2;
-            // 
-            // btnclr
-            // 
-            this.btnclr.Location = new System.Drawing.Point(562, 25);
-            this.btnclr.Name = "btnclr";
-            this.btnclr.Size = new System.Drawing.Size(75, 23);
-            this.btnclr.TabIndex = 2;
-            this.btnclr.Text = "Clear";
-            // 
-            // btnFind
-            // 
-            this.btnFind.Location = new System.Drawing.Point(481, 25);
-            this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(75, 23);
-            this.btnFind.TabIndex = 1;
-            this.btnFind.Text = "Find";
-            // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.labelControl1);
-            this.panelControl1.Location = new System.Drawing.Point(42, 14);
+            this.panelControl1.Location = new System.Drawing.Point(5, 5);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1345, 50);
+            this.panelControl1.Size = new System.Drawing.Size(1488, 50);
             this.panelControl1.TabIndex = 0;
             // 
             // labelControl1
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Verdana", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(486, 6);
+            this.labelControl1.Location = new System.Drawing.Point(622, 6);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(220, 39);
-            this.labelControl1.TabIndex = 0;
+            this.labelControl1.Size = new System.Drawing.Size(245, 38);
+            this.labelControl1.TabIndex = 1;
             this.labelControl1.Text = "Job Received ";
             // 
             // FrmJobReceivedProfile
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1603, 866);
+            this.ClientSize = new System.Drawing.Size(1603, 899);
             this.Controls.Add(this.panelControl3);
+            this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FrmJobReceivedProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmJobReceivedProfile";
@@ -788,11 +748,8 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelDeliveryChallan)).EndInit();
-            this.panelDeliveryChallan.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbFind.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
@@ -813,12 +770,7 @@ namespace BillPlex
         private DevExpress.XtraEditors.SimpleButton btnNew;
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraEditors.CheckEdit checkEdit1;
-        private DevExpress.XtraEditors.PanelControl panelDeliveryChallan;
-        private DevExpress.XtraEditors.CheckedComboBoxEdit cmbFind;
-        private DevExpress.XtraEditors.SimpleButton btnclr;
-        private DevExpress.XtraEditors.SimpleButton btnFind;
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
@@ -861,5 +813,6 @@ namespace BillPlex
         private DevExpress.XtraGrid.Columns.GridColumn colBDays;
         private DevExpress.XtraGrid.Columns.GridColumn colADays;
         private DevExpress.XtraGrid.Columns.GridColumn colBalanceWt;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }

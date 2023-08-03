@@ -176,8 +176,8 @@ namespace BillPlex
             this.labelControl39 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl35 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl33 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).BeginInit();
@@ -229,13 +229,15 @@ namespace BillPlex
             // 
             // panelControl1
             // 
+            this.panelControl1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelControl1.Controls.Add(this.panelControl6);
             this.panelControl1.Controls.Add(this.panelControl7);
             this.panelControl1.Controls.Add(this.panelControl5);
             this.panelControl1.Controls.Add(this.panelControl2);
             this.panelControl1.Controls.Add(this.panelControl3);
-            this.panelControl1.Location = new System.Drawing.Point(12, 60);
+            this.panelControl1.Location = new System.Drawing.Point(12, 3);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1355, 759);
+            this.panelControl1.Size = new System.Drawing.Size(1355, 816);
             this.panelControl1.TabIndex = 5;
             // 
             // panelControl7
@@ -254,7 +256,7 @@ namespace BillPlex
             // 
             // btnClear
             // 
-            this.btnClear.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.Appearance.Options.UseFont = true;
             this.btnClear.Location = new System.Drawing.Point(18, 220);
             this.btnClear.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
@@ -269,7 +271,7 @@ namespace BillPlex
             // 
             // btnDelete
             // 
-            this.btnDelete.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Appearance.Options.UseFont = true;
             this.btnDelete.Enabled = false;
             this.btnDelete.Location = new System.Drawing.Point(18, 173);
@@ -284,7 +286,7 @@ namespace BillPlex
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Appearance.Options.UseFont = true;
             this.btnUpdate.Enabled = false;
             this.btnUpdate.Location = new System.Drawing.Point(18, 128);
@@ -300,7 +302,7 @@ namespace BillPlex
             // 
             // btnEdit
             // 
-            this.btnEdit.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.Appearance.Options.UseFont = true;
             this.btnEdit.Enabled = false;
             this.btnEdit.Location = new System.Drawing.Point(18, 87);
@@ -315,7 +317,7 @@ namespace BillPlex
             // 
             // btnAdd
             // 
-            this.btnAdd.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Appearance.Options.UseFont = true;
             this.btnAdd.Location = new System.Drawing.Point(18, 48);
             this.btnAdd.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
@@ -330,7 +332,7 @@ namespace BillPlex
             // 
             // btnExit
             // 
-            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.Appearance.Options.UseFont = true;
             this.btnExit.Location = new System.Drawing.Point(18, 265);
             this.btnExit.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
@@ -345,7 +347,7 @@ namespace BillPlex
             // 
             // btnNew
             // 
-            this.btnNew.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNew.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNew.Appearance.Options.UseFont = true;
             this.btnNew.Enabled = false;
             this.btnNew.Location = new System.Drawing.Point(18, 5);
@@ -364,7 +366,7 @@ namespace BillPlex
             this.panelControl5.Controls.Add(this.txtEmpCode2);
             this.panelControl5.Controls.Add(this.chckViewDailyRecievPending);
             this.panelControl5.Controls.Add(this.labelControl25);
-            this.panelControl5.Location = new System.Drawing.Point(15, 324);
+            this.panelControl5.Location = new System.Drawing.Point(5, 381);
             this.panelControl5.Name = "panelControl5";
             this.panelControl5.Size = new System.Drawing.Size(1203, 430);
             this.panelControl5.TabIndex = 135;
@@ -696,11 +698,11 @@ namespace BillPlex
             // 
             // labelControl7
             // 
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.Options.UseFont = true;
             this.labelControl7.Location = new System.Drawing.Point(5, 15);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(122, 19);
+            this.labelControl7.Size = new System.Drawing.Size(123, 18);
             this.labelControl7.TabIndex = 136;
             this.labelControl7.Text = "Job Giving Info";
             // 
@@ -1078,23 +1080,23 @@ namespace BillPlex
             // 
             this.chckViewDailyRecievPending.Location = new System.Drawing.Point(9, 5);
             this.chckViewDailyRecievPending.Name = "chckViewDailyRecievPending";
-            this.chckViewDailyRecievPending.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chckViewDailyRecievPending.Properties.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chckViewDailyRecievPending.Properties.Appearance.Options.UseFont = true;
             this.chckViewDailyRecievPending.Properties.Caption = "View DailyReceived Pending";
             this.chckViewDailyRecievPending.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.chckViewDailyRecievPending.Properties.LookAndFeel.SkinName = "DevExpress Style";
             this.chckViewDailyRecievPending.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.chckViewDailyRecievPending.Size = new System.Drawing.Size(265, 23);
+            this.chckViewDailyRecievPending.Size = new System.Drawing.Size(265, 22);
             this.chckViewDailyRecievPending.TabIndex = 93;
             this.chckViewDailyRecievPending.CheckedChanged += new System.EventHandler(this.chckViewDailyRecievPending_CheckedChanged);
             // 
             // labelControl25
             // 
-            this.labelControl25.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl25.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl25.Appearance.Options.UseFont = true;
             this.labelControl25.Location = new System.Drawing.Point(294, 9);
             this.labelControl25.Name = "labelControl25";
-            this.labelControl25.Size = new System.Drawing.Size(125, 19);
+            this.labelControl25.Size = new System.Drawing.Size(126, 18);
             this.labelControl25.TabIndex = 135;
             this.labelControl25.Text = "Employee Code";
             // 
@@ -1102,20 +1104,20 @@ namespace BillPlex
             // 
             this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl2.Controls.Add(this.labelControl20);
-            this.panelControl2.Location = new System.Drawing.Point(37, 5);
+            this.panelControl2.Location = new System.Drawing.Point(16, 61);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(222, 32);
+            this.panelControl2.Size = new System.Drawing.Size(241, 32);
             this.panelControl2.TabIndex = 4;
             // 
             // labelControl20
             // 
-            this.labelControl20.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl20.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl20.Appearance.ForeColor = System.Drawing.SystemColors.Highlight;
             this.labelControl20.Appearance.Options.UseFont = true;
             this.labelControl20.Appearance.Options.UseForeColor = true;
-            this.labelControl20.Location = new System.Drawing.Point(6, 4);
+            this.labelControl20.Location = new System.Drawing.Point(3, 4);
             this.labelControl20.Name = "labelControl20";
-            this.labelControl20.Size = new System.Drawing.Size(211, 19);
+            this.labelControl20.Size = new System.Drawing.Size(226, 18);
             this.labelControl20.TabIndex = 92;
             this.labelControl20.Text = "Assign a Job To Employee";
             // 
@@ -1177,7 +1179,7 @@ namespace BillPlex
             this.panelControl3.Controls.Add(this.labelControl39);
             this.panelControl3.Controls.Add(this.labelControl35);
             this.panelControl3.Controls.Add(this.labelControl33);
-            this.panelControl3.Location = new System.Drawing.Point(15, 17);
+            this.panelControl3.Location = new System.Drawing.Point(5, 74);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(1203, 301);
             this.panelControl3.TabIndex = 1;
@@ -1188,7 +1190,7 @@ namespace BillPlex
             this.labelControl9.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl9.Appearance.Options.UseFont = true;
             this.labelControl9.Appearance.Options.UseForeColor = true;
-            this.labelControl9.Location = new System.Drawing.Point(738, 46);
+            this.labelControl9.Location = new System.Drawing.Point(743, 46);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(10, 18);
             this.labelControl9.TabIndex = 138;
@@ -1241,51 +1243,51 @@ namespace BillPlex
             // 
             // labelControl23
             // 
-            this.labelControl23.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl23.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl23.Appearance.Options.UseFont = true;
             this.labelControl23.Location = new System.Drawing.Point(924, 253);
             this.labelControl23.Name = "labelControl23";
-            this.labelControl23.Size = new System.Drawing.Size(68, 19);
+            this.labelControl23.Size = new System.Drawing.Size(68, 18);
             this.labelControl23.TabIndex = 131;
             this.labelControl23.Text = "Net Amt";
             // 
             // labelControl22
             // 
-            this.labelControl22.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl22.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl22.Appearance.Options.UseFont = true;
             this.labelControl22.Location = new System.Drawing.Point(895, 196);
             this.labelControl22.Name = "labelControl22";
-            this.labelControl22.Size = new System.Drawing.Size(97, 19);
+            this.labelControl22.Size = new System.Drawing.Size(97, 18);
             this.labelControl22.TabIndex = 130;
             this.labelControl22.Text = "Conveyance";
             // 
             // labelControl21
             // 
-            this.labelControl21.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl21.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl21.Appearance.Options.UseFont = true;
             this.labelControl21.Location = new System.Drawing.Point(916, 225);
             this.labelControl21.Name = "labelControl21";
-            this.labelControl21.Size = new System.Drawing.Size(76, 19);
+            this.labelControl21.Size = new System.Drawing.Size(76, 18);
             this.labelControl21.TabIndex = 129;
             this.labelControl21.Text = "Incentive";
             // 
             // labelControl18
             // 
-            this.labelControl18.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl18.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl18.Appearance.Options.UseFont = true;
             this.labelControl18.Location = new System.Drawing.Point(614, 250);
             this.labelControl18.Name = "labelControl18";
-            this.labelControl18.Size = new System.Drawing.Size(43, 19);
+            this.labelControl18.Size = new System.Drawing.Size(42, 18);
             this.labelControl18.TabIndex = 128;
             this.labelControl18.Text = "Total";
             // 
             // labelControl17
             // 
-            this.labelControl17.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl17.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl17.Appearance.Options.UseFont = true;
             this.labelControl17.Location = new System.Drawing.Point(614, 225);
             this.labelControl17.Name = "labelControl17";
-            this.labelControl17.Size = new System.Drawing.Size(82, 19);
+            this.labelControl17.Size = new System.Drawing.Size(82, 18);
             this.labelControl17.TabIndex = 127;
             this.labelControl17.Text = "Deduction";
             // 
@@ -1323,11 +1325,11 @@ namespace BillPlex
             // 
             // labelControl14
             // 
-            this.labelControl14.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl14.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl14.Appearance.Options.UseFont = true;
             this.labelControl14.Location = new System.Drawing.Point(614, 189);
             this.labelControl14.Name = "labelControl14";
-            this.labelControl14.Size = new System.Drawing.Size(127, 19);
+            this.labelControl14.Size = new System.Drawing.Size(129, 18);
             this.labelControl14.TabIndex = 123;
             this.labelControl14.Text = "Balance Weight";
             // 
@@ -1341,31 +1343,31 @@ namespace BillPlex
             // 
             // labelControl11
             // 
-            this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl11.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl11.Appearance.Options.UseFont = true;
             this.labelControl11.Location = new System.Drawing.Point(10, 88);
             this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(130, 19);
+            this.labelControl11.Size = new System.Drawing.Size(131, 18);
             this.labelControl11.TabIndex = 121;
             this.labelControl11.Text = "Customer Name";
             // 
             // labelControl44
             // 
-            this.labelControl44.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl44.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl44.Appearance.Options.UseFont = true;
             this.labelControl44.Location = new System.Drawing.Point(1003, 165);
             this.labelControl44.Name = "labelControl44";
-            this.labelControl44.Size = new System.Drawing.Size(53, 19);
+            this.labelControl44.Size = new System.Drawing.Size(54, 18);
             this.labelControl44.TabIndex = 120;
             this.labelControl44.Text = "(Days)";
             // 
             // labelControl43
             // 
-            this.labelControl43.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl43.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl43.Appearance.Options.UseFont = true;
             this.labelControl43.Location = new System.Drawing.Point(869, 165);
             this.labelControl43.Name = "labelControl43";
-            this.labelControl43.Size = new System.Drawing.Size(53, 19);
+            this.labelControl43.Size = new System.Drawing.Size(54, 18);
             this.labelControl43.TabIndex = 94;
             this.labelControl43.Text = "(Days)";
             // 
@@ -1378,21 +1380,21 @@ namespace BillPlex
             // 
             // labelControl42
             // 
-            this.labelControl42.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl42.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl42.Appearance.Options.UseFont = true;
             this.labelControl42.Location = new System.Drawing.Point(1007, 146);
             this.labelControl42.Name = "labelControl42";
-            this.labelControl42.Size = new System.Drawing.Size(42, 19);
+            this.labelControl42.Size = new System.Drawing.Size(40, 18);
             this.labelControl42.TabIndex = 118;
             this.labelControl42.Text = "After";
             // 
             // labelControl41
             // 
-            this.labelControl41.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl41.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl41.Appearance.Options.UseFont = true;
             this.labelControl41.Location = new System.Drawing.Point(868, 146);
             this.labelControl41.Name = "labelControl41";
-            this.labelControl41.Size = new System.Drawing.Size(54, 19);
+            this.labelControl41.Size = new System.Drawing.Size(53, 18);
             this.labelControl41.TabIndex = 117;
             this.labelControl41.Text = "Before";
             // 
@@ -1411,11 +1413,11 @@ namespace BillPlex
             // 
             // labelControl31
             // 
-            this.labelControl31.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl31.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl31.Appearance.Options.UseFont = true;
             this.labelControl31.Location = new System.Drawing.Point(368, 218);
             this.labelControl31.Name = "labelControl31";
-            this.labelControl31.Size = new System.Drawing.Size(72, 19);
+            this.labelControl31.Size = new System.Drawing.Size(73, 18);
             this.labelControl31.TabIndex = 115;
             this.labelControl31.Text = "Rcvd Qty";
             // 
@@ -1429,11 +1431,11 @@ namespace BillPlex
             // 
             // labelControl30
             // 
-            this.labelControl30.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl30.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl30.Appearance.Options.UseFont = true;
             this.labelControl30.Location = new System.Drawing.Point(11, 250);
             this.labelControl30.Name = "labelControl30";
-            this.labelControl30.Size = new System.Drawing.Size(101, 19);
+            this.labelControl30.Size = new System.Drawing.Size(101, 18);
             this.labelControl30.TabIndex = 98;
             this.labelControl30.Text = "Model Name";
             // 
@@ -1468,11 +1470,11 @@ namespace BillPlex
             // 
             // labelControl19
             // 
-            this.labelControl19.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl19.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl19.Appearance.Options.UseFont = true;
             this.labelControl19.Location = new System.Drawing.Point(368, 189);
             this.labelControl19.Name = "labelControl19";
-            this.labelControl19.Size = new System.Drawing.Size(90, 19);
+            this.labelControl19.Size = new System.Drawing.Size(90, 18);
             this.labelControl19.TabIndex = 110;
             this.labelControl19.Text = "Current Wt";
             // 
@@ -1486,11 +1488,11 @@ namespace BillPlex
             // 
             // labelControl6
             // 
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
             this.labelControl6.Location = new System.Drawing.Point(368, 130);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(40, 19);
+            this.labelControl6.Size = new System.Drawing.Size(39, 18);
             this.labelControl6.TabIndex = 108;
             this.labelControl6.Text = "Type";
             // 
@@ -1503,21 +1505,21 @@ namespace BillPlex
             // 
             // labelControl15
             // 
-            this.labelControl15.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl15.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl15.Appearance.Options.UseFont = true;
             this.labelControl15.Location = new System.Drawing.Point(614, 146);
             this.labelControl15.Name = "labelControl15";
-            this.labelControl15.Size = new System.Drawing.Size(76, 19);
+            this.labelControl15.Size = new System.Drawing.Size(76, 18);
             this.labelControl15.TabIndex = 105;
             this.labelControl15.Text = "Incentive";
             // 
             // labelControl16
             // 
-            this.labelControl16.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl16.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl16.Appearance.Options.UseFont = true;
             this.labelControl16.Location = new System.Drawing.Point(614, 164);
             this.labelControl16.Name = "labelControl16";
-            this.labelControl16.Size = new System.Drawing.Size(85, 19);
+            this.labelControl16.Size = new System.Drawing.Size(84, 18);
             this.labelControl16.TabIndex = 106;
             this.labelControl16.Text = "Applicable";
             // 
@@ -1547,11 +1549,11 @@ namespace BillPlex
             // 
             // labelControl10
             // 
-            this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl10.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl10.Appearance.Options.UseFont = true;
             this.labelControl10.Location = new System.Drawing.Point(924, 77);
             this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(41, 19);
+            this.labelControl10.Size = new System.Drawing.Size(41, 18);
             this.labelControl10.TabIndex = 101;
             this.labelControl10.Text = "Code";
             // 
@@ -1593,11 +1595,11 @@ namespace BillPlex
             // 
             // labelControl1
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Location = new System.Drawing.Point(83, 63);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(61, 19);
+            this.labelControl1.Size = new System.Drawing.Size(60, 18);
             this.labelControl1.TabIndex = 98;
             this.labelControl1.Text = "/ Name";
             // 
@@ -1611,21 +1613,21 @@ namespace BillPlex
             // 
             // labelControl5
             // 
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
             this.labelControl5.Location = new System.Drawing.Point(614, 74);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(117, 19);
+            this.labelControl5.Size = new System.Drawing.Size(115, 18);
             this.labelControl5.TabIndex = 86;
             this.labelControl5.Text = "Product Model";
             // 
             // labelControl4
             // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
             this.labelControl4.Location = new System.Drawing.Point(614, 44);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(123, 19);
+            this.labelControl4.Size = new System.Drawing.Size(123, 18);
             this.labelControl4.TabIndex = 85;
             this.labelControl4.Text = "Receiving Date";
             // 
@@ -1639,11 +1641,11 @@ namespace BillPlex
             // 
             // labelControl3
             // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
             this.labelControl3.Location = new System.Drawing.Point(10, 165);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(70, 19);
+            this.labelControl3.Size = new System.Drawing.Size(71, 18);
             this.labelControl3.TabIndex = 83;
             this.labelControl3.Text = "Quantity";
             // 
@@ -1657,11 +1659,11 @@ namespace BillPlex
             // 
             // labelControl32
             // 
-            this.labelControl32.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl32.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl32.Appearance.Options.UseFont = true;
             this.labelControl32.Location = new System.Drawing.Point(11, 195);
             this.labelControl32.Name = "labelControl32";
-            this.labelControl32.Size = new System.Drawing.Size(54, 19);
+            this.labelControl32.Size = new System.Drawing.Size(56, 18);
             this.labelControl32.TabIndex = 62;
             this.labelControl32.Text = "Wages";
             // 
@@ -1675,96 +1677,97 @@ namespace BillPlex
             // 
             // labelControl2
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Location = new System.Drawing.Point(11, 38);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(125, 19);
+            this.labelControl2.Size = new System.Drawing.Size(126, 18);
             this.labelControl2.TabIndex = 3;
             this.labelControl2.Text = "Employee Code";
             // 
             // labelControl24
             // 
-            this.labelControl24.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl24.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl24.Appearance.Options.UseFont = true;
             this.labelControl24.Location = new System.Drawing.Point(924, 116);
             this.labelControl24.Name = "labelControl24";
-            this.labelControl24.Size = new System.Drawing.Size(43, 19);
+            this.labelControl24.Size = new System.Drawing.Size(42, 18);
             this.labelControl24.TabIndex = 39;
             this.labelControl24.Text = "Color";
             // 
             // labelControl38
             // 
-            this.labelControl38.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl38.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl38.Appearance.Options.UseFont = true;
             this.labelControl38.Location = new System.Drawing.Point(614, 111);
             this.labelControl38.Name = "labelControl38";
-            this.labelControl38.Size = new System.Drawing.Size(102, 19);
+            this.labelControl38.Size = new System.Drawing.Size(101, 18);
             this.labelControl38.TabIndex = 6;
             this.labelControl38.Text = "Product Size";
             // 
             // labelControl39
             // 
-            this.labelControl39.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl39.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl39.Appearance.Options.UseFont = true;
             this.labelControl39.Location = new System.Drawing.Point(10, 220);
             this.labelControl39.Name = "labelControl39";
-            this.labelControl39.Size = new System.Drawing.Size(99, 19);
+            this.labelControl39.Size = new System.Drawing.Size(100, 18);
             this.labelControl39.TabIndex = 9;
             this.labelControl39.Text = "Pending Qty";
             // 
             // labelControl35
             // 
-            this.labelControl35.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl35.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl35.Appearance.Options.UseFont = true;
             this.labelControl35.Location = new System.Drawing.Point(11, 135);
             this.labelControl35.Name = "labelControl35";
-            this.labelControl35.Size = new System.Drawing.Size(161, 19);
+            this.labelControl35.Size = new System.Drawing.Size(159, 18);
             this.labelControl35.TabIndex = 10;
             this.labelControl35.Text = "Raw Material Name";
             // 
             // labelControl33
             // 
-            this.labelControl33.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl33.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl33.Appearance.Options.UseFont = true;
             this.labelControl33.Location = new System.Drawing.Point(368, 163);
             this.labelControl33.Name = "labelControl33";
-            this.labelControl33.Size = new System.Drawing.Size(58, 19);
+            this.labelControl33.Size = new System.Drawing.Size(59, 18);
             this.labelControl33.TabIndex = 12;
             this.labelControl33.Text = "Weight";
-            // 
-            // labelControl8
-            // 
-            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl8.Appearance.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Appearance.Options.UseForeColor = true;
-            this.labelControl8.Location = new System.Drawing.Point(559, 5);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(187, 33);
-            this.labelControl8.TabIndex = 6;
-            this.labelControl8.Text = "Job Received ";
             // 
             // panelControl6
             // 
             this.panelControl6.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panelControl6.Appearance.Options.UseBackColor = true;
-            this.panelControl6.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl6.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.panelControl6.Controls.Add(this.labelControl8);
-            this.panelControl6.Location = new System.Drawing.Point(12, 11);
+            this.panelControl6.Location = new System.Drawing.Point(5, 4);
             this.panelControl6.LookAndFeel.SkinName = "DevExpress Style";
             this.panelControl6.LookAndFeel.UseDefaultLookAndFeel = false;
             this.panelControl6.Name = "panelControl6";
-            this.panelControl6.Size = new System.Drawing.Size(1355, 41);
+            this.panelControl6.Size = new System.Drawing.Size(1345, 41);
             this.panelControl6.TabIndex = 7;
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl8.Appearance.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.labelControl8.Appearance.Options.UseFont = true;
+            this.labelControl8.Appearance.Options.UseForeColor = true;
+            this.labelControl8.Location = new System.Drawing.Point(568, 4);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(208, 32);
+            this.labelControl8.TabIndex = 7;
+            this.labelControl8.Text = "Job Received ";
             // 
             // FrmJobReceivedInfo
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1374, 846);
-            this.Controls.Add(this.panelControl6);
             this.Controls.Add(this.panelControl1);
+            this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FrmJobReceivedInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmJobReceivedInfo";
@@ -1893,7 +1896,6 @@ namespace BillPlex
         private DevExpress.XtraEditors.PanelControl panelControl5;
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl7;
-        private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.PanelControl panelControl6;
         private DevExpress.XtraEditors.ComboBoxEdit drpIncentiveApp;
         private DevExpress.XtraEditors.PanelControl panelControl7;
@@ -1971,5 +1973,6 @@ namespace BillPlex
         private DevExpress.XtraGrid.Columns.GridColumn colBalanceWt;
         private DevExpress.XtraGrid.Columns.GridColumn colWagesEmp;
         private DevExpress.XtraEditors.LabelControl labelControl9;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
     }
 }
