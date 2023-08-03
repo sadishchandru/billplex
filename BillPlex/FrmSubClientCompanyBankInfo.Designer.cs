@@ -50,6 +50,17 @@ namespace BillPlex
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.SubClientBankGrid = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colComCname = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSubComName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colClientCompanyId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSubClientCompanyId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBankName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBankAcNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBranchCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBranchName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIFSCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAddress = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SearchComapnyNameTxt = new DevExpress.XtraEditors.TextEdit();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.imgImage = new DevExpress.XtraEditors.PictureEdit();
@@ -71,17 +82,6 @@ namespace BillPlex
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colComCname = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSubComName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colClientCompanyId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSubClientCompanyId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colBankName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colBankAcNo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colBranchCode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colBranchName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colIFSCode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colAddress = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.drpBankName.Properties)).BeginInit();
@@ -102,7 +102,8 @@ namespace BillPlex
             // 
             // panelControl1
             // 
-            this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.panelControl1.Controls.Add(this.labelControl17);
             this.panelControl1.Controls.Add(this.labelControl16);
             this.panelControl1.Controls.Add(this.labelControl14);
@@ -150,7 +151,7 @@ namespace BillPlex
             this.labelControl17.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl17.Appearance.Options.UseFont = true;
             this.labelControl17.Appearance.Options.UseForeColor = true;
-            this.labelControl17.Location = new System.Drawing.Point(94, 158);
+            this.labelControl17.Location = new System.Drawing.Point(150, 163);
             this.labelControl17.Name = "labelControl17";
             this.labelControl17.Size = new System.Drawing.Size(10, 19);
             this.labelControl17.TabIndex = 44;
@@ -162,7 +163,7 @@ namespace BillPlex
             this.labelControl16.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl16.Appearance.Options.UseFont = true;
             this.labelControl16.Appearance.Options.UseForeColor = true;
-            this.labelControl16.Location = new System.Drawing.Point(92, 277);
+            this.labelControl16.Location = new System.Drawing.Point(150, 280);
             this.labelControl16.Name = "labelControl16";
             this.labelControl16.Size = new System.Drawing.Size(10, 19);
             this.labelControl16.TabIndex = 42;
@@ -174,7 +175,7 @@ namespace BillPlex
             this.labelControl14.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl14.Appearance.Options.UseFont = true;
             this.labelControl14.Appearance.Options.UseForeColor = true;
-            this.labelControl14.Location = new System.Drawing.Point(65, 371);
+            this.labelControl14.Location = new System.Drawing.Point(150, 374);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(10, 19);
             this.labelControl14.TabIndex = 41;
@@ -186,7 +187,7 @@ namespace BillPlex
             this.labelControl13.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl13.Appearance.Options.UseFont = true;
             this.labelControl13.Appearance.Options.UseForeColor = true;
-            this.labelControl13.Location = new System.Drawing.Point(138, 97);
+            this.labelControl13.Location = new System.Drawing.Point(192, 105);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(10, 19);
             this.labelControl13.TabIndex = 40;
@@ -198,7 +199,7 @@ namespace BillPlex
             this.labelControl12.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl12.Appearance.Options.UseFont = true;
             this.labelControl12.Appearance.Options.UseForeColor = true;
-            this.labelControl12.Location = new System.Drawing.Point(77, 129);
+            this.labelControl12.Location = new System.Drawing.Point(150, 134);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(10, 19);
             this.labelControl12.TabIndex = 39;
@@ -210,7 +211,7 @@ namespace BillPlex
             this.labelControl11.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl11.Appearance.Options.UseFont = true;
             this.labelControl11.Appearance.Options.UseForeColor = true;
-            this.labelControl11.Location = new System.Drawing.Point(65, 194);
+            this.labelControl11.Location = new System.Drawing.Point(150, 196);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(10, 19);
             this.labelControl11.TabIndex = 38;
@@ -222,7 +223,7 @@ namespace BillPlex
             this.labelControl15.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl15.Appearance.Options.UseFont = true;
             this.labelControl15.Appearance.Options.UseForeColor = true;
-            this.labelControl15.Location = new System.Drawing.Point(110, 57);
+            this.labelControl15.Location = new System.Drawing.Point(192, 63);
             this.labelControl15.Name = "labelControl15";
             this.labelControl15.Size = new System.Drawing.Size(10, 19);
             this.labelControl15.TabIndex = 37;
@@ -233,7 +234,7 @@ namespace BillPlex
             this.btnUpdate.Enabled = false;
             this.btnUpdate.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
             this.btnUpdate.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnUpdate.ImageOptions.SvgImage")));
-            this.btnUpdate.Location = new System.Drawing.Point(392, 132);
+            this.btnUpdate.Location = new System.Drawing.Point(548, 142);
             this.btnUpdate.LookAndFeel.SkinName = "DevExpress Style";
             this.btnUpdate.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnUpdate.Name = "btnUpdate";
@@ -243,33 +244,35 @@ namespace BillPlex
             // 
             // drpBankName
             // 
-            this.drpBankName.Location = new System.Drawing.Point(165, 128);
+            this.drpBankName.Location = new System.Drawing.Point(238, 132);
             this.drpBankName.Name = "drpBankName";
             this.drpBankName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.drpBankName.Size = new System.Drawing.Size(176, 20);
+            this.drpBankName.Size = new System.Drawing.Size(192, 20);
             this.drpBankName.TabIndex = 32;
             // 
             // drpClientCompany
             // 
-            this.drpClientCompany.Location = new System.Drawing.Point(165, 61);
+            this.drpClientCompany.Location = new System.Drawing.Point(238, 65);
             this.drpClientCompany.Name = "drpClientCompany";
             this.drpClientCompany.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.drpClientCompany.Size = new System.Drawing.Size(209, 20);
+            this.drpClientCompany.Size = new System.Drawing.Size(225, 20);
             this.drpClientCompany.TabIndex = 31;
             // 
             // drpSubCompany
             // 
-            this.drpSubCompany.Location = new System.Drawing.Point(165, 99);
+            this.drpSubCompany.Location = new System.Drawing.Point(238, 103);
             this.drpSubCompany.Name = "drpSubCompany";
             this.drpSubCompany.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.drpSubCompany.Size = new System.Drawing.Size(209, 20);
+            this.drpSubCompany.Size = new System.Drawing.Size(225, 20);
             this.drpSubCompany.TabIndex = 30;
             // 
             // btnSelect
             // 
+            this.btnSelect.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelect.Appearance.Options.UseFont = true;
             this.btnSelect.Location = new System.Drawing.Point(7, 411);
             this.btnSelect.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.btnSelect.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightBlue;
@@ -282,11 +285,11 @@ namespace BillPlex
             // 
             // labelControl2
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(5, 103);
+            this.labelControl2.Location = new System.Drawing.Point(7, 105);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(127, 16);
+            this.labelControl2.Size = new System.Drawing.Size(165, 18);
             this.labelControl2.TabIndex = 27;
             this.labelControl2.Text = "Sub Client Company";
             // 
@@ -295,10 +298,6 @@ namespace BillPlex
             this.gridControl1.DataMember = "PRO_GetSubClientBankInfo";
             this.gridControl1.DataSource = this.sqlDataSource1;
             this.gridControl1.Location = new System.Drawing.Point(7, 448);
-            this.gridControl1.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
-            this.gridControl1.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightBlue;
-            this.gridControl1.LookAndFeel.SkinName = "DevExpress Style";
-            this.gridControl1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Style3D;
             this.gridControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.gridControl1.MainView = this.SubClientBankGrid;
             this.gridControl1.Name = "gridControl1";
@@ -322,7 +321,6 @@ namespace BillPlex
             // 
             // SubClientBankGrid
             // 
-            this.SubClientBankGrid.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
             this.SubClientBankGrid.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colId,
             this.colComCname,
@@ -337,213 +335,7 @@ namespace BillPlex
             this.colAddress});
             this.SubClientBankGrid.GridControl = this.gridControl1;
             this.SubClientBankGrid.Name = "SubClientBankGrid";
-            this.SubClientBankGrid.OptionsView.ShowGroupPanel = false;
-            this.SubClientBankGrid.PaintStyleName = "Office2003";
             this.SubClientBankGrid.DoubleClick += new System.EventHandler(this.btn_GridView);
-            // 
-            // SearchComapnyNameTxt
-            // 
-            this.SearchComapnyNameTxt.Location = new System.Drawing.Point(820, 408);
-            this.SearchComapnyNameTxt.Name = "SearchComapnyNameTxt";
-            this.SearchComapnyNameTxt.Size = new System.Drawing.Size(751, 20);
-            this.SearchComapnyNameTxt.TabIndex = 25;
-            // 
-            // labelControl10
-            // 
-            this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Location = new System.Drawing.Point(667, 410);
-            this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(147, 16);
-            this.labelControl10.TabIndex = 24;
-            this.labelControl10.Text = "Search Company Name";
-            // 
-            // imgImage
-            // 
-            this.imgImage.EditValue = ((object)(resources.GetObject("imgImage.EditValue")));
-            this.imgImage.Location = new System.Drawing.Point(572, 53);
-            this.imgImage.Name = "imgImage";
-            this.imgImage.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.imgImage.Size = new System.Drawing.Size(999, 338);
-            this.imgImage.TabIndex = 23;
-            // 
-            // btn
-            // 
-            this.btn.Enabled = false;
-            this.btn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn.ImageOptions.Image")));
-            this.btn.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btn.Location = new System.Drawing.Point(392, 297);
-            this.btn.LookAndFeel.SkinName = "DevExpress Style";
-            this.btn.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btn.Name = "btn";
-            this.btn.Size = new System.Drawing.Size(74, 73);
-            this.btn.TabIndex = 22;
-            // 
-            // btnClear
-            // 
-            this.btnClear.Enabled = false;
-            this.btnClear.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.ImageOptions.Image")));
-            this.btnClear.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.btnClear.Location = new System.Drawing.Point(392, 218);
-            this.btnClear.LookAndFeel.SkinName = "DevExpress Style";
-            this.btnClear.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(74, 73);
-            this.btnClear.TabIndex = 21;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageOptions.Image")));
-            this.btnAdd.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.btnAdd.Location = new System.Drawing.Point(392, 53);
-            this.btnAdd.LookAndFeel.SkinName = "DevExpress Style";
-            this.btnAdd.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(74, 73);
-            this.btnAdd.TabIndex = 19;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.ImageOptions.Image")));
-            this.btnSearch.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btnSearch.Location = new System.Drawing.Point(347, 125);
-            this.btnSearch.LookAndFeel.SkinName = "DevExpress Style";
-            this.btnSearch.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(27, 23);
-            this.btnSearch.TabIndex = 18;
-            // 
-            // TxtIfsCode
-            // 
-            this.TxtIfsCode.Location = new System.Drawing.Point(149, 373);
-            this.TxtIfsCode.Name = "TxtIfsCode";
-            this.TxtIfsCode.Size = new System.Drawing.Size(225, 20);
-            this.TxtIfsCode.TabIndex = 17;
-            // 
-            // TxtBranchName
-            // 
-            this.TxtBranchName.Location = new System.Drawing.Point(149, 327);
-            this.TxtBranchName.Name = "TxtBranchName";
-            this.TxtBranchName.Size = new System.Drawing.Size(225, 20);
-            this.TxtBranchName.TabIndex = 16;
-            // 
-            // TxtBranchCode
-            // 
-            this.TxtBranchCode.Location = new System.Drawing.Point(149, 279);
-            this.TxtBranchCode.Name = "TxtBranchCode";
-            this.TxtBranchCode.Size = new System.Drawing.Size(225, 20);
-            this.TxtBranchCode.TabIndex = 15;
-            // 
-            // TxtAddress
-            // 
-            this.TxtAddress.Location = new System.Drawing.Point(149, 197);
-            this.TxtAddress.Name = "TxtAddress";
-            this.TxtAddress.Size = new System.Drawing.Size(225, 66);
-            this.TxtAddress.TabIndex = 14;
-            // 
-            // TxtBankAccountNo
-            // 
-            this.TxtBankAccountNo.Location = new System.Drawing.Point(149, 162);
-            this.TxtBankAccountNo.Name = "TxtBankAccountNo";
-            this.TxtBankAccountNo.Size = new System.Drawing.Size(225, 20);
-            this.TxtBankAccountNo.TabIndex = 13;
-            // 
-            // labelControl9
-            // 
-            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(5, 377);
-            this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(55, 16);
-            this.labelControl9.TabIndex = 9;
-            this.labelControl9.Text = "IFS Code";
-            // 
-            // labelControl8
-            // 
-            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(5, 331);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(84, 16);
-            this.labelControl8.TabIndex = 8;
-            this.labelControl8.Text = "Branch Name";
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(5, 283);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(81, 16);
-            this.labelControl7.TabIndex = 7;
-            this.labelControl7.Text = "Branch Code";
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(5, 197);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(54, 16);
-            this.labelControl6.TabIndex = 6;
-            this.labelControl6.Text = "Address";
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(5, 166);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(82, 16);
-            this.labelControl5.TabIndex = 5;
-            this.labelControl5.Text = "Bank A/C NO";
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(5, 132);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(70, 16);
-            this.labelControl4.TabIndex = 4;
-            this.labelControl4.Text = "Bank Name";
-            // 
-            // panelControl2
-            // 
-            this.panelControl2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panelControl2.Appearance.Options.UseBackColor = true;
-            this.panelControl2.AutoSize = true;
-            this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl2.Controls.Add(this.labelControl3);
-            this.panelControl2.Location = new System.Drawing.Point(2, 3);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1569, 35);
-            this.panelControl2.TabIndex = 2;
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl3.Appearance.ForeColor = System.Drawing.Color.Blue;
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Appearance.Options.UseForeColor = true;
-            this.labelControl3.Location = new System.Drawing.Point(3, 8);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(79, 19);
-            this.labelControl3.TabIndex = 5;
-            this.labelControl3.Text = "Bank Info";
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.labelControl1.Location = new System.Drawing.Point(5, 60);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(99, 16);
-            this.labelControl1.TabIndex = 1;
-            this.labelControl1.Text = "Client Company";
             // 
             // colId
             // 
@@ -618,12 +410,218 @@ namespace BillPlex
             this.colAddress.Visible = true;
             this.colAddress.VisibleIndex = 8;
             // 
+            // SearchComapnyNameTxt
+            // 
+            this.SearchComapnyNameTxt.Location = new System.Drawing.Point(820, 408);
+            this.SearchComapnyNameTxt.Name = "SearchComapnyNameTxt";
+            this.SearchComapnyNameTxt.Size = new System.Drawing.Size(751, 20);
+            this.SearchComapnyNameTxt.TabIndex = 25;
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl10.Appearance.Options.UseFont = true;
+            this.labelControl10.Location = new System.Drawing.Point(580, 412);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(188, 18);
+            this.labelControl10.TabIndex = 24;
+            this.labelControl10.Text = "Search Company Name";
+            // 
+            // imgImage
+            // 
+            this.imgImage.EditValue = ((object)(resources.GetObject("imgImage.EditValue")));
+            this.imgImage.Location = new System.Drawing.Point(686, 53);
+            this.imgImage.Name = "imgImage";
+            this.imgImage.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.imgImage.Size = new System.Drawing.Size(848, 338);
+            this.imgImage.TabIndex = 23;
+            // 
+            // btn
+            // 
+            this.btn.Enabled = false;
+            this.btn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn.ImageOptions.Image")));
+            this.btn.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btn.Location = new System.Drawing.Point(548, 307);
+            this.btn.LookAndFeel.SkinName = "DevExpress Style";
+            this.btn.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btn.Name = "btn";
+            this.btn.Size = new System.Drawing.Size(74, 73);
+            this.btn.TabIndex = 22;
+            // 
+            // btnClear
+            // 
+            this.btnClear.Enabled = false;
+            this.btnClear.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.ImageOptions.Image")));
+            this.btnClear.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
+            this.btnClear.Location = new System.Drawing.Point(548, 228);
+            this.btnClear.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnClear.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(74, 73);
+            this.btnClear.TabIndex = 21;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageOptions.Image")));
+            this.btnAdd.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
+            this.btnAdd.Location = new System.Drawing.Point(548, 63);
+            this.btnAdd.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnAdd.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(74, 73);
+            this.btnAdd.TabIndex = 19;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.ImageOptions.Image")));
+            this.btnSearch.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.btnSearch.Location = new System.Drawing.Point(436, 132);
+            this.btnSearch.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnSearch.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(27, 23);
+            this.btnSearch.TabIndex = 18;
+            // 
+            // TxtIfsCode
+            // 
+            this.TxtIfsCode.Location = new System.Drawing.Point(238, 377);
+            this.TxtIfsCode.Name = "TxtIfsCode";
+            this.TxtIfsCode.Size = new System.Drawing.Size(225, 20);
+            this.TxtIfsCode.TabIndex = 17;
+            // 
+            // TxtBranchName
+            // 
+            this.TxtBranchName.Location = new System.Drawing.Point(238, 331);
+            this.TxtBranchName.Name = "TxtBranchName";
+            this.TxtBranchName.Size = new System.Drawing.Size(225, 20);
+            this.TxtBranchName.TabIndex = 16;
+            // 
+            // TxtBranchCode
+            // 
+            this.TxtBranchCode.Location = new System.Drawing.Point(238, 283);
+            this.TxtBranchCode.Name = "TxtBranchCode";
+            this.TxtBranchCode.Size = new System.Drawing.Size(225, 20);
+            this.TxtBranchCode.TabIndex = 15;
+            // 
+            // TxtAddress
+            // 
+            this.TxtAddress.Location = new System.Drawing.Point(238, 201);
+            this.TxtAddress.Name = "TxtAddress";
+            this.TxtAddress.Size = new System.Drawing.Size(225, 66);
+            this.TxtAddress.TabIndex = 14;
+            // 
+            // TxtBankAccountNo
+            // 
+            this.TxtBankAccountNo.Location = new System.Drawing.Point(238, 166);
+            this.TxtBankAccountNo.Name = "TxtBankAccountNo";
+            this.TxtBankAccountNo.Size = new System.Drawing.Size(225, 20);
+            this.TxtBankAccountNo.TabIndex = 13;
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl9.Appearance.Options.UseFont = true;
+            this.labelControl9.Location = new System.Drawing.Point(7, 379);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(73, 18);
+            this.labelControl9.TabIndex = 9;
+            this.labelControl9.Text = "IFS Code";
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl8.Appearance.Options.UseFont = true;
+            this.labelControl8.Location = new System.Drawing.Point(7, 333);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(108, 18);
+            this.labelControl8.TabIndex = 8;
+            this.labelControl8.Text = "Branch Name";
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl7.Appearance.Options.UseFont = true;
+            this.labelControl7.Location = new System.Drawing.Point(7, 285);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(102, 18);
+            this.labelControl7.TabIndex = 7;
+            this.labelControl7.Text = "Branch Code";
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl6.Appearance.Options.UseFont = true;
+            this.labelControl6.Location = new System.Drawing.Point(7, 199);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(65, 18);
+            this.labelControl6.TabIndex = 6;
+            this.labelControl6.Text = "Address";
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Location = new System.Drawing.Point(7, 168);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(106, 18);
+            this.labelControl5.TabIndex = 5;
+            this.labelControl5.Text = "Bank A/C NO";
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Location = new System.Drawing.Point(7, 134);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(93, 18);
+            this.labelControl4.TabIndex = 4;
+            this.labelControl4.Text = "Bank Name";
+            // 
+            // panelControl2
+            // 
+            this.panelControl2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panelControl2.Appearance.Options.UseBackColor = true;
+            this.panelControl2.AutoSize = true;
+            this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl2.Controls.Add(this.labelControl3);
+            this.panelControl2.Location = new System.Drawing.Point(4, 5);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(1569, 35);
+            this.panelControl2.TabIndex = 2;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Appearance.Options.UseForeColor = true;
+            this.labelControl3.Location = new System.Drawing.Point(3, 5);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(115, 25);
+            this.labelControl3.TabIndex = 5;
+            this.labelControl3.Text = "Bank Info";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.labelControl1.Location = new System.Drawing.Point(7, 62);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(129, 18);
+            this.labelControl1.TabIndex = 1;
+            this.labelControl1.Text = "Client Company";
+            // 
             // FrmSubClientCompanyBankInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1599, 828);
             this.Controls.Add(this.panelControl1);
+            this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FrmSubClientCompanyBankInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmSubClientCompanyBankInfo";

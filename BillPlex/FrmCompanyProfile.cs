@@ -37,29 +37,6 @@ namespace BillPlex
             gridView1.RefreshData();
         }
 
-        private void Newbtn_Click(object sender, EventArgs e)
-        {
-            bool IsOpen = false;
-
-            Form myForm = Application.OpenForms["FrmCompanyInfo"];
-            if (myForm != null)
-            {
-                myForm.Close();
-                myForm = new FrmCompanyInfo();
-                myForm.MdiParent = this.MdiParent;
-                myForm.Show();
-                IsOpen = true;
-            }
-
-            if (IsOpen == false)
-            {
-                FrmCompanyInfo CompanyInfo = new FrmCompanyInfo();
-                CompanyInfo.MdiParent = this.MdiParent;
-                CompanyInfo.Show();
-            }
-            this.Close();
-        }
-
         private void Deletebtn_Click(object sender, EventArgs e)
         {
             var selectedRows = gridView1.GetSelectedRows();
@@ -101,7 +78,6 @@ namespace BillPlex
 
             CompanyInfoRequest.BindData(gridView1);
 
-
             CompanyInfoRequest.Show();
         }
         private void FrmCompanyProfile_Load(object sender, EventArgs e)
@@ -112,6 +88,28 @@ namespace BillPlex
 
             // Set the controls' positions to the calculated center position
             panelControl1.Location = new Point(centerX, centerY);
+        }
+
+        private void Newbtn_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+
+            Form myForm = Application.OpenForms["FrmCompanyInfo"];
+            if (myForm != null)
+            {
+                myForm.Close();
+                myForm = new FrmCompanyInfo();
+                myForm.MdiParent = this.MdiParent;
+                myForm.Show();
+                IsOpen = true;
+            }
+
+            if (IsOpen == false)
+            {
+                FrmCompanyInfo CompanyInfo = new FrmCompanyInfo();
+                CompanyInfo.MdiParent = this.MdiParent;
+                CompanyInfo.Show();
+            }
         }
     }
 }
