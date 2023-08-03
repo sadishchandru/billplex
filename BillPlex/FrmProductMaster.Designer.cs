@@ -30,8 +30,8 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery4 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter4 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProductMaster));
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -54,6 +54,7 @@ namespace BillPlex
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -65,6 +66,8 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.txtPName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
+            this.panelControl4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelControl2
@@ -78,10 +81,10 @@ namespace BillPlex
             this.panelControl2.Controls.Add(this.panelControl3);
             this.panelControl2.Controls.Add(this.txtPName);
             this.panelControl2.Controls.Add(this.labelControl2);
-            this.panelControl2.Location = new System.Drawing.Point(10, 216);
+            this.panelControl2.Location = new System.Drawing.Point(5, 60);
             this.panelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1596, 656);
+            this.panelControl2.Size = new System.Drawing.Size(1583, 652);
             this.panelControl2.TabIndex = 2;
             // 
             // labelControl1
@@ -90,7 +93,7 @@ namespace BillPlex
             this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(249, 61);
+            this.labelControl1.Location = new System.Drawing.Point(273, 60);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(11, 22);
@@ -102,11 +105,11 @@ namespace BillPlex
             this.gridControl1.DataMember = "PRO_GetProductmodeltemp";
             this.gridControl1.DataSource = this.sqlDataSource1;
             this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gridControl1.Location = new System.Drawing.Point(55, 283);
+            this.gridControl1.Location = new System.Drawing.Point(5, 283);
             this.gridControl1.MainView = this.grd_productmaster;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1540, 369);
+            this.gridControl1.Size = new System.Drawing.Size(1573, 365);
             this.gridControl1.TabIndex = 13;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grd_productmaster});
@@ -116,13 +119,13 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery1.Name = "PRO_GetProductmodeltemp";
-            queryParameter1.Name = "@SearchKey";
-            queryParameter1.Type = typeof(string);
-            storedProcQuery1.Parameters.Add(queryParameter1);
-            storedProcQuery1.StoredProcName = "PRO_GetProductmodeltemp";
+            storedProcQuery4.Name = "PRO_GetProductmodeltemp";
+            queryParameter4.Name = "@SearchKey";
+            queryParameter4.Type = typeof(string);
+            storedProcQuery4.Parameters.Add(queryParameter4);
+            storedProcQuery4.StoredProcName = "PRO_GetProductmodeltemp";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery1});
+            storedProcQuery4});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // grd_productmaster
@@ -164,12 +167,12 @@ namespace BillPlex
             // 
             // labelControl6
             // 
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
             this.labelControl6.Location = new System.Drawing.Point(54, 240);
             this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(169, 19);
+            this.labelControl6.Size = new System.Drawing.Size(182, 18);
             this.labelControl6.TabIndex = 11;
             this.labelControl6.Text = "Search Raw Material";
             // 
@@ -178,7 +181,7 @@ namespace BillPlex
             this.svgImageBox1.Location = new System.Drawing.Point(885, 17);
             this.svgImageBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.svgImageBox1.Name = "svgImageBox1";
-            this.svgImageBox1.Size = new System.Drawing.Size(710, 242);
+            this.svgImageBox1.Size = new System.Drawing.Size(382, 242);
             this.svgImageBox1.SvgImage = global::BillPlex.Properties.Resources.Product_Master;
             this.svgImageBox1.TabIndex = 10;
             this.svgImageBox1.Text = "svgImageBox1";
@@ -200,6 +203,9 @@ namespace BillPlex
             // btClear
             // 
             this.btClear.Location = new System.Drawing.Point(417, 27);
+            this.btClear.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btClear.LookAndFeel.SkinName = "DevExpress Style";
+            this.btClear.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btClear.Name = "btClear";
             this.btClear.Size = new System.Drawing.Size(81, 24);
@@ -210,6 +216,9 @@ namespace BillPlex
             // btExit
             // 
             this.btExit.Location = new System.Drawing.Point(514, 27);
+            this.btExit.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btExit.LookAndFeel.SkinName = "DevExpress Style";
+            this.btExit.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btExit.Name = "btExit";
             this.btExit.Size = new System.Drawing.Size(81, 24);
@@ -219,6 +228,9 @@ namespace BillPlex
             // btDelete
             // 
             this.btDelete.Location = new System.Drawing.Point(309, 27);
+            this.btDelete.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btDelete.LookAndFeel.SkinName = "DevExpress Style";
+            this.btDelete.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btDelete.Name = "btDelete";
             this.btDelete.Size = new System.Drawing.Size(81, 24);
@@ -229,6 +241,10 @@ namespace BillPlex
             // btEdit
             // 
             this.btEdit.Location = new System.Drawing.Point(109, 27);
+            this.btEdit.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btEdit.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightBlue;
+            this.btEdit.LookAndFeel.SkinName = "DevExpress Style";
+            this.btEdit.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btEdit.Name = "btEdit";
             this.btEdit.Size = new System.Drawing.Size(81, 24);
@@ -238,6 +254,9 @@ namespace BillPlex
             // btUpdate
             // 
             this.btUpdate.Location = new System.Drawing.Point(208, 27);
+            this.btUpdate.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btUpdate.LookAndFeel.SkinName = "DevExpress Style";
+            this.btUpdate.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btUpdate.Name = "btUpdate";
             this.btUpdate.Size = new System.Drawing.Size(81, 24);
@@ -248,6 +267,9 @@ namespace BillPlex
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(9, 27);
+            this.btnAdd.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btnAdd.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnAdd.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(81, 24);
@@ -265,44 +287,55 @@ namespace BillPlex
             // 
             // labelControl2
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Location = new System.Drawing.Point(121, 61);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(115, 19);
+            this.labelControl2.Size = new System.Drawing.Size(114, 18);
             this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "Product Name";
             // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.labelControl3);
-            this.panelControl1.Location = new System.Drawing.Point(10, 26);
+            this.panelControl1.Location = new System.Drawing.Point(5, 4);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1596, 81);
+            this.panelControl1.Size = new System.Drawing.Size(1583, 49);
             this.panelControl1.TabIndex = 3;
             // 
             // labelControl3
             // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.ForeColor = System.Drawing.SystemColors.Highlight;
             this.labelControl3.Appearance.Options.UseFont = true;
             this.labelControl3.Appearance.Options.UseForeColor = true;
-            this.labelControl3.Location = new System.Drawing.Point(759, 31);
+            this.labelControl3.Location = new System.Drawing.Point(733, 9);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(182, 29);
+            this.labelControl3.Size = new System.Drawing.Size(205, 29);
             this.labelControl3.TabIndex = 1;
             this.labelControl3.Text = "Product Master";
+            // 
+            // panelControl4
+            // 
+            this.panelControl4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelControl4.Controls.Add(this.panelControl1);
+            this.panelControl4.Controls.Add(this.panelControl2);
+            this.panelControl4.Location = new System.Drawing.Point(13, 13);
+            this.panelControl4.Name = "panelControl4";
+            this.panelControl4.Size = new System.Drawing.Size(1593, 716);
+            this.panelControl4.TabIndex = 4;
             // 
             // FrmProductMaster
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1618, 883);
-            this.Controls.Add(this.panelControl1);
-            this.Controls.Add(this.panelControl2);
+            this.ClientSize = new System.Drawing.Size(1618, 743);
+            this.Controls.Add(this.panelControl4);
+            this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmProductMaster";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -322,6 +355,8 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
+            this.panelControl4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -349,5 +384,6 @@ namespace BillPlex
         private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colProductmodel;
+        private DevExpress.XtraEditors.PanelControl panelControl4;
     }
 }

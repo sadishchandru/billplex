@@ -204,20 +204,11 @@ namespace BillPlex
 
         private void FrmSizeMaster_Load(object sender, EventArgs e)
         {
+            int centerX = (this.Width - panelControl4.Width) / 2;
+            int centerY = (this.Height - panelControl4.Height) / 2;
 
-            CenterToScreen();
-
-            // Set the form size to occupy the entire screen with equal margins on all four sides
-            int margin = 50; // Adjust this value to control the size of the margins
-            Rectangle screenBounds = Screen.FromControl(this).Bounds;
-            int formWidth = screenBounds.Width - 5 * margin;
-            int formHeight = screenBounds.Height - 5 * margin;
-            this.Size = new Size(formWidth, formHeight);
-
-            // Set the form position to the center
-            int formX = (screenBounds.Width - formWidth) / 5;
-            int formY = (screenBounds.Height - formHeight) / 5;
-            this.Location = new Point(formX, formY);
+            // Set the controls' positions to the calculated center position
+            panelControl4.Location = new Point(centerX, centerY);
         }
     }
 }

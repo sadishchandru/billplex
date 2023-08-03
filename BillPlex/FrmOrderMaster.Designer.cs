@@ -30,11 +30,10 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery3 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter3 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmOrderMaster));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
@@ -68,37 +67,28 @@ namespace BillPlex
             this.btnClear = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
-            this.radioGroup1 = new DevExpress.XtraEditors.RadioGroup();
+            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
+            this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.labelControl1);
-            this.panelControl1.Location = new System.Drawing.Point(11, 11);
+            this.panelControl1.Location = new System.Drawing.Point(5, 4);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1480, 81);
+            this.panelControl1.Size = new System.Drawing.Size(1523, 53);
             this.panelControl1.TabIndex = 0;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(487, 25);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(170, 31);
-            this.labelControl1.TabIndex = 2;
-            this.labelControl1.Text = "Order Master";
             // 
             // panelControl2
             // 
@@ -111,21 +101,21 @@ namespace BillPlex
             this.panelControl2.Controls.Add(this.btnClear);
             this.panelControl2.Controls.Add(this.btnAdd);
             this.panelControl2.Controls.Add(this.btnEdit);
-            this.panelControl2.Controls.Add(this.radioGroup1);
-            this.panelControl2.Location = new System.Drawing.Point(11, 109);
+            this.panelControl2.Controls.Add(this.panelControl4);
+            this.panelControl2.Location = new System.Drawing.Point(5, 61);
             this.panelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1480, 640);
+            this.panelControl2.Size = new System.Drawing.Size(1523, 555);
             this.panelControl2.TabIndex = 1;
             // 
             // gridControl1
             // 
             this.gridControl1.DataMember = "PRO_GetOrderMaster";
             this.gridControl1.DataSource = this.sqlDataSource1;
-            this.gridControl1.Location = new System.Drawing.Point(5, 120);
+            this.gridControl1.Location = new System.Drawing.Point(5, 23);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1291, 515);
+            this.gridControl1.Size = new System.Drawing.Size(1291, 527);
             this.gridControl1.TabIndex = 59;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -135,13 +125,13 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery3.Name = "PRO_GetOrderMaster";
-            queryParameter3.Name = "@SearchKey";
-            queryParameter3.Type = typeof(string);
-            storedProcQuery3.Parameters.Add(queryParameter3);
-            storedProcQuery3.StoredProcName = "PRO_GetOrderMaster";
+            storedProcQuery2.Name = "PRO_GetOrderMaster";
+            queryParameter2.Name = "@SearchKey";
+            queryParameter2.Type = typeof(string);
+            storedProcQuery2.Parameters.Add(queryParameter2);
+            storedProcQuery2.StoredProcName = "PRO_GetOrderMaster";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery3});
+            storedProcQuery2});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // gridView1
@@ -211,7 +201,7 @@ namespace BillPlex
             this.colCode.MinWidth = 80;
             this.colCode.Name = "colCode";
             this.colCode.Visible = true;
-            this.colCode.VisibleIndex = 4;
+            this.colCode.VisibleIndex = 3;
             this.colCode.Width = 80;
             // 
             // colCustomerId
@@ -227,7 +217,7 @@ namespace BillPlex
             this.colName.MinWidth = 80;
             this.colName.Name = "colName";
             this.colName.Visible = true;
-            this.colName.VisibleIndex = 6;
+            this.colName.VisibleIndex = 4;
             this.colName.Width = 80;
             // 
             // colProductNameId
@@ -236,7 +226,7 @@ namespace BillPlex
             this.colProductNameId.MinWidth = 80;
             this.colProductNameId.Name = "colProductNameId";
             this.colProductNameId.Visible = true;
-            this.colProductNameId.VisibleIndex = 7;
+            this.colProductNameId.VisibleIndex = 5;
             this.colProductNameId.Width = 80;
             // 
             // colproductmodel
@@ -245,7 +235,7 @@ namespace BillPlex
             this.colproductmodel.MinWidth = 80;
             this.colproductmodel.Name = "colproductmodel";
             this.colproductmodel.Visible = true;
-            this.colproductmodel.VisibleIndex = 8;
+            this.colproductmodel.VisibleIndex = 6;
             this.colproductmodel.Width = 80;
             // 
             // colproductcode
@@ -254,7 +244,7 @@ namespace BillPlex
             this.colproductcode.MinWidth = 80;
             this.colproductcode.Name = "colproductcode";
             this.colproductcode.Visible = true;
-            this.colproductcode.VisibleIndex = 9;
+            this.colproductcode.VisibleIndex = 7;
             this.colproductcode.Width = 80;
             // 
             // colproductsize
@@ -263,7 +253,7 @@ namespace BillPlex
             this.colproductsize.MinWidth = 80;
             this.colproductsize.Name = "colproductsize";
             this.colproductsize.Visible = true;
-            this.colproductsize.VisibleIndex = 10;
+            this.colproductsize.VisibleIndex = 8;
             this.colproductsize.Width = 80;
             // 
             // colQuantity
@@ -272,7 +262,7 @@ namespace BillPlex
             this.colQuantity.MinWidth = 80;
             this.colQuantity.Name = "colQuantity";
             this.colQuantity.Visible = true;
-            this.colQuantity.VisibleIndex = 11;
+            this.colQuantity.VisibleIndex = 9;
             this.colQuantity.Width = 80;
             // 
             // colRawmaterialId
@@ -281,7 +271,7 @@ namespace BillPlex
             this.colRawmaterialId.MinWidth = 80;
             this.colRawmaterialId.Name = "colRawmaterialId";
             this.colRawmaterialId.Visible = true;
-            this.colRawmaterialId.VisibleIndex = 12;
+            this.colRawmaterialId.VisibleIndex = 10;
             this.colRawmaterialId.Width = 80;
             // 
             // colRawType
@@ -290,7 +280,7 @@ namespace BillPlex
             this.colRawType.MinWidth = 80;
             this.colRawType.Name = "colRawType";
             this.colRawType.Visible = true;
-            this.colRawType.VisibleIndex = 13;
+            this.colRawType.VisibleIndex = 11;
             this.colRawType.Width = 80;
             // 
             // colColorId
@@ -299,7 +289,7 @@ namespace BillPlex
             this.colColorId.MinWidth = 80;
             this.colColorId.Name = "colColorId";
             this.colColorId.Visible = true;
-            this.colColorId.VisibleIndex = 14;
+            this.colColorId.VisibleIndex = 12;
             this.colColorId.Width = 80;
             // 
             // colRawQty
@@ -308,7 +298,7 @@ namespace BillPlex
             this.colRawQty.MinWidth = 80;
             this.colRawQty.Name = "colRawQty";
             this.colRawQty.Visible = true;
-            this.colRawQty.VisibleIndex = 15;
+            this.colRawQty.VisibleIndex = 13;
             this.colRawQty.Width = 80;
             // 
             // colTotalRaw
@@ -317,7 +307,7 @@ namespace BillPlex
             this.colTotalRaw.MinWidth = 80;
             this.colTotalRaw.Name = "colTotalRaw";
             this.colTotalRaw.Visible = true;
-            this.colTotalRaw.VisibleIndex = 16;
+            this.colTotalRaw.VisibleIndex = 14;
             this.colTotalRaw.Width = 80;
             // 
             // colDelivarydate
@@ -326,7 +316,7 @@ namespace BillPlex
             this.colDelivarydate.MinWidth = 80;
             this.colDelivarydate.Name = "colDelivarydate";
             this.colDelivarydate.Visible = true;
-            this.colDelivarydate.VisibleIndex = 17;
+            this.colDelivarydate.VisibleIndex = 15;
             this.colDelivarydate.Width = 80;
             // 
             // colWagesforEmp
@@ -335,7 +325,7 @@ namespace BillPlex
             this.colWagesforEmp.MinWidth = 80;
             this.colWagesforEmp.Name = "colWagesforEmp";
             this.colWagesforEmp.Visible = true;
-            this.colWagesforEmp.VisibleIndex = 18;
+            this.colWagesforEmp.VisibleIndex = 16;
             this.colWagesforEmp.Width = 80;
             // 
             // colStatus
@@ -344,7 +334,7 @@ namespace BillPlex
             this.colStatus.MinWidth = 80;
             this.colStatus.Name = "colStatus";
             this.colStatus.Visible = true;
-            this.colStatus.VisibleIndex = 19;
+            this.colStatus.VisibleIndex = 17;
             this.colStatus.Width = 80;
             // 
             // colAdditionalReason
@@ -353,14 +343,14 @@ namespace BillPlex
             this.colAdditionalReason.MinWidth = 80;
             this.colAdditionalReason.Name = "colAdditionalReason";
             this.colAdditionalReason.Visible = true;
-            this.colAdditionalReason.VisibleIndex = 20;
+            this.colAdditionalReason.VisibleIndex = 18;
             this.colAdditionalReason.Width = 80;
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnRefresh.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefresh.Appearance.Options.UseFont = true;
-            this.btnRefresh.Location = new System.Drawing.Point(1313, 92);
+            this.btnRefresh.Location = new System.Drawing.Point(1373, 69);
             this.btnRefresh.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.btnRefresh.LookAndFeel.SkinName = "DevExpress Style";
             this.btnRefresh.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -372,9 +362,9 @@ namespace BillPlex
             // 
             // btnNew
             // 
-            this.btnNew.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNew.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNew.Appearance.Options.UseFont = true;
-            this.btnNew.Location = new System.Drawing.Point(1323, 206);
+            this.btnNew.Location = new System.Drawing.Point(1383, 183);
             this.btnNew.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.btnNew.LookAndFeel.SkinName = "DevExpress Style";
             this.btnNew.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -387,9 +377,9 @@ namespace BillPlex
             // 
             // btnExit
             // 
-            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnExit.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.Appearance.Options.UseFont = true;
-            this.btnExit.Location = new System.Drawing.Point(1323, 471);
+            this.btnExit.Location = new System.Drawing.Point(1383, 448);
             this.btnExit.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.btnExit.LookAndFeel.SkinName = "DevExpress Style";
             this.btnExit.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -401,10 +391,10 @@ namespace BillPlex
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnUpdate.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Appearance.Options.UseFont = true;
             this.btnUpdate.Enabled = false;
-            this.btnUpdate.Location = new System.Drawing.Point(1323, 340);
+            this.btnUpdate.Location = new System.Drawing.Point(1383, 317);
             this.btnUpdate.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.btnUpdate.LookAndFeel.SkinName = "DevExpress Style";
             this.btnUpdate.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -416,9 +406,9 @@ namespace BillPlex
             // 
             // btnDelete
             // 
-            this.btnDelete.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnDelete.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Appearance.Options.UseFont = true;
-            this.btnDelete.Location = new System.Drawing.Point(1323, 383);
+            this.btnDelete.Location = new System.Drawing.Point(1383, 360);
             this.btnDelete.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.btnDelete.LookAndFeel.SkinName = "DevExpress Style";
             this.btnDelete.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -431,10 +421,10 @@ namespace BillPlex
             // 
             // btnClear
             // 
-            this.btnClear.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnClear.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.Appearance.Options.UseFont = true;
             this.btnClear.Enabled = false;
-            this.btnClear.Location = new System.Drawing.Point(1323, 428);
+            this.btnClear.Location = new System.Drawing.Point(1383, 405);
             this.btnClear.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.btnClear.LookAndFeel.SkinName = "DevExpress Style";
             this.btnClear.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -446,10 +436,10 @@ namespace BillPlex
             // 
             // btnAdd
             // 
-            this.btnAdd.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Appearance.Options.UseFont = true;
             this.btnAdd.Enabled = false;
-            this.btnAdd.Location = new System.Drawing.Point(1323, 252);
+            this.btnAdd.Location = new System.Drawing.Point(1383, 229);
             this.btnAdd.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.btnAdd.LookAndFeel.SkinName = "DevExpress Style";
             this.btnAdd.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -461,9 +451,9 @@ namespace BillPlex
             // 
             // btnEdit
             // 
-            this.btnEdit.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnEdit.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.Appearance.Options.UseFont = true;
-            this.btnEdit.Location = new System.Drawing.Point(1323, 298);
+            this.btnEdit.Location = new System.Drawing.Point(1383, 275);
             this.btnEdit.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.btnEdit.LookAndFeel.SkinName = "DevExpress Style";
             this.btnEdit.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -473,45 +463,51 @@ namespace BillPlex
             this.btnEdit.TabIndex = 51;
             this.btnEdit.Text = "EDIT";
             // 
-            // radioGroup1
+            // panelControl3
             // 
-            this.radioGroup1.Location = new System.Drawing.Point(712, 66);
-            this.radioGroup1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.radioGroup1.Name = "radioGroup1";
-            this.radioGroup1.Properties.Appearance.BackColor = System.Drawing.SystemColors.Control;
-            this.radioGroup1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioGroup1.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.radioGroup1.Properties.Appearance.Options.UseBackColor = true;
-            this.radioGroup1.Properties.Appearance.Options.UseFont = true;
-            this.radioGroup1.Properties.Appearance.Options.UseForeColor = true;
-            this.radioGroup1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.radioGroup1.Properties.ColumnIndent = 5;
-            this.radioGroup1.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.radioGroup1.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Open", true, ((short)(1)), "open"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Cancel", true, ((short)(1)), "cancel"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Complete", true, ((short)(1)), "complete"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "All", true, ((short)(1)), "all")});
-            this.radioGroup1.Properties.ItemsLayout = DevExpress.XtraEditors.RadioGroupItemsLayout.Flow;
-            this.radioGroup1.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
-            this.radioGroup1.Properties.LookAndFeel.SkinName = "DevExpress Style";
-            this.radioGroup1.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.radioGroup1.Size = new System.Drawing.Size(502, 40);
-            this.radioGroup1.TabIndex = 0;
+            this.panelControl3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelControl3.Controls.Add(this.panelControl1);
+            this.panelControl3.Controls.Add(this.panelControl2);
+            this.panelControl3.Location = new System.Drawing.Point(12, 12);
+            this.panelControl3.Name = "panelControl3";
+            this.panelControl3.Size = new System.Drawing.Size(1533, 620);
+            this.panelControl3.TabIndex = 2;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Appearance.Options.UseForeColor = true;
+            this.labelControl1.Location = new System.Drawing.Point(662, 10);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(198, 32);
+            this.labelControl1.TabIndex = 4;
+            this.labelControl1.Text = "Order Master";
+            // 
+            // panelControl4
+            // 
+            this.panelControl4.Location = new System.Drawing.Point(1362, 58);
+            this.panelControl4.Name = "panelControl4";
+            this.panelControl4.Size = new System.Drawing.Size(124, 430);
+            this.panelControl4.TabIndex = 60;
             // 
             // FrmOrderMaster
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoScroll = true;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1503, 760);
-            this.Controls.Add(this.panelControl2);
-            this.Controls.Add(this.panelControl1);
+            this.ClientSize = new System.Drawing.Size(1557, 644);
+            this.Controls.Add(this.panelControl3);
+            this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MinimumSize = new System.Drawing.Size(500, 0);
             this.Name = "FrmOrderMaster";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmOrderMaster";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmOrderMaster_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
@@ -520,7 +516,9 @@ namespace BillPlex
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
+            this.panelControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -529,7 +527,6 @@ namespace BillPlex
 
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.PanelControl panelControl2;
-        private DevExpress.XtraEditors.RadioGroup radioGroup1;
         private DevExpress.XtraEditors.SimpleButton btnRefresh;
         private DevExpress.XtraEditors.SimpleButton btnNew;
         private DevExpress.XtraEditors.SimpleButton btnExit;
@@ -562,6 +559,8 @@ namespace BillPlex
         private DevExpress.XtraGrid.Columns.GridColumn colWagesforEmp;
         private DevExpress.XtraGrid.Columns.GridColumn colStatus;
         private DevExpress.XtraGrid.Columns.GridColumn colAdditionalReason;
+        private DevExpress.XtraEditors.PanelControl panelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.PanelControl panelControl4;
     }
 }

@@ -30,11 +30,10 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRawMaterial));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
@@ -61,6 +60,8 @@ namespace BillPlex
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -74,29 +75,18 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.txtRawMaterial.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtStock.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtType.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
+            this.panelControl4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.labelControl1);
-            this.panelControl1.Location = new System.Drawing.Point(10, 10);
+            this.panelControl1.Location = new System.Drawing.Point(5, 4);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1516, 104);
+            this.panelControl1.Size = new System.Drawing.Size(1421, 49);
             this.panelControl1.TabIndex = 0;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(658, 46);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(212, 39);
-            this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Raw Material";
             // 
             // panelControl2
             // 
@@ -114,10 +104,10 @@ namespace BillPlex
             this.panelControl2.Controls.Add(this.labelControl4);
             this.panelControl2.Controls.Add(this.labelControl3);
             this.panelControl2.Controls.Add(this.labelControl2);
-            this.panelControl2.Location = new System.Drawing.Point(11, 119);
+            this.panelControl2.Location = new System.Drawing.Point(5, 57);
             this.panelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1515, 734);
+            this.panelControl2.Size = new System.Drawing.Size(1421, 655);
             this.panelControl2.TabIndex = 1;
             // 
             // gridControl1
@@ -125,7 +115,7 @@ namespace BillPlex
             this.gridControl1.DataMember = "PRO_GetRawMaterial";
             this.gridControl1.DataSource = this.sqlDataSource1;
             this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gridControl1.Location = new System.Drawing.Point(48, 396);
+            this.gridControl1.Location = new System.Drawing.Point(48, 312);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControl1.Name = "gridControl1";
@@ -139,13 +129,13 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery1.Name = "PRO_GetRawMaterial";
-            queryParameter1.Name = "@SearchKey";
-            queryParameter1.Type = typeof(string);
-            storedProcQuery1.Parameters.Add(queryParameter1);
-            storedProcQuery1.StoredProcName = "PRO_GetRawMaterial";
+            storedProcQuery2.Name = "PRO_GetRawMaterial";
+            queryParameter2.Name = "@SearchKey";
+            queryParameter2.Type = typeof(string);
+            storedProcQuery2.Parameters.Add(queryParameter2);
+            storedProcQuery2.StoredProcName = "PRO_GetRawMaterial";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery1});
+            storedProcQuery2});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // gridView1
@@ -189,7 +179,7 @@ namespace BillPlex
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(289, 358);
+            this.txtSearch.Location = new System.Drawing.Point(297, 261);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(432, 20);
@@ -197,21 +187,21 @@ namespace BillPlex
             // 
             // labelControl6
             // 
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(53, 354);
+            this.labelControl6.Location = new System.Drawing.Point(48, 264);
             this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(169, 19);
+            this.labelControl6.Size = new System.Drawing.Size(166, 18);
             this.labelControl6.TabIndex = 11;
             this.labelControl6.Text = "Search Raw Material";
             // 
             // svgImageBox1
             // 
-            this.svgImageBox1.Location = new System.Drawing.Point(781, 55);
+            this.svgImageBox1.Location = new System.Drawing.Point(969, 25);
             this.svgImageBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.svgImageBox1.Name = "svgImageBox1";
-            this.svgImageBox1.Size = new System.Drawing.Size(610, 318);
+            this.svgImageBox1.Size = new System.Drawing.Size(440, 256);
             this.svgImageBox1.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Stretch;
             this.svgImageBox1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageBox1.SvgImage")));
             this.svgImageBox1.TabIndex = 10;
@@ -225,15 +215,15 @@ namespace BillPlex
             this.panelControl3.Controls.Add(this.btEdit);
             this.panelControl3.Controls.Add(this.btUpdate);
             this.panelControl3.Controls.Add(this.btnAdd);
-            this.panelControl3.Location = new System.Drawing.Point(89, 230);
+            this.panelControl3.Location = new System.Drawing.Point(89, 176);
             this.panelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(632, 81);
+            this.panelControl3.Size = new System.Drawing.Size(632, 58);
             this.panelControl3.TabIndex = 9;
             // 
             // btClear
             // 
-            this.btClear.Location = new System.Drawing.Point(417, 27);
+            this.btClear.Location = new System.Drawing.Point(417, 16);
             this.btClear.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.btClear.LookAndFeel.SkinName = "DevExpress Style";
             this.btClear.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -246,7 +236,7 @@ namespace BillPlex
             // 
             // btExit
             // 
-            this.btExit.Location = new System.Drawing.Point(516, 27);
+            this.btExit.Location = new System.Drawing.Point(513, 16);
             this.btExit.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.btExit.LookAndFeel.SkinName = "DevExpress Style";
             this.btExit.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -259,7 +249,7 @@ namespace BillPlex
             // 
             // btDelete
             // 
-            this.btDelete.Location = new System.Drawing.Point(309, 27);
+            this.btDelete.Location = new System.Drawing.Point(309, 16);
             this.btDelete.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.btDelete.LookAndFeel.SkinName = "DevExpress Style";
             this.btDelete.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -272,7 +262,7 @@ namespace BillPlex
             // 
             // btEdit
             // 
-            this.btEdit.Location = new System.Drawing.Point(109, 27);
+            this.btEdit.Location = new System.Drawing.Point(109, 16);
             this.btEdit.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.btEdit.LookAndFeel.SkinName = "DevExpress Style";
             this.btEdit.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -284,7 +274,7 @@ namespace BillPlex
             // 
             // btUpdate
             // 
-            this.btUpdate.Location = new System.Drawing.Point(208, 27);
+            this.btUpdate.Location = new System.Drawing.Point(208, 16);
             this.btUpdate.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.btUpdate.LookAndFeel.SkinName = "DevExpress Style";
             this.btUpdate.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -297,7 +287,7 @@ namespace BillPlex
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(9, 27);
+            this.btnAdd.Location = new System.Drawing.Point(9, 16);
             this.btnAdd.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.btnAdd.LookAndFeel.SkinName = "DevExpress Style";
             this.btnAdd.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -310,7 +300,7 @@ namespace BillPlex
             // 
             // txtRawMaterial
             // 
-            this.txtRawMaterial.Location = new System.Drawing.Point(284, 102);
+            this.txtRawMaterial.Location = new System.Drawing.Point(284, 81);
             this.txtRawMaterial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtRawMaterial.Name = "txtRawMaterial";
             this.txtRawMaterial.Size = new System.Drawing.Size(432, 20);
@@ -318,7 +308,7 @@ namespace BillPlex
             // 
             // txtStock
             // 
-            this.txtStock.Location = new System.Drawing.Point(284, 174);
+            this.txtStock.Location = new System.Drawing.Point(284, 121);
             this.txtStock.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(432, 20);
@@ -338,7 +328,7 @@ namespace BillPlex
             this.labelControl7.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl7.Appearance.Options.UseFont = true;
             this.labelControl7.Appearance.Options.UseForeColor = true;
-            this.labelControl7.Location = new System.Drawing.Point(232, 165);
+            this.labelControl7.Location = new System.Drawing.Point(239, 124);
             this.labelControl7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(14, 27);
@@ -351,7 +341,7 @@ namespace BillPlex
             this.labelControl5.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl5.Appearance.Options.UseFont = true;
             this.labelControl5.Appearance.Options.UseForeColor = true;
-            this.labelControl5.Location = new System.Drawing.Point(219, 96);
+            this.labelControl5.Location = new System.Drawing.Point(239, 84);
             this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(14, 27);
@@ -360,44 +350,68 @@ namespace BillPlex
             // 
             // labelControl4
             // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(48, 100);
+            this.labelControl4.Location = new System.Drawing.Point(48, 79);
             this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(158, 19);
+            this.labelControl4.Size = new System.Drawing.Size(155, 18);
             this.labelControl4.TabIndex = 2;
             this.labelControl4.Text = "Enter Raw Material";
             // 
             // labelControl3
             // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(48, 167);
+            this.labelControl3.Location = new System.Drawing.Point(48, 124);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(167, 19);
+            this.labelControl3.Size = new System.Drawing.Size(169, 18);
             this.labelControl3.TabIndex = 1;
             this.labelControl3.Text = "Enter Stock Qty (Kg)";
             // 
             // labelControl2
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Location = new System.Drawing.Point(48, 40);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(125, 19);
+            this.labelControl2.Size = new System.Drawing.Size(124, 18);
             this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "Enter The Type";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Verdana", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Appearance.Options.UseForeColor = true;
+            this.labelControl1.Location = new System.Drawing.Point(653, 7);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(211, 35);
+            this.labelControl1.TabIndex = 1;
+            this.labelControl1.Text = "Raw Material";
+            // 
+            // panelControl4
+            // 
+            this.panelControl4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelControl4.Controls.Add(this.panelControl2);
+            this.panelControl4.Controls.Add(this.panelControl1);
+            this.panelControl4.Location = new System.Drawing.Point(13, 7);
+            this.panelControl4.Name = "panelControl4";
+            this.panelControl4.Size = new System.Drawing.Size(1433, 721);
+            this.panelControl4.TabIndex = 2;
             // 
             // FrmRawMaterial
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1714, 916);
-            this.Controls.Add(this.panelControl2);
-            this.Controls.Add(this.panelControl1);
+            this.ClientSize = new System.Drawing.Size(1451, 756);
+            this.Controls.Add(this.panelControl4);
+            this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmRawMaterial";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -419,6 +433,8 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.txtRawMaterial.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtStock.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtType.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
+            this.panelControl4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -426,7 +442,6 @@ namespace BillPlex
         #endregion
 
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
@@ -453,5 +468,7 @@ namespace BillPlex
         private DevExpress.XtraGrid.Columns.GridColumn colRawMaterials;
         private DevExpress.XtraGrid.Columns.GridColumn colRawMaterialType;
         private DevExpress.XtraGrid.Columns.GridColumn colRawMaterialStock;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.PanelControl panelControl4;
     }
 }

@@ -571,6 +571,8 @@ namespace BillPlex
             // 
             // EmployeeMasterTab
             // 
+            this.EmployeeMasterTab.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.EmployeeMasterTab.Appearance.Options.UseBackColor = true;
             this.EmployeeMasterTab.Location = new System.Drawing.Point(5, 5);
             this.EmployeeMasterTab.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.EmployeeMasterTab.LookAndFeel.SkinName = "DevExpress Style";
@@ -588,6 +590,9 @@ namespace BillPlex
             // 
             // PERSONAL
             // 
+            this.PERSONAL.Appearance.HeaderActive.BackColor = System.Drawing.Color.Pink;
+            this.PERSONAL.Appearance.HeaderActive.Options.UseBackColor = true;
+            this.PERSONAL.Appearance.PageClient.BackColor = System.Drawing.Color.Gray;
             this.PERSONAL.Controls.Add(this.labelCodeExist);
             this.PERSONAL.Controls.Add(this.labelAvailable);
             this.PERSONAL.Controls.Add(this.txtPhone);
@@ -685,7 +690,7 @@ namespace BillPlex
             this.PERSONAL.Controls.Add(this.txtCName);
             this.PERSONAL.Controls.Add(this.txtSCName);
             this.PERSONAL.Name = "PERSONAL";
-            this.PERSONAL.Size = new System.Drawing.Size(1414, 678);
+            this.PERSONAL.Size = new System.Drawing.Size(1414, 673);
             this.PERSONAL.Text = "PERSONAL";
             // 
             // labelCodeExist
@@ -1896,6 +1901,8 @@ namespace BillPlex
             // 
             // FINANCE
             // 
+            this.FINANCE.Appearance.HeaderActive.BackColor = System.Drawing.Color.LightPink;
+            this.FINANCE.Appearance.HeaderActive.Options.UseBackColor = true;
             this.FINANCE.Controls.Add(this.labelControl73);
             this.FINANCE.Controls.Add(this.labelControl68);
             this.FINANCE.Controls.Add(this.txtBIEsiNo);
@@ -1945,7 +1952,7 @@ namespace BillPlex
             this.FINANCE.Controls.Add(this.drpLOffice);
             this.FINANCE.Controls.Add(this.drpESIDispensary);
             this.FINANCE.Name = "FINANCE";
-            this.FINANCE.Size = new System.Drawing.Size(1414, 678);
+            this.FINANCE.Size = new System.Drawing.Size(1414, 673);
             this.FINANCE.Text = "FINANCE";
             // 
             // labelControl73
@@ -2537,6 +2544,8 @@ namespace BillPlex
             // 
             // Family
             // 
+            this.Family.Appearance.HeaderActive.BackColor = System.Drawing.Color.LightPink;
+            this.Family.Appearance.HeaderActive.Options.UseBackColor = true;
             this.Family.Controls.Add(this.FamilyGridControl);
             this.Family.Controls.Add(this.btndelete);
             this.Family.Controls.Add(this.bntAddRow);
@@ -2568,7 +2577,7 @@ namespace BillPlex
             this.Family.Controls.Add(this.ddFDOB);
             this.Family.Controls.Add(this.drpResiding);
             this.Family.Name = "Family";
-            this.Family.Size = new System.Drawing.Size(1414, 678);
+            this.Family.Size = new System.Drawing.Size(1414, 673);
             this.Family.Text = "Family";
             // 
             // FamilyGridControl
@@ -3088,6 +3097,17 @@ namespace BillPlex
             // 
             // Nominee
             // 
+            this.Nominee.Appearance.HeaderActive.BackColor = System.Drawing.Color.LightPink;
+            this.Nominee.Appearance.HeaderActive.Options.UseBackColor = true;
+            this.Nominee.Appearance.HeaderHotTracked.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Nominee.Appearance.HeaderHotTracked.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Nominee.Appearance.HeaderHotTracked.Options.UseBackColor = true;
+            this.Nominee.Appearance.HeaderHotTracked.Options.UseFont = true;
+            this.Nominee.Appearance.PageClient.BackColor = System.Drawing.Color.Gainsboro;
+            this.Nominee.Appearance.PageClient.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Nominee.Appearance.PageClient.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Nominee.Appearance.PageClient.Options.UseBackColor = true;
+            this.Nominee.Appearance.PageClient.Options.UseBorderColor = true;
             this.Nominee.Controls.Add(this.NomieeGridControl);
             this.Nominee.Controls.Add(this.btnCopyFamily);
             this.Nominee.Controls.Add(this.btnDeleteRow);
@@ -3130,7 +3150,7 @@ namespace BillPlex
             this.Nominee.Controls.Add(this.txtNAddress);
             this.Nominee.Controls.Add(this.txtGAddress);
             this.Nominee.Name = "Nominee";
-            this.Nominee.Size = new System.Drawing.Size(1414, 678);
+            this.Nominee.Size = new System.Drawing.Size(1414, 673);
             this.Nominee.Text = "Nominee";
             // 
             // NomieeGridControl
@@ -3815,7 +3835,7 @@ namespace BillPlex
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1583, 784);
+            this.ClientSize = new System.Drawing.Size(1636, 849);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Name = "FrmEmployeeMaster";
