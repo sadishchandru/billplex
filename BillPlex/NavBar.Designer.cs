@@ -192,7 +192,7 @@ namespace BillPlex
             // 
             // SubClientBankInfo
             // 
-            this.SubClientBankInfo.Caption = "Sub Clinet";
+            this.SubClientBankInfo.Caption = "Sub Client";
             this.SubClientBankInfo.Id = 17;
             this.SubClientBankInfo.Name = "SubClientBankInfo";
             this.SubClientBankInfo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_SubClientBankInfo);

@@ -270,6 +270,7 @@ namespace BillPlex
             txtAuthorEmailId.ResetText();
             txtAuthorMobileNo.ResetText();
             txtAuthorPanNo.ResetText();
+            txtBankDetails.ResetText();
 
         }
 

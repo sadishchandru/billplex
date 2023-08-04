@@ -94,6 +94,8 @@ namespace BillPlex
                         btnCancel_Click();
                         btnCancel.Enabled = true;
                         ReloadSqlDataSource();
+                        btnAdd.Enabled = true;
+                        btnUpdate.Enabled = false;
                     }
                 }
                 else

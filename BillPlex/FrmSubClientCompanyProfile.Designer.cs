@@ -30,12 +30,19 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery3 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSubClientCompanyProfile));
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
+            this.Exitbtn = new DevExpress.XtraEditors.SimpleButton();
+            this.Clearbtn = new DevExpress.XtraEditors.SimpleButton();
+            this.Deletebtn = new DevExpress.XtraEditors.SimpleButton();
+            this.Updatebtn = new DevExpress.XtraEditors.SimpleButton();
+            this.Editbtn = new DevExpress.XtraEditors.SimpleButton();
+            this.Addbtn = new DevExpress.XtraEditors.SimpleButton();
+            this.Newbtn = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.SubClientGrid = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -80,35 +87,28 @@ namespace BillPlex
             this.colAuthorPan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAuthorPercent = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAuthorActive = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
-            this.Exitbtn = new DevExpress.XtraEditors.SimpleButton();
-            this.Clearbtn = new DevExpress.XtraEditors.SimpleButton();
-            this.Deletebtn = new DevExpress.XtraEditors.SimpleButton();
-            this.Updatebtn = new DevExpress.XtraEditors.SimpleButton();
-            this.Editbtn = new DevExpress.XtraEditors.SimpleButton();
-            this.Addbtn = new DevExpress.XtraEditors.SimpleButton();
-            this.Newbtn = new DevExpress.XtraEditors.SimpleButton();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
-            this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SubClientGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
             this.panelControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SubClientGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
+            this.panelControl2.SuspendLayout();
             this.SuspendLayout();
             // 
             // sqlDataSource1
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery3.Name = "PRO_GetSubClientCompanyProfileInfo";
-            storedProcQuery3.StoredProcName = "PRO_GetSubClientCompanyProfileInfo";
+            storedProcQuery1.Name = "PRO_GetSubClientCompanyProfileInfo";
+            storedProcQuery1.StoredProcName = "PRO_GetSubClientCompanyProfileInfo";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery3});
+            storedProcQuery1});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // panelControl1
@@ -121,15 +121,6 @@ namespace BillPlex
             this.panelControl1.Size = new System.Drawing.Size(1542, 724);
             this.panelControl1.TabIndex = 0;
             // 
-            // panelControl2
-            // 
-            this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.panelControl2.Controls.Add(this.labelControl1);
-            this.panelControl2.Location = new System.Drawing.Point(5, 5);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1532, 72);
-            this.panelControl2.TabIndex = 2;
-            // 
             // panelControl3
             // 
             this.panelControl3.Controls.Add(this.panelControl5);
@@ -138,6 +129,125 @@ namespace BillPlex
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(1532, 636);
             this.panelControl3.TabIndex = 3;
+            // 
+            // panelControl5
+            // 
+            this.panelControl5.Controls.Add(this.Exitbtn);
+            this.panelControl5.Controls.Add(this.Clearbtn);
+            this.panelControl5.Controls.Add(this.Deletebtn);
+            this.panelControl5.Controls.Add(this.Updatebtn);
+            this.panelControl5.Controls.Add(this.Editbtn);
+            this.panelControl5.Controls.Add(this.Addbtn);
+            this.panelControl5.Controls.Add(this.Newbtn);
+            this.panelControl5.Location = new System.Drawing.Point(1404, 143);
+            this.panelControl5.Name = "panelControl5";
+            this.panelControl5.Size = new System.Drawing.Size(98, 281);
+            this.panelControl5.TabIndex = 2;
+            // 
+            // Exitbtn
+            // 
+            this.Exitbtn.Appearance.BackColor = System.Drawing.Color.LightBlue;
+            this.Exitbtn.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Exitbtn.Appearance.Options.UseBackColor = true;
+            this.Exitbtn.Appearance.Options.UseFont = true;
+            this.Exitbtn.Enabled = false;
+            this.Exitbtn.Location = new System.Drawing.Point(12, 246);
+            this.Exitbtn.LookAndFeel.SkinName = "DevExpress Style";
+            this.Exitbtn.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.Exitbtn.Name = "Exitbtn";
+            this.Exitbtn.Size = new System.Drawing.Size(75, 23);
+            this.Exitbtn.TabIndex = 11;
+            this.Exitbtn.Text = "EXIT";
+            // 
+            // Clearbtn
+            // 
+            this.Clearbtn.Appearance.BackColor = System.Drawing.Color.LightBlue;
+            this.Clearbtn.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Clearbtn.Appearance.Options.UseBackColor = true;
+            this.Clearbtn.Appearance.Options.UseFont = true;
+            this.Clearbtn.Enabled = false;
+            this.Clearbtn.Location = new System.Drawing.Point(12, 207);
+            this.Clearbtn.LookAndFeel.SkinName = "DevExpress Style";
+            this.Clearbtn.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.Clearbtn.Name = "Clearbtn";
+            this.Clearbtn.Size = new System.Drawing.Size(75, 23);
+            this.Clearbtn.TabIndex = 10;
+            this.Clearbtn.Text = "CLEAR";
+            // 
+            // Deletebtn
+            // 
+            this.Deletebtn.Appearance.BackColor = System.Drawing.Color.LightBlue;
+            this.Deletebtn.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Deletebtn.Appearance.Options.UseBackColor = true;
+            this.Deletebtn.Appearance.Options.UseFont = true;
+            this.Deletebtn.Location = new System.Drawing.Point(12, 168);
+            this.Deletebtn.LookAndFeel.SkinName = "DevExpress Style";
+            this.Deletebtn.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.Deletebtn.Name = "Deletebtn";
+            this.Deletebtn.Size = new System.Drawing.Size(75, 23);
+            this.Deletebtn.TabIndex = 9;
+            this.Deletebtn.Text = "DELETE";
+            this.Deletebtn.Click += new System.EventHandler(this.Deletebtn_Click);
+            // 
+            // Updatebtn
+            // 
+            this.Updatebtn.Appearance.BackColor = System.Drawing.Color.LightBlue;
+            this.Updatebtn.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Updatebtn.Appearance.Options.UseBackColor = true;
+            this.Updatebtn.Appearance.Options.UseFont = true;
+            this.Updatebtn.Enabled = false;
+            this.Updatebtn.Location = new System.Drawing.Point(12, 126);
+            this.Updatebtn.LookAndFeel.SkinName = "DevExpress Style";
+            this.Updatebtn.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.Updatebtn.Name = "Updatebtn";
+            this.Updatebtn.Size = new System.Drawing.Size(75, 23);
+            this.Updatebtn.TabIndex = 8;
+            this.Updatebtn.Text = "UPDATE";
+            // 
+            // Editbtn
+            // 
+            this.Editbtn.Appearance.BackColor = System.Drawing.Color.LightBlue;
+            this.Editbtn.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Editbtn.Appearance.Options.UseBackColor = true;
+            this.Editbtn.Appearance.Options.UseFont = true;
+            this.Editbtn.Enabled = false;
+            this.Editbtn.Location = new System.Drawing.Point(12, 86);
+            this.Editbtn.LookAndFeel.SkinName = "DevExpress Style";
+            this.Editbtn.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.Editbtn.Name = "Editbtn";
+            this.Editbtn.Size = new System.Drawing.Size(75, 23);
+            this.Editbtn.TabIndex = 7;
+            this.Editbtn.Text = "EDIT";
+            // 
+            // Addbtn
+            // 
+            this.Addbtn.Appearance.BackColor = System.Drawing.Color.LightBlue;
+            this.Addbtn.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Addbtn.Appearance.Options.UseBackColor = true;
+            this.Addbtn.Appearance.Options.UseFont = true;
+            this.Addbtn.Enabled = false;
+            this.Addbtn.Location = new System.Drawing.Point(12, 43);
+            this.Addbtn.LookAndFeel.SkinName = "DevExpress Style";
+            this.Addbtn.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.Addbtn.Name = "Addbtn";
+            this.Addbtn.Size = new System.Drawing.Size(75, 23);
+            this.Addbtn.TabIndex = 6;
+            this.Addbtn.Text = "ADD";
+            // 
+            // Newbtn
+            // 
+            this.Newbtn.Appearance.BackColor = System.Drawing.Color.LightBlue;
+            this.Newbtn.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Newbtn.Appearance.Options.UseBackColor = true;
+            this.Newbtn.Appearance.Options.UseFont = true;
+            this.Newbtn.Location = new System.Drawing.Point(12, 5);
+            this.Newbtn.LookAndFeel.SkinName = "DevExpress Style";
+            this.Newbtn.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.Newbtn.Name = "Newbtn";
+            this.Newbtn.Size = new System.Drawing.Size(75, 23);
+            this.Newbtn.TabIndex = 5;
+            this.Newbtn.Text = "NEW";
+            this.Newbtn.Click += new System.EventHandler(this.Newbtn_Click);
             // 
             // gridControl1
             // 
@@ -300,8 +410,6 @@ namespace BillPlex
             this.colDirector.FieldName = "Director";
             this.colDirector.MinWidth = 80;
             this.colDirector.Name = "colDirector";
-            this.colDirector.Visible = true;
-            this.colDirector.VisibleIndex = 9;
             this.colDirector.Width = 80;
             // 
             // colComDatestart
@@ -310,7 +418,7 @@ namespace BillPlex
             this.colComDatestart.MinWidth = 80;
             this.colComDatestart.Name = "colComDatestart";
             this.colComDatestart.Visible = true;
-            this.colComDatestart.VisibleIndex = 10;
+            this.colComDatestart.VisibleIndex = 9;
             this.colComDatestart.Width = 80;
             // 
             // colComStdCode
@@ -319,7 +427,7 @@ namespace BillPlex
             this.colComStdCode.MinWidth = 80;
             this.colComStdCode.Name = "colComStdCode";
             this.colComStdCode.Visible = true;
-            this.colComStdCode.VisibleIndex = 11;
+            this.colComStdCode.VisibleIndex = 10;
             this.colComStdCode.Width = 80;
             // 
             // colComPhone
@@ -328,7 +436,7 @@ namespace BillPlex
             this.colComPhone.MinWidth = 80;
             this.colComPhone.Name = "colComPhone";
             this.colComPhone.Visible = true;
-            this.colComPhone.VisibleIndex = 12;
+            this.colComPhone.VisibleIndex = 11;
             this.colComPhone.Width = 1000;
             // 
             // colComEmail
@@ -337,7 +445,7 @@ namespace BillPlex
             this.colComEmail.MinWidth = 80;
             this.colComEmail.Name = "colComEmail";
             this.colComEmail.Visible = true;
-            this.colComEmail.VisibleIndex = 13;
+            this.colComEmail.VisibleIndex = 12;
             this.colComEmail.Width = 80;
             // 
             // colComWebsite
@@ -346,7 +454,7 @@ namespace BillPlex
             this.colComWebsite.MinWidth = 80;
             this.colComWebsite.Name = "colComWebsite";
             this.colComWebsite.Visible = true;
-            this.colComWebsite.VisibleIndex = 14;
+            this.colComWebsite.VisibleIndex = 13;
             this.colComWebsite.Width = 80;
             // 
             // colPfType
@@ -355,7 +463,7 @@ namespace BillPlex
             this.colPfType.MinWidth = 80;
             this.colPfType.Name = "colPfType";
             this.colPfType.Visible = true;
-            this.colPfType.VisibleIndex = 15;
+            this.colPfType.VisibleIndex = 14;
             this.colPfType.Width = 80;
             // 
             // colComPfNo
@@ -364,7 +472,7 @@ namespace BillPlex
             this.colComPfNo.MinWidth = 80;
             this.colComPfNo.Name = "colComPfNo";
             this.colComPfNo.Visible = true;
-            this.colComPfNo.VisibleIndex = 16;
+            this.colComPfNo.VisibleIndex = 15;
             this.colComPfNo.Width = 80;
             // 
             // colComPfDate
@@ -373,7 +481,7 @@ namespace BillPlex
             this.colComPfDate.MinWidth = 80;
             this.colComPfDate.Name = "colComPfDate";
             this.colComPfDate.Visible = true;
-            this.colComPfDate.VisibleIndex = 17;
+            this.colComPfDate.VisibleIndex = 16;
             this.colComPfDate.Width = 80;
             // 
             // colComEsiNo
@@ -382,7 +490,7 @@ namespace BillPlex
             this.colComEsiNo.MinWidth = 80;
             this.colComEsiNo.Name = "colComEsiNo";
             this.colComEsiNo.Visible = true;
-            this.colComEsiNo.VisibleIndex = 18;
+            this.colComEsiNo.VisibleIndex = 17;
             this.colComEsiNo.Width = 80;
             // 
             // colComEsiDate
@@ -391,7 +499,7 @@ namespace BillPlex
             this.colComEsiDate.MinWidth = 80;
             this.colComEsiDate.Name = "colComEsiDate";
             this.colComEsiDate.Visible = true;
-            this.colComEsiDate.VisibleIndex = 19;
+            this.colComEsiDate.VisibleIndex = 18;
             this.colComEsiDate.Width = 80;
             // 
             // colComFactoryNo
@@ -400,7 +508,7 @@ namespace BillPlex
             this.colComFactoryNo.MinWidth = 80;
             this.colComFactoryNo.Name = "colComFactoryNo";
             this.colComFactoryNo.Visible = true;
-            this.colComFactoryNo.VisibleIndex = 20;
+            this.colComFactoryNo.VisibleIndex = 19;
             this.colComFactoryNo.Width = 80;
             // 
             // colComCstNo
@@ -409,7 +517,7 @@ namespace BillPlex
             this.colComCstNo.MinWidth = 80;
             this.colComCstNo.Name = "colComCstNo";
             this.colComCstNo.Visible = true;
-            this.colComCstNo.VisibleIndex = 21;
+            this.colComCstNo.VisibleIndex = 20;
             this.colComCstNo.Width = 80;
             // 
             // colComSslNo
@@ -418,7 +526,7 @@ namespace BillPlex
             this.colComSslNo.MinWidth = 80;
             this.colComSslNo.Name = "colComSslNo";
             this.colComSslNo.Visible = true;
-            this.colComSslNo.VisibleIndex = 22;
+            this.colComSslNo.VisibleIndex = 21;
             this.colComSslNo.Width = 80;
             // 
             // colComTinNo
@@ -427,7 +535,7 @@ namespace BillPlex
             this.colComTinNo.MinWidth = 80;
             this.colComTinNo.Name = "colComTinNo";
             this.colComTinNo.Visible = true;
-            this.colComTinNo.VisibleIndex = 23;
+            this.colComTinNo.VisibleIndex = 22;
             this.colComTinNo.Width = 80;
             // 
             // colComLicenseno
@@ -436,7 +544,7 @@ namespace BillPlex
             this.colComLicenseno.MinWidth = 80;
             this.colComLicenseno.Name = "colComLicenseno";
             this.colComLicenseno.Visible = true;
-            this.colComLicenseno.VisibleIndex = 24;
+            this.colComLicenseno.VisibleIndex = 23;
             this.colComLicenseno.Width = 80;
             // 
             // colComPanNo
@@ -445,7 +553,7 @@ namespace BillPlex
             this.colComPanNo.MinWidth = 80;
             this.colComPanNo.Name = "colComPanNo";
             this.colComPanNo.Visible = true;
-            this.colComPanNo.VisibleIndex = 25;
+            this.colComPanNo.VisibleIndex = 24;
             this.colComPanNo.Width = 80;
             // 
             // colComTanNo
@@ -454,7 +562,7 @@ namespace BillPlex
             this.colComTanNo.MinWidth = 80;
             this.colComTanNo.Name = "colComTanNo";
             this.colComTanNo.Visible = true;
-            this.colComTanNo.VisibleIndex = 26;
+            this.colComTanNo.VisibleIndex = 25;
             this.colComTanNo.Width = 80;
             // 
             // colAuthorName
@@ -463,7 +571,7 @@ namespace BillPlex
             this.colAuthorName.MinWidth = 80;
             this.colAuthorName.Name = "colAuthorName";
             this.colAuthorName.Visible = true;
-            this.colAuthorName.VisibleIndex = 27;
+            this.colAuthorName.VisibleIndex = 26;
             this.colAuthorName.Width = 80;
             // 
             // colAuthorFathername
@@ -472,7 +580,7 @@ namespace BillPlex
             this.colAuthorFathername.MinWidth = 80;
             this.colAuthorFathername.Name = "colAuthorFathername";
             this.colAuthorFathername.Visible = true;
-            this.colAuthorFathername.VisibleIndex = 28;
+            this.colAuthorFathername.VisibleIndex = 27;
             this.colAuthorFathername.Width = 80;
             // 
             // colAuthorGender
@@ -481,7 +589,7 @@ namespace BillPlex
             this.colAuthorGender.MinWidth = 80;
             this.colAuthorGender.Name = "colAuthorGender";
             this.colAuthorGender.Visible = true;
-            this.colAuthorGender.VisibleIndex = 29;
+            this.colAuthorGender.VisibleIndex = 28;
             this.colAuthorGender.Width = 80;
             // 
             // colAuthorBlood
@@ -490,7 +598,7 @@ namespace BillPlex
             this.colAuthorBlood.MinWidth = 80;
             this.colAuthorBlood.Name = "colAuthorBlood";
             this.colAuthorBlood.Visible = true;
-            this.colAuthorBlood.VisibleIndex = 30;
+            this.colAuthorBlood.VisibleIndex = 29;
             this.colAuthorBlood.Width = 80;
             // 
             // colAuthorDOB
@@ -499,7 +607,7 @@ namespace BillPlex
             this.colAuthorDOB.MinWidth = 80;
             this.colAuthorDOB.Name = "colAuthorDOB";
             this.colAuthorDOB.Visible = true;
-            this.colAuthorDOB.VisibleIndex = 31;
+            this.colAuthorDOB.VisibleIndex = 30;
             this.colAuthorDOB.Width = 80;
             // 
             // colAuthorEmail
@@ -508,7 +616,7 @@ namespace BillPlex
             this.colAuthorEmail.MinWidth = 80;
             this.colAuthorEmail.Name = "colAuthorEmail";
             this.colAuthorEmail.Visible = true;
-            this.colAuthorEmail.VisibleIndex = 32;
+            this.colAuthorEmail.VisibleIndex = 31;
             this.colAuthorEmail.Width = 80;
             // 
             // colAuthorAddress
@@ -517,7 +625,7 @@ namespace BillPlex
             this.colAuthorAddress.MinWidth = 80;
             this.colAuthorAddress.Name = "colAuthorAddress";
             this.colAuthorAddress.Visible = true;
-            this.colAuthorAddress.VisibleIndex = 33;
+            this.colAuthorAddress.VisibleIndex = 32;
             this.colAuthorAddress.Width = 80;
             // 
             // colAuthorState
@@ -526,7 +634,7 @@ namespace BillPlex
             this.colAuthorState.MinWidth = 80;
             this.colAuthorState.Name = "colAuthorState";
             this.colAuthorState.Visible = true;
-            this.colAuthorState.VisibleIndex = 34;
+            this.colAuthorState.VisibleIndex = 33;
             this.colAuthorState.Width = 80;
             // 
             // colAuthorPin
@@ -535,7 +643,7 @@ namespace BillPlex
             this.colAuthorPin.MinWidth = 80;
             this.colAuthorPin.Name = "colAuthorPin";
             this.colAuthorPin.Visible = true;
-            this.colAuthorPin.VisibleIndex = 35;
+            this.colAuthorPin.VisibleIndex = 34;
             this.colAuthorPin.Width = 80;
             // 
             // colAuthorMobile
@@ -544,7 +652,7 @@ namespace BillPlex
             this.colAuthorMobile.MinWidth = 80;
             this.colAuthorMobile.Name = "colAuthorMobile";
             this.colAuthorMobile.Visible = true;
-            this.colAuthorMobile.VisibleIndex = 36;
+            this.colAuthorMobile.VisibleIndex = 35;
             this.colAuthorMobile.Width = 80;
             // 
             // colAuthorPan
@@ -553,7 +661,7 @@ namespace BillPlex
             this.colAuthorPan.MinWidth = 80;
             this.colAuthorPan.Name = "colAuthorPan";
             this.colAuthorPan.Visible = true;
-            this.colAuthorPan.VisibleIndex = 37;
+            this.colAuthorPan.VisibleIndex = 36;
             this.colAuthorPan.Width = 80;
             // 
             // colAuthorPercent
@@ -562,7 +670,7 @@ namespace BillPlex
             this.colAuthorPercent.MinWidth = 80;
             this.colAuthorPercent.Name = "colAuthorPercent";
             this.colAuthorPercent.Visible = true;
-            this.colAuthorPercent.VisibleIndex = 38;
+            this.colAuthorPercent.VisibleIndex = 37;
             this.colAuthorPercent.Width = 80;
             // 
             // colAuthorActive
@@ -571,127 +679,17 @@ namespace BillPlex
             this.colAuthorActive.MinWidth = 80;
             this.colAuthorActive.Name = "colAuthorActive";
             this.colAuthorActive.Visible = true;
-            this.colAuthorActive.VisibleIndex = 39;
+            this.colAuthorActive.VisibleIndex = 38;
             this.colAuthorActive.Width = 80;
             // 
-            // panelControl5
+            // panelControl2
             // 
-            this.panelControl5.Controls.Add(this.Exitbtn);
-            this.panelControl5.Controls.Add(this.Clearbtn);
-            this.panelControl5.Controls.Add(this.Deletebtn);
-            this.panelControl5.Controls.Add(this.Updatebtn);
-            this.panelControl5.Controls.Add(this.Editbtn);
-            this.panelControl5.Controls.Add(this.Addbtn);
-            this.panelControl5.Controls.Add(this.Newbtn);
-            this.panelControl5.Location = new System.Drawing.Point(1404, 143);
-            this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(98, 281);
-            this.panelControl5.TabIndex = 2;
-            // 
-            // Exitbtn
-            // 
-            this.Exitbtn.Appearance.BackColor = System.Drawing.Color.LightBlue;
-            this.Exitbtn.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Exitbtn.Appearance.Options.UseBackColor = true;
-            this.Exitbtn.Appearance.Options.UseFont = true;
-            this.Exitbtn.Enabled = false;
-            this.Exitbtn.Location = new System.Drawing.Point(12, 246);
-            this.Exitbtn.LookAndFeel.SkinName = "DevExpress Style";
-            this.Exitbtn.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.Exitbtn.Name = "Exitbtn";
-            this.Exitbtn.Size = new System.Drawing.Size(75, 23);
-            this.Exitbtn.TabIndex = 11;
-            this.Exitbtn.Text = "EXIT";
-            // 
-            // Clearbtn
-            // 
-            this.Clearbtn.Appearance.BackColor = System.Drawing.Color.LightBlue;
-            this.Clearbtn.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Clearbtn.Appearance.Options.UseBackColor = true;
-            this.Clearbtn.Appearance.Options.UseFont = true;
-            this.Clearbtn.Enabled = false;
-            this.Clearbtn.Location = new System.Drawing.Point(12, 207);
-            this.Clearbtn.LookAndFeel.SkinName = "DevExpress Style";
-            this.Clearbtn.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.Clearbtn.Name = "Clearbtn";
-            this.Clearbtn.Size = new System.Drawing.Size(75, 23);
-            this.Clearbtn.TabIndex = 10;
-            this.Clearbtn.Text = "CLEAR";
-            // 
-            // Deletebtn
-            // 
-            this.Deletebtn.Appearance.BackColor = System.Drawing.Color.LightBlue;
-            this.Deletebtn.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Deletebtn.Appearance.Options.UseBackColor = true;
-            this.Deletebtn.Appearance.Options.UseFont = true;
-            this.Deletebtn.Location = new System.Drawing.Point(12, 168);
-            this.Deletebtn.LookAndFeel.SkinName = "DevExpress Style";
-            this.Deletebtn.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.Deletebtn.Name = "Deletebtn";
-            this.Deletebtn.Size = new System.Drawing.Size(75, 23);
-            this.Deletebtn.TabIndex = 9;
-            this.Deletebtn.Text = "DELETE";
-            this.Deletebtn.Click += new System.EventHandler(this.Deletebtn_Click);
-            // 
-            // Updatebtn
-            // 
-            this.Updatebtn.Appearance.BackColor = System.Drawing.Color.LightBlue;
-            this.Updatebtn.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Updatebtn.Appearance.Options.UseBackColor = true;
-            this.Updatebtn.Appearance.Options.UseFont = true;
-            this.Updatebtn.Enabled = false;
-            this.Updatebtn.Location = new System.Drawing.Point(12, 126);
-            this.Updatebtn.LookAndFeel.SkinName = "DevExpress Style";
-            this.Updatebtn.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.Updatebtn.Name = "Updatebtn";
-            this.Updatebtn.Size = new System.Drawing.Size(75, 23);
-            this.Updatebtn.TabIndex = 8;
-            this.Updatebtn.Text = "UPDATE";
-            // 
-            // Editbtn
-            // 
-            this.Editbtn.Appearance.BackColor = System.Drawing.Color.LightBlue;
-            this.Editbtn.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Editbtn.Appearance.Options.UseBackColor = true;
-            this.Editbtn.Appearance.Options.UseFont = true;
-            this.Editbtn.Enabled = false;
-            this.Editbtn.Location = new System.Drawing.Point(12, 86);
-            this.Editbtn.LookAndFeel.SkinName = "DevExpress Style";
-            this.Editbtn.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.Editbtn.Name = "Editbtn";
-            this.Editbtn.Size = new System.Drawing.Size(75, 23);
-            this.Editbtn.TabIndex = 7;
-            this.Editbtn.Text = "EDIT";
-            // 
-            // Addbtn
-            // 
-            this.Addbtn.Appearance.BackColor = System.Drawing.Color.LightBlue;
-            this.Addbtn.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Addbtn.Appearance.Options.UseBackColor = true;
-            this.Addbtn.Appearance.Options.UseFont = true;
-            this.Addbtn.Enabled = false;
-            this.Addbtn.Location = new System.Drawing.Point(12, 43);
-            this.Addbtn.LookAndFeel.SkinName = "DevExpress Style";
-            this.Addbtn.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.Addbtn.Name = "Addbtn";
-            this.Addbtn.Size = new System.Drawing.Size(75, 23);
-            this.Addbtn.TabIndex = 6;
-            this.Addbtn.Text = "ADD";
-            // 
-            // Newbtn
-            // 
-            this.Newbtn.Appearance.BackColor = System.Drawing.Color.LightBlue;
-            this.Newbtn.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Newbtn.Appearance.Options.UseBackColor = true;
-            this.Newbtn.Appearance.Options.UseFont = true;
-            this.Newbtn.Location = new System.Drawing.Point(12, 5);
-            this.Newbtn.LookAndFeel.SkinName = "DevExpress Style";
-            this.Newbtn.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.Newbtn.Name = "Newbtn";
-            this.Newbtn.Size = new System.Drawing.Size(75, 23);
-            this.Newbtn.TabIndex = 5;
-            this.Newbtn.Text = "NEW";
-            this.Newbtn.Click += new System.EventHandler(this.Newbtn_Click);
+            this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.panelControl2.Controls.Add(this.labelControl1);
+            this.panelControl2.Location = new System.Drawing.Point(5, 5);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(1532, 72);
+            this.panelControl2.TabIndex = 2;
             // 
             // labelControl1
             // 
@@ -721,15 +719,15 @@ namespace BillPlex
             this.Load += new System.EventHandler(this.FrmSubClientCompanyProfile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
+            this.panelControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
+            this.panelControl5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SubClientGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
-            this.panelControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SubClientGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
-            this.panelControl5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

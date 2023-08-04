@@ -59,7 +59,7 @@ namespace BillPlex
             {
                 if (CompanyMasterRequest.Result.Message.Contains("FK__"))
                 {
-                    XtraMessageBox.Show("This Iteam has RelationShip with Another Model", "RelationShip Issues", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    XtraMessageBox.Show("This Item has RelationShip with Another Model", "RelationShip Issues", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {

@@ -31,9 +31,10 @@ namespace BillPlex
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSubClientCompanyBankInfo));
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
@@ -104,6 +105,7 @@ namespace BillPlex
             // 
             this.panelControl1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.panelControl1.Controls.Add(this.labelControl18);
             this.panelControl1.Controls.Add(this.labelControl17);
             this.panelControl1.Controls.Add(this.labelControl16);
             this.panelControl1.Controls.Add(this.labelControl14);
@@ -144,6 +146,18 @@ namespace BillPlex
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1576, 808);
             this.panelControl1.TabIndex = 2;
+            // 
+            // labelControl18
+            // 
+            this.labelControl18.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl18.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl18.Appearance.Options.UseFont = true;
+            this.labelControl18.Appearance.Options.UseForeColor = true;
+            this.labelControl18.Location = new System.Drawing.Point(150, 334);
+            this.labelControl18.Name = "labelControl18";
+            this.labelControl18.Size = new System.Drawing.Size(10, 19);
+            this.labelControl18.TabIndex = 45;
+            this.labelControl18.Text = "*";
             // 
             // labelControl17
             // 
@@ -282,6 +296,7 @@ namespace BillPlex
             this.btnSelect.Size = new System.Drawing.Size(75, 23);
             this.btnSelect.TabIndex = 29;
             this.btnSelect.Text = "Select";
+            this.btnSelect.Visible = false;
             // 
             // labelControl2
             // 
@@ -310,13 +325,13 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery1.Name = "PRO_GetSubClientBankInfo";
-            queryParameter1.Name = "@SearchKey";
-            queryParameter1.Type = typeof(string);
-            storedProcQuery1.Parameters.Add(queryParameter1);
-            storedProcQuery1.StoredProcName = "PRO_GetSubClientBankInfo";
+            storedProcQuery2.Name = "PRO_GetSubClientBankInfo";
+            queryParameter2.Name = "@SearchKey";
+            queryParameter2.Type = typeof(string);
+            storedProcQuery2.Parameters.Add(queryParameter2);
+            storedProcQuery2.StoredProcName = "PRO_GetSubClientBankInfo";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery1});
+            storedProcQuery2});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // SubClientBankGrid
@@ -416,6 +431,7 @@ namespace BillPlex
             this.SearchComapnyNameTxt.Name = "SearchComapnyNameTxt";
             this.SearchComapnyNameTxt.Size = new System.Drawing.Size(751, 20);
             this.SearchComapnyNameTxt.TabIndex = 25;
+            this.SearchComapnyNameTxt.Visible = false;
             // 
             // labelControl10
             // 
@@ -426,6 +442,7 @@ namespace BillPlex
             this.labelControl10.Size = new System.Drawing.Size(188, 18);
             this.labelControl10.TabIndex = 24;
             this.labelControl10.Text = "Search Company Name";
+            this.labelControl10.Visible = false;
             // 
             // imgImage
             // 
@@ -700,5 +717,6 @@ namespace BillPlex
         private DevExpress.XtraGrid.Columns.GridColumn colBranchName;
         private DevExpress.XtraGrid.Columns.GridColumn colIFSCode;
         private DevExpress.XtraGrid.Columns.GridColumn colAddress;
+        private DevExpress.XtraEditors.LabelControl labelControl18;
     }
 }
