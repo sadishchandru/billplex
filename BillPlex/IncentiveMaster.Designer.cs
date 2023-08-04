@@ -30,27 +30,10 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery4 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IncentiveMaster));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.DrpModelName = new DevExpress.XtraEditors.TextEdit();
-            this.txtDurationPeriod = new DevExpress.XtraEditors.TextEdit();
-            this.txtModelSize = new DevExpress.XtraEditors.TextEdit();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
-            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
-            this.btnClear = new DevExpress.XtraEditors.SimpleButton();
-            this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
-            this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
-            this.BtnPNameTab = new DevExpress.XtraEditors.SimpleButton();
-            this.DrpProductName = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.DrpModelCode = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -61,26 +44,43 @@ namespace BillPlex
             this.colModelSize = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDurationPeriod = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ddDate = new DevExpress.XtraEditors.DateEdit();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
+            this.btnClear = new DevExpress.XtraEditors.SimpleButton();
+            this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
+            this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
+            this.txtModelSize = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.txtDurationPeriod = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.ddDate = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.BtnPNameTab = new DevExpress.XtraEditors.SimpleButton();
+            this.DrpModelCode = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.DrpProductName = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.DrpModelName = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DrpModelName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDurationPeriod.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtModelSize.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
-            this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DrpProductName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DrpModelCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
+            this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtModelSize.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDurationPeriod.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DrpModelCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DrpProductName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DrpModelName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
@@ -112,86 +112,116 @@ namespace BillPlex
             this.panelControl1.Size = new System.Drawing.Size(1491, 511);
             this.panelControl1.TabIndex = 0;
             // 
-            // labelControl2
+            // labelControl10
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(20, 20);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(114, 18);
-            this.labelControl2.TabIndex = 1;
-            this.labelControl2.Text = "Product Name";
+            this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl10.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl10.Appearance.Options.UseFont = true;
+            this.labelControl10.Appearance.Options.UseForeColor = true;
+            this.labelControl10.Location = new System.Drawing.Point(1135, 13);
+            this.labelControl10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(14, 27);
+            this.labelControl10.TabIndex = 31;
+            this.labelControl10.Text = "*";
             // 
-            // labelControl3
+            // gridControl1
             // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(20, 57);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(95, 18);
-            this.labelControl3.TabIndex = 2;
-            this.labelControl3.Text = "Model Code";
+            this.gridControl1.DataMember = "PRO_GetIncentiveMaster";
+            this.gridControl1.DataSource = this.sqlDataSource1;
+            this.gridControl1.Location = new System.Drawing.Point(20, 232);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(1455, 274);
+            this.gridControl1.TabIndex = 28;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            this.gridControl1.DoubleClick += new System.EventHandler(this.gridControl1_DoubleClick);
             // 
-            // labelControl4
+            // sqlDataSource1
             // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(20, 92);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(101, 18);
-            this.labelControl4.TabIndex = 3;
-            this.labelControl4.Text = "Model Name";
+            this.sqlDataSource1.ConnectionName = "BillPlex";
+            this.sqlDataSource1.Name = "sqlDataSource1";
+            storedProcQuery1.Name = "PRO_GetIncentiveMaster";
+            storedProcQuery1.StoredProcName = "PRO_GetIncentiveMaster";
+            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
+            storedProcQuery1});
+            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
-            // labelControl5
+            // gridView1
             // 
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(794, 51);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(88, 18);
-            this.labelControl5.TabIndex = 4;
-            this.labelControl5.Text = "Model Size";
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colId,
+            this.colProductName,
+            this.colModelCode,
+            this.colModelName,
+            this.colModelSize,
+            this.colDurationPeriod,
+            this.colDate});
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
             // 
-            // labelControl6
+            // colId
             // 
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(794, 89);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(181, 18);
-            this.labelControl6.TabIndex = 5;
-            this.labelControl6.Text = "Duration Period(Days)";
+            this.colId.FieldName = "Id";
+            this.colId.Name = "colId";
+            this.colId.Visible = true;
+            this.colId.VisibleIndex = 0;
             // 
-            // labelControl7
+            // colProductName
             // 
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(1062, 15);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(39, 18);
-            this.labelControl7.TabIndex = 6;
-            this.labelControl7.Text = "Date";
+            this.colProductName.FieldName = "ProductName";
+            this.colProductName.Name = "colProductName";
+            this.colProductName.Visible = true;
+            this.colProductName.VisibleIndex = 1;
             // 
-            // DrpModelName
+            // colModelCode
             // 
-            this.DrpModelName.Location = new System.Drawing.Point(231, 91);
-            this.DrpModelName.Name = "DrpModelName";
-            this.DrpModelName.Size = new System.Drawing.Size(214, 20);
-            this.DrpModelName.TabIndex = 14;
+            this.colModelCode.FieldName = "ModelCode";
+            this.colModelCode.Name = "colModelCode";
+            this.colModelCode.Visible = true;
+            this.colModelCode.VisibleIndex = 2;
             // 
-            // txtDurationPeriod
+            // colModelName
             // 
-            this.txtDurationPeriod.Location = new System.Drawing.Point(1062, 91);
-            this.txtDurationPeriod.Name = "txtDurationPeriod";
-            this.txtDurationPeriod.Size = new System.Drawing.Size(281, 20);
-            this.txtDurationPeriod.TabIndex = 16;
+            this.colModelName.FieldName = "ModelName";
+            this.colModelName.Name = "colModelName";
+            this.colModelName.Visible = true;
+            this.colModelName.VisibleIndex = 3;
             // 
-            // txtModelSize
+            // colModelSize
             // 
-            this.txtModelSize.Location = new System.Drawing.Point(1062, 55);
-            this.txtModelSize.Name = "txtModelSize";
-            this.txtModelSize.Size = new System.Drawing.Size(281, 20);
-            this.txtModelSize.TabIndex = 17;
+            this.colModelSize.FieldName = "ModelSize";
+            this.colModelSize.Name = "colModelSize";
+            this.colModelSize.Visible = true;
+            this.colModelSize.VisibleIndex = 4;
+            // 
+            // colDurationPeriod
+            // 
+            this.colDurationPeriod.FieldName = "DurationPeriod";
+            this.colDurationPeriod.Name = "colDurationPeriod";
+            this.colDurationPeriod.Visible = true;
+            this.colDurationPeriod.VisibleIndex = 5;
+            // 
+            // colDate
+            // 
+            this.colDate.FieldName = "Date";
+            this.colDate.Name = "colDate";
+            this.colDate.Visible = true;
+            this.colDate.VisibleIndex = 6;
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl9.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl9.Appearance.Options.UseFont = true;
+            this.labelControl9.Appearance.Options.UseForeColor = true;
+            this.labelControl9.Location = new System.Drawing.Point(143, 57);
+            this.labelControl9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(14, 27);
+            this.labelControl9.TabIndex = 30;
+            this.labelControl9.Text = "*";
             // 
             // panelControl2
             // 
@@ -331,121 +361,44 @@ namespace BillPlex
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 1;
             this.btnEdit.Text = "Edit";
+            this.btnEdit.Visible = false;
             // 
-            // BtnPNameTab
+            // txtModelSize
             // 
-            this.BtnPNameTab.Location = new System.Drawing.Point(451, 16);
-            this.BtnPNameTab.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
-            this.BtnPNameTab.LookAndFeel.SkinName = "DevExpress Style";
-            this.BtnPNameTab.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.BtnPNameTab.Name = "BtnPNameTab";
-            this.BtnPNameTab.Size = new System.Drawing.Size(31, 19);
-            this.BtnPNameTab.TabIndex = 23;
-            this.BtnPNameTab.Text = "...";
-            this.BtnPNameTab.Click += new System.EventHandler(this.BtnPNameTab_Click);
+            this.txtModelSize.Location = new System.Drawing.Point(1062, 55);
+            this.txtModelSize.Name = "txtModelSize";
+            this.txtModelSize.Size = new System.Drawing.Size(281, 20);
+            this.txtModelSize.TabIndex = 17;
             // 
-            // DrpProductName
+            // labelControl8
             // 
-            this.DrpProductName.Location = new System.Drawing.Point(231, 15);
-            this.DrpProductName.Name = "DrpProductName";
-            this.DrpProductName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.DrpProductName.Size = new System.Drawing.Size(214, 20);
-            this.DrpProductName.TabIndex = 24;
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl8.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl8.Appearance.Options.UseFont = true;
+            this.labelControl8.Appearance.Options.UseForeColor = true;
+            this.labelControl8.Location = new System.Drawing.Point(166, 16);
+            this.labelControl8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(14, 27);
+            this.labelControl8.TabIndex = 29;
+            this.labelControl8.Text = "*";
             // 
-            // DrpModelCode
+            // txtDurationPeriod
             // 
-            this.DrpModelCode.Location = new System.Drawing.Point(231, 56);
-            this.DrpModelCode.Name = "DrpModelCode";
-            this.DrpModelCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.DrpModelCode.Size = new System.Drawing.Size(214, 20);
-            this.DrpModelCode.TabIndex = 25;
+            this.txtDurationPeriod.Location = new System.Drawing.Point(1062, 91);
+            this.txtDurationPeriod.Name = "txtDurationPeriod";
+            this.txtDurationPeriod.Size = new System.Drawing.Size(281, 20);
+            this.txtDurationPeriod.TabIndex = 16;
             // 
-            // gridControl1
+            // labelControl6
             // 
-            this.gridControl1.DataMember = "PRO_GetIncentiveMaster";
-            this.gridControl1.DataSource = this.sqlDataSource1;
-            this.gridControl1.Location = new System.Drawing.Point(20, 232);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1455, 274);
-            this.gridControl1.TabIndex = 28;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            this.gridControl1.DoubleClick += new System.EventHandler(this.gridControl1_DoubleClick);
-            // 
-            // sqlDataSource1
-            // 
-            this.sqlDataSource1.ConnectionName = "BillPlex";
-            this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery4.Name = "PRO_GetIncentiveMaster";
-            storedProcQuery4.StoredProcName = "PRO_GetIncentiveMaster";
-            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery4});
-            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
-            // 
-            // gridView1
-            // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colId,
-            this.colProductName,
-            this.colModelCode,
-            this.colModelName,
-            this.colModelSize,
-            this.colDurationPeriod,
-            this.colDate});
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            // 
-            // colId
-            // 
-            this.colId.FieldName = "Id";
-            this.colId.Name = "colId";
-            this.colId.Visible = true;
-            this.colId.VisibleIndex = 0;
-            // 
-            // colProductName
-            // 
-            this.colProductName.FieldName = "ProductName";
-            this.colProductName.Name = "colProductName";
-            this.colProductName.Visible = true;
-            this.colProductName.VisibleIndex = 1;
-            // 
-            // colModelCode
-            // 
-            this.colModelCode.FieldName = "ModelCode";
-            this.colModelCode.Name = "colModelCode";
-            this.colModelCode.Visible = true;
-            this.colModelCode.VisibleIndex = 2;
-            // 
-            // colModelName
-            // 
-            this.colModelName.FieldName = "ModelName";
-            this.colModelName.Name = "colModelName";
-            this.colModelName.Visible = true;
-            this.colModelName.VisibleIndex = 3;
-            // 
-            // colModelSize
-            // 
-            this.colModelSize.FieldName = "ModelSize";
-            this.colModelSize.Name = "colModelSize";
-            this.colModelSize.Visible = true;
-            this.colModelSize.VisibleIndex = 4;
-            // 
-            // colDurationPeriod
-            // 
-            this.colDurationPeriod.FieldName = "DurationPeriod";
-            this.colDurationPeriod.Name = "colDurationPeriod";
-            this.colDurationPeriod.Visible = true;
-            this.colDurationPeriod.VisibleIndex = 5;
-            // 
-            // colDate
-            // 
-            this.colDate.FieldName = "Date";
-            this.colDate.Name = "colDate";
-            this.colDate.Visible = true;
-            this.colDate.VisibleIndex = 6;
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl6.Appearance.Options.UseFont = true;
+            this.labelControl6.Location = new System.Drawing.Point(794, 89);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(181, 18);
+            this.labelControl6.TabIndex = 5;
+            this.labelControl6.Text = "Duration Period(Days)";
             // 
             // ddDate
             // 
@@ -467,31 +420,92 @@ namespace BillPlex
             this.ddDate.Size = new System.Drawing.Size(145, 20);
             this.ddDate.TabIndex = 27;
             // 
-            // labelControl8
+            // labelControl5
             // 
-            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl8.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Appearance.Options.UseForeColor = true;
-            this.labelControl8.Location = new System.Drawing.Point(166, 16);
-            this.labelControl8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(14, 27);
-            this.labelControl8.TabIndex = 29;
-            this.labelControl8.Text = "*";
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Location = new System.Drawing.Point(794, 51);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(88, 18);
+            this.labelControl5.TabIndex = 4;
+            this.labelControl5.Text = "Model Size";
             // 
-            // labelControl9
+            // labelControl7
             // 
-            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl9.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Appearance.Options.UseForeColor = true;
-            this.labelControl9.Location = new System.Drawing.Point(143, 57);
-            this.labelControl9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(14, 27);
-            this.labelControl9.TabIndex = 30;
-            this.labelControl9.Text = "*";
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl7.Appearance.Options.UseFont = true;
+            this.labelControl7.Location = new System.Drawing.Point(1062, 15);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(39, 18);
+            this.labelControl7.TabIndex = 6;
+            this.labelControl7.Text = "Date";
+            // 
+            // BtnPNameTab
+            // 
+            this.BtnPNameTab.Location = new System.Drawing.Point(451, 16);
+            this.BtnPNameTab.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.BtnPNameTab.LookAndFeel.SkinName = "DevExpress Style";
+            this.BtnPNameTab.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.BtnPNameTab.Name = "BtnPNameTab";
+            this.BtnPNameTab.Size = new System.Drawing.Size(31, 19);
+            this.BtnPNameTab.TabIndex = 23;
+            this.BtnPNameTab.Text = "...";
+            this.BtnPNameTab.Click += new System.EventHandler(this.BtnPNameTab_Click);
+            // 
+            // DrpModelCode
+            // 
+            this.DrpModelCode.Location = new System.Drawing.Point(231, 56);
+            this.DrpModelCode.Name = "DrpModelCode";
+            this.DrpModelCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.DrpModelCode.Size = new System.Drawing.Size(214, 20);
+            this.DrpModelCode.TabIndex = 25;
+            // 
+            // DrpProductName
+            // 
+            this.DrpProductName.Location = new System.Drawing.Point(231, 15);
+            this.DrpProductName.Name = "DrpProductName";
+            this.DrpProductName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.DrpProductName.Size = new System.Drawing.Size(214, 20);
+            this.DrpProductName.TabIndex = 24;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(20, 20);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(114, 18);
+            this.labelControl2.TabIndex = 1;
+            this.labelControl2.Text = "Product Name";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Location = new System.Drawing.Point(20, 57);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(95, 18);
+            this.labelControl3.TabIndex = 2;
+            this.labelControl3.Text = "Model Code";
+            // 
+            // DrpModelName
+            // 
+            this.DrpModelName.Location = new System.Drawing.Point(231, 91);
+            this.DrpModelName.Name = "DrpModelName";
+            this.DrpModelName.Size = new System.Drawing.Size(214, 20);
+            this.DrpModelName.TabIndex = 14;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Location = new System.Drawing.Point(20, 92);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(101, 18);
+            this.labelControl4.TabIndex = 3;
+            this.labelControl4.Text = "Model Name";
             // 
             // panelControl3
             // 
@@ -524,19 +538,6 @@ namespace BillPlex
             this.labelControl1.TabIndex = 1;
             this.labelControl1.Text = "Incentive Master";
             // 
-            // labelControl10
-            // 
-            this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl10.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Appearance.Options.UseForeColor = true;
-            this.labelControl10.Location = new System.Drawing.Point(1135, 13);
-            this.labelControl10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(14, 27);
-            this.labelControl10.TabIndex = 31;
-            this.labelControl10.Text = "*";
-            // 
             // IncentiveMaster
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -552,17 +553,17 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DrpModelName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDurationPeriod.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtModelSize.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
-            this.panelControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DrpProductName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DrpModelCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
+            this.panelControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtModelSize.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDurationPeriod.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DrpModelCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DrpProductName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DrpModelName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();

@@ -101,7 +101,7 @@ namespace BillPlex
         {
             productMasterRequest.Id = 0;
             txtPName.ResetText();
-            btnAdd.Enabled = false;
+            btnAdd.Enabled = true;
         }
 
         private void txtSearch_EditValueChanged(object sender, EventArgs e)
@@ -120,7 +120,7 @@ namespace BillPlex
                     productMasterRequest.Id = (Int32)grd_productmaster.GetRowCellValue(rowHandle, "Id");
                     txtPName.Text = grd_productmaster.GetRowCellValue(rowHandle, "Productmodel").ToString();
                 }
-                btnAdd.Enabled = false;
+                btnAdd.Enabled = true;
                 btEdit.Enabled = false;
                 btDelete.Enabled = true;
                 btUpdate.Enabled = true;

@@ -3,14 +3,14 @@
 namespace BillPlex
 {
     public partial class FrmClientCompanyProfile : DevExpress.XtraEditors.XtraForm
-    {        
+    {
         private ClientCompanyInfo ClientCompanyinfoRequest;
         private FrmClientCompanyInfo ClientCompanyRequest;
         private GridView gridView;
         public FrmClientCompanyProfile()
 
         {
-            ClientCompanyinfoRequest  = new ClientCompanyInfo();
+            ClientCompanyinfoRequest = new ClientCompanyInfo();
             InitializeComponent();
             ClientCompanyinfoRequest.ConnectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
             ReloadSqlDataSource();
@@ -47,29 +47,33 @@ namespace BillPlex
         private void btnDelete_Click(object sender, EventArgs e)
         {
             var selectedRows = gridView2.GetSelectedRows();
-
-            foreach (var rowHandle in selectedRows)
+            if (selectedRows.Length > 0)
             {
-                ClientCompanyinfoRequest.Id = (Int64)gridView2.GetRowCellValue(rowHandle, "Id");
-            }
-            ClientCompanyinfoRequest.Delete();
-
-            if (ClientCompanyinfoRequest.Result.Status == ResultStatus.Success)
-            {
-                XtraMessageBox.Show(ClientCompanyinfoRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                ReloadSqlDataSource();
-            }
-            else
-            {
-                if (ClientCompanyinfoRequest.Result.Message.Contains("FK__"))
+                foreach (var rowHandle in selectedRows)
                 {
-                    XtraMessageBox.Show("This Iteam has RelationShip with Another Model", "RelationShip Issues", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    ClientCompanyinfoRequest.Id = (Int64)gridView2.GetRowCellValue(rowHandle, "Id");
+                }
+                ClientCompanyinfoRequest.Delete();
+                if (ClientCompanyinfoRequest.Result.Status == ResultStatus.Success)
+                {
+                    XtraMessageBox.Show(ClientCompanyinfoRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ReloadSqlDataSource();
                 }
                 else
                 {
-                    XtraMessageBox.Show(ClientCompanyinfoRequest.Result.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    if (ClientCompanyinfoRequest.Result.Message.Contains("FK__"))
+                    {
+                        XtraMessageBox.Show("This Iteam has RelationShip with Another Model", "RelationShip Issues", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show(ClientCompanyinfoRequest.Result.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
-
+            }
+            else
+            {
+                XtraMessageBox.Show("No Record Found", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -84,7 +88,7 @@ namespace BillPlex
             ClientCompanyRequest.MdiParent = this.MdiParent;
 
             ClientCompanyRequest.Show();
-           
+
         }
 
         public void FrmClientCompanyProfile_Load(object sender, EventArgs e)

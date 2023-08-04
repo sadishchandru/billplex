@@ -290,13 +290,13 @@ namespace BillPlex
                         }
                         else
                         {
-                            XtraMessageBox.Show(OrderMasterRequest.Result.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            XtraMessageBox.Show(OrderMasterRequest.Result.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
                 else
                 {
-                    XtraMessageBox.Show(OrderMasterRequest.Result.Message, "please give the manditory field", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    XtraMessageBox.Show(OrderMasterRequest.Result.Message, "please give the manditory field", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)

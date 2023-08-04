@@ -61,41 +61,39 @@ namespace BillPlex
         {
             var selectedRows = SubClientGrid.GetSelectedRows();
 
-            foreach (var rowHandle in selectedRows)
+            if (selectedRows.Length > 0)
             {
-                SubClientRequest.Id = (Int64)SubClientGrid.GetRowCellValue(rowHandle, "Id");
-                //SubClientRequest.Id = (int)Id;
-
-            }                                                                                 
-
-           // SubClientRequest.Id = Id;
-            SubClientRequest.Delete();
-
-            if (SubClientRequest.Result.Status == ResultStatus.Success)
-            {
-                XtraMessageBox.Show(SubClientRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                ReloadSqlDataSource();
-            }
-            else
-            {
-                if (SubClientRequest.Result.Message.Contains("FK__"))
+                foreach (var rowHandle in selectedRows)
                 {
-                    XtraMessageBox.Show("This Iteam has RelationShip with Another Model", "RelationShip Issues", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    SubClientRequest.Id = (Int64)SubClientGrid.GetRowCellValue(rowHandle, "Id");
+                }
+                SubClientRequest.Delete();
+                if (SubClientRequest.Result.Status == ResultStatus.Success)
+                {
+                    XtraMessageBox.Show(SubClientRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ReloadSqlDataSource();
                 }
                 else
                 {
-                    XtraMessageBox.Show(SubClientRequest.Result.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    if (SubClientRequest.Result.Message.Contains("FK__"))
+                    {
+                        XtraMessageBox.Show("This Item has Relationship with Another Model", "Relationship Issues", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show(SubClientRequest.Result.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
-
+            }
+            else
+            {
+                XtraMessageBox.Show("No Record Found", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
-
         private void btn_EditClick(object sender, EventArgs e)
         {
             var selectedRow = SubClientGrid.GetSelectedRows();
-
             SubCompanyInfoRequest = new FrmSubClientCompanyInfo();
-
             SubCompanyInfoRequest.BindData(SubClientGrid);
             SubCompanyInfoRequest.MdiParent = this.MdiParent;
             SubCompanyInfoRequest.Show();
