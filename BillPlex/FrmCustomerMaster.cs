@@ -132,7 +132,7 @@ namespace BillPlex
         private void btnDelete_Click(object sender, EventArgs e)
         {
             var selectedRows = CustomerMaster_GridView.GetSelectedRows();
-            if (selectedRows.Length >= 0)
+            if (selectedRows.Length > 0)
             {
                 foreach (var rowHandle in selectedRows)
                 {
@@ -157,40 +157,47 @@ namespace BillPlex
             try
             {
                 var selectedRows = CustomerMaster_GridView.GetSelectedRows();
-
-                foreach (var rowHandle in selectedRows)
+                if (selectedRows.Length > 0)
                 {
-                    CustomerRequest.Id = (Int64)CustomerMaster_GridView.GetRowCellValue(rowHandle, "Id");
-                    txtCustomerCode.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "Code");
-                    txtCustomerName.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "Name");
-                    txtOffAddress.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "OffAddress");
-                    drpState.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "State");
-                    txtStatePin.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "Pin");
-                    drpCountry.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "Country");
-                    txtCode.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "PhonePin");
-                    txtPhoneNo.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "OffPhone");
-                    txtEmailID.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "Email");
-                    txtCDAddress.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "ResAddress");
-                    drpCState.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "ResState");
-                    txtPin.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "ResPin");
-                    drpCDCountry.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "ResCountry");
-                    txtMobileNo.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "Mobile");
-                    txtTINno.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "TinNo");
-                    var datete = CustomerMaster_GridView.GetRowCellValue(rowHandle, "TinDate").ToString();
-                    ddTINDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
-                    txtCSTno.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "CstNo");
-                    datete = CustomerMaster_GridView.GetRowCellValue(rowHandle, "CstDate").ToString();
-                    ddCSTDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
-                    txtLicenseNo.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "licenseNo");
-                    txtWebsite.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "Website");
+
+                    foreach (var rowHandle in selectedRows)
+                    {
+                        CustomerRequest.Id = (Int64)CustomerMaster_GridView.GetRowCellValue(rowHandle, "Id");
+                        txtCustomerCode.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "Code");
+                        txtCustomerName.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "Name");
+                        txtOffAddress.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "OffAddress");
+                        drpState.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "State");
+                        txtStatePin.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "Pin");
+                        drpCountry.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "Country");
+                        txtCode.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "PhonePin");
+                        txtPhoneNo.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "OffPhone");
+                        txtEmailID.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "Email");
+                        txtCDAddress.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "ResAddress");
+                        drpCState.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "ResState");
+                        txtPin.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "ResPin");
+                        drpCDCountry.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "ResCountry");
+                        txtMobileNo.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "Mobile");
+                        txtTINno.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "TinNo");
+                        var datete = CustomerMaster_GridView.GetRowCellValue(rowHandle, "TinDate").ToString();
+                        ddTINDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
+                        txtCSTno.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "CstNo");
+                        datete = CustomerMaster_GridView.GetRowCellValue(rowHandle, "CstDate").ToString();
+                        ddCSTDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
+                        txtLicenseNo.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "licenseNo");
+                        txtWebsite.Text = (string)CustomerMaster_GridView.GetRowCellValue(rowHandle, "Website");
+                    }
+                    txtCustomerCode.Enabled = false;
+                    btnAdd.Enabled = false;
+                    btnEdit.Enabled = false;
+                    btnDelete.Enabled = true;
+                    btnUpdate.Enabled = true;
+                    labelAvailable.Visible = false;
+                    labelCodeExist.Visible = false;
                 }
-                txtCustomerCode.Enabled = false;
-                btnAdd.Enabled = false;
-                btnEdit.Enabled = false;
-                btnDelete.Enabled = true;
-                btnUpdate.Enabled = true;
-                labelAvailable.Visible = false;
-                labelCodeExist.Visible = false;
+                else
+                {
+                    XtraMessageBox.Show("Records not found", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             catch (Exception ex)
             {

@@ -30,11 +30,20 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery4 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter4 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmOrderMasterInfo));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
+            this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
+            this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
+            this.btnClear = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
+            this.btnNew = new DevExpress.XtraEditors.SimpleButton();
+            this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.txtReasonbox = new DevExpress.XtraEditors.MemoEdit();
             this.lblReason = new DevExpress.XtraEditors.LabelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -62,13 +71,6 @@ namespace BillPlex
             this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAdditionalReason = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
-            this.btnNew = new DevExpress.XtraEditors.SimpleButton();
-            this.btnExit = new DevExpress.XtraEditors.SimpleButton();
-            this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
-            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
-            this.btnClear = new DevExpress.XtraEditors.SimpleButton();
-            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
-            this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl22 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
             this.drpCustCode = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -105,17 +107,17 @@ namespace BillPlex
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.ddOrderDate = new DevExpress.XtraEditors.DateEdit();
             this.ddDDate = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
+            this.panelControl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtReasonbox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -142,8 +144,6 @@ namespace BillPlex
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
-            this.panelControl5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -155,6 +155,19 @@ namespace BillPlex
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1552, 52);
             this.panelControl1.TabIndex = 0;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Appearance.Options.UseForeColor = true;
+            this.labelControl1.Location = new System.Drawing.Point(691, 11);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(198, 32);
+            this.labelControl1.TabIndex = 4;
+            this.labelControl1.Text = "Order Master";
             // 
             // panelControl2
             // 
@@ -207,6 +220,126 @@ namespace BillPlex
             this.panelControl2.Size = new System.Drawing.Size(1551, 703);
             this.panelControl2.TabIndex = 1;
             // 
+            // panelControl5
+            // 
+            this.panelControl5.Controls.Add(this.btnUpdate);
+            this.panelControl5.Controls.Add(this.btnEdit);
+            this.panelControl5.Controls.Add(this.btnAdd);
+            this.panelControl5.Controls.Add(this.btnClear);
+            this.panelControl5.Controls.Add(this.btnDelete);
+            this.panelControl5.Controls.Add(this.btnNew);
+            this.panelControl5.Controls.Add(this.btnExit);
+            this.panelControl5.Location = new System.Drawing.Point(1400, 90);
+            this.panelControl5.Name = "panelControl5";
+            this.panelControl5.Size = new System.Drawing.Size(122, 312);
+            this.panelControl5.TabIndex = 54;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnUpdate.Appearance.Options.UseFont = true;
+            this.btnUpdate.Location = new System.Drawing.Point(21, 146);
+            this.btnUpdate.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btnUpdate.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnUpdate.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(78, 30);
+            this.btnUpdate.TabIndex = 47;
+            this.btnUpdate.Text = "UPDATE";
+            this.btnUpdate.Click += new System.EventHandler(this.btnAdd_click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnEdit.Appearance.Options.UseFont = true;
+            this.btnEdit.Location = new System.Drawing.Point(21, 104);
+            this.btnEdit.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btnEdit.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnEdit.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(78, 30);
+            this.btnEdit.TabIndex = 43;
+            this.btnEdit.Text = "EDIT";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Appearance.Options.UseFont = true;
+            this.btnAdd.Location = new System.Drawing.Point(21, 59);
+            this.btnAdd.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btnAdd.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightBlue;
+            this.btnAdd.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnAdd.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(78, 30);
+            this.btnAdd.TabIndex = 44;
+            this.btnAdd.Text = "ADD";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnClear.Appearance.Options.UseFont = true;
+            this.btnClear.Location = new System.Drawing.Point(21, 234);
+            this.btnClear.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btnClear.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnClear.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(78, 30);
+            this.btnClear.TabIndex = 45;
+            this.btnClear.Text = "CLEAR";
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnDelete.Appearance.Options.UseFont = true;
+            this.btnDelete.Location = new System.Drawing.Point(21, 190);
+            this.btnDelete.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btnDelete.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnDelete.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(78, 30);
+            this.btnDelete.TabIndex = 46;
+            this.btnDelete.Text = "DELETE";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnNew
+            // 
+            this.btnNew.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNew.Appearance.Options.UseFont = true;
+            this.btnNew.Enabled = false;
+            this.btnNew.Location = new System.Drawing.Point(21, 12);
+            this.btnNew.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btnNew.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightBlue;
+            this.btnNew.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnNew.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnNew.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(78, 30);
+            this.btnNew.TabIndex = 49;
+            this.btnNew.Text = "NEW";
+            // 
+            // btnExit
+            // 
+            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnExit.Appearance.Options.UseFont = true;
+            this.btnExit.Location = new System.Drawing.Point(21, 277);
+            this.btnExit.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btnExit.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnExit.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(78, 30);
+            this.btnExit.TabIndex = 48;
+            this.btnExit.Text = "EXIT";
+            // 
             // txtReasonbox
             // 
             this.txtReasonbox.Location = new System.Drawing.Point(1031, 347);
@@ -242,13 +375,13 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery4.Name = "PRO_GetOrderMasterByFilter";
-            queryParameter4.Name = "@OrderNo";
-            queryParameter4.Type = typeof(string);
-            storedProcQuery4.Parameters.Add(queryParameter4);
-            storedProcQuery4.StoredProcName = "PRO_GetOrderMasterByFilter";
+            storedProcQuery1.Name = "PRO_GetOrderMasterByFilter";
+            queryParameter1.Name = "@OrderNo";
+            queryParameter1.Type = typeof(string);
+            storedProcQuery1.Parameters.Add(queryParameter1);
+            storedProcQuery1.StoredProcName = "PRO_GetOrderMasterByFilter";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery4});
+            storedProcQuery1});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // gridView1
@@ -480,112 +613,6 @@ namespace BillPlex
             this.btnRefresh.Size = new System.Drawing.Size(87, 60);
             this.btnRefresh.TabIndex = 50;
             this.btnRefresh.Text = "REFRESH";
-            // 
-            // btnNew
-            // 
-            this.btnNew.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.Appearance.Options.UseFont = true;
-            this.btnNew.Enabled = false;
-            this.btnNew.Location = new System.Drawing.Point(21, 12);
-            this.btnNew.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
-            this.btnNew.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightBlue;
-            this.btnNew.LookAndFeel.SkinName = "DevExpress Style";
-            this.btnNew.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnNew.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(78, 30);
-            this.btnNew.TabIndex = 49;
-            this.btnNew.Text = "NEW";
-            // 
-            // btnExit
-            // 
-            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.btnExit.Appearance.Options.UseFont = true;
-            this.btnExit.Location = new System.Drawing.Point(21, 277);
-            this.btnExit.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
-            this.btnExit.LookAndFeel.SkinName = "DevExpress Style";
-            this.btnExit.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(78, 30);
-            this.btnExit.TabIndex = 48;
-            this.btnExit.Text = "EXIT";
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.btnUpdate.Appearance.Options.UseFont = true;
-            this.btnUpdate.Location = new System.Drawing.Point(21, 146);
-            this.btnUpdate.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
-            this.btnUpdate.LookAndFeel.SkinName = "DevExpress Style";
-            this.btnUpdate.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(78, 30);
-            this.btnUpdate.TabIndex = 47;
-            this.btnUpdate.Text = "UPDATE";
-            this.btnUpdate.Click += new System.EventHandler(this.btnAdd_click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.btnDelete.Appearance.Options.UseFont = true;
-            this.btnDelete.Location = new System.Drawing.Point(21, 190);
-            this.btnDelete.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
-            this.btnDelete.LookAndFeel.SkinName = "DevExpress Style";
-            this.btnDelete.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(78, 30);
-            this.btnDelete.TabIndex = 46;
-            this.btnDelete.Text = "DELETE";
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnClear
-            // 
-            this.btnClear.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.btnClear.Appearance.Options.UseFont = true;
-            this.btnClear.Location = new System.Drawing.Point(21, 234);
-            this.btnClear.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
-            this.btnClear.LookAndFeel.SkinName = "DevExpress Style";
-            this.btnClear.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(78, 30);
-            this.btnClear.TabIndex = 45;
-            this.btnClear.Text = "CLEAR";
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Appearance.Options.UseFont = true;
-            this.btnAdd.Location = new System.Drawing.Point(21, 59);
-            this.btnAdd.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
-            this.btnAdd.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightBlue;
-            this.btnAdd.LookAndFeel.SkinName = "DevExpress Style";
-            this.btnAdd.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(78, 30);
-            this.btnAdd.TabIndex = 44;
-            this.btnAdd.Text = "ADD";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.btnEdit.Appearance.Options.UseFont = true;
-            this.btnEdit.Location = new System.Drawing.Point(21, 104);
-            this.btnEdit.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
-            this.btnEdit.LookAndFeel.SkinName = "DevExpress Style";
-            this.btnEdit.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(78, 30);
-            this.btnEdit.TabIndex = 43;
-            this.btnEdit.Text = "EDIT";
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // labelControl22
             // 
@@ -982,19 +1009,6 @@ namespace BillPlex
             this.labelControl3.TabIndex = 1;
             this.labelControl3.Text = "Order No";
             // 
-            // labelControl2
-            // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Appearance.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Appearance.Options.UseForeColor = true;
-            this.labelControl2.Location = new System.Drawing.Point(3, 3);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(116, 18);
-            this.labelControl2.TabIndex = 0;
-            this.labelControl2.Text = "Order Details";
-            // 
             // ddOrderDate
             // 
             this.ddOrderDate.EditValue = null;
@@ -1035,6 +1049,19 @@ namespace BillPlex
             this.ddDDate.Size = new System.Drawing.Size(285, 20);
             this.ddDDate.TabIndex = 34;
             // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Appearance.Options.UseForeColor = true;
+            this.labelControl2.Location = new System.Drawing.Point(3, 3);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(116, 18);
+            this.labelControl2.TabIndex = 0;
+            this.labelControl2.Text = "Order Details";
+            // 
             // panelControl3
             // 
             this.panelControl3.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -1055,33 +1082,6 @@ namespace BillPlex
             this.panelControl4.Size = new System.Drawing.Size(125, 25);
             this.panelControl4.TabIndex = 54;
             // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(691, 11);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(198, 32);
-            this.labelControl1.TabIndex = 4;
-            this.labelControl1.Text = "Order Master";
-            // 
-            // panelControl5
-            // 
-            this.panelControl5.Controls.Add(this.btnUpdate);
-            this.panelControl5.Controls.Add(this.btnEdit);
-            this.panelControl5.Controls.Add(this.btnAdd);
-            this.panelControl5.Controls.Add(this.btnClear);
-            this.panelControl5.Controls.Add(this.btnDelete);
-            this.panelControl5.Controls.Add(this.btnNew);
-            this.panelControl5.Controls.Add(this.btnExit);
-            this.panelControl5.Location = new System.Drawing.Point(1400, 90);
-            this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(122, 312);
-            this.panelControl5.TabIndex = 54;
-            // 
             // FrmOrderMasterInfo
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -1101,6 +1101,8 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
+            this.panelControl5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtReasonbox.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
@@ -1128,8 +1130,6 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
             this.panelControl4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
-            this.panelControl5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -30,11 +30,11 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery15 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter15 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCompanyProfile));
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery16 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter16 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
             this.sqlDataSource2 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
@@ -111,26 +111,26 @@ namespace BillPlex
             // 
             this.sqlDataSource2.ConnectionName = "BillPlex";
             this.sqlDataSource2.Name = "sqlDataSource2";
-            storedProcQuery15.Name = "PRO_GetMasterCompanyProfileInfo";
-            queryParameter15.Name = "@SearchKey";
-            queryParameter15.Type = typeof(string);
-            storedProcQuery15.Parameters.Add(queryParameter15);
-            storedProcQuery15.StoredProcName = "PRO_GetMasterCompanyProfileInfo";
+            storedProcQuery1.Name = "PRO_GetMasterCompanyProfileInfo";
+            queryParameter1.Name = "@SearchKey";
+            queryParameter1.Type = typeof(string);
+            storedProcQuery1.Parameters.Add(queryParameter1);
+            storedProcQuery1.StoredProcName = "PRO_GetMasterCompanyProfileInfo";
             this.sqlDataSource2.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery15});
+            storedProcQuery1});
             this.sqlDataSource2.ResultSchemaSerializable = resources.GetString("sqlDataSource2.ResultSchemaSerializable");
             // 
             // sqlDataSource1
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery16.Name = "PRO_GetMasterCompanyProfileInfo";
-            queryParameter16.Name = "@SearchKey";
-            queryParameter16.Type = typeof(string);
-            storedProcQuery16.Parameters.Add(queryParameter16);
-            storedProcQuery16.StoredProcName = "PRO_GetMasterCompanyProfileInfo";
+            storedProcQuery2.Name = "PRO_GetMasterCompanyProfileInfo";
+            queryParameter2.Name = "@SearchKey";
+            queryParameter2.Type = typeof(string);
+            storedProcQuery2.Parameters.Add(queryParameter2);
+            storedProcQuery2.StoredProcName = "PRO_GetMasterCompanyProfileInfo";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery16});
+            storedProcQuery2});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // panelControl1
@@ -171,6 +171,7 @@ namespace BillPlex
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.Click += new System.EventHandler(this.Editbtn_Click);
             // 
             // gridView1
             // 

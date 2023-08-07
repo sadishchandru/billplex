@@ -341,32 +341,6 @@ namespace BillPlex
 
         private void txtQuantity_EditValueChanged(object sender = null, EventArgs e = null)
         {
-
-            //int total = 0;
-
-            //if (txtWages.Text != "" && (txtQuantity.Text != "" && txtQuantity.Text != "0"))
-            //{
-            //    total = (Convert.ToInt32(txtWages.Text) * Convert.ToInt32(txtQuantity.Text));
-            //}
-
-            //if (txtDeducation.Text != "" && txtDeducation.Text != "0")
-            //{
-            //    total = total - Convert.ToInt32(txtDeducation.Text);
-            //}
-
-            //if (txtConveyance.Text != "" && txtConveyance.Text != "0")
-            //{
-            //    total = total + Convert.ToInt32(txtConveyance.Text);
-            //}
-
-            //if (txtIncentive.Text != "" && txtIncentive.Text != "0")
-            //{
-            //    total = total + Convert.ToInt32(txtIncentive.Text);
-            //}
-
-            //txtTotal.Text = total.ToString();
-            //txtNetAmt.Text = total.ToString();
-
             decimal total = 0;
             decimal deductionTotal = 0;
 
@@ -398,9 +372,7 @@ namespace BillPlex
 
         private void InitializeDataSource()
         {
-            //FamilyGridView.Columns.Clear();
             DataTable dataTable = new DataTable();
-
             // Create columns and bind them to the object properties
             dataTable.Columns.Add("EmployeeCode", typeof(string));
             dataTable.Columns.Add("EmployeeName", typeof(string));

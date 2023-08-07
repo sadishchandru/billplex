@@ -49,45 +49,59 @@ namespace BillPlex
             var selectedRows = gridView2.GetSelectedRows();
             if (selectedRows.Length > 0)
             {
-                foreach (var rowHandle in selectedRows)
+                if (selectedRows.Length > 0)
                 {
-                    ClientCompanyinfoRequest.Id = (Int64)gridView2.GetRowCellValue(rowHandle, "Id");
-                }
-                ClientCompanyinfoRequest.Delete();
-                if (ClientCompanyinfoRequest.Result.Status == ResultStatus.Success)
-                {
-                    XtraMessageBox.Show(ClientCompanyinfoRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ReloadSqlDataSource();
-                }
-                else
-                {
-                    if (ClientCompanyinfoRequest.Result.Message.Contains("FK__"))
+                    foreach (var rowHandle in selectedRows)
                     {
-                        XtraMessageBox.Show("This Iteam has RelationShip with Another Model", "RelationShip Issues", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        ClientCompanyinfoRequest.Id = (Int64)gridView2.GetRowCellValue(rowHandle, "Id");
+                    }
+                    ClientCompanyinfoRequest.Delete();
+                    if (ClientCompanyinfoRequest.Result.Status == ResultStatus.Success)
+                    {
+                        XtraMessageBox.Show(ClientCompanyinfoRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ReloadSqlDataSource();
                     }
                     else
                     {
-                        XtraMessageBox.Show(ClientCompanyinfoRequest.Result.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        if (ClientCompanyinfoRequest.Result.Message.Contains("FK__"))
+                        {
+                            XtraMessageBox.Show("This Iteam has RelationShip with Another Model", "RelationShip Issues", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        else
+                        {
+                            XtraMessageBox.Show(ClientCompanyinfoRequest.Result.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
                     }
+                }
+                else
+                {
+                    XtraMessageBox.Show("No Record Found", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
             else
             {
-                XtraMessageBox.Show("No Record Found", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                XtraMessageBox.Show("Records not found", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         private void Editbtn_Click(object sender, EventArgs e)
         {
             var selectedRow = gridView2.GetSelectedRows();
+            if (selectedRow.Length > 0)
+            {
 
-            ClientCompanyRequest = new FrmClientCompanyInfo();
+                ClientCompanyRequest = new FrmClientCompanyInfo();
 
-            ClientCompanyRequest.BindData(gridView2);
+                ClientCompanyRequest.BindData(gridView2);
 
-            ClientCompanyRequest.MdiParent = this.MdiParent;
+                ClientCompanyRequest.MdiParent = this.MdiParent;
 
-            ClientCompanyRequest.Show();
+                ClientCompanyRequest.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("Records not found", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
         }
 

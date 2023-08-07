@@ -40,45 +40,56 @@ namespace BillPlex
         private void Deletebtn_Click(object sender, EventArgs e)
         {
             var selectedRows = gridView1.GetSelectedRows();
-
-            foreach (var rowHandle in selectedRows)
+            if (selectedRows.Length > 0)
             {
-                CompanyMasterRequest.Id = (Int64)gridView1.GetRowCellValue(rowHandle, "Id");
-                
-                //CompanyMasterRequest.Id = (Int32)gridView2.GetRowCellValue(rowHandle, "Id");
-            }
-            CompanyMasterRequest.Delete();
-
-            if (CompanyMasterRequest.Result.Status == ResultStatus.Success)
-            {
-                XtraMessageBox.Show(CompanyMasterRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                gridView1.RefreshData();
-                ReloadSqlDataSource();
-            }
-            else
-            {
-                if (CompanyMasterRequest.Result.Message.Contains("FK__"))
+                foreach (var rowHandle in selectedRows)
                 {
-                    XtraMessageBox.Show("This Item has RelationShip with Another Model", "RelationShip Issues", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    CompanyMasterRequest.Id = (Int64)gridView1.GetRowCellValue(rowHandle, "Id");
+                }
+                CompanyMasterRequest.Delete();
+
+                if (CompanyMasterRequest.Result.Status == ResultStatus.Success)
+                {
+                    XtraMessageBox.Show(CompanyMasterRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    gridView1.RefreshData();
+                    ReloadSqlDataSource();
                 }
                 else
                 {
-                    XtraMessageBox.Show(CompanyMasterRequest.Result.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    if (CompanyMasterRequest.Result.Message.Contains("FK__"))
+                    {
+                        XtraMessageBox.Show("This Item has RelationShip with Another Model", "RelationShip Issues", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show(CompanyMasterRequest.Result.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
+            }
+            else
+            {
+                XtraMessageBox.Show("Records not found", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         private void Editbtn_Click(object sender, EventArgs e)
         {
             var selectedRow = gridView1.GetSelectedRows();
+            if (selectedRow.Length > 0)
+            {
 
-            CompanyInfoRequest = new FrmCompanyInfo();
+                CompanyInfoRequest = new FrmCompanyInfo();
 
-            CompanyInfoRequest.MdiParent = this.MdiParent;
+                CompanyInfoRequest.MdiParent = this.MdiParent;
 
-            CompanyInfoRequest.BindData(gridView1);
+                CompanyInfoRequest.BindData(gridView1);
 
-            CompanyInfoRequest.Show();
+                CompanyInfoRequest.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("Records not found", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
         private void FrmCompanyProfile_Load(object sender, EventArgs e)
         {

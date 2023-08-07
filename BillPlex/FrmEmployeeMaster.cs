@@ -465,12 +465,10 @@ namespace BillPlex
                 XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void Newbtn_Click(object sender, EventArgs e)
         {
 
         }
-
         private void drpMCompany_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedItem = (string)drpMCompany.SelectedItem;
@@ -480,7 +478,6 @@ namespace BillPlex
                 txtPName.Text = EmployeePersonalRequest.MasterCompanyList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.AuthorName ?? "";
             }
         }
-
         private void drpCCompany_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedItem = (string)drpCCompany.SelectedItem;
@@ -490,7 +487,6 @@ namespace BillPlex
                 txtCName.Text = EmployeePersonalRequest.ClientCompanyList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.AuthorName ?? "";
             }
         }
-
         private void drpSCCom_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedItem = (string)drpSCCom.SelectedItem;
@@ -500,12 +496,10 @@ namespace BillPlex
                 txtSCName.Text = EmployeePersonalRequest.SubClientCompanyList.FirstOrDefault(item => item.Name == selectedItem.ToString())?.AuthorName ?? "";
             }
         }
-
         private void Exitbtn_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void Clearbtn_Click(object sender, EventArgs e)
         {
             drpMCompany.ResetText();
@@ -550,7 +544,6 @@ namespace BillPlex
             drpReason.ResetText();
             ddRDate.ResetText();
         }
-
         public void BindData(dynamic selectedClientCompanyList)
         {
             var selectedRows = selectedClientCompanyList.GetSelectedRows();
@@ -563,15 +556,9 @@ namespace BillPlex
                 txtEmpCode.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "EmployeeCode");
                 drpMCompany.SelectedIndex = EmployeePersonalRequest.MasterCompanyList.FindIndex(e => e.Id == Convert.ToInt32(selectedClientCompanyList.GetRowCellValue(rowHandle, "MasterCompanyId")));
                 txtPName.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ContractorName");
-
-                //drpCCompany.SelectedIndex = Convert.ToInt32(selectedClientCompanyList.GetRowCellValue(rowHandle, "ClientCompanyId"));
                 drpCCompany.SelectedIndex = EmployeePersonalRequest.ClientCompanyList.FindIndex(e => e.Id == Convert.ToInt32(selectedClientCompanyList.GetRowCellValue(rowHandle, "ClientCompanyId")));
                 txtCName.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ClientName");
-
-                //drpSCCom.SelectedIndex = Convert.ToInt32(selectedClientCompanyList.GetRowCellValue(rowHandle, "SubCompanyId"));
                 drpSCCom.SelectedIndex = EmployeePersonalRequest.SubClientCompanyList.FindIndex(e => e.Id == Convert.ToInt32(selectedClientCompanyList.GetRowCellValue(rowHandle, "SubCompanyId")));
-
-
                 txtSCName.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "SubCompanyName");
                 txtEmpName.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "EmployeeName");
                 txtPerAddress.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "PAddress");
@@ -589,16 +576,12 @@ namespace BillPlex
                 txtPANCard.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "Pan");
                 txtPassport.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "PassportNo");
                 txtIdentity.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "IdentityMark");
-
-
                 var datete = selectedClientCompanyList.GetRowCellValue(rowHandle, "DoB").ToString();
                 ddDOB.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
-
                 if (radGender.SelectedIndex != null && selectedClientCompanyList.GetRowCellValue(rowHandle, "Gender") != "")
                 {
                     radGender.SelectedIndex = Convert.ToInt32(selectedClientCompanyList.GetRowCellValue(rowHandle, "Gender"));
                 }
-
                 drpBlood.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "BloodGroup");
                 txtEmailId.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "Email");
                 txtFathers.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "FName");
@@ -610,21 +593,14 @@ namespace BillPlex
                 txtStdCode.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "SCode");
                 txtPhone.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "Phone");
                 txtMobile.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "Mobile");
-
                 datete = selectedClientCompanyList.GetRowCellValue(rowHandle, "EJoiningDate").ToString();
                 ddJDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
-
-
                 txtProb.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "EProbationPeriod");
-
                 datete = selectedClientCompanyList.GetRowCellValue(rowHandle, "EConfirmationDate").ToString();
                 ddCDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
-
                 datete = selectedClientCompanyList.GetRowCellValue(rowHandle, "EResigningDate").ToString();
                 ddRDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
-
                 drpReason.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "Reason");
-
                 int convertedValue = Convert.IsDBNull(selectedClientCompanyList.GetRowCellValue(rowHandle, "EmpId")) ? 0 : Convert.ToInt32(selectedClientCompanyList.GetRowCellValue(rowHandle, "EmpId"));
                 // Finance Details 
                 if (convertedValue != 0)
@@ -661,14 +637,9 @@ namespace BillPlex
                     ddESILastDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
                     drpLOffice.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ESIOffice");
                     drpESIDispensary.Text = selectedClientCompanyList.GetRowCellValue(rowHandle, "ESIDispensary");
-
-
                     //Family Data bindings
                     EmployeeFamilyRequest.EFEmpId = convertedValue;
                 }
-
-
-
             }
 
             if (EmployeePersonalRequest.Id > 0)
@@ -1090,6 +1061,38 @@ namespace BillPlex
 
             // Set the controls' positions to the calculated center position
             panelControl3.Location = new Point(centerX, centerY);
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtCPAddress.ResetText();
+            txtCArea.ResetText();
+            drpCDistrict.ResetText();
+            drpState.ResetText();
+            txtPPincode.ResetText();
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            txtFAddress.ResetText();
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            if (txtFAddress.Text != "")
+            {
+                // Get the text from the text box
+                string text = txtFAddress.Text;
+
+                // Copy the text to the clipboard
+                Clipboard.SetText(text);
+
+                XtraMessageBox.Show("Text copied to clipboard!", "Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                XtraMessageBox.Show("No text to copy!", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }
