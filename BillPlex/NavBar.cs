@@ -92,6 +92,7 @@ namespace BillPlex
         private void CustomerMaster_ItemClick(object sender, ItemClickEventArgs e)
         {
             bool IsOpen = false;
+            Form myForm = Application.OpenForms["FrmCustomerMaster"];
             foreach (Form f in Application.OpenForms)
             {
                 if (f.Text == "FrmCustomerMaster")
@@ -310,6 +311,7 @@ namespace BillPlex
         private void btn_ClientBankInfo(object sender, ItemClickEventArgs e)
         {
             bool IsOpen = false;
+            Form myForm = Application.OpenForms["FrmClientCompanyBankInfo"];
             foreach (Form f in Application.OpenForms)
             {
                 if (f.Text == "FrmClientCompanyBankInfo")
@@ -515,5 +517,19 @@ namespace BillPlex
             }
         }
         #endregion
+        private bool IsFormOpen(Form _form)
+        {
+            bool isOpen = false;
+            foreach (Form item in MdiChildren)
+            {
+                if (item.Name == _form.Name)
+                {
+                    xtraTabbedMdiManager1.Pages[item].MdiChild.Activate();
+                    isOpen = true;
+                    break; // No need to continue looping once the form is found.
+                }
+            }
+            return isOpen;
+        }
     }
 }
