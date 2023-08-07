@@ -73,6 +73,7 @@ namespace BillPlex
             // 
             // ribbon
             // 
+            this.ribbon.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(35, 37, 35, 37);
             this.ribbon.ExpandCollapseItem.Id = 0;
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbon.ExpandCollapseItem,
@@ -106,13 +107,15 @@ namespace BillPlex
             this.btn_DirectJobReceived,
             this.btn_DirectJobReceivedWithoutGiving});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
+            this.ribbon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ribbon.MaxItemId = 37;
             this.ribbon.Name = "ribbon";
+            this.ribbon.OptionsMenuMinWidth = 385;
             this.ribbon.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.ribbonPageCategory1});
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbon.Size = new System.Drawing.Size(1618, 158);
+            this.ribbon.Size = new System.Drawing.Size(1888, 193);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // barButtonItem1
@@ -147,7 +150,10 @@ namespace BillPlex
             // 
             this.btnCustomerDetails.Caption = "Customer Master";
             this.btnCustomerDetails.Id = 9;
+            this.btnCustomerDetails.ImageOptions.DisabledImage = ((System.Drawing.Image)(resources.GetObject("btnCustomerDetails.ImageOptions.DisabledImage")));
+            this.btnCustomerDetails.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCustomerDetails.ImageOptions.Image")));
             this.btnCustomerDetails.Name = "btnCustomerDetails";
+            this.btnCustomerDetails.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btnCustomerDetails.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.CustomerMaster_ItemClick);
             // 
             // MasterCompany_Btn_Click
@@ -162,7 +168,9 @@ namespace BillPlex
             // 
             this.btn_EmployeeMaster.Caption = "Employee Master";
             this.btn_EmployeeMaster.Id = 11;
+            this.btn_EmployeeMaster.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_EmployeeMaster.ImageOptions.Image")));
             this.btn_EmployeeMaster.Name = "btn_EmployeeMaster";
+            this.btn_EmployeeMaster.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btn_EmployeeMaster.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Employee_Master);
             // 
             // barSubItem2
@@ -201,56 +209,72 @@ namespace BillPlex
             // 
             this.barButtonItem5.Caption = "OrderMaster";
             this.barButtonItem5.Id = 19;
+            this.barButtonItem5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
             this.barButtonItem5.Name = "barButtonItem5";
+            this.barButtonItem5.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
             // 
             // btn_RawMaterial
             // 
             this.btn_RawMaterial.Caption = "Raw Material";
             this.btn_RawMaterial.Id = 20;
+            this.btn_RawMaterial.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_RawMaterial.ImageOptions.Image")));
             this.btn_RawMaterial.Name = "btn_RawMaterial";
+            this.btn_RawMaterial.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btn_RawMaterial.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_RawMaterial_ItemClick);
             // 
             // btn_ProductMaster
             // 
             this.btn_ProductMaster.Caption = "Product Master";
             this.btn_ProductMaster.Id = 21;
+            this.btn_ProductMaster.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ProductMaster.ImageOptions.Image")));
             this.btn_ProductMaster.Name = "btn_ProductMaster";
+            this.btn_ProductMaster.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btn_ProductMaster.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ProductMaster_ItemClick);
             // 
             // btn_SizeMaster
             // 
             this.btn_SizeMaster.Caption = "Size Master";
             this.btn_SizeMaster.Id = 22;
+            this.btn_SizeMaster.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_SizeMaster.ImageOptions.Image")));
             this.btn_SizeMaster.Name = "btn_SizeMaster";
+            this.btn_SizeMaster.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btn_SizeMaster.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_SizeMaster_ItemClick);
             // 
             // btn_ColorMaster
             // 
             this.btn_ColorMaster.Caption = "Color Master";
             this.btn_ColorMaster.Id = 23;
+            this.btn_ColorMaster.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ColorMaster.ImageOptions.Image")));
             this.btn_ColorMaster.Name = "btn_ColorMaster";
+            this.btn_ColorMaster.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btn_ColorMaster.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ColorMaster_ItemClick);
             // 
             // btn_ProductModel
             // 
             this.btn_ProductModel.Caption = "Product Model";
             this.btn_ProductModel.Id = 24;
+            this.btn_ProductModel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ProductModel.ImageOptions.Image")));
             this.btn_ProductModel.Name = "btn_ProductModel";
+            this.btn_ProductModel.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btn_ProductModel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ProductModel_ItemClick);
             // 
             // BtnFinishingProduct
             // 
             this.BtnFinishingProduct.Caption = "Finishing Product Model";
             this.BtnFinishingProduct.Id = 25;
+            this.BtnFinishingProduct.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnFinishingProduct.ImageOptions.Image")));
             this.BtnFinishingProduct.Name = "BtnFinishingProduct";
+            this.BtnFinishingProduct.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.BtnFinishingProduct.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem11_ItemClick);
             // 
             // barButtonItem12
             // 
             this.barButtonItem12.Caption = "Incentive Master";
             this.barButtonItem12.Id = 26;
+            this.barButtonItem12.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem12.ImageOptions.Image")));
             this.barButtonItem12.Name = "barButtonItem12";
+            this.barButtonItem12.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem12.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem12_ItemClick);
             // 
             // barButtonItem6
@@ -262,56 +286,72 @@ namespace BillPlex
             // 
             this.btn_DeliveryChallan.Caption = "Material Delivary Challan";
             this.btn_DeliveryChallan.Id = 28;
+            this.btn_DeliveryChallan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_DeliveryChallan.ImageOptions.Image")));
             this.btn_DeliveryChallan.Name = "btn_DeliveryChallan";
+            this.btn_DeliveryChallan.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btn_DeliveryChallan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem7_ItemClick);
             // 
             // btn_JobGiving
             // 
             this.btn_JobGiving.Caption = "Job Giving";
             this.btn_JobGiving.Id = 30;
+            this.btn_JobGiving.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_JobGiving.ImageOptions.Image")));
             this.btn_JobGiving.Name = "btn_JobGiving";
+            this.btn_JobGiving.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btn_JobGiving.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_JobGiving_ItemClick);
             // 
             // btn_JobGivingWithoutDC
             // 
             this.btn_JobGivingWithoutDC.Caption = "Job Giving Without DC";
             this.btn_JobGivingWithoutDC.Id = 31;
+            this.btn_JobGivingWithoutDC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_JobGivingWithoutDC.ImageOptions.Image")));
             this.btn_JobGivingWithoutDC.Name = "btn_JobGivingWithoutDC";
+            this.btn_JobGivingWithoutDC.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btn_JobGivingWithoutDC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_JobGivingWithoutDC_ItemClick);
             // 
             // btnJobReceived
             // 
             this.btnJobReceived.Caption = "Job Received";
             this.btnJobReceived.Id = 32;
+            this.btnJobReceived.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnJobReceived.ImageOptions.Image")));
             this.btnJobReceived.Name = "btnJobReceived";
+            this.btnJobReceived.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btnJobReceived.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnJobReceived_ItemClick);
             // 
             // btn_JobReallocation
             // 
             this.btn_JobReallocation.Caption = "Job Reallocation";
             this.btn_JobReallocation.Id = 33;
+            this.btn_JobReallocation.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_JobReallocation.ImageOptions.Image")));
             this.btn_JobReallocation.Name = "btn_JobReallocation";
+            this.btn_JobReallocation.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btn_JobReallocation.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_JobReallocation_ItemClick);
             // 
             // btn_DirectJobGiving
             // 
             this.btn_DirectJobGiving.Caption = "Direct Job Giving";
             this.btn_DirectJobGiving.Id = 34;
+            this.btn_DirectJobGiving.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_DirectJobGiving.ImageOptions.Image")));
             this.btn_DirectJobGiving.Name = "btn_DirectJobGiving";
+            this.btn_DirectJobGiving.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btn_DirectJobGiving.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_DirectJobGiving_ItemClick);
             // 
             // btn_DirectJobReceived
             // 
             this.btn_DirectJobReceived.Caption = "Direct Job Received";
             this.btn_DirectJobReceived.Id = 35;
+            this.btn_DirectJobReceived.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_DirectJobReceived.ImageOptions.Image")));
             this.btn_DirectJobReceived.Name = "btn_DirectJobReceived";
+            this.btn_DirectJobReceived.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btn_DirectJobReceived.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_DirectJobReceived_ItemClick);
             // 
             // btn_DirectJobReceivedWithoutGiving
             // 
             this.btn_DirectJobReceivedWithoutGiving.Caption = "Direct Job Received (Without Giving)";
             this.btn_DirectJobReceivedWithoutGiving.Id = 36;
+            this.btn_DirectJobReceivedWithoutGiving.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_DirectJobReceivedWithoutGiving.ImageOptions.Image")));
             this.btn_DirectJobReceivedWithoutGiving.Name = "btn_DirectJobReceivedWithoutGiving";
+            this.btn_DirectJobReceivedWithoutGiving.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btn_DirectJobReceivedWithoutGiving.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_DirectJobReceivedWithoutGiving_ItemClick);
             // 
             // ribbonPageCategory1
@@ -387,20 +427,22 @@ namespace BillPlex
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 661);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 813);
+            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1618, 24);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1888, 30);
             // 
             // NavBar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1618, 685);
+            this.ClientSize = new System.Drawing.Size(1888, 843);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("NavBar.IconOptions.Icon")));
             this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "NavBar";
             this.Ribbon = this.ribbon;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
