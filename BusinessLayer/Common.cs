@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Linq;
+using System.Net;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,7 +24,16 @@ namespace BusinessLayer
         // Initialize the SQL DB connection
         public void InitializeDb()
         {
-            ObjDbfactory = new DbFactory(DataBaseType.SQLServer, ConnectionString);
+            //string localIpAddress = Dns.GetHostEntry(Dns.GetHostName()).AddressList
+            //           .First(ip => ip.AddressFamily == AddressFamily.InterNetwork)
+            //           .ToString();
+
+            string localServerName = Environment.MachineName;
+            string connectionStringTemplate = "Data Source={0};Initial Catalog=BillPlex;Integrated Security=True;";
+
+
+            string dynamicConnectionString = string.Format(connectionStringTemplate, localServerName);
+            ObjDbfactory = new DbFactory(DataBaseType.SQLServer, dynamicConnectionString);
         }
 
         // Close the SQL DB connection
