@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.Common;
 using System.Linq;
@@ -24,12 +25,24 @@ namespace BusinessLayer
         // Initialize the SQL DB connection
         public void InitializeDb()
         {
-            //string localIpAddress = Dns.GetHostEntry(Dns.GetHostName()).AddressList
-            //           .First(ip => ip.AddressFamily == AddressFamily.InterNetwork)
-            //           .ToString();
 
+            
+
+            // Refresh the ConfigurationManager
+            ConfigurationManager.RefreshSection("connectionStrings");
             string localServerName = Environment.MachineName;
             string connectionStringTemplate = "Data Source={0};Initial Catalog=BillPlex;Integrated Security=True;";
+
+            // Retrieve the connection string from app.config
+            string connectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
+
+            // Modify the connection string (example: change the database name)
+            connectionString = connectionString.Replace("Data Source=localhost", $"Data Source={localServerName}");
+
+            // Update the connection string in app.config
+            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            config.ConnectionStrings.ConnectionStrings["BillPlex"].ConnectionString = connectionString;
+            config.Save(ConfigurationSaveMode.Modified);
 
 
             string dynamicConnectionString = string.Format(connectionStringTemplate, localServerName);
