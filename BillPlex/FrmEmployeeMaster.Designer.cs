@@ -42,6 +42,12 @@ namespace BillPlex
             this.Newbtn = new DevExpress.XtraEditors.SimpleButton();
             this.EmployeeMasterTab = new DevExpress.XtraTab.XtraTabControl();
             this.PERSONAL = new DevExpress.XtraTab.XtraTabPage();
+            this.labelControl110 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl109 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl108 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl107 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl106 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl104 = new DevExpress.XtraEditors.LabelControl();
             this.labelCodeExist = new DevExpress.XtraEditors.LabelControl();
             this.labelAvailable = new DevExpress.XtraEditors.LabelControl();
             this.txtPhone = new DevExpress.XtraEditors.TextEdit();
@@ -293,12 +299,6 @@ namespace BillPlex
             this.txtNAddress = new DevExpress.XtraEditors.MemoEdit();
             this.txtGAddress = new DevExpress.XtraEditors.MemoEdit();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl104 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl106 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl107 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl108 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl109 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl110 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -712,6 +712,78 @@ namespace BillPlex
             this.PERSONAL.Name = "PERSONAL";
             this.PERSONAL.Size = new System.Drawing.Size(1380, 678);
             this.PERSONAL.Text = "PERSONAL";
+            // 
+            // labelControl110
+            // 
+            this.labelControl110.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl110.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl110.Appearance.Options.UseFont = true;
+            this.labelControl110.Appearance.Options.UseForeColor = true;
+            this.labelControl110.Location = new System.Drawing.Point(385, 145);
+            this.labelControl110.Name = "labelControl110";
+            this.labelControl110.Size = new System.Drawing.Size(10, 19);
+            this.labelControl110.TabIndex = 137;
+            this.labelControl110.Text = "*";
+            // 
+            // labelControl109
+            // 
+            this.labelControl109.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl109.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl109.Appearance.Options.UseFont = true;
+            this.labelControl109.Appearance.Options.UseForeColor = true;
+            this.labelControl109.Location = new System.Drawing.Point(175, 46);
+            this.labelControl109.Name = "labelControl109";
+            this.labelControl109.Size = new System.Drawing.Size(10, 19);
+            this.labelControl109.TabIndex = 136;
+            this.labelControl109.Text = "*";
+            // 
+            // labelControl108
+            // 
+            this.labelControl108.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl108.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl108.Appearance.Options.UseFont = true;
+            this.labelControl108.Appearance.Options.UseForeColor = true;
+            this.labelControl108.Location = new System.Drawing.Point(175, 97);
+            this.labelControl108.Name = "labelControl108";
+            this.labelControl108.Size = new System.Drawing.Size(10, 19);
+            this.labelControl108.TabIndex = 135;
+            this.labelControl108.Text = "*";
+            // 
+            // labelControl107
+            // 
+            this.labelControl107.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl107.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl107.Appearance.Options.UseFont = true;
+            this.labelControl107.Appearance.Options.UseForeColor = true;
+            this.labelControl107.Location = new System.Drawing.Point(175, 153);
+            this.labelControl107.Name = "labelControl107";
+            this.labelControl107.Size = new System.Drawing.Size(10, 19);
+            this.labelControl107.TabIndex = 134;
+            this.labelControl107.Text = "*";
+            // 
+            // labelControl106
+            // 
+            this.labelControl106.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl106.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl106.Appearance.Options.UseFont = true;
+            this.labelControl106.Appearance.Options.UseForeColor = true;
+            this.labelControl106.Location = new System.Drawing.Point(385, 46);
+            this.labelControl106.Name = "labelControl106";
+            this.labelControl106.Size = new System.Drawing.Size(10, 19);
+            this.labelControl106.TabIndex = 133;
+            this.labelControl106.Text = "*";
+            // 
+            // labelControl104
+            // 
+            this.labelControl104.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl104.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl104.Appearance.Options.UseFont = true;
+            this.labelControl104.Appearance.Options.UseForeColor = true;
+            this.labelControl104.Location = new System.Drawing.Point(385, 97);
+            this.labelControl104.Name = "labelControl104";
+            this.labelControl104.Size = new System.Drawing.Size(10, 19);
+            this.labelControl104.TabIndex = 132;
+            this.labelControl104.Text = "*";
             // 
             // labelCodeExist
             // 
@@ -1497,7 +1569,7 @@ namespace BillPlex
             this.labelControl10.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl10.Appearance.Options.UseFont = true;
             this.labelControl10.Appearance.Options.UseForeColor = true;
-            this.labelControl10.Location = new System.Drawing.Point(169, 197);
+            this.labelControl10.Location = new System.Drawing.Point(175, 199);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(10, 19);
             this.labelControl10.TabIndex = 47;
@@ -3864,78 +3936,6 @@ namespace BillPlex
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(1575, 795);
             this.panelControl3.TabIndex = 2;
-            // 
-            // labelControl104
-            // 
-            this.labelControl104.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl104.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl104.Appearance.Options.UseFont = true;
-            this.labelControl104.Appearance.Options.UseForeColor = true;
-            this.labelControl104.Location = new System.Drawing.Point(385, 97);
-            this.labelControl104.Name = "labelControl104";
-            this.labelControl104.Size = new System.Drawing.Size(10, 19);
-            this.labelControl104.TabIndex = 132;
-            this.labelControl104.Text = "*";
-            // 
-            // labelControl106
-            // 
-            this.labelControl106.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl106.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl106.Appearance.Options.UseFont = true;
-            this.labelControl106.Appearance.Options.UseForeColor = true;
-            this.labelControl106.Location = new System.Drawing.Point(385, 46);
-            this.labelControl106.Name = "labelControl106";
-            this.labelControl106.Size = new System.Drawing.Size(10, 19);
-            this.labelControl106.TabIndex = 133;
-            this.labelControl106.Text = "*";
-            // 
-            // labelControl107
-            // 
-            this.labelControl107.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl107.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl107.Appearance.Options.UseFont = true;
-            this.labelControl107.Appearance.Options.UseForeColor = true;
-            this.labelControl107.Location = new System.Drawing.Point(175, 152);
-            this.labelControl107.Name = "labelControl107";
-            this.labelControl107.Size = new System.Drawing.Size(10, 19);
-            this.labelControl107.TabIndex = 134;
-            this.labelControl107.Text = "*";
-            // 
-            // labelControl108
-            // 
-            this.labelControl108.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl108.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl108.Appearance.Options.UseFont = true;
-            this.labelControl108.Appearance.Options.UseForeColor = true;
-            this.labelControl108.Location = new System.Drawing.Point(169, 97);
-            this.labelControl108.Name = "labelControl108";
-            this.labelControl108.Size = new System.Drawing.Size(10, 19);
-            this.labelControl108.TabIndex = 135;
-            this.labelControl108.Text = "*";
-            // 
-            // labelControl109
-            // 
-            this.labelControl109.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl109.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl109.Appearance.Options.UseFont = true;
-            this.labelControl109.Appearance.Options.UseForeColor = true;
-            this.labelControl109.Location = new System.Drawing.Point(169, 46);
-            this.labelControl109.Name = "labelControl109";
-            this.labelControl109.Size = new System.Drawing.Size(10, 19);
-            this.labelControl109.TabIndex = 136;
-            this.labelControl109.Text = "*";
-            // 
-            // labelControl110
-            // 
-            this.labelControl110.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl110.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl110.Appearance.Options.UseFont = true;
-            this.labelControl110.Appearance.Options.UseForeColor = true;
-            this.labelControl110.Location = new System.Drawing.Point(385, 145);
-            this.labelControl110.Name = "labelControl110";
-            this.labelControl110.Size = new System.Drawing.Size(10, 19);
-            this.labelControl110.TabIndex = 137;
-            this.labelControl110.Text = "*";
             // 
             // FrmEmployeeMaster
             // 

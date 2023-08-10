@@ -80,7 +80,7 @@ namespace BillPlex
                         CompanyRequest.StdCode = txtStdCode.Text;
                         CompanyRequest.PhoneNo = txtPhoneNo.Text;
                         CompanyRequest.Startingdate = ddStartingdate.Text.ToString();
-                        CompanyRequest.BusinessNature = radBusinessNature.Text;
+                        CompanyRequest.BusinessNature = radBusinessNature.Text.ToString();
                         CompanyRequest.EmailID = txtEmail.Text;
                         CompanyRequest.Website = txtWebsite.Text;
                         CompanyRequest.PFCode = txtPFCode.Text;
@@ -96,7 +96,7 @@ namespace BillPlex
                         CompanyRequest.LicenseNo = txtLicense.Text;
                         CompanyRequest.Name = txtName.Text;
                         CompanyRequest.FathersName = txtFathersName.Text;
-                        CompanyRequest.Gender = radGender.Text;
+                        CompanyRequest.Gender = radGender.Text.ToString();
                         CompanyRequest.Address = txtAddress.Text;
                         CompanyRequest.AuthState = drpAuthState.Text;
                         CompanyRequest.AuthPin = txtAuthorPin.Text;
@@ -169,7 +169,6 @@ namespace BillPlex
                 txtEmail.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComEmail");
                 txtWebsite.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComWebsite");
                 txtPFCode.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComPFno");
-
                 datete = selectedCompanyList.GetRowCellValue(rowHandle, "ComPFdate").ToString();
                 ddPfDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
                 txtEsiCode.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ComESIno");
@@ -277,25 +276,6 @@ namespace BillPlex
         private void ExitBtn_Click(object sender = null, EventArgs e = null)
         {
             this.Close();
-
-            bool IsOpen = false;
-
-            Form myForm = Application.OpenForms["FrmCompanyProfile"];
-            if (myForm != null)
-            {
-                myForm.Close();
-                myForm = new FrmCompanyProfile();
-                myForm.MdiParent = this.MdiParent;
-                myForm.Show();
-                IsOpen = true;
-            }
-
-            if (IsOpen == false)
-            {
-                FrmCompanyProfile CompanyInfo = new FrmCompanyProfile();
-                CompanyInfo.MdiParent = this.MdiParent;
-                CompanyInfo.Show();
-            }
         }
 
         private void AddClearBtn_Click(object sender, EventArgs e)

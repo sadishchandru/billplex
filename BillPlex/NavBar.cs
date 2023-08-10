@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BusinessLayer;
 
 namespace BillPlex
 {
@@ -23,6 +24,10 @@ namespace BillPlex
             btn_DirectJobReceived.Visibility = BarItemVisibility.Never;
             btn_DeliveryChallan.Visibility = BarItemVisibility.Never;
             MasterCompanyInfo = new FrmCompanyProfile();
+
+            //Common commonClass = new Common();
+
+            //commonClass.InitializeConfigure();
         }
         #region profile
         private void ClientCompany_ItemClick(object sender, ItemClickEventArgs e)
@@ -519,17 +524,35 @@ namespace BillPlex
         #endregion
         private bool IsFormOpen(Form _form)
         {
+            //bool isOpen = false;
+            //foreach (Form item in MdiChildren)
+            //{
+            //    if (item.Name == _form.Name)
+            //    {
+            //        xtraTabbedMdiManager1.Pages[item].MdiChild.Activate();
+            //        isOpen = true;
+            //        break; // No need to continue looping once the form is found.
+            //    }
+            //}
+            //return isOpen;
+
             bool isOpen = false;
             foreach (Form item in MdiChildren)
             {
-                if (item.Name == _form.Name)
+                if (item.GetType() == _form.GetType())
                 {
                     xtraTabbedMdiManager1.Pages[item].MdiChild.Activate();
                     isOpen = true;
-                    break; // No need to continue looping once the form is found.
+                    break;
                 }
             }
             return isOpen;
+
+            if (isOpen)
+            {
+                _form.Activate();
+                return true;
+            }
         }
     }
 }

@@ -25,9 +25,54 @@ namespace BusinessLayer
         // Initialize the SQL DB connection
         public void InitializeDb()
         {
+            try
+            {
 
-            
 
+                // Refresh the ConfigurationManager
+                ConfigurationManager.RefreshSection("connectionStrings");
+                string localServerName = Environment.MachineName;
+                string connectionStringTemplate = "Data Source={0};Initial Catalog=BillPlex;Integrated Security=True;";
+
+                // Retrieve the connection string from app.config
+                string connectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
+
+                // Modify the connection string (example: change the database name)
+                connectionString = connectionString.Replace("Data Source=localhost", $"Data Source={localServerName}");
+
+                // Update the connection string in app.config
+                Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                config.ConnectionStrings.ConnectionStrings["BillPlex"].ConnectionString = connectionString;
+                config.Save(ConfigurationSaveMode.Modified);
+
+                string dynamicConnectionString = string.Format(connectionStringTemplate, localServerName);
+
+
+            //string userConfigFilePath = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal).FilePath;
+
+            //Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal);
+            //string connectionString = config.ConnectionStrings.ConnectionStrings["BillPlex"].ConnectionString;
+            //connectionString = connectionString.Replace("Data Source=localhost", $"Data Source={serverName}");
+            //config.ConnectionStrings.ConnectionStrings["BillPlex"].ConnectionString = connectionString;
+            //config.Save(ConfigurationSaveMode.Modified);
+
+            //// Refresh the ConfigurationManager
+            //ConfigurationManager.RefreshSection("connectionStrings");
+
+
+            ObjDbfactory = new DbFactory(DataBaseType.SQLServer, dynamicConnectionString);
+            }
+            catch (Exception ex)
+            {
+                var eqaswdqaw = ex.Message;
+                // Display a warning alert
+                
+            }
+        }
+
+
+        public void InitializeConfigure()
+        {
             // Refresh the ConfigurationManager
             ConfigurationManager.RefreshSection("connectionStrings");
             string localServerName = Environment.MachineName;
@@ -40,13 +85,11 @@ namespace BusinessLayer
             connectionString = connectionString.Replace("Data Source=localhost", $"Data Source={localServerName}");
 
             // Update the connection string in app.config
-            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal);
             config.ConnectionStrings.ConnectionStrings["BillPlex"].ConnectionString = connectionString;
             config.Save(ConfigurationSaveMode.Modified);
 
-
-            string dynamicConnectionString = string.Format(connectionStringTemplate, localServerName);
-            ObjDbfactory = new DbFactory(DataBaseType.SQLServer, dynamicConnectionString);
+            //string dynamicConnectionString = string.Format(connectionStringTemplate, localServerName);
         }
 
         // Close the SQL DB connection

@@ -577,5 +577,10 @@ namespace BillPlex
             // Set the controls' positions to the calculated center position
             panelControl3.Location = new Point(centerX, centerY);
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
