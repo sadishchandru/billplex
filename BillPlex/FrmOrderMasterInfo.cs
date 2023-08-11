@@ -317,7 +317,7 @@ namespace BillPlex
                 txtMaterialwt.Text = OrderMasterRequest.ProductMasterList.FirstOrDefault(item => item.productId == ProductName.ToString() && item.proModel == ModelName.ToString() && item.Code == ModelCode.ToString() && item.Name == selectedItem.ToString())?.AuthorName ?? "";
                 txtType.Text = OrderMasterRequest.ProductMasterList.FirstOrDefault(item => item.productId == ProductName.ToString() && item.proModel == ModelName.ToString() && item.Code == ModelCode.ToString() && item.Name == selectedItem.ToString())?.Code ?? "";
                 txtRawmatName.Text = OrderMasterRequest.ProductMasterList.FirstOrDefault(item => item.productId == ProductName.ToString() && item.proModel == ModelName.ToString() && item.Code == ModelCode.ToString() && item.Name == selectedItem.ToString())?.RawMaterial ?? "";
-                txtWages.Text = OrderMasterRequest.ProductMasterList.FirstOrDefault(item => item.productId == ProductName.ToString() && item.proModel == ModelName.ToString() && item.Code == ModelCode.ToString() && item.Name == selectedItem.ToString())?.AuthorName ?? "";
+                txtWages.Text = OrderMasterRequest.ProductMasterList.FirstOrDefault(item => item.productId == ProductName.ToString() && item.proModel == ModelName.ToString() && item.Code == ModelCode.ToString() && item.Name == selectedItem.ToString())?.SubCom ?? "";
             }
         }
         public void BindData(dynamic SelectedOrderList)
@@ -335,7 +335,7 @@ namespace BillPlex
                 drpModelName.Text = (string)SelectedOrderList.GetRowCellValue(rowHandle, "productcode");
                 drpModelCode.Text = (string)SelectedOrderList.GetRowCellValue(rowHandle, "productmodel");
                 drpProductSize.Text = (string)SelectedOrderList.GetRowCellValue(rowHandle, "productsize");
-                txtMaterialwt.Text = (string)SelectedOrderList.GetRowCellValue(rowHandle, "totalWt");
+                txtMaterialwt.Text = (string)SelectedOrderList.GetRowCellValue(rowHandle, "TotalWt");
                 txtType.Text = (string)SelectedOrderList.GetRowCellValue(rowHandle, "RawType");
                 txtRawmatName.Text = (string)SelectedOrderList.GetRowCellValue(rowHandle, "RawmaterialId");
                 drpProColor.SelectedIndex = OrderMasterRequest.ColourMasterList.FindIndex(x => x.Id == Convert.ToInt32(SelectedOrderList.GetRowCellValue(rowHandle, "ColorId").ToString()));

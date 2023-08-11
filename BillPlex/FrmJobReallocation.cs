@@ -179,12 +179,12 @@ namespace BillPlex
 
         private void txtWeight_EditValueChanged(object sender, EventArgs e)
         {
-            int txtWeightValue;
-            int lblWeightValue;
+            decimal txtWeightValue;
+            decimal lblWeightValue;
 
-            if (int.TryParse(txtWeight.Text, out txtWeightValue) && int.TryParse(lblWeight.Text, out lblWeightValue))
+            if (decimal.TryParse(txtWeight.Text, out txtWeightValue) && decimal.TryParse(lblWeight.Text, out lblWeightValue))
             {
-                int countDifferent = txtWeightValue - lblWeightValue;
+                decimal countDifferent = txtWeightValue - lblWeightValue;
                 if (countDifferent >= 0)
                 {
                     txtExcess.Text = countDifferent.ToString();

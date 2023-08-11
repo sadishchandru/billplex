@@ -138,8 +138,6 @@ namespace BillPlex
                     JobGivingWithoutDcRequest.QuantityPiece = txtQuantity.Text;
                     JobGivingWithoutDcRequest.WeightKg = txtWeight.Text;
                     JobGivingWithoutDcRequest.AvlQty = txtAvlQty.Text;
-                    //JobGivingWithoutDcRequest.TotalQty = txtTQty.Text;
-                    //JobGivingWithoutDcRequest.TotalWt = txtTotalWT.Text;
                     JobGivingWithoutDcRequest.Shortage = txtShortage.Text;
                     string OrderNo = (string)drpOrderNo.SelectedItem;
                     if (OrderNo != null)

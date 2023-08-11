@@ -34,6 +34,14 @@ namespace BillPlex
             DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmJobGivingWithoutDcInfo));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.panelControl8 = new DevExpress.XtraEditors.PanelControl();
+            this.btnExit = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
+            this.btnClear = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
+            this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
+            this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
+            this.btnNew = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl11 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.cmbCompanyName = new DevExpress.XtraEditors.PanelControl();
@@ -134,17 +142,12 @@ namespace BillPlex
             this.colorderWt = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.panelControl8 = new DevExpress.XtraEditors.PanelControl();
-            this.btnExit = new DevExpress.XtraEditors.SimpleButton();
-            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
-            this.btnClear = new DevExpress.XtraEditors.SimpleButton();
-            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
-            this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
-            this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
-            this.btnNew = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl8)).BeginInit();
+            this.panelControl8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl11)).BeginInit();
             this.panelControl11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbCompanyName)).BeginInit();
@@ -196,14 +199,13 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
             this.panelControl5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl8)).BeginInit();
-            this.panelControl8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
             this.panelControl6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.labelControl10);
             this.panelControl1.Controls.Add(this.panelControl8);
             this.panelControl1.Controls.Add(this.panelControl11);
             this.panelControl1.Controls.Add(this.cmbCompanyName);
@@ -219,6 +221,197 @@ namespace BillPlex
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1663, 755);
             this.panelControl1.TabIndex = 4;
+            // 
+            // panelControl8
+            // 
+            this.panelControl8.Controls.Add(this.btnExit);
+            this.panelControl8.Controls.Add(this.btnAdd);
+            this.panelControl8.Controls.Add(this.btnClear);
+            this.panelControl8.Controls.Add(this.btnDelete);
+            this.panelControl8.Controls.Add(this.btnUpdate);
+            this.panelControl8.Controls.Add(this.btnEdit);
+            this.panelControl8.Controls.Add(this.btnNew);
+            this.panelControl8.Location = new System.Drawing.Point(1541, 203);
+            this.panelControl8.Name = "panelControl8";
+            this.panelControl8.Size = new System.Drawing.Size(117, 240);
+            this.panelControl8.TabIndex = 6;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Appearance.BackColor = System.Drawing.Color.LightBlue;
+            this.btnExit.Appearance.BackColor2 = System.Drawing.SystemColors.Highlight;
+            this.btnExit.Appearance.BorderColor = System.Drawing.Color.White;
+            this.btnExit.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.btnExit.Appearance.Options.UseBackColor = true;
+            this.btnExit.Appearance.Options.UseBorderColor = true;
+            this.btnExit.Appearance.Options.UseFont = true;
+            this.btnExit.Appearance.Options.UseForeColor = true;
+            this.btnExit.AppearanceDisabled.BackColor = System.Drawing.Color.White;
+            this.btnExit.AppearanceDisabled.BackColor2 = System.Drawing.Color.White;
+            this.btnExit.AppearanceDisabled.BorderColor = System.Drawing.Color.White;
+            this.btnExit.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.btnExit.AppearanceDisabled.Options.UseBackColor = true;
+            this.btnExit.AppearanceDisabled.Options.UseBorderColor = true;
+            this.btnExit.AppearanceDisabled.Options.UseForeColor = true;
+            this.btnExit.AppearanceHovered.BackColor = System.Drawing.Color.White;
+            this.btnExit.AppearanceHovered.BackColor2 = System.Drawing.Color.White;
+            this.btnExit.AppearanceHovered.BorderColor = System.Drawing.Color.White;
+            this.btnExit.AppearanceHovered.Options.UseBackColor = true;
+            this.btnExit.AppearanceHovered.Options.UseBorderColor = true;
+            this.btnExit.AppearancePressed.BackColor = System.Drawing.Color.Blue;
+            this.btnExit.AppearancePressed.BackColor2 = System.Drawing.Color.Lime;
+            this.btnExit.AppearancePressed.BorderColor = System.Drawing.Color.Aqua;
+            this.btnExit.AppearancePressed.ForeColor = System.Drawing.Color.Black;
+            this.btnExit.AppearancePressed.Options.UseBackColor = true;
+            this.btnExit.AppearancePressed.Options.UseBorderColor = true;
+            this.btnExit.AppearancePressed.Options.UseForeColor = true;
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnExit.Location = new System.Drawing.Point(25, 192);
+            this.btnExit.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnExit.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.TabIndex = 30;
+            this.btnExit.Text = "EXIT";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Appearance.BackColor = System.Drawing.Color.LightBlue;
+            this.btnAdd.Appearance.BackColor2 = System.Drawing.SystemColors.Highlight;
+            this.btnAdd.Appearance.BorderColor = System.Drawing.Color.White;
+            this.btnAdd.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.btnAdd.Appearance.Options.UseBackColor = true;
+            this.btnAdd.Appearance.Options.UseBorderColor = true;
+            this.btnAdd.Appearance.Options.UseFont = true;
+            this.btnAdd.Appearance.Options.UseForeColor = true;
+            this.btnAdd.AppearanceDisabled.BackColor = System.Drawing.Color.White;
+            this.btnAdd.AppearanceDisabled.BackColor2 = System.Drawing.Color.White;
+            this.btnAdd.AppearanceDisabled.BorderColor = System.Drawing.Color.White;
+            this.btnAdd.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.btnAdd.AppearanceDisabled.Options.UseBackColor = true;
+            this.btnAdd.AppearanceDisabled.Options.UseBorderColor = true;
+            this.btnAdd.AppearanceDisabled.Options.UseForeColor = true;
+            this.btnAdd.AppearanceHovered.BackColor = System.Drawing.Color.White;
+            this.btnAdd.AppearanceHovered.BackColor2 = System.Drawing.Color.White;
+            this.btnAdd.AppearanceHovered.BorderColor = System.Drawing.Color.White;
+            this.btnAdd.AppearanceHovered.Options.UseBackColor = true;
+            this.btnAdd.AppearanceHovered.Options.UseBorderColor = true;
+            this.btnAdd.AppearancePressed.BackColor = System.Drawing.Color.Blue;
+            this.btnAdd.AppearancePressed.BackColor2 = System.Drawing.Color.Lime;
+            this.btnAdd.AppearancePressed.BorderColor = System.Drawing.Color.Aqua;
+            this.btnAdd.AppearancePressed.ForeColor = System.Drawing.Color.Black;
+            this.btnAdd.AppearancePressed.Options.UseBackColor = true;
+            this.btnAdd.AppearancePressed.Options.UseBorderColor = true;
+            this.btnAdd.AppearancePressed.Options.UseForeColor = true;
+            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAdd.Location = new System.Drawing.Point(25, 45);
+            this.btnAdd.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnAdd.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 29;
+            this.btnAdd.Text = "ADD";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Appearance.BackColor = System.Drawing.Color.LightBlue;
+            this.btnClear.Appearance.BackColor2 = System.Drawing.SystemColors.Highlight;
+            this.btnClear.Appearance.BorderColor = System.Drawing.Color.White;
+            this.btnClear.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.btnClear.Appearance.Options.UseBackColor = true;
+            this.btnClear.Appearance.Options.UseBorderColor = true;
+            this.btnClear.Appearance.Options.UseFont = true;
+            this.btnClear.Appearance.Options.UseForeColor = true;
+            this.btnClear.AppearanceDisabled.BackColor = System.Drawing.Color.White;
+            this.btnClear.AppearanceDisabled.BackColor2 = System.Drawing.Color.White;
+            this.btnClear.AppearanceDisabled.BorderColor = System.Drawing.Color.White;
+            this.btnClear.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.btnClear.AppearanceDisabled.Options.UseBackColor = true;
+            this.btnClear.AppearanceDisabled.Options.UseBorderColor = true;
+            this.btnClear.AppearanceDisabled.Options.UseForeColor = true;
+            this.btnClear.AppearanceHovered.BackColor = System.Drawing.Color.White;
+            this.btnClear.AppearanceHovered.BackColor2 = System.Drawing.Color.White;
+            this.btnClear.AppearanceHovered.BorderColor = System.Drawing.Color.White;
+            this.btnClear.AppearanceHovered.Options.UseBackColor = true;
+            this.btnClear.AppearanceHovered.Options.UseBorderColor = true;
+            this.btnClear.AppearancePressed.BackColor = System.Drawing.Color.Blue;
+            this.btnClear.AppearancePressed.BackColor2 = System.Drawing.Color.Lime;
+            this.btnClear.AppearancePressed.BorderColor = System.Drawing.Color.Aqua;
+            this.btnClear.AppearancePressed.ForeColor = System.Drawing.Color.Black;
+            this.btnClear.AppearancePressed.Options.UseBackColor = true;
+            this.btnClear.AppearancePressed.Options.UseBorderColor = true;
+            this.btnClear.AppearancePressed.Options.UseForeColor = true;
+            this.btnClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnClear.Location = new System.Drawing.Point(25, 161);
+            this.btnClear.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnClear.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.TabIndex = 28;
+            this.btnClear.Text = "CLEAR";
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Appearance.Options.UseFont = true;
+            this.btnDelete.Enabled = false;
+            this.btnDelete.Location = new System.Drawing.Point(25, 132);
+            this.btnDelete.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btnDelete.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnDelete.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 8;
+            this.btnDelete.Text = "DELETE";
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Appearance.Options.UseFont = true;
+            this.btnUpdate.Enabled = false;
+            this.btnUpdate.Location = new System.Drawing.Point(25, 103);
+            this.btnUpdate.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btnUpdate.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnUpdate.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.TabIndex = 7;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Appearance.Options.UseFont = true;
+            this.btnEdit.Enabled = false;
+            this.btnEdit.Location = new System.Drawing.Point(25, 74);
+            this.btnEdit.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btnEdit.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnEdit.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 6;
+            this.btnEdit.Text = "EDIT";
+            // 
+            // btnNew
+            // 
+            this.btnNew.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNew.Appearance.Options.UseFont = true;
+            this.btnNew.Enabled = false;
+            this.btnNew.Location = new System.Drawing.Point(25, 16);
+            this.btnNew.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.btnNew.LookAndFeel.SkinName = "DevExpress Style";
+            this.btnNew.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(75, 23);
+            this.btnNew.TabIndex = 4;
+            this.btnNew.Text = "NEW";
             // 
             // panelControl11
             // 
@@ -792,7 +985,7 @@ namespace BillPlex
             // ddDate
             // 
             this.ddDate.EditValue = null;
-            this.ddDate.Location = new System.Drawing.Point(1204, 19);
+            this.ddDate.Location = new System.Drawing.Point(1226, 18);
             this.ddDate.Name = "ddDate";
             this.ddDate.Properties.BeepOnError = false;
             this.ddDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -1223,197 +1416,6 @@ namespace BillPlex
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "JOB GIVING Without DC";
             // 
-            // panelControl8
-            // 
-            this.panelControl8.Controls.Add(this.btnExit);
-            this.panelControl8.Controls.Add(this.btnAdd);
-            this.panelControl8.Controls.Add(this.btnClear);
-            this.panelControl8.Controls.Add(this.btnDelete);
-            this.panelControl8.Controls.Add(this.btnUpdate);
-            this.panelControl8.Controls.Add(this.btnEdit);
-            this.panelControl8.Controls.Add(this.btnNew);
-            this.panelControl8.Location = new System.Drawing.Point(1541, 203);
-            this.panelControl8.Name = "panelControl8";
-            this.panelControl8.Size = new System.Drawing.Size(117, 240);
-            this.panelControl8.TabIndex = 6;
-            // 
-            // btnExit
-            // 
-            this.btnExit.Appearance.BackColor = System.Drawing.Color.LightBlue;
-            this.btnExit.Appearance.BackColor2 = System.Drawing.SystemColors.Highlight;
-            this.btnExit.Appearance.BorderColor = System.Drawing.Color.White;
-            this.btnExit.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.btnExit.Appearance.Options.UseBackColor = true;
-            this.btnExit.Appearance.Options.UseBorderColor = true;
-            this.btnExit.Appearance.Options.UseFont = true;
-            this.btnExit.Appearance.Options.UseForeColor = true;
-            this.btnExit.AppearanceDisabled.BackColor = System.Drawing.Color.White;
-            this.btnExit.AppearanceDisabled.BackColor2 = System.Drawing.Color.White;
-            this.btnExit.AppearanceDisabled.BorderColor = System.Drawing.Color.White;
-            this.btnExit.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.btnExit.AppearanceDisabled.Options.UseBackColor = true;
-            this.btnExit.AppearanceDisabled.Options.UseBorderColor = true;
-            this.btnExit.AppearanceDisabled.Options.UseForeColor = true;
-            this.btnExit.AppearanceHovered.BackColor = System.Drawing.Color.White;
-            this.btnExit.AppearanceHovered.BackColor2 = System.Drawing.Color.White;
-            this.btnExit.AppearanceHovered.BorderColor = System.Drawing.Color.White;
-            this.btnExit.AppearanceHovered.Options.UseBackColor = true;
-            this.btnExit.AppearanceHovered.Options.UseBorderColor = true;
-            this.btnExit.AppearancePressed.BackColor = System.Drawing.Color.Blue;
-            this.btnExit.AppearancePressed.BackColor2 = System.Drawing.Color.Lime;
-            this.btnExit.AppearancePressed.BorderColor = System.Drawing.Color.Aqua;
-            this.btnExit.AppearancePressed.ForeColor = System.Drawing.Color.Black;
-            this.btnExit.AppearancePressed.Options.UseBackColor = true;
-            this.btnExit.AppearancePressed.Options.UseBorderColor = true;
-            this.btnExit.AppearancePressed.Options.UseForeColor = true;
-            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnExit.Location = new System.Drawing.Point(25, 192);
-            this.btnExit.LookAndFeel.SkinName = "DevExpress Style";
-            this.btnExit.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 23);
-            this.btnExit.TabIndex = 30;
-            this.btnExit.Text = "EXIT";
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Appearance.BackColor = System.Drawing.Color.LightBlue;
-            this.btnAdd.Appearance.BackColor2 = System.Drawing.SystemColors.Highlight;
-            this.btnAdd.Appearance.BorderColor = System.Drawing.Color.White;
-            this.btnAdd.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.btnAdd.Appearance.Options.UseBackColor = true;
-            this.btnAdd.Appearance.Options.UseBorderColor = true;
-            this.btnAdd.Appearance.Options.UseFont = true;
-            this.btnAdd.Appearance.Options.UseForeColor = true;
-            this.btnAdd.AppearanceDisabled.BackColor = System.Drawing.Color.White;
-            this.btnAdd.AppearanceDisabled.BackColor2 = System.Drawing.Color.White;
-            this.btnAdd.AppearanceDisabled.BorderColor = System.Drawing.Color.White;
-            this.btnAdd.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.btnAdd.AppearanceDisabled.Options.UseBackColor = true;
-            this.btnAdd.AppearanceDisabled.Options.UseBorderColor = true;
-            this.btnAdd.AppearanceDisabled.Options.UseForeColor = true;
-            this.btnAdd.AppearanceHovered.BackColor = System.Drawing.Color.White;
-            this.btnAdd.AppearanceHovered.BackColor2 = System.Drawing.Color.White;
-            this.btnAdd.AppearanceHovered.BorderColor = System.Drawing.Color.White;
-            this.btnAdd.AppearanceHovered.Options.UseBackColor = true;
-            this.btnAdd.AppearanceHovered.Options.UseBorderColor = true;
-            this.btnAdd.AppearancePressed.BackColor = System.Drawing.Color.Blue;
-            this.btnAdd.AppearancePressed.BackColor2 = System.Drawing.Color.Lime;
-            this.btnAdd.AppearancePressed.BorderColor = System.Drawing.Color.Aqua;
-            this.btnAdd.AppearancePressed.ForeColor = System.Drawing.Color.Black;
-            this.btnAdd.AppearancePressed.Options.UseBackColor = true;
-            this.btnAdd.AppearancePressed.Options.UseBorderColor = true;
-            this.btnAdd.AppearancePressed.Options.UseForeColor = true;
-            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAdd.Location = new System.Drawing.Point(25, 45);
-            this.btnAdd.LookAndFeel.SkinName = "DevExpress Style";
-            this.btnAdd.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 29;
-            this.btnAdd.Text = "ADD";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnClear
-            // 
-            this.btnClear.Appearance.BackColor = System.Drawing.Color.LightBlue;
-            this.btnClear.Appearance.BackColor2 = System.Drawing.SystemColors.Highlight;
-            this.btnClear.Appearance.BorderColor = System.Drawing.Color.White;
-            this.btnClear.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.btnClear.Appearance.Options.UseBackColor = true;
-            this.btnClear.Appearance.Options.UseBorderColor = true;
-            this.btnClear.Appearance.Options.UseFont = true;
-            this.btnClear.Appearance.Options.UseForeColor = true;
-            this.btnClear.AppearanceDisabled.BackColor = System.Drawing.Color.White;
-            this.btnClear.AppearanceDisabled.BackColor2 = System.Drawing.Color.White;
-            this.btnClear.AppearanceDisabled.BorderColor = System.Drawing.Color.White;
-            this.btnClear.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.btnClear.AppearanceDisabled.Options.UseBackColor = true;
-            this.btnClear.AppearanceDisabled.Options.UseBorderColor = true;
-            this.btnClear.AppearanceDisabled.Options.UseForeColor = true;
-            this.btnClear.AppearanceHovered.BackColor = System.Drawing.Color.White;
-            this.btnClear.AppearanceHovered.BackColor2 = System.Drawing.Color.White;
-            this.btnClear.AppearanceHovered.BorderColor = System.Drawing.Color.White;
-            this.btnClear.AppearanceHovered.Options.UseBackColor = true;
-            this.btnClear.AppearanceHovered.Options.UseBorderColor = true;
-            this.btnClear.AppearancePressed.BackColor = System.Drawing.Color.Blue;
-            this.btnClear.AppearancePressed.BackColor2 = System.Drawing.Color.Lime;
-            this.btnClear.AppearancePressed.BorderColor = System.Drawing.Color.Aqua;
-            this.btnClear.AppearancePressed.ForeColor = System.Drawing.Color.Black;
-            this.btnClear.AppearancePressed.Options.UseBackColor = true;
-            this.btnClear.AppearancePressed.Options.UseBorderColor = true;
-            this.btnClear.AppearancePressed.Options.UseForeColor = true;
-            this.btnClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnClear.Location = new System.Drawing.Point(25, 161);
-            this.btnClear.LookAndFeel.SkinName = "DevExpress Style";
-            this.btnClear.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 23);
-            this.btnClear.TabIndex = 28;
-            this.btnClear.Text = "CLEAR";
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Appearance.Options.UseFont = true;
-            this.btnDelete.Enabled = false;
-            this.btnDelete.Location = new System.Drawing.Point(25, 132);
-            this.btnDelete.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
-            this.btnDelete.LookAndFeel.SkinName = "DevExpress Style";
-            this.btnDelete.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 8;
-            this.btnDelete.Text = "DELETE";
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Appearance.Options.UseFont = true;
-            this.btnUpdate.Enabled = false;
-            this.btnUpdate.Location = new System.Drawing.Point(25, 103);
-            this.btnUpdate.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
-            this.btnUpdate.LookAndFeel.SkinName = "DevExpress Style";
-            this.btnUpdate.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdate.TabIndex = 7;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Appearance.Options.UseFont = true;
-            this.btnEdit.Enabled = false;
-            this.btnEdit.Location = new System.Drawing.Point(25, 74);
-            this.btnEdit.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
-            this.btnEdit.LookAndFeel.SkinName = "DevExpress Style";
-            this.btnEdit.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnEdit.TabIndex = 6;
-            this.btnEdit.Text = "EDIT";
-            // 
-            // btnNew
-            // 
-            this.btnNew.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.Appearance.Options.UseFont = true;
-            this.btnNew.Enabled = false;
-            this.btnNew.Location = new System.Drawing.Point(25, 16);
-            this.btnNew.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
-            this.btnNew.LookAndFeel.SkinName = "DevExpress Style";
-            this.btnNew.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(75, 23);
-            this.btnNew.TabIndex = 4;
-            this.btnNew.Text = "NEW";
-            // 
             // panelControl6
             // 
             this.panelControl6.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -1423,6 +1425,18 @@ namespace BillPlex
             this.panelControl6.Name = "panelControl6";
             this.panelControl6.Size = new System.Drawing.Size(1673, 836);
             this.panelControl6.TabIndex = 6;
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl10.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl10.Appearance.Options.UseFont = true;
+            this.labelControl10.Appearance.Options.UseForeColor = true;
+            this.labelControl10.Location = new System.Drawing.Point(1204, 19);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(10, 18);
+            this.labelControl10.TabIndex = 93;
+            this.labelControl10.Text = "*";
             // 
             // FrmJobGivingWithoutDcInfo
             // 
@@ -1439,6 +1453,8 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl8)).EndInit();
+            this.panelControl8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl11)).EndInit();
             this.panelControl11.ResumeLayout(false);
             this.panelControl11.PerformLayout();
@@ -1501,8 +1517,6 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
             this.panelControl5.ResumeLayout(false);
             this.panelControl5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl8)).EndInit();
-            this.panelControl8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
             this.panelControl6.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -1621,5 +1635,6 @@ namespace BillPlex
         private DevExpress.XtraGrid.Columns.GridColumn colorderQty;
         private DevExpress.XtraGrid.Columns.GridColumn colorderWt;
         private DevExpress.XtraEditors.PanelControl panelControl6;
+        private DevExpress.XtraEditors.LabelControl labelControl10;
     }
 }
