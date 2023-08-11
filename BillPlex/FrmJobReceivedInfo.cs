@@ -120,7 +120,7 @@ namespace BillPlex
                 }
                 else
                 {
-                    XtraMessageBox.Show(JobReceivedRequest.Result.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    XtraMessageBox.Show("please Enter the mandatory field", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
