@@ -364,7 +364,7 @@ namespace BillPlex
             foreach (var rowHandle in selectedRows)
             {
                 JobGivingWithoutDcRequest.Id = selectedCompanyList.GetRowCellValue(rowHandle, "Id");
-                drpEmpCode.SelectedIndex = JobGivingWithoutDcRequest.EmployeePersonalList.FindIndex(x => x.Id == Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "EmployeeCode").ToString()));
+                drpEmpCode.SelectedIndex = JobGivingWithoutDcRequest.EmployeePersonalList.FindIndex(x => x.Id == Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "EmployeeCodeId").ToString()));
                 txtEmpName.Text = selectedCompanyList.GetRowCellValue(rowHandle, "EmployeeName");
                 txtComName.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CompanyName");
                 txtCCom.Text = selectedCompanyList.GetRowCellValue(rowHandle, "ClientCompany");

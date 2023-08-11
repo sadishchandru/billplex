@@ -69,6 +69,7 @@ SET NOCOUNT ON;
 				SELECT 
 						OM.OrderNo
 						,JG.Id
+						,JG.EmployeeCode as EmployeeCodeId
 						,EP.EmployeeCode
 						,JG.EmployeeName
 						,CompanyName

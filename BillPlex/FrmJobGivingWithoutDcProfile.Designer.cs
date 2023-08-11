@@ -47,6 +47,7 @@ namespace BillPlex
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.EmployeeCodeId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEmployeeCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEmployeeName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCompanyName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -260,6 +261,7 @@ namespace BillPlex
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colId,
+            this.EmployeeCodeId,
             this.colEmployeeCode,
             this.colEmployeeName,
             this.colCompanyName,
@@ -293,6 +295,12 @@ namespace BillPlex
             this.colId.Name = "colId";
             this.colId.Visible = true;
             this.colId.VisibleIndex = 0;
+            // 
+            // EmployeeCodeId
+            // 
+            this.EmployeeCodeId.Caption = "EmployeeCodeId";
+            this.EmployeeCodeId.FieldName = "EmployeeCodeId";
+            this.EmployeeCodeId.Name = "EmployeeCodeId";
             // 
             // colEmployeeCode
             // 
@@ -556,5 +564,6 @@ namespace BillPlex
         private DevExpress.XtraEditors.SimpleButton btnAdd;
         private DevExpress.XtraEditors.SimpleButton btnExit;
         private DevExpress.XtraEditors.SimpleButton btnNew;
+        private DevExpress.XtraGrid.Columns.GridColumn EmployeeCodeId;
     }
 }
