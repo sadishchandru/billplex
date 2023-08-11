@@ -176,15 +176,6 @@ namespace BillPlex
                                 // Add the new DataRow to the DataTable
                                 dataTable.Rows.Add(newRow);
                             }
-                            //this.Close();
-
-                            //FrmDirectJobReceivedWithoutGivingProfile form = Application.OpenForms.OfType<FrmDirectJobReceivedWithoutGivingProfile>().FirstOrDefault();
-
-                            //Form myForm = Application.OpenForms["FrmDirectJobReceivedWithoutGivingProfile"];
-                            //if (myForm != null)
-                            //{
-                            //    form.ReloadSqlDataSource();
-                            //}
                             gridView1.RefreshData();
                             gridControl1.RefreshDataSource();
                         }
@@ -197,7 +188,7 @@ namespace BillPlex
                 }
                 else
                 {
-                    XtraMessageBox.Show(DirectJobReceivedWithoutGivingRequest.Result.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    XtraMessageBox.Show("please Enter the mandatory field", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
