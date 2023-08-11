@@ -331,14 +331,15 @@ namespace BillPlex
                 ddOrderDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
                 drpCustCode.SelectedIndex = OrderMasterRequest.CustomerMasterList.FindIndex(x => x.Id == Convert.ToInt32(SelectedOrderList.GetRowCellValue(rowHandle, "Customcode").ToString()));
                 drpCustName.SelectedIndex = OrderMasterRequest.CustomerMasterList.FindIndex(x => x.Id == Convert.ToInt32(SelectedOrderList.GetRowCellValue(rowHandle, "CustomerId").ToString()));
-                drpProductName.SelectedIndex = OrderMasterRequest.ProductModelList.FindIndex(x => x.Id == Convert.ToInt32(SelectedOrderList.GetRowCellValue(rowHandle, "ProductNameId").ToString()));
+                drpProductName.SelectedIndex = OrderMasterRequest.ProductMasterList.FindIndex(x => x.Id == Convert.ToInt32(SelectedOrderList.GetRowCellValue(rowHandle, "ProductNameId").ToString()));
                 drpModelName.Text = (string)SelectedOrderList.GetRowCellValue(rowHandle, "productcode");
                 drpModelCode.Text = (string)SelectedOrderList.GetRowCellValue(rowHandle, "productmodel");
                 drpProductSize.Text = (string)SelectedOrderList.GetRowCellValue(rowHandle, "productsize");
                 txtMaterialwt.Text = (string)SelectedOrderList.GetRowCellValue(rowHandle, "TotalWt");
                 txtType.Text = (string)SelectedOrderList.GetRowCellValue(rowHandle, "RawType");
                 txtRawmatName.Text = (string)SelectedOrderList.GetRowCellValue(rowHandle, "RawmaterialId");
-                drpProColor.SelectedIndex = OrderMasterRequest.ColourMasterList.FindIndex(x => x.Id == Convert.ToInt32(SelectedOrderList.GetRowCellValue(rowHandle, "ColorId").ToString()));
+                drpProColor.Text = (string)SelectedOrderList.GetRowCellValue(rowHandle, "ColorId");
+                //drpProColor.SelectedIndex = OrderMasterRequest.ColourMasterList.FindIndex(x => x.Id == Convert.ToInt32(SelectedOrderList.GetRowCellValue(rowHandle, "ColorId").ToString()));
                 txtQuantity.Text = (string)SelectedOrderList.GetRowCellValue(rowHandle, "Quantity");
                 datete = SelectedOrderList.GetRowCellValue(rowHandle, "Delivarydate").ToString();
                 ddDDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";

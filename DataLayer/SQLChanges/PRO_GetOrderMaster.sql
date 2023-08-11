@@ -66,7 +66,7 @@ SET NOCOUNT ON;
 				Quantity,
 				OM.RawmaterialId,
 				RawType,
-				ColorId,
+				COM.Colournname As ColorId,
 				RawQty,
 				TotalRaw,
 				TotalWt,
@@ -77,4 +77,5 @@ SET NOCOUNT ON;
 			FROM OrderMaster OM
 			left join CustomerMaster CM on CM.Id = OM.CustomerId
 			left join Productmodeltemp PM on PM.Id = OM.ProductNameId
+			left join ColourMaster COM on COM.Id = OM.ColorId
 END

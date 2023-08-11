@@ -128,7 +128,7 @@ namespace BillPlex
             this.colCustomerName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colModelName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colModelCode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colProductName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ProductName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colProductSize = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRawMaterial = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colQuantityPiece = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -1203,7 +1203,7 @@ namespace BillPlex
             this.colCustomerName,
             this.colModelName,
             this.colModelCode,
-            this.colProductName,
+            this.ProductName,
             this.colProductSize,
             this.colRawMaterial,
             this.colQuantityPiece,
@@ -1307,12 +1307,13 @@ namespace BillPlex
             this.colModelCode.Visible = true;
             this.colModelCode.VisibleIndex = 11;
             // 
-            // colProductName
+            // ProductName
             // 
-            this.colProductName.FieldName = "ProductName";
-            this.colProductName.Name = "colProductName";
-            this.colProductName.Visible = true;
-            this.colProductName.VisibleIndex = 12;
+            this.ProductName.Caption = "ProductName";
+            this.ProductName.FieldName = "ProductName";
+            this.ProductName.Name = "ProductName";
+            this.ProductName.Visible = true;
+            this.ProductName.VisibleIndex = 12;
             // 
             // colProductSize
             // 
@@ -1622,7 +1623,7 @@ namespace BillPlex
         private DevExpress.XtraGrid.Columns.GridColumn colCustomerName;
         private DevExpress.XtraGrid.Columns.GridColumn colModelName;
         private DevExpress.XtraGrid.Columns.GridColumn colModelCode;
-        private DevExpress.XtraGrid.Columns.GridColumn colProductName;
+        private DevExpress.XtraGrid.Columns.GridColumn ProductName;
         private DevExpress.XtraGrid.Columns.GridColumn colProductSize;
         private DevExpress.XtraGrid.Columns.GridColumn colRawMaterial;
         private DevExpress.XtraGrid.Columns.GridColumn colQuantityPiece;

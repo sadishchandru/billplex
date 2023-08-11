@@ -19,7 +19,7 @@ SET NOCOUNT ON;
 
 		WITH JobGiving AS (
 				SELECT  OrderNo
-						,Id					
+						,Id
 						,EmployeeCode
 						,EmployeeName
 						,CompanyName
@@ -67,33 +67,33 @@ SET NOCOUNT ON;
 
 			)
 				SELECT 
-				OrderNo
-						,Id					
-						,EmployeeCode
-						,EmployeeName
+						OM.OrderNo
+						,JG.Id
+						,EP.EmployeeCode
+						,JG.EmployeeName
 						,CompanyName
 						,Director
 						,ClientCompany
-						,ClientName
+						,JG.ClientName
 						,SubClientCompany
 						,subContractor
 						,Date
-						,OrderDate
+						,JG.OrderDate
 						,CustomerCode
 						,CustomerName
 						,ModelName
 						,ModelCode
 						,ProductName
-						,ProductSize
+						,JG.ProductSize
 						,Color
 						,RawMaterial
 						,Type
 						,CAST(QuantityPiece AS INT) as QuantityPiece
 						,WeightKg
-						,AvlQty
+						,JG.AvlQty
 						,Excess
 						,TotalQty
-						,TotalWt
+						,JG.TotalWt
 						,Shortage
 						,orderQty
 						,orderWt
@@ -110,7 +110,9 @@ SET NOCOUNT ON;
 						,incentive
 						,NetAmt
 						,TotalAmt
-			FROM JobGiving
+			FROM JobGiving JG
+			left join EmployeePersonal EP on EP.Id = JG.EmployeeCode
+			left join OrderMaster OM on OM.Id = JG.OrderNo
 			WHERE RowNum = 1
 			AND ISNULL(isDelete, 0) = 0;
 
