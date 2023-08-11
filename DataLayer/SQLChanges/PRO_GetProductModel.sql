@@ -58,6 +58,7 @@ SET NOCOUNT ON;
 					RM.RawMaterialType,
 					RawMaterialId,
 					RM.RawMaterials,
+					RM.RawMaterials,
 					ProductId,
 					ProductCode,
 					ProductModel,
@@ -67,5 +68,5 @@ SET NOCOUNT ON;
 					WagesforItem,
 					Date
 			FROM ProductModel PM
-			LEFT JOIN RawMaterial RM ON RM.Id = PM.RawmaterialTypeId
+			LEFT JOIN RawMaterial RM ON RM.Id = PM.RawmaterialTypeId AND RM.Id = PM.RawMaterialId
 END

@@ -30,8 +30,8 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery3 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter3 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProductModel));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -47,7 +47,9 @@ namespace BillPlex
             this.grd_ProductModel = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRawmaterialTypeId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRawMaterialType = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRawMaterialId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRawMaterials = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colProductId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colProductCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colProductModel = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -264,13 +266,13 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery3.Name = "PRO_GetProductModel";
-            queryParameter3.Name = "@SearchKey";
-            queryParameter3.Type = typeof(string);
-            storedProcQuery3.Parameters.Add(queryParameter3);
-            storedProcQuery3.StoredProcName = "PRO_GetProductModel";
+            storedProcQuery1.Name = "PRO_GetProductModel";
+            queryParameter1.Name = "@SearchKey";
+            queryParameter1.Type = typeof(string);
+            storedProcQuery1.Parameters.Add(queryParameter1);
+            storedProcQuery1.StoredProcName = "PRO_GetProductModel";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery3});
+            storedProcQuery1});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // grd_ProductModel
@@ -278,7 +280,9 @@ namespace BillPlex
             this.grd_ProductModel.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colId,
             this.colRawmaterialTypeId,
+            this.colRawMaterialType,
             this.colRawMaterialId,
+            this.colRawMaterials,
             this.colProductId,
             this.colProductCode,
             this.colProductModel,
@@ -294,90 +298,88 @@ namespace BillPlex
             // colId
             // 
             this.colId.FieldName = "Id";
-            this.colId.MinWidth = 21;
             this.colId.Name = "colId";
+            this.colId.OptionsColumn.FixedWidth = true;
             this.colId.Visible = true;
             this.colId.VisibleIndex = 0;
             // 
             // colRawmaterialTypeId
             // 
             this.colRawmaterialTypeId.FieldName = "RawmaterialTypeId";
-            this.colRawmaterialTypeId.MinWidth = 21;
             this.colRawmaterialTypeId.Name = "colRawmaterialTypeId";
-            this.colRawmaterialTypeId.Visible = true;
-            this.colRawmaterialTypeId.VisibleIndex = 1;
+            // 
+            // colRawMaterialType
+            // 
+            this.colRawMaterialType.FieldName = "RawMaterialType";
+            this.colRawMaterialType.Name = "colRawMaterialType";
+            this.colRawMaterialType.Visible = true;
+            this.colRawMaterialType.VisibleIndex = 1;
             // 
             // colRawMaterialId
             // 
             this.colRawMaterialId.FieldName = "RawMaterialId";
-            this.colRawMaterialId.MinWidth = 21;
             this.colRawMaterialId.Name = "colRawMaterialId";
-            this.colRawMaterialId.Visible = true;
-            this.colRawMaterialId.VisibleIndex = 2;
+            // 
+            // colRawMaterials
+            // 
+            this.colRawMaterials.FieldName = "RawMaterials";
+            this.colRawMaterials.Name = "colRawMaterials";
+            this.colRawMaterials.Visible = true;
+            this.colRawMaterials.VisibleIndex = 2;
             // 
             // colProductId
             // 
             this.colProductId.FieldName = "ProductId";
-            this.colProductId.MinWidth = 21;
             this.colProductId.Name = "colProductId";
-            this.colProductId.Visible = true;
-            this.colProductId.VisibleIndex = 3;
             // 
             // colProductCode
             // 
             this.colProductCode.FieldName = "ProductCode";
-            this.colProductCode.MinWidth = 21;
             this.colProductCode.Name = "colProductCode";
             this.colProductCode.Visible = true;
-            this.colProductCode.VisibleIndex = 4;
+            this.colProductCode.VisibleIndex = 3;
             // 
             // colProductModel
             // 
             this.colProductModel.FieldName = "ProductModel";
-            this.colProductModel.MinWidth = 21;
             this.colProductModel.Name = "colProductModel";
             this.colProductModel.Visible = true;
-            this.colProductModel.VisibleIndex = 5;
+            this.colProductModel.VisibleIndex = 4;
             // 
             // colProductSize
             // 
             this.colProductSize.FieldName = "ProductSize";
-            this.colProductSize.MinWidth = 21;
             this.colProductSize.Name = "colProductSize";
             this.colProductSize.Visible = true;
-            this.colProductSize.VisibleIndex = 6;
+            this.colProductSize.VisibleIndex = 5;
             // 
             // colRawMaterialStock
             // 
             this.colRawMaterialStock.FieldName = "RawMaterialStock";
-            this.colRawMaterialStock.MinWidth = 21;
             this.colRawMaterialStock.Name = "colRawMaterialStock";
             this.colRawMaterialStock.Visible = true;
-            this.colRawMaterialStock.VisibleIndex = 7;
+            this.colRawMaterialStock.VisibleIndex = 6;
             // 
             // colReqRawMaterial
             // 
             this.colReqRawMaterial.FieldName = "ReqRawMaterial";
-            this.colReqRawMaterial.MinWidth = 21;
             this.colReqRawMaterial.Name = "colReqRawMaterial";
             this.colReqRawMaterial.Visible = true;
-            this.colReqRawMaterial.VisibleIndex = 8;
+            this.colReqRawMaterial.VisibleIndex = 7;
             // 
             // colWagesforItem
             // 
             this.colWagesforItem.FieldName = "WagesforItem";
-            this.colWagesforItem.MinWidth = 21;
             this.colWagesforItem.Name = "colWagesforItem";
             this.colWagesforItem.Visible = true;
-            this.colWagesforItem.VisibleIndex = 9;
+            this.colWagesforItem.VisibleIndex = 8;
             // 
             // colDate
             // 
             this.colDate.FieldName = "Date";
-            this.colDate.MinWidth = 21;
             this.colDate.Name = "colDate";
             this.colDate.Visible = true;
-            this.colDate.VisibleIndex = 10;
+            this.colDate.VisibleIndex = 9;
             // 
             // panelControl3
             // 
@@ -819,17 +821,6 @@ namespace BillPlex
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView grd_ProductModel;
         private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
-        private DevExpress.XtraGrid.Columns.GridColumn colId;
-        private DevExpress.XtraGrid.Columns.GridColumn colRawmaterialTypeId;
-        private DevExpress.XtraGrid.Columns.GridColumn colRawMaterialId;
-        private DevExpress.XtraGrid.Columns.GridColumn colProductId;
-        private DevExpress.XtraGrid.Columns.GridColumn colProductCode;
-        private DevExpress.XtraGrid.Columns.GridColumn colProductModel;
-        private DevExpress.XtraGrid.Columns.GridColumn colProductSize;
-        private DevExpress.XtraGrid.Columns.GridColumn colRawMaterialStock;
-        private DevExpress.XtraGrid.Columns.GridColumn colReqRawMaterial;
-        private DevExpress.XtraGrid.Columns.GridColumn colWagesforItem;
-        private DevExpress.XtraGrid.Columns.GridColumn colDate;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.LabelControl LabelExceed;
         private DevExpress.XtraEditors.LabelControl labelControl15;
@@ -839,5 +830,18 @@ namespace BillPlex
         private DevExpress.XtraEditors.LabelControl labelCodeExist;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.PanelControl panelControl4;
+        private DevExpress.XtraGrid.Columns.GridColumn colId;
+        private DevExpress.XtraGrid.Columns.GridColumn colRawmaterialTypeId;
+        private DevExpress.XtraGrid.Columns.GridColumn colRawMaterialType;
+        private DevExpress.XtraGrid.Columns.GridColumn colRawMaterialId;
+        private DevExpress.XtraGrid.Columns.GridColumn colRawMaterials;
+        private DevExpress.XtraGrid.Columns.GridColumn colProductId;
+        private DevExpress.XtraGrid.Columns.GridColumn colProductCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colProductModel;
+        private DevExpress.XtraGrid.Columns.GridColumn colProductSize;
+        private DevExpress.XtraGrid.Columns.GridColumn colRawMaterialStock;
+        private DevExpress.XtraGrid.Columns.GridColumn colReqRawMaterial;
+        private DevExpress.XtraGrid.Columns.GridColumn colWagesforItem;
+        private DevExpress.XtraGrid.Columns.GridColumn colDate;
     }
 }
