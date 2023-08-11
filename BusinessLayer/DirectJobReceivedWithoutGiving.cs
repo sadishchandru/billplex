@@ -164,7 +164,7 @@ namespace BusinessLayer
 
                 // Calling the stored procedure for creating a new Company Profile
                 List<DbParams> objLstDbParams = new List<DbParams>();
-                objLstDbParams.Add(new DbParams(DbType.String, 50, Id, "@Id", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.String, 50, Id, "Id", ParameterDirection.Input));
                 dbReader = ObjDbfactory.GetReader("PRO_DeleteDirectJobReceivedWithoutGiving", false, objLstDbParams);
 
                 Result.Message = "Direct Job Received Without Giving Deleted Successfully";
@@ -175,8 +175,6 @@ namespace BusinessLayer
                     Result.Message = ToString(dbReader["ResultMessage"]);
                     Result.Status = (ResultStatus)ToInteger(dbReader["ResultNo"]);
                 }
-
-
             }
             catch (Exception ex)
             {

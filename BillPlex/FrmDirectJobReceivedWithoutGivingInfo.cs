@@ -166,6 +166,7 @@ namespace BillPlex
                                 newRow["Weight"] = item.Weight;
                                 newRow["BDays"] = item.BDays;
                                 newRow["ADays"] = item.ADays;
+                                newRow["IncentiveApplicable"] = item.IncentiveApplicable;
                                 newRow["Deduction"] = item.Deduction;
                                 newRow["Total"] = item.Total;
                                 newRow["Conveyance"] = item.Conveyance;
@@ -383,6 +384,7 @@ namespace BillPlex
             dataTable.Columns.Add("Weight", typeof(string));
             dataTable.Columns.Add("BDays", typeof(string));
             dataTable.Columns.Add("ADays", typeof(string));
+            dataTable.Columns.Add("IncentiveApplicable", typeof(string));
             dataTable.Columns.Add("Deduction", typeof(string));
             dataTable.Columns.Add("Total", typeof(string));
             dataTable.Columns.Add("Conveyance", typeof(string));

@@ -63,5 +63,45 @@ namespace BillPlex
             // Set the controls' positions to the calculated center position
             panelControl2.Location = new Point(centerX, centerY);
         }
+
+        private void Deletebtn_Click(object sender, EventArgs e)
+        {
+            var selectedRows = gridView1.GetSelectedRows();
+            if (selectedRows.Length > 0)
+            {
+                if (selectedRows.Length > 0)
+                {
+                    foreach (var rowHandle in selectedRows)
+                    {
+                        DirectJobReceivedWithoutGivingRequest.Id = (Int64)gridView1.GetRowCellValue(rowHandle, "Id");
+                    }
+                    DirectJobReceivedWithoutGivingRequest.Delete();
+                    if (DirectJobReceivedWithoutGivingRequest.Result.Status == ResultStatus.Success)
+                    {
+                        XtraMessageBox.Show(DirectJobReceivedWithoutGivingRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ReloadSqlDataSource();
+                    }
+                    else
+                    {
+                        if (DirectJobReceivedWithoutGivingRequest.Result.Message.Contains("FK__"))
+                        {
+                            XtraMessageBox.Show("This Iteam has RelationShip with Another Model", "RelationShip Issues", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        else
+                        {
+                            XtraMessageBox.Show(DirectJobReceivedWithoutGivingRequest.Result.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                }
+                else
+                {
+                    XtraMessageBox.Show("No Record Found", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            else
+            {
+                XtraMessageBox.Show("Records not found", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }

@@ -30,7 +30,7 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery4 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDirectJobReceivedWithoutGivingProfile));
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
@@ -71,10 +71,10 @@ namespace BillPlex
             this.colIncentive1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNetAmt1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.colNetAmt = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIncentive = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colConveyance = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
@@ -165,6 +165,7 @@ namespace BillPlex
             this.Deletebtn.Size = new System.Drawing.Size(75, 23);
             this.Deletebtn.TabIndex = 9;
             this.Deletebtn.Text = "DELETE";
+            this.Deletebtn.Click += new System.EventHandler(this.Deletebtn_Click);
             // 
             // Updatebtn
             // 
@@ -243,10 +244,10 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery4.Name = "PRO_GetDirectJobReceivedWithoutGiving";
-            storedProcQuery4.StoredProcName = "PRO_GetDirectJobReceivedWithoutGiving";
+            storedProcQuery1.Name = "PRO_GetDirectJobReceivedWithoutGiving";
+            storedProcQuery1.StoredProcName = "PRO_GetDirectJobReceivedWithoutGiving";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery4});
+            storedProcQuery1});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // gridView1
@@ -464,6 +465,18 @@ namespace BillPlex
             this.panelControl1.Size = new System.Drawing.Size(1650, 55);
             this.panelControl1.TabIndex = 2;
             // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Appearance.Options.UseForeColor = true;
+            this.labelControl1.Location = new System.Drawing.Point(525, 11);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(600, 32);
+            this.labelControl1.TabIndex = 3;
+            this.labelControl1.Text = "DIRECT JOB RECEIVED Without GIVING";
+            // 
             // colNetAmt
             // 
             this.colNetAmt.FieldName = "NetAmt";
@@ -478,18 +491,6 @@ namespace BillPlex
             // 
             this.colConveyance.FieldName = "Conveyance";
             this.colConveyance.Name = "colConveyance";
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(525, 11);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(600, 32);
-            this.labelControl1.TabIndex = 3;
-            this.labelControl1.Text = "DIRECT JOB RECEIVED Without GIVING";
             // 
             // FrmDirectJobReceivedWithoutGivingProfile
             // 

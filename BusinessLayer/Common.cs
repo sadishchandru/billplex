@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.Common;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -27,47 +28,42 @@ namespace BusinessLayer
         {
             try
             {
-
-
                 // Refresh the ConfigurationManager
-                ConfigurationManager.RefreshSection("connectionStrings");
                 string localServerName = Environment.MachineName;
                 string connectionStringTemplate = "Data Source={0};Initial Catalog=BillPlex;Integrated Security=True;";
-
-                // Retrieve the connection string from app.config
-                string connectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
-
                 // Modify the connection string (example: change the database name)
-                connectionString = connectionString.Replace("Data Source=localhost", $"Data Source={localServerName}");
-
+                connectionStringTemplate = connectionStringTemplate.Replace("Data Source=localhost", $"Data Source={localServerName}");
+                string dynamicConnectionString = string.Format(connectionStringTemplate, localServerName);
                 // Update the connection string in app.config
                 Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-                config.ConnectionStrings.ConnectionStrings["BillPlex"].ConnectionString = connectionString;
+                config.ConnectionStrings.ConnectionStrings["BillPlex"].ConnectionString = dynamicConnectionString;
                 config.Save(ConfigurationSaveMode.Modified);
-
-                string dynamicConnectionString = string.Format(connectionStringTemplate, localServerName);
-
-
-            //string userConfigFilePath = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal).FilePath;
-
-            //Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal);
-            //string connectionString = config.ConnectionStrings.ConnectionStrings["BillPlex"].ConnectionString;
-            //connectionString = connectionString.Replace("Data Source=localhost", $"Data Source={serverName}");
-            //config.ConnectionStrings.ConnectionStrings["BillPlex"].ConnectionString = connectionString;
-            //config.Save(ConfigurationSaveMode.Modified);
-
-            //// Refresh the ConfigurationManager
-            //ConfigurationManager.RefreshSection("connectionStrings");
-
-
-            ObjDbfactory = new DbFactory(DataBaseType.SQLServer, dynamicConnectionString);
+                // Refresh the ConfigurationManager
+                ConfigurationManager.RefreshSection("connectionStrings");
+                // Get the local server's IP address
+                string localServerIPAddress = GetLocalIPAddress();
+                // Save the IP address to a text file
+                string ipFilePath = "ip_address.txt";
+                File.WriteAllText(ipFilePath, localServerIPAddress);
+                ObjDbfactory = new DbFactory(DataBaseType.SQLServer, dynamicConnectionString);
             }
             catch (Exception ex)
             {
                 var eqaswdqaw = ex.Message;
-                // Display a warning alert
-                
             }
+        }
+        private string GetLocalIPAddress()
+        {
+            string ipAddress = "";
+            foreach (IPAddress ip in Dns.GetHostAddresses(Dns.GetHostName()))
+            {
+                if (ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+                {
+                    ipAddress = ip.ToString();
+                    break;
+                }
+            }
+            return ipAddress;
         }
 
 
@@ -77,19 +73,14 @@ namespace BusinessLayer
             ConfigurationManager.RefreshSection("connectionStrings");
             string localServerName = Environment.MachineName;
             string connectionStringTemplate = "Data Source={0};Initial Catalog=BillPlex;Integrated Security=True;";
-
             // Retrieve the connection string from app.config
             string connectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
-
             // Modify the connection string (example: change the database name)
             connectionString = connectionString.Replace("Data Source=localhost", $"Data Source={localServerName}");
-
             // Update the connection string in app.config
             Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal);
             config.ConnectionStrings.ConnectionStrings["BillPlex"].ConnectionString = connectionString;
             config.Save(ConfigurationSaveMode.Modified);
-
-            //string dynamicConnectionString = string.Format(connectionStringTemplate, localServerName);
         }
 
         // Close the SQL DB connection
@@ -101,7 +92,6 @@ namespace BusinessLayer
             if (ObjDbfactory != null)
                 ObjDbfactory.CloseConnection();
         }
-
         #region Convertion methods
         public string ToString(object Value)
         {
@@ -265,9 +255,6 @@ namespace BusinessLayer
                     DropdownItemLists = DropDownItemInfo.PreparedItemList(ref dbReader, true);
                     dbReader.NextResult();
                 }
-
-               //esult.Status = ResultStatus.Success;
-               //return  ;
             }
             catch (Exception ex)
             {
@@ -304,7 +291,7 @@ namespace BusinessLayer
 
                 foreach (var item in RequiredDropdownFields)
                 {
-                    DropdownItemLists.Add( item.Key,DropDownItemInfo.PreparedItemByProModelList(ref dbReader));
+                    DropdownItemLists.Add(item.Key, DropDownItemInfo.PreparedItemByProModelList(ref dbReader));
                     dbReader.NextResult();
                 }
             }
