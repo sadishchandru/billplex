@@ -285,6 +285,7 @@ namespace BillPlex
             // 
             this.colId.FieldName = "Id";
             this.colId.Name = "colId";
+            this.colId.OptionsColumn.FixedWidth = true;
             this.colId.Visible = true;
             this.colId.VisibleIndex = 0;
             // 

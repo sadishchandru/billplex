@@ -505,6 +505,7 @@ namespace BillPlex
             // ddDate
             // 
             this.ddDate.EditValue = null;
+            this.ddDate.EnterMoveNextControl = true;
             this.ddDate.Location = new System.Drawing.Point(1372, 5);
             this.ddDate.Name = "ddDate";
             this.ddDate.Properties.BeepOnError = false;
@@ -515,7 +516,7 @@ namespace BillPlex
             this.ddDate.Properties.MaskSettings.Set("mask", "d");
             this.ddDate.Properties.UseMaskAsDisplayFormat = true;
             this.ddDate.Size = new System.Drawing.Size(111, 20);
-            this.ddDate.TabIndex = 23;
+            this.ddDate.TabIndex = 10;
             // 
             // labelControl11
             // 
@@ -541,21 +542,24 @@ namespace BillPlex
             // 
             // txtWages
             // 
+            this.txtWages.EnterMoveNextControl = true;
             this.txtWages.Location = new System.Drawing.Point(1008, 157);
             this.txtWages.Name = "txtWages";
             this.txtWages.Size = new System.Drawing.Size(224, 20);
-            this.txtWages.TabIndex = 20;
+            this.txtWages.TabIndex = 9;
             // 
             // txtRawWeight
             // 
+            this.txtRawWeight.EnterMoveNextControl = true;
             this.txtRawWeight.Location = new System.Drawing.Point(1006, 112);
             this.txtRawWeight.Name = "txtRawWeight";
             this.txtRawWeight.Size = new System.Drawing.Size(224, 20);
-            this.txtRawWeight.TabIndex = 19;
+            this.txtRawWeight.TabIndex = 8;
             this.txtRawWeight.EditValueChanged += new System.EventHandler(this.txtRawWeight_EditValueChanged);
             // 
             // txtRawStock
             // 
+            this.txtRawStock.EnterMoveNextControl = true;
             this.txtRawStock.Location = new System.Drawing.Point(1006, 74);
             this.txtRawStock.Name = "txtRawStock";
             this.txtRawStock.Properties.BeepOnError = false;
@@ -563,16 +567,17 @@ namespace BillPlex
             this.txtRawStock.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
             this.txtRawStock.Properties.MaskSettings.Set("mask", "d");
             this.txtRawStock.Size = new System.Drawing.Size(224, 20);
-            this.txtRawStock.TabIndex = 18;
+            this.txtRawStock.TabIndex = 7;
             // 
             // drpProSize
             // 
+            this.drpProSize.EnterMoveNextControl = true;
             this.drpProSize.Location = new System.Drawing.Point(1006, 32);
             this.drpProSize.Name = "drpProSize";
             this.drpProSize.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.drpProSize.Size = new System.Drawing.Size(224, 20);
-            this.drpProSize.TabIndex = 17;
+            this.drpProSize.TabIndex = 6;
             // 
             // labelControl10
             // 
@@ -640,46 +645,51 @@ namespace BillPlex
             // 
             // txtModelName
             // 
+            this.txtModelName.EnterMoveNextControl = true;
             this.txtModelName.Location = new System.Drawing.Point(252, 201);
             this.txtModelName.Name = "txtModelName";
             this.txtModelName.Size = new System.Drawing.Size(224, 20);
-            this.txtModelName.TabIndex = 10;
+            this.txtModelName.TabIndex = 5;
             // 
             // txtModelCode
             // 
+            this.txtModelCode.EnterMoveNextControl = true;
             this.txtModelCode.Location = new System.Drawing.Point(252, 154);
             this.txtModelCode.Name = "txtModelCode";
             this.txtModelCode.Size = new System.Drawing.Size(224, 20);
-            this.txtModelCode.TabIndex = 9;
+            this.txtModelCode.TabIndex = 4;
             this.txtModelCode.EditValueChanged += new System.EventHandler(this.txtCode_EditValueChanged);
             // 
             // drpProName
             // 
+            this.drpProName.EnterMoveNextControl = true;
             this.drpProName.Location = new System.Drawing.Point(252, 114);
             this.drpProName.Name = "drpProName";
             this.drpProName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.drpProName.Size = new System.Drawing.Size(224, 20);
-            this.drpProName.TabIndex = 8;
+            this.drpProName.TabIndex = 3;
             // 
             // drpRawName
             // 
+            this.drpRawName.EnterMoveNextControl = true;
             this.drpRawName.Location = new System.Drawing.Point(252, 77);
             this.drpRawName.Name = "drpRawName";
             this.drpRawName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.drpRawName.Size = new System.Drawing.Size(224, 20);
-            this.drpRawName.TabIndex = 7;
+            this.drpRawName.TabIndex = 2;
             this.drpRawName.SelectedIndexChanged += new System.EventHandler(this.drpRawName_SelectedIndexChanged);
             // 
             // drpRawType
             // 
+            this.drpRawType.EnterMoveNextControl = true;
             this.drpRawType.Location = new System.Drawing.Point(252, 39);
             this.drpRawType.Name = "drpRawType";
             this.drpRawType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.drpRawType.Size = new System.Drawing.Size(224, 20);
-            this.drpRawType.TabIndex = 6;
+            this.drpRawType.TabIndex = 1;
             this.drpRawType.SelectedIndexChanged += new System.EventHandler(this.drpRawType_SelectedIndexChanged_1);
             // 
             // labelControl6

@@ -30,8 +30,8 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmOrderMasterInfo));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -343,11 +343,12 @@ namespace BillPlex
             // 
             // txtReasonbox
             // 
+            this.txtReasonbox.EnterMoveNextControl = true;
             this.txtReasonbox.Location = new System.Drawing.Point(1031, 347);
             this.txtReasonbox.Name = "txtReasonbox";
             this.txtReasonbox.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtReasonbox.Size = new System.Drawing.Size(285, 46);
-            this.txtReasonbox.TabIndex = 53;
+            this.txtReasonbox.TabIndex = 18;
             // 
             // lblReason
             // 
@@ -376,13 +377,13 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery2.Name = "PRO_GetOrderMasterByFilter";
-            queryParameter2.Name = "@OrderNo";
-            queryParameter2.Type = typeof(string);
-            storedProcQuery2.Parameters.Add(queryParameter2);
-            storedProcQuery2.StoredProcName = "PRO_GetOrderMasterByFilter";
+            storedProcQuery1.Name = "PRO_GetOrderMasterByFilter";
+            queryParameter1.Name = "@OrderNo";
+            queryParameter1.Type = typeof(string);
+            storedProcQuery1.Parameters.Add(queryParameter1);
+            storedProcQuery1.StoredProcName = "PRO_GetOrderMasterByFilter";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery2});
+            storedProcQuery1});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // gridView1
@@ -417,6 +418,7 @@ namespace BillPlex
             this.colId.FieldName = "Id";
             this.colId.MinWidth = 80;
             this.colId.Name = "colId";
+            this.colId.OptionsColumn.FixedWidth = true;
             this.colId.Visible = true;
             this.colId.VisibleIndex = 0;
             this.colId.Width = 80;
@@ -643,13 +645,14 @@ namespace BillPlex
             // 
             // drpCustCode
             // 
+            this.drpCustCode.EnterMoveNextControl = true;
             this.drpCustCode.Location = new System.Drawing.Point(334, 146);
             this.drpCustCode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.drpCustCode.Name = "drpCustCode";
             this.drpCustCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.drpCustCode.Size = new System.Drawing.Size(141, 20);
-            this.drpCustCode.TabIndex = 40;
+            this.drpCustCode.TabIndex = 3;
             this.drpCustCode.SelectedIndexChanged += new System.EventHandler(this.comboBoxEdit10_SelectedIndexChanged);
             // 
             // btnProName
@@ -699,16 +702,18 @@ namespace BillPlex
             // 
             // drpProColor
             // 
+            this.drpProColor.EnterMoveNextControl = true;
             this.drpProColor.Location = new System.Drawing.Point(1031, 126);
             this.drpProColor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.drpProColor.Name = "drpProColor";
             this.drpProColor.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.drpProColor.Size = new System.Drawing.Size(219, 20);
-            this.drpProColor.TabIndex = 36;
+            this.drpProColor.TabIndex = 12;
             // 
             // drpStatus
             // 
+            this.drpStatus.EnterMoveNextControl = true;
             this.drpStatus.Location = new System.Drawing.Point(1031, 240);
             this.drpStatus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.drpStatus.Name = "drpStatus";
@@ -719,111 +724,122 @@ namespace BillPlex
             "Cancel",
             "Complete"});
             this.drpStatus.Size = new System.Drawing.Size(285, 20);
-            this.drpStatus.TabIndex = 35;
+            this.drpStatus.TabIndex = 15;
             // 
             // drpProductSize
             // 
+            this.drpProductSize.EnterMoveNextControl = true;
             this.drpProductSize.Location = new System.Drawing.Point(334, 300);
             this.drpProductSize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.drpProductSize.Name = "drpProductSize";
             this.drpProductSize.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.drpProductSize.Size = new System.Drawing.Size(285, 20);
-            this.drpProductSize.TabIndex = 33;
+            this.drpProductSize.TabIndex = 8;
             this.drpProductSize.SelectedIndexChanged += new System.EventHandler(this.drpProductSize_SelectedIndexChanged);
             // 
             // drpModelCode
             // 
+            this.drpModelCode.EnterMoveNextControl = true;
             this.drpModelCode.Location = new System.Drawing.Point(334, 262);
             this.drpModelCode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.drpModelCode.Name = "drpModelCode";
             this.drpModelCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.drpModelCode.Size = new System.Drawing.Size(285, 20);
-            this.drpModelCode.TabIndex = 32;
+            this.drpModelCode.TabIndex = 7;
             this.drpModelCode.SelectedIndexChanged += new System.EventHandler(this.drpModelCode_SelectedIndexChanged);
             // 
             // drpModelName
             // 
+            this.drpModelName.EnterMoveNextControl = true;
             this.drpModelName.Location = new System.Drawing.Point(334, 225);
             this.drpModelName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.drpModelName.Name = "drpModelName";
             this.drpModelName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.drpModelName.Size = new System.Drawing.Size(285, 20);
-            this.drpModelName.TabIndex = 31;
+            this.drpModelName.TabIndex = 6;
             this.drpModelName.SelectedIndexChanged += new System.EventHandler(this.drpModelName_SelectedIndexChanged);
             // 
             // drpCustName
             // 
+            this.drpCustName.EnterMoveNextControl = true;
             this.drpCustName.Location = new System.Drawing.Point(480, 146);
             this.drpCustName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.drpCustName.Name = "drpCustName";
             this.drpCustName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.drpCustName.Size = new System.Drawing.Size(139, 20);
-            this.drpCustName.TabIndex = 30;
+            this.drpCustName.TabIndex = 4;
             this.drpCustName.SelectedIndexChanged += new System.EventHandler(this.comboBoxEdit10_SelectedIndexChanged);
             // 
             // drpProductName
             // 
+            this.drpProductName.EnterMoveNextControl = true;
             this.drpProductName.Location = new System.Drawing.Point(334, 187);
             this.drpProductName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.drpProductName.Name = "drpProductName";
             this.drpProductName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.drpProductName.Size = new System.Drawing.Size(285, 20);
-            this.drpProductName.TabIndex = 29;
+            this.drpProductName.TabIndex = 5;
             this.drpProductName.SelectedIndexChanged += new System.EventHandler(this.drpProductName_SelectedIndexChanged);
             // 
             // txtQuantity
             // 
+            this.txtQuantity.EnterMoveNextControl = true;
             this.txtQuantity.Location = new System.Drawing.Point(1031, 166);
             this.txtQuantity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(285, 20);
-            this.txtQuantity.TabIndex = 25;
+            this.txtQuantity.TabIndex = 13;
             this.txtQuantity.EditValueChanged += new System.EventHandler(this.txtQuantity_EditValueChanged);
             // 
             // txtTotRawmat
             // 
+            this.txtTotRawmat.EnterMoveNextControl = true;
             this.txtTotRawmat.Location = new System.Drawing.Point(1031, 278);
             this.txtTotRawmat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTotRawmat.Name = "txtTotRawmat";
             this.txtTotRawmat.Size = new System.Drawing.Size(285, 20);
-            this.txtTotRawmat.TabIndex = 24;
+            this.txtTotRawmat.TabIndex = 16;
             // 
             // txtRawmatName
             // 
+            this.txtRawmatName.EnterMoveNextControl = true;
             this.txtRawmatName.Location = new System.Drawing.Point(1031, 87);
             this.txtRawmatName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtRawmatName.Name = "txtRawmatName";
             this.txtRawmatName.Size = new System.Drawing.Size(285, 20);
-            this.txtRawmatName.TabIndex = 23;
+            this.txtRawmatName.TabIndex = 11;
             // 
             // txtType
             // 
+            this.txtType.EnterMoveNextControl = true;
             this.txtType.Location = new System.Drawing.Point(1031, 48);
             this.txtType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtType.Name = "txtType";
             this.txtType.Size = new System.Drawing.Size(285, 20);
-            this.txtType.TabIndex = 22;
+            this.txtType.TabIndex = 10;
             // 
             // txtWages
             // 
+            this.txtWages.EnterMoveNextControl = true;
             this.txtWages.Location = new System.Drawing.Point(1031, 322);
             this.txtWages.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtWages.Name = "txtWages";
             this.txtWages.Size = new System.Drawing.Size(285, 20);
-            this.txtWages.TabIndex = 21;
+            this.txtWages.TabIndex = 17;
             // 
             // txtMaterialwt
             // 
+            this.txtMaterialwt.EnterMoveNextControl = true;
             this.txtMaterialwt.Location = new System.Drawing.Point(334, 339);
             this.txtMaterialwt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMaterialwt.Name = "txtMaterialwt";
             this.txtMaterialwt.Size = new System.Drawing.Size(285, 20);
-            this.txtMaterialwt.TabIndex = 20;
+            this.txtMaterialwt.TabIndex = 9;
             // 
             // txtOrderNo
             // 
@@ -832,7 +848,7 @@ namespace BillPlex
             this.txtOrderNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtOrderNo.Name = "txtOrderNo";
             this.txtOrderNo.Size = new System.Drawing.Size(285, 20);
-            this.txtOrderNo.TabIndex = 19;
+            this.txtOrderNo.TabIndex = 1;
             this.txtOrderNo.EditValueChanged += new System.EventHandler(this.txtOrderNo_EditValueChanged);
             // 
             // labelControl12
@@ -1030,11 +1046,12 @@ namespace BillPlex
             this.ddOrderDate.Properties.MaskSettings.Set("mask", "d");
             this.ddOrderDate.Properties.UseMaskAsDisplayFormat = true;
             this.ddOrderDate.Size = new System.Drawing.Size(285, 20);
-            this.ddOrderDate.TabIndex = 28;
+            this.ddOrderDate.TabIndex = 2;
             // 
             // ddDDate
             // 
             this.ddDDate.EditValue = null;
+            this.ddDDate.EnterMoveNextControl = true;
             this.ddDDate.Location = new System.Drawing.Point(1031, 208);
             this.ddDDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ddDDate.Name = "ddDDate";
@@ -1050,7 +1067,7 @@ namespace BillPlex
             this.ddDDate.Properties.MaskSettings.Set("mask", "d");
             this.ddDDate.Properties.UseMaskAsDisplayFormat = true;
             this.ddDDate.Size = new System.Drawing.Size(285, 20);
-            this.ddDDate.TabIndex = 34;
+            this.ddDDate.TabIndex = 14;
             // 
             // labelControl2
             // 

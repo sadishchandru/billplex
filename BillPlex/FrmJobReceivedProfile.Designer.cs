@@ -30,10 +30,11 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery3 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter3 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmJobReceivedProfile));
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
@@ -42,11 +43,12 @@ namespace BillPlex
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
             this.btnNew = new DevExpress.XtraEditors.SimpleButton();
-            this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEmployeeCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEmployeeName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -61,7 +63,6 @@ namespace BillPlex
             this.colCustomerName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colModelName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colModelCode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colProductName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colProductSize = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRawMaterial = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colQuantityPiece = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -86,19 +87,22 @@ namespace BillPlex
             this.colBDays = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colADays = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBalanceWt = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.colDeduction = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colconveyance = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colincentive = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNetAmt = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTotalAmt = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
-            this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
+            this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl3
@@ -110,6 +114,16 @@ namespace BillPlex
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(1498, 752);
             this.panelControl3.TabIndex = 3;
+            // 
+            // panelControl4
+            // 
+            this.panelControl4.Controls.Add(this.gridControl1);
+            this.panelControl4.Controls.Add(this.panelControl2);
+            this.panelControl4.Controls.Add(this.checkEdit1);
+            this.panelControl4.Location = new System.Drawing.Point(5, 61);
+            this.panelControl4.Name = "panelControl4";
+            this.panelControl4.Size = new System.Drawing.Size(1488, 683);
+            this.panelControl4.TabIndex = 6;
             // 
             // panelControl2
             // 
@@ -302,16 +316,6 @@ namespace BillPlex
             this.btnNew.Text = "NEW";
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
-            // panelControl4
-            // 
-            this.panelControl4.Controls.Add(this.panelControl2);
-            this.panelControl4.Controls.Add(this.gridControl1);
-            this.panelControl4.Controls.Add(this.checkEdit1);
-            this.panelControl4.Location = new System.Drawing.Point(5, 61);
-            this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(1488, 683);
-            this.panelControl4.TabIndex = 6;
-            // 
             // checkEdit1
             // 
             this.checkEdit1.Location = new System.Drawing.Point(1053, 33);
@@ -325,30 +329,37 @@ namespace BillPlex
             this.checkEdit1.Size = new System.Drawing.Size(217, 22);
             this.checkEdit1.TabIndex = 87;
             // 
+            // panelControl1
+            // 
+            this.panelControl1.Controls.Add(this.labelControl1);
+            this.panelControl1.Location = new System.Drawing.Point(5, 5);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(1488, 50);
+            this.panelControl1.TabIndex = 0;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Verdana", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Appearance.Options.UseForeColor = true;
+            this.labelControl1.Location = new System.Drawing.Point(622, 6);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(245, 38);
+            this.labelControl1.TabIndex = 1;
+            this.labelControl1.Text = "Job Received ";
+            // 
             // gridControl1
             // 
-            this.gridControl1.DataMember = "PRO_GetJobGivingWithoutDCAllList";
+            this.gridControl1.DataMember = "PRO_GetJobGivingWithoutDCReceivedFilter";
             this.gridControl1.DataSource = this.sqlDataSource1;
-            this.gridControl1.Location = new System.Drawing.Point(5, 71);
+            this.gridControl1.Location = new System.Drawing.Point(5, 108);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1318, 607);
-            this.gridControl1.TabIndex = 3;
+            this.gridControl1.Size = new System.Drawing.Size(1337, 570);
+            this.gridControl1.TabIndex = 88;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            // 
-            // sqlDataSource1
-            // 
-            this.sqlDataSource1.ConnectionName = "BillPlex";
-            this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery1.Name = "PRO_GetJobGivingWithoutDCAllList";
-            queryParameter1.Name = "@SearchKey";
-            queryParameter1.Type = typeof(string);
-            storedProcQuery1.Parameters.Add(queryParameter1);
-            storedProcQuery1.StoredProcName = "PRO_GetJobGivingWithoutDCAllList";
-            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery1});
-            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // gridView1
             // 
@@ -367,7 +378,6 @@ namespace BillPlex
             this.colCustomerName,
             this.colModelName,
             this.colModelCode,
-            this.colProductName,
             this.colProductSize,
             this.colRawMaterial,
             this.colQuantityPiece,
@@ -391,342 +401,416 @@ namespace BillPlex
             this.colReceivingDate,
             this.colBDays,
             this.colADays,
-            this.colBalanceWt});
+            this.colBalanceWt,
+            this.colDeduction,
+            this.colconveyance,
+            this.colincentive,
+            this.colNetAmt,
+            this.colTotalAmt});
             this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             this.gridView1.Name = "gridView1";
+            this.gridView1.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
+            // 
+            // sqlDataSource1
+            // 
+            this.sqlDataSource1.ConnectionName = "BillPlex";
+            this.sqlDataSource1.Name = "sqlDataSource1";
+            storedProcQuery3.Name = "PRO_GetJobGivingWithoutDCReceivedFilter";
+            queryParameter3.Name = "@SearchKey";
+            queryParameter3.Type = typeof(string);
+            storedProcQuery3.Parameters.Add(queryParameter3);
+            storedProcQuery3.StoredProcName = "PRO_GetJobGivingWithoutDCReceivedFilter";
+            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
+            storedProcQuery3});
+            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // colId
             // 
             this.colId.FieldName = "Id";
-            this.colId.MinWidth = 60;
+            this.colId.MinWidth = 80;
             this.colId.Name = "colId";
+            this.colId.OptionsColumn.FixedWidth = true;
             this.colId.Visible = true;
             this.colId.VisibleIndex = 0;
             // 
             // colEmployeeCode
             // 
             this.colEmployeeCode.FieldName = "EmployeeCode";
-            this.colEmployeeCode.MinWidth = 60;
+            this.colEmployeeCode.MinWidth = 80;
             this.colEmployeeCode.Name = "colEmployeeCode";
             this.colEmployeeCode.Visible = true;
             this.colEmployeeCode.VisibleIndex = 1;
+            this.colEmployeeCode.Width = 80;
             // 
             // colEmployeeName
             // 
             this.colEmployeeName.FieldName = "EmployeeName";
-            this.colEmployeeName.MinWidth = 60;
+            this.colEmployeeName.MinWidth = 80;
             this.colEmployeeName.Name = "colEmployeeName";
             this.colEmployeeName.Visible = true;
             this.colEmployeeName.VisibleIndex = 2;
+            this.colEmployeeName.Width = 80;
             // 
             // colCompanyName
             // 
             this.colCompanyName.FieldName = "CompanyName";
-            this.colCompanyName.MinWidth = 60;
+            this.colCompanyName.MinWidth = 80;
             this.colCompanyName.Name = "colCompanyName";
             this.colCompanyName.Visible = true;
             this.colCompanyName.VisibleIndex = 3;
+            this.colCompanyName.Width = 80;
             // 
             // colClientCompany
             // 
             this.colClientCompany.FieldName = "ClientCompany";
-            this.colClientCompany.MinWidth = 60;
+            this.colClientCompany.MinWidth = 80;
             this.colClientCompany.Name = "colClientCompany";
             this.colClientCompany.Visible = true;
             this.colClientCompany.VisibleIndex = 4;
+            this.colClientCompany.Width = 80;
             // 
             // colSubClientCompany
             // 
             this.colSubClientCompany.FieldName = "SubClientCompany";
-            this.colSubClientCompany.MinWidth = 60;
+            this.colSubClientCompany.MinWidth = 80;
             this.colSubClientCompany.Name = "colSubClientCompany";
             this.colSubClientCompany.Visible = true;
             this.colSubClientCompany.VisibleIndex = 5;
+            this.colSubClientCompany.Width = 80;
             // 
             // colOrderNo
             // 
             this.colOrderNo.FieldName = "OrderNo";
-            this.colOrderNo.MinWidth = 60;
+            this.colOrderNo.MinWidth = 80;
             this.colOrderNo.Name = "colOrderNo";
             this.colOrderNo.Visible = true;
             this.colOrderNo.VisibleIndex = 6;
+            this.colOrderNo.Width = 80;
             // 
             // colOrderno1
             // 
             this.colOrderno1.FieldName = "Orderno";
-            this.colOrderno1.MinWidth = 60;
+            this.colOrderno1.MinWidth = 80;
             this.colOrderno1.Name = "colOrderno1";
             this.colOrderno1.Visible = true;
             this.colOrderno1.VisibleIndex = 7;
+            this.colOrderno1.Width = 80;
             // 
             // colDate
             // 
             this.colDate.FieldName = "Date";
-            this.colDate.MinWidth = 60;
+            this.colDate.MinWidth = 80;
             this.colDate.Name = "colDate";
             this.colDate.Visible = true;
             this.colDate.VisibleIndex = 8;
+            this.colDate.Width = 80;
             // 
             // colOrderdate
             // 
             this.colOrderdate.FieldName = "Orderdate";
-            this.colOrderdate.MinWidth = 60;
+            this.colOrderdate.MinWidth = 80;
             this.colOrderdate.Name = "colOrderdate";
             this.colOrderdate.Visible = true;
             this.colOrderdate.VisibleIndex = 9;
+            this.colOrderdate.Width = 80;
             // 
             // colCustomerCode
             // 
             this.colCustomerCode.FieldName = "CustomerCode";
-            this.colCustomerCode.MinWidth = 60;
+            this.colCustomerCode.MinWidth = 80;
             this.colCustomerCode.Name = "colCustomerCode";
             this.colCustomerCode.Visible = true;
             this.colCustomerCode.VisibleIndex = 10;
+            this.colCustomerCode.Width = 80;
             // 
             // colCustomerName
             // 
             this.colCustomerName.FieldName = "CustomerName";
-            this.colCustomerName.MinWidth = 60;
+            this.colCustomerName.MinWidth = 80;
             this.colCustomerName.Name = "colCustomerName";
             this.colCustomerName.Visible = true;
             this.colCustomerName.VisibleIndex = 11;
+            this.colCustomerName.Width = 80;
             // 
             // colModelName
             // 
             this.colModelName.FieldName = "ModelName";
-            this.colModelName.MinWidth = 60;
+            this.colModelName.MinWidth = 80;
             this.colModelName.Name = "colModelName";
             this.colModelName.Visible = true;
             this.colModelName.VisibleIndex = 12;
+            this.colModelName.Width = 80;
             // 
             // colModelCode
             // 
             this.colModelCode.FieldName = "ModelCode";
-            this.colModelCode.MinWidth = 60;
+            this.colModelCode.MinWidth = 80;
             this.colModelCode.Name = "colModelCode";
             this.colModelCode.Visible = true;
             this.colModelCode.VisibleIndex = 13;
-            // 
-            // colProductName
-            // 
-            this.colProductName.FieldName = "ProductName";
-            this.colProductName.MinWidth = 60;
-            this.colProductName.Name = "colProductName";
-            this.colProductName.Visible = true;
-            this.colProductName.VisibleIndex = 14;
+            this.colModelCode.Width = 80;
             // 
             // colProductSize
             // 
             this.colProductSize.FieldName = "ProductSize";
-            this.colProductSize.MinWidth = 60;
+            this.colProductSize.MinWidth = 80;
             this.colProductSize.Name = "colProductSize";
             this.colProductSize.Visible = true;
-            this.colProductSize.VisibleIndex = 15;
+            this.colProductSize.VisibleIndex = 14;
+            this.colProductSize.Width = 80;
             // 
             // colRawMaterial
             // 
             this.colRawMaterial.FieldName = "RawMaterial";
-            this.colRawMaterial.MinWidth = 60;
+            this.colRawMaterial.MinWidth = 80;
             this.colRawMaterial.Name = "colRawMaterial";
             this.colRawMaterial.Visible = true;
-            this.colRawMaterial.VisibleIndex = 16;
+            this.colRawMaterial.VisibleIndex = 15;
+            this.colRawMaterial.Width = 80;
             // 
             // colQuantityPiece
             // 
             this.colQuantityPiece.FieldName = "QuantityPiece";
-            this.colQuantityPiece.MinWidth = 60;
+            this.colQuantityPiece.MinWidth = 80;
             this.colQuantityPiece.Name = "colQuantityPiece";
             this.colQuantityPiece.Visible = true;
-            this.colQuantityPiece.VisibleIndex = 17;
+            this.colQuantityPiece.VisibleIndex = 16;
+            this.colQuantityPiece.Width = 80;
             // 
             // colWeightKg
             // 
             this.colWeightKg.FieldName = "WeightKg";
-            this.colWeightKg.MinWidth = 60;
+            this.colWeightKg.MinWidth = 80;
             this.colWeightKg.Name = "colWeightKg";
             this.colWeightKg.Visible = true;
-            this.colWeightKg.VisibleIndex = 18;
+            this.colWeightKg.VisibleIndex = 17;
+            this.colWeightKg.Width = 80;
             // 
             // colExcess
             // 
             this.colExcess.FieldName = "Excess";
-            this.colExcess.MinWidth = 60;
+            this.colExcess.MinWidth = 80;
             this.colExcess.Name = "colExcess";
             this.colExcess.Visible = true;
-            this.colExcess.VisibleIndex = 19;
+            this.colExcess.VisibleIndex = 18;
+            this.colExcess.Width = 80;
             // 
             // colColor
             // 
             this.colColor.FieldName = "Color";
-            this.colColor.MinWidth = 60;
+            this.colColor.MinWidth = 80;
             this.colColor.Name = "colColor";
             this.colColor.Visible = true;
-            this.colColor.VisibleIndex = 20;
+            this.colColor.VisibleIndex = 19;
+            this.colColor.Width = 80;
             // 
             // colType
             // 
             this.colType.FieldName = "Type";
-            this.colType.MinWidth = 60;
+            this.colType.MinWidth = 80;
             this.colType.Name = "colType";
             this.colType.Visible = true;
-            this.colType.VisibleIndex = 21;
+            this.colType.VisibleIndex = 20;
+            this.colType.Width = 80;
             // 
             // colAvlQty
             // 
             this.colAvlQty.FieldName = "AvlQty";
-            this.colAvlQty.MinWidth = 60;
+            this.colAvlQty.MinWidth = 80;
             this.colAvlQty.Name = "colAvlQty";
             this.colAvlQty.Visible = true;
-            this.colAvlQty.VisibleIndex = 22;
+            this.colAvlQty.VisibleIndex = 21;
+            this.colAvlQty.Width = 80;
             // 
             // colShortage
             // 
             this.colShortage.FieldName = "Shortage";
-            this.colShortage.MinWidth = 60;
+            this.colShortage.MinWidth = 80;
             this.colShortage.Name = "colShortage";
             this.colShortage.Visible = true;
-            this.colShortage.VisibleIndex = 23;
+            this.colShortage.VisibleIndex = 22;
+            this.colShortage.Width = 80;
             // 
             // colorderQty
             // 
             this.colorderQty.FieldName = "orderQty";
-            this.colorderQty.MinWidth = 60;
+            this.colorderQty.MinWidth = 80;
             this.colorderQty.Name = "colorderQty";
             this.colorderQty.Visible = true;
-            this.colorderQty.VisibleIndex = 24;
+            this.colorderQty.VisibleIndex = 23;
+            this.colorderQty.Width = 80;
             // 
             // colorderWt
             // 
             this.colorderWt.FieldName = "orderWt";
-            this.colorderWt.MinWidth = 60;
+            this.colorderWt.MinWidth = 80;
             this.colorderWt.Name = "colorderWt";
             this.colorderWt.Visible = true;
-            this.colorderWt.VisibleIndex = 25;
+            this.colorderWt.VisibleIndex = 24;
+            this.colorderWt.Width = 80;
             // 
             // colClientName
             // 
             this.colClientName.FieldName = "ClientName";
-            this.colClientName.MinWidth = 60;
+            this.colClientName.MinWidth = 80;
             this.colClientName.Name = "colClientName";
             this.colClientName.Visible = true;
-            this.colClientName.VisibleIndex = 26;
-            this.colClientName.Width = 206;
+            this.colClientName.VisibleIndex = 25;
+            this.colClientName.Width = 80;
             // 
             // colTotalQty
             // 
             this.colTotalQty.FieldName = "TotalQty";
-            this.colTotalQty.MinWidth = 60;
+            this.colTotalQty.MinWidth = 80;
             this.colTotalQty.Name = "colTotalQty";
             this.colTotalQty.Visible = true;
-            this.colTotalQty.VisibleIndex = 27;
+            this.colTotalQty.VisibleIndex = 26;
+            this.colTotalQty.Width = 208;
             // 
             // colTotalWt
             // 
             this.colTotalWt.FieldName = "TotalWt";
-            this.colTotalWt.MinWidth = 60;
+            this.colTotalWt.MinWidth = 80;
             this.colTotalWt.Name = "colTotalWt";
             this.colTotalWt.Visible = true;
-            this.colTotalWt.VisibleIndex = 28;
+            this.colTotalWt.VisibleIndex = 27;
+            this.colTotalWt.Width = 80;
             // 
             // colsubContractor
             // 
             this.colsubContractor.FieldName = "subContractor";
-            this.colsubContractor.MinWidth = 60;
+            this.colsubContractor.MinWidth = 80;
             this.colsubContractor.Name = "colsubContractor";
             this.colsubContractor.Visible = true;
-            this.colsubContractor.VisibleIndex = 29;
+            this.colsubContractor.VisibleIndex = 28;
+            this.colsubContractor.Width = 80;
             // 
             // colDirector
             // 
             this.colDirector.FieldName = "Director";
-            this.colDirector.MinWidth = 60;
+            this.colDirector.MinWidth = 80;
             this.colDirector.Name = "colDirector";
             this.colDirector.Visible = true;
-            this.colDirector.VisibleIndex = 30;
+            this.colDirector.VisibleIndex = 29;
+            this.colDirector.Width = 80;
             // 
             // colPendingQty
             // 
             this.colPendingQty.FieldName = "PendingQty";
-            this.colPendingQty.MinWidth = 60;
+            this.colPendingQty.MinWidth = 80;
             this.colPendingQty.Name = "colPendingQty";
             this.colPendingQty.Visible = true;
-            this.colPendingQty.VisibleIndex = 31;
+            this.colPendingQty.VisibleIndex = 30;
+            this.colPendingQty.Width = 80;
             // 
             // colreceived
             // 
             this.colreceived.FieldName = "received";
-            this.colreceived.MinWidth = 60;
+            this.colreceived.MinWidth = 80;
             this.colreceived.Name = "colreceived";
             this.colreceived.Visible = true;
-            this.colreceived.VisibleIndex = 32;
+            this.colreceived.VisibleIndex = 31;
+            this.colreceived.Width = 80;
             // 
             // colWages
             // 
             this.colWages.FieldName = "Wages";
-            this.colWages.MinWidth = 60;
+            this.colWages.MinWidth = 80;
             this.colWages.Name = "colWages";
             this.colWages.Visible = true;
-            this.colWages.VisibleIndex = 33;
+            this.colWages.VisibleIndex = 32;
+            this.colWages.Width = 80;
             // 
             // colCurrentWt
             // 
             this.colCurrentWt.FieldName = "CurrentWt";
-            this.colCurrentWt.MinWidth = 60;
+            this.colCurrentWt.MinWidth = 80;
             this.colCurrentWt.Name = "colCurrentWt";
             this.colCurrentWt.Visible = true;
-            this.colCurrentWt.VisibleIndex = 34;
+            this.colCurrentWt.VisibleIndex = 33;
+            this.colCurrentWt.Width = 80;
             // 
             // colReceivingDate
             // 
             this.colReceivingDate.FieldName = "ReceivingDate";
-            this.colReceivingDate.MinWidth = 60;
+            this.colReceivingDate.MinWidth = 80;
             this.colReceivingDate.Name = "colReceivingDate";
             this.colReceivingDate.Visible = true;
-            this.colReceivingDate.VisibleIndex = 35;
+            this.colReceivingDate.VisibleIndex = 34;
+            this.colReceivingDate.Width = 80;
             // 
             // colBDays
             // 
             this.colBDays.FieldName = "BDays";
-            this.colBDays.MinWidth = 60;
+            this.colBDays.MinWidth = 80;
             this.colBDays.Name = "colBDays";
             this.colBDays.Visible = true;
-            this.colBDays.VisibleIndex = 36;
+            this.colBDays.VisibleIndex = 35;
+            this.colBDays.Width = 80;
             // 
             // colADays
             // 
             this.colADays.FieldName = "ADays";
-            this.colADays.MinWidth = 60;
+            this.colADays.MinWidth = 80;
             this.colADays.Name = "colADays";
             this.colADays.Visible = true;
-            this.colADays.VisibleIndex = 37;
+            this.colADays.VisibleIndex = 36;
+            this.colADays.Width = 80;
             // 
             // colBalanceWt
             // 
             this.colBalanceWt.FieldName = "BalanceWt";
-            this.colBalanceWt.MinWidth = 60;
+            this.colBalanceWt.MinWidth = 80;
             this.colBalanceWt.Name = "colBalanceWt";
             this.colBalanceWt.Visible = true;
-            this.colBalanceWt.VisibleIndex = 38;
+            this.colBalanceWt.VisibleIndex = 37;
+            this.colBalanceWt.Width = 80;
             // 
-            // panelControl1
+            // colDeduction
             // 
-            this.panelControl1.Controls.Add(this.labelControl1);
-            this.panelControl1.Location = new System.Drawing.Point(5, 5);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1488, 50);
-            this.panelControl1.TabIndex = 0;
+            this.colDeduction.FieldName = "Deduction";
+            this.colDeduction.MinWidth = 80;
+            this.colDeduction.Name = "colDeduction";
+            this.colDeduction.Visible = true;
+            this.colDeduction.VisibleIndex = 38;
+            this.colDeduction.Width = 80;
             // 
-            // labelControl1
+            // colconveyance
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Verdana", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(622, 6);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(245, 38);
-            this.labelControl1.TabIndex = 1;
-            this.labelControl1.Text = "Job Received ";
+            this.colconveyance.FieldName = "conveyance";
+            this.colconveyance.MinWidth = 80;
+            this.colconveyance.Name = "colconveyance";
+            this.colconveyance.Visible = true;
+            this.colconveyance.VisibleIndex = 39;
+            this.colconveyance.Width = 80;
+            // 
+            // colincentive
+            // 
+            this.colincentive.FieldName = "incentive";
+            this.colincentive.MinWidth = 80;
+            this.colincentive.Name = "colincentive";
+            this.colincentive.Visible = true;
+            this.colincentive.VisibleIndex = 40;
+            this.colincentive.Width = 80;
+            // 
+            // colNetAmt
+            // 
+            this.colNetAmt.FieldName = "NetAmt";
+            this.colNetAmt.MinWidth = 80;
+            this.colNetAmt.Name = "colNetAmt";
+            this.colNetAmt.Visible = true;
+            this.colNetAmt.VisibleIndex = 41;
+            this.colNetAmt.Width = 80;
+            // 
+            // colTotalAmt
+            // 
+            this.colTotalAmt.FieldName = "TotalAmt";
+            this.colTotalAmt.MinWidth = 80;
+            this.colTotalAmt.Name = "colTotalAmt";
+            this.colTotalAmt.Visible = true;
+            this.colTotalAmt.VisibleIndex = 42;
+            this.colTotalAmt.Width = 80;
             // 
             // FrmJobReceivedProfile
             // 
@@ -743,16 +827,16 @@ namespace BillPlex
             this.Load += new System.EventHandler(this.FrmJobReceivedProfile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
-            this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
+            this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -771,6 +855,7 @@ namespace BillPlex
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraEditors.CheckEdit checkEdit1;
         private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
@@ -788,7 +873,6 @@ namespace BillPlex
         private DevExpress.XtraGrid.Columns.GridColumn colCustomerName;
         private DevExpress.XtraGrid.Columns.GridColumn colModelName;
         private DevExpress.XtraGrid.Columns.GridColumn colModelCode;
-        private DevExpress.XtraGrid.Columns.GridColumn colProductName;
         private DevExpress.XtraGrid.Columns.GridColumn colProductSize;
         private DevExpress.XtraGrid.Columns.GridColumn colRawMaterial;
         private DevExpress.XtraGrid.Columns.GridColumn colQuantityPiece;
@@ -813,6 +897,10 @@ namespace BillPlex
         private DevExpress.XtraGrid.Columns.GridColumn colBDays;
         private DevExpress.XtraGrid.Columns.GridColumn colADays;
         private DevExpress.XtraGrid.Columns.GridColumn colBalanceWt;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraGrid.Columns.GridColumn colDeduction;
+        private DevExpress.XtraGrid.Columns.GridColumn colconveyance;
+        private DevExpress.XtraGrid.Columns.GridColumn colincentive;
+        private DevExpress.XtraGrid.Columns.GridColumn colNetAmt;
+        private DevExpress.XtraGrid.Columns.GridColumn colTotalAmt;
     }
 }
