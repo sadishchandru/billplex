@@ -365,10 +365,11 @@ namespace BillPlex
             // 
             // txtModelSize
             // 
+            this.txtModelSize.EnterMoveNextControl = true;
             this.txtModelSize.Location = new System.Drawing.Point(1062, 55);
             this.txtModelSize.Name = "txtModelSize";
             this.txtModelSize.Size = new System.Drawing.Size(281, 20);
-            this.txtModelSize.TabIndex = 17;
+            this.txtModelSize.TabIndex = 5;
             // 
             // labelControl8
             // 
@@ -385,10 +386,11 @@ namespace BillPlex
             // 
             // txtDurationPeriod
             // 
+            this.txtDurationPeriod.EnterMoveNextControl = true;
             this.txtDurationPeriod.Location = new System.Drawing.Point(1062, 91);
             this.txtDurationPeriod.Name = "txtDurationPeriod";
             this.txtDurationPeriod.Size = new System.Drawing.Size(281, 20);
-            this.txtDurationPeriod.TabIndex = 16;
+            this.txtDurationPeriod.TabIndex = 6;
             // 
             // labelControl6
             // 
@@ -403,6 +405,7 @@ namespace BillPlex
             // ddDate
             // 
             this.ddDate.EditValue = null;
+            this.ddDate.EnterMoveNextControl = true;
             this.ddDate.Location = new System.Drawing.Point(1198, 16);
             this.ddDate.Name = "ddDate";
             this.ddDate.Properties.BeepOnError = false;
@@ -418,7 +421,7 @@ namespace BillPlex
             this.ddDate.Properties.MaskSettings.Set("mask", "d");
             this.ddDate.Properties.UseMaskAsDisplayFormat = true;
             this.ddDate.Size = new System.Drawing.Size(145, 20);
-            this.ddDate.TabIndex = 27;
+            this.ddDate.TabIndex = 4;
             // 
             // labelControl5
             // 
@@ -454,21 +457,23 @@ namespace BillPlex
             // 
             // DrpModelCode
             // 
+            this.DrpModelCode.EnterMoveNextControl = true;
             this.DrpModelCode.Location = new System.Drawing.Point(231, 56);
             this.DrpModelCode.Name = "DrpModelCode";
             this.DrpModelCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.DrpModelCode.Size = new System.Drawing.Size(214, 20);
-            this.DrpModelCode.TabIndex = 25;
+            this.DrpModelCode.TabIndex = 2;
             // 
             // DrpProductName
             // 
+            this.DrpProductName.EnterMoveNextControl = true;
             this.DrpProductName.Location = new System.Drawing.Point(231, 15);
             this.DrpProductName.Name = "DrpProductName";
             this.DrpProductName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.DrpProductName.Size = new System.Drawing.Size(214, 20);
-            this.DrpProductName.TabIndex = 24;
+            this.DrpProductName.TabIndex = 1;
             // 
             // labelControl2
             // 
@@ -492,10 +497,11 @@ namespace BillPlex
             // 
             // DrpModelName
             // 
+            this.DrpModelName.EnterMoveNextControl = true;
             this.DrpModelName.Location = new System.Drawing.Point(231, 91);
             this.DrpModelName.Name = "DrpModelName";
             this.DrpModelName.Size = new System.Drawing.Size(214, 20);
-            this.DrpModelName.TabIndex = 14;
+            this.DrpModelName.TabIndex = 3;
             // 
             // labelControl4
             // 

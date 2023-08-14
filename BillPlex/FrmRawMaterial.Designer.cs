@@ -319,7 +319,7 @@ namespace BillPlex
             this.txtRawMaterial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtRawMaterial.Name = "txtRawMaterial";
             this.txtRawMaterial.Size = new System.Drawing.Size(432, 20);
-            this.txtRawMaterial.TabIndex = 8;
+            this.txtRawMaterial.TabIndex = 2;
             // 
             // txtStock
             // 
@@ -328,7 +328,7 @@ namespace BillPlex
             this.txtStock.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(432, 20);
-            this.txtStock.TabIndex = 7;
+            this.txtStock.TabIndex = 3;
             // 
             // txtType
             // 
@@ -337,7 +337,7 @@ namespace BillPlex
             this.txtType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtType.Name = "txtType";
             this.txtType.Size = new System.Drawing.Size(432, 20);
-            this.txtType.TabIndex = 6;
+            this.txtType.TabIndex = 1;
             // 
             // labelControl7
             // 
