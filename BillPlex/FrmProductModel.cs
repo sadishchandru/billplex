@@ -354,7 +354,6 @@ namespace BillPlex
                     productModelRequest.Id = (Int64)grd_ProductModel.GetRowCellValue(rowHandle, "Id");
                     drpRawType.SelectedIndex = productModelRequest.RawMaterialList.FindIndex(x => x.Id == Convert.ToInt32(grd_ProductModel.GetRowCellValue(rowHandle, "RawmaterialTypeId")));
                     drpRawName.SelectedIndex = productModelRequest.RawMaterialList.FindIndex(x => x.Id == Convert.ToInt32(grd_ProductModel.GetRowCellValue(rowHandle, "RawMaterialId")));
-                    //drpRawName.SelectedIndex = productModelRequest.RawMaterialList.FindIndex(x => x.Id == Convert.ToInt32(grd_ProductModel.GetRowCellValue(rowHandle, "RawMaterialId")));
                     drpProName.SelectedIndex = productModelRequest.ProductModelList.FindIndex(x => x.Id == Convert.ToInt32(grd_ProductModel.GetRowCellValue(rowHandle, "ProductId")));
                     txtModelCode.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "ProductCode");
                     txtModelName.Text = (string)grd_ProductModel.GetRowCellValue(rowHandle, "ProductModel");

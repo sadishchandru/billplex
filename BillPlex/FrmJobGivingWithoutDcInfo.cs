@@ -372,7 +372,7 @@ namespace BillPlex
                 txtSCCom.Text = selectedCompanyList.GetRowCellValue(rowHandle, "SubClientCompany");
                 var datete = selectedCompanyList.GetRowCellValue(rowHandle, "Date").ToString();
                 ddDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
-                drpOrderNo.Text = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.Id == Convert.ToInt32(selectedCompanyList.GetRowCellValue(rowHandle, "OrderNo").ToString()))?.Code.ToString() ?? "";
+                drpOrderNo.Text = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.Code == selectedCompanyList.GetRowCellValue(rowHandle, "OrderNo").ToString())?.Code.ToString() ?? "";
                 datete = selectedCompanyList.GetRowCellValue(rowHandle, "OrderDate").ToString();
                 ddODate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
                 txtCCode.Text = selectedCompanyList.GetRowCellValue(rowHandle, "CustomerCode");
