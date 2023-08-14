@@ -30,8 +30,8 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProductModel));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -91,6 +91,7 @@ namespace BillPlex
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -138,6 +139,7 @@ namespace BillPlex
             // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(this.labelControl16);
             this.panelControl2.Controls.Add(this.labelCodeExist);
             this.panelControl2.Controls.Add(this.labelAvailable);
             this.panelControl2.Controls.Add(this.labelControl15);
@@ -266,13 +268,13 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery1.Name = "PRO_GetProductModel";
-            queryParameter1.Name = "@SearchKey";
-            queryParameter1.Type = typeof(string);
-            storedProcQuery1.Parameters.Add(queryParameter1);
-            storedProcQuery1.StoredProcName = "PRO_GetProductModel";
+            storedProcQuery2.Name = "PRO_GetProductModel";
+            queryParameter2.Name = "@SearchKey";
+            queryParameter2.Type = typeof(string);
+            storedProcQuery2.Parameters.Add(queryParameter2);
+            storedProcQuery2.StoredProcName = "PRO_GetProductModel";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery1});
+            storedProcQuery2});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // grd_ProductModel
@@ -747,16 +749,28 @@ namespace BillPlex
             this.panelControl4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelControl4.Controls.Add(this.panelControl2);
             this.panelControl4.Controls.Add(this.panelControl1);
-            this.panelControl4.Location = new System.Drawing.Point(13, 12);
+            this.panelControl4.Location = new System.Drawing.Point(20, 16);
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Size = new System.Drawing.Size(1600, 725);
             this.panelControl4.TabIndex = 2;
+            // 
+            // labelControl16
+            // 
+            this.labelControl16.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl16.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl16.Appearance.Options.UseFont = true;
+            this.labelControl16.Appearance.Options.UseForeColor = true;
+            this.labelControl16.Location = new System.Drawing.Point(1343, 4);
+            this.labelControl16.Name = "labelControl16";
+            this.labelControl16.Size = new System.Drawing.Size(10, 18);
+            this.labelControl16.TabIndex = 55;
+            this.labelControl16.Text = "*";
             // 
             // FrmProductModel
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1619, 742);
+            this.ClientSize = new System.Drawing.Size(1633, 751);
             this.Controls.Add(this.panelControl4);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -853,5 +867,6 @@ namespace BillPlex
         private DevExpress.XtraGrid.Columns.GridColumn colReqRawMaterial;
         private DevExpress.XtraGrid.Columns.GridColumn colWagesforItem;
         private DevExpress.XtraGrid.Columns.GridColumn colDate;
+        private DevExpress.XtraEditors.LabelControl labelControl16;
     }
 }

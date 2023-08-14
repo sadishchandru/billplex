@@ -30,7 +30,7 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery7 = new DevExpress.DataAccess.Sql.StoredProcQuery();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IncentiveMaster));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
@@ -109,7 +109,7 @@ namespace BillPlex
             this.panelControl1.Controls.Add(this.labelControl4);
             this.panelControl1.Location = new System.Drawing.Point(6, 85);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1491, 511);
+            this.panelControl1.Size = new System.Drawing.Size(1177, 511);
             this.panelControl1.TabIndex = 0;
             // 
             // labelControl10
@@ -118,7 +118,7 @@ namespace BillPlex
             this.labelControl10.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl10.Appearance.Options.UseFont = true;
             this.labelControl10.Appearance.Options.UseForeColor = true;
-            this.labelControl10.Location = new System.Drawing.Point(1135, 13);
+            this.labelControl10.Location = new System.Drawing.Point(951, 15);
             this.labelControl10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(14, 27);
@@ -132,7 +132,7 @@ namespace BillPlex
             this.gridControl1.Location = new System.Drawing.Point(20, 232);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1455, 274);
+            this.gridControl1.Size = new System.Drawing.Size(1139, 274);
             this.gridControl1.TabIndex = 28;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -142,10 +142,10 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery1.Name = "PRO_GetIncentiveMaster";
-            storedProcQuery1.StoredProcName = "PRO_GetIncentiveMaster";
+            storedProcQuery7.Name = "PRO_GetIncentiveMaster";
+            storedProcQuery7.StoredProcName = "PRO_GetIncentiveMaster";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery1});
+            storedProcQuery7});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // gridView1
@@ -366,7 +366,7 @@ namespace BillPlex
             // txtModelSize
             // 
             this.txtModelSize.EnterMoveNextControl = true;
-            this.txtModelSize.Location = new System.Drawing.Point(1062, 55);
+            this.txtModelSize.Location = new System.Drawing.Point(878, 57);
             this.txtModelSize.Name = "txtModelSize";
             this.txtModelSize.Size = new System.Drawing.Size(281, 20);
             this.txtModelSize.TabIndex = 5;
@@ -387,7 +387,7 @@ namespace BillPlex
             // txtDurationPeriod
             // 
             this.txtDurationPeriod.EnterMoveNextControl = true;
-            this.txtDurationPeriod.Location = new System.Drawing.Point(1062, 91);
+            this.txtDurationPeriod.Location = new System.Drawing.Point(878, 93);
             this.txtDurationPeriod.Name = "txtDurationPeriod";
             this.txtDurationPeriod.Size = new System.Drawing.Size(281, 20);
             this.txtDurationPeriod.TabIndex = 6;
@@ -396,7 +396,7 @@ namespace BillPlex
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(794, 89);
+            this.labelControl6.Location = new System.Drawing.Point(610, 91);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(181, 18);
             this.labelControl6.TabIndex = 5;
@@ -406,7 +406,7 @@ namespace BillPlex
             // 
             this.ddDate.EditValue = null;
             this.ddDate.EnterMoveNextControl = true;
-            this.ddDate.Location = new System.Drawing.Point(1198, 16);
+            this.ddDate.Location = new System.Drawing.Point(1014, 18);
             this.ddDate.Name = "ddDate";
             this.ddDate.Properties.BeepOnError = false;
             this.ddDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -427,7 +427,7 @@ namespace BillPlex
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(794, 51);
+            this.labelControl5.Location = new System.Drawing.Point(610, 53);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(88, 18);
             this.labelControl5.TabIndex = 4;
@@ -437,7 +437,7 @@ namespace BillPlex
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(1062, 15);
+            this.labelControl7.Location = new System.Drawing.Point(878, 17);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(39, 18);
             this.labelControl7.TabIndex = 6;
@@ -518,9 +518,9 @@ namespace BillPlex
             this.panelControl3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelControl3.Controls.Add(this.panelControl4);
             this.panelControl3.Controls.Add(this.panelControl1);
-            this.panelControl3.Location = new System.Drawing.Point(13, 13);
+            this.panelControl3.Location = new System.Drawing.Point(12, 11);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(1504, 601);
+            this.panelControl3.Size = new System.Drawing.Size(1188, 601);
             this.panelControl3.TabIndex = 1;
             // 
             // panelControl4
@@ -528,7 +528,7 @@ namespace BillPlex
             this.panelControl4.Controls.Add(this.labelControl1);
             this.panelControl4.Location = new System.Drawing.Point(6, 5);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(1491, 74);
+            this.panelControl4.Size = new System.Drawing.Size(1177, 74);
             this.panelControl4.TabIndex = 1;
             // 
             // labelControl1
@@ -538,21 +538,22 @@ namespace BillPlex
             this.labelControl1.Appearance.ForeColor = System.Drawing.SystemColors.Highlight;
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(608, 20);
+            this.labelControl1.Location = new System.Drawing.Point(451, 20);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(274, 35);
-            this.labelControl1.TabIndex = 1;
+            this.labelControl1.TabIndex = 2;
             this.labelControl1.Text = "Incentive Master";
             // 
             // IncentiveMaster
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1540, 626);
+            this.ClientSize = new System.Drawing.Size(1230, 643);
             this.Controls.Add(this.panelControl3);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "IncentiveMaster";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IncentiveMaster";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.IncentiveMaster_Load);
@@ -615,7 +616,7 @@ namespace BillPlex
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.PanelControl panelControl3;
         private DevExpress.XtraEditors.PanelControl panelControl4;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl10;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }
