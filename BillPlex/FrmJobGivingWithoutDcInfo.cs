@@ -247,12 +247,28 @@ namespace BillPlex
                     drpMName.Properties.Items.Clear();
                     foreach (DropDownItemInfo item in JobGivingWithoutDcRequest.OrderMasterList)
                     {
-                        if (item.Code == selectItem)
+                        var foundItem = "";
+
+                        foreach (string items in drpMName.Properties.Items)
+                        {
+                            if (items.ToString() == item.productId.ToString())
+                            {
+                                foundItem = items;
+                                break;
+                            }
+                        }
+                        if (foundItem == "")
                         {
                             drpMName.Properties.Items.Add(new ImageComboBoxItem(item.productId));
                         }
                     }
-
+                    //foreach (DropDownItemInfo item in JobGivingWithoutDcRequest.OrderMasterList)
+                    //{
+                    //    if (item.Code == selectItem)
+                    //    {
+                    //        drpMName.Properties.Items.Add(new ImageComboBoxItem(item.productId));
+                    //    }
+                    //}
                     drpMName.ResetText();
                     drpMCode.ResetText();
                     txtPName.ResetText();
@@ -278,10 +294,19 @@ namespace BillPlex
             {
                 if (JobGivingWithoutDcRequest.OrderMasterList.Count() > 0)
                 {
-                    drpMCode.Properties.Items.Clear();
                     foreach (DropDownItemInfo item in JobGivingWithoutDcRequest.OrderMasterList)
                     {
-                        if (item.productId == selectItem && item.AuthorName == ccode)
+                        var foundItem = "";
+
+                        foreach (string items in drpMCode.Properties.Items)
+                        {
+                            if (selectItem == item.productId.ToString() && items.ToString() == item.RawMaterial.ToString())
+                            {
+                                foundItem = items;
+                                break;
+                            }
+                        }
+                        if (foundItem == "")
                         {
                             drpMCode.Properties.Items.Add(new ImageComboBoxItem(item.RawMaterial));
                         }
@@ -299,9 +324,6 @@ namespace BillPlex
                 txtPSize.Text = JobGivingWithoutDcRequest.OrderMasterList.FirstOrDefault(item => item.RawMaterial == selectedItem.ToString())?.SubComName ?? "";
             }
             var selectItem = drpMCode.Text;
-            var MName = drpMName.Text;
-            var ccode = txtCCode.Text;
-            var psize = txtPSize.Text;
             if (JobGivingWithoutDcRequest.OrderMasterList != null && selectItem != "")
             {
                 if (JobGivingWithoutDcRequest.OrderMasterList.Count() > 0)
@@ -309,7 +331,17 @@ namespace BillPlex
                     drpColor.Properties.Items.Clear();
                     foreach (DropDownItemInfo item in JobGivingWithoutDcRequest.OrderMasterList)
                     {
-                        if (item.RawMaterial == selectItem && item.productId == MName && item.AuthorName == ccode && item.SubComName == psize)
+                        var foundItem = "";
+
+                        foreach (string items in drpColor.Properties.Items)
+                        {
+                            if (items.ToString().ToLower() == item.color.ToString().ToLower())
+                            {
+                                foundItem = items;
+                                break;
+                            }
+                        }
+                        if (foundItem == "")
                         {
                             drpColor.Properties.Items.Add(new ImageComboBoxItem(item.color));
                         }

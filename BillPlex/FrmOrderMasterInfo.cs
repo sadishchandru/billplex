@@ -76,11 +76,31 @@ namespace BillPlex
 
             if (OrderMasterRequest.ProductMasterList != null)
             {
+                //if (OrderMasterRequest.ProductMasterList.Count() > 0)
+                //{
+                //    foreach (DropDownItemInfo item in OrderMasterRequest.ProductMasterList)
+                //    {
+                //        drpProductName.Properties.Items.Add(new ImageComboBoxItem(item.productId));
+                //    }
+                //}
                 if (OrderMasterRequest.ProductMasterList.Count() > 0)
                 {
                     foreach (DropDownItemInfo item in OrderMasterRequest.ProductMasterList)
                     {
-                        drpProductName.Properties.Items.Add(new ImageComboBoxItem(item.productId));
+                        var foundItem = "";
+
+                        foreach (string items in drpProductName.Properties.Items)
+                        {
+                            if (items.ToString().ToLower() == item.productId.ToLower().ToString())
+                            {
+                                foundItem = items.ToString();
+                                break;
+                            }
+                        }
+                        if (foundItem == "")
+                        {
+                            drpProductName.Properties.Items.Add(new ImageComboBoxItem(item.productId));
+                        }
                     }
                 }
             }
@@ -331,7 +351,7 @@ namespace BillPlex
                 ddOrderDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
                 drpCustCode.SelectedIndex = OrderMasterRequest.CustomerMasterList.FindIndex(x => x.Id == Convert.ToInt32(SelectedOrderList.GetRowCellValue(rowHandle, "Customcode").ToString()));
                 drpCustName.SelectedIndex = OrderMasterRequest.CustomerMasterList.FindIndex(x => x.Id == Convert.ToInt32(SelectedOrderList.GetRowCellValue(rowHandle, "CustomerId").ToString()));
-                drpProductName.SelectedIndex = OrderMasterRequest.ProductModelList.FindIndex(x => x.Id == Convert.ToInt32(SelectedOrderList.GetRowCellValue(rowHandle, "ProductNameId").ToString()));
+                drpProductName.SelectedIndex = OrderMasterRequest.ProductMasterList.FindIndex(x => x.Id == Convert.ToInt32(SelectedOrderList.GetRowCellValue(rowHandle, "ProductNameId").ToString()));
                 drpModelName.Text = (string)SelectedOrderList.GetRowCellValue(rowHandle, "productcode");
                 drpModelCode.Text = (string)SelectedOrderList.GetRowCellValue(rowHandle, "productmodel");
                 drpProductSize.Text = (string)SelectedOrderList.GetRowCellValue(rowHandle, "productsize");
@@ -391,19 +411,18 @@ namespace BillPlex
             var selectItem = drpProductName.Text;
             if (OrderMasterRequest.ProductMasterList != null && selectItem != "")
             {
+                drpModelName.Properties.Items.Clear();
                 if (OrderMasterRequest.ProductMasterList.Count() > 0)
                 {
                     foreach (DropDownItemInfo item in OrderMasterRequest.ProductMasterList)
                     {
-                        if (item.productId == selectItem && drpProductName.Properties.Items.OfType<object>().Any(prop => prop.ToString() == selectItem))
+                        if (item.productId.ToLower() == selectItem.ToLower())
                         {
-                            drpModelName.Properties.Items.Add(new ImageComboBoxItem(item.proModel));
+                            if (!drpModelName.Properties.Items.OfType<object>().Any(prop => prop.ToString().ToLower() == item.proModel.ToLower()))
+                            {
+                                drpModelName.Properties.Items.Add(new ImageComboBoxItem(item.proModel));
+                            }
                         }
-                        //drpModelName.Properties.Items.Clear();
-                        //    if (item.productId == selectItem)
-                        //{
-                        //    drpModelName.Properties.Items.Add(new ImageComboBoxItem(item.proModel));
-                        //}
                     }
                 }
             }
