@@ -57,7 +57,7 @@ SET NOCOUNT ON;
 					RawmaterialTypeId,
 					RM.RawMaterialType,
 					RawMaterialId,
-					RM.RawMaterials,
+					--RM.RawMaterials,
 					RM.RawMaterials,
 					ProductId,
 					ProductCode,
