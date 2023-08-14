@@ -30,8 +30,6 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.drpAuthBlood = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -143,10 +141,10 @@ namespace BillPlex
             this.radPfType = new DevExpress.XtraEditors.RadioGroup();
             this.txtDirector = new DevExpress.XtraEditors.TextEdit();
             this.txtContName = new DevExpress.XtraEditors.TextEdit();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
-            this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
@@ -205,6 +203,8 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.radPfType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDirector.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtContName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
+            this.panelControl2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -216,26 +216,6 @@ namespace BillPlex
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1610, 800);
             this.panelControl1.TabIndex = 0;
-            // 
-            // panelControl2
-            // 
-            this.panelControl2.Controls.Add(this.labelControl1);
-            this.panelControl2.Location = new System.Drawing.Point(5, 5);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1600, 62);
-            this.panelControl2.TabIndex = 3;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(587, 17);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(427, 29);
-            this.labelControl1.TabIndex = 2;
-            this.labelControl1.Text = "SUB CLIENT COMPANY PROFILE";
             // 
             // panelControl3
             // 
@@ -291,11 +271,12 @@ namespace BillPlex
             this.panelControl4.Location = new System.Drawing.Point(21, 405);
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Size = new System.Drawing.Size(1405, 267);
-            this.panelControl4.TabIndex = 63;
+            this.panelControl4.TabIndex = 1;
             // 
             // drpAuthBlood
             // 
             this.drpAuthBlood.EditValue = "";
+            this.drpAuthBlood.EnterMoveNextControl = true;
             this.drpAuthBlood.Location = new System.Drawing.Point(151, 155);
             this.drpAuthBlood.Name = "drpAuthBlood";
             this.drpAuthBlood.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -311,10 +292,11 @@ namespace BillPlex
             "O positive (O+)",
             "O negative (O-)"});
             this.drpAuthBlood.Size = new System.Drawing.Size(263, 20);
-            this.drpAuthBlood.TabIndex = 78;
+            this.drpAuthBlood.TabIndex = 32;
             // 
             // drpAuthState
             // 
+            this.drpAuthState.EnterMoveNextControl = true;
             this.drpAuthState.Location = new System.Drawing.Point(566, 116);
             this.drpAuthState.Name = "drpAuthState";
             this.drpAuthState.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -359,7 +341,7 @@ namespace BillPlex
             "West Bengal"});
             this.drpAuthState.Properties.Sorted = true;
             this.drpAuthState.Size = new System.Drawing.Size(159, 20);
-            this.drpAuthState.TabIndex = 77;
+            this.drpAuthState.TabIndex = 36;
             // 
             // btnPANnoCopy
             // 
@@ -459,10 +441,11 @@ namespace BillPlex
             // txtAuthPercent
             // 
             this.txtAuthPercent.EditValue = "";
+            this.txtAuthPercent.EnterMoveNextControl = true;
             this.txtAuthPercent.Location = new System.Drawing.Point(566, 214);
             this.txtAuthPercent.Name = "txtAuthPercent";
             this.txtAuthPercent.Size = new System.Drawing.Size(270, 20);
-            this.txtAuthPercent.TabIndex = 64;
+            this.txtAuthPercent.TabIndex = 40;
             // 
             // labelControl23
             // 
@@ -477,10 +460,11 @@ namespace BillPlex
             // txtAuthPanNo
             // 
             this.txtAuthPanNo.EditValue = "";
+            this.txtAuthPanNo.EnterMoveNextControl = true;
             this.txtAuthPanNo.Location = new System.Drawing.Point(566, 179);
             this.txtAuthPanNo.Name = "txtAuthPanNo";
             this.txtAuthPanNo.Size = new System.Drawing.Size(191, 20);
-            this.txtAuthPanNo.TabIndex = 62;
+            this.txtAuthPanNo.TabIndex = 39;
             // 
             // labelControl21
             // 
@@ -494,14 +478,16 @@ namespace BillPlex
             // 
             // txtAuthAddress
             // 
+            this.txtAuthAddress.EnterMoveNextControl = true;
             this.txtAuthAddress.Location = new System.Drawing.Point(566, 45);
             this.txtAuthAddress.Name = "txtAuthAddress";
             this.txtAuthAddress.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
             this.txtAuthAddress.Size = new System.Drawing.Size(171, 54);
-            this.txtAuthAddress.TabIndex = 60;
+            this.txtAuthAddress.TabIndex = 35;
             // 
             // txtAuthpin
             // 
+            this.txtAuthpin.EnterMoveNextControl = true;
             this.txtAuthpin.Location = new System.Drawing.Point(784, 114);
             this.txtAuthpin.Name = "txtAuthpin";
             this.txtAuthpin.Properties.BeepOnError = false;
@@ -511,7 +497,7 @@ namespace BillPlex
             this.txtAuthpin.Properties.MaskSettings.Set("valueType", typeof(long));
             this.txtAuthpin.Properties.UseMaskAsDisplayFormat = true;
             this.txtAuthpin.Size = new System.Drawing.Size(52, 20);
-            this.txtAuthpin.TabIndex = 59;
+            this.txtAuthpin.TabIndex = 37;
             // 
             // labelControl20
             // 
@@ -581,10 +567,11 @@ namespace BillPlex
             // txtAuthEmailId
             // 
             this.txtAuthEmailId.EditValue = "";
+            this.txtAuthEmailId.EnterMoveNextControl = true;
             this.txtAuthEmailId.Location = new System.Drawing.Point(151, 231);
             this.txtAuthEmailId.Name = "txtAuthEmailId";
             this.txtAuthEmailId.Size = new System.Drawing.Size(194, 20);
-            this.txtAuthEmailId.TabIndex = 51;
+            this.txtAuthEmailId.TabIndex = 34;
             // 
             // panelControl6
             // 
@@ -625,6 +612,7 @@ namespace BillPlex
             // 
             // txtAuthMobileNo
             // 
+            this.txtAuthMobileNo.EnterMoveNextControl = true;
             this.txtAuthMobileNo.Location = new System.Drawing.Point(566, 151);
             this.txtAuthMobileNo.Name = "txtAuthMobileNo";
             this.txtAuthMobileNo.Properties.BeepOnError = false;
@@ -634,7 +622,7 @@ namespace BillPlex
             this.txtAuthMobileNo.Properties.MaskSettings.Set("valueType", typeof(long));
             this.txtAuthMobileNo.Properties.UseMaskAsDisplayFormat = true;
             this.txtAuthMobileNo.Size = new System.Drawing.Size(270, 20);
-            this.txtAuthMobileNo.TabIndex = 30;
+            this.txtAuthMobileNo.TabIndex = 38;
             // 
             // labelControl27
             // 
@@ -679,18 +667,20 @@ namespace BillPlex
             // txtFathers
             // 
             this.txtFathers.EditValue = "";
+            this.txtFathers.EnterMoveNextControl = true;
             this.txtFathers.Location = new System.Drawing.Point(151, 73);
             this.txtFathers.Name = "txtFathers";
             this.txtFathers.Size = new System.Drawing.Size(263, 20);
-            this.txtFathers.TabIndex = 10;
+            this.txtFathers.TabIndex = 30;
             // 
             // txtName
             // 
             this.txtName.EditValue = "";
+            this.txtName.EnterMoveNextControl = true;
             this.txtName.Location = new System.Drawing.Point(151, 44);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(263, 20);
-            this.txtName.TabIndex = 9;
+            this.txtName.TabIndex = 29;
             // 
             // AddressLbl
             // 
@@ -736,6 +726,7 @@ namespace BillPlex
             // 
             // radGender
             // 
+            this.radGender.EnterMoveNextControl = true;
             this.radGender.Location = new System.Drawing.Point(151, 102);
             this.radGender.Name = "radGender";
             this.radGender.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -751,10 +742,11 @@ namespace BillPlex
             this.radGender.Properties.LookAndFeel.SkinName = "DevExpress Style";
             this.radGender.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.radGender.Size = new System.Drawing.Size(263, 45);
-            this.radGender.TabIndex = 47;
+            this.radGender.TabIndex = 31;
             // 
             // radActiveStatus
             // 
+            this.radActiveStatus.EnterMoveNextControl = true;
             this.radActiveStatus.Location = new System.Drawing.Point(1023, 43);
             this.radActiveStatus.Name = "radActiveStatus";
             this.radActiveStatus.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -770,11 +762,12 @@ namespace BillPlex
             this.radActiveStatus.Properties.LookAndFeel.SkinName = "DevExpress Style";
             this.radActiveStatus.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.radActiveStatus.Size = new System.Drawing.Size(138, 36);
-            this.radActiveStatus.TabIndex = 66;
+            this.radActiveStatus.TabIndex = 41;
             // 
             // ddDOB
             // 
             this.ddDOB.EditValue = "";
+            this.ddDOB.EnterMoveNextControl = true;
             this.ddDOB.Location = new System.Drawing.Point(151, 195);
             this.ddDOB.Name = "ddDOB";
             this.ddDOB.Properties.BeepOnError = false;
@@ -789,7 +782,7 @@ namespace BillPlex
             this.ddDOB.Properties.MaskSettings.Set("mask", "d");
             this.ddDOB.Properties.UseMaskAsDisplayFormat = true;
             this.ddDOB.Size = new System.Drawing.Size(263, 20);
-            this.ddDOB.TabIndex = 76;
+            this.ddDOB.TabIndex = 33;
             // 
             // panelControl7
             // 
@@ -1029,28 +1022,31 @@ namespace BillPlex
             // 
             // drpCCompany
             // 
+            this.drpCCompany.EnterMoveNextControl = true;
             this.drpCCompany.Location = new System.Drawing.Point(6, 117);
             this.drpCCompany.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.drpCCompany.Name = "drpCCompany";
             this.drpCCompany.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.drpCCompany.Size = new System.Drawing.Size(195, 20);
-            this.drpCCompany.TabIndex = 82;
+            this.drpCCompany.TabIndex = 3;
             this.drpCCompany.SelectedIndexChanged += new System.EventHandler(this.drpCCompany_SelectedIndexChanged);
             // 
             // drpMainCompany
             // 
+            this.drpMainCompany.EnterMoveNextControl = true;
             this.drpMainCompany.Location = new System.Drawing.Point(6, 70);
             this.drpMainCompany.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.drpMainCompany.Name = "drpMainCompany";
             this.drpMainCompany.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.drpMainCompany.Size = new System.Drawing.Size(195, 20);
-            this.drpMainCompany.TabIndex = 81;
+            this.drpMainCompany.TabIndex = 1;
             this.drpMainCompany.SelectedIndexChanged += new System.EventHandler(this.drpMainCompany_SelectedIndexChanged);
             // 
             // drpState
             // 
+            this.drpState.EnterMoveNextControl = true;
             this.drpState.Location = new System.Drawing.Point(182, 277);
             this.drpState.Name = "drpState";
             this.drpState.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -1095,11 +1091,12 @@ namespace BillPlex
             "West Bengal"});
             this.drpState.Properties.Sorted = true;
             this.drpState.Size = new System.Drawing.Size(155, 20);
-            this.drpState.TabIndex = 80;
+            this.drpState.TabIndex = 8;
             // 
             // ddStartingDate
             // 
             this.ddStartingDate.EditValue = "";
+            this.ddStartingDate.EnterMoveNextControl = true;
             this.ddStartingDate.Location = new System.Drawing.Point(749, 48);
             this.ddStartingDate.Name = "ddStartingDate";
             this.ddStartingDate.Properties.BeepOnError = false;
@@ -1114,11 +1111,12 @@ namespace BillPlex
             this.ddStartingDate.Properties.MaskSettings.Set("mask", "d");
             this.ddStartingDate.Properties.UseMaskAsDisplayFormat = true;
             this.ddStartingDate.Size = new System.Drawing.Size(207, 20);
-            this.ddStartingDate.TabIndex = 79;
+            this.ddStartingDate.TabIndex = 11;
             // 
             // ddESIDate
             // 
             this.ddESIDate.EditValue = "";
+            this.ddESIDate.EnterMoveNextControl = true;
             this.ddESIDate.Location = new System.Drawing.Point(749, 310);
             this.ddESIDate.Name = "ddESIDate";
             this.ddESIDate.Properties.BeepOnError = false;
@@ -1133,11 +1131,12 @@ namespace BillPlex
             this.ddESIDate.Properties.MaskSettings.Set("mask", "d");
             this.ddESIDate.Properties.UseMaskAsDisplayFormat = true;
             this.ddESIDate.Size = new System.Drawing.Size(207, 20);
-            this.ddESIDate.TabIndex = 78;
+            this.ddESIDate.TabIndex = 20;
             // 
             // ddPFDate
             // 
             this.ddPFDate.EditValue = "";
+            this.ddPFDate.EnterMoveNextControl = true;
             this.ddPFDate.Location = new System.Drawing.Point(749, 234);
             this.ddPFDate.Name = "ddPFDate";
             this.ddPFDate.Properties.BeepOnError = false;
@@ -1152,7 +1151,7 @@ namespace BillPlex
             this.ddPFDate.Properties.MaskSettings.Set("mask", "d");
             this.ddPFDate.Properties.UseMaskAsDisplayFormat = true;
             this.ddPFDate.Size = new System.Drawing.Size(207, 20);
-            this.ddPFDate.TabIndex = 77;
+            this.ddPFDate.TabIndex = 18;
             // 
             // labelControl32
             // 
@@ -1177,50 +1176,56 @@ namespace BillPlex
             // txtCst
             // 
             this.txtCst.EditValue = "";
+            this.txtCst.EnterMoveNextControl = true;
             this.txtCst.Location = new System.Drawing.Point(1172, 129);
             this.txtCst.Name = "txtCst";
             this.txtCst.Size = new System.Drawing.Size(207, 20);
-            this.txtCst.TabIndex = 60;
+            this.txtCst.TabIndex = 24;
             // 
             // txtSsi
             // 
             this.txtSsi.EditValue = "";
+            this.txtSsi.EnterMoveNextControl = true;
             this.txtSsi.Location = new System.Drawing.Point(1172, 165);
             this.txtSsi.Name = "txtSsi";
             this.txtSsi.Size = new System.Drawing.Size(207, 20);
-            this.txtSsi.TabIndex = 59;
+            this.txtSsi.TabIndex = 25;
             // 
             // txtPanNo
             // 
             this.txtPanNo.EditValue = "";
+            this.txtPanNo.EnterMoveNextControl = true;
             this.txtPanNo.Location = new System.Drawing.Point(1172, 200);
             this.txtPanNo.Name = "txtPanNo";
             this.txtPanNo.Size = new System.Drawing.Size(207, 20);
-            this.txtPanNo.TabIndex = 58;
+            this.txtPanNo.TabIndex = 26;
             // 
             // txttan
             // 
             this.txttan.EditValue = "";
+            this.txttan.EnterMoveNextControl = true;
             this.txttan.Location = new System.Drawing.Point(1172, 232);
             this.txttan.Name = "txttan";
             this.txttan.Size = new System.Drawing.Size(207, 20);
-            this.txttan.TabIndex = 57;
+            this.txttan.TabIndex = 27;
             // 
             // txtLicense
             // 
             this.txtLicense.EditValue = "";
+            this.txtLicense.EnterMoveNextControl = true;
             this.txtLicense.Location = new System.Drawing.Point(1172, 269);
             this.txtLicense.Name = "txtLicense";
             this.txtLicense.Size = new System.Drawing.Size(207, 20);
-            this.txtLicense.TabIndex = 56;
+            this.txtLicense.TabIndex = 28;
             // 
             // txtTin
             // 
             this.txtTin.EditValue = "";
+            this.txtTin.EnterMoveNextControl = true;
             this.txtTin.Location = new System.Drawing.Point(1172, 86);
             this.txtTin.Name = "txtTin";
             this.txtTin.Size = new System.Drawing.Size(207, 20);
-            this.txtTin.TabIndex = 55;
+            this.txtTin.TabIndex = 23;
             // 
             // LicenseLbl
             // 
@@ -1284,10 +1289,11 @@ namespace BillPlex
             // 
             // txtFactoryAct
             // 
+            this.txtFactoryAct.EnterMoveNextControl = true;
             this.txtFactoryAct.Location = new System.Drawing.Point(1172, 48);
             this.txtFactoryAct.Name = "txtFactoryAct";
             this.txtFactoryAct.Size = new System.Drawing.Size(207, 20);
-            this.txtFactoryAct.TabIndex = 48;
+            this.txtFactoryAct.TabIndex = 22;
             // 
             // labelControl19
             // 
@@ -1302,10 +1308,11 @@ namespace BillPlex
             // txtEsiCode
             // 
             this.txtEsiCode.EditValue = "";
+            this.txtEsiCode.EnterMoveNextControl = true;
             this.txtEsiCode.Location = new System.Drawing.Point(749, 276);
             this.txtEsiCode.Name = "txtEsiCode";
             this.txtEsiCode.Size = new System.Drawing.Size(207, 20);
-            this.txtEsiCode.TabIndex = 45;
+            this.txtEsiCode.TabIndex = 19;
             // 
             // labelControl18
             // 
@@ -1340,10 +1347,11 @@ namespace BillPlex
             // txtPFCode
             // 
             this.txtPFCode.EditValue = "";
+            this.txtPFCode.EnterMoveNextControl = true;
             this.txtPFCode.Location = new System.Drawing.Point(749, 198);
             this.txtPFCode.Name = "txtPFCode";
             this.txtPFCode.Size = new System.Drawing.Size(207, 20);
-            this.txtPFCode.TabIndex = 40;
+            this.txtPFCode.TabIndex = 17;
             // 
             // labelControl15
             // 
@@ -1368,11 +1376,12 @@ namespace BillPlex
             // txtWebsite
             // 
             this.txtWebsite.EditValue = "";
+            this.txtWebsite.EnterMoveNextControl = true;
             this.txtWebsite.Location = new System.Drawing.Point(749, 132);
             this.txtWebsite.Name = "txtWebsite";
             this.txtWebsite.Properties.BeepOnError = false;
             this.txtWebsite.Size = new System.Drawing.Size(207, 20);
-            this.txtWebsite.TabIndex = 36;
+            this.txtWebsite.TabIndex = 15;
             // 
             // labelControl13
             // 
@@ -1387,10 +1396,11 @@ namespace BillPlex
             // txtEmail
             // 
             this.txtEmail.EditValue = "";
+            this.txtEmail.EnterMoveNextControl = true;
             this.txtEmail.Location = new System.Drawing.Point(749, 106);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(207, 20);
-            this.txtEmail.TabIndex = 34;
+            this.txtEmail.TabIndex = 14;
             // 
             // labelControl12
             // 
@@ -1405,6 +1415,7 @@ namespace BillPlex
             // txtOfficePhone
             // 
             this.txtOfficePhone.EditValue = "";
+            this.txtOfficePhone.EnterMoveNextControl = true;
             this.txtOfficePhone.Location = new System.Drawing.Point(802, 77);
             this.txtOfficePhone.Name = "txtOfficePhone";
             this.txtOfficePhone.Properties.BeepOnError = false;
@@ -1414,11 +1425,12 @@ namespace BillPlex
             this.txtOfficePhone.Properties.MaskSettings.Set("valueType", typeof(long));
             this.txtOfficePhone.Properties.UseMaskAsDisplayFormat = true;
             this.txtOfficePhone.Size = new System.Drawing.Size(154, 20);
-            this.txtOfficePhone.TabIndex = 32;
+            this.txtOfficePhone.TabIndex = 13;
             // 
             // txtOffPin
             // 
             this.txtOffPin.EditValue = "";
+            this.txtOffPin.EnterMoveNextControl = true;
             this.txtOffPin.Location = new System.Drawing.Point(749, 77);
             this.txtOffPin.Name = "txtOffPin";
             this.txtOffPin.Properties.BeepOnError = false;
@@ -1428,7 +1440,7 @@ namespace BillPlex
             this.txtOffPin.Properties.MaskSettings.Set("valueType", typeof(long));
             this.txtOffPin.Properties.UseMaskAsDisplayFormat = true;
             this.txtOffPin.Size = new System.Drawing.Size(52, 20);
-            this.txtOffPin.TabIndex = 31;
+            this.txtOffPin.TabIndex = 12;
             // 
             // labelControl9
             // 
@@ -1452,6 +1464,7 @@ namespace BillPlex
             // 
             // radBusinessNature
             // 
+            this.radBusinessNature.EnterMoveNextControl = true;
             this.radBusinessNature.Location = new System.Drawing.Point(182, 309);
             this.radBusinessNature.Name = "radBusinessNature";
             this.radBusinessNature.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -1469,7 +1482,7 @@ namespace BillPlex
             this.radBusinessNature.Properties.LookAndFeel.SkinName = "DevExpress Style";
             this.radBusinessNature.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.radBusinessNature.Size = new System.Drawing.Size(276, 48);
-            this.radBusinessNature.TabIndex = 27;
+            this.radBusinessNature.TabIndex = 10;
             // 
             // labelControl11
             // 
@@ -1483,6 +1496,7 @@ namespace BillPlex
             // 
             // txtPin
             // 
+            this.txtPin.EnterMoveNextControl = true;
             this.txtPin.Location = new System.Drawing.Point(428, 276);
             this.txtPin.Name = "txtPin";
             this.txtPin.Properties.BeepOnError = false;
@@ -1492,7 +1506,7 @@ namespace BillPlex
             this.txtPin.Properties.MaskSettings.Set("valueType", typeof(long));
             this.txtPin.Properties.UseMaskAsDisplayFormat = true;
             this.txtPin.Size = new System.Drawing.Size(86, 20);
-            this.txtPin.TabIndex = 20;
+            this.txtPin.TabIndex = 9;
             // 
             // PinLbl
             // 
@@ -1516,11 +1530,12 @@ namespace BillPlex
             // 
             // txtOffAddress
             // 
+            this.txtOffAddress.EnterMoveNextControl = true;
             this.txtOffAddress.Location = new System.Drawing.Point(182, 216);
             this.txtOffAddress.Name = "txtOffAddress";
             this.txtOffAddress.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
             this.txtOffAddress.Size = new System.Drawing.Size(333, 43);
-            this.txtOffAddress.TabIndex = 16;
+            this.txtOffAddress.TabIndex = 7;
             // 
             // OfficeAddressTxt
             // 
@@ -1534,17 +1549,19 @@ namespace BillPlex
             // 
             // txtCompanyName
             // 
+            this.txtCompanyName.EnterMoveNextControl = true;
             this.txtCompanyName.Location = new System.Drawing.Point(290, 172);
             this.txtCompanyName.Name = "txtCompanyName";
             this.txtCompanyName.Size = new System.Drawing.Size(224, 20);
-            this.txtCompanyName.TabIndex = 14;
+            this.txtCompanyName.TabIndex = 6;
             // 
             // txtCompanyCode
             // 
+            this.txtCompanyCode.EnterMoveNextControl = true;
             this.txtCompanyCode.Location = new System.Drawing.Point(6, 171);
             this.txtCompanyCode.Name = "txtCompanyCode";
             this.txtCompanyCode.Size = new System.Drawing.Size(195, 20);
-            this.txtCompanyCode.TabIndex = 13;
+            this.txtCompanyCode.TabIndex = 5;
             this.txtCompanyCode.EditValueChanged += new System.EventHandler(this.txtCompanyCode_EditValueChanged);
             // 
             // labelControl8
@@ -1638,6 +1655,7 @@ namespace BillPlex
             // 
             // radPfType
             // 
+            this.radPfType.EnterMoveNextControl = true;
             this.radPfType.Location = new System.Drawing.Point(747, 156);
             this.radPfType.Name = "radPfType";
             this.radPfType.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -1653,24 +1671,46 @@ namespace BillPlex
             this.radPfType.Properties.LookAndFeel.SkinName = "DevExpress Style";
             this.radPfType.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.radPfType.Size = new System.Drawing.Size(209, 37);
-            this.radPfType.TabIndex = 38;
+            this.radPfType.TabIndex = 16;
             // 
             // txtDirector
             // 
             this.txtDirector.EditValue = "";
+            this.txtDirector.EnterMoveNextControl = true;
             this.txtDirector.Location = new System.Drawing.Point(290, 73);
             this.txtDirector.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDirector.Name = "txtDirector";
             this.txtDirector.Size = new System.Drawing.Size(224, 20);
-            this.txtDirector.TabIndex = 83;
+            this.txtDirector.TabIndex = 2;
             // 
             // txtContName
             // 
+            this.txtContName.EnterMoveNextControl = true;
             this.txtContName.Location = new System.Drawing.Point(290, 123);
             this.txtContName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtContName.Name = "txtContName";
             this.txtContName.Size = new System.Drawing.Size(225, 20);
-            this.txtContName.TabIndex = 84;
+            this.txtContName.TabIndex = 4;
+            // 
+            // panelControl2
+            // 
+            this.panelControl2.Controls.Add(this.labelControl1);
+            this.panelControl2.Location = new System.Drawing.Point(5, 5);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(1600, 62);
+            this.panelControl2.TabIndex = 3;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Appearance.Options.UseForeColor = true;
+            this.labelControl1.Location = new System.Drawing.Point(587, 17);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(427, 29);
+            this.labelControl1.TabIndex = 2;
+            this.labelControl1.Text = "SUB CLIENT COMPANY PROFILE";
             // 
             // FrmSubClientCompanyInfo
             // 
@@ -1688,9 +1728,6 @@ namespace BillPlex
             this.Load += new System.EventHandler(this.FrmSubClientCompanyInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
-            this.panelControl2.ResumeLayout(false);
-            this.panelControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
@@ -1753,6 +1790,9 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.radPfType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDirector.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtContName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
+            this.panelControl2.ResumeLayout(false);
+            this.panelControl2.PerformLayout();
             this.ResumeLayout(false);
 
         }

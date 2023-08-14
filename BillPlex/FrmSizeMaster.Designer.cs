@@ -339,6 +339,7 @@ namespace BillPlex
             // 
             // txtSName
             // 
+            this.txtSName.EnterMoveNextControl = true;
             this.txtSName.Location = new System.Drawing.Point(300, 39);
             this.txtSName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSName.Name = "txtSName";

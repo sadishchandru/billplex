@@ -314,6 +314,7 @@ namespace BillPlex
             // 
             // txtRawMaterial
             // 
+            this.txtRawMaterial.EnterMoveNextControl = true;
             this.txtRawMaterial.Location = new System.Drawing.Point(284, 81);
             this.txtRawMaterial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtRawMaterial.Name = "txtRawMaterial";
@@ -322,6 +323,7 @@ namespace BillPlex
             // 
             // txtStock
             // 
+            this.txtStock.EnterMoveNextControl = true;
             this.txtStock.Location = new System.Drawing.Point(284, 121);
             this.txtStock.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtStock.Name = "txtStock";
@@ -330,6 +332,7 @@ namespace BillPlex
             // 
             // txtType
             // 
+            this.txtType.EnterMoveNextControl = true;
             this.txtType.Location = new System.Drawing.Point(284, 43);
             this.txtType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtType.Name = "txtType";
