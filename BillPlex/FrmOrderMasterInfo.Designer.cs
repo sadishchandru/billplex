@@ -30,8 +30,8 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery4 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter4 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmOrderMasterInfo));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -344,7 +344,7 @@ namespace BillPlex
             // txtReasonbox
             // 
             this.txtReasonbox.EnterMoveNextControl = true;
-            this.txtReasonbox.Location = new System.Drawing.Point(1031, 347);
+            this.txtReasonbox.Location = new System.Drawing.Point(1031, 351);
             this.txtReasonbox.Name = "txtReasonbox";
             this.txtReasonbox.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtReasonbox.Size = new System.Drawing.Size(285, 46);
@@ -354,7 +354,7 @@ namespace BillPlex
             // 
             this.lblReason.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReason.Appearance.Options.UseFont = true;
-            this.lblReason.Location = new System.Drawing.Point(745, 374);
+            this.lblReason.Location = new System.Drawing.Point(745, 359);
             this.lblReason.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblReason.Name = "lblReason";
             this.lblReason.Size = new System.Drawing.Size(237, 18);
@@ -377,13 +377,13 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery1.Name = "PRO_GetOrderMasterByFilter";
-            queryParameter1.Name = "@OrderNo";
-            queryParameter1.Type = typeof(string);
-            storedProcQuery1.Parameters.Add(queryParameter1);
-            storedProcQuery1.StoredProcName = "PRO_GetOrderMasterByFilter";
+            storedProcQuery4.Name = "PRO_GetOrderMasterByFilter";
+            queryParameter4.Name = "@OrderNo";
+            queryParameter4.Type = typeof(string);
+            storedProcQuery4.Parameters.Add(queryParameter4);
+            storedProcQuery4.StoredProcName = "PRO_GetOrderMasterByFilter";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery1});
+            storedProcQuery4});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // gridView1
@@ -764,6 +764,7 @@ namespace BillPlex
             // 
             // drpCustName
             // 
+            this.drpCustName.Enabled = false;
             this.drpCustName.EnterMoveNextControl = true;
             this.drpCustName.Location = new System.Drawing.Point(480, 146);
             this.drpCustName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -798,6 +799,7 @@ namespace BillPlex
             // 
             // txtTotRawmat
             // 
+            this.txtTotRawmat.Enabled = false;
             this.txtTotRawmat.EnterMoveNextControl = true;
             this.txtTotRawmat.Location = new System.Drawing.Point(1031, 278);
             this.txtTotRawmat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -807,6 +809,7 @@ namespace BillPlex
             // 
             // txtRawmatName
             // 
+            this.txtRawmatName.Enabled = false;
             this.txtRawmatName.EnterMoveNextControl = true;
             this.txtRawmatName.Location = new System.Drawing.Point(1031, 87);
             this.txtRawmatName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -816,6 +819,7 @@ namespace BillPlex
             // 
             // txtType
             // 
+            this.txtType.Enabled = false;
             this.txtType.EnterMoveNextControl = true;
             this.txtType.Location = new System.Drawing.Point(1031, 48);
             this.txtType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -825,8 +829,9 @@ namespace BillPlex
             // 
             // txtWages
             // 
+            this.txtWages.Enabled = false;
             this.txtWages.EnterMoveNextControl = true;
-            this.txtWages.Location = new System.Drawing.Point(1031, 322);
+            this.txtWages.Location = new System.Drawing.Point(1031, 321);
             this.txtWages.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtWages.Name = "txtWages";
             this.txtWages.Size = new System.Drawing.Size(285, 20);
@@ -834,6 +839,7 @@ namespace BillPlex
             // 
             // txtMaterialwt
             // 
+            this.txtMaterialwt.Enabled = false;
             this.txtMaterialwt.EnterMoveNextControl = true;
             this.txtMaterialwt.Location = new System.Drawing.Point(334, 339);
             this.txtMaterialwt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -855,7 +861,7 @@ namespace BillPlex
             // 
             this.labelControl12.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl12.Appearance.Options.UseFont = true;
-            this.labelControl12.Location = new System.Drawing.Point(745, 337);
+            this.labelControl12.Location = new System.Drawing.Point(745, 323);
             this.labelControl12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(169, 18);
@@ -921,7 +927,7 @@ namespace BillPlex
             // 
             this.labelControl17.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl17.Appearance.Options.UseFont = true;
-            this.labelControl17.Location = new System.Drawing.Point(745, 293);
+            this.labelControl17.Location = new System.Drawing.Point(745, 280);
             this.labelControl17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl17.Name = "labelControl17";
             this.labelControl17.Size = new System.Drawing.Size(160, 18);

@@ -205,7 +205,7 @@ namespace BillPlex
         {
             try
             {
-                if (drpCustCode.Text != string.Empty && drpCustName.Text != string.Empty && txtOrderNo.Text != string.Empty)
+                if (drpCustCode.Text != string.Empty && drpCustName.Text != string.Empty && txtOrderNo.Text != string.Empty && ddDDate.Text!= string.Empty && ddDDate.Text != "")
                 {
                     if ((OrderMasterRequest.Id == 0 && txtReasonbox.Visible == true && lblReason.Visible == true) || txtReasonbox.Visible == false && lblReason.Visible == false)
                     {
