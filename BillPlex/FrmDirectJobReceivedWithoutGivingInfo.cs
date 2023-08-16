@@ -29,7 +29,7 @@ namespace BillPlex
         {
             InitializeComponent();
             InitializeDataSource();
-
+            ddReceivingDate.DateTime = DateTime.Now;
             DirectJobReceivedWithoutGivingRequest = new DirectJobReceivedWithoutGiving();
 
             DirectJobReceivedWithoutGivingRequest.ConnectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
