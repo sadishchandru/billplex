@@ -200,6 +200,14 @@ namespace BillPlex
                             btnClear_Click();
                             gridView1.RefreshData();
                             gridControl1.RefreshDataSource();
+
+                            FrmJobGivingWithoutDcProfile form = Application.OpenForms.OfType<FrmJobGivingWithoutDcProfile>().FirstOrDefault();
+
+                            Form myForm = Application.OpenForms["FrmJobGivingWithoutDcProfile"];
+                            if (myForm != null)
+                            {
+                                form.ReloadSqlDataSource();
+                            }
                         }
                     }
                 }

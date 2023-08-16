@@ -180,42 +180,42 @@ namespace BillPlex
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            try
-            {
-                var selectedRows = gridView1.GetSelectedRows();
+            //try
+            //{
+            //    var selectedRows = gridView1.GetSelectedRows();
 
-                foreach (var rowHandle in selectedRows)
-                {
-                    OrderMasterRequest.Id = (int)gridView1.GetRowCellValue(rowHandle, "Id");
-                    txtOrderNo.Text = (string)gridView1.GetRowCellValue(rowHandle, "OrderNo");
-                    var datete = gridView1.GetRowCellValue(rowHandle, "Orderdate").ToString();
-                    ddOrderDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
-                    drpCustCode.Text = (string)gridView1.GetRowCellValue(rowHandle, "Customcode");
-                    drpCustName.Text = gridView1.GetRowCellValue(rowHandle, "CustomerId").ToString();
-                    drpProductName.Text = gridView1.GetRowCellValue(rowHandle, "ProductNameId").ToString();
-                    drpModelName.Text = (string)gridView1.GetRowCellValue(rowHandle, "productcode");
-                    drpModelCode.Text = (string)gridView1.GetRowCellValue(rowHandle, "productmodel");
-                    drpProductSize.Text = (string)gridView1.GetRowCellValue(rowHandle, "productsize");
-                    txtMaterialwt.Text = (string)gridView1.GetRowCellValue(rowHandle, "totalWt");
-                    txtType.Text = (string)gridView1.GetRowCellValue(rowHandle, "RawType");
-                    txtRawmatName.Text = (string)gridView1.GetRowCellValue(rowHandle, "RawmaterialId");
-                    drpProColor.SelectedIndex = OrderMasterRequest.ColourMasterList.FindIndex(x => x.Id == Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "ColorId").ToString()));
-                    var datet = gridView1.GetRowCellValue(rowHandle, "").ToString();
-                    ddDDate.Text = datet != "Delivarydate" ? DateTime.Parse(datet).ToString("MM-dd-yyyy") : "";
-                    drpStatus.Text = (string)gridView1.GetRowCellValue(rowHandle, "Status");
-                    txtTotRawmat.Text = (string)gridView1.GetRowCellValue(rowHandle, "TotalRaw");
-                    txtWages.Text = (string)gridView1.GetRowCellValue(rowHandle, "WagesforEmp");
-                }
-                btnAdd.Enabled = true;
-                btnEdit.Enabled = false;
-                btnDelete.Enabled = true;
-                btnUpdate.Enabled = true;
+            //    foreach (var rowHandle in selectedRows)
+            //    {
+            //        OrderMasterRequest.Id = (int)gridView1.GetRowCellValue(rowHandle, "Id");
+            //        txtOrderNo.Text = (string)gridView1.GetRowCellValue(rowHandle, "OrderNo");
+            //        var datete = gridView1.GetRowCellValue(rowHandle, "Orderdate").ToString();
+            //        ddOrderDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
+            //        drpCustCode.Text = (string)gridView1.GetRowCellValue(rowHandle, "Customcode");
+            //        drpCustName.Text = gridView1.GetRowCellValue(rowHandle, "CustomerId").ToString();
+            //        drpProductName.Text = gridView1.GetRowCellValue(rowHandle, "ProductNameId").ToString();
+            //        drpModelName.Text = (string)gridView1.GetRowCellValue(rowHandle, "productcode");
+            //        drpModelCode.Text = (string)gridView1.GetRowCellValue(rowHandle, "productmodel");
+            //        drpProductSize.Text = (string)gridView1.GetRowCellValue(rowHandle, "productsize");
+            //        txtMaterialwt.Text = (string)gridView1.GetRowCellValue(rowHandle, "totalWt");
+            //        txtType.Text = (string)gridView1.GetRowCellValue(rowHandle, "RawType");
+            //        txtRawmatName.Text = (string)gridView1.GetRowCellValue(rowHandle, "RawmaterialId");
+            //        drpProColor.SelectedIndex = OrderMasterRequest.ColourMasterList.FindIndex(x => x.Id == Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "ColorId").ToString()));
+            //        var datet = gridView1.GetRowCellValue(rowHandle, "").ToString();
+            //        ddDDate.Text = datet != "Delivarydate" ? DateTime.Parse(datet).ToString("MM-dd-yyyy") : "";
+            //        drpStatus.Text = (string)gridView1.GetRowCellValue(rowHandle, "Status");
+            //        txtTotRawmat.Text = (string)gridView1.GetRowCellValue(rowHandle, "TotalRaw");
+            //        txtWages.Text = (string)gridView1.GetRowCellValue(rowHandle, "WagesforEmp");
+            //    }
+            //    btnAdd.Enabled = true;
+            //    btnEdit.Enabled = false;
+            //    btnDelete.Enabled = true;
+            //    btnUpdate.Enabled = true;
 
-            }
-            catch (Exception ex)
-            {
-                XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
         #endregion
 
