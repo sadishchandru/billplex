@@ -605,5 +605,11 @@ namespace BillPlex
         {
             this.Close();
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            sqlDataSource1.FillAsync();
+            gridView1.RefreshData();
+        }
     }
 }

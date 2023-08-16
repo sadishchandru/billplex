@@ -372,6 +372,7 @@ namespace BillPlex
             this.btnRefresh.Size = new System.Drawing.Size(97, 82);
             this.btnRefresh.TabIndex = 58;
             this.btnRefresh.Text = "REFRESH";
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnNew
             // 

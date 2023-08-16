@@ -30,8 +30,8 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery4 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter4 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmOrderMasterInfo));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -377,13 +377,13 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery4.Name = "PRO_GetOrderMasterByFilter";
-            queryParameter4.Name = "@OrderNo";
-            queryParameter4.Type = typeof(string);
-            storedProcQuery4.Parameters.Add(queryParameter4);
-            storedProcQuery4.StoredProcName = "PRO_GetOrderMasterByFilter";
+            storedProcQuery2.Name = "PRO_GetOrderMasterByFilter";
+            queryParameter2.Name = "@OrderNo";
+            queryParameter2.Type = typeof(string);
+            storedProcQuery2.Parameters.Add(queryParameter2);
+            storedProcQuery2.StoredProcName = "PRO_GetOrderMasterByFilter";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery4});
+            storedProcQuery2});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // gridView1
@@ -607,15 +607,16 @@ namespace BillPlex
             // 
             this.btnRefresh.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.btnRefresh.Appearance.Options.UseFont = true;
-            this.btnRefresh.Location = new System.Drawing.Point(1412, 21);
+            this.btnRefresh.Location = new System.Drawing.Point(1421, 25);
             this.btnRefresh.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.btnRefresh.LookAndFeel.SkinName = "DevExpress Style";
             this.btnRefresh.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(87, 60);
+            this.btnRefresh.Size = new System.Drawing.Size(78, 60);
             this.btnRefresh.TabIndex = 50;
             this.btnRefresh.Text = "REFRESH";
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // labelControl22
             // 
