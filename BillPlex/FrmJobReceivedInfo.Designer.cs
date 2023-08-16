@@ -1442,7 +1442,7 @@ namespace BillPlex
             this.txtRcvdQty.Properties.BeepOnError = false;
             this.txtRcvdQty.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.txtRcvdQty.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
-            this.txtRcvdQty.Properties.MaskSettings.Set("mask", "f3");
+            this.txtRcvdQty.Properties.MaskSettings.Set("mask", "d");
             this.txtRcvdQty.Properties.UseMaskAsDisplayFormat = true;
             this.txtRcvdQty.Size = new System.Drawing.Size(107, 20);
             this.txtRcvdQty.TabIndex = 11;

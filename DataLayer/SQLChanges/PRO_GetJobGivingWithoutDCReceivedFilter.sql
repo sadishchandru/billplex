@@ -26,8 +26,8 @@ SET NOCOUNT ON;
 			,CompanyName
 			,ClientCompany
 			,SubClientCompany
-			,JGDC.OrderNo
-			,Om.Orderno
+			--,JGDC.OrderNo
+			,Om.Orderno As OrderNo
 			,Date
 			,JGDC.Orderdate
 			,CustomerCode
