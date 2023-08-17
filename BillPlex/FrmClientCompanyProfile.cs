@@ -14,6 +14,7 @@ namespace BillPlex
             InitializeComponent();
             ClientCompanyinfoRequest.ConnectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
             ReloadSqlDataSource();
+            gridView2.BestFitColumns();
         }
 
         public void ReloadSqlDataSource()

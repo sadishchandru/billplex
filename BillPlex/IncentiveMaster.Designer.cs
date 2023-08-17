@@ -30,7 +30,7 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery7 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IncentiveMaster));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
@@ -142,10 +142,10 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery7.Name = "PRO_GetIncentiveMaster";
-            storedProcQuery7.StoredProcName = "PRO_GetIncentiveMaster";
+            storedProcQuery1.Name = "PRO_GetIncentiveMaster";
+            storedProcQuery1.StoredProcName = "PRO_GetIncentiveMaster";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery7});
+            storedProcQuery1});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // gridView1
@@ -165,50 +165,48 @@ namespace BillPlex
             // 
             this.colId.FieldName = "Id";
             this.colId.Name = "colId";
-            this.colId.Visible = true;
-            this.colId.VisibleIndex = 0;
             // 
             // colProductName
             // 
             this.colProductName.FieldName = "ProductName";
             this.colProductName.Name = "colProductName";
             this.colProductName.Visible = true;
-            this.colProductName.VisibleIndex = 1;
+            this.colProductName.VisibleIndex = 0;
             // 
             // colModelCode
             // 
             this.colModelCode.FieldName = "ModelCode";
             this.colModelCode.Name = "colModelCode";
             this.colModelCode.Visible = true;
-            this.colModelCode.VisibleIndex = 2;
+            this.colModelCode.VisibleIndex = 1;
             // 
             // colModelName
             // 
             this.colModelName.FieldName = "ModelName";
             this.colModelName.Name = "colModelName";
             this.colModelName.Visible = true;
-            this.colModelName.VisibleIndex = 3;
+            this.colModelName.VisibleIndex = 2;
             // 
             // colModelSize
             // 
             this.colModelSize.FieldName = "ModelSize";
             this.colModelSize.Name = "colModelSize";
             this.colModelSize.Visible = true;
-            this.colModelSize.VisibleIndex = 4;
+            this.colModelSize.VisibleIndex = 3;
             // 
             // colDurationPeriod
             // 
             this.colDurationPeriod.FieldName = "DurationPeriod";
             this.colDurationPeriod.Name = "colDurationPeriod";
             this.colDurationPeriod.Visible = true;
-            this.colDurationPeriod.VisibleIndex = 5;
+            this.colDurationPeriod.VisibleIndex = 4;
             // 
             // colDate
             // 
             this.colDate.FieldName = "Date";
             this.colDate.Name = "colDate";
             this.colDate.Visible = true;
-            this.colDate.VisibleIndex = 6;
+            this.colDate.VisibleIndex = 5;
             // 
             // labelControl9
             // 

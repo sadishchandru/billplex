@@ -31,7 +31,7 @@ namespace BillPlex
             InitializeDataSource();
             ddReceivingDate.DateTime = DateTime.Now;
             DirectJobReceivedWithoutGivingRequest = new DirectJobReceivedWithoutGiving();
-
+            gridView1.BestFitColumns();
             DirectJobReceivedWithoutGivingRequest.ConnectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
             DirectJobReceivedWithoutGivingRequest.DirectJobReceivedWithoutGivingList = new List<DirectJobReceivedWithoutGiving>();
 

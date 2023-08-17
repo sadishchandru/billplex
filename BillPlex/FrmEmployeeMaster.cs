@@ -40,8 +40,8 @@ namespace BillPlex
             InitializeComponent();
             labelAvailable.Visible = false;
             labelCodeExist.Visible = false;
-            //InitializeGridControl();
-            //InitializeDataSource();
+            FamilyGridView.BestFitColumns();
+            NomieeGridView.BestFitColumns();
 
             EmployeePersonalRequest = new EmployeePersonal();
             EmployeeFinanceRequest = new EmployeeFinance();

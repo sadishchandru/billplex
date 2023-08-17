@@ -23,7 +23,7 @@ namespace BillPlex
             ColorMasterRequest = new ColorMaster();
             ColorMasterRequest.ConnectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
             ColorMasterRequest.Result = new ResultDetail();
-
+            ColormasterGrid.BestFitColumns();
             labelAvailable.Visible = false;
             LabelExceed.Visible = false;
 

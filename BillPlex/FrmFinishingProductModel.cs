@@ -23,7 +23,7 @@ namespace BillPlex
             InitializeComponent();
             FinishingProductModelRequest = new FinishingProductModel();
             FinishingProductModelRequest.ConnectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
-
+            gridView1.BestFitColumns();
             Dictionary<string, bool> dropDownList = new Dictionary<string, bool>        {
                     {"ProductModelRequired",true },
                     {"SizeMasterRequired",true}

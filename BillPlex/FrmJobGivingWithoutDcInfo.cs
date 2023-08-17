@@ -39,6 +39,7 @@ namespace BillPlex
 
             JobGivingWithoutDcRequest.List();
             JobGivingWithoutDcRequest.JobGivingWithoutDcListByOrder = new List<JobGivingWithoutDc>();
+            gridView1.BestFitColumns();
 
             Dictionary<string, bool> dropDownList = new Dictionary<string, bool>
             {
@@ -302,6 +303,7 @@ namespace BillPlex
             {
                 if (JobGivingWithoutDcRequest.OrderMasterList.Count() > 0)
                 {
+                    drpMCode.Properties.Items.Clear();
                     foreach (DropDownItemInfo item in JobGivingWithoutDcRequest.OrderMasterList)
                     {
                         var foundItem = "";

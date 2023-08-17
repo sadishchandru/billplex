@@ -24,6 +24,7 @@ namespace BillPlex
             InitializeComponent();
             ClientCompanyBankInfoRequest = new ClientCompanyBankInfo();
             ClientCompanyBankInfoRequest.ConnectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
+            ClientCompanyBankGrid.BestFitColumns();
             Dictionary<string, bool> dropDownList = new Dictionary<string, bool>        {
                     { "MasterCompanyRequired", true },
                     { "ClientCompanyRequired", true }

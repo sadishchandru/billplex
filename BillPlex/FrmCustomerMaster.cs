@@ -25,6 +25,7 @@ namespace BillPlex
             labelAvailable.Visible = false;
             labelCodeExist.Visible = false;
             sqlDataSource1.FillAsync();
+            CustomerMaster_GridView.BestFitColumns();
             CustomerRequest = new CustomerMasterInfo();
             CustomerRequest.ConnectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
             CustomerRequest.Result = new ResultDetail();

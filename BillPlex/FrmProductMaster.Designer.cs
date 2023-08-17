@@ -144,8 +144,6 @@ namespace BillPlex
             this.colId.MinWidth = 23;
             this.colId.Name = "colId";
             this.colId.OptionsColumn.FixedWidth = true;
-            this.colId.Visible = true;
-            this.colId.VisibleIndex = 0;
             this.colId.Width = 86;
             // 
             // colProductmodel
@@ -154,7 +152,7 @@ namespace BillPlex
             this.colProductmodel.MinWidth = 23;
             this.colProductmodel.Name = "colProductmodel";
             this.colProductmodel.Visible = true;
-            this.colProductmodel.VisibleIndex = 1;
+            this.colProductmodel.VisibleIndex = 0;
             this.colProductmodel.Width = 86;
             // 
             // txtSearch

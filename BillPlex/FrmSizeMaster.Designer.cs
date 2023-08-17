@@ -178,15 +178,13 @@ namespace BillPlex
             this.Id.FieldName = "Id";
             this.Id.Name = "Id";
             this.Id.OptionsColumn.FixedWidth = true;
-            this.Id.Visible = true;
-            this.Id.VisibleIndex = 0;
             // 
             // colSizename
             // 
             this.colSizename.FieldName = "Sizename";
             this.colSizename.Name = "colSizename";
             this.colSizename.Visible = true;
-            this.colSizename.VisibleIndex = 1;
+            this.colSizename.VisibleIndex = 0;
             // 
             // labelControl1
             // 

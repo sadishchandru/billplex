@@ -30,6 +30,7 @@ namespace BillPlex
 
             //EmployeePersonalRequest.GetList();
             sqlDataSource1.FillAsync();
+            EmployeeGridView.BestFitColumns();
         }
 
         public void ReloadSqlDataSource()

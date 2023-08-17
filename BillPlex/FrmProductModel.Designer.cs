@@ -314,8 +314,6 @@ namespace BillPlex
             this.colId.FieldName = "Id";
             this.colId.Name = "colId";
             this.colId.OptionsColumn.FixedWidth = true;
-            this.colId.Visible = true;
-            this.colId.VisibleIndex = 0;
             // 
             // colRawmaterialTypeId
             // 
@@ -327,21 +325,21 @@ namespace BillPlex
             this.colRawMaterialType.FieldName = "RawMaterialType";
             this.colRawMaterialType.Name = "colRawMaterialType";
             this.colRawMaterialType.Visible = true;
-            this.colRawMaterialType.VisibleIndex = 1;
+            this.colRawMaterialType.VisibleIndex = 0;
             // 
             // colRawMaterialId
             // 
             this.colRawMaterialId.FieldName = "RawMaterialId";
             this.colRawMaterialId.Name = "colRawMaterialId";
             this.colRawMaterialId.Visible = true;
-            this.colRawMaterialId.VisibleIndex = 10;
+            this.colRawMaterialId.VisibleIndex = 9;
             // 
             // colRawMaterials
             // 
             this.colRawMaterials.FieldName = "RawMaterials";
             this.colRawMaterials.Name = "colRawMaterials";
             this.colRawMaterials.Visible = true;
-            this.colRawMaterials.VisibleIndex = 2;
+            this.colRawMaterials.VisibleIndex = 1;
             // 
             // colProductId
             // 
@@ -353,49 +351,49 @@ namespace BillPlex
             this.colProductCode.FieldName = "ProductCode";
             this.colProductCode.Name = "colProductCode";
             this.colProductCode.Visible = true;
-            this.colProductCode.VisibleIndex = 3;
+            this.colProductCode.VisibleIndex = 2;
             // 
             // colProductModel
             // 
             this.colProductModel.FieldName = "ProductModel";
             this.colProductModel.Name = "colProductModel";
             this.colProductModel.Visible = true;
-            this.colProductModel.VisibleIndex = 4;
+            this.colProductModel.VisibleIndex = 3;
             // 
             // colProductSize
             // 
             this.colProductSize.FieldName = "ProductSize";
             this.colProductSize.Name = "colProductSize";
             this.colProductSize.Visible = true;
-            this.colProductSize.VisibleIndex = 5;
+            this.colProductSize.VisibleIndex = 4;
             // 
             // colRawMaterialStock
             // 
             this.colRawMaterialStock.FieldName = "RawMaterialStock";
             this.colRawMaterialStock.Name = "colRawMaterialStock";
             this.colRawMaterialStock.Visible = true;
-            this.colRawMaterialStock.VisibleIndex = 6;
+            this.colRawMaterialStock.VisibleIndex = 5;
             // 
             // colReqRawMaterial
             // 
             this.colReqRawMaterial.FieldName = "ReqRawMaterial";
             this.colReqRawMaterial.Name = "colReqRawMaterial";
             this.colReqRawMaterial.Visible = true;
-            this.colReqRawMaterial.VisibleIndex = 7;
+            this.colReqRawMaterial.VisibleIndex = 6;
             // 
             // colWagesforItem
             // 
             this.colWagesforItem.FieldName = "WagesforItem";
             this.colWagesforItem.Name = "colWagesforItem";
             this.colWagesforItem.Visible = true;
-            this.colWagesforItem.VisibleIndex = 8;
+            this.colWagesforItem.VisibleIndex = 7;
             // 
             // colDate
             // 
             this.colDate.FieldName = "Date";
             this.colDate.Name = "colDate";
             this.colDate.Visible = true;
-            this.colDate.VisibleIndex = 9;
+            this.colDate.VisibleIndex = 8;
             // 
             // panelControl3
             // 

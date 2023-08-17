@@ -178,50 +178,48 @@ namespace BillPlex
             this.colId.FieldName = "Id";
             this.colId.Name = "colId";
             this.colId.OptionsColumn.FixedWidth = true;
-            this.colId.Visible = true;
-            this.colId.VisibleIndex = 0;
             // 
             // colProductNameId
             // 
             this.colProductNameId.FieldName = "ProductNameId";
             this.colProductNameId.Name = "colProductNameId";
             this.colProductNameId.Visible = true;
-            this.colProductNameId.VisibleIndex = 1;
+            this.colProductNameId.VisibleIndex = 0;
             // 
             // colProductcode
             // 
             this.colProductcode.FieldName = "Productcode";
             this.colProductcode.Name = "colProductcode";
             this.colProductcode.Visible = true;
-            this.colProductcode.VisibleIndex = 2;
+            this.colProductcode.VisibleIndex = 1;
             // 
             // colProductmodel
             // 
             this.colProductmodel.FieldName = "Productmodel";
             this.colProductmodel.Name = "colProductmodel";
             this.colProductmodel.Visible = true;
-            this.colProductmodel.VisibleIndex = 3;
+            this.colProductmodel.VisibleIndex = 2;
             // 
             // colProductsize
             // 
             this.colProductsize.FieldName = "Productsize";
             this.colProductsize.Name = "colProductsize";
             this.colProductsize.Visible = true;
-            this.colProductsize.VisibleIndex = 4;
+            this.colProductsize.VisibleIndex = 3;
             // 
             // colWagesforProduct
             // 
             this.colWagesforProduct.FieldName = "WagesforProduct";
             this.colWagesforProduct.Name = "colWagesforProduct";
             this.colWagesforProduct.Visible = true;
-            this.colWagesforProduct.VisibleIndex = 5;
+            this.colWagesforProduct.VisibleIndex = 4;
             // 
             // colItemDate
             // 
             this.colItemDate.FieldName = "ItemDate";
             this.colItemDate.Name = "colItemDate";
             this.colItemDate.Visible = true;
-            this.colItemDate.VisibleIndex = 6;
+            this.colItemDate.VisibleIndex = 5;
             // 
             // panelControl3
             // 

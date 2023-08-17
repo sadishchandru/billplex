@@ -167,29 +167,27 @@ namespace BillPlex
             this.colId.FieldName = "Id";
             this.colId.Name = "colId";
             this.colId.OptionsColumn.FixedWidth = true;
-            this.colId.Visible = true;
-            this.colId.VisibleIndex = 0;
             // 
             // colRawMaterials
             // 
             this.colRawMaterials.FieldName = "RawMaterials";
             this.colRawMaterials.Name = "colRawMaterials";
             this.colRawMaterials.Visible = true;
-            this.colRawMaterials.VisibleIndex = 1;
+            this.colRawMaterials.VisibleIndex = 0;
             // 
             // colRawMaterialType
             // 
             this.colRawMaterialType.FieldName = "RawMaterialType";
             this.colRawMaterialType.Name = "colRawMaterialType";
             this.colRawMaterialType.Visible = true;
-            this.colRawMaterialType.VisibleIndex = 2;
+            this.colRawMaterialType.VisibleIndex = 1;
             // 
             // colRawMaterialStock
             // 
             this.colRawMaterialStock.FieldName = "RawMaterialStock";
             this.colRawMaterialStock.Name = "colRawMaterialStock";
             this.colRawMaterialStock.Visible = true;
-            this.colRawMaterialStock.VisibleIndex = 3;
+            this.colRawMaterialStock.VisibleIndex = 2;
             // 
             // txtSearch
             // 

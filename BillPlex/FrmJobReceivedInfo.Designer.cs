@@ -339,6 +339,7 @@ namespace BillPlex
             this.btnEdit.Size = new System.Drawing.Size(81, 23);
             this.btnEdit.TabIndex = 61;
             this.btnEdit.Text = "EDIT";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
@@ -465,6 +466,7 @@ namespace BillPlex
             this.colBalanceWt1});
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsView.ColumnAutoWidth = false;
             // 
             // colId1
             // 
@@ -795,6 +797,7 @@ namespace BillPlex
             this.colWagesEmp});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ColumnAutoWidth = false;
             // 
             // colId
             // 

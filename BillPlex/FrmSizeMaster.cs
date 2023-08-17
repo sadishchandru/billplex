@@ -35,6 +35,7 @@ namespace BillPlex
             sizeMasterRequest.Result = new ResultDetail();
             labelAvailable.Visible = false;
             LabelExceed.Visible = false;
+            SizeMasterGrid.BestFitColumns();
 
             Dictionary<string, bool> dropDownList = new Dictionary<string, bool>        {
                     { "SizeMasterRequired", true }

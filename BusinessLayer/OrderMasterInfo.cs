@@ -27,6 +27,7 @@ namespace BusinessLayer
         public string RawMaterialId { get; set; }
         public string RawType { get; set; }
         public Int64 ColorId { get; set; }
+        public string Color { get; set; }
         public string RawQty { get; set; }
         public string TotalRaw { get; set; }
         public string MaterialWghtNo { get; set; }
@@ -123,6 +124,7 @@ namespace BusinessLayer
                 OrderDetail.RawType = ToString(dbReader["RawmaterialId"]);
                 OrderDetail.RawMaterialId = ToString(dbReader["RawType"]);
                 OrderDetail.ColorId = ToInteger(dbReader["ColorId"]);
+                OrderDetail.Color = ToString(dbReader["Color"]);
                 OrderDetail.RawQty = ToString(dbReader["RawQty"]);
                 OrderDetail.Deliverydate = ToDateTimeToString(dbReader["Delivarydate"]);
                 OrderDetail.status = ToString(dbReader["Status"]);

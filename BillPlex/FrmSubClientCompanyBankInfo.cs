@@ -23,6 +23,7 @@ namespace BillPlex
         {
             InitializeComponent();
             sqlDataSource1.FillAsync();
+            SubClientBankGrid.BestFitColumns();
             string connectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
             SubClientCompanyBankRequest = new SubClientCompanyBank();
             SubClientCompanyBankRequest.ConnectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
