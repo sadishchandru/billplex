@@ -65,7 +65,7 @@ namespace BillPlex
             }
             if (IsOpen == false)
             {
-                 MasterCompanyInfo = new FrmCompanyProfile();
+                MasterCompanyInfo = new FrmCompanyProfile();
                 MasterCompanyInfo.MdiParent = this;
                 MasterCompanyInfo.Show();
             }
@@ -373,7 +373,7 @@ namespace BillPlex
                 finishingProductItem.MdiParent = this;
                 finishingProductItem.Show();
             }
-            
+
         }
         #endregion
 
@@ -381,22 +381,22 @@ namespace BillPlex
         private void btn_JobGiving_ItemClick(object sender, ItemClickEventArgs e)
         {
 
-           //bool IsOpen = false;
-           //foreach (Form f in Application.OpenForms)
-           //{
-           //    if (f.Text == "FrmJobGivingProfile")
-           //    {
-           //        IsOpen = true;
-           //        f.Focus();
-           //        break;
-           //    }
-           //}
-           //if (IsOpen == false)
-           //{
-           //    FrmJobGivingProfile JobGivingItem = new FrmJobGivingProfile();
-           //    JobGivingItem.MdiParent = this;
-           //    JobGivingItem.Show();
-           //}
+            //bool IsOpen = false;
+            //foreach (Form f in Application.OpenForms)
+            //{
+            //    if (f.Text == "FrmJobGivingProfile")
+            //    {
+            //        IsOpen = true;
+            //        f.Focus();
+            //        break;
+            //    }
+            //}
+            //if (IsOpen == false)
+            //{
+            //    FrmJobGivingProfile JobGivingItem = new FrmJobGivingProfile();
+            //    JobGivingItem.MdiParent = this;
+            //    JobGivingItem.Show();
+            //}
 
         }
 
@@ -444,22 +444,22 @@ namespace BillPlex
 
         private void btn_DirectJobGiving_ItemClick(object sender, ItemClickEventArgs e)
         {
-           //bool IsOpen = false;
-           //foreach (Form f in Application.OpenForms)
-           //{
-           // if (f.Text == "FrmDirectJobGivingProfile")
-           // {
-           //   IsOpen = true;
-           //   f.Focus();
-           //   break;
-           // }
-           //}
-           //if (IsOpen == false)
-           //{
-           //  FrmDirectJobGivingProfile DirectJobGiving = new FrmDirectJobGivingProfile();
-           //  DirectJobGiving.MdiParent = this;
-           //  DirectJobGiving.Show();
-           //}
+            //bool IsOpen = false;
+            //foreach (Form f in Application.OpenForms)
+            //{
+            // if (f.Text == "FrmDirectJobGivingProfile")
+            // {
+            //   IsOpen = true;
+            //   f.Focus();
+            //   break;
+            // }
+            //}
+            //if (IsOpen == false)
+            //{
+            //  FrmDirectJobGivingProfile DirectJobGiving = new FrmDirectJobGivingProfile();
+            //  DirectJobGiving.MdiParent = this;
+            //  DirectJobGiving.Show();
+            //}
         }
 
         private void btn_DirectJobReceived_ItemClick(object sender, ItemClickEventArgs e)
@@ -552,6 +552,53 @@ namespace BillPlex
             {
                 _form.Activate();
                 return true;
+            }
+        }
+
+        private void xtraTabbedMdiManager1_SelectedPageChanged(object sender, EventArgs e)
+        {
+            // Activate a specific MDI child form based on the selected tab
+            foreach (Form item in MdiChildren)
+            {
+
+                if (item is FrmOrderMasterInfo orderMasterForm)
+                {
+                    if (xtraTabbedMdiManager1.SelectedPage.MdiChild.GetType() == item.GetType())
+                    {
+                        // Focus the found form
+                        orderMasterForm.Focus();
+
+                        // Call the method on the form
+                        orderMasterForm.DropDownGetList();
+
+                        break; // Exit the loop after finding the form
+                    }
+
+                }
+                if (item is FrmProductModel ProductModelForm)
+                {
+                    if (xtraTabbedMdiManager1.SelectedPage != null)
+                    {
+                        if (xtraTabbedMdiManager1.SelectedPage.MdiChild.GetType() == item.GetType())
+                        {
+                            // Focus the found form
+                            ProductModelForm.Focus();
+
+                            // Call the method on the form
+                            ProductModelForm.DropDownGetList();
+
+                            break; // Exit the loop after finding the form
+                        }
+                    }
+                }
+                if (xtraTabbedMdiManager1.SelectedPage != null)
+                {
+                    if (xtraTabbedMdiManager1.SelectedPage.MdiChild.GetType() == item.GetType())
+                    {
+                        item.Activate();
+                        break;
+                    }
+                }
             }
         }
     }

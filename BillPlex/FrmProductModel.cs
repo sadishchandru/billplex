@@ -36,8 +36,18 @@ namespace BillPlex
             // Fill the SqlDataSource asynchronously
             sqlDataSource1.FillAsync();
             grd_ProductModel.BestFitColumns();
-
+        }
+        public FrmProductModel(string isReload)
+        {
+            productModelRequest = new ProductModel();
+            productModelRequest.ConnectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
+            productModelRequest.ProductModelList = new List<DropDownItemInfo>();
+            DropDownGetList();
             LabelExceed.Visible = false;
+        }
+
+        public void DropDownGetList()
+        {
 
             Dictionary<string, bool> dropDownList = new Dictionary<string, bool>        {
                     {"RawMaterialRequired",true},
@@ -74,6 +84,7 @@ namespace BillPlex
 
                 if (productModelRequest.RawMaterialList.Count() > 0)
                 {
+                    drpRawType.Properties.Items.Clear();
                     foreach (DropDownItemInfo item in productModelRequest.RawMaterialList)
                     {
                         var foundItem = "";
@@ -92,22 +103,21 @@ namespace BillPlex
                             drpRawType.Properties.Items.Add(new ImageComboBoxItem(item.Code));
                         }
 
+                        //foundItem = "";
 
-                        foundItem = "";
+                        //foreach (string items in drpRawName.Properties.Items)
+                        //{
+                        //    if (items.ToString() == item.Name.ToString())
+                        //    {
+                        //        foundItem = items;
+                        //        break;
+                        //    }
+                        //}
 
-                        foreach (string items in drpRawName.Properties.Items)
-                        {
-                            if (items.ToString() == item.Name.ToString())
-                            {
-                                foundItem = items;
-                                break;
-                            }
-                        }
-
-                        if (foundItem == "")
-                        {
-                            drpRawName.Properties.Items.Add(new ImageComboBoxItem(item.Name));
-                        }
+                        //if (foundItem == "")
+                        //{
+                        //    drpRawName.Properties.Items.Add(new ImageComboBoxItem(item.Name));
+                        //}
                     }
                 }
             }
@@ -116,6 +126,7 @@ namespace BillPlex
             {
                 if (productModelRequest.ProductModelList.Count() > 0)
                 {
+                    drpProName.Properties.Items.Clear();
                     foreach (DropDownItemInfo item in productModelRequest.ProductModelList)
                     {
                         drpProName.Properties.Items.Add(new ImageComboBoxItem(item.Name));
@@ -127,6 +138,7 @@ namespace BillPlex
             {
                 if (productModelRequest.SizeMasterList.Count() > 0)
                 {
+                    drpProSize.Properties.Items.Clear();
                     foreach (DropDownItemInfo item in productModelRequest.SizeMasterList)
                     {
                         var foundItem = "";
@@ -148,7 +160,6 @@ namespace BillPlex
                 }
             }
         }
-
         public void ReloadSqlDataSource()
         {
             sqlDataSource1.FillAsync();
@@ -487,17 +498,18 @@ namespace BillPlex
 
             if (productModelRequest.RawMaterialList != null && selectItem != "")
             {
-                if (productModelRequest.RawMaterialList.Count() > 0)
+                if (!productModelRequest.RawMaterialList.Any())
                 {
-                    foreach (DropDownItemInfo item in productModelRequest.RawMaterialList)
-                    {
+                    return;
+                }
+                drpRawName.Properties.Items.Clear();
+                foreach (DropDownItemInfo item in productModelRequest.RawMaterialList)
+                {
 
-                        if (item.Code == selectItem && drpRawName.Properties.Items.OfType<object>().Any(prop => prop.ToString() == selectItem))
-                        {
-                            //drpRawName.Properties.Items.Clear();
-                            drpRawName.Properties.Items.Add(new ImageComboBoxItem(item.Name));
-                            break;
-                        }
+                    if (item.Code == selectItem)
+                    {
+                        drpRawName.Properties.Items.Add(new ImageComboBoxItem(item.Name));
+                        break;
                     }
                 }
             }

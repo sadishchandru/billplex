@@ -30,7 +30,7 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IncentiveMaster));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
@@ -142,10 +142,10 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery1.Name = "PRO_GetIncentiveMaster";
-            storedProcQuery1.StoredProcName = "PRO_GetIncentiveMaster";
+            storedProcQuery2.Name = "PRO_GetIncentiveMaster";
+            storedProcQuery2.StoredProcName = "PRO_GetIncentiveMaster";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery1});
+            storedProcQuery2});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // gridView1
@@ -244,7 +244,7 @@ namespace BillPlex
             this.btnDelete.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 3;
+            this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Delete";
             this.btnDelete.Click += new System.EventHandler(this.btn_DeleteClick);
             // 
@@ -286,7 +286,7 @@ namespace BillPlex
             this.btnAdd.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 26;
+            this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Add";
             this.btnAdd.Click += new System.EventHandler(this.btn_AddClick);
             // 
@@ -326,7 +326,7 @@ namespace BillPlex
             this.btnClear.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
-            this.btnClear.TabIndex = 27;
+            this.btnClear.TabIndex = 5;
             this.btnClear.Text = "Clear";
             this.btnClear.Click += new System.EventHandler(this.btn_ClearClick);
             // 
@@ -342,7 +342,7 @@ namespace BillPlex
             this.btnUpdate.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdate.TabIndex = 2;
+            this.btnUpdate.TabIndex = 3;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.Click += new System.EventHandler(this.btn_AddClick);
             // 
@@ -357,7 +357,7 @@ namespace BillPlex
             this.btnEdit.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnEdit.TabIndex = 1;
+            this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "Edit";
             this.btnEdit.Visible = false;
             // 
@@ -450,6 +450,7 @@ namespace BillPlex
             this.BtnPNameTab.Name = "BtnPNameTab";
             this.BtnPNameTab.Size = new System.Drawing.Size(31, 19);
             this.BtnPNameTab.TabIndex = 23;
+            this.BtnPNameTab.TabStop = false;
             this.BtnPNameTab.Text = "...";
             this.BtnPNameTab.Click += new System.EventHandler(this.BtnPNameTab_Click);
             // 

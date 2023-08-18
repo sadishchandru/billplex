@@ -102,7 +102,7 @@ namespace BusinessLayer
 
         public List<OrderMasterInfo> AssignResult()
         {
-            List<OrderMasterInfo> FamilyList = new List<OrderMasterInfo>();
+            List<OrderMasterInfo> OrderList = new List<OrderMasterInfo>();
             dbReader.NextResult();
 
             while (dbReader.Read())
@@ -133,10 +133,10 @@ namespace BusinessLayer
                 OrderDetail.MaterialWghtNo = ToString(dbReader["totalWt"]);
                 OrderDetail.AdditionalReason = ToString(dbReader["AdditionalReason"]);
 
-                FamilyList.Add(OrderDetail);
+                OrderList.Add(OrderDetail);
             }
 
-            return FamilyList;
+            return OrderList;
         }
         #endregion
 

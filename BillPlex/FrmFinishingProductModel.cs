@@ -195,5 +195,47 @@ namespace BillPlex
             // Set the controls' positions to the calculated center position
             panelControl4.Location = new Point(centerX, centerY);
         }
+
+        private void proName_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+
+            Form myForm = Application.OpenForms["FrmProductMaster"];
+            if (myForm != null)
+            {
+                myForm.Close();
+                myForm = new FrmProductMaster();
+                myForm.MdiParent = this.MdiParent;
+                myForm.Show();
+                IsOpen = true;
+            }
+            if (IsOpen == false)
+            {
+                FrmProductMaster rawMaterial = new FrmProductMaster();
+                rawMaterial.MdiParent = this.MdiParent;
+                rawMaterial.Show();
+            }
+        }
+
+        private void ProSize_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+
+            Form myForm = Application.OpenForms["FrmSizeMaster"];
+            if (myForm != null)
+            {
+                myForm.Close();
+                myForm = new FrmSizeMaster();
+                myForm.MdiParent = this.MdiParent;
+                myForm.Show();
+                IsOpen = true;
+            }
+            if (IsOpen == false)
+            {
+                FrmSizeMaster rawMaterial = new FrmSizeMaster();
+                rawMaterial.MdiParent = this.MdiParent;
+                rawMaterial.Show();
+            }
+        }
     }
 }

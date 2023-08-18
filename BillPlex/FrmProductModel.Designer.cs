@@ -551,6 +551,7 @@ namespace BillPlex
             this.btnDot2.Name = "btnDot2";
             this.btnDot2.Size = new System.Drawing.Size(23, 19);
             this.btnDot2.TabIndex = 21;
+            this.btnDot2.TabStop = false;
             this.btnDot2.Text = "...";
             this.btnDot2.Click += new System.EventHandler(this.btnDot2_Click);
             // 
@@ -642,6 +643,7 @@ namespace BillPlex
             this.btnDot1.Name = "btnDot1";
             this.btnDot1.Size = new System.Drawing.Size(23, 19);
             this.btnDot1.TabIndex = 12;
+            this.btnDot1.TabStop = false;
             this.btnDot1.Text = "...";
             this.btnDot1.Click += new System.EventHandler(this.btnDot1_Click);
             // 
@@ -654,6 +656,7 @@ namespace BillPlex
             this.btnDot.Name = "btnDot";
             this.btnDot.Size = new System.Drawing.Size(23, 19);
             this.btnDot.TabIndex = 11;
+            this.btnDot.TabStop = false;
             this.btnDot.Text = "...";
             this.btnDot.Click += new System.EventHandler(this.btnDot_Click);
             // 
