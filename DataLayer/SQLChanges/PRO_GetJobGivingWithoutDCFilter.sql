@@ -10,7 +10,7 @@ GO
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
--- exec PRO_GetJobGivingWithoutDCFilter  @Id = '2019'
+-- EXEC PRO_GetJobGivingWithoutDCFilter  @Id = '2019'
 CREATE OR ALTER PROCEDURE [dbo].[PRO_GetJobGivingWithoutDCFilter]
 @Id varchar(50) = ''
 AS
@@ -22,7 +22,7 @@ SET NOCOUNT ON;
 		IF(@Id = '')
 			BEGIN 
 				
-				SELECT  Id
+				SELECT  JG.Id
 					,EmployeeCode
 					,EmployeeName
 					,CompanyName
@@ -32,32 +32,33 @@ SET NOCOUNT ON;
 					,SubClientCompany
 					,subContractor
 					,Date
-					,OrderNo
-					,OrderDate
+					,O.Orderno AS OrderNo
+					,JG.OrderDate
 					,CustomerCode
 					,CustomerName
 					,ModelName
 					,ModelCode
 					,ProductName
-					,ProductSize
+					,JG.ProductSize
 					,Color
 					,RawMaterial
 					,Type
 					,CAST(QuantityPiece AS INT) as QuantityPiece
 					,WeightKg
-					,AvlQty
+					,JG.AvlQty
 					,Excess
 					,TotalQty
-					,TotalWt
+					,JG.TotalWt
 					,Shortage
 					,orderQty
 					,orderWt
-					FROM JobGivingWithoutDC
+					FROM JobGivingWithoutDC JG
+					LEFT JOIN OrderMaster O ON O.Id = JG.OrderNo
 					Where ISNULL(isDelete, 0) = 0
 			END
 		ELSE
 			BEGIN 
-				SELECT  Id
+				SELECT  JG.Id
 					,EmployeeCode
 					,EmployeeName
 					,CompanyName
@@ -67,28 +68,29 @@ SET NOCOUNT ON;
 					,SubClientCompany
 					,subContractor
 					,Date
-					,OrderNo
-					,OrderDate
+					,O.Orderno AS OrderNo
+					,JG.OrderDate
 					,CustomerCode
 					,CustomerName
 					,ModelName
 					,ModelCode
 					,ProductName
-					,ProductSize
+					,JG.ProductSize
 					,Color
 					,RawMaterial
 					,Type
 					,CAST(QuantityPiece AS INT) as QuantityPiece
 					,WeightKg
-					,AvlQty
+					,JG.AvlQty
 					,Excess
 					,TotalQty
-					,TotalWt
+					,JG.TotalWt
 					,Shortage
 					,orderQty
 					,orderWt
-					FROM JobGivingWithoutDC
-					where OrderNo = @Id
+					FROM JobGivingWithoutDC JG
+					LEFT JOIN OrderMaster O ON O.Id = JG.OrderNo
+					where JG.OrderNo = @Id
 					AND ISNULL(isDelete, 0) = 0
 			END
 			

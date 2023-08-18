@@ -151,7 +151,7 @@ namespace BusinessLayer
             while (dbReader.Read())
             {
                 JobGivingWithoutDc JobDetail = new JobGivingWithoutDc();
-                JobDetail.Id = ToInteger(dbReader["Id"]);                                                       
+                JobDetail.Id = ToInteger(dbReader["Id"]);
                 JobDetail.EmployeeCode = ToInteger(dbReader["EmployeeCode"]);
                 JobDetail.EmployeeName = ToString(dbReader["EmployeeName"]);
                 JobDetail.CompanyName = ToString(dbReader["CompanyName"]);

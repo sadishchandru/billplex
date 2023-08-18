@@ -162,6 +162,7 @@ namespace BillPlex
                         XtraMessageBox.Show(JobGivingWithoutDcRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         if (JobGivingWithoutDcRequest.JobGivingWithoutDcListByOrder.Count() > 0)
                         {
+                            InitializeDataSource();
                             foreach (var item in JobGivingWithoutDcRequest.JobGivingWithoutDcListByOrder)
                             {
                                 DataTable dataTable = gridControl1.DataSource as DataTable;
@@ -316,7 +317,7 @@ namespace BillPlex
                                 break;
                             }
                         }
-                        if (foundItem == "")
+                        if (foundItem == "" && selectItem == item.productId.ToString())
                         {
                             drpMCode.Properties.Items.Add(new ImageComboBoxItem(item.RawMaterial));
                         }
@@ -345,13 +346,13 @@ namespace BillPlex
 
                         foreach (string items in drpColor.Properties.Items)
                         {
-                            if (items.ToString().ToLower() == item.color.ToString().ToLower())
+                            if (item.RawMaterial == selectedItem.ToString() && items.ToString().ToLower() == item.color.ToString().ToLower())
                             {
                                 foundItem = items;
                                 break;
                             }
                         }
-                        if (foundItem == "")
+                        if (foundItem == "" && item.RawMaterial == selectedItem.ToString())
                         {
                             drpColor.Properties.Items.Add(new ImageComboBoxItem(item.color));
                         }

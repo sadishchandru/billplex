@@ -59,5 +59,6 @@ _ReSharper*
 obj/Debug/
 bin/Debug/
 
-BillPlex/obj/Debug/
-BillPlex/bin/Debug/
+/BillPlex/obj/Debug/
+/BillPlex/bin/Debug/
+/BillPlex/DevExpress/XtraBars/TabPageChangedEventArgs.cs

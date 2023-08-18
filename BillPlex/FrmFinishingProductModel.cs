@@ -21,12 +21,25 @@ namespace BillPlex
         public FrmFinishingProductModel()
         {
             InitializeComponent();
+
+            labelAvailable.Visible = false;
+            labelCodeExist.Visible = false;
+
             FinishingProductModelRequest = new FinishingProductModel();
             FinishingProductModelRequest.ConnectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
             gridView1.BestFitColumns();
+
+            GetDropDownList();
+
+            sqlDataSource1.FillAsync();
+        }
+
+        public void GetDropDownList()
+        {
             Dictionary<string, bool> dropDownList = new Dictionary<string, bool>        {
                     {"ProductModelRequired",true },
-                    {"SizeMasterRequired",true}
+                    {"SizeMasterRequired",true},
+                    {"FinishingProductRequired",true}
                 };
 
             var dropdwonList = FinishingProductModelRequest.GetDropdownCollections(dropDownList);
@@ -41,6 +54,10 @@ namespace BillPlex
                 if (item.Key == "SizeMasterRequired")
                 {
                     FinishingProductModelRequest.SizeMasterList = (List<DropDownItemInfo>)item.Value;
+                }
+                if (item.Key == "FinishingProductRequired")
+                {
+                    FinishingProductModelRequest.FinsihingProductCodeList = (List<DropDownItemInfo>)item.Value;
                 }
             }
 
@@ -78,7 +95,6 @@ namespace BillPlex
                     }
                 }
             }
-            sqlDataSource1.FillAsync();
         }
         public void ReloadSqlDataSource()
         {
@@ -95,28 +111,38 @@ namespace BillPlex
             {
                 if ((drpProductName.Text != string.Empty || drpProductName.Text != "Select") && txtModelCode.Text != string.Empty)
                 {
-                    string selectedProductItem = (string)drpProductName.SelectedItem;
-
-                    if (selectedProductItem != null)
+                    if ((FinishingProductModelRequest.Id != 0 || labelAvailable.Visible == true) && labelCodeExist.Visible == false)
                     {
-                        FinishingProductModelRequest.ProductNameId = FinishingProductModelRequest.ProductModelList.FirstOrDefault(item => item.Name == selectedProductItem.ToString())?.Id ?? -1;
-                    }
-                    FinishingProductModelRequest.Productcode = txtModelCode.Text;
-                    FinishingProductModelRequest.Productmodel = txtModelName.Text;
-                    FinishingProductModelRequest.Productsize = drpProductSize.Text;
-                    FinishingProductModelRequest.WagesforProduct = txtWages.Text;
-                    FinishingProductModelRequest.ItemDate = ddDate.Text;
-                    FinishingProductModelRequest.Update();
+                        string selectedProductItem = (string)drpProductName.SelectedItem;
 
-                    if (FinishingProductModelRequest.Result.Status == ResultStatus.Success)
-                    {
-                        XtraMessageBox.Show(FinishingProductModelRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        ReloadSqlDataSource();
-                        btnAdd.Enabled = true;
-                        btnUpdate.Enabled = false;
-                        txtModelCode.Enabled = true;
-                        Reset_Text();
+                        if (selectedProductItem != null)
+                        {
+                            FinishingProductModelRequest.ProductNameId = FinishingProductModelRequest.ProductModelList.FirstOrDefault(item => item.Name == selectedProductItem.ToString())?.Id ?? -1;
+                        }
+                        FinishingProductModelRequest.Productcode = txtModelCode.Text;
+                        FinishingProductModelRequest.Productmodel = txtModelName.Text;
+                        FinishingProductModelRequest.Productsize = drpProductSize.Text;
+                        FinishingProductModelRequest.WagesforProduct = txtWages.Text;
+                        FinishingProductModelRequest.ItemDate = ddDate.Text;
+                        FinishingProductModelRequest.Update();
+
+                        if (FinishingProductModelRequest.Result.Status == ResultStatus.Success)
+                        {
+                            XtraMessageBox.Show(FinishingProductModelRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            ReloadSqlDataSource();
+                            btnAdd.Enabled = true;
+                            btnUpdate.Enabled = false;
+                            txtModelCode.Enabled = true;
+                            Reset_Text();
+                            GetDropDownList();
+                        }
                     }
+                    else
+                    {
+                        XtraMessageBox.Show("Code already exist", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                       
+                    }
+
                 }
                 else
                 {
@@ -146,6 +172,7 @@ namespace BillPlex
             {
                 XtraMessageBox.Show(FinishingProductModelRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ReloadSqlDataSource();
+                Reset_Text();
             }
         }
         private void gridControl1_DoubleClick(object sender, EventArgs e)
@@ -171,6 +198,11 @@ namespace BillPlex
                 btnUpdate.Enabled = true;
                 btnAdd.Enabled = true;
                 txtModelCode.Enabled = false;
+
+                labelAvailable.Visible = false;
+                labelCodeExist.Visible = false;
+
+
             }
             catch (Exception ex)
             {
@@ -235,6 +267,41 @@ namespace BillPlex
                 FrmSizeMaster rawMaterial = new FrmSizeMaster();
                 rawMaterial.MdiParent = this.MdiParent;
                 rawMaterial.Show();
+            }
+        }
+
+        private void txtModelCode_EditValueChanged(object sender, EventArgs e)
+        {
+            if (txtModelCode.Text != string.Empty)
+            {
+                if (FinishingProductModelRequest.FinsihingProductCodeList != null)
+                {
+
+                    //var IsCode = CompanyRequest.MasterCodeList.FirstOrDefault(item => item.Code == txtCode.Text.ToString())?.Id ?? 0;
+                    var IsCode = FinishingProductModelRequest.FinsihingProductCodeList.FirstOrDefault(obj => obj.productId.ToLower() == txtModelCode.Text.ToLower() && obj.Id != FinishingProductModelRequest.Id);
+
+                    if (IsCode != null)
+                    {
+                        labelAvailable.Visible = false;
+                        labelCodeExist.Visible = true;
+                    }
+                    else
+                    {
+                        labelAvailable.Visible = true;
+                        labelCodeExist.Visible = false;
+                    }
+                }
+                else
+                {
+                    labelAvailable.Visible = true;
+                    labelCodeExist.Visible = false;
+                }
+
+            }
+            else
+            {
+                labelAvailable.Visible = false;
+                labelCodeExist.Visible = false;
             }
         }
     }
