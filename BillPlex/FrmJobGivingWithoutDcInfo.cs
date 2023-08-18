@@ -261,13 +261,13 @@ namespace BillPlex
 
                         foreach (string items in drpMName.Properties.Items)
                         {
-                            if (items.ToString() == item.productId.ToString())
+                            if (items.ToString() == item.productId.ToString() && item.Code == drpOrderNo.Text)
                             {
                                 foundItem = items;
                                 break;
                             }
                         }
-                        if (foundItem == "")
+                        if (foundItem == "" && item.Code == drpOrderNo.Text)
                         {
                             drpMName.Properties.Items.Add(new ImageComboBoxItem(item.productId));
                         }
@@ -311,13 +311,13 @@ namespace BillPlex
 
                         foreach (string items in drpMCode.Properties.Items)
                         {
-                            if (selectItem == item.productId.ToString() && items.ToString() == item.RawMaterial.ToString())
+                            if (selectItem == item.productId.ToString() && items.ToString() == item.RawMaterial.ToString() && item.Code == drpOrderNo.Text)
                             {
                                 foundItem = items;
                                 break;
                             }
                         }
-                        if (foundItem == "" && selectItem == item.productId.ToString())
+                        if (foundItem == "" && selectItem == item.productId.ToString() && item.Code == drpOrderNo.Text)
                         {
                             drpMCode.Properties.Items.Add(new ImageComboBoxItem(item.RawMaterial));
                         }
@@ -346,13 +346,13 @@ namespace BillPlex
 
                         foreach (string items in drpColor.Properties.Items)
                         {
-                            if (item.RawMaterial == selectedItem.ToString() && items.ToString().ToLower() == item.color.ToString().ToLower())
+                            if (item.RawMaterial == selectedItem.ToString() && items.ToString().ToLower() == item.color.ToString().ToLower() && item.Code == drpOrderNo.Text)
                             {
                                 foundItem = items;
                                 break;
                             }
                         }
-                        if (foundItem == "" && item.RawMaterial == selectedItem.ToString())
+                        if (foundItem == "" && item.RawMaterial == selectedItem.ToString() && item.Code == drpOrderNo.Text)
                         {
                             drpColor.Properties.Items.Add(new ImageComboBoxItem(item.color));
                         }
