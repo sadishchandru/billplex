@@ -30,11 +30,11 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery3 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter3 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmJobReallocation));
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery4 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter4 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl7 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -354,13 +354,13 @@ namespace BillPlex
             // 
             this.sqlDataSource2.ConnectionName = "BillPlex";
             this.sqlDataSource2.Name = "sqlDataSource2";
-            storedProcQuery3.Name = "PRO_GetJobGivingWithoutDCReceivedFilter";
-            queryParameter3.Name = "@SearchKey";
-            queryParameter3.Type = typeof(string);
-            storedProcQuery3.Parameters.Add(queryParameter3);
-            storedProcQuery3.StoredProcName = "PRO_GetJobGivingWithoutDCReceivedFilter";
+            storedProcQuery1.Name = "PRO_GetJobGivingWithoutDCReceivedFilter";
+            queryParameter1.Name = "@SearchKey";
+            queryParameter1.Type = typeof(string);
+            storedProcQuery1.Parameters.Add(queryParameter1);
+            storedProcQuery1.StoredProcName = "PRO_GetJobGivingWithoutDCReceivedFilter";
             this.sqlDataSource2.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery3});
+            storedProcQuery1});
             this.sqlDataSource2.ResultSchemaSerializable = resources.GetString("sqlDataSource2.ResultSchemaSerializable");
             // 
             // gridView2
@@ -411,8 +411,6 @@ namespace BillPlex
             this.colId1.FieldName = "Id";
             this.colId1.MinWidth = 80;
             this.colId1.Name = "colId1";
-            this.colId1.Visible = true;
-            this.colId1.VisibleIndex = 0;
             this.colId1.Width = 80;
             // 
             // colEmployeeCode1
@@ -421,7 +419,7 @@ namespace BillPlex
             this.colEmployeeCode1.MinWidth = 80;
             this.colEmployeeCode1.Name = "colEmployeeCode1";
             this.colEmployeeCode1.Visible = true;
-            this.colEmployeeCode1.VisibleIndex = 1;
+            this.colEmployeeCode1.VisibleIndex = 0;
             this.colEmployeeCode1.Width = 80;
             // 
             // colEmployeeName1
@@ -430,7 +428,7 @@ namespace BillPlex
             this.colEmployeeName1.MinWidth = 80;
             this.colEmployeeName1.Name = "colEmployeeName1";
             this.colEmployeeName1.Visible = true;
-            this.colEmployeeName1.VisibleIndex = 2;
+            this.colEmployeeName1.VisibleIndex = 1;
             this.colEmployeeName1.Width = 80;
             // 
             // colCompanyName1
@@ -439,7 +437,7 @@ namespace BillPlex
             this.colCompanyName1.MinWidth = 80;
             this.colCompanyName1.Name = "colCompanyName1";
             this.colCompanyName1.Visible = true;
-            this.colCompanyName1.VisibleIndex = 3;
+            this.colCompanyName1.VisibleIndex = 2;
             this.colCompanyName1.Width = 80;
             // 
             // colClientCompany1
@@ -448,7 +446,7 @@ namespace BillPlex
             this.colClientCompany1.MinWidth = 80;
             this.colClientCompany1.Name = "colClientCompany1";
             this.colClientCompany1.Visible = true;
-            this.colClientCompany1.VisibleIndex = 4;
+            this.colClientCompany1.VisibleIndex = 3;
             this.colClientCompany1.Width = 80;
             // 
             // colSubClientCompany1
@@ -457,7 +455,7 @@ namespace BillPlex
             this.colSubClientCompany1.MinWidth = 80;
             this.colSubClientCompany1.Name = "colSubClientCompany1";
             this.colSubClientCompany1.Visible = true;
-            this.colSubClientCompany1.VisibleIndex = 5;
+            this.colSubClientCompany1.VisibleIndex = 4;
             this.colSubClientCompany1.Width = 80;
             // 
             // colOrderNo
@@ -466,7 +464,7 @@ namespace BillPlex
             this.colOrderNo.MinWidth = 80;
             this.colOrderNo.Name = "colOrderNo";
             this.colOrderNo.Visible = true;
-            this.colOrderNo.VisibleIndex = 6;
+            this.colOrderNo.VisibleIndex = 5;
             this.colOrderNo.Width = 80;
             // 
             // colOrderDate1
@@ -475,7 +473,7 @@ namespace BillPlex
             this.colOrderDate1.MinWidth = 80;
             this.colOrderDate1.Name = "colOrderDate1";
             this.colOrderDate1.Visible = true;
-            this.colOrderDate1.VisibleIndex = 7;
+            this.colOrderDate1.VisibleIndex = 6;
             this.colOrderDate1.Width = 80;
             // 
             // colCustomerCode1
@@ -484,7 +482,7 @@ namespace BillPlex
             this.colCustomerCode1.MinWidth = 80;
             this.colCustomerCode1.Name = "colCustomerCode1";
             this.colCustomerCode1.Visible = true;
-            this.colCustomerCode1.VisibleIndex = 8;
+            this.colCustomerCode1.VisibleIndex = 7;
             this.colCustomerCode1.Width = 80;
             // 
             // colCustomerName1
@@ -493,7 +491,7 @@ namespace BillPlex
             this.colCustomerName1.MinWidth = 80;
             this.colCustomerName1.Name = "colCustomerName1";
             this.colCustomerName1.Visible = true;
-            this.colCustomerName1.VisibleIndex = 9;
+            this.colCustomerName1.VisibleIndex = 8;
             this.colCustomerName1.Width = 80;
             // 
             // colModelName1
@@ -502,7 +500,7 @@ namespace BillPlex
             this.colModelName1.MinWidth = 80;
             this.colModelName1.Name = "colModelName1";
             this.colModelName1.Visible = true;
-            this.colModelName1.VisibleIndex = 10;
+            this.colModelName1.VisibleIndex = 9;
             this.colModelName1.Width = 80;
             // 
             // colModelCode1
@@ -511,7 +509,7 @@ namespace BillPlex
             this.colModelCode1.MinWidth = 80;
             this.colModelCode1.Name = "colModelCode1";
             this.colModelCode1.Visible = true;
-            this.colModelCode1.VisibleIndex = 11;
+            this.colModelCode1.VisibleIndex = 10;
             this.colModelCode1.Width = 80;
             // 
             // colProductSize1
@@ -520,7 +518,7 @@ namespace BillPlex
             this.colProductSize1.MinWidth = 80;
             this.colProductSize1.Name = "colProductSize1";
             this.colProductSize1.Visible = true;
-            this.colProductSize1.VisibleIndex = 12;
+            this.colProductSize1.VisibleIndex = 11;
             this.colProductSize1.Width = 80;
             // 
             // colRawMaterial1
@@ -529,7 +527,7 @@ namespace BillPlex
             this.colRawMaterial1.MinWidth = 80;
             this.colRawMaterial1.Name = "colRawMaterial1";
             this.colRawMaterial1.Visible = true;
-            this.colRawMaterial1.VisibleIndex = 13;
+            this.colRawMaterial1.VisibleIndex = 12;
             this.colRawMaterial1.Width = 80;
             // 
             // colWeightKg1
@@ -538,7 +536,7 @@ namespace BillPlex
             this.colWeightKg1.MinWidth = 80;
             this.colWeightKg1.Name = "colWeightKg1";
             this.colWeightKg1.Visible = true;
-            this.colWeightKg1.VisibleIndex = 14;
+            this.colWeightKg1.VisibleIndex = 13;
             this.colWeightKg1.Width = 80;
             // 
             // colExcess1
@@ -547,7 +545,7 @@ namespace BillPlex
             this.colExcess1.MinWidth = 80;
             this.colExcess1.Name = "colExcess1";
             this.colExcess1.Visible = true;
-            this.colExcess1.VisibleIndex = 15;
+            this.colExcess1.VisibleIndex = 14;
             this.colExcess1.Width = 80;
             // 
             // colColor1
@@ -556,7 +554,7 @@ namespace BillPlex
             this.colColor1.MinWidth = 80;
             this.colColor1.Name = "colColor1";
             this.colColor1.Visible = true;
-            this.colColor1.VisibleIndex = 16;
+            this.colColor1.VisibleIndex = 15;
             this.colColor1.Width = 80;
             // 
             // colType1
@@ -565,7 +563,7 @@ namespace BillPlex
             this.colType1.MinWidth = 80;
             this.colType1.Name = "colType1";
             this.colType1.Visible = true;
-            this.colType1.VisibleIndex = 17;
+            this.colType1.VisibleIndex = 16;
             this.colType1.Width = 80;
             // 
             // colAvlQty1
@@ -574,7 +572,7 @@ namespace BillPlex
             this.colAvlQty1.MinWidth = 80;
             this.colAvlQty1.Name = "colAvlQty1";
             this.colAvlQty1.Visible = true;
-            this.colAvlQty1.VisibleIndex = 18;
+            this.colAvlQty1.VisibleIndex = 17;
             this.colAvlQty1.Width = 80;
             // 
             // colShortage1
@@ -583,7 +581,7 @@ namespace BillPlex
             this.colShortage1.MinWidth = 80;
             this.colShortage1.Name = "colShortage1";
             this.colShortage1.Visible = true;
-            this.colShortage1.VisibleIndex = 19;
+            this.colShortage1.VisibleIndex = 18;
             this.colShortage1.Width = 80;
             // 
             // colClientName1
@@ -592,7 +590,7 @@ namespace BillPlex
             this.colClientName1.MinWidth = 80;
             this.colClientName1.Name = "colClientName1";
             this.colClientName1.Visible = true;
-            this.colClientName1.VisibleIndex = 20;
+            this.colClientName1.VisibleIndex = 19;
             this.colClientName1.Width = 80;
             // 
             // colTotalQty1
@@ -601,7 +599,7 @@ namespace BillPlex
             this.colTotalQty1.MinWidth = 80;
             this.colTotalQty1.Name = "colTotalQty1";
             this.colTotalQty1.Visible = true;
-            this.colTotalQty1.VisibleIndex = 21;
+            this.colTotalQty1.VisibleIndex = 20;
             this.colTotalQty1.Width = 80;
             // 
             // colTotalWt1
@@ -610,7 +608,7 @@ namespace BillPlex
             this.colTotalWt1.MinWidth = 80;
             this.colTotalWt1.Name = "colTotalWt1";
             this.colTotalWt1.Visible = true;
-            this.colTotalWt1.VisibleIndex = 22;
+            this.colTotalWt1.VisibleIndex = 21;
             this.colTotalWt1.Width = 80;
             // 
             // subContractor
@@ -620,7 +618,7 @@ namespace BillPlex
             this.subContractor.MinWidth = 80;
             this.subContractor.Name = "subContractor";
             this.subContractor.Visible = true;
-            this.subContractor.VisibleIndex = 23;
+            this.subContractor.VisibleIndex = 22;
             this.subContractor.Width = 80;
             // 
             // colDirector1
@@ -629,7 +627,7 @@ namespace BillPlex
             this.colDirector1.MinWidth = 80;
             this.colDirector1.Name = "colDirector1";
             this.colDirector1.Visible = true;
-            this.colDirector1.VisibleIndex = 24;
+            this.colDirector1.VisibleIndex = 23;
             this.colDirector1.Width = 80;
             // 
             // colPendingQty1
@@ -638,7 +636,7 @@ namespace BillPlex
             this.colPendingQty1.MinWidth = 80;
             this.colPendingQty1.Name = "colPendingQty1";
             this.colPendingQty1.Visible = true;
-            this.colPendingQty1.VisibleIndex = 25;
+            this.colPendingQty1.VisibleIndex = 24;
             this.colPendingQty1.Width = 80;
             // 
             // colreceived1
@@ -647,7 +645,7 @@ namespace BillPlex
             this.colreceived1.MinWidth = 80;
             this.colreceived1.Name = "colreceived1";
             this.colreceived1.Visible = true;
-            this.colreceived1.VisibleIndex = 26;
+            this.colreceived1.VisibleIndex = 25;
             this.colreceived1.Width = 80;
             // 
             // colWages1
@@ -656,7 +654,7 @@ namespace BillPlex
             this.colWages1.MinWidth = 80;
             this.colWages1.Name = "colWages1";
             this.colWages1.Visible = true;
-            this.colWages1.VisibleIndex = 27;
+            this.colWages1.VisibleIndex = 26;
             this.colWages1.Width = 80;
             // 
             // colCurrentWt1
@@ -665,7 +663,7 @@ namespace BillPlex
             this.colCurrentWt1.MinWidth = 80;
             this.colCurrentWt1.Name = "colCurrentWt1";
             this.colCurrentWt1.Visible = true;
-            this.colCurrentWt1.VisibleIndex = 28;
+            this.colCurrentWt1.VisibleIndex = 27;
             this.colCurrentWt1.Width = 80;
             // 
             // ReceivingDate
@@ -675,7 +673,7 @@ namespace BillPlex
             this.ReceivingDate.MinWidth = 80;
             this.ReceivingDate.Name = "ReceivingDate";
             this.ReceivingDate.Visible = true;
-            this.ReceivingDate.VisibleIndex = 29;
+            this.ReceivingDate.VisibleIndex = 28;
             this.ReceivingDate.Width = 80;
             // 
             // colBalanceWt1
@@ -684,7 +682,7 @@ namespace BillPlex
             this.colBalanceWt1.MinWidth = 80;
             this.colBalanceWt1.Name = "colBalanceWt1";
             this.colBalanceWt1.Visible = true;
-            this.colBalanceWt1.VisibleIndex = 30;
+            this.colBalanceWt1.VisibleIndex = 29;
             this.colBalanceWt1.Width = 80;
             // 
             // colDeduction
@@ -693,7 +691,7 @@ namespace BillPlex
             this.colDeduction.MinWidth = 80;
             this.colDeduction.Name = "colDeduction";
             this.colDeduction.Visible = true;
-            this.colDeduction.VisibleIndex = 31;
+            this.colDeduction.VisibleIndex = 30;
             this.colDeduction.Width = 80;
             // 
             // colconveyance
@@ -702,7 +700,7 @@ namespace BillPlex
             this.colconveyance.MinWidth = 80;
             this.colconveyance.Name = "colconveyance";
             this.colconveyance.Visible = true;
-            this.colconveyance.VisibleIndex = 32;
+            this.colconveyance.VisibleIndex = 31;
             this.colconveyance.Width = 80;
             // 
             // colincentive
@@ -711,7 +709,7 @@ namespace BillPlex
             this.colincentive.MinWidth = 80;
             this.colincentive.Name = "colincentive";
             this.colincentive.Visible = true;
-            this.colincentive.VisibleIndex = 33;
+            this.colincentive.VisibleIndex = 32;
             this.colincentive.Width = 80;
             // 
             // colNetAmt
@@ -720,7 +718,7 @@ namespace BillPlex
             this.colNetAmt.MinWidth = 80;
             this.colNetAmt.Name = "colNetAmt";
             this.colNetAmt.Visible = true;
-            this.colNetAmt.VisibleIndex = 34;
+            this.colNetAmt.VisibleIndex = 33;
             this.colNetAmt.Width = 80;
             // 
             // colTotalAmt
@@ -729,7 +727,7 @@ namespace BillPlex
             this.colTotalAmt.MinWidth = 80;
             this.colTotalAmt.Name = "colTotalAmt";
             this.colTotalAmt.Visible = true;
-            this.colTotalAmt.VisibleIndex = 35;
+            this.colTotalAmt.VisibleIndex = 34;
             this.colTotalAmt.Width = 80;
             // 
             // gridControl1
@@ -749,13 +747,13 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery4.Name = "PRO_GetJobGivingWithoutDC";
-            queryParameter4.Name = "@SearchKey";
-            queryParameter4.Type = typeof(string);
-            storedProcQuery4.Parameters.Add(queryParameter4);
-            storedProcQuery4.StoredProcName = "PRO_GetJobGivingWithoutDC";
+            storedProcQuery2.Name = "PRO_GetJobGivingWithoutDC";
+            queryParameter2.Name = "@SearchKey";
+            queryParameter2.Type = typeof(string);
+            storedProcQuery2.Parameters.Add(queryParameter2);
+            storedProcQuery2.StoredProcName = "PRO_GetJobGivingWithoutDC";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery4});
+            storedProcQuery2});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // gridView1
@@ -808,8 +806,6 @@ namespace BillPlex
             this.colId.FieldName = "Id";
             this.colId.MinWidth = 50;
             this.colId.Name = "colId";
-            this.colId.Visible = true;
-            this.colId.VisibleIndex = 0;
             // 
             // colEmployeeCode
             // 
@@ -817,7 +813,7 @@ namespace BillPlex
             this.colEmployeeCode.MinWidth = 80;
             this.colEmployeeCode.Name = "colEmployeeCode";
             this.colEmployeeCode.Visible = true;
-            this.colEmployeeCode.VisibleIndex = 1;
+            this.colEmployeeCode.VisibleIndex = 0;
             this.colEmployeeCode.Width = 80;
             // 
             // colEmployeeName
@@ -826,7 +822,7 @@ namespace BillPlex
             this.colEmployeeName.MinWidth = 80;
             this.colEmployeeName.Name = "colEmployeeName";
             this.colEmployeeName.Visible = true;
-            this.colEmployeeName.VisibleIndex = 2;
+            this.colEmployeeName.VisibleIndex = 1;
             this.colEmployeeName.Width = 80;
             // 
             // colCompanyName
@@ -835,7 +831,7 @@ namespace BillPlex
             this.colCompanyName.MinWidth = 80;
             this.colCompanyName.Name = "colCompanyName";
             this.colCompanyName.Visible = true;
-            this.colCompanyName.VisibleIndex = 3;
+            this.colCompanyName.VisibleIndex = 2;
             this.colCompanyName.Width = 80;
             // 
             // colClientCompany
@@ -844,7 +840,7 @@ namespace BillPlex
             this.colClientCompany.MinWidth = 80;
             this.colClientCompany.Name = "colClientCompany";
             this.colClientCompany.Visible = true;
-            this.colClientCompany.VisibleIndex = 4;
+            this.colClientCompany.VisibleIndex = 3;
             this.colClientCompany.Width = 80;
             // 
             // colSubClientCompany
@@ -853,7 +849,7 @@ namespace BillPlex
             this.colSubClientCompany.MinWidth = 80;
             this.colSubClientCompany.Name = "colSubClientCompany";
             this.colSubClientCompany.Visible = true;
-            this.colSubClientCompany.VisibleIndex = 5;
+            this.colSubClientCompany.VisibleIndex = 4;
             this.colSubClientCompany.Width = 80;
             // 
             // Orderno
@@ -863,7 +859,7 @@ namespace BillPlex
             this.Orderno.MinWidth = 80;
             this.Orderno.Name = "Orderno";
             this.Orderno.Visible = true;
-            this.Orderno.VisibleIndex = 6;
+            this.Orderno.VisibleIndex = 5;
             this.Orderno.Width = 80;
             // 
             // colDate
@@ -872,7 +868,7 @@ namespace BillPlex
             this.colDate.MinWidth = 80;
             this.colDate.Name = "colDate";
             this.colDate.Visible = true;
-            this.colDate.VisibleIndex = 7;
+            this.colDate.VisibleIndex = 6;
             this.colDate.Width = 80;
             // 
             // colOrderDate
@@ -881,7 +877,7 @@ namespace BillPlex
             this.colOrderDate.MinWidth = 80;
             this.colOrderDate.Name = "colOrderDate";
             this.colOrderDate.Visible = true;
-            this.colOrderDate.VisibleIndex = 8;
+            this.colOrderDate.VisibleIndex = 7;
             this.colOrderDate.Width = 80;
             // 
             // colCustomerCode
@@ -890,7 +886,7 @@ namespace BillPlex
             this.colCustomerCode.MinWidth = 80;
             this.colCustomerCode.Name = "colCustomerCode";
             this.colCustomerCode.Visible = true;
-            this.colCustomerCode.VisibleIndex = 9;
+            this.colCustomerCode.VisibleIndex = 8;
             this.colCustomerCode.Width = 80;
             // 
             // colCustomerName
@@ -899,7 +895,7 @@ namespace BillPlex
             this.colCustomerName.MinWidth = 80;
             this.colCustomerName.Name = "colCustomerName";
             this.colCustomerName.Visible = true;
-            this.colCustomerName.VisibleIndex = 10;
+            this.colCustomerName.VisibleIndex = 9;
             this.colCustomerName.Width = 80;
             // 
             // colModelName
@@ -908,7 +904,7 @@ namespace BillPlex
             this.colModelName.MinWidth = 80;
             this.colModelName.Name = "colModelName";
             this.colModelName.Visible = true;
-            this.colModelName.VisibleIndex = 11;
+            this.colModelName.VisibleIndex = 10;
             this.colModelName.Width = 80;
             // 
             // colModelCode
@@ -917,7 +913,7 @@ namespace BillPlex
             this.colModelCode.MinWidth = 80;
             this.colModelCode.Name = "colModelCode";
             this.colModelCode.Visible = true;
-            this.colModelCode.VisibleIndex = 12;
+            this.colModelCode.VisibleIndex = 11;
             this.colModelCode.Width = 80;
             // 
             // colProductName
@@ -926,7 +922,7 @@ namespace BillPlex
             this.colProductName.MinWidth = 80;
             this.colProductName.Name = "colProductName";
             this.colProductName.Visible = true;
-            this.colProductName.VisibleIndex = 13;
+            this.colProductName.VisibleIndex = 12;
             this.colProductName.Width = 80;
             // 
             // colProductSize
@@ -935,7 +931,7 @@ namespace BillPlex
             this.colProductSize.MinWidth = 80;
             this.colProductSize.Name = "colProductSize";
             this.colProductSize.Visible = true;
-            this.colProductSize.VisibleIndex = 14;
+            this.colProductSize.VisibleIndex = 13;
             this.colProductSize.Width = 80;
             // 
             // colRawMaterial
@@ -944,7 +940,7 @@ namespace BillPlex
             this.colRawMaterial.MinWidth = 80;
             this.colRawMaterial.Name = "colRawMaterial";
             this.colRawMaterial.Visible = true;
-            this.colRawMaterial.VisibleIndex = 15;
+            this.colRawMaterial.VisibleIndex = 14;
             this.colRawMaterial.Width = 80;
             // 
             // colQuantityPiece
@@ -953,7 +949,7 @@ namespace BillPlex
             this.colQuantityPiece.MinWidth = 80;
             this.colQuantityPiece.Name = "colQuantityPiece";
             this.colQuantityPiece.Visible = true;
-            this.colQuantityPiece.VisibleIndex = 16;
+            this.colQuantityPiece.VisibleIndex = 15;
             this.colQuantityPiece.Width = 80;
             // 
             // colWeightKg
@@ -962,7 +958,7 @@ namespace BillPlex
             this.colWeightKg.MinWidth = 80;
             this.colWeightKg.Name = "colWeightKg";
             this.colWeightKg.Visible = true;
-            this.colWeightKg.VisibleIndex = 17;
+            this.colWeightKg.VisibleIndex = 16;
             this.colWeightKg.Width = 80;
             // 
             // colExcess
@@ -971,7 +967,7 @@ namespace BillPlex
             this.colExcess.MinWidth = 80;
             this.colExcess.Name = "colExcess";
             this.colExcess.Visible = true;
-            this.colExcess.VisibleIndex = 18;
+            this.colExcess.VisibleIndex = 17;
             this.colExcess.Width = 80;
             // 
             // colColor
@@ -980,7 +976,7 @@ namespace BillPlex
             this.colColor.MinWidth = 80;
             this.colColor.Name = "colColor";
             this.colColor.Visible = true;
-            this.colColor.VisibleIndex = 19;
+            this.colColor.VisibleIndex = 18;
             this.colColor.Width = 80;
             // 
             // colType
@@ -989,7 +985,7 @@ namespace BillPlex
             this.colType.MinWidth = 80;
             this.colType.Name = "colType";
             this.colType.Visible = true;
-            this.colType.VisibleIndex = 20;
+            this.colType.VisibleIndex = 19;
             this.colType.Width = 80;
             // 
             // colAvlQty
@@ -998,7 +994,7 @@ namespace BillPlex
             this.colAvlQty.MinWidth = 80;
             this.colAvlQty.Name = "colAvlQty";
             this.colAvlQty.Visible = true;
-            this.colAvlQty.VisibleIndex = 21;
+            this.colAvlQty.VisibleIndex = 20;
             this.colAvlQty.Width = 80;
             // 
             // colShortage
@@ -1007,7 +1003,7 @@ namespace BillPlex
             this.colShortage.MinWidth = 80;
             this.colShortage.Name = "colShortage";
             this.colShortage.Visible = true;
-            this.colShortage.VisibleIndex = 22;
+            this.colShortage.VisibleIndex = 21;
             this.colShortage.Width = 80;
             // 
             // colorderQty
@@ -1016,7 +1012,7 @@ namespace BillPlex
             this.colorderQty.MinWidth = 80;
             this.colorderQty.Name = "colorderQty";
             this.colorderQty.Visible = true;
-            this.colorderQty.VisibleIndex = 23;
+            this.colorderQty.VisibleIndex = 22;
             this.colorderQty.Width = 80;
             // 
             // colorderWt
@@ -1025,7 +1021,7 @@ namespace BillPlex
             this.colorderWt.MinWidth = 80;
             this.colorderWt.Name = "colorderWt";
             this.colorderWt.Visible = true;
-            this.colorderWt.VisibleIndex = 24;
+            this.colorderWt.VisibleIndex = 23;
             this.colorderWt.Width = 80;
             // 
             // colClientName
@@ -1034,7 +1030,7 @@ namespace BillPlex
             this.colClientName.MinWidth = 80;
             this.colClientName.Name = "colClientName";
             this.colClientName.Visible = true;
-            this.colClientName.VisibleIndex = 25;
+            this.colClientName.VisibleIndex = 24;
             this.colClientName.Width = 80;
             // 
             // colTotalQty
@@ -1043,7 +1039,7 @@ namespace BillPlex
             this.colTotalQty.MinWidth = 80;
             this.colTotalQty.Name = "colTotalQty";
             this.colTotalQty.Visible = true;
-            this.colTotalQty.VisibleIndex = 26;
+            this.colTotalQty.VisibleIndex = 25;
             this.colTotalQty.Width = 80;
             // 
             // colTotalWt
@@ -1052,7 +1048,7 @@ namespace BillPlex
             this.colTotalWt.MinWidth = 80;
             this.colTotalWt.Name = "colTotalWt";
             this.colTotalWt.Visible = true;
-            this.colTotalWt.VisibleIndex = 27;
+            this.colTotalWt.VisibleIndex = 26;
             this.colTotalWt.Width = 80;
             // 
             // colsubContractor
@@ -1061,7 +1057,7 @@ namespace BillPlex
             this.colsubContractor.MinWidth = 80;
             this.colsubContractor.Name = "colsubContractor";
             this.colsubContractor.Visible = true;
-            this.colsubContractor.VisibleIndex = 28;
+            this.colsubContractor.VisibleIndex = 27;
             this.colsubContractor.Width = 80;
             // 
             // colDirector
@@ -1070,7 +1066,7 @@ namespace BillPlex
             this.colDirector.MinWidth = 80;
             this.colDirector.Name = "colDirector";
             this.colDirector.Visible = true;
-            this.colDirector.VisibleIndex = 29;
+            this.colDirector.VisibleIndex = 28;
             this.colDirector.Width = 80;
             // 
             // colPendingQty
@@ -1079,7 +1075,7 @@ namespace BillPlex
             this.colPendingQty.MinWidth = 80;
             this.colPendingQty.Name = "colPendingQty";
             this.colPendingQty.Visible = true;
-            this.colPendingQty.VisibleIndex = 30;
+            this.colPendingQty.VisibleIndex = 29;
             this.colPendingQty.Width = 80;
             // 
             // received
@@ -1089,7 +1085,7 @@ namespace BillPlex
             this.received.MinWidth = 80;
             this.received.Name = "received";
             this.received.Visible = true;
-            this.received.VisibleIndex = 31;
+            this.received.VisibleIndex = 30;
             this.received.Width = 80;
             // 
             // colWages
@@ -1098,7 +1094,7 @@ namespace BillPlex
             this.colWages.MinWidth = 80;
             this.colWages.Name = "colWages";
             this.colWages.Visible = true;
-            this.colWages.VisibleIndex = 32;
+            this.colWages.VisibleIndex = 31;
             this.colWages.Width = 80;
             // 
             // colCurrentWt
@@ -1107,7 +1103,7 @@ namespace BillPlex
             this.colCurrentWt.MinWidth = 80;
             this.colCurrentWt.Name = "colCurrentWt";
             this.colCurrentWt.Visible = true;
-            this.colCurrentWt.VisibleIndex = 33;
+            this.colCurrentWt.VisibleIndex = 32;
             this.colCurrentWt.Width = 80;
             // 
             // colReceivingDate
@@ -1116,7 +1112,7 @@ namespace BillPlex
             this.colReceivingDate.MinWidth = 80;
             this.colReceivingDate.Name = "colReceivingDate";
             this.colReceivingDate.Visible = true;
-            this.colReceivingDate.VisibleIndex = 34;
+            this.colReceivingDate.VisibleIndex = 33;
             this.colReceivingDate.Width = 80;
             // 
             // colBDays
@@ -1125,7 +1121,7 @@ namespace BillPlex
             this.colBDays.MinWidth = 80;
             this.colBDays.Name = "colBDays";
             this.colBDays.Visible = true;
-            this.colBDays.VisibleIndex = 35;
+            this.colBDays.VisibleIndex = 34;
             this.colBDays.Width = 80;
             // 
             // colADays
@@ -1134,7 +1130,7 @@ namespace BillPlex
             this.colADays.MinWidth = 80;
             this.colADays.Name = "colADays";
             this.colADays.Visible = true;
-            this.colADays.VisibleIndex = 36;
+            this.colADays.VisibleIndex = 35;
             this.colADays.Width = 80;
             // 
             // colBalanceWt
@@ -1143,7 +1139,7 @@ namespace BillPlex
             this.colBalanceWt.MinWidth = 80;
             this.colBalanceWt.Name = "colBalanceWt";
             this.colBalanceWt.Visible = true;
-            this.colBalanceWt.VisibleIndex = 37;
+            this.colBalanceWt.VisibleIndex = 36;
             this.colBalanceWt.Width = 80;
             // 
             // labelControl31

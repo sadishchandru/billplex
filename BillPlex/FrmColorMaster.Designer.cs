@@ -188,8 +188,6 @@ namespace BillPlex
             this.Id.MinWidth = 23;
             this.Id.Name = "Id";
             this.Id.OptionsColumn.FixedWidth = true;
-            this.Id.Visible = true;
-            this.Id.VisibleIndex = 0;
             this.Id.Width = 64;
             // 
             // colColournname
@@ -198,7 +196,7 @@ namespace BillPlex
             this.colColournname.MinWidth = 23;
             this.colColournname.Name = "colColournname";
             this.colColournname.Visible = true;
-            this.colColournname.VisibleIndex = 1;
+            this.colColournname.VisibleIndex = 0;
             this.colColournname.Width = 64;
             // 
             // svgImageBox1

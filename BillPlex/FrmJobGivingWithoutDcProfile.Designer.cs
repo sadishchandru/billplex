@@ -30,7 +30,7 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmJobGivingWithoutDcProfile));
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
@@ -251,10 +251,10 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery1.Name = "PRO_GetJobGivingWithoutDCList";
-            storedProcQuery1.StoredProcName = "PRO_GetJobGivingWithoutDCList";
+            storedProcQuery2.Name = "PRO_GetJobGivingWithoutDCList";
+            storedProcQuery2.StoredProcName = "PRO_GetJobGivingWithoutDCList";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery1});
+            storedProcQuery2});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // gridView1
@@ -288,14 +288,13 @@ namespace BillPlex
             this.colorderWt});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ColumnAutoWidth = false;
             // 
             // colId
             // 
             this.colId.FieldName = "Id";
             this.colId.Name = "colId";
             this.colId.OptionsColumn.FixedWidth = true;
-            this.colId.Visible = true;
-            this.colId.VisibleIndex = 0;
             // 
             // EmployeeCodeId
             // 
