@@ -93,18 +93,18 @@ namespace BillPlex
                 }
             }
 
-            if (OrderMasterRequest.ProductMasterList != null)
+            if (OrderMasterRequest.ProductModelList != null)
             {
-                if (OrderMasterRequest.ProductMasterList.Count() > 0)
+                if (OrderMasterRequest.ProductModelList.Count() > 0)
                 {
                     drpProductName.Properties.Items.Clear();
-                    foreach (DropDownItemInfo item in OrderMasterRequest.ProductMasterList)
+                    foreach (DropDownItemInfo item in OrderMasterRequest.ProductModelList)
                     {
                         var foundItem = "";
 
                         foreach (string items in drpProductName.Properties.Items)
                         {
-                            if (items.ToString().ToLower() == item.productId.ToLower().ToString())
+                            if (items.ToString().ToLower() == item.Name.ToLower().ToString())
                             {
                                 foundItem = items.ToString();
                                 break;
@@ -112,7 +112,7 @@ namespace BillPlex
                         }
                         if (foundItem == "")
                         {
-                            drpProductName.Properties.Items.Add(new ImageComboBoxItem(item.productId));
+                            drpProductName.Properties.Items.Add(new ImageComboBoxItem(item.Name));
                         }
                     }
                 }
@@ -280,7 +280,7 @@ namespace BillPlex
                         if (OrderMasterRequest.Result.Status == ResultStatus.Success)
                         {
                             XtraMessageBox.Show(OrderMasterRequest.Result.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                            DropDownGetList();
                             OrderMasterRequest.Id = 0;
 
                             btnAdd.Enabled = true;
@@ -373,7 +373,7 @@ namespace BillPlex
                 ddOrderDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
                 drpCustCode.SelectedIndex = OrderMasterRequest.CustomerMasterList.FindIndex(x => x.Id == Convert.ToInt32(SelectedOrderList.GetRowCellValue(rowHandle, "Customcode").ToString()));
                 drpCustName.SelectedIndex = OrderMasterRequest.CustomerMasterList.FindIndex(x => x.Id == Convert.ToInt32(SelectedOrderList.GetRowCellValue(rowHandle, "CustomerId").ToString()));
-                drpProductName.SelectedIndex = OrderMasterRequest.ProductMasterList.FindIndex(x => x.Id == Convert.ToInt32(SelectedOrderList.GetRowCellValue(rowHandle, "ProductNameId").ToString()));
+                drpProductName.SelectedIndex = OrderMasterRequest.ProductModelList.FindIndex(x => x.Id == Convert.ToInt32(SelectedOrderList.GetRowCellValue(rowHandle, "ProductNameId").ToString()));
                 drpModelName.Text = (string)SelectedOrderList.GetRowCellValue(rowHandle, "productcode");
                 drpModelCode.Text = (string)SelectedOrderList.GetRowCellValue(rowHandle, "productmodel");
                 drpProductSize.Text = (string)SelectedOrderList.GetRowCellValue(rowHandle, "productsize");

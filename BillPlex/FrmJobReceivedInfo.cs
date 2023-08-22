@@ -111,7 +111,7 @@ namespace BillPlex
 
                         this.Close();
 
-                        FrmSubClientCompanyProfile form = Application.OpenForms.OfType<FrmSubClientCompanyProfile>().FirstOrDefault();
+                        FrmJobReceivedProfile form = Application.OpenForms.OfType<FrmJobReceivedProfile>().FirstOrDefault();
 
                         Form myForm = Application.OpenForms["FrmJobReceivedRequestProfile"];
                         if (myForm != null)
