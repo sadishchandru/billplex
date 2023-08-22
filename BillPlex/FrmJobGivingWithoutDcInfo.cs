@@ -445,7 +445,7 @@ namespace BillPlex
             txtCCom.ResetText();
             txtClientName.ResetText();
             txtSCCom.ResetText();
-            ddDate.ResetText();
+            //ddDate.ResetText();
             drpOrderNo.ResetText();
             ddODate.ResetText();
             txtCCode.ResetText();

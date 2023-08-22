@@ -399,7 +399,7 @@ namespace BillPlex
         private void btnClear_Click(object sender = null, EventArgs e = null)
         {
             txtOrderNo.ResetText();
-            ddOrderDate.ResetText();
+            //ddOrderDate.ResetText();
             drpCustCode.ResetText();
             drpCustName.ResetText();
             drpProductName.ResetText();

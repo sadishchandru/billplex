@@ -93,7 +93,7 @@ namespace BillPlex
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //this.Close();
         }
 
         private void FrmJobReceivedProfile_Load(object sender, EventArgs e)

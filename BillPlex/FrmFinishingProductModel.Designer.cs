@@ -212,43 +212,41 @@ namespace BillPlex
             // 
             this.colProductNameId.FieldName = "ProductNameId";
             this.colProductNameId.Name = "colProductNameId";
-            this.colProductNameId.Visible = true;
-            this.colProductNameId.VisibleIndex = 0;
             // 
             // colProductcode
             // 
             this.colProductcode.FieldName = "Productcode";
             this.colProductcode.Name = "colProductcode";
             this.colProductcode.Visible = true;
-            this.colProductcode.VisibleIndex = 1;
+            this.colProductcode.VisibleIndex = 0;
             // 
             // colProductmodel
             // 
             this.colProductmodel.FieldName = "Productmodel";
             this.colProductmodel.Name = "colProductmodel";
             this.colProductmodel.Visible = true;
-            this.colProductmodel.VisibleIndex = 2;
+            this.colProductmodel.VisibleIndex = 1;
             // 
             // colProductsize
             // 
             this.colProductsize.FieldName = "Productsize";
             this.colProductsize.Name = "colProductsize";
             this.colProductsize.Visible = true;
-            this.colProductsize.VisibleIndex = 3;
+            this.colProductsize.VisibleIndex = 2;
             // 
             // colWagesforProduct
             // 
             this.colWagesforProduct.FieldName = "WagesforProduct";
             this.colWagesforProduct.Name = "colWagesforProduct";
             this.colWagesforProduct.Visible = true;
-            this.colWagesforProduct.VisibleIndex = 4;
+            this.colWagesforProduct.VisibleIndex = 3;
             // 
             // colItemDate
             // 
             this.colItemDate.FieldName = "ItemDate";
             this.colItemDate.Name = "colItemDate";
             this.colItemDate.Visible = true;
-            this.colItemDate.VisibleIndex = 5;
+            this.colItemDate.VisibleIndex = 4;
             // 
             // panelControl3
             // 

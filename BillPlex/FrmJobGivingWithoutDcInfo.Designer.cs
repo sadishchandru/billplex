@@ -728,6 +728,7 @@ namespace BillPlex
             // 
             // txtAvlQty
             // 
+            this.txtAvlQty.Enabled = false;
             this.txtAvlQty.EnterMoveNextControl = true;
             this.txtAvlQty.Location = new System.Drawing.Point(991, 133);
             this.txtAvlQty.Name = "txtAvlQty";

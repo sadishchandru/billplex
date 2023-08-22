@@ -217,7 +217,7 @@ namespace BillPlex
             txtWeight.ResetText();
             txtCrntWt.ResetText();
             txtRcvdQty.ResetText();
-            ddReceDate.ResetText();
+            //ddReceDate.ResetText();
             txtPModel.ResetText();
             txtPCode.ResetText();
             txtPSize.ResetText();
