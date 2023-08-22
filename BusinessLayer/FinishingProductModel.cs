@@ -19,6 +19,7 @@ namespace BusinessLayer
 
         public List<DropDownItemInfo> ProductModelList { get; set; }
         public List<DropDownItemInfo> SizeMasterList { get; set; }
+        public List<DropDownItemInfo> FinsihingProductCodeList { get; set; }
 
         #region Update
 
