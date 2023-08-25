@@ -60,18 +60,34 @@ namespace BillPlex
             this.btn_DirectJobGiving = new DevExpress.XtraBars.BarButtonItem();
             this.btn_DirectJobReceived = new DevExpress.XtraBars.BarButtonItem();
             this.btn_DirectJobReceivedWithoutGiving = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem3 = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
             this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.JobAllocation = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Master_Group_btn_Click = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.galleryDropDown1 = new DevExpress.XtraBars.Ribbon.GalleryDropDown(this.components);
+            this.barSubItem4 = new DevExpress.XtraBars.BarSubItem();
+            this.barCheckItem1 = new DevExpress.XtraBars.BarCheckItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem5 = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.galleryDropDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -107,9 +123,19 @@ namespace BillPlex
             this.btn_JobReallocation,
             this.btn_DirectJobGiving,
             this.btn_DirectJobReceived,
-            this.btn_DirectJobReceivedWithoutGiving});
+            this.btn_DirectJobReceivedWithoutGiving,
+            this.barSubItem3,
+            this.barButtonItem2,
+            this.barButtonItem3,
+            this.barSubItem4,
+            this.barCheckItem1,
+            this.barButtonItem4,
+            this.barSubItem5,
+            this.barButtonItem7,
+            this.barButtonItem8,
+            this.barButtonItem9});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 37;
+            this.ribbon.MaxItemId = 50;
             this.ribbon.Name = "ribbon";
             this.ribbon.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.ribbonPageCategory1});
@@ -354,12 +380,41 @@ namespace BillPlex
             this.btn_DirectJobReceivedWithoutGiving.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btn_DirectJobReceivedWithoutGiving.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_DirectJobReceivedWithoutGiving_ItemClick);
             // 
+            // barSubItem3
+            // 
+            this.barSubItem3.Caption = "Labour Bill";
+            this.barSubItem3.Id = 37;
+            this.barSubItem3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3)});
+            this.barSubItem3.Name = "barSubItem3";
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Direct Labour Bill";
+            this.barButtonItem2.Id = 38;
+            this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "InDirect Labour Bill";
+            this.barButtonItem3.Id = 39;
+            this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
+            // 
+            // popupMenu1
+            // 
+            this.popupMenu1.Name = "popupMenu1";
+            this.popupMenu1.Ribbon = this.ribbon;
+            // 
             // ribbonPageCategory1
             // 
             this.ribbonPageCategory1.Name = "ribbonPageCategory1";
             this.ribbonPageCategory1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage2,
-            this.ribbonPage3});
+            this.ribbonPage3,
+            this.ribbonPage4});
             this.ribbonPageCategory1.Text = "BillPlex";
             // 
             // ribbonPage2
@@ -402,6 +457,19 @@ namespace BillPlex
             this.JobAllocation.ItemLinks.Add(this.btn_DirectJobReceived, true);
             this.JobAllocation.ItemLinks.Add(this.btn_DirectJobReceivedWithoutGiving, true);
             this.JobAllocation.Name = "JobAllocation";
+            // 
+            // ribbonPage4
+            // 
+            this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup3});
+            this.ribbonPage4.Name = "ribbonPage4";
+            this.ribbonPage4.Text = "Report";
+            // 
+            // ribbonPageGroup3
+            // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.barSubItem3);
+            this.ribbonPageGroup3.ItemLinks.Add(this.barSubItem4, true);
+            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             // 
             // ribbonPage1
             // 
@@ -448,6 +516,62 @@ namespace BillPlex
             this.xtraTabbedMdiManager1.MdiParent = this;
             this.xtraTabbedMdiManager1.SelectedPageChanged += new System.EventHandler(this.xtraTabbedMdiManager1_SelectedPageChanged);
             // 
+            // galleryDropDown1
+            // 
+            this.galleryDropDown1.Name = "galleryDropDown1";
+            this.galleryDropDown1.Ribbon = this.ribbon;
+            // 
+            // barSubItem4
+            // 
+            this.barSubItem4.Caption = "Wages Report";
+            this.barSubItem4.Id = 43;
+            this.barSubItem4.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem5)});
+            this.barSubItem4.Name = "barSubItem4";
+            // 
+            // barCheckItem1
+            // 
+            this.barCheckItem1.Caption = "barCheckItem1";
+            this.barCheckItem1.Id = 44;
+            this.barCheckItem1.Name = "barCheckItem1";
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "Direct wages report";
+            this.barButtonItem4.Id = 45;
+            this.barButtonItem4.Name = "barButtonItem4";
+            // 
+            // barSubItem5
+            // 
+            this.barSubItem5.Caption = "Direct Wages Report";
+            this.barSubItem5.Id = 46;
+            this.barSubItem5.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.Caption, this.barButtonItem7, "Main Company"),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem8),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem9)});
+            this.barSubItem5.Name = "barSubItem5";
+            // 
+            // barButtonItem7
+            // 
+            this.barButtonItem7.Caption = "Main Company";
+            this.barButtonItem7.Id = 47;
+            this.barButtonItem7.Name = "barButtonItem7";
+            this.barButtonItem7.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem7_ItemClick_1);
+            // 
+            // barButtonItem8
+            // 
+            this.barButtonItem8.Caption = "Client Company";
+            this.barButtonItem8.Id = 48;
+            this.barButtonItem8.Name = "barButtonItem8";
+            this.barButtonItem8.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem8_ItemClick);
+            // 
+            // barButtonItem9
+            // 
+            this.barButtonItem9.Caption = "Sub Client Company";
+            this.barButtonItem9.Id = 49;
+            this.barButtonItem9.Name = "barButtonItem9";
+            this.barButtonItem9.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem9_ItemClick);
+            // 
             // NavBar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -463,7 +587,9 @@ namespace BillPlex
             this.StatusBar = this.ribbonStatusBar;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.galleryDropDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -510,5 +636,19 @@ namespace BillPlex
         private DevExpress.XtraBars.BarButtonItem btn_DirectJobReceived;
         private DevExpress.XtraBars.BarButtonItem btn_DirectJobReceivedWithoutGiving;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
+        private DevExpress.XtraBars.BarSubItem barSubItem3;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage4;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
+        private DevExpress.XtraBars.PopupMenu popupMenu1;
+        private DevExpress.XtraBars.BarSubItem barSubItem4;
+        private DevExpress.XtraBars.BarSubItem barSubItem5;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem8;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem9;
+        private DevExpress.XtraBars.BarCheckItem barCheckItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.Ribbon.GalleryDropDown galleryDropDown1;
     }
 }

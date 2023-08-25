@@ -601,5 +601,110 @@ namespace BillPlex
                 }
             }
         }
+
+        private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            bool IsOpen = false;
+
+            Form myForm = Application.OpenForms["FrmDirectLabourBill"];
+            if (myForm != null)
+            {
+                myForm.Close();
+                myForm = new FrmDirectLabourBill();
+                myForm.MdiParent = this;
+                myForm.Show();
+                IsOpen = true;
+            }
+            if (IsOpen == false)
+            {
+                FrmDirectLabourBill DirectLabourBill = new FrmDirectLabourBill();
+                DirectLabourBill.MdiParent = this;
+                DirectLabourBill.Show();
+            }
+        }
+
+        private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            bool IsOpen = false;
+
+            Form myForm = Application.OpenForms["FrmInDirectLabourBill"];
+            if (myForm != null)
+            {
+                myForm.Close();
+                myForm = new FrmInDirectLabourBill();
+                myForm.MdiParent = this;
+                myForm.Show();
+                IsOpen = true;
+            }
+            if (IsOpen == false)
+            {
+                FrmInDirectLabourBill InDirectLabourBill = new FrmInDirectLabourBill();
+                InDirectLabourBill.MdiParent = this;
+                InDirectLabourBill.Show();
+            }
+        }
+
+        private void barButtonItem7_ItemClick_1(object sender, ItemClickEventArgs e)
+        {
+            bool IsOpen = false;
+
+            Form myForm = Application.OpenForms["FrmMainCompanyReport"];
+            if (myForm != null)
+            {
+                myForm.Close();
+                myForm = new FrmMainCompanyReport();
+                myForm.MdiParent = this;
+                myForm.Show();
+                IsOpen = true;
+            }
+            if (IsOpen == false)
+            {
+                FrmMainCompanyReport mainCompanyReport = new FrmMainCompanyReport();
+                mainCompanyReport.MdiParent = this;
+                mainCompanyReport.Show();
+            }
+        }
+
+        private void barButtonItem8_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            bool IsOpen = false;
+
+            Form myForm = Application.OpenForms["FrmClientCompanyReport"];
+            if (myForm != null)
+            {
+                myForm.Close();
+                myForm = new FrmClientCompanyReport();
+                myForm.MdiParent = this;
+                myForm.Show();
+                IsOpen = true;
+            }
+            if (IsOpen == false)
+            {
+                FrmClientCompanyReport clientCompanyReport = new FrmClientCompanyReport();
+                clientCompanyReport.MdiParent = this;
+                clientCompanyReport.Show();
+            }
+        }
+
+        private void barButtonItem9_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            bool IsOpen = false;
+
+            Form myForm = Application.OpenForms["FrmSubClientCompanyReport"];
+            if (myForm != null)
+            {
+                myForm.Close();
+                myForm = new FrmSubClientCompanyReport();
+                myForm.MdiParent = this;
+                myForm.Show();
+                IsOpen = true;
+            }
+            if (IsOpen == false)
+            {
+                FrmSubClientCompanyReport subClientCompanyReport = new FrmSubClientCompanyReport();
+                subClientCompanyReport.MdiParent = this;
+                subClientCompanyReport.Show();
+            }
+        }
     }
 }
