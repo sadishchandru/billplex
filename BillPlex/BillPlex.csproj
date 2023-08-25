@@ -112,6 +112,12 @@
     <Compile Include="FrmClientCompanyBankInfo.Designer.cs">
       <DependentUpon>FrmClientCompanyBankInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmClientCompanyReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmClientCompanyReport.Designer.cs">
+      <DependentUpon>FrmClientCompanyReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmColorMaster.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,6 +208,12 @@
     <Compile Include="FrmDirectJobReceivedWithoutGivingProfile.Designer.cs">
       <DependentUpon>FrmDirectJobReceivedWithoutGivingProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmDirectLabourBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDirectLabourBill.Designer.cs">
+      <DependentUpon>FrmDirectLabourBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmEmployeeMaster.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +231,12 @@
     </Compile>
     <Compile Include="FrmFinishingProductModel.Designer.cs">
       <DependentUpon>FrmFinishingProductModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInDirectLabourBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInDirectLabourBill.Designer.cs">
+      <DependentUpon>FrmInDirectLabourBill.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmJobGivingInfo.cs">
       <SubType>Form</SubType>
@@ -261,6 +279,12 @@
     </Compile>
     <Compile Include="FrmJobReceivedProfile.Designer.cs">
       <DependentUpon>FrmJobReceivedProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMainCompanyReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMainCompanyReport.Designer.cs">
+      <DependentUpon>FrmMainCompanyReport.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmOrderMaster.cs">
       <SubType>Form</SubType>
@@ -315,6 +339,12 @@
     </Compile>
     <Compile Include="FrmSubClientCompanyProfile.Designer.cs">
       <DependentUpon>FrmSubClientCompanyProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSubClientCompanyReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSubClientCompanyReport.Designer.cs">
+      <DependentUpon>FrmSubClientCompanyReport.cs</DependentUpon>
     </Compile>
     <Compile Include="IncentiveMaster.cs">
       <SubType>Form</SubType>
