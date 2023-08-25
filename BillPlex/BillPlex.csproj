@@ -363,6 +363,9 @@
     <EmbeddedResource Include="FrmClientCompanyBankInfo.resx">
       <DependentUpon>FrmClientCompanyBankInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmClientCompanyReport.resx">
+      <DependentUpon>FrmClientCompanyReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmColorMaster.resx">
       <DependentUpon>FrmColorMaster.cs</DependentUpon>
     </EmbeddedResource>
@@ -411,6 +414,9 @@
     <EmbeddedResource Include="FrmDirectJobReceivedWithoutGivingProfile.resx">
       <DependentUpon>FrmDirectJobReceivedWithoutGivingProfile.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmDirectLabourBill.resx">
+      <DependentUpon>FrmDirectLabourBill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmEmployeeMaster.resx">
       <DependentUpon>FrmEmployeeMaster.cs</DependentUpon>
     </EmbeddedResource>
@@ -419,6 +425,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmFinishingProductModel.resx">
       <DependentUpon>FrmFinishingProductModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInDirectLabourBill.resx">
+      <DependentUpon>FrmInDirectLabourBill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmJobGivingProfile.resx">
       <DependentUpon>FrmJobGivingProfile.cs</DependentUpon>
@@ -437,6 +446,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmJobReceivedProfile.resx">
       <DependentUpon>FrmJobReceivedProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMainCompanyReport.resx">
+      <DependentUpon>FrmMainCompanyReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmOrderMaster.resx">
       <DependentUpon>FrmOrderMaster.cs</DependentUpon>
@@ -464,6 +476,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSubClientCompanyProfile.resx">
       <DependentUpon>FrmSubClientCompanyProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSubClientCompanyReport.resx">
+      <DependentUpon>FrmSubClientCompanyReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IncentiveMaster.resx">
       <DependentUpon>IncentiveMaster.cs</DependentUpon>

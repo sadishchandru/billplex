@@ -17,5 +17,15 @@ namespace BillPlex
         {
             InitializeComponent();
         }
+
+        private void labelControl6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxEdit8_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

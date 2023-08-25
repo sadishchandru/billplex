@@ -119,5 +119,10 @@ namespace BillPlex
             // Set the controls' positions to the calculated center position
             panelControl1.Location = new Point(centerX, centerY);
         }
+
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

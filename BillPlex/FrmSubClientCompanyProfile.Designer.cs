@@ -30,7 +30,7 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSubClientCompanyProfile));
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
@@ -45,8 +45,6 @@ namespace BillPlex
             this.Newbtn = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.SubClientGrid = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMasterCompany = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colClientCompany = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -89,6 +87,8 @@ namespace BillPlex
             this.colAuthorPan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAuthorPercent = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAuthorActive = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
@@ -105,10 +105,10 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery1.Name = "PRO_GetSubClientCompanyProfileInfo";
-            storedProcQuery1.StoredProcName = "PRO_GetSubClientCompanyProfileInfo";
+            storedProcQuery2.Name = "PRO_GetSubClientCompanyProfileInfo";
+            storedProcQuery2.StoredProcName = "PRO_GetSubClientCompanyProfileInfo";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery1});
+            storedProcQuery2});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // panelControl1
@@ -260,6 +260,7 @@ namespace BillPlex
             this.gridControl1.TabIndex = 6;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.SubClientGrid});
+            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
             this.gridControl1.DoubleClick += new System.EventHandler(this.btn_EditClick);
             // 
             // SubClientGrid
@@ -312,27 +313,6 @@ namespace BillPlex
             this.SubClientGrid.Name = "SubClientGrid";
             this.SubClientGrid.OptionsView.ColumnAutoWidth = false;
             this.SubClientGrid.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
-            // 
-            // panelControl2
-            // 
-            this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.panelControl2.Controls.Add(this.labelControl1);
-            this.panelControl2.Location = new System.Drawing.Point(5, 5);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1532, 72);
-            this.panelControl2.TabIndex = 2;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(584, 22);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(364, 29);
-            this.labelControl1.TabIndex = 2;
-            this.labelControl1.Text = "Sub Client Company Profile";
             // 
             // colId
             // 
@@ -621,6 +601,27 @@ namespace BillPlex
             this.colAuthorActive.Name = "colAuthorActive";
             this.colAuthorActive.Visible = true;
             this.colAuthorActive.VisibleIndex = 38;
+            // 
+            // panelControl2
+            // 
+            this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.panelControl2.Controls.Add(this.labelControl1);
+            this.panelControl2.Location = new System.Drawing.Point(5, 5);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(1532, 72);
+            this.panelControl2.TabIndex = 2;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Appearance.Options.UseForeColor = true;
+            this.labelControl1.Location = new System.Drawing.Point(584, 22);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(364, 29);
+            this.labelControl1.TabIndex = 2;
+            this.labelControl1.Text = "Sub Client Company Profile";
             // 
             // FrmSubClientCompanyProfile
             // 
