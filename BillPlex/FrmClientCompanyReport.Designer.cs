@@ -43,7 +43,6 @@ namespace BillPlex
             this.labelFrom = new DevExpress.XtraEditors.LabelControl();
             this.labelDirector = new DevExpress.XtraEditors.LabelControl();
             this.labelMainCompany = new DevExpress.XtraEditors.LabelControl();
-            this.drpFrom = new DevExpress.XtraEditors.ComboBoxEdit();
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.txtClientName = new DevExpress.XtraEditors.TextEdit();
             this.drpClientCompany = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -51,7 +50,8 @@ namespace BillPlex
             this.labelSearchIndex = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.drpTo = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.drpFrom = new DevExpress.XtraEditors.DateEdit();
+            this.drpTo = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
@@ -64,11 +64,13 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.drpFrom.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtClientName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpClientCompany.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.drpFrom.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpFrom.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpTo.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpTo.Properties)).BeginInit();
             this.SuspendLayout();
             // 
@@ -169,17 +171,17 @@ namespace BillPlex
             // 
             // panelControl2
             // 
-            this.panelControl2.Controls.Add(this.drpTo);
             this.panelControl2.Controls.Add(this.labelControl2);
             this.panelControl2.Controls.Add(this.labelControl1);
             this.panelControl2.Controls.Add(this.labelFrom);
             this.panelControl2.Controls.Add(this.labelDirector);
             this.panelControl2.Controls.Add(this.labelMainCompany);
-            this.panelControl2.Controls.Add(this.drpFrom);
             this.panelControl2.Controls.Add(this.btnPrint);
             this.panelControl2.Controls.Add(this.txtClientName);
             this.panelControl2.Controls.Add(this.drpClientCompany);
             this.panelControl2.Controls.Add(this.panelControl4);
+            this.panelControl2.Controls.Add(this.drpFrom);
+            this.panelControl2.Controls.Add(this.drpTo);
             this.panelControl2.Location = new System.Drawing.Point(14, 167);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(217, 383);
@@ -214,15 +216,6 @@ namespace BillPlex
             this.labelMainCompany.Size = new System.Drawing.Size(123, 18);
             this.labelMainCompany.TabIndex = 10;
             this.labelMainCompany.Text = "ClientCompany";
-            // 
-            // drpFrom
-            // 
-            this.drpFrom.Location = new System.Drawing.Point(11, 228);
-            this.drpFrom.Name = "drpFrom";
-            this.drpFrom.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.drpFrom.Size = new System.Drawing.Size(185, 20);
-            this.drpFrom.TabIndex = 8;
             // 
             // btnPrint
             // 
@@ -291,12 +284,35 @@ namespace BillPlex
             this.labelControl2.TabIndex = 14;
             this.labelControl2.Text = "To";
             // 
+            // drpFrom
+            // 
+            this.drpFrom.EditValue = null;
+            this.drpFrom.Location = new System.Drawing.Point(11, 228);
+            this.drpFrom.Name = "drpFrom";
+            this.drpFrom.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpFrom.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpFrom.Properties.DisplayFormat.FormatString = "";
+            this.drpFrom.Properties.EditFormat.FormatString = "";
+            this.drpFrom.Properties.Mask.EditMask = "";
+            this.drpFrom.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.drpFrom.Size = new System.Drawing.Size(185, 20);
+            this.drpFrom.TabIndex = 8;
+            // 
             // drpTo
             // 
+            this.drpTo.EditValue = null;
             this.drpTo.Location = new System.Drawing.Point(11, 290);
             this.drpTo.Name = "drpTo";
             this.drpTo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpTo.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.drpTo.Properties.DisplayFormat.FormatString = "";
+            this.drpTo.Properties.EditFormat.FormatString = "";
+            this.drpTo.Properties.Mask.EditMask = "";
+            this.drpTo.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.drpTo.Size = new System.Drawing.Size(185, 20);
             this.drpTo.TabIndex = 15;
             // 
@@ -323,12 +339,14 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.drpFrom.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtClientName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpClientCompany.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
             this.panelControl4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.drpFrom.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpFrom.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpTo.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpTo.Properties)).EndInit();
             this.ResumeLayout(false);
 
@@ -350,14 +368,14 @@ namespace BillPlex
         private DevExpress.XtraEditors.LabelControl labelFrom;
         private DevExpress.XtraEditors.LabelControl labelDirector;
         private DevExpress.XtraEditors.LabelControl labelMainCompany;
-        private DevExpress.XtraEditors.ComboBoxEdit drpFrom;
         private DevExpress.XtraEditors.SimpleButton btnPrint;
         private DevExpress.XtraEditors.TextEdit txtClientName;
         private DevExpress.XtraEditors.ComboBoxEdit drpClientCompany;
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraEditors.LabelControl labelSearchIndex;
-        private DevExpress.XtraEditors.ComboBoxEdit drpTo;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.DateEdit drpFrom;
+        private DevExpress.XtraEditors.DateEdit drpTo;
     }
 }
