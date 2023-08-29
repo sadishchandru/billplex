@@ -1,5 +1,7 @@
-﻿using System;
+﻿using DataLayer;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,10 +10,8 @@ namespace BusinessLayer
 {
     public class DirectLabourBill : Common
     {
-        public List<DropDownItemInfo> RawMaterialList { get; set; }
-        public List<DropDownItemInfo> ProductModelList { get; set; }
-        public List<DropDownItemInfo> CustomerMasterList { get; set; }
-        public List<DropDownItemInfo> ProductMasterList { get; set; }
-        public List<DropDownItemInfo> ColourMasterList { get; set; }
+        public List<DropDownItemInfo> MasterCompanyList { get; set; }
+        public List<DropDownItemInfo> ClientCompanyList { get; set; }
+        public List<DropDownItemInfo> SubClientList { get; set; }
     }
 }

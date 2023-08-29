@@ -29,10 +29,25 @@ namespace BillPlex
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDirectLabourBill));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colModelName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProductName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProductSize = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colQuantityPiece = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colorderQty = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTotalQty = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNetAmt = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTotalAmt = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl8 = new DevExpress.XtraEditors.PanelControl();
-            this.comboBoxEdit8 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.panelControl9 = new DevExpress.XtraEditors.PanelControl();
+            this.calcEdit1 = new DevExpress.XtraEditors.CalcEdit();
+            this.labelControl34 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl7 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl33 = new DevExpress.XtraEditors.LabelControl();
@@ -41,10 +56,10 @@ namespace BillPlex
             this.labelControl30 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl29 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl28 = new DevExpress.XtraEditors.LabelControl();
-            this.radioGroup5 = new DevExpress.XtraEditors.RadioGroup();
-            this.radioGroup4 = new DevExpress.XtraEditors.RadioGroup();
-            this.radioGroup2 = new DevExpress.XtraEditors.RadioGroup();
-            this.radioGroup3 = new DevExpress.XtraEditors.RadioGroup();
+            this.radBonus = new DevExpress.XtraEditors.RadioGroup();
+            this.radESI = new DevExpress.XtraEditors.RadioGroup();
+            this.radProduction = new DevExpress.XtraEditors.RadioGroup();
+            this.radPF = new DevExpress.XtraEditors.RadioGroup();
             this.labelControl27 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl26 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl25 = new DevExpress.XtraEditors.LabelControl();
@@ -52,12 +67,12 @@ namespace BillPlex
             this.labelControl23 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl22 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit24 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit23 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit22 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit21 = new DevExpress.XtraEditors.TextEdit();
+            this.txtBonus = new DevExpress.XtraEditors.TextEdit();
+            this.txtESI = new DevExpress.XtraEditors.TextEdit();
+            this.txtpf = new DevExpress.XtraEditors.TextEdit();
+            this.txtIncentivePercent = new DevExpress.XtraEditors.TextEdit();
             this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit20 = new DevExpress.XtraEditors.TextEdit();
+            this.txtSuperVisor = new DevExpress.XtraEditors.TextEdit();
             this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
@@ -65,37 +80,35 @@ namespace BillPlex
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit19 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit18 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit17 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit16 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit15 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit14 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit13 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit12 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit11 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit10 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit9 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit8 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit7 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit6 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
+            this.txtNetAmount = new DevExpress.XtraEditors.TextEdit();
+            this.txtAdvance = new DevExpress.XtraEditors.TextEdit();
+            this.txtFinalTotal = new DevExpress.XtraEditors.TextEdit();
+            this.txtTotalBouns = new DevExpress.XtraEditors.TextEdit();
+            this.TxtTotalESI = new DevExpress.XtraEditors.TextEdit();
+            this.txtPFText = new DevExpress.XtraEditors.TextEdit();
+            this.txtProductionIncentive = new DevExpress.XtraEditors.TextEdit();
+            this.txtGrandTotal = new DevExpress.XtraEditors.TextEdit();
+            this.txtSupVisorTotal = new DevExpress.XtraEditors.TextEdit();
+            this.txtSubTotal2 = new DevExpress.XtraEditors.TextEdit();
+            this.txtIncentives = new DevExpress.XtraEditors.TextEdit();
+            this.txtConveyance = new DevExpress.XtraEditors.TextEdit();
+            this.txtSubTotal1 = new DevExpress.XtraEditors.TextEdit();
+            this.txtDeducation = new DevExpress.XtraEditors.TextEdit();
+            this.txtTotal = new DevExpress.XtraEditors.TextEdit();
             this.btn_Print = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
-            this.comboBoxEdit7 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.drpOrderBy = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            this.comboBoxEdit6 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.drpSortBy = new DevExpress.XtraEditors.ComboBoxEdit();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.txtSubClient = new DevExpress.XtraEditors.TextEdit();
+            this.txtClientName = new DevExpress.XtraEditors.TextEdit();
+            this.txtDirector = new DevExpress.XtraEditors.TextEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.comboBoxEdit5 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.comboBoxEdit4 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.drpSubClient = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.drpCCompany = new DevExpress.XtraEditors.ComboBoxEdit();
             this.drpMainCompany = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl32 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
@@ -108,57 +121,56 @@ namespace BillPlex
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.drpFrom = new DevExpress.XtraEditors.DateEdit();
-            this.comboBoxEdit3 = new DevExpress.XtraEditors.DateEdit();
+            this.ddFrom = new DevExpress.XtraEditors.DateEdit();
+            this.ddTo = new DevExpress.XtraEditors.DateEdit();
             this.comboBoxEdit1 = new DevExpress.XtraEditors.DateEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl8)).BeginInit();
             this.panelControl8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit8.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.calcEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
             this.panelControl6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).BeginInit();
             this.panelControl7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radioGroup6.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroup5.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroup4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroup2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroup3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit24.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit23.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit22.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit21.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit20.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit19.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit18.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit17.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit16.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit15.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit14.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit13.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit12.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit11.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit10.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit9.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit7.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit6.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radBonus.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radESI.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radProduction.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radPF.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBonus.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtESI.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtpf.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIncentivePercent.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSuperVisor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNetAmount.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAdvance.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFinalTotal.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTotalBouns.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtTotalESI.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPFText.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtProductionIncentive.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGrandTotal.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSupVisorTotal.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSubTotal2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIncentives.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtConveyance.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSubTotal1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDeducation.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTotal.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpOrderBy.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpSortBy.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
             this.panelControl5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit5.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSubClient.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtClientName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDirector.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpSubClient.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpCCompany.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpMainCompany.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
@@ -166,10 +178,10 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtBillNo.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.drpFrom.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.drpFrom.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit3.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddFrom.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddFrom.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddTo.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddTo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -178,16 +190,17 @@ namespace BillPlex
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.gridControl1);
             this.panelControl1.Controls.Add(this.panelControl8);
             this.panelControl1.Controls.Add(this.panelControl6);
             this.panelControl1.Controls.Add(this.labelControl31);
             this.panelControl1.Controls.Add(this.labelControl30);
             this.panelControl1.Controls.Add(this.labelControl29);
             this.panelControl1.Controls.Add(this.labelControl28);
-            this.panelControl1.Controls.Add(this.radioGroup5);
-            this.panelControl1.Controls.Add(this.radioGroup4);
-            this.panelControl1.Controls.Add(this.radioGroup2);
-            this.panelControl1.Controls.Add(this.radioGroup3);
+            this.panelControl1.Controls.Add(this.radBonus);
+            this.panelControl1.Controls.Add(this.radESI);
+            this.panelControl1.Controls.Add(this.radProduction);
+            this.panelControl1.Controls.Add(this.radPF);
             this.panelControl1.Controls.Add(this.labelControl27);
             this.panelControl1.Controls.Add(this.labelControl26);
             this.panelControl1.Controls.Add(this.labelControl25);
@@ -195,12 +208,12 @@ namespace BillPlex
             this.panelControl1.Controls.Add(this.labelControl23);
             this.panelControl1.Controls.Add(this.labelControl22);
             this.panelControl1.Controls.Add(this.labelControl21);
-            this.panelControl1.Controls.Add(this.textEdit24);
-            this.panelControl1.Controls.Add(this.textEdit23);
-            this.panelControl1.Controls.Add(this.textEdit22);
-            this.panelControl1.Controls.Add(this.textEdit21);
+            this.panelControl1.Controls.Add(this.txtBonus);
+            this.panelControl1.Controls.Add(this.txtESI);
+            this.panelControl1.Controls.Add(this.txtpf);
+            this.panelControl1.Controls.Add(this.txtIncentivePercent);
             this.panelControl1.Controls.Add(this.labelControl20);
-            this.panelControl1.Controls.Add(this.textEdit20);
+            this.panelControl1.Controls.Add(this.txtSuperVisor);
             this.panelControl1.Controls.Add(this.labelControl19);
             this.panelControl1.Controls.Add(this.labelControl18);
             this.panelControl1.Controls.Add(this.labelControl17);
@@ -208,27 +221,26 @@ namespace BillPlex
             this.panelControl1.Controls.Add(this.labelControl15);
             this.panelControl1.Controls.Add(this.labelControl14);
             this.panelControl1.Controls.Add(this.labelControl13);
-            this.panelControl1.Controls.Add(this.textEdit19);
-            this.panelControl1.Controls.Add(this.textEdit18);
-            this.panelControl1.Controls.Add(this.textEdit17);
-            this.panelControl1.Controls.Add(this.textEdit16);
-            this.panelControl1.Controls.Add(this.textEdit15);
-            this.panelControl1.Controls.Add(this.textEdit14);
-            this.panelControl1.Controls.Add(this.textEdit13);
-            this.panelControl1.Controls.Add(this.textEdit12);
-            this.panelControl1.Controls.Add(this.textEdit11);
-            this.panelControl1.Controls.Add(this.textEdit10);
-            this.panelControl1.Controls.Add(this.textEdit9);
-            this.panelControl1.Controls.Add(this.textEdit8);
-            this.panelControl1.Controls.Add(this.textEdit7);
-            this.panelControl1.Controls.Add(this.textEdit6);
-            this.panelControl1.Controls.Add(this.textEdit5);
+            this.panelControl1.Controls.Add(this.txtNetAmount);
+            this.panelControl1.Controls.Add(this.txtAdvance);
+            this.panelControl1.Controls.Add(this.txtFinalTotal);
+            this.panelControl1.Controls.Add(this.txtTotalBouns);
+            this.panelControl1.Controls.Add(this.TxtTotalESI);
+            this.panelControl1.Controls.Add(this.txtPFText);
+            this.panelControl1.Controls.Add(this.txtProductionIncentive);
+            this.panelControl1.Controls.Add(this.txtGrandTotal);
+            this.panelControl1.Controls.Add(this.txtSupVisorTotal);
+            this.panelControl1.Controls.Add(this.txtSubTotal2);
+            this.panelControl1.Controls.Add(this.txtIncentives);
+            this.panelControl1.Controls.Add(this.txtConveyance);
+            this.panelControl1.Controls.Add(this.txtSubTotal1);
+            this.panelControl1.Controls.Add(this.txtDeducation);
+            this.panelControl1.Controls.Add(this.txtTotal);
             this.panelControl1.Controls.Add(this.btn_Print);
             this.panelControl1.Controls.Add(this.labelControl12);
-            this.panelControl1.Controls.Add(this.comboBoxEdit7);
+            this.panelControl1.Controls.Add(this.drpOrderBy);
             this.panelControl1.Controls.Add(this.labelControl11);
-            this.panelControl1.Controls.Add(this.comboBoxEdit6);
-            this.panelControl1.Controls.Add(this.gridControl1);
+            this.panelControl1.Controls.Add(this.drpSortBy);
             this.panelControl1.Controls.Add(this.panelControl5);
             this.panelControl1.Controls.Add(this.panelControl4);
             this.panelControl1.Controls.Add(this.panelControl3);
@@ -238,31 +250,140 @@ namespace BillPlex
             this.panelControl1.Size = new System.Drawing.Size(1800, 826);
             this.panelControl1.TabIndex = 0;
             // 
+            // gridControl1
+            // 
+            this.gridControl1.DataMember = "PRO_GetDirectLabourBill";
+            this.gridControl1.DataSource = this.sqlDataSource1;
+            this.gridControl1.Location = new System.Drawing.Point(12, 174);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(1385, 341);
+            this.gridControl1.TabIndex = 123;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // sqlDataSource1
+            // 
+            this.sqlDataSource1.ConnectionName = "BillPlex";
+            this.sqlDataSource1.Name = "sqlDataSource1";
+            storedProcQuery2.Name = "PRO_GetDirectLabourBill";
+            queryParameter2.Name = "@SearchKey";
+            queryParameter2.Type = typeof(string);
+            storedProcQuery2.Parameters.Add(queryParameter2);
+            storedProcQuery2.StoredProcName = "PRO_GetDirectLabourBill";
+            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
+            storedProcQuery2});
+            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colModelName,
+            this.colProductName,
+            this.colProductSize,
+            this.colQuantityPiece,
+            this.colorderQty,
+            this.colTotalQty,
+            this.colNetAmt,
+            this.colTotalAmt});
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.AlignGroupSummaryInGroupRow = DevExpress.Utils.DefaultBoolean.True;
+            this.gridView1.OptionsMenu.ShowAddNewSummaryItem = DevExpress.Utils.DefaultBoolean.True;
+            this.gridView1.OptionsView.ShowFooter = true;
+            // 
+            // colModelName
+            // 
+            this.colModelName.FieldName = "ModelName";
+            this.colModelName.Name = "colModelName";
+            this.colModelName.Visible = true;
+            this.colModelName.VisibleIndex = 0;
+            // 
+            // colProductName
+            // 
+            this.colProductName.FieldName = "ProductName";
+            this.colProductName.Name = "colProductName";
+            this.colProductName.Visible = true;
+            this.colProductName.VisibleIndex = 1;
+            // 
+            // colProductSize
+            // 
+            this.colProductSize.FieldName = "ProductSize";
+            this.colProductSize.Name = "colProductSize";
+            this.colProductSize.Visible = true;
+            this.colProductSize.VisibleIndex = 2;
+            // 
+            // colQuantityPiece
+            // 
+            this.colQuantityPiece.FieldName = "QuantityPiece";
+            this.colQuantityPiece.Name = "colQuantityPiece";
+            this.colQuantityPiece.Visible = true;
+            this.colQuantityPiece.VisibleIndex = 3;
+            // 
+            // colorderQty
+            // 
+            this.colorderQty.FieldName = "orderQty";
+            this.colorderQty.Name = "colorderQty";
+            this.colorderQty.Visible = true;
+            this.colorderQty.VisibleIndex = 4;
+            // 
+            // colTotalQty
+            // 
+            this.colTotalQty.FieldName = "TotalQty";
+            this.colTotalQty.Name = "colTotalQty";
+            this.colTotalQty.Visible = true;
+            this.colTotalQty.VisibleIndex = 5;
+            // 
+            // colNetAmt
+            // 
+            this.colNetAmt.FieldName = "NetAmt";
+            this.colNetAmt.Name = "colNetAmt";
+            this.colNetAmt.Visible = true;
+            this.colNetAmt.VisibleIndex = 6;
+            // 
+            // colTotalAmt
+            // 
+            this.colTotalAmt.FieldName = "TotalAmt";
+            this.colTotalAmt.Name = "colTotalAmt";
+            this.colTotalAmt.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TotalAmt", "Total={0:0.##}")});
+            this.colTotalAmt.Visible = true;
+            this.colTotalAmt.VisibleIndex = 7;
+            // 
             // panelControl8
             // 
-            this.panelControl8.Controls.Add(this.comboBoxEdit8);
-            this.panelControl8.Controls.Add(this.panelControl9);
+            this.panelControl8.Controls.Add(this.calcEdit1);
+            this.panelControl8.Controls.Add(this.labelControl34);
             this.panelControl8.Location = new System.Drawing.Point(21, 556);
             this.panelControl8.Name = "panelControl8";
             this.panelControl8.Size = new System.Drawing.Size(357, 236);
             this.panelControl8.TabIndex = 122;
             // 
-            // comboBoxEdit8
+            // calcEdit1
             // 
-            this.comboBoxEdit8.Location = new System.Drawing.Point(5, 43);
-            this.comboBoxEdit8.Name = "comboBoxEdit8";
-            this.comboBoxEdit8.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.calcEdit1.Location = new System.Drawing.Point(5, 29);
+            this.calcEdit1.Name = "calcEdit1";
+            this.calcEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.calcEdit1.Properties.Appearance.Options.UseFont = true;
+            this.calcEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit8.Size = new System.Drawing.Size(347, 20);
-            this.comboBoxEdit8.TabIndex = 124;
+            this.calcEdit1.Properties.LookAndFeel.SkinName = "DevExpress Style";
+            this.calcEdit1.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.calcEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.calcEdit1.Size = new System.Drawing.Size(333, 26);
+            this.calcEdit1.TabIndex = 126;
             // 
-            // panelControl9
+            // labelControl34
             // 
-            this.panelControl9.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl9.Location = new System.Drawing.Point(0, 1);
-            this.panelControl9.Name = "panelControl9";
-            this.panelControl9.Size = new System.Drawing.Size(357, 36);
-            this.panelControl9.TabIndex = 123;
+            this.labelControl34.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl34.Appearance.ForeColor = System.Drawing.Color.Maroon;
+            this.labelControl34.Appearance.Options.UseFont = true;
+            this.labelControl34.Appearance.Options.UseForeColor = true;
+            this.labelControl34.Location = new System.Drawing.Point(5, 5);
+            this.labelControl34.Name = "labelControl34";
+            this.labelControl34.Size = new System.Drawing.Size(82, 18);
+            this.labelControl34.TabIndex = 125;
+            this.labelControl34.Text = "Calculator";
             // 
             // panelControl6
             // 
@@ -350,81 +471,85 @@ namespace BillPlex
             this.labelControl28.TabIndex = 117;
             this.labelControl28.Text = "Production Incentive : % or Amount";
             // 
-            // radioGroup5
+            // radBonus
             // 
-            this.radioGroup5.Location = new System.Drawing.Point(1040, 688);
-            this.radioGroup5.Name = "radioGroup5";
-            this.radioGroup5.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.radioGroup5.Properties.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioGroup5.Properties.Appearance.Options.UseBackColor = true;
-            this.radioGroup5.Properties.Appearance.Options.UseFont = true;
-            this.radioGroup5.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.radioGroup5.Properties.Columns = 2;
-            this.radioGroup5.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "%", true, null, "%"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Amount", true, null, "Amount")});
-            this.radioGroup5.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
-            this.radioGroup5.Properties.LookAndFeel.SkinName = "DevExpress Style";
-            this.radioGroup5.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.radioGroup5.Size = new System.Drawing.Size(172, 27);
-            this.radioGroup5.TabIndex = 116;
+            this.radBonus.Location = new System.Drawing.Point(1040, 688);
+            this.radBonus.Name = "radBonus";
+            this.radBonus.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.radBonus.Properties.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radBonus.Properties.Appearance.Options.UseBackColor = true;
+            this.radBonus.Properties.Appearance.Options.UseFont = true;
+            this.radBonus.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.radBonus.Properties.Columns = 2;
+            this.radBonus.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(0)), "%", true, null, "%"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(1)), "Amount", true, null, "Amount")});
+            this.radBonus.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.radBonus.Properties.LookAndFeel.SkinName = "DevExpress Style";
+            this.radBonus.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.radBonus.Size = new System.Drawing.Size(172, 27);
+            this.radBonus.TabIndex = 116;
+            this.radBonus.EditValueChanged += new System.EventHandler(this.radBonus_EditValueChanged);
             // 
-            // radioGroup4
+            // radESI
             // 
-            this.radioGroup4.Location = new System.Drawing.Point(1040, 655);
-            this.radioGroup4.Name = "radioGroup4";
-            this.radioGroup4.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.radioGroup4.Properties.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioGroup4.Properties.Appearance.Options.UseBackColor = true;
-            this.radioGroup4.Properties.Appearance.Options.UseFont = true;
-            this.radioGroup4.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.radioGroup4.Properties.Columns = 2;
-            this.radioGroup4.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "%", true, null, "%"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Amount", true, null, "Amount")});
-            this.radioGroup4.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
-            this.radioGroup4.Properties.LookAndFeel.SkinName = "DevExpress Style";
-            this.radioGroup4.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.radioGroup4.Size = new System.Drawing.Size(172, 27);
-            this.radioGroup4.TabIndex = 115;
+            this.radESI.Location = new System.Drawing.Point(1040, 655);
+            this.radESI.Name = "radESI";
+            this.radESI.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.radESI.Properties.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radESI.Properties.Appearance.Options.UseBackColor = true;
+            this.radESI.Properties.Appearance.Options.UseFont = true;
+            this.radESI.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.radESI.Properties.Columns = 2;
+            this.radESI.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(0)), "%", true, null, "%"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(1)), "Amount", true, null, "Amount")});
+            this.radESI.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.radESI.Properties.LookAndFeel.SkinName = "DevExpress Style";
+            this.radESI.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.radESI.Size = new System.Drawing.Size(172, 27);
+            this.radESI.TabIndex = 115;
+            this.radESI.EditValueChanged += new System.EventHandler(this.radESI_EditValueChanged);
             // 
-            // radioGroup2
+            // radProduction
             // 
-            this.radioGroup2.Location = new System.Drawing.Point(1040, 581);
-            this.radioGroup2.Name = "radioGroup2";
-            this.radioGroup2.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.radioGroup2.Properties.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioGroup2.Properties.Appearance.Options.UseBackColor = true;
-            this.radioGroup2.Properties.Appearance.Options.UseFont = true;
-            this.radioGroup2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.radioGroup2.Properties.Columns = 2;
-            this.radioGroup2.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "%", true, null, "%"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Amount", true, null, "Amount")});
-            this.radioGroup2.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
-            this.radioGroup2.Properties.LookAndFeel.SkinName = "DevExpress Style";
-            this.radioGroup2.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.radioGroup2.Size = new System.Drawing.Size(172, 42);
-            this.radioGroup2.TabIndex = 113;
+            this.radProduction.Location = new System.Drawing.Point(1040, 581);
+            this.radProduction.Name = "radProduction";
+            this.radProduction.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.radProduction.Properties.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radProduction.Properties.Appearance.Options.UseBackColor = true;
+            this.radProduction.Properties.Appearance.Options.UseFont = true;
+            this.radProduction.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.radProduction.Properties.Columns = 2;
+            this.radProduction.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(1)), "%", true, null, "%"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(0)), "Amount", true, null, "Amount")});
+            this.radProduction.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.radProduction.Properties.LookAndFeel.SkinName = "DevExpress Style";
+            this.radProduction.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.radProduction.Size = new System.Drawing.Size(172, 42);
+            this.radProduction.TabIndex = 113;
+            this.radProduction.SelectedIndexChanged += new System.EventHandler(this.radioGroup2_SelectedIndexChanged);
             // 
-            // radioGroup3
+            // radPF
             // 
-            this.radioGroup3.Location = new System.Drawing.Point(1040, 622);
-            this.radioGroup3.Name = "radioGroup3";
-            this.radioGroup3.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.radioGroup3.Properties.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioGroup3.Properties.Appearance.Options.UseBackColor = true;
-            this.radioGroup3.Properties.Appearance.Options.UseFont = true;
-            this.radioGroup3.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.radioGroup3.Properties.Columns = 2;
-            this.radioGroup3.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "%", true, null, "%"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Amount", true, null, "Amount")});
-            this.radioGroup3.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
-            this.radioGroup3.Properties.LookAndFeel.SkinName = "DevExpress Style";
-            this.radioGroup3.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.radioGroup3.Size = new System.Drawing.Size(172, 27);
-            this.radioGroup3.TabIndex = 114;
+            this.radPF.Location = new System.Drawing.Point(1040, 622);
+            this.radPF.Name = "radPF";
+            this.radPF.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.radPF.Properties.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radPF.Properties.Appearance.Options.UseBackColor = true;
+            this.radPF.Properties.Appearance.Options.UseFont = true;
+            this.radPF.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.radPF.Properties.Columns = 2;
+            this.radPF.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(0)), "%", true, null, "%"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(1)), "Amount", true, null, "Amount")});
+            this.radPF.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
+            this.radPF.Properties.LookAndFeel.SkinName = "DevExpress Style";
+            this.radPF.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.radPF.Size = new System.Drawing.Size(172, 27);
+            this.radPF.TabIndex = 114;
+            this.radPF.SelectedIndexChanged += new System.EventHandler(this.radPF_SelectedIndexChanged);
             // 
             // labelControl27
             // 
@@ -496,33 +621,41 @@ namespace BillPlex
             this.labelControl21.TabIndex = 106;
             this.labelControl21.Text = "Production Incentive";
             // 
-            // textEdit24
+            // txtBonus
             // 
-            this.textEdit24.Location = new System.Drawing.Point(1453, 701);
-            this.textEdit24.Name = "textEdit24";
-            this.textEdit24.Size = new System.Drawing.Size(67, 20);
-            this.textEdit24.TabIndex = 102;
+            this.txtBonus.Location = new System.Drawing.Point(1453, 701);
+            this.txtBonus.Name = "txtBonus";
+            this.txtBonus.Size = new System.Drawing.Size(67, 20);
+            this.txtBonus.TabIndex = 102;
+            this.txtBonus.EditValueChanged += new System.EventHandler(this.radBonus_EditValueChanged);
             // 
-            // textEdit23
+            // txtESI
             // 
-            this.textEdit23.Location = new System.Drawing.Point(1453, 664);
-            this.textEdit23.Name = "textEdit23";
-            this.textEdit23.Size = new System.Drawing.Size(67, 20);
-            this.textEdit23.TabIndex = 101;
+            this.txtESI.Location = new System.Drawing.Point(1453, 664);
+            this.txtESI.Name = "txtESI";
+            this.txtESI.Size = new System.Drawing.Size(67, 20);
+            this.txtESI.TabIndex = 101;
+            this.txtESI.EditValueChanged += new System.EventHandler(this.radESI_EditValueChanged);
             // 
-            // textEdit22
+            // txtpf
             // 
-            this.textEdit22.Location = new System.Drawing.Point(1453, 629);
-            this.textEdit22.Name = "textEdit22";
-            this.textEdit22.Size = new System.Drawing.Size(67, 20);
-            this.textEdit22.TabIndex = 100;
+            this.txtpf.EditValue = "";
+            this.txtpf.Location = new System.Drawing.Point(1453, 629);
+            this.txtpf.Name = "txtpf";
+            this.txtpf.Properties.BeepOnError = false;
+            this.txtpf.Properties.UseMaskAsDisplayFormat = true;
+            this.txtpf.Size = new System.Drawing.Size(67, 20);
+            this.txtpf.TabIndex = 100;
+            this.txtpf.EditValueChanged += new System.EventHandler(this.radPF_SelectedIndexChanged);
             // 
-            // textEdit21
+            // txtIncentivePercent
             // 
-            this.textEdit21.Location = new System.Drawing.Point(1453, 593);
-            this.textEdit21.Name = "textEdit21";
-            this.textEdit21.Size = new System.Drawing.Size(67, 20);
-            this.textEdit21.TabIndex = 99;
+            this.txtIncentivePercent.Location = new System.Drawing.Point(1453, 593);
+            this.txtIncentivePercent.Name = "txtIncentivePercent";
+            this.txtIncentivePercent.Properties.BeepOnError = false;
+            this.txtIncentivePercent.Size = new System.Drawing.Size(67, 20);
+            this.txtIncentivePercent.TabIndex = 99;
+            this.txtIncentivePercent.EditValueChanged += new System.EventHandler(this.radioGroup2_SelectedIndexChanged);
             // 
             // labelControl20
             // 
@@ -534,12 +667,12 @@ namespace BillPlex
             this.labelControl20.TabIndex = 98;
             this.labelControl20.Text = "Grant Total";
             // 
-            // textEdit20
+            // txtSuperVisor
             // 
-            this.textEdit20.Location = new System.Drawing.Point(1453, 519);
-            this.textEdit20.Name = "textEdit20";
-            this.textEdit20.Size = new System.Drawing.Size(67, 20);
-            this.textEdit20.TabIndex = 97;
+            this.txtSuperVisor.Location = new System.Drawing.Point(1453, 519);
+            this.txtSuperVisor.Name = "txtSuperVisor";
+            this.txtSuperVisor.Size = new System.Drawing.Size(67, 20);
+            this.txtSuperVisor.TabIndex = 97;
             // 
             // labelControl19
             // 
@@ -611,110 +744,123 @@ namespace BillPlex
             this.labelControl13.TabIndex = 90;
             this.labelControl13.Text = "Total";
             // 
-            // textEdit19
+            // txtNetAmount
             // 
-            this.textEdit19.Location = new System.Drawing.Point(1590, 801);
-            this.textEdit19.Name = "textEdit19";
-            this.textEdit19.Size = new System.Drawing.Size(200, 20);
-            this.textEdit19.TabIndex = 89;
+            this.txtNetAmount.Location = new System.Drawing.Point(1590, 801);
+            this.txtNetAmount.Name = "txtNetAmount";
+            this.txtNetAmount.Size = new System.Drawing.Size(200, 20);
+            this.txtNetAmount.TabIndex = 89;
+            this.txtNetAmount.EditValueChanged += new System.EventHandler(this.txtSubTotal1_EditValueChanged);
             // 
-            // textEdit18
+            // txtAdvance
             // 
-            this.textEdit18.Location = new System.Drawing.Point(1590, 772);
-            this.textEdit18.Name = "textEdit18";
-            this.textEdit18.Size = new System.Drawing.Size(200, 20);
-            this.textEdit18.TabIndex = 88;
+            this.txtAdvance.Location = new System.Drawing.Point(1590, 772);
+            this.txtAdvance.Name = "txtAdvance";
+            this.txtAdvance.Size = new System.Drawing.Size(200, 20);
+            this.txtAdvance.TabIndex = 88;
+            this.txtAdvance.EditValueChanged += new System.EventHandler(this.txtSubTotal1_EditValueChanged);
             // 
-            // textEdit17
+            // txtFinalTotal
             // 
-            this.textEdit17.Location = new System.Drawing.Point(1590, 737);
-            this.textEdit17.Name = "textEdit17";
-            this.textEdit17.Size = new System.Drawing.Size(200, 20);
-            this.textEdit17.TabIndex = 87;
+            this.txtFinalTotal.Location = new System.Drawing.Point(1590, 737);
+            this.txtFinalTotal.Name = "txtFinalTotal";
+            this.txtFinalTotal.Size = new System.Drawing.Size(200, 20);
+            this.txtFinalTotal.TabIndex = 87;
+            this.txtFinalTotal.EditValueChanged += new System.EventHandler(this.txtSubTotal1_EditValueChanged);
             // 
-            // textEdit16
+            // txtTotalBouns
             // 
-            this.textEdit16.Location = new System.Drawing.Point(1590, 701);
-            this.textEdit16.Name = "textEdit16";
-            this.textEdit16.Size = new System.Drawing.Size(200, 20);
-            this.textEdit16.TabIndex = 86;
+            this.txtTotalBouns.Location = new System.Drawing.Point(1590, 701);
+            this.txtTotalBouns.Name = "txtTotalBouns";
+            this.txtTotalBouns.Size = new System.Drawing.Size(200, 20);
+            this.txtTotalBouns.TabIndex = 86;
+            this.txtTotalBouns.EditValueChanged += new System.EventHandler(this.txtSubTotal1_EditValueChanged);
             // 
-            // textEdit15
+            // TxtTotalESI
             // 
-            this.textEdit15.Location = new System.Drawing.Point(1590, 664);
-            this.textEdit15.Name = "textEdit15";
-            this.textEdit15.Size = new System.Drawing.Size(200, 20);
-            this.textEdit15.TabIndex = 85;
+            this.TxtTotalESI.Location = new System.Drawing.Point(1590, 664);
+            this.TxtTotalESI.Name = "TxtTotalESI";
+            this.TxtTotalESI.Size = new System.Drawing.Size(200, 20);
+            this.TxtTotalESI.TabIndex = 85;
+            this.TxtTotalESI.EditValueChanged += new System.EventHandler(this.txtSubTotal1_EditValueChanged);
             // 
-            // textEdit14
+            // txtPFText
             // 
-            this.textEdit14.Location = new System.Drawing.Point(1590, 629);
-            this.textEdit14.Name = "textEdit14";
-            this.textEdit14.Size = new System.Drawing.Size(200, 20);
-            this.textEdit14.TabIndex = 84;
+            this.txtPFText.Location = new System.Drawing.Point(1590, 629);
+            this.txtPFText.Name = "txtPFText";
+            this.txtPFText.Size = new System.Drawing.Size(200, 20);
+            this.txtPFText.TabIndex = 84;
+            this.txtPFText.EditValueChanged += new System.EventHandler(this.txtSubTotal1_EditValueChanged);
             // 
-            // textEdit13
+            // txtProductionIncentive
             // 
-            this.textEdit13.Location = new System.Drawing.Point(1590, 593);
-            this.textEdit13.Name = "textEdit13";
-            this.textEdit13.Size = new System.Drawing.Size(200, 20);
-            this.textEdit13.TabIndex = 83;
+            this.txtProductionIncentive.Location = new System.Drawing.Point(1590, 593);
+            this.txtProductionIncentive.Name = "txtProductionIncentive";
+            this.txtProductionIncentive.Size = new System.Drawing.Size(200, 20);
+            this.txtProductionIncentive.TabIndex = 83;
+            this.txtProductionIncentive.EditValueChanged += new System.EventHandler(this.txtSubTotal1_EditValueChanged);
             // 
-            // textEdit12
+            // txtGrandTotal
             // 
-            this.textEdit12.Location = new System.Drawing.Point(1590, 554);
-            this.textEdit12.Name = "textEdit12";
-            this.textEdit12.Size = new System.Drawing.Size(200, 20);
-            this.textEdit12.TabIndex = 82;
+            this.txtGrandTotal.Location = new System.Drawing.Point(1590, 554);
+            this.txtGrandTotal.Name = "txtGrandTotal";
+            this.txtGrandTotal.Size = new System.Drawing.Size(200, 20);
+            this.txtGrandTotal.TabIndex = 82;
+            this.txtGrandTotal.EditValueChanged += new System.EventHandler(this.txtSubTotal1_EditValueChanged);
             // 
-            // textEdit11
+            // txtSupVisorTotal
             // 
-            this.textEdit11.Location = new System.Drawing.Point(1590, 519);
-            this.textEdit11.Name = "textEdit11";
-            this.textEdit11.Size = new System.Drawing.Size(200, 20);
-            this.textEdit11.TabIndex = 81;
+            this.txtSupVisorTotal.Location = new System.Drawing.Point(1590, 519);
+            this.txtSupVisorTotal.Name = "txtSupVisorTotal";
+            this.txtSupVisorTotal.Size = new System.Drawing.Size(200, 20);
+            this.txtSupVisorTotal.TabIndex = 81;
+            this.txtSupVisorTotal.EditValueChanged += new System.EventHandler(this.txtSubTotal1_EditValueChanged);
             // 
-            // textEdit10
+            // txtSubTotal2
             // 
-            this.textEdit10.Location = new System.Drawing.Point(1590, 479);
-            this.textEdit10.Name = "textEdit10";
-            this.textEdit10.Size = new System.Drawing.Size(200, 20);
-            this.textEdit10.TabIndex = 80;
+            this.txtSubTotal2.Location = new System.Drawing.Point(1590, 479);
+            this.txtSubTotal2.Name = "txtSubTotal2";
+            this.txtSubTotal2.Size = new System.Drawing.Size(200, 20);
+            this.txtSubTotal2.TabIndex = 80;
+            this.txtSubTotal2.EditValueChanged += new System.EventHandler(this.txtSubTotal1_EditValueChanged);
             // 
-            // textEdit9
+            // txtIncentives
             // 
-            this.textEdit9.Location = new System.Drawing.Point(1590, 443);
-            this.textEdit9.Name = "textEdit9";
-            this.textEdit9.Size = new System.Drawing.Size(200, 20);
-            this.textEdit9.TabIndex = 79;
+            this.txtIncentives.Location = new System.Drawing.Point(1590, 443);
+            this.txtIncentives.Name = "txtIncentives";
+            this.txtIncentives.Size = new System.Drawing.Size(200, 20);
+            this.txtIncentives.TabIndex = 79;
+            this.txtIncentives.EditValueChanged += new System.EventHandler(this.txtSubTotal1_EditValueChanged);
             // 
-            // textEdit8
+            // txtConveyance
             // 
-            this.textEdit8.Location = new System.Drawing.Point(1590, 407);
-            this.textEdit8.Name = "textEdit8";
-            this.textEdit8.Size = new System.Drawing.Size(200, 20);
-            this.textEdit8.TabIndex = 78;
+            this.txtConveyance.Location = new System.Drawing.Point(1590, 407);
+            this.txtConveyance.Name = "txtConveyance";
+            this.txtConveyance.Size = new System.Drawing.Size(200, 20);
+            this.txtConveyance.TabIndex = 78;
+            this.txtConveyance.EditValueChanged += new System.EventHandler(this.txtSubTotal1_EditValueChanged);
             // 
-            // textEdit7
+            // txtSubTotal1
             // 
-            this.textEdit7.Location = new System.Drawing.Point(1590, 372);
-            this.textEdit7.Name = "textEdit7";
-            this.textEdit7.Size = new System.Drawing.Size(200, 20);
-            this.textEdit7.TabIndex = 77;
+            this.txtSubTotal1.Location = new System.Drawing.Point(1590, 372);
+            this.txtSubTotal1.Name = "txtSubTotal1";
+            this.txtSubTotal1.Size = new System.Drawing.Size(200, 20);
+            this.txtSubTotal1.TabIndex = 77;
+            this.txtSubTotal1.EditValueChanged += new System.EventHandler(this.txtSubTotal1_EditValueChanged);
             // 
-            // textEdit6
+            // txtDeducation
             // 
-            this.textEdit6.Location = new System.Drawing.Point(1590, 337);
-            this.textEdit6.Name = "textEdit6";
-            this.textEdit6.Size = new System.Drawing.Size(200, 20);
-            this.textEdit6.TabIndex = 76;
+            this.txtDeducation.Location = new System.Drawing.Point(1590, 337);
+            this.txtDeducation.Name = "txtDeducation";
+            this.txtDeducation.Size = new System.Drawing.Size(200, 20);
+            this.txtDeducation.TabIndex = 76;
             // 
-            // textEdit5
+            // txtTotal
             // 
-            this.textEdit5.Location = new System.Drawing.Point(1590, 301);
-            this.textEdit5.Name = "textEdit5";
-            this.textEdit5.Size = new System.Drawing.Size(200, 20);
-            this.textEdit5.TabIndex = 75;
+            this.txtTotal.Location = new System.Drawing.Point(1590, 301);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(200, 20);
+            this.txtTotal.TabIndex = 75;
             // 
             // btn_Print
             // 
@@ -738,16 +884,20 @@ namespace BillPlex
             this.labelControl12.TabIndex = 73;
             this.labelControl12.Text = "Order By";
             // 
-            // comboBoxEdit7
+            // drpOrderBy
             // 
-            this.comboBoxEdit7.EnterMoveNextControl = true;
-            this.comboBoxEdit7.Location = new System.Drawing.Point(1590, 227);
-            this.comboBoxEdit7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBoxEdit7.Name = "comboBoxEdit7";
-            this.comboBoxEdit7.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.drpOrderBy.EnterMoveNextControl = true;
+            this.drpOrderBy.Location = new System.Drawing.Point(1590, 227);
+            this.drpOrderBy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.drpOrderBy.Name = "drpOrderBy";
+            this.drpOrderBy.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit7.Size = new System.Drawing.Size(200, 20);
-            this.comboBoxEdit7.TabIndex = 72;
+            this.drpOrderBy.Properties.Items.AddRange(new object[] {
+            "Ascending",
+            "Descending"});
+            this.drpOrderBy.Size = new System.Drawing.Size(200, 20);
+            this.drpOrderBy.TabIndex = 72;
+            this.drpOrderBy.SelectedIndexChanged += new System.EventHandler(this.drpOrderBy_SelectedIndexChanged);
             // 
             // labelControl11
             // 
@@ -759,42 +909,28 @@ namespace BillPlex
             this.labelControl11.TabIndex = 71;
             this.labelControl11.Text = "Sort By";
             // 
-            // comboBoxEdit6
+            // drpSortBy
             // 
-            this.comboBoxEdit6.EnterMoveNextControl = true;
-            this.comboBoxEdit6.Location = new System.Drawing.Point(1590, 189);
-            this.comboBoxEdit6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBoxEdit6.Name = "comboBoxEdit6";
-            this.comboBoxEdit6.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.drpSortBy.EnterMoveNextControl = true;
+            this.drpSortBy.Location = new System.Drawing.Point(1590, 189);
+            this.drpSortBy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.drpSortBy.Name = "drpSortBy";
+            this.drpSortBy.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit6.Size = new System.Drawing.Size(200, 20);
-            this.comboBoxEdit6.TabIndex = 7;
-            // 
-            // gridControl1
-            // 
-            this.gridControl1.Location = new System.Drawing.Point(5, 178);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1366, 321);
-            this.gridControl1.TabIndex = 6;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
+            this.drpSortBy.Size = new System.Drawing.Size(200, 20);
+            this.drpSortBy.TabIndex = 7;
+            this.drpSortBy.SelectedIndexChanged += new System.EventHandler(this.drpSortBy_SelectedIndexChanged);
             // 
             // panelControl5
             // 
             this.panelControl5.Controls.Add(this.labelControl10);
             this.panelControl5.Controls.Add(this.labelControl9);
-            this.panelControl5.Controls.Add(this.textEdit4);
-            this.panelControl5.Controls.Add(this.textEdit3);
-            this.panelControl5.Controls.Add(this.textEdit2);
+            this.panelControl5.Controls.Add(this.txtSubClient);
+            this.panelControl5.Controls.Add(this.txtClientName);
+            this.panelControl5.Controls.Add(this.txtDirector);
             this.panelControl5.Controls.Add(this.labelControl8);
-            this.panelControl5.Controls.Add(this.comboBoxEdit5);
-            this.panelControl5.Controls.Add(this.comboBoxEdit4);
+            this.panelControl5.Controls.Add(this.drpSubClient);
+            this.panelControl5.Controls.Add(this.drpCCompany);
             this.panelControl5.Controls.Add(this.drpMainCompany);
             this.panelControl5.Controls.Add(this.labelControl32);
             this.panelControl5.Controls.Add(this.labelControl7);
@@ -824,26 +960,26 @@ namespace BillPlex
             this.labelControl9.TabIndex = 69;
             this.labelControl9.Text = "Client Name";
             // 
-            // textEdit4
+            // txtSubClient
             // 
-            this.textEdit4.Location = new System.Drawing.Point(694, 75);
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Size = new System.Drawing.Size(200, 20);
-            this.textEdit4.TabIndex = 68;
+            this.txtSubClient.Location = new System.Drawing.Point(694, 75);
+            this.txtSubClient.Name = "txtSubClient";
+            this.txtSubClient.Size = new System.Drawing.Size(200, 20);
+            this.txtSubClient.TabIndex = 68;
             // 
-            // textEdit3
+            // txtClientName
             // 
-            this.textEdit3.Location = new System.Drawing.Point(694, 38);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(200, 20);
-            this.textEdit3.TabIndex = 67;
+            this.txtClientName.Location = new System.Drawing.Point(694, 38);
+            this.txtClientName.Name = "txtClientName";
+            this.txtClientName.Size = new System.Drawing.Size(200, 20);
+            this.txtClientName.TabIndex = 67;
             // 
-            // textEdit2
+            // txtDirector
             // 
-            this.textEdit2.Location = new System.Drawing.Point(694, 5);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(200, 20);
-            this.textEdit2.TabIndex = 66;
+            this.txtDirector.Location = new System.Drawing.Point(694, 5);
+            this.txtDirector.Name = "txtDirector";
+            this.txtDirector.Size = new System.Drawing.Size(200, 20);
+            this.txtDirector.TabIndex = 66;
             // 
             // labelControl8
             // 
@@ -855,27 +991,29 @@ namespace BillPlex
             this.labelControl8.TabIndex = 6;
             this.labelControl8.Text = "Director";
             // 
-            // comboBoxEdit5
+            // drpSubClient
             // 
-            this.comboBoxEdit5.EnterMoveNextControl = true;
-            this.comboBoxEdit5.Location = new System.Drawing.Point(241, 80);
-            this.comboBoxEdit5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBoxEdit5.Name = "comboBoxEdit5";
-            this.comboBoxEdit5.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.drpSubClient.EnterMoveNextControl = true;
+            this.drpSubClient.Location = new System.Drawing.Point(241, 80);
+            this.drpSubClient.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.drpSubClient.Name = "drpSubClient";
+            this.drpSubClient.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit5.Size = new System.Drawing.Size(234, 20);
-            this.comboBoxEdit5.TabIndex = 65;
+            this.drpSubClient.Size = new System.Drawing.Size(234, 20);
+            this.drpSubClient.TabIndex = 65;
+            this.drpSubClient.SelectedIndexChanged += new System.EventHandler(this.drpSubClient_SelectedIndexChanged);
             // 
-            // comboBoxEdit4
+            // drpCCompany
             // 
-            this.comboBoxEdit4.EnterMoveNextControl = true;
-            this.comboBoxEdit4.Location = new System.Drawing.Point(241, 38);
-            this.comboBoxEdit4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBoxEdit4.Name = "comboBoxEdit4";
-            this.comboBoxEdit4.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.drpCCompany.EnterMoveNextControl = true;
+            this.drpCCompany.Location = new System.Drawing.Point(241, 38);
+            this.drpCCompany.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.drpCCompany.Name = "drpCCompany";
+            this.drpCCompany.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit4.Size = new System.Drawing.Size(234, 20);
-            this.comboBoxEdit4.TabIndex = 64;
+            this.drpCCompany.Size = new System.Drawing.Size(234, 20);
+            this.drpCCompany.TabIndex = 64;
+            this.drpCCompany.SelectedIndexChanged += new System.EventHandler(this.drpCCompany_SelectedIndexChanged);
             // 
             // drpMainCompany
             // 
@@ -887,6 +1025,7 @@ namespace BillPlex
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.drpMainCompany.Size = new System.Drawing.Size(234, 20);
             this.drpMainCompany.TabIndex = 6;
+            this.drpMainCompany.EditValueChanged += new System.EventHandler(this.drpMainCompany_EditValueChanged);
             // 
             // labelControl32
             // 
@@ -928,7 +1067,7 @@ namespace BillPlex
             // 
             // radCompanyWise
             // 
-            this.radCompanyWise.Location = new System.Drawing.Point(5, 9);
+            this.radCompanyWise.Location = new System.Drawing.Point(5, 7);
             this.radCompanyWise.Name = "radCompanyWise";
             this.radCompanyWise.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.radCompanyWise.Properties.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -952,8 +1091,8 @@ namespace BillPlex
             this.panelControl3.Controls.Add(this.labelControl4);
             this.panelControl3.Controls.Add(this.labelControl3);
             this.panelControl3.Controls.Add(this.labelControl2);
-            this.panelControl3.Controls.Add(this.drpFrom);
-            this.panelControl3.Controls.Add(this.comboBoxEdit3);
+            this.panelControl3.Controls.Add(this.ddFrom);
+            this.panelControl3.Controls.Add(this.ddTo);
             this.panelControl3.Controls.Add(this.comboBoxEdit1);
             this.panelControl3.Location = new System.Drawing.Point(5, 68);
             this.panelControl3.Name = "panelControl3";
@@ -1015,43 +1154,44 @@ namespace BillPlex
             this.labelControl2.TabIndex = 3;
             this.labelControl2.Text = "Bill No";
             // 
-            // drpFrom
+            // ddFrom
             // 
-            this.drpFrom.EditValue = null;
-            this.drpFrom.Location = new System.Drawing.Point(377, 6);
-            this.drpFrom.Name = "drpFrom";
-            this.drpFrom.Properties.BeepOnError = false;
-            this.drpFrom.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.ddFrom.EditValue = null;
+            this.ddFrom.Location = new System.Drawing.Point(377, 6);
+            this.ddFrom.Name = "ddFrom";
+            this.ddFrom.Properties.BeepOnError = false;
+            this.ddFrom.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.drpFrom.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.ddFrom.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.drpFrom.Properties.DisplayFormat.FormatString = "";
-            this.drpFrom.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.drpFrom.Properties.EditFormat.FormatString = "";
-            this.drpFrom.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.drpFrom.Properties.MaskSettings.Set("mask", "d");
-            this.drpFrom.Properties.UseMaskAsDisplayFormat = true;
-            this.drpFrom.Size = new System.Drawing.Size(133, 20);
-            this.drpFrom.TabIndex = 9;
+            this.ddFrom.Properties.DisplayFormat.FormatString = "";
+            this.ddFrom.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.ddFrom.Properties.EditFormat.FormatString = "";
+            this.ddFrom.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.ddFrom.Properties.MaskSettings.Set("mask", "d");
+            this.ddFrom.Properties.UseMaskAsDisplayFormat = true;
+            this.ddFrom.Size = new System.Drawing.Size(133, 20);
+            this.ddFrom.TabIndex = 9;
             // 
-            // comboBoxEdit3
+            // ddTo
             // 
-            this.comboBoxEdit3.EditValue = null;
-            this.comboBoxEdit3.Location = new System.Drawing.Point(377, 48);
-            this.comboBoxEdit3.Name = "comboBoxEdit3";
-            this.comboBoxEdit3.Properties.BeepOnError = false;
-            this.comboBoxEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.ddTo.EditValue = null;
+            this.ddTo.Location = new System.Drawing.Point(377, 48);
+            this.ddTo.Name = "ddTo";
+            this.ddTo.Properties.BeepOnError = false;
+            this.ddTo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit3.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.ddTo.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit3.Properties.DisplayFormat.FormatString = "";
-            this.comboBoxEdit3.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.comboBoxEdit3.Properties.EditFormat.FormatString = "";
-            this.comboBoxEdit3.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.comboBoxEdit3.Properties.MaskSettings.Set("mask", "d");
-            this.comboBoxEdit3.Properties.UseMaskAsDisplayFormat = true;
-            this.comboBoxEdit3.Size = new System.Drawing.Size(133, 20);
-            this.comboBoxEdit3.TabIndex = 10;
+            this.ddTo.Properties.DisplayFormat.FormatString = "";
+            this.ddTo.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.ddTo.Properties.EditFormat.FormatString = "";
+            this.ddTo.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.ddTo.Properties.MaskSettings.Set("mask", "d");
+            this.ddTo.Properties.UseMaskAsDisplayFormat = true;
+            this.ddTo.Size = new System.Drawing.Size(133, 20);
+            this.ddTo.TabIndex = 10;
+            this.ddTo.EditValueChanged += new System.EventHandler(this.comboBoxEdit3_EditValueChanged);
             // 
             // comboBoxEdit1
             // 
@@ -1095,8 +1235,8 @@ namespace BillPlex
             // 
             // FrmDirectLabourBill
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1838, 857);
             this.Controls.Add(this.panelControl1);
             this.MinimizeBox = false;
@@ -1104,55 +1244,56 @@ namespace BillPlex
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmDirectLabourBill";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmDirectLabourBill_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl8)).EndInit();
             this.panelControl8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit8.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl9)).EndInit();
+            this.panelControl8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.calcEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
             this.panelControl6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).EndInit();
             this.panelControl7.ResumeLayout(false);
             this.panelControl7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radioGroup6.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroup5.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroup4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroup2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroup3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit24.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit23.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit22.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit21.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit20.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit19.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit18.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit17.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit16.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit15.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit14.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit13.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit12.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit11.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit10.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit9.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit7.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit6.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radBonus.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radESI.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radProduction.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radPF.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBonus.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtESI.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtpf.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIncentivePercent.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSuperVisor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNetAmount.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAdvance.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFinalTotal.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTotalBouns.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtTotalESI.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPFText.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtProductionIncentive.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGrandTotal.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSupVisorTotal.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSubTotal2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIncentives.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtConveyance.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSubTotal1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDeducation.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTotal.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpOrderBy.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpSortBy.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
             this.panelControl5.ResumeLayout(false);
             this.panelControl5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit5.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSubClient.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtClientName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDirector.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpSubClient.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpCCompany.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpMainCompany.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
@@ -1161,10 +1302,10 @@ namespace BillPlex
             this.panelControl3.ResumeLayout(false);
             this.panelControl3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtBillNo.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.drpFrom.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.drpFrom.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit3.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddFrom.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddFrom.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddTo.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddTo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
@@ -1185,8 +1326,8 @@ namespace BillPlex
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.DateEdit drpFrom;
-        private DevExpress.XtraEditors.DateEdit comboBoxEdit3;
+        private DevExpress.XtraEditors.DateEdit ddFrom;
+        private DevExpress.XtraEditors.DateEdit ddTo;
         private DevExpress.XtraEditors.DateEdit comboBoxEdit1;
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraEditors.RadioGroup radCompanyWise;
@@ -1194,37 +1335,35 @@ namespace BillPlex
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.LabelControl labelControl32;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit5;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit4;
+        private DevExpress.XtraEditors.ComboBoxEdit drpSubClient;
+        private DevExpress.XtraEditors.ComboBoxEdit drpCCompany;
         private DevExpress.XtraEditors.ComboBoxEdit drpMainCompany;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private DevExpress.XtraEditors.TextEdit txtSubClient;
+        private DevExpress.XtraEditors.TextEdit txtClientName;
+        private DevExpress.XtraEditors.TextEdit txtDirector;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.LabelControl labelControl12;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit7;
+        private DevExpress.XtraEditors.ComboBoxEdit drpOrderBy;
         private DevExpress.XtraEditors.LabelControl labelControl11;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit6;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraEditors.ComboBoxEdit drpSortBy;
         private DevExpress.XtraEditors.SimpleButton btn_Print;
-        private DevExpress.XtraEditors.TextEdit textEdit16;
-        private DevExpress.XtraEditors.TextEdit textEdit15;
-        private DevExpress.XtraEditors.TextEdit textEdit14;
-        private DevExpress.XtraEditors.TextEdit textEdit13;
-        private DevExpress.XtraEditors.TextEdit textEdit12;
-        private DevExpress.XtraEditors.TextEdit textEdit11;
-        private DevExpress.XtraEditors.TextEdit textEdit10;
-        private DevExpress.XtraEditors.TextEdit textEdit9;
-        private DevExpress.XtraEditors.TextEdit textEdit8;
-        private DevExpress.XtraEditors.TextEdit textEdit7;
-        private DevExpress.XtraEditors.TextEdit textEdit6;
-        private DevExpress.XtraEditors.TextEdit textEdit5;
-        private DevExpress.XtraEditors.TextEdit textEdit19;
-        private DevExpress.XtraEditors.TextEdit textEdit18;
-        private DevExpress.XtraEditors.TextEdit textEdit17;
+        private DevExpress.XtraEditors.TextEdit txtTotalBouns;
+        private DevExpress.XtraEditors.TextEdit TxtTotalESI;
+        private DevExpress.XtraEditors.TextEdit txtPFText;
+        private DevExpress.XtraEditors.TextEdit txtProductionIncentive;
+        private DevExpress.XtraEditors.TextEdit txtGrandTotal;
+        private DevExpress.XtraEditors.TextEdit txtSupVisorTotal;
+        private DevExpress.XtraEditors.TextEdit txtSubTotal2;
+        private DevExpress.XtraEditors.TextEdit txtIncentives;
+        private DevExpress.XtraEditors.TextEdit txtConveyance;
+        private DevExpress.XtraEditors.TextEdit txtSubTotal1;
+        private DevExpress.XtraEditors.TextEdit txtDeducation;
+        private DevExpress.XtraEditors.TextEdit txtTotal;
+        private DevExpress.XtraEditors.TextEdit txtNetAmount;
+        private DevExpress.XtraEditors.TextEdit txtAdvance;
+        private DevExpress.XtraEditors.TextEdit txtFinalTotal;
         private DevExpress.XtraEditors.LabelControl labelControl19;
         private DevExpress.XtraEditors.LabelControl labelControl18;
         private DevExpress.XtraEditors.LabelControl labelControl17;
@@ -1232,12 +1371,12 @@ namespace BillPlex
         private DevExpress.XtraEditors.LabelControl labelControl15;
         private DevExpress.XtraEditors.LabelControl labelControl14;
         private DevExpress.XtraEditors.LabelControl labelControl13;
-        private DevExpress.XtraEditors.TextEdit textEdit20;
+        private DevExpress.XtraEditors.TextEdit txtSuperVisor;
         private DevExpress.XtraEditors.LabelControl labelControl20;
-        private DevExpress.XtraEditors.TextEdit textEdit24;
-        private DevExpress.XtraEditors.TextEdit textEdit23;
-        private DevExpress.XtraEditors.TextEdit textEdit22;
-        private DevExpress.XtraEditors.TextEdit textEdit21;
+        private DevExpress.XtraEditors.TextEdit txtBonus;
+        private DevExpress.XtraEditors.TextEdit txtESI;
+        private DevExpress.XtraEditors.TextEdit txtpf;
+        private DevExpress.XtraEditors.TextEdit txtIncentivePercent;
         private DevExpress.XtraEditors.LabelControl labelControl21;
         private DevExpress.XtraEditors.LabelControl labelControl24;
         private DevExpress.XtraEditors.LabelControl labelControl23;
@@ -1245,10 +1384,10 @@ namespace BillPlex
         private DevExpress.XtraEditors.LabelControl labelControl27;
         private DevExpress.XtraEditors.LabelControl labelControl26;
         private DevExpress.XtraEditors.LabelControl labelControl25;
-        private DevExpress.XtraEditors.RadioGroup radioGroup5;
-        private DevExpress.XtraEditors.RadioGroup radioGroup4;
-        private DevExpress.XtraEditors.RadioGroup radioGroup2;
-        private DevExpress.XtraEditors.RadioGroup radioGroup3;
+        private DevExpress.XtraEditors.RadioGroup radBonus;
+        private DevExpress.XtraEditors.RadioGroup radESI;
+        private DevExpress.XtraEditors.RadioGroup radProduction;
+        private DevExpress.XtraEditors.RadioGroup radPF;
         private DevExpress.XtraEditors.LabelControl labelControl28;
         private DevExpress.XtraEditors.LabelControl labelControl31;
         private DevExpress.XtraEditors.LabelControl labelControl30;
@@ -1258,7 +1397,18 @@ namespace BillPlex
         private DevExpress.XtraEditors.PanelControl panelControl7;
         private DevExpress.XtraEditors.LabelControl labelControl33;
         private DevExpress.XtraEditors.PanelControl panelControl8;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit8;
-        private DevExpress.XtraEditors.PanelControl panelControl9;
+        private DevExpress.XtraEditors.LabelControl labelControl34;
+        private DevExpress.XtraEditors.CalcEdit calcEdit1;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn colModelName;
+        private DevExpress.XtraGrid.Columns.GridColumn colProductName;
+        private DevExpress.XtraGrid.Columns.GridColumn colProductSize;
+        private DevExpress.XtraGrid.Columns.GridColumn colQuantityPiece;
+        private DevExpress.XtraGrid.Columns.GridColumn colorderQty;
+        private DevExpress.XtraGrid.Columns.GridColumn colTotalQty;
+        private DevExpress.XtraGrid.Columns.GridColumn colNetAmt;
+        private DevExpress.XtraGrid.Columns.GridColumn colTotalAmt;
     }
 }
