@@ -23,7 +23,7 @@ SET NOCOUNT ON;
 					,ProductName
 					,JGDC.ProductSize
 					,QuantityPiece
-					,orderQty
+					,WagesforEmp
 					,[TotalQty]
 					,NetAmt
 					,TotalAmt

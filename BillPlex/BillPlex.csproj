@@ -359,6 +359,12 @@
     <Compile Include="IncentiveMaster.Designer.cs">
       <DependentUpon>IncentiveMaster.cs</DependentUpon>
     </Compile>
+    <Compile Include="LabourBill.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LabourBill.Designer.cs">
+      <DependentUpon>LabourBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="NavBar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -495,6 +501,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="IncentiveMaster.resx">
       <DependentUpon>IncentiveMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LabourBill.resx">
+      <DependentUpon>LabourBill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NavBar.resx">
       <DependentUpon>NavBar.cs</DependentUpon>
