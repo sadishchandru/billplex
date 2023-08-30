@@ -360,5 +360,10 @@ namespace BillPlex
             //total = deductionTotal - Convert.ToDecimal(txtAdvance.Text);
             //txtNetAmount.Text = total.ToString();
         }
+
+        private void drpCCompany_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
     }
 }

@@ -32,11 +32,23 @@ namespace BillPlex
             this.components = new System.ComponentModel.Container();
             DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
             DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDirectLabourBill));
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter3 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter4 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter5 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter6 = new DevExpress.DataAccess.Sql.QueryParameter();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colModelName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProductName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProductSize = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colQuantityPiece = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colWagesforEmp = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTotalQty = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNetAmt = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTotalAmt = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl8 = new DevExpress.XtraEditors.PanelControl();
             this.calcEdit1 = new DevExpress.XtraEditors.CalcEdit();
             this.labelControl34 = new DevExpress.XtraEditors.LabelControl();
@@ -118,14 +130,6 @@ namespace BillPlex
             this.ddDate = new DevExpress.XtraEditors.DateEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.colModelName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colProductName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colProductSize = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colQuantityPiece = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colWagesforEmp = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTotalQty = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNetAmt = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTotalAmt = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -254,10 +258,10 @@ namespace BillPlex
             // 
             this.gridControl1.DataMember = "PRO_GetDirectLabourBill";
             this.gridControl1.DataSource = this.sqlDataSource1;
-            this.gridControl1.Location = new System.Drawing.Point(12, 174);
+            this.gridControl1.Location = new System.Drawing.Point(12, 191);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1385, 341);
+            this.gridControl1.Size = new System.Drawing.Size(1359, 324);
             this.gridControl1.TabIndex = 123;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -267,13 +271,32 @@ namespace BillPlex
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
             storedProcQuery1.Name = "PRO_GetDirectLabourBill";
-            queryParameter1.Name = "@SearchKey";
-            queryParameter1.Type = typeof(string);
+            queryParameter1.Name = "@From";
+            queryParameter1.Type = typeof(System.DateTime);
+            queryParameter1.ValueInfo = "2023-08-01";
+            queryParameter2.Name = "@To";
+            queryParameter2.Type = typeof(System.DateTime);
+            queryParameter2.ValueInfo = "2023-08-30";
+            queryParameter3.Name = "@IsClientWise";
+            queryParameter3.Type = typeof(int);
+            queryParameter3.ValueInfo = "1";
+            queryParameter4.Name = "@MainCompany";
+            queryParameter4.Type = typeof(string);
+            queryParameter5.Name = "@ClientCompany";
+            queryParameter5.Type = typeof(string);
+            queryParameter6.Name = "@SubClientCompany";
+            queryParameter6.Type = typeof(string);
             storedProcQuery1.Parameters.Add(queryParameter1);
+            storedProcQuery1.Parameters.Add(queryParameter2);
+            storedProcQuery1.Parameters.Add(queryParameter3);
+            storedProcQuery1.Parameters.Add(queryParameter4);
+            storedProcQuery1.Parameters.Add(queryParameter5);
+            storedProcQuery1.Parameters.Add(queryParameter6);
             storedProcQuery1.StoredProcName = "PRO_GetDirectLabourBill";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
             storedProcQuery1});
-            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
+            this.sqlDataSource1.ResultSchemaSerializable = "PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlBST19HZXREaXJlY3RMYWJvd" +
+    "XJCaWxsIiAvPjwvRGF0YVNldD4=";
             // 
             // gridView1
             // 
@@ -288,9 +311,65 @@ namespace BillPlex
             this.colTotalAmt});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsBehavior.AlignGroupSummaryInGroupRow = DevExpress.Utils.DefaultBoolean.True;
-            this.gridView1.OptionsMenu.ShowAddNewSummaryItem = DevExpress.Utils.DefaultBoolean.True;
             this.gridView1.OptionsView.ShowFooter = true;
+            // 
+            // colModelName
+            // 
+            this.colModelName.FieldName = "ModelName";
+            this.colModelName.Name = "colModelName";
+            this.colModelName.Visible = true;
+            this.colModelName.VisibleIndex = 0;
+            // 
+            // colProductName
+            // 
+            this.colProductName.FieldName = "ProductName";
+            this.colProductName.Name = "colProductName";
+            this.colProductName.Visible = true;
+            this.colProductName.VisibleIndex = 1;
+            // 
+            // colProductSize
+            // 
+            this.colProductSize.FieldName = "ProductSize";
+            this.colProductSize.Name = "colProductSize";
+            this.colProductSize.Visible = true;
+            this.colProductSize.VisibleIndex = 2;
+            // 
+            // colQuantityPiece
+            // 
+            this.colQuantityPiece.FieldName = "QuantityPiece";
+            this.colQuantityPiece.Name = "colQuantityPiece";
+            this.colQuantityPiece.Visible = true;
+            this.colQuantityPiece.VisibleIndex = 3;
+            // 
+            // colWagesforEmp
+            // 
+            this.colWagesforEmp.FieldName = "WagesforEmp";
+            this.colWagesforEmp.Name = "colWagesforEmp";
+            this.colWagesforEmp.Visible = true;
+            this.colWagesforEmp.VisibleIndex = 4;
+            // 
+            // colTotalQty
+            // 
+            this.colTotalQty.FieldName = "TotalQty";
+            this.colTotalQty.Name = "colTotalQty";
+            this.colTotalQty.Visible = true;
+            this.colTotalQty.VisibleIndex = 5;
+            // 
+            // colNetAmt
+            // 
+            this.colNetAmt.FieldName = "NetAmt";
+            this.colNetAmt.Name = "colNetAmt";
+            this.colNetAmt.Visible = true;
+            this.colNetAmt.VisibleIndex = 6;
+            // 
+            // colTotalAmt
+            // 
+            this.colTotalAmt.FieldName = "TotalAmt";
+            this.colTotalAmt.Name = "colTotalAmt";
+            this.colTotalAmt.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TotalAmt", "Total={0:0.##}")});
+            this.colTotalAmt.Visible = true;
+            this.colTotalAmt.VisibleIndex = 7;
             // 
             // panelControl8
             // 
@@ -956,6 +1035,7 @@ namespace BillPlex
             this.drpCCompany.Size = new System.Drawing.Size(234, 20);
             this.drpCCompany.TabIndex = 64;
             this.drpCCompany.SelectedIndexChanged += new System.EventHandler(this.drpCCompany_SelectedIndexChanged);
+            this.drpCCompany.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.drpCCompany_KeyPress);
             // 
             // drpMainCompany
             // 
@@ -1018,8 +1098,8 @@ namespace BillPlex
             this.radCompanyWise.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.radCompanyWise.Properties.Columns = 1;
             this.radCompanyWise.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Client Company Wise", true, null, "Client Company Wise"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Sub Client Company Wise", true, null, "Sub Client Company Wise")});
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(0)), "Client Company Wise", true, null, "Client Company Wise"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(1)), "Sub Client Company Wise", true, null, "Sub Client Company Wise")});
             this.radCompanyWise.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.radCompanyWise.Properties.LookAndFeel.SkinName = "DevExpress Style";
             this.radCompanyWise.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -1174,62 +1254,6 @@ namespace BillPlex
             this.labelControl1.Size = new System.Drawing.Size(143, 29);
             this.labelControl1.TabIndex = 2;
             this.labelControl1.Text = "Labour Bill";
-            // 
-            // colModelName
-            // 
-            this.colModelName.FieldName = "ModelName";
-            this.colModelName.Name = "colModelName";
-            this.colModelName.Visible = true;
-            this.colModelName.VisibleIndex = 0;
-            // 
-            // colProductName
-            // 
-            this.colProductName.FieldName = "ProductName";
-            this.colProductName.Name = "colProductName";
-            this.colProductName.Visible = true;
-            this.colProductName.VisibleIndex = 1;
-            // 
-            // colProductSize
-            // 
-            this.colProductSize.FieldName = "ProductSize";
-            this.colProductSize.Name = "colProductSize";
-            this.colProductSize.Visible = true;
-            this.colProductSize.VisibleIndex = 2;
-            // 
-            // colQuantityPiece
-            // 
-            this.colQuantityPiece.FieldName = "QuantityPiece";
-            this.colQuantityPiece.Name = "colQuantityPiece";
-            this.colQuantityPiece.Visible = true;
-            this.colQuantityPiece.VisibleIndex = 3;
-            // 
-            // colWagesforEmp
-            // 
-            this.colWagesforEmp.FieldName = "WagesforEmp";
-            this.colWagesforEmp.Name = "colWagesforEmp";
-            this.colWagesforEmp.Visible = true;
-            this.colWagesforEmp.VisibleIndex = 4;
-            // 
-            // colTotalQty
-            // 
-            this.colTotalQty.FieldName = "TotalQty";
-            this.colTotalQty.Name = "colTotalQty";
-            this.colTotalQty.Visible = true;
-            this.colTotalQty.VisibleIndex = 5;
-            // 
-            // colNetAmt
-            // 
-            this.colNetAmt.FieldName = "NetAmt";
-            this.colNetAmt.Name = "colNetAmt";
-            this.colNetAmt.Visible = true;
-            this.colNetAmt.VisibleIndex = 6;
-            // 
-            // colTotalAmt
-            // 
-            this.colTotalAmt.FieldName = "TotalAmt";
-            this.colTotalAmt.Name = "colTotalAmt";
-            this.colTotalAmt.Visible = true;
-            this.colTotalAmt.VisibleIndex = 7;
             // 
             // FrmDirectLabourBill
             // 
