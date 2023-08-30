@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="ClientCompanyBankInfo.cs" />
     <Compile Include="ClientCompanyInfo.cs" />
+    <Compile Include="ClientCompanyReport.cs" />
     <Compile Include="ColorMaster.cs" />
     <Compile Include="Common.cs" />
     <Compile Include="CompanyBankInfo.cs" />
@@ -67,8 +68,10 @@
     <Compile Include="EmployeePersonal.cs" />
     <Compile Include="FinishingProductModel.cs" />
     <Compile Include="IncentiveMasters.cs" />
+    <Compile Include="InDirectLabourBill.cs" />
     <Compile Include="JobGivingWithoutDc.cs" />
     <Compile Include="JobReceived.cs" />
+    <Compile Include="MainCompanyReport.cs" />
     <Compile Include="OrderMasterInfo.cs" />
     <Compile Include="ProductMaster.cs" />
     <Compile Include="ProductModel.cs" />
@@ -79,6 +82,7 @@
     <Compile Include="SizeMaster.cs" />
     <Compile Include="SubClientCompanyBank.cs" />
     <Compile Include="SubClientCompanyInfo.cs" />
+    <Compile Include="SubClientReport.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataLayer\DataLayer.csproj">

@@ -32,6 +32,7 @@ namespace BillPlex
             DirectLabourBillRequest = new DirectLabourBill();
 
             DirectLabourBillRequest.ConnectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
+            ddDate.DateTime = DateTime.Now;
 
             Dictionary<string, bool> dropDownList = new Dictionary<string, bool>        {
                     { "MasterCompanyRequired", true },

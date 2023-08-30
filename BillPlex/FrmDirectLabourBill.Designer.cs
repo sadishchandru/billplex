@@ -30,8 +30,8 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDirectLabourBill));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -123,7 +123,7 @@ namespace BillPlex
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.ddFrom = new DevExpress.XtraEditors.DateEdit();
             this.ddTo = new DevExpress.XtraEditors.DateEdit();
-            this.comboBoxEdit1 = new DevExpress.XtraEditors.DateEdit();
+            this.ddDate = new DevExpress.XtraEditors.DateEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -182,8 +182,8 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.ddFrom.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddTo.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddTo.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             this.SuspendLayout();
@@ -266,13 +266,13 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery2.Name = "PRO_GetDirectLabourBill";
-            queryParameter2.Name = "@SearchKey";
-            queryParameter2.Type = typeof(string);
-            storedProcQuery2.Parameters.Add(queryParameter2);
-            storedProcQuery2.StoredProcName = "PRO_GetDirectLabourBill";
+            storedProcQuery1.Name = "PRO_GetDirectLabourBill";
+            queryParameter1.Name = "@SearchKey";
+            queryParameter1.Type = typeof(string);
+            storedProcQuery1.Parameters.Add(queryParameter1);
+            storedProcQuery1.StoredProcName = "PRO_GetDirectLabourBill";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery2});
+            storedProcQuery1});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // gridView1
@@ -1093,7 +1093,7 @@ namespace BillPlex
             this.panelControl3.Controls.Add(this.labelControl2);
             this.panelControl3.Controls.Add(this.ddFrom);
             this.panelControl3.Controls.Add(this.ddTo);
-            this.panelControl3.Controls.Add(this.comboBoxEdit1);
+            this.panelControl3.Controls.Add(this.ddDate);
             this.panelControl3.Location = new System.Drawing.Point(5, 68);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(527, 82);
@@ -1193,24 +1193,24 @@ namespace BillPlex
             this.ddTo.TabIndex = 10;
             this.ddTo.EditValueChanged += new System.EventHandler(this.comboBoxEdit3_EditValueChanged);
             // 
-            // comboBoxEdit1
+            // ddDate
             // 
-            this.comboBoxEdit1.EditValue = null;
-            this.comboBoxEdit1.Location = new System.Drawing.Point(79, 51);
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.BeepOnError = false;
-            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.ddDate.EditValue = null;
+            this.ddDate.Location = new System.Drawing.Point(79, 51);
+            this.ddDate.Name = "ddDate";
+            this.ddDate.Properties.BeepOnError = false;
+            this.ddDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.ddDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Properties.DisplayFormat.FormatString = "";
-            this.comboBoxEdit1.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.comboBoxEdit1.Properties.EditFormat.FormatString = "";
-            this.comboBoxEdit1.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.comboBoxEdit1.Properties.MaskSettings.Set("mask", "d");
-            this.comboBoxEdit1.Properties.UseMaskAsDisplayFormat = true;
-            this.comboBoxEdit1.Size = new System.Drawing.Size(167, 20);
-            this.comboBoxEdit1.TabIndex = 8;
+            this.ddDate.Properties.DisplayFormat.FormatString = "";
+            this.ddDate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.ddDate.Properties.EditFormat.FormatString = "";
+            this.ddDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.ddDate.Properties.MaskSettings.Set("mask", "d");
+            this.ddDate.Properties.UseMaskAsDisplayFormat = true;
+            this.ddDate.Size = new System.Drawing.Size(167, 20);
+            this.ddDate.TabIndex = 8;
             // 
             // panelControl2
             // 
@@ -1306,8 +1306,8 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.ddFrom.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddTo.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddTo.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddDate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
@@ -1328,7 +1328,7 @@ namespace BillPlex
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.DateEdit ddFrom;
         private DevExpress.XtraEditors.DateEdit ddTo;
-        private DevExpress.XtraEditors.DateEdit comboBoxEdit1;
+        private DevExpress.XtraEditors.DateEdit ddDate;
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraEditors.RadioGroup radCompanyWise;
         private DevExpress.XtraEditors.PanelControl panelControl5;

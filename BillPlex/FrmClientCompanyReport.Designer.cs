@@ -30,6 +30,8 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
+            this.labelSearchIndex = new DevExpress.XtraEditors.LabelControl();
             this.labelMonthlyreportwages = new DevExpress.XtraEditors.LabelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.labelOrderby = new DevExpress.XtraEditors.LabelControl();
@@ -48,12 +50,12 @@ namespace BillPlex
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.txtClientName = new DevExpress.XtraEditors.TextEdit();
             this.drpClientCompany = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
-            this.labelSearchIndex = new DevExpress.XtraEditors.LabelControl();
             this.drpFrom = new DevExpress.XtraEditors.DateEdit();
             this.drpTo = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
+            this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.drpOrderby.Properties)).BeginInit();
@@ -66,8 +68,6 @@ namespace BillPlex
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtClientName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpClientCompany.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
-            this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.drpFrom.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpFrom.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpTo.Properties.CalendarTimeProperties)).BeginInit();
@@ -84,6 +84,25 @@ namespace BillPlex
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1790, 818);
             this.panelControl1.TabIndex = 1;
+            // 
+            // panelControl4
+            // 
+            this.panelControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl4.Controls.Add(this.labelSearchIndex);
+            this.panelControl4.Location = new System.Drawing.Point(14, 167);
+            this.panelControl4.Name = "panelControl4";
+            this.panelControl4.Size = new System.Drawing.Size(217, 42);
+            this.panelControl4.TabIndex = 4;
+            // 
+            // labelSearchIndex
+            // 
+            this.labelSearchIndex.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSearchIndex.Appearance.Options.UseFont = true;
+            this.labelSearchIndex.Location = new System.Drawing.Point(13, 15);
+            this.labelSearchIndex.Name = "labelSearchIndex";
+            this.labelSearchIndex.Size = new System.Drawing.Size(106, 18);
+            this.labelSearchIndex.TabIndex = 0;
+            this.labelSearchIndex.Text = "Search Index";
             // 
             // labelMonthlyreportwages
             // 
@@ -264,25 +283,7 @@ namespace BillPlex
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.drpClientCompany.Size = new System.Drawing.Size(183, 20);
             this.drpClientCompany.TabIndex = 5;
-            // 
-            // panelControl4
-            // 
-            this.panelControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl4.Controls.Add(this.labelSearchIndex);
-            this.panelControl4.Location = new System.Drawing.Point(14, 167);
-            this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(217, 42);
-            this.panelControl4.TabIndex = 4;
-            // 
-            // labelSearchIndex
-            // 
-            this.labelSearchIndex.Appearance.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSearchIndex.Appearance.Options.UseFont = true;
-            this.labelSearchIndex.Location = new System.Drawing.Point(13, 15);
-            this.labelSearchIndex.Name = "labelSearchIndex";
-            this.labelSearchIndex.Size = new System.Drawing.Size(106, 18);
-            this.labelSearchIndex.TabIndex = 0;
-            this.labelSearchIndex.Text = "Search Index";
+            this.drpClientCompany.SelectedIndexChanged += new System.EventHandler(this.drpClientCompany_SelectedIndexChanged);
             // 
             // drpFrom
             // 
@@ -328,9 +329,13 @@ namespace BillPlex
             this.Controls.Add(this.panelControl1);
             this.Name = "FrmClientCompanyReport";
             this.Text = "FrmClientCompanyReport";
+            this.Load += new System.EventHandler(this.FrmClientCompanyReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
+            this.panelControl4.ResumeLayout(false);
+            this.panelControl4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.panelControl3.PerformLayout();
@@ -345,9 +350,6 @@ namespace BillPlex
             this.panelControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtClientName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpClientCompany.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
-            this.panelControl4.ResumeLayout(false);
-            this.panelControl4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.drpFrom.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpFrom.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpTo.Properties.CalendarTimeProperties)).EndInit();
