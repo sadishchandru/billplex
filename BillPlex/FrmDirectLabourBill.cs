@@ -100,40 +100,68 @@ namespace BillPlex
         }
         private void btn_Print_Click(object sender, EventArgs e)
         {
-            //report rep = new report();
-            //rep.RequestParameters = false;
-            //MessageBox.Show("the 'DevExpress.XtraPrinting'Labrary is not fount");
-            //return;
-            //rep.ExportToPdf("Report.pdf");
-            //System.Diagnostics.Process.Start("Report.pdf");
+            string BillNo = txtBillNo.Text;
+            string FromDate = ddFrom.Text;
+            string ToDate = ddTo.Text;
+            string Date = ddDate.Text;
+            string LessDeducation = txtDeducation.Text;
+            string SubTotal1 = txtSubTotal1.Text;
+            string Conveyance = txtConveyance.Text;
+            string Incentives = txtIncentives.Text;
+            string SubTotal2 = txtSubTotal2.Text;
+            string SupVisorTotal = txtSupVisorTotal.Text;
+            string GrandTotal = txtGrandTotal.Text;
+            string ProductIncentive = txtProductionIncentive.Text;
+            string PFText = txtPFText.Text;
+            string TotalESI = TxtTotalESI.Text;
+            string TotalBouns = txtTotalBouns.Text;
+            string FinalTotal = txtFinalTotal.Text;
+            string Advance = txtAdvance.Text;
+            string NetAmount = txtNetAmount.Text;
 
-            //if (!gridControl1.IsPrintingAvailable)
-            //{
-            //MessageBox.Show("The 'DevExpress.XtraPrinting' library is not found", "Error");
-            //return;
-            //}
+            // Create an instance of your report
+            RpLabourBill report = new RpLabourBill(GetLabourBillDataSource(BillNo, FromDate , Date , ToDate,LessDeducation,SubTotal1,Conveyance,Incentives,SubTotal2, 
+                SupVisorTotal,GrandTotal,ProductIncentive,PFText,TotalESI, TotalBouns,FinalTotal,Advance,NetAmount), DirectLabourBillRequest.DirectBillReportList);
 
-            //PrintableComponentLink link = new PrintableComponentLink(new PrintingSystem());
-            //link.Component = gridControl1;
-
-            //link.ShowPreview();
-
-            // Open the Preview window.
-            //gridControl1.ShowPrintPreview();
-
-            if (LabourBill == null)
-            {
-                // Initialize the report if not already done
-                LabourBill = new RpLabourBill(); // Replace with your actual report class
-                //LabourBill.DataSource = sqlDataSource1; // Replace with your actual data source
-                LabourBill.getSqldataSource(DirectLabourBillRequest.DirectBillReportList);
-            }
-
-            ReportPrintTool printTool = new ReportPrintTool(LabourBill);
+            // Show the report preview
+            ReportPrintTool printTool = new ReportPrintTool(report);
             printTool.ShowPreview();
-
         }
+        private List<LabourBillData> GetLabourBillDataSource(string billNo, string fromDate,string date,string todate, string lessdeducation, string subTotal1, string conveyance, string incentives,
+            string grandTotal, string productIncentive, string Subtotal2, string SupVisortotal, string PFtext, string totalESI, string totalbouns, string finaltotal, string advance, string netamount)
+        {
+            // Convert the fromDate to a DateTime if needed
+            string parsedFromDate = fromDate;
+            string parsedToDate = todate;
+            string parsedDate = date;
 
+            List<LabourBillData> dataSource = new List<LabourBillData>
+            {
+                new LabourBillData
+                {
+                    BillNo = billNo,
+                    FromDate = parsedFromDate,
+                    ToDate = parsedToDate,
+                    Date = parsedDate,
+                    LessDeducation = lessdeducation,
+                    SubTotal1 = subTotal1,
+                    Conveyance = conveyance,
+                    Incentives = incentives,
+                    SubTotal2 = Subtotal2,
+                    SupVisorTotal = SupVisortotal,
+                    GrandTotal = grandTotal,
+                    ProductIncentive = productIncentive,
+                    PFText = PFtext,
+                    TotalESI = totalESI,
+                    TotalBouns = totalbouns,
+                    FinalTotal = finaltotal,
+                    Advance = advance,
+                    NetAmount = netamount
+                }
+            };
+
+            return dataSource;
+        }
         private void drpMainCompany_EditValueChanged(object sender, EventArgs e)
         {
             string selectedItem = (string)drpMainCompany.SelectedItem;
