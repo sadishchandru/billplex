@@ -29,6 +29,7 @@ namespace BillPlex
         public FrmDirectLabourBill()
         {
             InitializeComponent();
+            InitializeDataSource();
             DirectLabourBillRequest = new DirectLabourBill();
 
             DirectLabourBillRequest.ConnectionString = ConfigurationManager.ConnectionStrings["BillPlex"].ConnectionString;
@@ -176,7 +177,7 @@ namespace BillPlex
 
             //// Apply the date range filter
             //gridView.ActiveFilterString = $"[sqlDataSource1] >= #{fromDate.ToString("MM/dd/yyyy")}# AND [sqlDataSource1] <= #{toDate.ToString("MM/dd/yyyy")}#";
-            DisplayFooterTotal();
+            //DisplayFooterTotal();
         }
 
         private void FrmDirectLabourBill_Load(object sender, EventArgs e)
@@ -363,7 +364,57 @@ namespace BillPlex
 
         private void drpCCompany_KeyPress(object sender, KeyPressEventArgs e)
         {
+            try
+            {
+                DirectLabourBillRequest.FromDate = ddFrom.Text;
+                DirectLabourBillRequest.ToDate = ddTo.Text;
+                DirectLabourBillRequest.MainComapny = drpMainCompany.Text;
+                DirectLabourBillRequest.ClientComapny = drpCCompany.Text;
+                DirectLabourBillRequest.SubClientCompany = drpSubClient.Text;
+                DirectLabourBillRequest.ClientWise = radCompanyWise.Text;
+                DirectLabourBillRequest.DirectBillReport();
+                if (DirectLabourBillRequest.DirectBillReportList.Count() > 0)
+                {
+                    InitializeDataSource();
 
+                    foreach (var item in DirectLabourBillRequest.DirectBillReportList)
+                    {
+                        DataTable dataTable = (DataTable)gridControl1.DataSource;
+                        DataRow newRow = dataTable.NewRow();
+                        newRow["ModelName"] = item.ModelName;
+                        newRow["ProductName"] = item.ProductName;
+                        newRow["ProductSize"] = item.ProductSize;
+                        newRow["QuantityPiece"] = item.QuantityPiece;
+                        newRow["WagesforEmp"] = item.WagesforEmp;
+                        newRow["TotalQty"] = item.TotalQty;
+                        newRow["NetAmt"] = item.NetAmt;
+                        newRow["TotalAmt"] = item.TotalAmt;
+                        dataTable.Rows.Add(newRow);
+                        gridControl1.RefreshDataSource();
+                    }
+                    // Refresh the grid to display the new row
+                    gridView1.RefreshData();
+                    gridControl1.RefreshDataSource();
+                }
+                DisplayFooterTotal();
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void InitializeDataSource()
+        {
+            DataTable dataTable = new DataTable();
+            // Create columns and bind them to the object properties
+            dataTable.Columns.Add("ModelName", typeof(string));
+            dataTable.Columns.Add("ProductName", typeof(string));
+            dataTable.Columns.Add("ProductSize", typeof(string));
+            dataTable.Columns.Add("QuantityPiece", typeof(string));
+            dataTable.Columns.Add("WagesforEmp", typeof(string));
+            dataTable.Columns.Add("TotalQty", typeof(string));
+            dataTable.Columns.Add("NetAmt", typeof(string));
+            dataTable.Columns.Add("TotalAmt", typeof(string));
         }
     }
 }

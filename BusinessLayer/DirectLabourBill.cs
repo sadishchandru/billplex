@@ -75,5 +75,27 @@ namespace BusinessLayer
                 CloseConnection();
             }
         }
+
+        //public List<DirectLabourBill> AssignResult()
+        //{
+        //    List<DirectLabourBill> OrderList = new List<DirectLabourBill>();
+        //    dbReader.NextResult();
+
+        //    while (dbReader.Read())
+        //    {
+        //        DirectLabourBill OrderDetail = new DirectLabourBill();
+        //        OrderDetail.ModelName = ToString(dbReader["ModelName"]);
+        //        OrderDetail.ProductName = ToString(dbReader["ProductName"]);
+        //        OrderDetail.ProductSize = ToDateTimeToString(dbReader["ProductSize"]);
+        //        OrderDetail.QuantityPiece = ToString(dbReader["QuantityPiece"]);
+        //        OrderDetail.WagesforEmp = ToString(dbReader["WagesforEmp"]);
+        //        OrderDetail.TotalQty = ToString(dbReader["TotalQty"]);
+        //        OrderDetail.NetAmt = ToString(dbReader["NetAmt"]);
+        //        OrderDetail.TotalAmt = ToString(dbReader["TotalAmt"]);
+        //        OrderList.Add(OrderDetail);
+        //    }
+
+        //    return OrderList;
+        //}
     }
 }
