@@ -16,6 +16,7 @@ namespace BillPlex
         {
             InitializeComponent();
             //sqlDataSource3.Fill();
+
         }
 
         public void getSqldataSource(List<DirectLabourBill> DirectBillReportList)
@@ -27,10 +28,10 @@ namespace BillPlex
                 {
                     return;
                 }
-                InitializeDataSource();
+                DataTable InitialDataTable = InitializeDataSource();
                 foreach (var item in DirectBillReportList)
                 {
-                    DataTable dataTable = InitializeDataSource();
+                    DataTable dataTable = InitialDataTable;
                     DataRow newRow = dataTable.NewRow();
                     newRow["ModelName"] = item.ModelName;
                     newRow["ProductName"] = item.ProductName;
@@ -41,9 +42,9 @@ namespace BillPlex
                     newRow["NetAmt"] = item.NetAmt;
                     newRow["TotalAmt"] = item.TotalAmt == "" ? 0 : decimal.Parse(item.TotalAmt);
                     // Add the new DataRow to the DataTable
-                    newRow["VendorName"] = "Srini";
+                   // newRow["VendorName"] = "Srini";
                     dataTable.Rows.Add(newRow);
-                    dataSet14.Tables.Add(dataTable);
+                    dataSet15.Tables.Add(dataTable);
                 }
             }
 
@@ -63,7 +64,9 @@ namespace BillPlex
             dataTable.Columns.Add("TotalQty", typeof(string));
             dataTable.Columns.Add("NetAmt", typeof(string));
             dataTable.Columns.Add("TotalAmt", typeof(string));
-            dataTable.Columns.Add("VendorName", typeof(string));
+            //dataTable.Columns.Add("VendorName", typeof(string));
+            //dataSet15.Tables.Add(dataTable);
+
 
             return dataTable;
         }

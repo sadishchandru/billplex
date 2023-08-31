@@ -125,13 +125,13 @@ namespace BillPlex
             {
                 // Initialize the report if not already done
                 LabourBill = new RpLabourBill(); // Replace with your actual report class
-                LabourBill.DataSource = sqlDataSource1; // Replace with your actual data source
+                //LabourBill.DataSource = sqlDataSource1; // Replace with your actual data source
+                LabourBill.getSqldataSource(DirectLabourBillRequest.DirectBillReportList);
             }
 
-            using (ReportPrintTool printTool = new ReportPrintTool(LabourBill))
-            {
-                printTool.ShowPreviewDialog();
-            }
+            ReportPrintTool printTool = new ReportPrintTool(LabourBill);
+            printTool.ShowPreview();
+
         }
 
         private void drpMainCompany_EditValueChanged(object sender, EventArgs e)
@@ -415,6 +415,10 @@ namespace BillPlex
             dataTable.Columns.Add("TotalQty", typeof(string));
             dataTable.Columns.Add("NetAmt", typeof(string));
             dataTable.Columns.Add("TotalAmt", typeof(string));
+
+            gridControl1.DataSource = dataTable;
+            gridView1.RefreshData();
+            gridControl1.RefreshDataSource();
         }
     }
 }
