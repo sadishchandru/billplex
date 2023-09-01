@@ -365,6 +365,7 @@
     <Compile Include="LabourBill.Designer.cs">
       <DependentUpon>LabourBill.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\LabourBillData.cs" />
     <Compile Include="NavBar.cs">
       <SubType>Form</SubType>
     </Compile>

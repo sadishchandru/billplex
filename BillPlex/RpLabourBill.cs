@@ -1,4 +1,5 @@
-﻿using BusinessLayer;
+﻿using BillPlex.Models;
+using BusinessLayer;
 using DevExpress.XtraGrid;
 using DevExpress.XtraReports.UI;
 using System;
@@ -12,27 +13,9 @@ namespace BillPlex
 {
     public partial class RpLabourBill : DevExpress.XtraReports.UI.XtraReport
     {
-        public class LabourBillData
-        {
-            public string BillNo { get; set; }
-            public string FromDate { get; set; }
-            public string ToDate { get; set; }
-            public string Date { get; set; }
-            public string LessDeducation { get; set; }
-            public string SubTotal1 { get; set; }
-            public string Conveyance { get; set; }
-            public string Incentives { get; set; }
-            public string SubTotal2 { get; set; }
-            public string SupVisorTotal { get; set; }
-            public string GrandTotal { get; set; }
-            public string ProductIncentive { get; set; }
-            public string PFText { get; set; }
-            public string TotalESI { get; set; }
-            public string TotalBouns { get; set; }
-            public string FinalTotal { get; set; }
-            public string Advance { get; set; }
-            public string NetAmount { get; set; }
-        }
+
+        LabourBillData labourBillData = new LabourBillData();
+
         public RpLabourBill(List<LabourBillData> dataSource, List<DirectLabourBill> DirectBillReportList)
         {
             InitializeComponent(); // Initialize the report components

@@ -1,4 +1,5 @@
-﻿using BusinessLayer;
+﻿using BillPlex.Models;
+using BusinessLayer;
 using DevExpress.Data;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
@@ -121,7 +122,7 @@ namespace BillPlex
 
             // Create an instance of your report
             RpLabourBill report = new RpLabourBill(GetLabourBillDataSource(BillNo, FromDate , Date , ToDate,LessDeducation,SubTotal1,Conveyance,Incentives,SubTotal2, 
-                SupVisorTotal,GrandTotal,ProductIncentive,PFText,TotalESI, TotalBouns,FinalTotal,Advance,NetAmount), DirectLabourBillRequest.DirectBillReportList);
+                SupVisorTotal,GrandTotal,ProductIncentive,PFText,TotalESI, TotalBouns,FinalTotal,Advance,NetAmount),DirectLabourBillRequest.DirectBillReportList);
 
             // Show the report preview
             ReportPrintTool printTool = new ReportPrintTool(report);
