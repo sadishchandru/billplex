@@ -45,55 +45,55 @@ namespace BillPlex
 
             //detailTable.BeginInit();
 
-            foreach (var item in DirectBillReportList)
-            {
-                detailTableRow = new XRTableRow();
-
-                quantity.DataBindings.Add("Text", item, "QuantityPiece");
-                detailTableRow.Cells.Add(quantity);
-
-                productName.DataBindings.Add("Text", item, "ProductName");
-                detailTableRow.Cells.Add(productName);
-
-                unitPrice.DataBindings.Add("Text", item, "WagesforEmp");
-                detailTableRow.Cells.Add(unitPrice);
-
-                lineTotal.DataBindings.Add("Text", item, "TotalAmt");
-                detailTableRow.Cells.Add(lineTotal);
-
-                // Add the row to the table
-                detailTable.Rows.Add(detailTableRow);
-            }
-
-            //detailTable.EndInit();
-
-            // Add the table to the DetailBand
-            this.Detail.Controls.Add(detailTable);
-
-            //if (DirectBillReportList != null)
+            //foreach (var item in DirectBillReportList)
             //{
+            //    detailTableRow = new XRTableRow();
 
-            //    if (DirectBillReportList.Count <= 0)
-            //    {
-            //        return;
-            //    }
-            //    foreach (var item in DirectBillReportList)
-            //    {
-            //        DataTable dataTable = InitializeDataSource();
-            //        DataRow newRow = dataTable.NewRow();
-            //        newRow["ModelName"] = item.ModelName;
-            //        newRow["ProductName"] = item.ProductName;
-            //        newRow["ProductSize"] = item.ProductSize;
-            //        newRow["QuantityPiece"] = item.QuantityPiece;
-            //        newRow["WagesforEmp"] = item.WagesforEmp;
-            //        newRow["TotalQty"] = item.TotalQty;
-            //        newRow["NetAmt"] = item.NetAmt;
-            //        newRow["TotalAmt"] = item.TotalAmt == "" ? 0 : decimal.Parse(item.TotalAmt);
+            //    quantity.DataBindings.Add("Text", item, "QuantityPiece");
+            //    detailTableRow.Cells.Add(quantity);
 
-            //        dataTable.Rows.Add(newRow);
-            //        dataSet14.Tables.Add(dataTable);
-            //    }
+            //    productName.DataBindings.Add("Text", item, "ProductName");
+            //    detailTableRow.Cells.Add(productName);
+
+            //    unitPrice.DataBindings.Add("Text", item, "WagesforEmp");
+            //    detailTableRow.Cells.Add(unitPrice);
+
+            //    lineTotal.DataBindings.Add("Text", item, "TotalAmt");
+            //    detailTableRow.Cells.Add(lineTotal);
+
+            //    // Add the row to the table
+            //    detailTable.Rows.Add(detailTableRow);
             //}
+
+            ////detailTable.EndInit();
+
+            //// Add the table to the DetailBand
+            //this.Detail.Controls.Add(detailTable);
+
+            if (DirectBillReportList != null)
+            {
+
+                if (DirectBillReportList.Count <= 0)
+                {
+                    return;
+                }
+                foreach (var item in DirectBillReportList)
+                {
+                    DataTable dataTable = InitializeDataSource();
+                    DataRow newRow = dataTable.NewRow();
+                    newRow["ModelName"] = item.ModelName;
+                    newRow["ProductName"] = item.ProductName;
+                    newRow["ProductSize"] = item.ProductSize;
+                    newRow["QuantityPiece"] = item.QuantityPiece;
+                    newRow["WagesforEmp"] = item.WagesforEmp;
+                    newRow["TotalQty"] = item.TotalQty;
+                    newRow["NetAmt"] = item.NetAmt;
+                    newRow["TotalAmt"] = item.TotalAmt == "" ? 0 : decimal.Parse(item.TotalAmt);
+
+                    dataTable.Rows.Add(newRow);
+                    dataSet14.Tables.Add(dataTable);
+                }
+            }
         }
 
         private DataTable InitializeDataSource()
