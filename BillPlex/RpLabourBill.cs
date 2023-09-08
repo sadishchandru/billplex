@@ -74,14 +74,14 @@ namespace BillPlex
             //// Add the table to the DetailBand
             //this.Detail.Controls.Add(detailTable);
 
-            if (DirectBillReportList != null)
+            if (DirectLabourBillRequest != null)
             {
 
-                if (DirectBillReportList.Count <= 0)
+                if (DirectLabourBillRequest.Count <= 0)
                 {
                     return;
                 }
-                foreach (var item in DirectBillReportList)
+                foreach (var item in DirectLabourBillRequest)
                 {
                     DataTable dataTable = InitializeDataSource();
                     DataRow newRow = dataTable.NewRow();

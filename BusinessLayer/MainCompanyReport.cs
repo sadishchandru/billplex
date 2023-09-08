@@ -70,10 +70,10 @@ namespace BusinessLayer
                     objDetails.NetAmt = ToString(dbReader["NetAmount"]);
                     if (masterCompanyWagesList.Count == 0)
                     {
-                        objDetails.TotalCount = ToBigInt(dbReader["total_count"]);
+                        //objDetails.TotalCount = ToBigInt(dbReader["total_count"]);
                     }
 
-                    objDetails.RowNumber = ToBigInt(dbReader["row_no"]);
+                    //objDetails.RowNumber = ToBigInt(dbReader["row_no"]);
 
                     masterCompanyWagesList.Add(objDetails);
                 }
@@ -115,10 +115,10 @@ namespace BusinessLayer
                     objDetails.NetAmt = ToString(dbReader["NetAmount"]);
                     if (departmentlist.Count == 0)
                     {
-                        objDetails.TotalCount = ToBigInt(dbReader["total_count"]);
+                        //objDetails.TotalCount = ToBigInt(dbReader["total_count"]);
                     }
 
-                    objDetails.RowNumber = ToBigInt(dbReader["row_no"]);
+                    //objDetails.RowNumber = ToBigInt(dbReader["row_no"]);
                 }
 
                 departmentlist.Add(objDetails);
