@@ -120,16 +120,26 @@ namespace BillPlex
             string Advance = txtAdvance.Text;
             string NetAmount = txtNetAmount.Text;
 
-            // Create an instance of your report
-            RpLabourBill report = new RpLabourBill(GetLabourBillDataSource(BillNo, FromDate , Date , ToDate,LessDeducation,SubTotal1,Conveyance,Incentives,SubTotal2, 
-                SupVisorTotal,GrandTotal,ProductIncentive,PFText,TotalESI, TotalBouns,FinalTotal,Advance,NetAmount),DirectLabourBillRequest.DirectBillReportList);
+            //Create an instance of your report
+            RpLabourBill report = new RpLabourBill(GetLabourBillDataSource(BillNo, FromDate, Date, ToDate, LessDeducation, SubTotal1, Conveyance, Incentives, SubTotal2,
+                SupVisorTotal, GrandTotal, ProductIncentive, PFText, TotalESI, TotalBouns, FinalTotal, Advance, NetAmount, DirectLabourBillRequest.DirectBillReportList), DirectLabourBillRequest.DirectBillReportList);
 
-            // Show the report preview
+            
+
+            //// Show the report preview
             ReportPrintTool printTool = new ReportPrintTool(report);
             printTool.ShowPreview();
+/*            if (!gridControl1.IsPrintingAvailable)
+            {
+                MessageBox.Show("");
+                return;
+            }
+            gridControl1.ShowPrintPreview();
+            sample repot = new sample();
+            repot.ShowPreview();*/
         }
-        private List<LabourBillData> GetLabourBillDataSource(string billNo, string fromDate,string date,string todate, string lessdeducation, string subTotal1, string conveyance, string incentives,
-            string grandTotal, string productIncentive, string Subtotal2, string SupVisortotal, string PFtext, string totalESI, string totalbouns, string finaltotal, string advance, string netamount)
+        private List<LabourBillData> GetLabourBillDataSource(string billNo, string fromDate, string date, string todate, string lessdeducation, string subTotal1, string conveyance, string incentives,
+            string grandTotal, string productIncentive, string Subtotal2, string SupVisortotal, string PFtext, string totalESI, string totalbouns, string finaltotal, string advance, string netamount, List<DirectLabourBill> DirectBillReportList)
         {
             // Convert the fromDate to a DateTime if needed
             string parsedFromDate = fromDate;
@@ -157,7 +167,8 @@ namespace BillPlex
                     TotalBouns = totalbouns,
                     FinalTotal = finaltotal,
                     Advance = advance,
-                    NetAmount = netamount
+                    NetAmount = netamount,
+                    DirectBillReportList = DirectBillReportList
                 }
             };
 
@@ -244,6 +255,7 @@ namespace BillPlex
 
                 if (radProduction.Text == "1")
                 {
+                    txtIncentivePercent.Enabled = true;
                     if (double.TryParse(txtIncentivePercent.Text, out double percentageValue))
                     {
                         result = (percentageValue / 100) * inputValue;
@@ -255,9 +267,6 @@ namespace BillPlex
                 }
 
                 txtProductionIncentive.Text = result.ToString("0.00");
-                /*txtFinalTotal.Text = txtGrandTotal.Text + txtProductionIncentive.Text + txtPFText.Text + TxtTotalESI.Text + txtTotalBouns.Text;
-                var a = txtGrandTotal.Text + txtProductionIncentive.Text + txtPFText.Text + TxtTotalESI.Text + txtTotalBouns.Text;
-                txtNetAmount.Text = a - txtAdvance.Text;*/
             }
         }
 
@@ -361,34 +370,66 @@ namespace BillPlex
 
         private void txtSubTotal1_EditValueChanged(object sender, EventArgs e)
         {
-            //decimal total = 0;
-            //decimal deductionTotal = 0;
+            decimal total = 0;
+            decimal deductionTotal = 0;
 
-            //if (txtConveyance.Text != "" && txtConveyance.Text != "0")
-            //{
-            //    total = Convert.ToDecimal(txtSubTotal1.Text) + Convert.ToDecimal(txtConveyance.Text);
-            //    deductionTotal = Convert.ToDecimal(txtSubTotal1.Text) + Convert.ToDecimal(txtConveyance.Text);
-            //}
+            if (txtDeducation.Text != "" && txtDeducation.Text != "0")
+            {
+                deductionTotal = Convert.ToDecimal(txtDeducation.Text);
+                total = deductionTotal;
+            }
 
-            //if (txtIncentives.Text != "" && txtSubTotal2.Text != "0")
-            //{
-            //    deductionTotal = deductionTotal + Convert.ToDecimal(txtSubTotal2.Text);
-            //    total = total + Convert.ToDecimal(txtSubTotal2.Text);
-            //}
+            if (txtSubTotal1.Text != "" && txtSubTotal1.Text != "0")
+            {
+                total += Convert.ToDecimal(txtSubTotal1.Text);
+            }
 
-            //if (txtSupVisorTotal.Text != "" && txtSupVisorTotal.Text != "0")
-            //{
-            //    total = total + Convert.ToDecimal(txtSupVisorTotal.Text);
-            //}
+            if (txtConveyance.Text != "" && txtConveyance.Text != "0")
+            {
+                total += Convert.ToDecimal(txtConveyance.Text);
+            }
 
-            //if (txtGrandTotal.Text != "" && txtGrandTotal.Text != "0")
-            //{
-            //    total = total + Convert.ToDecimal(txtGrandTotal.Text);
-            //}
+            if (txtIncentives.Text != "" && txtIncentives.Text != "0")
+            {
+                total += Convert.ToDecimal(txtIncentives.Text);
+            }
 
-            //txtFinalTotal.Text = deductionTotal.ToString();
-            //total = deductionTotal - Convert.ToDecimal(txtAdvance.Text);
-            //txtNetAmount.Text = total.ToString();
+            if (txtSubTotal2.Text != "" && txtSubTotal2.Text != "0")
+            {
+                total += Convert.ToDecimal(txtSubTotal2.Text);
+            }
+
+            if (txtSupVisorTotal.Text != "" && txtSupVisorTotal.Text != "0")
+            {
+                total += Convert.ToDecimal(txtSupVisorTotal.Text);
+            }
+
+            if (txtGrandTotal.Text != "" && txtGrandTotal.Text != "0")
+            {
+                total += Convert.ToDecimal(txtGrandTotal.Text);
+            }
+
+            if (txtPFText.Text != "" && txtPFText.Text != "0")
+            {
+                total += Convert.ToDecimal(txtPFText.Text);
+            }
+
+            if (TxtTotalESI.Text != "" && TxtTotalESI.Text != "0")
+            {
+                total += Convert.ToDecimal(TxtTotalESI.Text);
+            }
+
+            if (txtBonus.Text != "" && txtBonus.Text != "0")
+            {
+                total += Convert.ToDecimal(txtBonus.Text);
+            }
+            if (txtAdvance.Text != "" && txtAdvance.Text != "0")
+            {
+                decimal advance = Convert.ToDecimal(txtAdvance.Text);
+                total -= advance; // Subtract the advance amount from the total
+            }
+            txtFinalTotal.Text = total.ToString();
+            txtNetAmount.Text = total.ToString();
         }
 
         private void drpCCompany_KeyPress(object sender, KeyPressEventArgs e)
@@ -426,6 +467,10 @@ namespace BillPlex
                     gridControl1.RefreshDataSource();
                 }
                 DisplayFooterTotal();
+                DirectLabourBillRequest.DirectBillReportList.ToList();
+                txtDeducation.Text = DirectLabourBillRequest.DirectBillReportList.Sum(item => item.Deducation).ToString();
+                txtConveyance.Text = DirectLabourBillRequest.DirectBillReportList.Sum(item => item.Conveyance).ToString();
+                txtIncentives.Text = DirectLabourBillRequest.DirectBillReportList.Sum(item => item.Incentive).ToString();
             }
             catch (Exception ex)
             {
@@ -448,6 +493,20 @@ namespace BillPlex
             gridControl1.DataSource = dataTable;
             gridView1.RefreshData();
             gridControl1.RefreshDataSource();
+        }
+
+        private void radCompanyWise_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (radCompanyWise.Text == "0")
+            {
+                drpCCompany.Enabled = true;
+
+                drpSubClient.Enabled = false;
+            }
+            else if (radCompanyWise.Text == "1")
+            {
+                drpSubClient.Enabled = true;
+            }
         }
     }
 }

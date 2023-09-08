@@ -365,6 +365,12 @@
     <Compile Include="LabourBill.Designer.cs">
       <DependentUpon>LabourBill.cs</DependentUpon>
     </Compile>
+    <Compile Include="LabourDirectBill.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LabourDirectBill.Designer.cs">
+      <DependentUpon>LabourDirectBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\LabourBillData.cs" />
     <Compile Include="NavBar.cs">
       <SubType>Form</SubType>
@@ -505,6 +511,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LabourBill.resx">
       <DependentUpon>LabourBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LabourDirectBill.resx">
+      <DependentUpon>LabourDirectBill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NavBar.resx">
       <DependentUpon>NavBar.cs</DependentUpon>

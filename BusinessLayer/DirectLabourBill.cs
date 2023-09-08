@@ -24,6 +24,9 @@ namespace BusinessLayer
         public string TotalQty { get; set; }
         public string NetAmt { get; set; }
         public string TotalAmt { get; set; }
+        public long Deducation { get; set; }
+        public long Conveyance { get; set; }
+        public long Incentive { get; set; }
         public List<DropDownItemInfo> MasterCompanyList { get; set; }
         public List<DropDownItemInfo> ClientCompanyList { get; set; }
         public List<DropDownItemInfo> SubClientList { get; set; }
@@ -62,6 +65,9 @@ namespace BusinessLayer
                     item.TotalQty = ToString(dbReader["TotalQty"]);
                     item.NetAmt = ToString(dbReader["NetAmt"]);
                     item.TotalAmt = ToString(dbReader["TotalAmt"]);
+                    item.Deducation = ToInteger(dbReader["Deduction"]);
+                    item.Conveyance = ToInteger(dbReader["conveyance"]);
+                    item.Incentive = ToInteger(dbReader["incentive"]);
                     DirectBillReportList.Add(item);
                 }
             }

@@ -57,6 +57,7 @@ namespace BillPlex
             DevExpress.DataAccess.Sql.QueryParameter queryParameter6 = new DevExpress.DataAccess.Sql.QueryParameter();
             DevExpress.DataAccess.Sql.QueryParameter queryParameter7 = new DevExpress.DataAccess.Sql.QueryParameter();
             DevExpress.DataAccess.Sql.QueryParameter queryParameter8 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.ObjectBinding.ObjectConstructorInfo objectConstructorInfo1 = new DevExpress.DataAccess.ObjectBinding.ObjectConstructorInfo();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.totalTable = new DevExpress.XtraReports.UI.XRTable();
             this.totalRow = new DevExpress.XtraReports.UI.XRTableRow();
@@ -129,6 +130,8 @@ namespace BillPlex
             this.oDataInstantFeedbackSource1 = new DevExpress.Data.ODataLinq.ODataInstantFeedbackSource();
             this.dataSet15 = new BillPlex.DataSet1();
             this.dataSet16 = new BillPlex.DataSet1();
+            this.objectDataSource1 = new DevExpress.DataAccess.ObjectBinding.ObjectDataSource(this.components);
+            this.objectDataSource2 = new DevExpress.DataAccess.ObjectBinding.ObjectDataSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.totalTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detailTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.headerTable)).BeginInit();
@@ -138,6 +141,8 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.dataSet14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectDataSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectDataSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
@@ -145,7 +150,7 @@ namespace BillPlex
             this.Detail.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.totalTable,
             this.detailTable});
-            this.Detail.HeightF = 116.9894F;
+            this.Detail.HeightF = 91.36442F;
             this.Detail.KeepTogether = true;
             this.Detail.MultiColumn.Mode = DevExpress.XtraReports.UI.MultiColumnMode.UseColumnCount;
             this.Detail.Name = "Detail";
@@ -226,7 +231,7 @@ namespace BillPlex
             this.quantity.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.quantity.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[ReportItems.quantity].[Text]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[QuantityPiece]")});
             this.quantity.Multiline = true;
             this.quantity.Name = "quantity";
             this.quantity.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 5, 0, 100F);
@@ -241,7 +246,7 @@ namespace BillPlex
             this.productName.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.productName.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[ReportItems.productName].[Text]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[ProductName]")});
             this.productName.Name = "productName";
             this.productName.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 5, 0, 100F);
             this.productName.StylePriority.UseBorders = false;
@@ -352,7 +357,7 @@ namespace BillPlex
             // xrLabel18
             // 
             this.xrLabel18.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel18.LocationFloat = new DevExpress.Utils.PointFloat(202.7083F, 101.875F);
+            this.xrLabel18.LocationFloat = new DevExpress.Utils.PointFloat(227.7083F, 101.875F);
             this.xrLabel18.Multiline = true;
             this.xrLabel18.Name = "xrLabel18";
             this.xrLabel18.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -362,7 +367,7 @@ namespace BillPlex
             // 
             // ToDate
             // 
-            this.ToDate.LocationFloat = new DevExpress.Utils.PointFloat(302.7083F, 101.8751F);
+            this.ToDate.LocationFloat = new DevExpress.Utils.PointFloat(327.7083F, 101.8751F);
             this.ToDate.Multiline = true;
             this.ToDate.Name = "ToDate";
             this.ToDate.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -371,7 +376,7 @@ namespace BillPlex
             // 
             // FromDate
             // 
-            this.FromDate.LocationFloat = new DevExpress.Utils.PointFloat(102.7083F, 101.8751F);
+            this.FromDate.LocationFloat = new DevExpress.Utils.PointFloat(127.7083F, 101.8751F);
             this.FromDate.Multiline = true;
             this.FromDate.Name = "FromDate";
             this.FromDate.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -392,7 +397,7 @@ namespace BillPlex
             // xrLabel17
             // 
             this.xrLabel17.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel17.LocationFloat = new DevExpress.Utils.PointFloat(2.70834F, 101.8751F);
+            this.xrLabel17.LocationFloat = new DevExpress.Utils.PointFloat(27.70834F, 101.8751F);
             this.xrLabel17.Multiline = true;
             this.xrLabel17.Name = "xrLabel17";
             this.xrLabel17.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -963,6 +968,18 @@ namespace BillPlex
             this.dataSet16.DataSetName = "DataSet1";
             this.dataSet16.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // objectDataSource1
+            // 
+            this.objectDataSource1.Constructor = objectConstructorInfo1;
+            this.objectDataSource1.DataSource = typeof(BusinessLayer.DirectLabourBill);
+            this.objectDataSource1.Name = "objectDataSource1";
+            // 
+            // objectDataSource2
+            // 
+            this.objectDataSource2.DataMember = "DirectBillReportList";
+            this.objectDataSource2.DataSource = typeof(BusinessLayer.DirectLabourBill);
+            this.objectDataSource2.Name = "objectDataSource2";
+            // 
             // RpLabourBill
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -974,6 +991,7 @@ namespace BillPlex
             this.GroupHeader1,
             this.GroupFooter2});
             this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
+            this.objectDataSource1,
             this.sqlDataSource1,
             this.sqlDataSource2,
             this.dataSet11,
@@ -983,7 +1001,8 @@ namespace BillPlex
             this.dataSet14,
             this.oDataInstantFeedbackSource1,
             this.dataSet15,
-            this.dataSet16});
+            this.dataSet16,
+            this.objectDataSource2});
             this.DataSource = this.dataSet14;
             this.Font = new System.Drawing.Font("Arial", 9.75F);
             this.Margins = new System.Drawing.Printing.Margins(5, 6, 7, 75);
@@ -999,6 +1018,8 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.dataSet14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectDataSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectDataSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
@@ -1077,5 +1098,7 @@ namespace BillPlex
         private DevExpress.XtraReports.UI.XRLabel ProductionIncentive;
         private DevExpress.XtraReports.UI.XRLabel GrandTotal;
         private DevExpress.XtraReports.UI.XRLabel xrLabel1;
+        private DevExpress.DataAccess.ObjectBinding.ObjectDataSource objectDataSource1;
+        private DevExpress.DataAccess.ObjectBinding.ObjectDataSource objectDataSource2;
     }
 }

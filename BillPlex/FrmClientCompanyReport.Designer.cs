@@ -29,6 +29,11 @@ namespace BillPlex
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter3 = new DevExpress.DataAccess.Sql.QueryParameter();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.labelSearchIndex = new DevExpress.XtraEditors.LabelControl();
@@ -52,6 +57,7 @@ namespace BillPlex
             this.drpClientCompany = new DevExpress.XtraEditors.ComboBoxEdit();
             this.drpFrom = new DevExpress.XtraEditors.DateEdit();
             this.drpTo = new DevExpress.XtraEditors.DateEdit();
+            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
@@ -176,6 +182,8 @@ namespace BillPlex
             // 
             // gridControl1
             // 
+            this.gridControl1.DataMember = "PRO_GetWagesReportForMainCompany";
+            this.gridControl1.DataSource = this.sqlDataSource1;
             this.gridControl1.Location = new System.Drawing.Point(19, 38);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
@@ -321,6 +329,28 @@ namespace BillPlex
             this.drpTo.Size = new System.Drawing.Size(185, 20);
             this.drpTo.TabIndex = 15;
             // 
+            // sqlDataSource1
+            // 
+            this.sqlDataSource1.ConnectionName = "BillPlex";
+            this.sqlDataSource1.Name = "sqlDataSource1";
+            storedProcQuery1.Name = "PRO_GetWagesReportForMainCompany";
+            queryParameter1.Name = "@From";
+            queryParameter1.Type = typeof(System.DateTime);
+            queryParameter1.ValueInfo = "1753-01-01";
+            queryParameter2.Name = "@To";
+            queryParameter2.Type = typeof(System.DateTime);
+            queryParameter2.ValueInfo = "1753-01-01";
+            queryParameter3.Name = "@MainCompany";
+            queryParameter3.Type = typeof(string);
+            storedProcQuery1.Parameters.Add(queryParameter1);
+            storedProcQuery1.Parameters.Add(queryParameter2);
+            storedProcQuery1.Parameters.Add(queryParameter3);
+            storedProcQuery1.StoredProcName = "PRO_GetWagesReportForMainCompany";
+            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
+            storedProcQuery1});
+            this.sqlDataSource1.ResultSchemaSerializable = "PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlBST19HZXRXYWdlc1JlcG9yd" +
+    "EZvck1haW5Db21wYW55IiAvPjwvRGF0YVNldD4=";
+            // 
             // FrmClientCompanyReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -383,5 +413,6 @@ namespace BillPlex
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.DateEdit drpFrom;
         private DevExpress.XtraEditors.DateEdit drpTo;
+        private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
     }
 }

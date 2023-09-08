@@ -649,6 +649,7 @@ namespace BillPlex
             // 
             // textNetAmount
             // 
+            this.textNetAmount.Enabled = false;
             this.textNetAmount.Location = new System.Drawing.Point(1590, 801);
             this.textNetAmount.Name = "textNetAmount";
             this.textNetAmount.Size = new System.Drawing.Size(200, 20);
@@ -663,6 +664,7 @@ namespace BillPlex
             // 
             // textFinalTotal
             // 
+            this.textFinalTotal.Enabled = false;
             this.textFinalTotal.Location = new System.Drawing.Point(1590, 737);
             this.textFinalTotal.Name = "textFinalTotal";
             this.textFinalTotal.Size = new System.Drawing.Size(200, 20);
@@ -670,6 +672,7 @@ namespace BillPlex
             // 
             // textBousTotal
             // 
+            this.textBousTotal.Enabled = false;
             this.textBousTotal.Location = new System.Drawing.Point(1590, 701);
             this.textBousTotal.Name = "textBousTotal";
             this.textBousTotal.Size = new System.Drawing.Size(200, 20);
@@ -677,6 +680,7 @@ namespace BillPlex
             // 
             // txtESITotal
             // 
+            this.txtESITotal.Enabled = false;
             this.txtESITotal.Location = new System.Drawing.Point(1590, 664);
             this.txtESITotal.Name = "txtESITotal";
             this.txtESITotal.Size = new System.Drawing.Size(200, 20);
@@ -684,6 +688,7 @@ namespace BillPlex
             // 
             // textPFTotal
             // 
+            this.textPFTotal.Enabled = false;
             this.textPFTotal.Location = new System.Drawing.Point(1590, 629);
             this.textPFTotal.Name = "textPFTotal";
             this.textPFTotal.Size = new System.Drawing.Size(200, 20);
@@ -691,6 +696,7 @@ namespace BillPlex
             // 
             // textProIncentiveTotal
             // 
+            this.textProIncentiveTotal.Enabled = false;
             this.textProIncentiveTotal.Location = new System.Drawing.Point(1590, 593);
             this.textProIncentiveTotal.Name = "textProIncentiveTotal";
             this.textProIncentiveTotal.Size = new System.Drawing.Size(200, 20);
@@ -698,6 +704,7 @@ namespace BillPlex
             // 
             // textGrandToal
             // 
+            this.textGrandToal.Enabled = false;
             this.textGrandToal.Location = new System.Drawing.Point(1590, 554);
             this.textGrandToal.Name = "textGrandToal";
             this.textGrandToal.Size = new System.Drawing.Size(200, 20);
@@ -705,6 +712,7 @@ namespace BillPlex
             // 
             // textSuperVisorChargesLrg
             // 
+            this.textSuperVisorChargesLrg.Enabled = false;
             this.textSuperVisorChargesLrg.Location = new System.Drawing.Point(1590, 519);
             this.textSuperVisorChargesLrg.Name = "textSuperVisorChargesLrg";
             this.textSuperVisorChargesLrg.Size = new System.Drawing.Size(200, 20);
@@ -712,6 +720,7 @@ namespace BillPlex
             // 
             // textSubTotal2
             // 
+            this.textSubTotal2.Enabled = false;
             this.textSubTotal2.Location = new System.Drawing.Point(1590, 479);
             this.textSubTotal2.Name = "textSubTotal2";
             this.textSubTotal2.Size = new System.Drawing.Size(200, 20);
@@ -719,6 +728,7 @@ namespace BillPlex
             // 
             // textIncentives
             // 
+            this.textIncentives.Enabled = false;
             this.textIncentives.Location = new System.Drawing.Point(1590, 443);
             this.textIncentives.Name = "textIncentives";
             this.textIncentives.Size = new System.Drawing.Size(200, 20);
@@ -726,6 +736,7 @@ namespace BillPlex
             // 
             // textConveyance
             // 
+            this.textConveyance.Enabled = false;
             this.textConveyance.Location = new System.Drawing.Point(1590, 407);
             this.textConveyance.Name = "textConveyance";
             this.textConveyance.Size = new System.Drawing.Size(200, 20);
@@ -733,13 +744,16 @@ namespace BillPlex
             // 
             // textSubTotal1
             // 
+            this.textSubTotal1.Enabled = false;
             this.textSubTotal1.Location = new System.Drawing.Point(1590, 372);
             this.textSubTotal1.Name = "textSubTotal1";
             this.textSubTotal1.Size = new System.Drawing.Size(200, 20);
             this.textSubTotal1.TabIndex = 77;
+            this.textSubTotal1.EditValueChanged += new System.EventHandler(this.textSubTotal1_EditValueChanged);
             // 
             // textDeduction
             // 
+            this.textDeduction.Enabled = false;
             this.textDeduction.Location = new System.Drawing.Point(1590, 337);
             this.textDeduction.Name = "textDeduction";
             this.textDeduction.Size = new System.Drawing.Size(200, 20);
@@ -747,6 +761,7 @@ namespace BillPlex
             // 
             // txtTotal
             // 
+            this.txtTotal.Enabled = false;
             this.txtTotal.Location = new System.Drawing.Point(1590, 301);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(200, 20);
@@ -762,6 +777,7 @@ namespace BillPlex
             this.btn_Print.Size = new System.Drawing.Size(135, 23);
             this.btn_Print.TabIndex = 74;
             this.btn_Print.Text = "Print";
+            this.btn_Print.Click += new System.EventHandler(this.btn_Print_Click);
             // 
             // labelControl12
             // 
@@ -846,6 +862,7 @@ namespace BillPlex
             // 
             // txtSubClient
             // 
+            this.txtSubClient.Enabled = false;
             this.txtSubClient.Location = new System.Drawing.Point(694, 75);
             this.txtSubClient.Name = "txtSubClient";
             this.txtSubClient.Size = new System.Drawing.Size(200, 20);
@@ -853,6 +870,7 @@ namespace BillPlex
             // 
             // txtClientName
             // 
+            this.txtClientName.Enabled = false;
             this.txtClientName.Location = new System.Drawing.Point(694, 38);
             this.txtClientName.Name = "txtClientName";
             this.txtClientName.Size = new System.Drawing.Size(200, 20);
@@ -860,6 +878,7 @@ namespace BillPlex
             // 
             // txtDirector
             // 
+            this.txtDirector.Enabled = false;
             this.txtDirector.Location = new System.Drawing.Point(694, 5);
             this.txtDirector.Name = "txtDirector";
             this.txtDirector.Size = new System.Drawing.Size(200, 20);
@@ -960,13 +979,14 @@ namespace BillPlex
             this.radCompanyWise.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.radCompanyWise.Properties.Columns = 1;
             this.radCompanyWise.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Client Company Wise", true, null, "Client Company Wise"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Sub Client Company Wise", true, null, "Sub Client Company Wise")});
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(0)), "Client Company Wise", true, null, "Client Company Wise"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(1)), "Sub Client Company Wise", true, null, "Sub Client Company Wise")});
             this.radCompanyWise.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightBlue;
             this.radCompanyWise.Properties.LookAndFeel.SkinName = "DevExpress Style";
             this.radCompanyWise.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.radCompanyWise.Size = new System.Drawing.Size(277, 68);
             this.radCompanyWise.TabIndex = 0;
+            this.radCompanyWise.SelectedIndexChanged += new System.EventHandler(this.radCompanyWise_SelectedIndexChanged);
             // 
             // panelControl3
             // 

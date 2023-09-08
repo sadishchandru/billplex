@@ -25,6 +25,7 @@ namespace BillPlex
     public partial class FrmInDirectLabourBill : DevExpress.XtraEditors.XtraForm
     {
         private InDirectLabourBill InDirectLabourBillRequest;
+        private LabourDirectBill LabourBill;
         public FrmInDirectLabourBill()
         {
             InitializeComponent();
@@ -137,6 +138,7 @@ namespace BillPlex
 
                 if (radioProductionIncentive.Text == "1")
                 {
+                    textProctionIncentive.Enabled = true;
                     if (double.TryParse(textProctionIncentive.Text, out double percentageValue))
                     {
                         result = (percentageValue / 100) * inputValue;
@@ -214,6 +216,96 @@ namespace BillPlex
 
                 textBousTotal.Text = result.ToString("0.00");
             }
+        }
+
+        private void radCompanyWise_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (radCompanyWise.Text == "0")
+            {
+                drpClientCompany.Enabled = true;
+
+                drpSubClientCompany.Enabled = false;
+            }
+            else if (radCompanyWise.Text == "1")
+            {
+                drpSubClientCompany.Enabled = true;
+            }
+        }
+
+        private void btn_Print_Click(object sender, EventArgs e)
+        {
+            if (!gridControl1.IsPrintingAvailable)
+            {
+                MessageBox.Show("");
+                return;
+            }
+            gridControl1.ShowPrintPreview();
+            LabourDirectBill repot = new LabourDirectBill();
+            repot.ShowPreview();
+        }
+
+        private void textSubTotal1_EditValueChanged(object sender, EventArgs e)
+        {
+            decimal total = 0;
+            decimal deductionTotal = 0;
+
+            if (textDeduction.Text != "" && textDeduction.Text != "0")
+            {
+                deductionTotal = Convert.ToDecimal(textDeduction.Text);
+                total = deductionTotal;
+            }
+
+            if (textSubTotal1.Text != "" && textSubTotal1.Text != "0")
+            {
+                total += Convert.ToDecimal(textSubTotal1.Text);
+            }
+
+            if (textConveyance.Text != "" && textConveyance.Text != "0")
+            {
+                total += Convert.ToDecimal(textConveyance.Text);
+            }
+
+            if (textIncentives.Text != "" && textIncentives.Text != "0")
+            {
+                total += Convert.ToDecimal(textIncentives.Text);
+            }
+
+            if (textSubTotal2.Text != "" && textSubTotal2.Text != "0")
+            {
+                total += Convert.ToDecimal(textSubTotal2.Text);
+            }
+
+            if (textSuperVisorChargesLrg.Text != "" && textSuperVisorChargesLrg.Text != "0")
+            {
+                total += Convert.ToDecimal(textSuperVisorChargesLrg.Text);
+            }
+
+            if (textGrandToal.Text != "" && textGrandToal.Text != "0")
+            {
+                total += Convert.ToDecimal(textGrandToal.Text);
+            }
+
+            if (textPFTotal.Text != "" && textPFTotal.Text != "0")
+            {
+                total += Convert.ToDecimal(textPFTotal.Text);
+            }
+
+            if (txtESITotal.Text != "" && txtESITotal.Text != "0")
+            {
+                total += Convert.ToDecimal(txtESITotal.Text);
+            }
+
+            if (textBonus.Text != "" && textBonus.Text != "0")
+            {
+                total += Convert.ToDecimal(textBonus.Text);
+            }
+            if (textAdvance.Text != "" && textAdvance.Text != "0")
+            {
+                decimal advance = Convert.ToDecimal(textAdvance.Text);
+                total -= advance; // Subtract the advance amount from the total
+            }
+            textFinalTotal.Text = total.ToString();
+            textNetAmount.Text = total.ToString();
         }
     }
 }

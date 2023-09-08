@@ -30,13 +30,13 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter3 = new DevExpress.DataAccess.Sql.QueryParameter();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter4 = new DevExpress.DataAccess.Sql.QueryParameter();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter5 = new DevExpress.DataAccess.Sql.QueryParameter();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter6 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery4 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter19 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter20 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter21 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter22 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter23 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter24 = new DevExpress.DataAccess.Sql.QueryParameter();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
@@ -270,31 +270,31 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery1.Name = "PRO_GetDirectLabourBill";
-            queryParameter1.Name = "@From";
-            queryParameter1.Type = typeof(System.DateTime);
-            queryParameter1.ValueInfo = "2023-08-01";
-            queryParameter2.Name = "@To";
-            queryParameter2.Type = typeof(System.DateTime);
-            queryParameter2.ValueInfo = "2023-08-30";
-            queryParameter3.Name = "@IsClientWise";
-            queryParameter3.Type = typeof(int);
-            queryParameter3.ValueInfo = "1";
-            queryParameter4.Name = "@MainCompany";
-            queryParameter4.Type = typeof(string);
-            queryParameter5.Name = "@ClientCompany";
-            queryParameter5.Type = typeof(string);
-            queryParameter6.Name = "@SubClientCompany";
-            queryParameter6.Type = typeof(string);
-            storedProcQuery1.Parameters.Add(queryParameter1);
-            storedProcQuery1.Parameters.Add(queryParameter2);
-            storedProcQuery1.Parameters.Add(queryParameter3);
-            storedProcQuery1.Parameters.Add(queryParameter4);
-            storedProcQuery1.Parameters.Add(queryParameter5);
-            storedProcQuery1.Parameters.Add(queryParameter6);
-            storedProcQuery1.StoredProcName = "PRO_GetDirectLabourBill";
+            storedProcQuery4.Name = "PRO_GetDirectLabourBill";
+            queryParameter19.Name = "@From";
+            queryParameter19.Type = typeof(System.DateTime);
+            queryParameter19.ValueInfo = "2023-08-01";
+            queryParameter20.Name = "@To";
+            queryParameter20.Type = typeof(System.DateTime);
+            queryParameter20.ValueInfo = "2023-08-30";
+            queryParameter21.Name = "@IsClientWise";
+            queryParameter21.Type = typeof(int);
+            queryParameter21.ValueInfo = "1";
+            queryParameter22.Name = "@MainCompany";
+            queryParameter22.Type = typeof(string);
+            queryParameter23.Name = "@ClientCompany";
+            queryParameter23.Type = typeof(string);
+            queryParameter24.Name = "@SubClientCompany";
+            queryParameter24.Type = typeof(string);
+            storedProcQuery4.Parameters.Add(queryParameter19);
+            storedProcQuery4.Parameters.Add(queryParameter20);
+            storedProcQuery4.Parameters.Add(queryParameter21);
+            storedProcQuery4.Parameters.Add(queryParameter22);
+            storedProcQuery4.Parameters.Add(queryParameter23);
+            storedProcQuery4.Parameters.Add(queryParameter24);
+            storedProcQuery4.StoredProcName = "PRO_GetDirectLabourBill";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery1});
+            storedProcQuery4});
             this.sqlDataSource1.ResultSchemaSerializable = "PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlBST19HZXREaXJlY3RMYWJvd" +
     "XJCaWxsIiAvPjwvRGF0YVNldD4=";
             // 
@@ -644,6 +644,7 @@ namespace BillPlex
             // 
             // txtBonus
             // 
+            this.txtBonus.Enabled = false;
             this.txtBonus.Location = new System.Drawing.Point(1453, 701);
             this.txtBonus.Name = "txtBonus";
             this.txtBonus.Size = new System.Drawing.Size(67, 20);
@@ -652,6 +653,7 @@ namespace BillPlex
             // 
             // txtESI
             // 
+            this.txtESI.Enabled = false;
             this.txtESI.Location = new System.Drawing.Point(1453, 664);
             this.txtESI.Name = "txtESI";
             this.txtESI.Size = new System.Drawing.Size(67, 20);
@@ -661,6 +663,7 @@ namespace BillPlex
             // txtpf
             // 
             this.txtpf.EditValue = "";
+            this.txtpf.Enabled = false;
             this.txtpf.Location = new System.Drawing.Point(1453, 629);
             this.txtpf.Name = "txtpf";
             this.txtpf.Properties.BeepOnError = false;
@@ -671,6 +674,7 @@ namespace BillPlex
             // 
             // txtIncentivePercent
             // 
+            this.txtIncentivePercent.Enabled = false;
             this.txtIncentivePercent.Location = new System.Drawing.Point(1453, 593);
             this.txtIncentivePercent.Name = "txtIncentivePercent";
             this.txtIncentivePercent.Properties.BeepOnError = false;
@@ -767,6 +771,7 @@ namespace BillPlex
             // 
             // txtNetAmount
             // 
+            this.txtNetAmount.Enabled = false;
             this.txtNetAmount.Location = new System.Drawing.Point(1590, 801);
             this.txtNetAmount.Name = "txtNetAmount";
             this.txtNetAmount.Size = new System.Drawing.Size(200, 20);
@@ -783,6 +788,7 @@ namespace BillPlex
             // 
             // txtFinalTotal
             // 
+            this.txtFinalTotal.Enabled = false;
             this.txtFinalTotal.Location = new System.Drawing.Point(1590, 737);
             this.txtFinalTotal.Name = "txtFinalTotal";
             this.txtFinalTotal.Size = new System.Drawing.Size(200, 20);
@@ -791,6 +797,7 @@ namespace BillPlex
             // 
             // txtTotalBouns
             // 
+            this.txtTotalBouns.Enabled = false;
             this.txtTotalBouns.Location = new System.Drawing.Point(1590, 701);
             this.txtTotalBouns.Name = "txtTotalBouns";
             this.txtTotalBouns.Size = new System.Drawing.Size(200, 20);
@@ -799,6 +806,7 @@ namespace BillPlex
             // 
             // TxtTotalESI
             // 
+            this.TxtTotalESI.Enabled = false;
             this.TxtTotalESI.Location = new System.Drawing.Point(1590, 664);
             this.TxtTotalESI.Name = "TxtTotalESI";
             this.TxtTotalESI.Size = new System.Drawing.Size(200, 20);
@@ -807,6 +815,7 @@ namespace BillPlex
             // 
             // txtPFText
             // 
+            this.txtPFText.Enabled = false;
             this.txtPFText.Location = new System.Drawing.Point(1590, 629);
             this.txtPFText.Name = "txtPFText";
             this.txtPFText.Size = new System.Drawing.Size(200, 20);
@@ -815,6 +824,7 @@ namespace BillPlex
             // 
             // txtProductionIncentive
             // 
+            this.txtProductionIncentive.Enabled = false;
             this.txtProductionIncentive.Location = new System.Drawing.Point(1590, 593);
             this.txtProductionIncentive.Name = "txtProductionIncentive";
             this.txtProductionIncentive.Size = new System.Drawing.Size(200, 20);
@@ -823,6 +833,7 @@ namespace BillPlex
             // 
             // txtGrandTotal
             // 
+            this.txtGrandTotal.Enabled = false;
             this.txtGrandTotal.Location = new System.Drawing.Point(1590, 554);
             this.txtGrandTotal.Name = "txtGrandTotal";
             this.txtGrandTotal.Size = new System.Drawing.Size(200, 20);
@@ -831,6 +842,7 @@ namespace BillPlex
             // 
             // txtSupVisorTotal
             // 
+            this.txtSupVisorTotal.Enabled = false;
             this.txtSupVisorTotal.Location = new System.Drawing.Point(1590, 519);
             this.txtSupVisorTotal.Name = "txtSupVisorTotal";
             this.txtSupVisorTotal.Size = new System.Drawing.Size(200, 20);
@@ -839,6 +851,7 @@ namespace BillPlex
             // 
             // txtSubTotal2
             // 
+            this.txtSubTotal2.Enabled = false;
             this.txtSubTotal2.Location = new System.Drawing.Point(1590, 479);
             this.txtSubTotal2.Name = "txtSubTotal2";
             this.txtSubTotal2.Size = new System.Drawing.Size(200, 20);
@@ -847,6 +860,7 @@ namespace BillPlex
             // 
             // txtIncentives
             // 
+            this.txtIncentives.Enabled = false;
             this.txtIncentives.Location = new System.Drawing.Point(1590, 443);
             this.txtIncentives.Name = "txtIncentives";
             this.txtIncentives.Size = new System.Drawing.Size(200, 20);
@@ -855,6 +869,7 @@ namespace BillPlex
             // 
             // txtConveyance
             // 
+            this.txtConveyance.Enabled = false;
             this.txtConveyance.Location = new System.Drawing.Point(1590, 407);
             this.txtConveyance.Name = "txtConveyance";
             this.txtConveyance.Size = new System.Drawing.Size(200, 20);
@@ -863,6 +878,7 @@ namespace BillPlex
             // 
             // txtSubTotal1
             // 
+            this.txtSubTotal1.Enabled = false;
             this.txtSubTotal1.Location = new System.Drawing.Point(1590, 372);
             this.txtSubTotal1.Name = "txtSubTotal1";
             this.txtSubTotal1.Size = new System.Drawing.Size(200, 20);
@@ -871,6 +887,7 @@ namespace BillPlex
             // 
             // txtDeducation
             // 
+            this.txtDeducation.Enabled = false;
             this.txtDeducation.Location = new System.Drawing.Point(1590, 337);
             this.txtDeducation.Name = "txtDeducation";
             this.txtDeducation.Size = new System.Drawing.Size(200, 20);
@@ -878,6 +895,7 @@ namespace BillPlex
             // 
             // txtTotal
             // 
+            this.txtTotal.Enabled = false;
             this.txtTotal.Location = new System.Drawing.Point(1590, 301);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(200, 20);
@@ -983,6 +1001,7 @@ namespace BillPlex
             // 
             // txtSubClient
             // 
+            this.txtSubClient.Enabled = false;
             this.txtSubClient.Location = new System.Drawing.Point(694, 75);
             this.txtSubClient.Name = "txtSubClient";
             this.txtSubClient.Size = new System.Drawing.Size(200, 20);
@@ -990,6 +1009,7 @@ namespace BillPlex
             // 
             // txtClientName
             // 
+            this.txtClientName.Enabled = false;
             this.txtClientName.Location = new System.Drawing.Point(694, 38);
             this.txtClientName.Name = "txtClientName";
             this.txtClientName.Size = new System.Drawing.Size(200, 20);
@@ -997,6 +1017,7 @@ namespace BillPlex
             // 
             // txtDirector
             // 
+            this.txtDirector.Enabled = false;
             this.txtDirector.Location = new System.Drawing.Point(694, 5);
             this.txtDirector.Name = "txtDirector";
             this.txtDirector.Size = new System.Drawing.Size(200, 20);
@@ -1014,6 +1035,7 @@ namespace BillPlex
             // 
             // drpSubClient
             // 
+            this.drpSubClient.Enabled = false;
             this.drpSubClient.EnterMoveNextControl = true;
             this.drpSubClient.Location = new System.Drawing.Point(241, 80);
             this.drpSubClient.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1026,6 +1048,7 @@ namespace BillPlex
             // 
             // drpCCompany
             // 
+            this.drpCCompany.Enabled = false;
             this.drpCCompany.EnterMoveNextControl = true;
             this.drpCCompany.Location = new System.Drawing.Point(241, 38);
             this.drpCCompany.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1105,6 +1128,7 @@ namespace BillPlex
             this.radCompanyWise.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.radCompanyWise.Size = new System.Drawing.Size(277, 68);
             this.radCompanyWise.TabIndex = 0;
+            this.radCompanyWise.SelectedIndexChanged += new System.EventHandler(this.radCompanyWise_SelectedIndexChanged);
             // 
             // panelControl3
             // 
