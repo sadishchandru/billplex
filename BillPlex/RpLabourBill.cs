@@ -49,7 +49,7 @@ namespace BillPlex
 
             //detailTable.BeginInit();
 
-            //foreach (var item in DirectLabourBillRequest)
+            //foreach (var item in DirectBillReportList)
             //{
             //    detailTableRow = new XRTableRow();
 
@@ -69,19 +69,19 @@ namespace BillPlex
             //    detailTable.Rows.Add(detailTableRow);
             //}
 
-            //detailTable.EndInit();
+            ////detailTable.EndInit();
 
-            ////Add the table to the DetailBand
-            // this.Detail.Controls.Add(detailTable);
+            //// Add the table to the DetailBand
+            //this.Detail.Controls.Add(detailTable);
 
-            if (DirectLabourBillRequest != null)
+            if (DirectBillReportList != null)
             {
 
-                if (DirectLabourBillRequest.Count <= 0)
+                if (DirectBillReportList.Count <= 0)
                 {
                     return;
                 }
-                foreach (var item in DirectLabourBillRequest)
+                foreach (var item in DirectBillReportList)
                 {
                     DataTable dataTable = InitializeDataSource();
                     DataRow newRow = dataTable.NewRow();
