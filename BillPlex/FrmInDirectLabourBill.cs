@@ -242,6 +242,7 @@ namespace BillPlex
             gridControl1.ShowPrintPreview();
             LabourDirectBill repot = new LabourDirectBill();
             repot.ShowPreview();
+
         }
 
         private void textSubTotal1_EditValueChanged(object sender, EventArgs e)
