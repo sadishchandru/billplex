@@ -157,6 +157,7 @@ namespace BillPlex
             this.Detail.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.Detail.StyleName = "baseControlStyle";
             this.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            this.Detail.Visible = false;
             // 
             // totalTable
             // 
@@ -782,6 +783,7 @@ namespace BillPlex
             this.GroupHeader1.Name = "GroupHeader1";
             this.GroupHeader1.RepeatEveryPage = true;
             this.GroupHeader1.StyleName = "baseControlStyle";
+            this.GroupHeader1.Visible = false;
             // 
             // headerTable
             // 
