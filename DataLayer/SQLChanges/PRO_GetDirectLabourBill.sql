@@ -38,24 +38,23 @@ BEGIN
 						JGDC.Deduction,
 						JGDC.conveyance As Conveyance,
 						JGDC.incentive As Incentive,
+						JGDC.OrderDate,
 						ROW_NUMBER() OVER(ORDER BY JGDC.OrderDate DESC) AS row_no
 					FROM JobGivingWithoutDC JGDC
 					LEFT JOIN EmployeePersonal EP on EP.Id = JGDC.EmployeeCode
 					LEFT JOIN OrderMaster OM on OM.Id = JGDC.OrderNo
 					WHERE received IS NOT NULL AND received <> '''' 
 						  AND TotalQty IS NOT NULL AND TotalQty <> '''' 
-						  AND received = TotalQty'			IF(IsNull(@From, '') != '' AND IsNull(@To, '') != '' )				BEGIN				--PRINT('Date')					--SET	@Query = @Query + ' AND (CONVERT(DATE,JGDC.OrderDate)) BETWEEN '''+@From+''' AND '''+@To+''''					SET @Query = @Query + ' AND (CONVERT(DATE,JGDC.OrderDate)) BETWEEN ''' + CONVERT(NVARCHAR, @From) + ''' AND ''' + CONVERT(NVARCHAR, @To) + ''''				END			IF(@IsClientWise = 1 AND @MainCompany != '' AND @ClientCompany != '')				BEGIN					SET	@Query = @Query + ' AND JGDC.CompanyName =  '''+@MainCompany+ ''' AND JGDC.ClientCompany =  '''+@ClientCompany+ ''''				END			ELSE IF (@IsClientWise = 2 AND @MainCompany != '' AND @ClientCompany != '' AND @SubClientCompany != '')				BEGIN					SET	@Query = @Query + ' AND JGDC.CompanyName =  '''+@MainCompany+ ''' AND JGDC.ClientCompany =  '''+@ClientCompany+ ''' AND JGDC.SubClientCompany =  '''+@SubClientCompany+ ''''				END				SET	@Query = @Query + ')					SELECT	CASE 					WHEN ROW_NUMBER() OVER(ORDER BY row_no) = 1 THEN (SELECT COUNT(*) FROM LabourDirectReportList)					ELSE 0 					END AS total_count,					* FROM	LabourDirectReportList '
+						  AND received = Wages'			IF(IsNull(@From, '') != '' AND IsNull(@To, '') != '' )				BEGIN				--PRINT('Date')					--SET	@Query = @Query + ' AND (CONVERT(DATE,JGDC.OrderDate)) BETWEEN '''+@From+''' AND '''+@To+''''					SET @Query = @Query + ' AND (CONVERT(DATE,JGDC.OrderDate)) BETWEEN ''' + CONVERT(NVARCHAR, @From) + ''' AND ''' + CONVERT(NVARCHAR, @To) + ''''				END			IF(@IsClientWise = 1 AND @MainCompany != '' AND @ClientCompany != '')				BEGIN					SET	@Query = @Query + ' AND JGDC.CompanyName =  '''+@MainCompany+ ''' AND JGDC.ClientCompany =  '''+@ClientCompany+ ''''				END			ELSE IF (@IsClientWise = 2 AND @MainCompany != '' AND @ClientCompany != '' AND @SubClientCompany != '')				BEGIN					SET	@Query = @Query + ' AND JGDC.CompanyName =  '''+@MainCompany+ ''' AND JGDC.ClientCompany =  '''+@ClientCompany+ ''' AND JGDC.SubClientCompany =  '''+@SubClientCompany+ ''''				END				SET	@Query = @Query + ')					SELECT	CASE 					WHEN ROW_NUMBER() OVER(ORDER BY row_no) = 1 THEN (SELECT COUNT(*) FROM LabourDirectReportList)					ELSE 0 					END AS total_count,					* FROM	LabourDirectReportList '
 
-				--PRINT(@QUERY);
+				PRINT(@QUERY);
 		EXEC (@QUERY);
 END
 
 /*
 EXEC [dbo].[PRO_GetDirectLabourBill]
-    @From = '2023-08-14',
-    @To = '2023-09-14',
-    @IsClientWise = 2,
-    @MainCompany = 'ACOMPANY',
-    @ClientCompany = 'ClientCOmpany',
+    @IsClientWise = 0,
+    @MainCompany = 'Man',
+    @ClientCompany = 'AB123',
     @SubClientCompany = 'SUBCLIENTCOMPANY';
 */

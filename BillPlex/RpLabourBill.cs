@@ -3,6 +3,7 @@ using BusinessLayer;
 using DevExpress.XtraReports.UI;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 
 namespace BillPlex
 {
@@ -31,56 +32,160 @@ namespace BillPlex
             // Create a table
             XRTable table = new XRTable();
             table.WidthF = 830; // Set the table width as needed
-            table.Borders = DevExpress.XtraPrinting.BorderSide.All;
+            table.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             table.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleJustify; // Center-align the table
 
             // Create table header row
             XRTableRow headerRow = new XRTableRow();
+
+            headerRow.BackColor = System.Drawing.Color.Gray;
+            headerRow.Borders = DevExpress.XtraPrinting.BorderSide.None;
+
+            headerRow.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            //this.Margins = new System.Drawing.Printing.Margins(5, 6, 7, 75);
+
             XRTableCell headerCell1 = new XRTableCell();
-            headerCell1.Text = "Quantity";
-            headerCell1.Borders = DevExpress.XtraPrinting.BorderSide.All;
+            headerCell1.Text = "Product";
+            headerCell1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             headerCell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleJustify; // Center-align the table
+            headerCell1.ForeColor = Color.Brown;
+            headerCell1.BackColor = System.Drawing.Color.Gray;
+            headerCell1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             XRTableCell headerCell2 = new XRTableCell();
-            headerCell2.Text = "Product Name";
-            headerCell2.Borders = DevExpress.XtraPrinting.BorderSide.All;
-
+            headerCell2.Text = "Model";
+            headerCell2.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            headerCell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleJustify; // Center-align the table
+            headerCell2.ForeColor = Color.Brown;
+            headerCell2.BackColor = System.Drawing.Color.Gray;
+            headerCell2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            
             XRTableCell headerCell3 = new XRTableCell();
-            headerCell3.Text = "Net Amount";
-            headerCell3.Borders = DevExpress.XtraPrinting.BorderSide.All;
-
+            headerCell3.Text = "Size";
+            headerCell3.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            headerCell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleJustify; // Center-align the table
+            headerCell3.ForeColor = Color.Brown;
+            headerCell3.BackColor = System.Drawing.Color.Gray;
+            headerCell3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            
             XRTableCell headerCell4 = new XRTableCell();
-            headerCell4.Text = "Total Amount";
-            headerCell4.Borders = DevExpress.XtraPrinting.BorderSide.All;
+            headerCell4.Text = "Quantity";
+            headerCell4.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            headerCell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleJustify; // Center-align the table
+            headerCell4.ForeColor = Color.Brown;
+            headerCell4.BackColor = System.Drawing.Color.Gray;
+            headerCell4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
-            headerRow.Cells.AddRange(new XRTableCell[] { headerCell1, headerCell2, headerCell3, headerCell4 });
+            XRTableCell headerCell5 = new XRTableCell();
+            headerCell5.Text = "Rate";
+            headerCell5.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            headerCell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleJustify; // Center-align the table
+            headerCell5.ForeColor = Color.Brown;
+            headerCell5.BackColor = System.Drawing.Color.Gray;
+            headerCell5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            
+            XRTableCell headerCell6 = new XRTableCell();
+            headerCell6.Text = "Amount";
+            headerCell6.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            headerCell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleJustify; // Center-align the table
+            headerCell6.ForeColor = Color.Brown;
+            headerCell6.BackColor = System.Drawing.Color.Gray;
+            headerCell6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
+
+            //XRTableCell headerCell2 = new XRTableCell();
+            //headerCell2.Text = "Product Name";
+            //headerCell2.Borders = DevExpress.XtraPrinting.BorderSide.None;
+
+            //XRTableCell headerCell3 = new XRTableCell();
+            //headerCell3.Text = "Net Amount";
+            //headerCell3.Borders = DevExpress.XtraPrinting.BorderSide.None;
+
+            //XRTableCell headerCell4 = new XRTableCell();
+            //headerCell4.Text = "Total Amount";
+            //headerCell4.Borders = DevExpress.XtraPrinting.BorderSide.None;
+
+            headerRow.Cells.AddRange(new XRTableCell[] { headerCell1, headerCell2, headerCell3, headerCell4, headerCell5, headerCell6 });
             table.Rows.Add(headerRow);
 
             // Populate the table with data
+            XRTableRow dataRow = new XRTableRow();
+            XRTableCell dataCell1 = new XRTableCell();
+            XRTableCell dataCell2 = new XRTableCell();
+            XRTableCell dataCell3 = new XRTableCell();
+            XRTableCell dataCell4 = new XRTableCell();
+            XRTableCell dataCell5 = new XRTableCell();
+            XRTableCell dataCell6 = new XRTableCell();
             foreach (var dataItem in DirectLabourBillRequest)
             {
-                XRTableRow dataRow = new XRTableRow();
+                dataRow = new XRTableRow();
                 dataRow.Borders = DevExpress.XtraPrinting.BorderSide.All;
 
-                XRTableCell dataCell1 = new XRTableCell();
-                dataCell1.DataBindings.Add("Text", dataItem, "TotalQty");
-                dataCell1.Borders = DevExpress.XtraPrinting.BorderSide.All;
+                dataRow.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
 
-                XRTableCell dataCell2 = new XRTableCell();
-                dataCell2.DataBindings.Add("Text", dataItem, "ProductName");
-                dataCell2.Borders = DevExpress.XtraPrinting.BorderSide.All;
+                dataCell1 = new XRTableCell();
+                dataCell1.DataBindings.Add("Text", dataItem, "ProductName");
+                dataCell1.Borders = DevExpress.XtraPrinting.BorderSide.None;
 
-                XRTableCell dataCell3 = new XRTableCell();
-                dataCell3.DataBindings.Add("Text", dataItem, "NetAmt");
-                dataCell3.Borders = DevExpress.XtraPrinting.BorderSide.All;
+                dataCell2 = new XRTableCell();
+                dataCell2.DataBindings.Add("Text", dataItem, "ModelName");
+                dataCell2.Borders = DevExpress.XtraPrinting.BorderSide.None;
+                
+                dataCell3 = new XRTableCell();
+                dataCell3.DataBindings.Add("Text", dataItem, "ProductSize");
+                dataCell3.Borders = DevExpress.XtraPrinting.BorderSide.None;
+                
+                dataCell4 = new XRTableCell();
+                dataCell4.DataBindings.Add("Text", dataItem, "TotalQty");
+                dataCell4.Borders = DevExpress.XtraPrinting.BorderSide.None;
 
-                XRTableCell dataCell4 = new XRTableCell();
-                dataCell4.DataBindings.Add("Text", dataItem, "TotalAmt");
-                dataCell4.Borders = DevExpress.XtraPrinting.BorderSide.All;
+                dataCell5 = new XRTableCell();
+                dataCell5.DataBindings.Add("Text", dataItem, "WagesforEmp");
+                dataCell5.Borders = DevExpress.XtraPrinting.BorderSide.None;
 
-                dataRow.Cells.AddRange(new XRTableCell[] { dataCell1, dataCell2, dataCell3, dataCell4 });
+                dataCell6 = new XRTableCell();
+                dataCell6.DataBindings.Add("Text", dataItem, "TotalAmt");
+                dataCell6.Borders = DevExpress.XtraPrinting.BorderSide.None;
+
+                dataRow.Cells.AddRange(new XRTableCell[] { dataCell1, dataCell2, dataCell3, dataCell4, dataCell5, dataCell6 });
                 table.Rows.Add(dataRow);
             }
+
+            
+                dataRow = new XRTableRow();
+                dataRow.Borders = DevExpress.XtraPrinting.BorderSide.All;
+
+                dataRow.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+
+                dataCell1 = new XRTableCell();
+                dataCell1.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
+
+                dataCell2 = new XRTableCell();
+                dataCell2.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
+
+                dataCell3 = new XRTableCell();
+                dataCell3.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
+
+                dataCell4 = new XRTableCell();
+                dataCell4.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
+
+
+                dataCell5 = new XRTableCell();
+                dataCell5.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
+
+                dataCell6 = new XRTableCell();
+                dataCell6.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
+
+                dataRow.Cells.AddRange(new XRTableCell[] { dataCell1, dataCell2, dataCell3, dataCell4, dataCell5, dataCell6 });
+                table.Rows.Add(dataRow);
+            
+
+
+            //dataRow = new XRTableRow();
+            //dataRow.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
+
+            //table.Rows.Add(dataRow);
+
 
             // Add the table to the DetailBand
             detailBand.Controls.Add(table);

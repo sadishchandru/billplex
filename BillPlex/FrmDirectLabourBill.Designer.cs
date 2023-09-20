@@ -30,13 +30,13 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery4 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter19 = new DevExpress.DataAccess.Sql.QueryParameter();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter20 = new DevExpress.DataAccess.Sql.QueryParameter();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter21 = new DevExpress.DataAccess.Sql.QueryParameter();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter22 = new DevExpress.DataAccess.Sql.QueryParameter();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter23 = new DevExpress.DataAccess.Sql.QueryParameter();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter24 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter3 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter4 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter5 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter6 = new DevExpress.DataAccess.Sql.QueryParameter();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
@@ -270,31 +270,31 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery4.Name = "PRO_GetDirectLabourBill";
-            queryParameter19.Name = "@From";
-            queryParameter19.Type = typeof(System.DateTime);
-            queryParameter19.ValueInfo = "2023-08-01";
-            queryParameter20.Name = "@To";
-            queryParameter20.Type = typeof(System.DateTime);
-            queryParameter20.ValueInfo = "2023-08-30";
-            queryParameter21.Name = "@IsClientWise";
-            queryParameter21.Type = typeof(int);
-            queryParameter21.ValueInfo = "1";
-            queryParameter22.Name = "@MainCompany";
-            queryParameter22.Type = typeof(string);
-            queryParameter23.Name = "@ClientCompany";
-            queryParameter23.Type = typeof(string);
-            queryParameter24.Name = "@SubClientCompany";
-            queryParameter24.Type = typeof(string);
-            storedProcQuery4.Parameters.Add(queryParameter19);
-            storedProcQuery4.Parameters.Add(queryParameter20);
-            storedProcQuery4.Parameters.Add(queryParameter21);
-            storedProcQuery4.Parameters.Add(queryParameter22);
-            storedProcQuery4.Parameters.Add(queryParameter23);
-            storedProcQuery4.Parameters.Add(queryParameter24);
-            storedProcQuery4.StoredProcName = "PRO_GetDirectLabourBill";
+            storedProcQuery1.Name = "PRO_GetDirectLabourBill";
+            queryParameter1.Name = "@From";
+            queryParameter1.Type = typeof(System.DateTime);
+            queryParameter1.ValueInfo = "1753-01-01";
+            queryParameter2.Name = "@To";
+            queryParameter2.Type = typeof(System.DateTime);
+            queryParameter2.ValueInfo = "1753-01-01";
+            queryParameter3.Name = "@IsClientWise";
+            queryParameter3.Type = typeof(int);
+            queryParameter3.ValueInfo = "0";
+            queryParameter4.Name = "@MainCompany";
+            queryParameter4.Type = typeof(string);
+            queryParameter5.Name = "@ClientCompany";
+            queryParameter5.Type = typeof(string);
+            queryParameter6.Name = "@SubClientCompany";
+            queryParameter6.Type = typeof(string);
+            storedProcQuery1.Parameters.Add(queryParameter1);
+            storedProcQuery1.Parameters.Add(queryParameter2);
+            storedProcQuery1.Parameters.Add(queryParameter3);
+            storedProcQuery1.Parameters.Add(queryParameter4);
+            storedProcQuery1.Parameters.Add(queryParameter5);
+            storedProcQuery1.Parameters.Add(queryParameter6);
+            storedProcQuery1.StoredProcName = "PRO_GetDirectLabourBill";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery4});
+            storedProcQuery1});
             this.sqlDataSource1.ResultSchemaSerializable = "PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlBST19HZXREaXJlY3RMYWJvd" +
     "XJCaWxsIiAvPjwvRGF0YVNldD4=";
             // 

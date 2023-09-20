@@ -120,23 +120,31 @@ namespace BillPlex
             string Advance = txtAdvance.Text;
             string NetAmount = txtNetAmount.Text;
 
-            //Create an instance of your report
-            RpLabourBill report = new RpLabourBill(GetLabourBillDataSource(BillNo, FromDate, Date, ToDate, LessDeducation, SubTotal1, Conveyance, Incentives, SubTotal2,
-                SupVisorTotal, GrandTotal, ProductIncentive, PFText, TotalESI, TotalBouns, FinalTotal, Advance, NetAmount, DirectLabourBillRequest.DirectBillReportList), DirectLabourBillRequest.DirectBillReportList);
-
-            
-
-            //// Show the report preview
-            ReportPrintTool printTool = new ReportPrintTool(report);
-            printTool.ShowPreview();
-/*            if (!gridControl1.IsPrintingAvailable)
+            if (DirectLabourBillRequest.DirectBillReportList.Count > 0)
             {
-                MessageBox.Show("");
-                return;
+                //Create an instance of your report
+                RpLabourBill report = new RpLabourBill(GetLabourBillDataSource(BillNo, FromDate, Date, ToDate, LessDeducation, SubTotal1, Conveyance, Incentives, SubTotal2,
+                    SupVisorTotal, GrandTotal, ProductIncentive, PFText, TotalESI, TotalBouns, FinalTotal, Advance, NetAmount, DirectLabourBillRequest.DirectBillReportList), DirectLabourBillRequest.DirectBillReportList);
+
+
+
+                //// Show the report preview
+                ReportPrintTool printTool = new ReportPrintTool(report);
+                printTool.ShowPreview();
+                /*            if (!gridControl1.IsPrintingAvailable)
+                            {
+                                MessageBox.Show("");
+                                return;
+                            }
+                            gridControl1.ShowPrintPreview();
+                            sample repot = new sample();
+                            repot.ShowPreview();*/
+
+
+            } else
+            {
+                XtraMessageBox.Show("No Record to Genrate Report ", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            gridControl1.ShowPrintPreview();
-            sample repot = new sample();
-            repot.ShowPreview();*/
         }
         private List<LabourBillData> GetLabourBillDataSource(string billNo, string fromDate, string date, string todate, string lessdeducation, string subTotal1, string conveyance, string incentives,
             string grandTotal, string productIncentive, string Subtotal2, string SupVisortotal, string PFtext, string totalESI, string totalbouns, string finaltotal, string advance, string netamount, List<DirectLabourBill> DirectBillReportList)
