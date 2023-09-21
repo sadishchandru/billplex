@@ -125,22 +125,8 @@ namespace BillPlex
                 //Create an instance of your report
                 RpLabourBill report = new RpLabourBill(GetLabourBillDataSource(BillNo, FromDate, Date, ToDate, LessDeducation, SubTotal1, Conveyance, Incentives, SubTotal2,
                     SupVisorTotal, GrandTotal, ProductIncentive, PFText, TotalESI, TotalBouns, FinalTotal, Advance, NetAmount, DirectLabourBillRequest.DirectBillReportList), DirectLabourBillRequest.DirectBillReportList);
-
-
-
-                //// Show the report preview
                 ReportPrintTool printTool = new ReportPrintTool(report);
                 printTool.ShowPreview();
-                /*            if (!gridControl1.IsPrintingAvailable)
-                            {
-                                MessageBox.Show("");
-                                return;
-                            }
-                            gridControl1.ShowPrintPreview();
-                            sample repot = new sample();
-                            repot.ShowPreview();*/
-
-
             } else
             {
                 XtraMessageBox.Show("No Record to Genrate Report ", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -479,6 +465,7 @@ namespace BillPlex
                 txtDeducation.Text = DirectLabourBillRequest.DirectBillReportList.Sum(item => item.Deducation).ToString();
                 txtConveyance.Text = DirectLabourBillRequest.DirectBillReportList.Sum(item => item.Conveyance).ToString();
                 txtIncentives.Text = DirectLabourBillRequest.DirectBillReportList.Sum(item => item.Incentive).ToString();
+                //txtq.Text = DirectLabourBillRequest.DirectBillReportList.Sum(item => item.Incentive).ToString();
             }
             catch (Exception ex)
             {

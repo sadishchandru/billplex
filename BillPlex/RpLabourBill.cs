@@ -1,6 +1,7 @@
 ﻿using BillPlex.Models;
 using BusinessLayer;
 using DevExpress.XtraReports.UI;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
@@ -23,17 +24,24 @@ namespace BillPlex
             DetailBand detailBand = new DetailBand();
             detailReportBand.Bands.Add(detailBand);
 
-            XRPanel panel = new XRPanel();
-            panel.WidthF = 500; // Set the width of the panel as needed
-            panel.HeightF = 300; // Set the height of the panel as needed
-            panel.Borders = DevExpress.XtraPrinting.BorderSide.All; // Set panel borders
-            panel.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter; // Center-align the content
+            //XRPanel panel = new XRPanel();
+            //panel.WidthF = 50; // Set the width of the panel as needed
+            //panel.HeightF = 300; // Set the height of the panel as needed
+            //panel.Borders = DevExpress.XtraPrinting.BorderSide.All; // Set panel borders
+            //panel.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter; // Center-align the content
 
             // Create a table
             XRTable table = new XRTable();
             table.WidthF = 830; // Set the table width as needed
             table.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
+            table.LocationF = new PointF(detailBand.WidthF - table.WidthF, table.LocationF.Y);
+            detailBand.Controls.Add(table);
+            float leftPadding = 10;
+            float rightPadding = 10;
+            table.LocationF = new PointF(leftPadding, table.LocationF.Y);
+            table.WidthF -= (leftPadding + rightPadding); // Adjust the width to account for right padding
             table.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleJustify; // Center-align the table
+            table.AnchorHorizontal = DevExpress.XtraReports.UI.HorizontalAnchorStyles.None;
 
             // Create table header row
             XRTableRow headerRow = new XRTableRow();
@@ -41,7 +49,7 @@ namespace BillPlex
             headerRow.BackColor = System.Drawing.Color.Gray;
             headerRow.Borders = DevExpress.XtraPrinting.BorderSide.None;
 
-            headerRow.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            headerRow.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 0F);
             //this.Margins = new System.Drawing.Printing.Margins(5, 6, 7, 75);
 
             XRTableCell headerCell1 = new XRTableCell();
@@ -49,7 +57,7 @@ namespace BillPlex
             headerCell1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             headerCell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleJustify; // Center-align the table
             headerCell1.ForeColor = Color.Brown;
-            headerCell1.BackColor = System.Drawing.Color.Gray;
+            headerCell1.BackColor = System.Drawing.Color.LightGray;
             headerCell1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             XRTableCell headerCell2 = new XRTableCell();
@@ -57,7 +65,7 @@ namespace BillPlex
             headerCell2.Borders = DevExpress.XtraPrinting.BorderSide.None;
             headerCell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleJustify; // Center-align the table
             headerCell2.ForeColor = Color.Brown;
-            headerCell2.BackColor = System.Drawing.Color.Gray;
+            headerCell2.BackColor = System.Drawing.Color.LightGray;
             headerCell2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             
             XRTableCell headerCell3 = new XRTableCell();
@@ -65,7 +73,7 @@ namespace BillPlex
             headerCell3.Borders = DevExpress.XtraPrinting.BorderSide.None;
             headerCell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleJustify; // Center-align the table
             headerCell3.ForeColor = Color.Brown;
-            headerCell3.BackColor = System.Drawing.Color.Gray;
+            headerCell3.BackColor = System.Drawing.Color.LightGray;
             headerCell3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             
             XRTableCell headerCell4 = new XRTableCell();
@@ -73,7 +81,7 @@ namespace BillPlex
             headerCell4.Borders = DevExpress.XtraPrinting.BorderSide.None;
             headerCell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleJustify; // Center-align the table
             headerCell4.ForeColor = Color.Brown;
-            headerCell4.BackColor = System.Drawing.Color.Gray;
+            headerCell4.BackColor = System.Drawing.Color.LightGray;
             headerCell4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             XRTableCell headerCell5 = new XRTableCell();
@@ -81,7 +89,7 @@ namespace BillPlex
             headerCell5.Borders = DevExpress.XtraPrinting.BorderSide.None;
             headerCell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleJustify; // Center-align the table
             headerCell5.ForeColor = Color.Brown;
-            headerCell5.BackColor = System.Drawing.Color.Gray;
+            headerCell5.BackColor = System.Drawing.Color.LightGray;
             headerCell5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             
             XRTableCell headerCell6 = new XRTableCell();
@@ -89,7 +97,7 @@ namespace BillPlex
             headerCell6.Borders = DevExpress.XtraPrinting.BorderSide.None;
             headerCell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleJustify; // Center-align the table
             headerCell6.ForeColor = Color.Brown;
-            headerCell6.BackColor = System.Drawing.Color.Gray;
+            headerCell6.BackColor = System.Drawing.Color.LightGray;
             headerCell6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
 
@@ -121,7 +129,7 @@ namespace BillPlex
                 dataRow = new XRTableRow();
                 dataRow.Borders = DevExpress.XtraPrinting.BorderSide.All;
 
-                dataRow.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+                //dataRow.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 10F);
 
                 dataCell1 = new XRTableCell();
                 dataCell1.DataBindings.Add("Text", dataItem, "ProductName");
@@ -155,7 +163,7 @@ namespace BillPlex
                 dataRow = new XRTableRow();
                 dataRow.Borders = DevExpress.XtraPrinting.BorderSide.All;
 
-                dataRow.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+                //dataRow.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 0);
 
                 dataCell1 = new XRTableCell();
                 dataCell1.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
@@ -213,8 +221,40 @@ namespace BillPlex
             NetAmount.DataBindings.Add("Text", DataSource, "NetAmount");
             objectDataSource1.DataSource = dataSource;
 
-            // Report Data Binding (if needed)
-            // ... (data source configuration)
+            int TotalQty = 3000;
+            foreach (var dataItem in DirectLabourBillRequest)
+            {
+                int itemQty;
+                if (int.TryParse(dataItem.TotalQty, out itemQty))
+                {
+                    TotalQty += itemQty;
+                }
+            }
+            txtTotalQty.Text = TotalQty.ToString();
+            txtTotalQty.DataBindings.Add("Text", txtTotalQty.Text, txtTotalQty.Text);
         }
+        public static string NumberToWords(int number)
+        {
+            if (number == 0)
+                return "Zero";
+
+            string[] units = { "", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine" };
+            string[] teens = { "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen" };
+            string[] tens = { "", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety" };
+
+            if (number < 10)
+                return units[number];
+            else if (number < 20)
+                return teens[number - 10];
+            else if (number < 100)
+                return tens[number / 10] + " " + units[number % 10];
+            else if (number < 1000)
+                return units[number / 100] + " Hundred " + NumberToWords(number % 100);
+            else if (number < 1000000)
+                return NumberToWords(number / 1000) + " Thousand " + NumberToWords(number % 1000);
+
+            return "Number too large to convert";
+        }
+
     }
 }
