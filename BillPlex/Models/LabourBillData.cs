@@ -27,6 +27,8 @@ namespace BillPlex.Models
         public string FinalTotal { get; set; }
         public string Advance { get; set; }
         public string NetAmount { get; set; }
+        public long TotalQtys { get; set; }
+        public long TotalAmounts { get; set; }
         public List<DirectLabourBill> DirectBillReportList { get; set; }
     }
 }

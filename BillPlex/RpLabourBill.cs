@@ -124,6 +124,7 @@ namespace BillPlex
             XRTableCell dataCell4 = new XRTableCell();
             XRTableCell dataCell5 = new XRTableCell();
             XRTableCell dataCell6 = new XRTableCell();
+
             foreach (var dataItem in DirectLabourBillRequest)
             {
                 dataRow = new XRTableRow();
@@ -186,17 +187,12 @@ namespace BillPlex
 
                 dataRow.Cells.AddRange(new XRTableCell[] { dataCell1, dataCell2, dataCell3, dataCell4, dataCell5, dataCell6 });
                 table.Rows.Add(dataRow);
-            
+            detailBand.Controls.Add(table);
 
-
-            //dataRow = new XRTableRow();
-            //dataRow.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-
-            //table.Rows.Add(dataRow);
 
 
             // Add the table to the DetailBand
-            detailBand.Controls.Add(table);
+            //detailBand.Controls.Add(table);
 
             // Bind the controls to data source fields
             DataSource = dataSource;
@@ -219,6 +215,8 @@ namespace BillPlex
             FinalTotal.DataBindings.Add("Text", DataSource, "FinalTotal");
             Advance.DataBindings.Add("Text", DataSource, "Advance");
             NetAmount.DataBindings.Add("Text", DataSource, "NetAmount");
+            xrTotalQty.DataBindings.Add("Text", DataSource, "TotalQtys");
+            Amount.DataBindings.Add("Text", DataSource, "TotalAmounts");
             objectDataSource1.DataSource = dataSource;
 
             int TotalQty = 3000;
@@ -230,8 +228,6 @@ namespace BillPlex
                     TotalQty += itemQty;
                 }
             }
-            txtTotalQty.Text = TotalQty.ToString();
-            txtTotalQty.DataBindings.Add("Text", txtTotalQty.Text, txtTotalQty.Text);
         }
         public static string NumberToWords(int number)
         {

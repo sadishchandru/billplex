@@ -27,6 +27,8 @@ namespace BusinessLayer
         public long Deducation { get; set; }
         public long Conveyance { get; set; }
         public long Incentive { get; set; }
+        public long TotalQtys { get; set; }
+        public long TotalAmounts { get; set; }
         public List<DropDownItemInfo> MasterCompanyList { get; set; }
         public List<DropDownItemInfo> ClientCompanyList { get; set; }
         public List<DropDownItemInfo> SubClientList { get; set; }
@@ -63,8 +65,18 @@ namespace BusinessLayer
                     item.QuantityPiece = ToString(dbReader["QuantityPiece"]);
                     item.WagesforEmp = ToString(dbReader["WagesforEmp"]);
                     item.TotalQty = ToString(dbReader["TotalQty"]);
+                    if (item.TotalQty != "")
+                    {
+                        TotalQtys = + long.Parse(item.TotalQty);
+
+                    }
                     item.NetAmt = ToString(dbReader["NetAmt"]);
                     item.TotalAmt = ToString(dbReader["TotalAmt"]);
+                    if (item.TotalAmt != "")
+                    {
+                        TotalAmounts = + long.Parse(item.TotalAmt);
+
+                    }
                     item.Deducation = ToInteger(dbReader["Deduction"]);
                     item.Conveyance = ToInteger(dbReader["conveyance"]);
                     item.Incentive = ToInteger(dbReader["incentive"]);

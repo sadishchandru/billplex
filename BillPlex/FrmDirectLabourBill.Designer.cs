@@ -130,6 +130,7 @@ namespace BillPlex
             this.ddDate = new DevExpress.XtraEditors.DateEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.txttotalQuantity = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -190,10 +191,12 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.ddDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txttotalQuantity.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.txttotalQuantity);
             this.panelControl1.Controls.Add(this.gridControl1);
             this.panelControl1.Controls.Add(this.panelControl8);
             this.panelControl1.Controls.Add(this.panelControl6);
@@ -1279,6 +1282,15 @@ namespace BillPlex
             this.labelControl1.TabIndex = 2;
             this.labelControl1.Text = "Labour Bill";
             // 
+            // txttotalQuantity
+            // 
+            this.txttotalQuantity.Enabled = false;
+            this.txttotalQuantity.Location = new System.Drawing.Point(430, 562);
+            this.txttotalQuantity.Name = "txttotalQuantity";
+            this.txttotalQuantity.Size = new System.Drawing.Size(200, 20);
+            this.txttotalQuantity.TabIndex = 124;
+            this.txttotalQuantity.Visible = false;
+            // 
             // FrmDirectLabourBill
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -1357,6 +1369,7 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txttotalQuantity.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1456,5 +1469,6 @@ namespace BillPlex
         private DevExpress.XtraGrid.Columns.GridColumn colTotalQty;
         private DevExpress.XtraGrid.Columns.GridColumn colNetAmt;
         private DevExpress.XtraGrid.Columns.GridColumn colTotalAmt;
+        private DevExpress.XtraEditors.TextEdit txttotalQuantity;
     }
 }

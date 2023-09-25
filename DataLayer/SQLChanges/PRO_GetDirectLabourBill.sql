@@ -53,8 +53,11 @@ END
 
 /*
 EXEC [dbo].[PRO_GetDirectLabourBill]
+	@From = '2023-08-01',
+	@To = '2023-09-01',
     @IsClientWise = 0,
     @MainCompany = 'Man',
-    @ClientCompany = 'AB123',
+    @ClientCompany = 'AB123'
+	,
     @SubClientCompany = 'SUBCLIENTCOMPANY';
 */

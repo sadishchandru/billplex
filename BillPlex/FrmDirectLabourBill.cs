@@ -120,7 +120,7 @@ namespace BillPlex
             string Advance = txtAdvance.Text;
             string NetAmount = txtNetAmount.Text;
 
-            if (DirectLabourBillRequest.DirectBillReportList.Count > 0)
+            if (DirectLabourBillRequest.DirectBillReportList != null && DirectLabourBillRequest.DirectBillReportList.Count > 0)
             {
                 //Create an instance of your report
                 RpLabourBill report = new RpLabourBill(GetLabourBillDataSource(BillNo, FromDate, Date, ToDate, LessDeducation, SubTotal1, Conveyance, Incentives, SubTotal2,
@@ -162,6 +162,8 @@ namespace BillPlex
                     FinalTotal = finaltotal,
                     Advance = advance,
                     NetAmount = netamount,
+                    TotalQtys = long.Parse(txttotalQuantity.Text),
+                    TotalAmounts = long.Parse(txtGrandTotal.Text),
                     DirectBillReportList = DirectBillReportList
                 }
             };
@@ -462,10 +464,11 @@ namespace BillPlex
                 }
                 DisplayFooterTotal();
                 DirectLabourBillRequest.DirectBillReportList.ToList();
-                txtDeducation.Text = DirectLabourBillRequest.DirectBillReportList.Sum(item => item.Deducation).ToString();
-                txtConveyance.Text = DirectLabourBillRequest.DirectBillReportList.Sum(item => item.Conveyance).ToString();
-                txtIncentives.Text = DirectLabourBillRequest.DirectBillReportList.Sum(item => item.Incentive).ToString();
-                //txtq.Text = DirectLabourBillRequest.DirectBillReportList.Sum(item => item.Incentive).ToString();
+                txtDeducation.Text = DirectLabourBillRequest.DirectBillReportList.Sum(item => Convert.ToDecimal(item.Deducation)).ToString();
+                txtConveyance.Text = DirectLabourBillRequest.DirectBillReportList.Sum(item => Convert.ToDecimal(item.Conveyance)).ToString();
+                txtIncentives.Text = DirectLabourBillRequest.DirectBillReportList.Sum(item => Convert.ToDecimal(item.Incentive)).ToString();
+                txttotalQuantity.Text = DirectLabourBillRequest.DirectBillReportList.Sum(item => long.Parse(item.TotalQty == "" ? "0" : item.TotalQty)).ToString();
+                txtGrandTotal.Text = DirectLabourBillRequest.DirectBillReportList.Sum(item => long.Parse(item.TotalAmt == "" ? "0" : item.TotalAmt)).ToString();
             }
             catch (Exception ex)
             {
