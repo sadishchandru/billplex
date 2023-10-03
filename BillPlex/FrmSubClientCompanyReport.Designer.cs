@@ -313,9 +313,9 @@ namespace BillPlex
             // 
             // FrmSubClientCompanyReport
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1822, 833);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(1635, 850);
             this.Controls.Add(this.panelControl1);
             this.Name = "FrmSubClientCompanyReport";
             this.Text = "FrmSubClientCompanyReport";

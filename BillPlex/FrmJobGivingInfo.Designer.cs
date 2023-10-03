@@ -1132,9 +1132,9 @@ namespace BillPlex
             // 
             // FrmJobGivingInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1709, 848);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(1635, 865);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.panelControl15);
             this.Controls.Add(this.panelControl3);

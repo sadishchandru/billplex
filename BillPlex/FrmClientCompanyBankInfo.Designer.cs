@@ -646,7 +646,7 @@ namespace BillPlex
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FrmClientCompanyBankInfo";
-            this.Text = "ClientCompanyBankInfo";
+            this.Text = "FrmClientCompanyBankInfo";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmClientCompanyBankInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();

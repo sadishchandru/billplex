@@ -46,8 +46,8 @@ namespace BusinessLayer
                 InitializeDb();
 
                 List<DbParams> objLstDbParams = new List<DbParams>();
-                objLstDbParams.Add(new DbParams(DbType.String, 50, FromDate, "@From", ParameterDirection.Input));
-                objLstDbParams.Add(new DbParams(DbType.String, 50, ToDate, "@To", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.Date, 50, FromDate, "@From", ParameterDirection.Input));
+                objLstDbParams.Add(new DbParams(DbType.Date, 50, ToDate, "@To", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 200, ClientWise, "@IsClientWise", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 200, MainComapny, "@MainCompany", ParameterDirection.Input));
                 objLstDbParams.Add(new DbParams(DbType.String, 200, ClientComapny, "@ClientCompany", ParameterDirection.Input));

@@ -36,19 +36,8 @@ namespace BillPlex
             DevExpress.DataAccess.Sql.QueryParameter queryParameter3 = new DevExpress.DataAccess.Sql.QueryParameter();
             DevExpress.DataAccess.Sql.QueryParameter queryParameter4 = new DevExpress.DataAccess.Sql.QueryParameter();
             DevExpress.DataAccess.Sql.QueryParameter queryParameter5 = new DevExpress.DataAccess.Sql.QueryParameter();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter6 = new DevExpress.DataAccess.Sql.QueryParameter();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colModelName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colProductName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colProductSize = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colQuantityPiece = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colWagesforEmp = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTotalQty = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNetAmt = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTotalAmt = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.txttotalQuantity = new DevExpress.XtraEditors.TextEdit();
             this.panelControl8 = new DevExpress.XtraEditors.PanelControl();
             this.calcEdit1 = new DevExpress.XtraEditors.CalcEdit();
             this.labelControl34 = new DevExpress.XtraEditors.LabelControl();
@@ -130,11 +119,20 @@ namespace BillPlex
             this.ddDate = new DevExpress.XtraEditors.DateEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.txttotalQuantity = new DevExpress.XtraEditors.TextEdit();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colModelName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProductName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProductSize = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colQuantityPiece = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colWagesforEmp = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTotalQty = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNetAmt = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTotalAmt = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txttotalQuantity.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl8)).BeginInit();
             this.panelControl8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.calcEdit1.Properties)).BeginInit();
@@ -191,7 +189,8 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.ddDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txttotalQuantity.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -257,122 +256,14 @@ namespace BillPlex
             this.panelControl1.Size = new System.Drawing.Size(1800, 826);
             this.panelControl1.TabIndex = 0;
             // 
-            // gridControl1
+            // txttotalQuantity
             // 
-            this.gridControl1.DataMember = "PRO_GetDirectLabourBill";
-            this.gridControl1.DataSource = this.sqlDataSource1;
-            this.gridControl1.Location = new System.Drawing.Point(12, 191);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1359, 324);
-            this.gridControl1.TabIndex = 123;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // sqlDataSource1
-            // 
-            this.sqlDataSource1.ConnectionName = "BillPlex";
-            this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery1.Name = "PRO_GetDirectLabourBill";
-            queryParameter1.Name = "@From";
-            queryParameter1.Type = typeof(System.DateTime);
-            queryParameter1.ValueInfo = "1753-01-01";
-            queryParameter2.Name = "@To";
-            queryParameter2.Type = typeof(System.DateTime);
-            queryParameter2.ValueInfo = "1753-01-01";
-            queryParameter3.Name = "@IsClientWise";
-            queryParameter3.Type = typeof(int);
-            queryParameter3.ValueInfo = "0";
-            queryParameter4.Name = "@MainCompany";
-            queryParameter4.Type = typeof(string);
-            queryParameter5.Name = "@ClientCompany";
-            queryParameter5.Type = typeof(string);
-            queryParameter6.Name = "@SubClientCompany";
-            queryParameter6.Type = typeof(string);
-            storedProcQuery1.Parameters.Add(queryParameter1);
-            storedProcQuery1.Parameters.Add(queryParameter2);
-            storedProcQuery1.Parameters.Add(queryParameter3);
-            storedProcQuery1.Parameters.Add(queryParameter4);
-            storedProcQuery1.Parameters.Add(queryParameter5);
-            storedProcQuery1.Parameters.Add(queryParameter6);
-            storedProcQuery1.StoredProcName = "PRO_GetDirectLabourBill";
-            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery1});
-            this.sqlDataSource1.ResultSchemaSerializable = "PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlBST19HZXREaXJlY3RMYWJvd" +
-    "XJCaWxsIiAvPjwvRGF0YVNldD4=";
-            // 
-            // gridView1
-            // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colModelName,
-            this.colProductName,
-            this.colProductSize,
-            this.colQuantityPiece,
-            this.colWagesforEmp,
-            this.colTotalQty,
-            this.colNetAmt,
-            this.colTotalAmt});
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowFooter = true;
-            // 
-            // colModelName
-            // 
-            this.colModelName.FieldName = "ModelName";
-            this.colModelName.Name = "colModelName";
-            this.colModelName.Visible = true;
-            this.colModelName.VisibleIndex = 0;
-            // 
-            // colProductName
-            // 
-            this.colProductName.FieldName = "ProductName";
-            this.colProductName.Name = "colProductName";
-            this.colProductName.Visible = true;
-            this.colProductName.VisibleIndex = 1;
-            // 
-            // colProductSize
-            // 
-            this.colProductSize.FieldName = "ProductSize";
-            this.colProductSize.Name = "colProductSize";
-            this.colProductSize.Visible = true;
-            this.colProductSize.VisibleIndex = 2;
-            // 
-            // colQuantityPiece
-            // 
-            this.colQuantityPiece.FieldName = "QuantityPiece";
-            this.colQuantityPiece.Name = "colQuantityPiece";
-            this.colQuantityPiece.Visible = true;
-            this.colQuantityPiece.VisibleIndex = 3;
-            // 
-            // colWagesforEmp
-            // 
-            this.colWagesforEmp.FieldName = "WagesforEmp";
-            this.colWagesforEmp.Name = "colWagesforEmp";
-            this.colWagesforEmp.Visible = true;
-            this.colWagesforEmp.VisibleIndex = 4;
-            // 
-            // colTotalQty
-            // 
-            this.colTotalQty.FieldName = "TotalQty";
-            this.colTotalQty.Name = "colTotalQty";
-            this.colTotalQty.Visible = true;
-            this.colTotalQty.VisibleIndex = 5;
-            // 
-            // colNetAmt
-            // 
-            this.colNetAmt.FieldName = "NetAmt";
-            this.colNetAmt.Name = "colNetAmt";
-            this.colNetAmt.Visible = true;
-            this.colNetAmt.VisibleIndex = 6;
-            // 
-            // colTotalAmt
-            // 
-            this.colTotalAmt.FieldName = "TotalAmt";
-            this.colTotalAmt.Name = "colTotalAmt";
-            this.colTotalAmt.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TotalAmt", "Total={0:0.##}")});
-            this.colTotalAmt.Visible = true;
-            this.colTotalAmt.VisibleIndex = 7;
+            this.txttotalQuantity.Enabled = false;
+            this.txttotalQuantity.Location = new System.Drawing.Point(430, 562);
+            this.txttotalQuantity.Name = "txttotalQuantity";
+            this.txttotalQuantity.Size = new System.Drawing.Size(200, 20);
+            this.txttotalQuantity.TabIndex = 124;
+            this.txttotalQuantity.Visible = false;
             // 
             // panelControl8
             // 
@@ -1282,20 +1173,123 @@ namespace BillPlex
             this.labelControl1.TabIndex = 2;
             this.labelControl1.Text = "Labour Bill";
             // 
-            // txttotalQuantity
+            // gridView1
             // 
-            this.txttotalQuantity.Enabled = false;
-            this.txttotalQuantity.Location = new System.Drawing.Point(430, 562);
-            this.txttotalQuantity.Name = "txttotalQuantity";
-            this.txttotalQuantity.Size = new System.Drawing.Size(200, 20);
-            this.txttotalQuantity.TabIndex = 124;
-            this.txttotalQuantity.Visible = false;
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colModelName,
+            this.colProductName,
+            this.colProductSize,
+            this.colQuantityPiece,
+            this.colWagesforEmp,
+            this.colTotalQty,
+            this.colNetAmt,
+            this.colTotalAmt});
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowFooter = true;
+            // 
+            // colModelName
+            // 
+            this.colModelName.FieldName = "ModelName";
+            this.colModelName.Name = "colModelName";
+            this.colModelName.Visible = true;
+            this.colModelName.VisibleIndex = 0;
+            // 
+            // colProductName
+            // 
+            this.colProductName.FieldName = "ProductName";
+            this.colProductName.Name = "colProductName";
+            this.colProductName.Visible = true;
+            this.colProductName.VisibleIndex = 1;
+            // 
+            // colProductSize
+            // 
+            this.colProductSize.FieldName = "ProductSize";
+            this.colProductSize.Name = "colProductSize";
+            this.colProductSize.Visible = true;
+            this.colProductSize.VisibleIndex = 2;
+            // 
+            // colQuantityPiece
+            // 
+            this.colQuantityPiece.FieldName = "QuantityPiece";
+            this.colQuantityPiece.Name = "colQuantityPiece";
+            this.colQuantityPiece.Visible = true;
+            this.colQuantityPiece.VisibleIndex = 3;
+            // 
+            // colWagesforEmp
+            // 
+            this.colWagesforEmp.FieldName = "WagesforEmp";
+            this.colWagesforEmp.Name = "colWagesforEmp";
+            this.colWagesforEmp.Visible = true;
+            this.colWagesforEmp.VisibleIndex = 4;
+            // 
+            // colTotalQty
+            // 
+            this.colTotalQty.FieldName = "TotalQty";
+            this.colTotalQty.Name = "colTotalQty";
+            this.colTotalQty.Visible = true;
+            this.colTotalQty.VisibleIndex = 5;
+            // 
+            // colNetAmt
+            // 
+            this.colNetAmt.FieldName = "NetAmt";
+            this.colNetAmt.Name = "colNetAmt";
+            this.colNetAmt.Visible = true;
+            this.colNetAmt.VisibleIndex = 6;
+            // 
+            // colTotalAmt
+            // 
+            this.colTotalAmt.FieldName = "TotalAmt";
+            this.colTotalAmt.Name = "colTotalAmt";
+            this.colTotalAmt.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TotalAmt", "Total={0:0.##}")});
+            this.colTotalAmt.Visible = true;
+            this.colTotalAmt.VisibleIndex = 7;
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.DataSource = this.sqlDataSource1;
+            this.gridControl1.Location = new System.Drawing.Point(12, 191);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(1359, 324);
+            this.gridControl1.TabIndex = 123;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // sqlDataSource1
+            // 
+            this.sqlDataSource1.ConnectionName = "BillPlex";
+            this.sqlDataSource1.Name = "sqlDataSource1";
+            storedProcQuery1.Name = "GetJobGivingData";
+            queryParameter1.Name = "@From";
+            queryParameter1.Type = typeof(System.DateTime);
+            queryParameter1.ValueInfo = "1753-01-01";
+            queryParameter2.Name = "@To";
+            queryParameter2.Type = typeof(System.DateTime);
+            queryParameter2.ValueInfo = "1753-01-01";
+            queryParameter3.Name = "@MainCompany";
+            queryParameter3.Type = typeof(string);
+            queryParameter4.Name = "@ClientCompany";
+            queryParameter4.Type = typeof(string);
+            queryParameter5.Name = "@SubClientCompany";
+            queryParameter5.Type = typeof(string);
+            storedProcQuery1.Parameters.Add(queryParameter1);
+            storedProcQuery1.Parameters.Add(queryParameter2);
+            storedProcQuery1.Parameters.Add(queryParameter3);
+            storedProcQuery1.Parameters.Add(queryParameter4);
+            storedProcQuery1.Parameters.Add(queryParameter5);
+            storedProcQuery1.StoredProcName = "GetJobGivingData";
+            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
+            storedProcQuery1});
+            this.sqlDataSource1.ResultSchemaSerializable = "PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IkdldEpvYkdpdmluZ0RhdGEiI" +
+    "C8+PC9EYXRhU2V0Pg==";
             // 
             // FrmDirectLabourBill
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1838, 857);
+            this.ClientSize = new System.Drawing.Size(1618, 905);
             this.Controls.Add(this.panelControl1);
             this.MinimizeBox = false;
             this.Name = "FrmDirectLabourBill";
@@ -1306,8 +1300,7 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txttotalQuantity.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl8)).EndInit();
             this.panelControl8.ResumeLayout(false);
             this.panelControl8.PerformLayout();
@@ -1369,7 +1362,8 @@ namespace BillPlex
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txttotalQuantity.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1458,6 +1452,7 @@ namespace BillPlex
         private DevExpress.XtraEditors.PanelControl panelControl8;
         private DevExpress.XtraEditors.LabelControl labelControl34;
         private DevExpress.XtraEditors.CalcEdit calcEdit1;
+        private DevExpress.XtraEditors.TextEdit txttotalQuantity;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
@@ -1469,6 +1464,5 @@ namespace BillPlex
         private DevExpress.XtraGrid.Columns.GridColumn colTotalQty;
         private DevExpress.XtraGrid.Columns.GridColumn colNetAmt;
         private DevExpress.XtraGrid.Columns.GridColumn colTotalAmt;
-        private DevExpress.XtraEditors.TextEdit txttotalQuantity;
     }
 }

@@ -30,7 +30,7 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDirectJobReceivedWithoutGivingProfile));
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
@@ -244,10 +244,10 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery1.Name = "PRO_GetDirectJobReceivedWithoutGiving";
-            storedProcQuery1.StoredProcName = "PRO_GetDirectJobReceivedWithoutGiving";
+            storedProcQuery2.Name = "PRO_GetDirectJobReceivedWithoutGiving";
+            storedProcQuery2.StoredProcName = "PRO_GetDirectJobReceivedWithoutGiving";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery1});
+            storedProcQuery2});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // gridView1
@@ -304,6 +304,7 @@ namespace BillPlex
             this.colEmployeeName.Name = "colEmployeeName";
             this.colEmployeeName.Visible = true;
             this.colEmployeeName.VisibleIndex = 2;
+            this.colEmployeeName.Width = 99;
             // 
             // colCompanyName
             // 
@@ -311,6 +312,7 @@ namespace BillPlex
             this.colCompanyName.Name = "colCompanyName";
             this.colCompanyName.Visible = true;
             this.colCompanyName.VisibleIndex = 3;
+            this.colCompanyName.Width = 98;
             // 
             // colDirectorName
             // 
@@ -318,6 +320,7 @@ namespace BillPlex
             this.colDirectorName.Name = "colDirectorName";
             this.colDirectorName.Visible = true;
             this.colDirectorName.VisibleIndex = 4;
+            this.colDirectorName.Width = 91;
             // 
             // colClientCompany
             // 
@@ -325,6 +328,7 @@ namespace BillPlex
             this.colClientCompany.Name = "colClientCompany";
             this.colClientCompany.Visible = true;
             this.colClientCompany.VisibleIndex = 5;
+            this.colClientCompany.Width = 98;
             // 
             // colClientName
             // 
@@ -332,6 +336,7 @@ namespace BillPlex
             this.colClientName.Name = "colClientName";
             this.colClientName.Visible = true;
             this.colClientName.VisibleIndex = 6;
+            this.colClientName.Width = 80;
             // 
             // colSubClientCompany
             // 
@@ -339,6 +344,7 @@ namespace BillPlex
             this.colSubClientCompany.Name = "colSubClientCompany";
             this.colSubClientCompany.Visible = true;
             this.colSubClientCompany.VisibleIndex = 7;
+            this.colSubClientCompany.Width = 119;
             // 
             // colSubClientName
             // 
@@ -346,6 +352,7 @@ namespace BillPlex
             this.colSubClientName.Name = "colSubClientName";
             this.colSubClientName.Visible = true;
             this.colSubClientName.VisibleIndex = 8;
+            this.colSubClientName.Width = 101;
             // 
             // colProductModel
             // 
@@ -353,6 +360,7 @@ namespace BillPlex
             this.colProductModel.Name = "colProductModel";
             this.colProductModel.Visible = true;
             this.colProductModel.VisibleIndex = 9;
+            this.colProductModel.Width = 91;
             // 
             // colProductCode
             // 
@@ -360,6 +368,7 @@ namespace BillPlex
             this.colProductCode.Name = "colProductCode";
             this.colProductCode.Visible = true;
             this.colProductCode.VisibleIndex = 10;
+            this.colProductCode.Width = 88;
             // 
             // colProductName
             // 
@@ -367,6 +376,7 @@ namespace BillPlex
             this.colProductName.Name = "colProductName";
             this.colProductName.Visible = true;
             this.colProductName.VisibleIndex = 11;
+            this.colProductName.Width = 90;
             // 
             // colProsize
             // 
@@ -409,6 +419,7 @@ namespace BillPlex
             this.colIncentiveApplicable.Name = "colIncentiveApplicable";
             this.colIncentiveApplicable.Visible = true;
             this.colIncentiveApplicable.VisibleIndex = 17;
+            this.colIncentiveApplicable.Width = 119;
             // 
             // colBDays
             // 
@@ -444,6 +455,7 @@ namespace BillPlex
             this.colConveyance1.Name = "colConveyance1";
             this.colConveyance1.Visible = true;
             this.colConveyance1.VisibleIndex = 22;
+            this.colConveyance1.Width = 83;
             // 
             // colIncentive1
             // 
@@ -499,7 +511,7 @@ namespace BillPlex
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1678, 784);
+            this.ClientSize = new System.Drawing.Size(1618, 784);
             this.Controls.Add(this.panelControl2);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;

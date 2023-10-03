@@ -690,7 +690,8 @@ namespace BillPlex
             // FrmClientCompanyProfile
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.ClientSize = new System.Drawing.Size(1619, 763);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(1618, 763);
             this.Controls.Add(this.panelControl1);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;

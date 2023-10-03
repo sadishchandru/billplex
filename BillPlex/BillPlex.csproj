@@ -455,6 +455,9 @@
     <EmbeddedResource Include="FrmInDirectLabourBill.resx">
       <DependentUpon>FrmInDirectLabourBill.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmJobGivingInfo.resx">
+      <DependentUpon>FrmJobGivingInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmJobGivingProfile.resx">
       <DependentUpon>FrmJobGivingProfile.cs</DependentUpon>
     </EmbeddedResource>
