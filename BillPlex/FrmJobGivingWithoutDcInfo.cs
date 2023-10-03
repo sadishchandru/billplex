@@ -467,6 +467,13 @@ namespace BillPlex
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+            FrmJobGivingWithoutDcProfile form = Application.OpenForms.OfType<FrmJobGivingWithoutDcProfile>().FirstOrDefault();
+
+            Form myForm = Application.OpenForms["FrmJobGivingWithoutDcProfile"];
+            if (myForm != null)
+            {
+                form.ReloadSqlDataSource();
+            }
         }
 
         private void txtQuantity_EditValueChanged(object sender, EventArgs e)

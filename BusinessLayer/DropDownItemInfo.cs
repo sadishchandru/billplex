@@ -22,6 +22,7 @@ namespace BusinessLayer
         public string color { get; set; }
         public string RawName { get; set; }
         public string RawType { get; set; }
+        public string OrderNo { get; set; }
         public int OrderQty { get; set; }
         public int OrderWghtNo { get; set; }
         public string TotalWt { get; set; }

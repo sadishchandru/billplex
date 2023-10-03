@@ -41,7 +41,8 @@ namespace BillPlex
         public void ReloadSqlDataSource()
         {
             sqlDataSource1.FillAsync();
-            gridView1.RefreshData();
+            //gridView1.RefreshData();
+            gridControl1.RefreshDataSource();
 
         }
 
