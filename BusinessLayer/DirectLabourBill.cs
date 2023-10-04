@@ -22,6 +22,7 @@ namespace BusinessLayer
         public string QuantityPiece { get; set; }
         public string WagesforEmp { get; set; }
         public string TotalQty { get; set; }
+        public string OrderNo { get; set; }
         public string NetAmt { get; set; }
         public string TotalAmt { get; set; }
         public long Deducation { get; set; }
@@ -65,6 +66,7 @@ namespace BusinessLayer
                     item.QuantityPiece = ToString(dbReader["QuantityPiece"]);
                     item.WagesforEmp = ToString(dbReader["WagesforEmp"]);
                     item.TotalQty = ToString(dbReader["TotalQty"]);
+                    item.OrderNo = ToString(dbReader["OrderNo"]);
                     if (item.TotalQty != "")
                     {
                         TotalQtys = + long.Parse(item.TotalQty);

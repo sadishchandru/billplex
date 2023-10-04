@@ -40,6 +40,7 @@ BEGIN
                 JGDC.conveyance AS Conveyance,
                 JGDC.incentive AS Incentive,
                 JGDC.OrderDate,
+				OM.Orderno AS OrderNo,
                 ROW_NUMBER() OVER (ORDER BY JGDC.OrderDate DESC) AS row_no
             FROM JobGivingWithoutDC JGDC
             LEFT JOIN EmployeePersonal EP ON EP.Id = JGDC.EmployeeCode

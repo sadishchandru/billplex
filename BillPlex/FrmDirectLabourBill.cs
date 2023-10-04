@@ -455,6 +455,7 @@ namespace BillPlex
                         newRow["TotalQty"] = item.TotalQty;
                         newRow["NetAmt"] = item.NetAmt;
                         newRow["TotalAmt"] = item.TotalAmt;
+                        newRow["OrderNo"] = item.OrderNo;
                         dataTable.Rows.Add(newRow);
                         gridControl1.RefreshDataSource();
                     }
@@ -487,6 +488,7 @@ namespace BillPlex
             dataTable.Columns.Add("TotalQty", typeof(string));
             dataTable.Columns.Add("NetAmt", typeof(string));
             dataTable.Columns.Add("TotalAmt", typeof(string));
+            dataTable.Columns.Add("OrderNo", typeof(string));
 
             gridControl1.DataSource = dataTable;
             gridView1.RefreshData();
