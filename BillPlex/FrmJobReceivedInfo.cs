@@ -148,7 +148,8 @@ namespace BillPlex
                 txtPSize.Text = (string)selectedCompanyList.GetRowCellValue(rowHandle, "ProductSize");
                 txtColor.Text = (string)selectedCompanyList.GetRowCellValue(rowHandle, "Color");
                 txtWages.Text = (string)selectedCompanyList.GetRowCellValue(rowHandle, "Wages");
-                JobReceivedRequest.OrderNo = (string)selectedCompanyList.GetRowCellValue(rowHandle, "OrderNo");
+                JobReceivedRequest.Id = (Int64)selectedCompanyList.GetRowCellValue(rowHandle, "Id");
+                JobReceivedRequest.OrderNo = selectedCompanyList.GetRowCellValue(rowHandle, "OrderNo").ToString();
                 JobReceivedRequest.OrderDate = (string)selectedCompanyList.GetRowCellValue(rowHandle, "OrderDate");
                 JobReceivedRequest.CompanyName = (string)selectedCompanyList.GetRowCellValue(rowHandle, "CompanyName");
                 JobReceivedRequest.CompanyCName = (string)selectedCompanyList.GetRowCellValue(rowHandle, "Director");
@@ -157,7 +158,7 @@ namespace BillPlex
                 JobReceivedRequest.SubClientCompany = (string)selectedCompanyList.GetRowCellValue(rowHandle, "SubClientCompany");
                 JobReceivedRequest.SubClientCompanyName = (string)selectedCompanyList.GetRowCellValue(rowHandle, "subContractor");
                 JobReceivedRequest.CustomerCode = (string)selectedCompanyList.GetRowCellValue(rowHandle, "CustomerCode");
-                JobReceivedRequest.Id = (Int64)selectedCompanyList.GetRowCellValue(rowHandle, "Id");
+             
                 var recicivedQty = (string)selectedCompanyList.GetRowCellValue(rowHandle, "received");
                 if (recicivedQty != "" && recicivedQty != "0")
                 {

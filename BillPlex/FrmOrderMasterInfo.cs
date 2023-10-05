@@ -59,7 +59,7 @@ namespace BillPlex
             #region DropDown Get List
             Dictionary<string, bool> dropDownList = new Dictionary<string, bool>
             {
-                {"RawMaterialRequired",true},
+                //{"RawMaterialRequired",true},
                 {"ProductModelRequired",true},
                 {"ProductMasterRequired",true},
                 {"CustomerMasterRequired",true},
@@ -303,7 +303,7 @@ namespace BillPlex
                                     newRow["CustomerId"] = item.CustomerId;
                                     newRow["Name"] = item.CustomerName;
                                     newRow["ProductNameId"] = item.ProductNameId;
-                                    newRow["Productmodel"] = item.Productmodel;
+                                    newRow["Productmodel"] = item.ProductName;
                                     newRow["productmodel"] = item.ProductModel;
                                     newRow["productcode"] = item.ProductCode;
                                     newRow["productsize"] = item.ProductSize;

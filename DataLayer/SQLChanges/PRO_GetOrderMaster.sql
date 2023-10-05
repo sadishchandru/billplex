@@ -1,4 +1,3 @@
-USE [BillPlex]
 GO
 /****** Object:  StoredProcedure [dbo].[PRO_GetRawMaterial]    Script Date: 14/06/2023 11:55:34 ******/
 SET ANSI_NULLS ON
@@ -10,6 +9,7 @@ GO
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
+--Exec [dbo].[PRO_GetOrderMaster]
 CREATE OR ALTER   PROCEDURE [dbo].[PRO_GetOrderMaster]
 @SearchKey VARCHAR(200) = ''
 
@@ -59,7 +59,7 @@ SET NOCOUNT ON;
 				OM.CustomerId,
 				CM.Name,
 				ProductNameId,
-				Pm.Productmodel,
+				Pm.Productmodel AS ProductName,
 				OM.productmodel,
 				OM.productcode,
 				OM.productsize,

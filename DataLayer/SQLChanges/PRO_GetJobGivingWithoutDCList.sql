@@ -1,4 +1,4 @@
-USE [Billplex]
+
 GO
 /****** Object:  StoredProcedure [dbo].[PRO_GetClientCompanyProfileInfo]    Script Date: 27/06/2023 19:55:21 ******/
 SET ANSI_NULLS ON
@@ -114,7 +114,9 @@ SET NOCOUNT ON;
 			FROM JobGiving JG
 			left join EmployeePersonal EP on EP.Id = JG.EmployeeCode
 			left join OrderMaster OM on OM.Id = JG.OrderNo
-			WHERE RowNum = 1
-			AND ISNULL(isDelete, 0) = 0;
+			WHERE
+			--RowNum = 1
+			--AND 
+			ISNULL(isDelete, 0) = 0;
 
 END

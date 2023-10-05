@@ -900,7 +900,7 @@ namespace BillPlex
                     EmployeeNomineeReqest.ENEmpId = EmployeePersonalRequest.Id;
                     EmployeeNomineeReqest.GetList();
 
-                    if (EmployeeNomineeReqest.NomineeDBList.Count() > 0)
+                    if (EmployeeNomineeReqest.NomineeDBList != null && EmployeeNomineeReqest.NomineeDBList.Count() > 0) 
                     {
                         DataTable nomineedataTable = NomieeGridControl.DataSource as DataTable;
 

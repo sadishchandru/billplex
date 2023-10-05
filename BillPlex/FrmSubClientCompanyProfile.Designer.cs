@@ -30,7 +30,7 @@ namespace BillPlex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery3 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSubClientCompanyProfile));
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
@@ -105,10 +105,10 @@ namespace BillPlex
             // 
             this.sqlDataSource1.ConnectionName = "BillPlex";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery3.Name = "PRO_GetSubClientCompanyProfileInfo";
-            storedProcQuery3.StoredProcName = "PRO_GetSubClientCompanyProfileInfo";
+            storedProcQuery1.Name = "PRO_GetSubClientCompanyProfileInfo";
+            storedProcQuery1.StoredProcName = "PRO_GetSubClientCompanyProfileInfo";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery3});
+            storedProcQuery1});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // panelControl1
@@ -325,6 +325,7 @@ namespace BillPlex
             this.colMasterCompany.Name = "colMasterCompany";
             this.colMasterCompany.Visible = true;
             this.colMasterCompany.VisibleIndex = 0;
+            this.colMasterCompany.Width = 104;
             // 
             // colClientCompany
             // 
@@ -332,6 +333,7 @@ namespace BillPlex
             this.colClientCompany.Name = "colClientCompany";
             this.colClientCompany.Visible = true;
             this.colClientCompany.VisibleIndex = 1;
+            this.colClientCompany.Width = 98;
             // 
             // colMasterCompanyId
             // 
@@ -349,6 +351,7 @@ namespace BillPlex
             this.colSubComCode.Name = "colSubComCode";
             this.colSubComCode.Visible = true;
             this.colSubComCode.VisibleIndex = 2;
+            this.colSubComCode.Width = 93;
             // 
             // colSubComName
             // 
@@ -356,6 +359,7 @@ namespace BillPlex
             this.colSubComName.Name = "colSubComName";
             this.colSubComName.Visible = true;
             this.colSubComName.VisibleIndex = 3;
+            this.colSubComName.Width = 95;
             // 
             // colComOffAdd
             // 
@@ -363,6 +367,7 @@ namespace BillPlex
             this.colComOffAdd.Name = "colComOffAdd";
             this.colComOffAdd.Visible = true;
             this.colComOffAdd.VisibleIndex = 4;
+            this.colComOffAdd.Width = 85;
             // 
             // colComState
             // 
@@ -384,6 +389,7 @@ namespace BillPlex
             this.colComNature.Name = "colComNature";
             this.colComNature.Visible = true;
             this.colComNature.VisibleIndex = 7;
+            this.colComNature.Width = 80;
             // 
             // colDirector
             // 
@@ -398,6 +404,7 @@ namespace BillPlex
             this.colComDatestart.Name = "colComDatestart";
             this.colComDatestart.Visible = true;
             this.colComDatestart.VisibleIndex = 9;
+            this.colComDatestart.Width = 93;
             // 
             // colComStdCode
             // 
@@ -405,6 +412,7 @@ namespace BillPlex
             this.colComStdCode.Name = "colComStdCode";
             this.colComStdCode.Visible = true;
             this.colComStdCode.VisibleIndex = 10;
+            this.colComStdCode.Width = 91;
             // 
             // colComPhone
             // 
@@ -412,6 +420,7 @@ namespace BillPlex
             this.colComPhone.Name = "colComPhone";
             this.colComPhone.Visible = true;
             this.colComPhone.VisibleIndex = 11;
+            this.colComPhone.Width = 77;
             // 
             // colComEmail
             // 
@@ -426,6 +435,7 @@ namespace BillPlex
             this.colComWebsite.Name = "colComWebsite";
             this.colComWebsite.Visible = true;
             this.colComWebsite.VisibleIndex = 13;
+            this.colComWebsite.Width = 86;
             // 
             // colPfType
             // 
@@ -447,6 +457,7 @@ namespace BillPlex
             this.colComPfDate.Name = "colComPfDate";
             this.colComPfDate.Visible = true;
             this.colComPfDate.VisibleIndex = 16;
+            this.colComPfDate.Width = 83;
             // 
             // colComEsiNo
             // 
@@ -454,6 +465,7 @@ namespace BillPlex
             this.colComEsiNo.Name = "colComEsiNo";
             this.colComEsiNo.Visible = true;
             this.colComEsiNo.VisibleIndex = 17;
+            this.colComEsiNo.Width = 76;
             // 
             // colComEsiDate
             // 
@@ -461,6 +473,7 @@ namespace BillPlex
             this.colComEsiDate.Name = "colComEsiDate";
             this.colComEsiDate.Visible = true;
             this.colComEsiDate.VisibleIndex = 18;
+            this.colComEsiDate.Width = 86;
             // 
             // colComFactoryNo
             // 
@@ -468,6 +481,7 @@ namespace BillPlex
             this.colComFactoryNo.Name = "colComFactoryNo";
             this.colComFactoryNo.Visible = true;
             this.colComFactoryNo.VisibleIndex = 19;
+            this.colComFactoryNo.Width = 100;
             // 
             // colComCstNo
             // 
@@ -475,6 +489,7 @@ namespace BillPlex
             this.colComCstNo.Name = "colComCstNo";
             this.colComCstNo.Visible = true;
             this.colComCstNo.VisibleIndex = 20;
+            this.colComCstNo.Width = 79;
             // 
             // colComSslNo
             // 
@@ -482,6 +497,7 @@ namespace BillPlex
             this.colComSslNo.Name = "colComSslNo";
             this.colComSslNo.Visible = true;
             this.colComSslNo.VisibleIndex = 21;
+            this.colComSslNo.Width = 76;
             // 
             // colComTinNo
             // 
@@ -489,6 +505,7 @@ namespace BillPlex
             this.colComTinNo.Name = "colComTinNo";
             this.colComTinNo.Visible = true;
             this.colComTinNo.VisibleIndex = 22;
+            this.colComTinNo.Width = 77;
             // 
             // colComLicenseno
             // 
@@ -496,6 +513,7 @@ namespace BillPlex
             this.colComLicenseno.Name = "colComLicenseno";
             this.colComLicenseno.Visible = true;
             this.colComLicenseno.VisibleIndex = 23;
+            this.colComLicenseno.Width = 94;
             // 
             // colComPanNo
             // 
@@ -503,6 +521,7 @@ namespace BillPlex
             this.colComPanNo.Name = "colComPanNo";
             this.colComPanNo.Visible = true;
             this.colComPanNo.VisibleIndex = 24;
+            this.colComPanNo.Width = 81;
             // 
             // colComTanNo
             // 
@@ -510,6 +529,7 @@ namespace BillPlex
             this.colComTanNo.Name = "colComTanNo";
             this.colComTanNo.Visible = true;
             this.colComTanNo.VisibleIndex = 25;
+            this.colComTanNo.Width = 81;
             // 
             // colAuthorName
             // 
@@ -517,6 +537,7 @@ namespace BillPlex
             this.colAuthorName.Name = "colAuthorName";
             this.colAuthorName.Visible = true;
             this.colAuthorName.VisibleIndex = 26;
+            this.colAuthorName.Width = 86;
             // 
             // colAuthorFathername
             // 
@@ -524,6 +545,7 @@ namespace BillPlex
             this.colAuthorFathername.Name = "colAuthorFathername";
             this.colAuthorFathername.Visible = true;
             this.colAuthorFathername.VisibleIndex = 27;
+            this.colAuthorFathername.Width = 117;
             // 
             // colAuthorGender
             // 
@@ -531,6 +553,7 @@ namespace BillPlex
             this.colAuthorGender.Name = "colAuthorGender";
             this.colAuthorGender.Visible = true;
             this.colAuthorGender.VisibleIndex = 28;
+            this.colAuthorGender.Width = 94;
             // 
             // colAuthorBlood
             // 
@@ -538,6 +561,7 @@ namespace BillPlex
             this.colAuthorBlood.Name = "colAuthorBlood";
             this.colAuthorBlood.Visible = true;
             this.colAuthorBlood.VisibleIndex = 29;
+            this.colAuthorBlood.Width = 85;
             // 
             // colAuthorDOB
             // 
@@ -545,6 +569,7 @@ namespace BillPlex
             this.colAuthorDOB.Name = "colAuthorDOB";
             this.colAuthorDOB.Visible = true;
             this.colAuthorDOB.VisibleIndex = 30;
+            this.colAuthorDOB.Width = 80;
             // 
             // colAuthorEmail
             // 
@@ -552,6 +577,7 @@ namespace BillPlex
             this.colAuthorEmail.Name = "colAuthorEmail";
             this.colAuthorEmail.Visible = true;
             this.colAuthorEmail.VisibleIndex = 31;
+            this.colAuthorEmail.Width = 83;
             // 
             // colAuthorAddress
             // 
@@ -559,6 +585,7 @@ namespace BillPlex
             this.colAuthorAddress.Name = "colAuthorAddress";
             this.colAuthorAddress.Visible = true;
             this.colAuthorAddress.VisibleIndex = 32;
+            this.colAuthorAddress.Width = 98;
             // 
             // colAuthorState
             // 
@@ -566,6 +593,7 @@ namespace BillPlex
             this.colAuthorState.Name = "colAuthorState";
             this.colAuthorState.Visible = true;
             this.colAuthorState.VisibleIndex = 33;
+            this.colAuthorState.Width = 85;
             // 
             // colAuthorPin
             // 
@@ -580,6 +608,7 @@ namespace BillPlex
             this.colAuthorMobile.Name = "colAuthorMobile";
             this.colAuthorMobile.Visible = true;
             this.colAuthorMobile.VisibleIndex = 35;
+            this.colAuthorMobile.Width = 89;
             // 
             // colAuthorPan
             // 
@@ -587,6 +616,7 @@ namespace BillPlex
             this.colAuthorPan.Name = "colAuthorPan";
             this.colAuthorPan.Visible = true;
             this.colAuthorPan.VisibleIndex = 36;
+            this.colAuthorPan.Width = 77;
             // 
             // colAuthorPercent
             // 
@@ -594,6 +624,7 @@ namespace BillPlex
             this.colAuthorPercent.Name = "colAuthorPercent";
             this.colAuthorPercent.Visible = true;
             this.colAuthorPercent.VisibleIndex = 37;
+            this.colAuthorPercent.Width = 96;
             // 
             // colAuthorActive
             // 
@@ -601,6 +632,7 @@ namespace BillPlex
             this.colAuthorActive.Name = "colAuthorActive";
             this.colAuthorActive.Visible = true;
             this.colAuthorActive.VisibleIndex = 38;
+            this.colAuthorActive.Width = 89;
             // 
             // panelControl2
             // 

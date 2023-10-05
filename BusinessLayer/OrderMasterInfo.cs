@@ -19,7 +19,7 @@ namespace BusinessLayer
         public string CustomerName { get; set; }
         public string ProductId { get; set; }
         public Int64 ProductNameId { get; set; }
-        public string Productmodel { get; set; }
+        public string ProductName { get; set; }
         public string ProductModel { get; set; }
         public string ProductCode { get; set; }
         public string ProductSize { get; set; }
@@ -116,7 +116,7 @@ namespace BusinessLayer
                 OrderDetail.CustomerId = ToInteger(dbReader["CustomerId"]);
                 OrderDetail.CustomerName = ToString(dbReader["Name"]);
                 OrderDetail.ProductId = ToString(dbReader["ProductNameId"]);
-                OrderDetail.Productmodel = ToString(dbReader["Productmodel"]);
+                OrderDetail.ProductName = ToString(dbReader["ProductName"]);
                 OrderDetail.ProductModel = ToString(dbReader["productmodel"]);
                 OrderDetail.ProductCode = ToString(dbReader["productcode"]);
                 OrderDetail.ProductSize = ToString(dbReader["productsize"]);

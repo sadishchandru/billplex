@@ -108,8 +108,8 @@ namespace BillPlex
             try
             {
 
-                if (drpMainCompany.Text != string.Empty && drpCCompany.Text != string.Empty && txtCompanyCode.Text != "" && txtCompanyName.Text != "" && 
-                    (drpMainCompany.Text != string.Empty && drpMainCompany.Text != "Select") && (drpCCompany.Text != string.Empty && drpCCompany.Text != "Select")&& txtName.Text != "")
+                if (drpMainCompany.Text != string.Empty && drpCCompany.Text != string.Empty && txtCompanyCode.Text != "" && txtCompanyName.Text != "" &&
+                    (drpMainCompany.Text != string.Empty && drpMainCompany.Text != "Select") && (drpCCompany.Text != string.Empty && drpCCompany.Text != "Select") && txtName.Text != "")
                 {
                     if ((SubClientRequest.Id != 0 || labelAvailable.Visible == true) && labelCodeExist.Visible == false)
                     {
@@ -359,7 +359,7 @@ namespace BillPlex
             radActiveStatus.ResetText();
             txtBankDetails.ResetText();
         }
-     
+
         private void btnExit_Click_1(object sender, EventArgs e)
         {
             this.Close();
@@ -402,7 +402,7 @@ namespace BillPlex
 
         private void btnAddclear_click(object sender, EventArgs e)
         {
-                txtAuthAddress.ResetText();
+            txtAuthAddress.ResetText();
         }
 
         private void btnAddCopy_click(object sender, EventArgs e)
@@ -417,10 +417,11 @@ namespace BillPlex
 
                 XtraMessageBox.Show("Text copied to clipboard!", "Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else {
+            else
+            {
                 XtraMessageBox.Show("No text to copy!", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-           
+
         }
 
         private void btnPANnoCopy_click(object sender, EventArgs e)

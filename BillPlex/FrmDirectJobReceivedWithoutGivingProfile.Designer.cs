@@ -281,6 +281,7 @@ namespace BillPlex
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ColumnAutoWidth = false;
             this.gridView1.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             // 
             // colId
@@ -297,6 +298,7 @@ namespace BillPlex
             this.colEmpId.Name = "colEmpId";
             this.colEmpId.Visible = true;
             this.colEmpId.VisibleIndex = 1;
+            this.colEmpId.Width = 48;
             // 
             // colEmployeeName
             // 
@@ -304,7 +306,7 @@ namespace BillPlex
             this.colEmployeeName.Name = "colEmployeeName";
             this.colEmployeeName.Visible = true;
             this.colEmployeeName.VisibleIndex = 2;
-            this.colEmployeeName.Width = 99;
+            this.colEmployeeName.Width = 66;
             // 
             // colCompanyName
             // 
@@ -312,7 +314,7 @@ namespace BillPlex
             this.colCompanyName.Name = "colCompanyName";
             this.colCompanyName.Visible = true;
             this.colCompanyName.VisibleIndex = 3;
-            this.colCompanyName.Width = 98;
+            this.colCompanyName.Width = 66;
             // 
             // colDirectorName
             // 
@@ -320,7 +322,7 @@ namespace BillPlex
             this.colDirectorName.Name = "colDirectorName";
             this.colDirectorName.Visible = true;
             this.colDirectorName.VisibleIndex = 4;
-            this.colDirectorName.Width = 91;
+            this.colDirectorName.Width = 60;
             // 
             // colClientCompany
             // 
@@ -328,7 +330,7 @@ namespace BillPlex
             this.colClientCompany.Name = "colClientCompany";
             this.colClientCompany.Visible = true;
             this.colClientCompany.VisibleIndex = 5;
-            this.colClientCompany.Width = 98;
+            this.colClientCompany.Width = 66;
             // 
             // colClientName
             // 
@@ -336,7 +338,7 @@ namespace BillPlex
             this.colClientName.Name = "colClientName";
             this.colClientName.Visible = true;
             this.colClientName.VisibleIndex = 6;
-            this.colClientName.Width = 80;
+            this.colClientName.Width = 52;
             // 
             // colSubClientCompany
             // 
@@ -344,7 +346,7 @@ namespace BillPlex
             this.colSubClientCompany.Name = "colSubClientCompany";
             this.colSubClientCompany.Visible = true;
             this.colSubClientCompany.VisibleIndex = 7;
-            this.colSubClientCompany.Width = 119;
+            this.colSubClientCompany.Width = 80;
             // 
             // colSubClientName
             // 
@@ -352,7 +354,7 @@ namespace BillPlex
             this.colSubClientName.Name = "colSubClientName";
             this.colSubClientName.Visible = true;
             this.colSubClientName.VisibleIndex = 8;
-            this.colSubClientName.Width = 101;
+            this.colSubClientName.Width = 67;
             // 
             // colProductModel
             // 
@@ -360,7 +362,7 @@ namespace BillPlex
             this.colProductModel.Name = "colProductModel";
             this.colProductModel.Visible = true;
             this.colProductModel.VisibleIndex = 9;
-            this.colProductModel.Width = 91;
+            this.colProductModel.Width = 60;
             // 
             // colProductCode
             // 
@@ -368,7 +370,7 @@ namespace BillPlex
             this.colProductCode.Name = "colProductCode";
             this.colProductCode.Visible = true;
             this.colProductCode.VisibleIndex = 10;
-            this.colProductCode.Width = 88;
+            this.colProductCode.Width = 57;
             // 
             // colProductName
             // 
@@ -376,7 +378,7 @@ namespace BillPlex
             this.colProductName.Name = "colProductName";
             this.colProductName.Visible = true;
             this.colProductName.VisibleIndex = 11;
-            this.colProductName.Width = 90;
+            this.colProductName.Width = 59;
             // 
             // colProsize
             // 
@@ -384,6 +386,7 @@ namespace BillPlex
             this.colProsize.Name = "colProsize";
             this.colProsize.Visible = true;
             this.colProsize.VisibleIndex = 12;
+            this.colProsize.Width = 36;
             // 
             // colWages
             // 
@@ -391,6 +394,7 @@ namespace BillPlex
             this.colWages.Name = "colWages";
             this.colWages.Visible = true;
             this.colWages.VisibleIndex = 13;
+            this.colWages.Width = 35;
             // 
             // colcolor
             // 
@@ -398,6 +402,7 @@ namespace BillPlex
             this.colcolor.Name = "colcolor";
             this.colcolor.Visible = true;
             this.colcolor.VisibleIndex = 14;
+            this.colcolor.Width = 29;
             // 
             // colQuantity
             // 
@@ -405,6 +410,7 @@ namespace BillPlex
             this.colQuantity.Name = "colQuantity";
             this.colQuantity.Visible = true;
             this.colQuantity.VisibleIndex = 15;
+            this.colQuantity.Width = 44;
             // 
             // colWeight
             // 
@@ -412,6 +418,7 @@ namespace BillPlex
             this.colWeight.Name = "colWeight";
             this.colWeight.Visible = true;
             this.colWeight.VisibleIndex = 16;
+            this.colWeight.Width = 39;
             // 
             // colIncentiveApplicable
             // 
@@ -419,7 +426,7 @@ namespace BillPlex
             this.colIncentiveApplicable.Name = "colIncentiveApplicable";
             this.colIncentiveApplicable.Visible = true;
             this.colIncentiveApplicable.VisibleIndex = 17;
-            this.colIncentiveApplicable.Width = 119;
+            this.colIncentiveApplicable.Width = 88;
             // 
             // colBDays
             // 
@@ -427,6 +434,7 @@ namespace BillPlex
             this.colBDays.Name = "colBDays";
             this.colBDays.Visible = true;
             this.colBDays.VisibleIndex = 18;
+            this.colBDays.Width = 41;
             // 
             // colADays
             // 
@@ -434,6 +442,7 @@ namespace BillPlex
             this.colADays.Name = "colADays";
             this.colADays.Visible = true;
             this.colADays.VisibleIndex = 19;
+            this.colADays.Width = 43;
             // 
             // colDeduction
             // 
@@ -441,6 +450,7 @@ namespace BillPlex
             this.colDeduction.Name = "colDeduction";
             this.colDeduction.Visible = true;
             this.colDeduction.VisibleIndex = 20;
+            this.colDeduction.Width = 60;
             // 
             // colTotal
             // 
@@ -448,6 +458,7 @@ namespace BillPlex
             this.colTotal.Name = "colTotal";
             this.colTotal.Visible = true;
             this.colTotal.VisibleIndex = 21;
+            this.colTotal.Width = 41;
             // 
             // colConveyance1
             // 
@@ -455,7 +466,7 @@ namespace BillPlex
             this.colConveyance1.Name = "colConveyance1";
             this.colConveyance1.Visible = true;
             this.colConveyance1.VisibleIndex = 22;
-            this.colConveyance1.Width = 83;
+            this.colConveyance1.Width = 74;
             // 
             // colIncentive1
             // 
@@ -463,6 +474,7 @@ namespace BillPlex
             this.colIncentive1.Name = "colIncentive1";
             this.colIncentive1.Visible = true;
             this.colIncentive1.VisibleIndex = 23;
+            this.colIncentive1.Width = 63;
             // 
             // colNetAmt1
             // 
@@ -470,6 +482,7 @@ namespace BillPlex
             this.colNetAmt1.Name = "colNetAmt1";
             this.colNetAmt1.Visible = true;
             this.colNetAmt1.VisibleIndex = 24;
+            this.colNetAmt1.Width = 62;
             // 
             // panelControl1
             // 

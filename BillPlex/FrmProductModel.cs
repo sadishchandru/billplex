@@ -185,7 +185,7 @@ namespace BillPlex
 
                         if (selectedMasterItem != null)
                         {
-                            productModelRequest.RawMaterialId = productModelRequest.RawMaterialList.FirstOrDefault(item => item.Name == selectedMaterialItem.ToString())?.Id ?? -1;
+                            productModelRequest.RawMaterialId = productModelRequest.RawMaterialList.FirstOrDefault(item => item.Name == selectedMasterItem.ToString())?.Id ?? -1;
                         }
 
                         string selectedProductItem = (string)drpProName.SelectedItem;

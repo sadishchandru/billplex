@@ -188,14 +188,16 @@ namespace BillPlex
                     DrpModelName.Text = gridView1.GetRowCellValue(rowHandle, "ModelName").ToString();
                     txtModelSize.Text = gridView1.GetRowCellValue(rowHandle, "ModelSize").ToString();
                     txtDurationPeriod.Text = gridView1.GetRowCellValue(rowHandle, "DurationPeriod").ToString();
-                    ddDate.Text = gridView1.GetRowCellValue(rowHandle, "Date").ToString();
+                    //ddDate.Text = gridView1.GetRowCellValue(rowHandle, "Date").ToString();
+                    var datete = gridView1.GetRowCellValue(rowHandle, "Date").ToString();
+                    ddDate.Text = datete != "" ? DateTime.Parse(datete).ToString("MM-dd-yyyy") : "";
                 }
                 btnAdd.Enabled = false;
                 btnEdit.Enabled = false;
                 btnDelete.Enabled = true;
                 btnUpdate.Enabled = true;
                 btnClear.Enabled = true;
-                btnAdd.Enabled = true;
+                //btnAdd.Enabled = true;
             }
             catch (Exception ex)
             {
